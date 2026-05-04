@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fond sombre -->
+  <rect width="100" height="100" fill="#0a0a0a"/>
+  <!-- Lettre V stylisée -->
+  <text x="50" y="68"
+    font-family="Georgia, serif"
+    font-size="62"
+    font-weight="400"
+    font-style="italic"
+    fill="#c9a96e"
+    text-anchor="middle"
+    dominant-baseline="middle">F</text>
+  <!-- Ligne décorative -->
+  <line x1="20" y1="82" x2="80" y2="82" stroke="#c9a96e" stroke-width="1.2" opacity="0.5"/>
+</svg>

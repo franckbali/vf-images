@@ -326,6 +326,13 @@ button:focus:not(:focus-visible) {
   .cookie-text { font-size:.54rem; }
 }
 
+
+/* Boutons langue toujours cliquables */
+.lang-btn {
+  cursor: pointer !important;
+  pointer-events: all !important;
+}
+
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -353,23 +360,27 @@ button:focus:not(:focus-visible) {
         loading="eager"
         decoding="async"></a>
   <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="galerie-index.html">Galerie</a></li>
-    <li><a href="a-propos.html">À propos</a></li>
-    <li><a href="boutique.html">Boutique</a></li>
+    <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+    <li><a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
+    <li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li>
+    <li><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem">
-    <div class="lang"><span>FR</span> / <a href="en/legal.html" style="color:rgba(245,243,239,.5);text-decoration:none;transition:color .3s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(245,243,239,.5)'">EN</a></div>
+    <div style="display:flex;align-items:center;gap:.4rem">
+    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:var(--gold);cursor:pointer;padding:.2rem .4rem">FR</button>
+    <span style="color:rgba(245,243,239,.2);font-size:.6rem">/</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:rgba(245,243,239,.4);cursor:pointer;padding:.2rem .4rem">EN</button>
+  </div>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav-overlay" id="nav-overlay">
-  <a href="index.html">Accueil</a>
-  <a href="galerie-index.html">Galerie</a>
-  <a href="a-propos.html">À propos</a>
-  <a href="boutique.html">Boutique</a>
+  <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+  <a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
+  <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
+  <a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
   <a href="blog.html">Blog</a>
   <a href="contact.html">Contact</a>
 </div>
@@ -588,8 +599,8 @@ if(hamburger&&navOverlay){
     <a href="mentions-legales.html">En savoir plus</a>
   </p>
   <div class="cookie-actions">
-    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" aria-label="Refuser les cookies analytiques">Refuser</button>
-    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" aria-label="Accepter les cookies analytiques">Accepter</button>
+    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
   </div>
 </div>
 <script>
@@ -635,6 +646,45 @@ if(hamburger&&navOverlay){
     }
   }
 })();
+</script>
+<script>
+
+/* ══ SYSTÈME MULTILINGUE FR/EN ══ */
+(function(){
+  var currentLang = localStorage.getItem('vf_lang') || 'fr';
+  
+  window.setLang = function(lang){
+    currentLang = lang;
+    localStorage.setItem('vf_lang', lang);
+    
+    // Mettre à jour tous les éléments data-fr/data-en
+    document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+    
+    // Mettre à jour lang sur html
+    document.documentElement.lang = lang;
+    
+    // Mettre à jour les boutons actifs
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      if(b.getAttribute('data-lang') === lang){
+        b.style.color = 'var(--gold)';
+        b.style.fontWeight = '400';
+      } else {
+        b.style.color = 'rgba(245,243,239,.4)';
+        b.style.fontWeight = '300';
+      }
+    });
+  };
+  
+  // Appliquer au chargement
+  if(currentLang === 'en'){
+    document.addEventListener('DOMContentLoaded', function(){
+      window.setLang('en');
+    });
+  }
+})();
+
 </script>
 </body>
 </html>

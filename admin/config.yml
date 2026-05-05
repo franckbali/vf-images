@@ -2,7 +2,7 @@ backend:
   name: github
   repo: franckbali/vf-images
   branch: main
-  base_url: https://sveltia-cms-auth.vercel.app
+  
 
 media_folder: "images"
 public_folder: "/images"

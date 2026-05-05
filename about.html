@@ -795,5 +795,30 @@ if(hamburger&&navOverlay){
   }
 })();
 </script>
+<script>
+(function(){
+  var lang = localStorage.getItem('vf_lang') || 'fr';
+  window.setLang = function(l){
+    lang = l;
+    localStorage.setItem('vf_lang', l);
+    document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
+      el.textContent = el.getAttribute('data-' + l);
+    });
+    document.documentElement.lang = l;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      if(b.getAttribute('data-lang') === l){
+        b.style.color = 'var(--gold)';
+        b.style.fontWeight = '400';
+      } else {
+        b.style.color = 'rgba(245,243,239,.4)';
+        b.style.fontWeight = '300';
+      }
+    });
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    if(lang === 'en') window.setLang('en');
+  });
+})();
+</script>
 </body>
 </html>

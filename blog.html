@@ -845,25 +845,21 @@ if(hamburger&&navOverlay){
 </script>
 <script>
 
-/* ══ SYSTÈME MULTILINGUE FR/EN ══ */
+
+
+</script>
+<script>
 (function(){
-  var currentLang = localStorage.getItem('vf_lang') || 'fr';
-  
-  window.setLang = function(lang){
-    currentLang = lang;
-    localStorage.setItem('vf_lang', lang);
-    
-    // Mettre à jour tous les éléments data-fr/data-en
+  var lang = localStorage.getItem('vf_lang') || 'fr';
+  window.setLang = function(l){
+    lang = l;
+    localStorage.setItem('vf_lang', l);
     document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
-      el.textContent = el.getAttribute('data-' + lang);
+      el.textContent = el.getAttribute('data-' + l);
     });
-    
-    // Mettre à jour lang sur html
-    document.documentElement.lang = lang;
-    
-    // Mettre à jour les boutons actifs
+    document.documentElement.lang = l;
     document.querySelectorAll('.lang-btn').forEach(function(b){
-      if(b.getAttribute('data-lang') === lang){
+      if(b.getAttribute('data-lang') === l){
         b.style.color = 'var(--gold)';
         b.style.fontWeight = '400';
       } else {
@@ -872,15 +868,10 @@ if(hamburger&&navOverlay){
       }
     });
   };
-  
-  // Appliquer au chargement
-  if(currentLang === 'en'){
-    document.addEventListener('DOMContentLoaded', function(){
-      window.setLang('en');
-    });
-  }
+  document.addEventListener('DOMContentLoaded', function(){
+    if(lang === 'en') window.setLang('en');
+  });
 })();
-
 </script>
 </body>
 </html>

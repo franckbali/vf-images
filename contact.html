@@ -635,8 +635,8 @@ button:focus:not(:focus-visible) {
     <li><a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
     <li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li>
     <li><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a></li>
+    <li><a href="contact.html" class="active" data-fr="Contact" data-en="Contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem">
     <div style="display:flex;align-items:center;gap:.4rem">
@@ -652,8 +652,8 @@ button:focus:not(:focus-visible) {
   <a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
   <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
   <a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
-  <a href="blog.html">Blog</a>
-  <a href="contact.html">Contact</a>
+  <a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a>
+  <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
   <div class="overlay-lang"><span>FR</span> / EN</div>
 
 <main id="main-content">
@@ -675,7 +675,7 @@ button:focus:not(:focus-visible) {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div class="info-text">
-            <p>Email</p>
+            <p data-fr="Email" data-en="Email">Email</p>
             <a href="mailto:contact@vfimages.com">contact@vfimages.com</a>
           </div>
         </div>
@@ -684,8 +684,8 @@ button:focus:not(:focus-visible) {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div class="info-text">
-            <p>Fuseau horaire</p>
-            <span>Bali, Indonésie · GMT+8</span>
+            <p data-fr="Fuseau horaire" data-en="Time zone">Fuseau horaire</p>
+            <span data-fr="Bali, Indonésie · GMT+8" data-en="Bali, Indonesia · GMT+8">Bali, Indonésie · GMT+8</span>
           </div>
         </div>
         <div class="contact-info-item">
@@ -694,13 +694,13 @@ button:focus:not(:focus-visible) {
           </div>
           <div class="info-text">
             <p>Basé à</p>
-            <span>Bali, Indonésie</span>
+            <span data-fr="Bali, Indonésie" data-en="Bali, Indonesia">Bali, Indonésie</span>
           </div>
         </div>
       </div>
 
       <div class="contact-social">
-        <span class="social-label">Suivre ·</span>
+        <span class="social-label" data-fr="Suivre ·" data-en="Follow ·">Suivre ·</span>
         <a href="https://www.instagram.com/thelensofwonder/" target="_blank" class="social-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           Instagram
@@ -718,10 +718,10 @@ button:focus:not(:focus-visible) {
 
     <!-- SUJETS -->
     <div class="form-subjects reveal">
-      <button class="subject-btn active" onclick="selectSubject(this)">Tirage Fine Art</button>
-      <button class="subject-btn" onclick="selectSubject(this)">Commande sur mesure</button>
-      <button class="subject-btn" onclick="selectSubject(this)">Collaboration</button>
-      <button class="subject-btn" onclick="selectSubject(this)">Autre</button>
+      <button class="subject-btn active" onclick="selectSubject(this)" data-fr="Tirage Fine Art" data-en="Fine Art Print">Tirage Fine Art</button>
+      <button class="subject-btn" onclick="selectSubject(this)" data-fr="Commande sur mesure" data-en="Custom order">Commande sur mesure</button>
+      <button class="subject-btn" onclick="selectSubject(this)" data-fr="Collaboration" data-en="Collaboration">Collaboration</button>
+      <button class="subject-btn" onclick="selectSubject(this)" data-fr="Autre" data-en="Other">Autre</button>
     </div>
 
     <!-- FORMULAIRE -->
@@ -732,7 +732,7 @@ button:focus:not(:focus-visible) {
         <div class="form-underline"></div>
       </div>
       <div class="form-group reveal">
-        <label class="form-label">Email</label>
+        <label class="form-label" data-fr="Email" data-en="Email">Email</label>
         <div class="form-group reveal">
         <label class="form-label" for="field-subject" data-fr="Sujet" data-en="Subject">Sujet</label>
         <select name="subject" id="field-subject" class="form-input" style="background:transparent;color:inherit;cursor:pointer" aria-label="Sujet du message">
@@ -745,7 +745,7 @@ button:focus:not(:focus-visible) {
         <div class="form-underline"></div>
       </div>
       <div class="form-group reveal">
-        <label class="form-label" for="field-email">Email</label>
+        <label class="form-label" for="field-email" data-fr="Email" data-en="Email">Email</label>
         <input type="email" name="email" id="field-email" class="form-input" placeholder="votre@email.com" required autocomplete="email" aria-label="Votre email">
         <div class="form-underline"></div>
       </div>

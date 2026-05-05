@@ -1,0 +1,46 @@
+backend:
+  name: github
+  repo: franckbali/vf-images
+  branch: main
+  base_url: https://sveltia-cms-auth.vercel.app
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: fr
+
+collections:
+  - name: "pages"
+    label: "Pages du site"
+    files:
+
+      - name: "accueil"
+        label: "Page Accueil"
+        file: "index.html"
+        fields:
+          - {label: "Contenu HTML", name: "body", widget: "code", default_language: "html"}
+
+  - name: "blog"
+    label: "Articles de blog"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Image principale", name: "image", widget: "image", required: false}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+
+  - name: "galeries"
+    label: "Galeries photos"
+    folder: "galeries"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre de la galerie", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Photos", name: "photos", widget: "list", fields: [
+          {label: "Photo", name: "image", widget: "image"},
+          {label: "Légende", name: "caption", widget: "string", required: false}
+        ]}

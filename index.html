@@ -189,7 +189,7 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
 .nav-overlay a:hover{color:var(--gold)}
 .nav-overlay .overlay-lang{font-size:.58rem;letter-spacing:.3em;color:rgba(245,243,239,.25);margin-top:1rem}
 .nav-overlay .overlay-lang span{color:var(--gold)}
-@media(max-width:900px){.hamburger{display:flex}.nav-overlay{display:flex}}
+@media(max-width:900px){.hamburger{display:flex}.nav-overlay{display:flex;pointer-events:none;visibility:hidden}.nav-overlay.open{pointer-events:auto;visibility:visible}}
 /* CTA améliorés */
 .btn{display:inline-block;padding:1.1rem 3.5rem;border:1px solid var(--gold);color:var(--gold);font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;text-decoration:none;transition:background .4s,color .4s;font-family:'Raleway',sans-serif;font-weight:400;background:transparent}
 .btn:hover{background:var(--gold);color:var(--dark)}
@@ -770,11 +770,9 @@ document.addEventListener('keydown',e=>{
 const hamburger=document.getElementById('hamburger');
 const navOverlay=document.getElementById('nav-overlay');
 if(hamburger&&navOverlay){
-  navOverlay.style.pointerEvents='none';
   function toggleMenu(){
     const isOpen=hamburger.classList.toggle('open');
     navOverlay.classList.toggle('open',isOpen);
-    navOverlay.style.pointerEvents=isOpen?'auto':'none';
     document.body.style.overflow=isOpen?'hidden':'';
   }
   hamburger.addEventListener('click',toggleMenu);
@@ -782,7 +780,6 @@ if(hamburger&&navOverlay){
   navOverlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
     hamburger.classList.remove('open');
     navOverlay.classList.remove('open');
-    navOverlay.style.pointerEvents='none';
     document.body.style.overflow='';
   }));
 }

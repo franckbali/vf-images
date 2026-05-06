@@ -853,7 +853,6 @@ function submitForm(e){
   });
 }
 
-// Afficher message succès si redirigé après envoi
 if(window.location.search.includes('sent=1')){
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
@@ -862,45 +861,28 @@ if(window.location.search.includes('sent=1')){
 }
 
 document.addEventListener('keydown', function(e){
-    // Ctrl+U ou Cmd+U (voir source)
-    if((e.ctrlKey || e.metaKey) && e.key === 'u'){
-      e.preventDefault();
-    }
-    // Ctrl+Shift+I (DevTools) — tentative
-    if((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'i'){
-      e.preventDefault();
+  if((e.ctrlKey || e.metaKey) && e.key === 'u'){ e.preventDefault(); }
+  if((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'i'){ e.preventDefault(); }
+});
+
+document.addEventListener('selectstart', function(e){
+  if(e.target.tagName === 'IMG'){ e.preventDefault(); }
+});
+
+document.addEventListener('touchstart', function(e){
+  if(e.target.tagName === 'IMG'){ e.target.setAttribute('draggable', 'false'); }
+}, {passive: true});
+
+window.addEventListener('load', function(){
+  document.querySelectorAll('.photo-item img, .print-image img, .gallery-card img, .detail-image img, .intro-photo-col img').forEach(function(img){
+    if(img.complete && img.src && !img.src.startsWith('data:')){
+      img.setAttribute('data-protected', 'true');
+      img.style.pointerEvents = 'none';
+      img.setAttribute('draggable', 'false');
+      img.setAttribute('oncontextmenu', 'return false;');
     }
   });
-
-  // 4. Bloquer la sélection de texte sur les zones images
-  document.addEventListener('selectstart', function(e){
-    if(e.target.tagName === 'IMG'){
-      e.preventDefault();
-    }
-  });
-
-  // 5. Bloquer le menu de téléchargement via touch long-press (iOS/Android)
-  document.addEventListener('touchstart', function(e){
-    if(e.target.tagName === 'IMG'){
-      e.target.setAttribute('draggable', 'false');
-    }
-  }, {passive: true});
-
-  // 6. Supprimer l'URL src des images du DOM après chargement
-  // (rend le clic-droit → "Ouvrir l'image" inutile)
-  window.addEventListener('load', function(){
-    document.querySelectorAll('.photo-item img, .print-image img, .gallery-card img, .detail-image img, .intro-photo-col img').forEach(function(img){
-      // Stocker le src, remplacer par data-src protégé
-      if(img.complete && img.src && !img.src.startsWith('data:')){
-        img.setAttribute('data-protected', 'true');
-        // Rendre le pointer-events nul (déjà fait en CSS, renforcé ici)
-        img.style.pointerEvents = 'none';
-        img.setAttribute('draggable', 'false');
-        img.setAttribute('oncontextmenu', 'return false;');
-      }
-    });
-  });
-})();
+});
 </script>
 
 <!-- BANDEAU COOKIES RGPD -->

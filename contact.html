@@ -819,47 +819,39 @@ function selectSubject(btn){
 
 function submitForm(e){
   e.preventDefault();
-  const form = document.getElementById('contactForm');
-  const btn = form.querySelector('[type="submit"]');
-  const success = document.getElementById('formSuccess');
-  const errorMsg = document.getElementById('formError');
-
-  // Validation côté client
-  const name = form.querySelector('[name="name"]').value.trim();
-  const email = form.querySelector('[name="email"]').value.trim();
-  const message = form.querySelector('[name="message"]').value.trim();
-
+  var form = document.getElementById('contactForm');
+  var btn = form.querySelector('[type="submit"]');
+  var success = document.getElementById('formSuccess');
+  var errorMsg = document.getElementById('formError');
+  var name = form.querySelector('[name="name"]').value.trim();
+  var email = form.querySelector('[name="email"]').value.trim();
+  var message = form.querySelector('[name="message"]').value.trim();
   if(!name || !email || !message){
-    if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Merci de remplir tous les champs obligatoires.'; }
+    if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Merci de remplir tous les champs.'; }
     return;
   }
-
-  // État chargement
   btn.disabled = true;
   btn.textContent = 'Envoi en cours...';
-  btn.style.opacity = '0.6';
   if(errorMsg) errorMsg.style.display = 'none';
-
-  // Envoi Formspree
-  // ⚠️  REMPLACER "mwvybbrz" par votre ID récupéré sur formspree.io
   fetch('https://formspree.io/f/mwvybbrz', {
     method: 'POST',
-    headers: { 'Accept': 'application/json' },
+    headers: {'Accept': 'application/json'},
     body: new FormData(form)
-  })
-  .then(response => {
-    if(response.ok){
-      // Succès
-      form.style.opacity = '0';
-      form.style.transform = 'translateY(-10px)';
-      form.style.transition = 'opacity .4s ease, transform .4s ease';
-      setTimeout(() => {
-        form.style.display = 'none';
-        if(success){
-          success.style.display = 'block';
-          success.style.opacity = '0';
-          setTimeout(() => { success.style.opacity = '1'; success.style.transition = 'opacity .5s ease'; }, 50);
-        }
+  }).then(function(r){
+    if(r.ok){
+      form.style.display = 'none';
+      if(success){ success.style.display = 'block'; }
+    } else {
+      if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Erreur. Réessayez ou écrivez à contact@vfimages.com'; }
+      btn.disabled = false;
+      btn.textContent = 'Envoyer';
+    }
+  }).catch(function(){
+    if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Erreur réseau. Vérifiez votre connexion.'; }
+    btn.disabled = false;
+    btn.textContent = 'Envoyer';
+  });
+}
       }, 400);
     } else {
       response.json().then(data => {

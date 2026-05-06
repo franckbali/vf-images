@@ -302,7 +302,7 @@ footer{
 .nav-overlay a{font-family:'Raleway',sans-serif;font-size:1.8rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.65);text-decoration:none;transition:color .3s}
 .nav-overlay a:hover{color:var(--gold)}
 .nav-overlay .overlay-lang{font-size:.58rem;letter-spacing:.3em;color:rgba(245,243,239,.25);margin-top:1rem}
-@media(max-width:900px){.hamburger{display:flex}.nav-overlay{display:flex}}
+@media(max-width:900px){.hamburger{display:flex}.nav-overlay{display:flex;pointer-events:none;visibility:hidden}.nav-overlay.open{pointer-events:auto;visibility:visible}}
 
 /* ═══════════════════════════════════════
    RESPONSIVE — Tablette & Mobile complet

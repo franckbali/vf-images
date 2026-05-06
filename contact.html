@@ -14,7 +14,7 @@
 <meta property="og:title" content="Contact – VF Images">
 <meta property="og:description" content="Photographe Fine Art basé à Bali. Projets, commandes, collaborations.">
 <meta property="og:image" content="assets/og-contact.jpg">
-<meta property="og:url" content="https://vf-images.com/contact.html">
+<meta property="og:url" content="https://vfimages.com/contact.html">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -419,7 +419,7 @@ img {
 .print-image::after,
 .gallery-card::after,
 .detail-image::after {
-  content: '© VF Images — vf-images.com';
+  content: '© VF Images — vfimages.com';
   position: absolute;
   bottom: 8px;
   right: 10px;
@@ -761,7 +761,7 @@ button:focus:not(:focus-visible) {
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
       </div>
       <!-- Redirection après envoi réussi -->
-      <input type="hidden" name="_next" value="https://vf-images.com/contact.html?sent=1">
+      <input type="hidden" name="_next" value="https://vfimages.com/contact.html?sent=1">
       <input type="hidden" name="_subject" value="Nouveau message — VF Images">
       <input type="hidden" name="_language" value="fr">
       <button type="submit" class="submit-btn">
@@ -863,7 +863,7 @@ function submitForm(e){
       }, 400);
     } else {
       response.json().then(data => {
-        const msg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Une erreur est survenue. Réessayez ou écrivez à contact@vf-images.com';
+        const msg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Une erreur est survenue. Réessayez ou écrivez à contact@vfimages.com';
         if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent=msg; }
         btn.disabled = false;
         btn.textContent = 'Envoyer';
@@ -872,7 +872,7 @@ function submitForm(e){
     }
   })
   .catch(() => {
-    if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Erreur réseau. Vérifiez votre connexion ou écrivez à contact@vf-images.com'; }
+    if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Erreur réseau. Vérifiez votre connexion ou écrivez à contact@vfimages.com'; }
     btn.disabled = false;
     btn.textContent = 'Envoyer';
     btn.style.opacity = '1';

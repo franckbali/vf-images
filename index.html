@@ -776,6 +776,7 @@ if(hamburger&&navOverlay){
     document.body.style.overflow=isOpen?'hidden':'';
   }
   hamburger.addEventListener('click',toggleMenu);
+  hamburger.addEventListener('touchstart',function(e){e.preventDefault();toggleMenu();},{passive:false});
   navOverlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
     hamburger.classList.remove('open');
     navOverlay.classList.remove('open');

@@ -878,6 +878,8 @@ if(window.location.search.includes('sent=1')){
   if(form) form.style.display = 'none';
   if(success){ success.style.display = 'block'; success.style.opacity = '1'; }
 }
+
+document.addEventListener('keydown', function(e){
     // Ctrl+U ou Cmd+U (voir source)
     if((e.ctrlKey || e.metaKey) && e.key === 'u'){
       e.preventDefault();

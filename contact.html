@@ -841,8 +841,8 @@ function submitForm(e){
   if(errorMsg) errorMsg.style.display = 'none';
 
   // Envoi Formspree
-  // ⚠️  REMPLACER "VOTRE_ID_FORMSPREE" par votre ID récupéré sur formspree.io
-  fetch('https://formspree.io/f/VOTRE_ID_FORMSPREE', {
+  // ⚠️  REMPLACER "mwvybbrz" par votre ID récupéré sur formspree.io
+  fetch('https://formspree.io/f/mwvybbrz', {
     method: 'POST',
     headers: { 'Accept': 'application/json' },
     body: new FormData(form)

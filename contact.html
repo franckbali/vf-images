@@ -852,23 +852,6 @@ function submitForm(e){
     btn.textContent = 'Envoyer';
   });
 }
-      }, 400);
-    } else {
-      response.json().then(data => {
-        const msg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Une erreur est survenue. Réessayez ou écrivez à contact@vfimages.com';
-        if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent=msg; }
-        btn.disabled = false;
-        btn.textContent = 'Envoyer';
-        btn.style.opacity = '1';
-      });
-    }
-  })
-  .catch(() => {
-    if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Erreur réseau. Vérifiez votre connexion ou écrivez à contact@vfimages.com'; }
-    btn.disabled = false;
-    btn.textContent = 'Envoyer';
-    btn.style.opacity = '1';
-  });
 }
 
 // Afficher message succès si redirigé après envoi

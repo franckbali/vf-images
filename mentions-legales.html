@@ -44,7 +44,8 @@ nav ul li a:hover{color:var(--gold)}
 @media(max-width:900px){
   nav ul{display:none}
   .hamburger{display:flex}
-  .nav-overlay{display:flex}
+  .nav-overlay{display:flex;pointer-events:none;visibility:hidden}
+  .nav-overlay.open{pointer-events:auto;visibility:visible}
   nav{padding:1.5rem 2rem}
   .logo img{height:48px}
 }

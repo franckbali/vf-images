@@ -249,6 +249,9 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
 
 @media(max-width:900px){
   nav{padding:1.5rem 2rem} nav ul{display:none}
+  .hamburger{display:flex}
+  .nav-overlay{display:flex;pointer-events:none;visibility:hidden}
+  .nav-overlay.open{pointer-events:auto;visibility:visible}
   .logo img{height:56px}
   .hero{padding:0 2rem 5vh}
   .section-intro,.section-childhood{grid-template-columns:1fr}

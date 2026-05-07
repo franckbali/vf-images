@@ -18,7 +18,8 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Lora:ital,wght@1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Lora:ital,wght@1,400&display=swap"></noscript>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--gold:#c9a96e;--dark:#0a0a0a;--dark2:#111;--dark3:#1a1a1a;--light:#f5f3ef}
@@ -661,7 +662,7 @@ button:focus:not(:focus-visible) {
         srcset="images/rituels-offrandes-small.webp 640w, images/rituels-offrandes-medium.webp 1200w, images/rituels-offrandes-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Rituels & Offrandes"
-        loading="lazy"
+        loading="eager"
         decoding="async">
       </div>
       <div class="detail-info">

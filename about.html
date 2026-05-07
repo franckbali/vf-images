@@ -18,7 +18,8 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Lora:ital,wght@0,400;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Lora:ital,wght@0,400;1,400&display=swap"></noscript>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--gold:#c9a96e;--dark:#0a0a0a;--dark2:#111;--light:#f5f3ef}
@@ -546,7 +547,7 @@ button:focus:not(:focus-visible) {
         srcset="images/franck-enfant-dans-un-train-small.webp 640w, images/franck-enfant-dans-un-train-medium.webp 1200w, images/franck-enfant-dans-un-train-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Franck enfant dans un train"
-        loading="lazy"
+        loading="eager"
         decoding="async">
     <span class="childhood-caption">Le regard déjà tourné vers l'horizon</span>
   </div>

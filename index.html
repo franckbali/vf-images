@@ -26,16 +26,16 @@
 html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--light);font-family:'Raleway',sans-serif;font-weight:300;overflow-x:hidden}
 
-.cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,0.70);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,0.80);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
-.cursor-ring.h{width:48px;height:48px;border-color:rgba(201,169,110,0.80)}
+.cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,.90);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,.90);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
+.cursor-ring.h{width:48px;height:48px;border-color:rgba(201,169,110,.90)}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 4rem;background:linear-gradient(to bottom,rgba(10,10,10,0.96),transparent)}
 .logo img{height:80px;width:auto;display:block}
 nav ul{list-style:none;display:flex;gap:2.5rem}
-nav ul li a{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.80);text-decoration:none;transition:color .3s;font-family:'Raleway',sans-serif;font-weight:400}
+nav ul li a{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s;font-family:'Raleway',sans-serif;font-weight:400}
 nav ul li a:hover{color:var(--gold)}
-.lang{font-size:.65rem;letter-spacing:.15em;color:rgba(245,243,239,.80)}
+.lang{font-size:.65rem;letter-spacing:.15em;color:rgba(245,243,239,.92)}
 .lang span{color:var(--gold)}
 
 .hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -49,19 +49,19 @@ nav ul li a:hover{color:var(--gold)}
 .hero-divider{width:40px;height:1px;background:var(--gold);margin:0 auto 1.4rem;opacity:.8;animation:fadeUp 1.4s ease .55s both}
 .hero-name{font-family:'Raleway',sans-serif;font-size:clamp(3.5rem,10vw,8.5rem);font-weight:200;letter-spacing:.22em;line-height:1;color:var(--light);animation:fadeUp 1.4s ease .7s both;margin-bottom:.7rem;text-transform:uppercase}
 .hero-prenom-wrap{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-bottom:2rem;animation:fadeUp 1.4s ease .85s both}
-.hero-prenom-line{width:28px;height:1px;background:rgba(201,169,110,.80)}
+.hero-prenom-line{width:28px;height:1px;background:rgba(201,169,110,.90)}
 .hero-prenom{font-family:'Raleway',sans-serif;font-size:.9rem;font-weight:400;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);opacity:1}
-.hero-tagline{font-family:'Lora',serif;font-size:clamp(1.15rem,2vw,1.55rem);font-style:italic;font-weight:400;letter-spacing:.12em;color:rgba(245,243,239,.85);animation:fadeUp 1.4s ease 1s both}
+.hero-tagline{font-family:'Lora',serif;font-size:clamp(1.15rem,2vw,1.55rem);font-style:italic;font-weight:400;letter-spacing:.12em;color:rgba(245,243,239,.92);animation:fadeUp 1.4s ease 1s both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:fadeUp 1.4s ease 1.6s both}
-.scroll-indicator span{font-size:.48rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.80);font-family:'Raleway',sans-serif}
+.scroll-indicator span{font-size:.48rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.92);font-family:'Raleway',sans-serif}
 .scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sp 2s ease-in-out infinite}
 @keyframes sp{0%,100%{opacity:.3}50%{opacity:1}}
 
 section.gallery-preview{padding:8rem 4rem;background:var(--dark)}
 .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem}
 .section-label{font-size:.55rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-family:'Raleway',sans-serif;font-weight:400}
-.section-link{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.80);padding-bottom:.2rem;transition:border-color .3s;white-space:nowrap;font-family:'Raleway',sans-serif;font-weight:400}
+.section-link{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.90);padding-bottom:.2rem;transition:border-color .3s;white-space:nowrap;font-family:'Raleway',sans-serif;font-weight:400}
 .section-link:hover{border-color:var(--gold)}
 
 .photo-masonry{column-count:3;column-gap:5px}
@@ -110,7 +110,7 @@ section.gallery-preview{padding:8rem 4rem;background:var(--dark)}
 .lightbox-close{
   position:absolute;top:2rem;right:2.5rem;
   background:none;border:none;
-  color:rgba(245,243,239,.80);
+  color:rgba(245,243,239,.92);
   font-size:1.2rem;font-weight:200;
   cursor:none;
   font-family:'Raleway',sans-serif;
@@ -125,7 +125,7 @@ section.gallery-preview{padding:8rem 4rem;background:var(--dark)}
   font-family:'Raleway',sans-serif;
   font-size:.52rem;letter-spacing:.32em;
   text-transform:uppercase;
-  color:rgba(245,243,239,.80);
+  color:rgba(245,243,239,.92);
   white-space:nowrap;
   opacity:0;
   transition:opacity .6s ease .5s;
@@ -136,12 +136,12 @@ section.gallery-preview{padding:8rem 4rem;background:var(--dark)}
 /* À PROPOS */
 section.about-strip{padding:8rem 4rem;background:var(--dark2);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
 .about-image{position:relative}
-.about-image::before{content:'';position:absolute;top:-16px;left:-16px;right:16px;bottom:16px;border:1px solid rgba(201,169,110,.80);z-index:0}
+.about-image::before{content:'';position:absolute;top:-16px;left:-16px;right:16px;bottom:16px;border:1px solid rgba(201,169,110,.90);z-index:0}
 .about-image img{position:relative;z-index:1;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;filter:brightness(.88) saturate(.85);display:block}
 .section-title{font-family:'Bodoni Moda',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;letter-spacing:.05em;line-height:1.15}
 .about-text .section-label{margin-bottom:.75rem}
 .about-text .section-title{margin-bottom:2rem}
-.about-body{font-size:.9rem;line-height:2.1;color:rgba(245,243,239,.80);margin-bottom:2.5rem;font-family:'Raleway',sans-serif}
+.about-body{font-size:.9rem;line-height:2.1;color:rgba(245,243,239,.92);margin-bottom:2.5rem;font-family:'Raleway',sans-serif}
 .about-signature{font-family:'Lora',serif;font-size:2.4rem;font-weight:400;font-style:italic;color:var(--gold)}
 
 /* CTA */
@@ -149,7 +149,7 @@ section.cta{padding:10rem 4rem;text-align:center;position:relative;overflow:hidd
 section.cta::before{content:'';position:absolute;inset:0;background:url('images/cta-bali.webp') center 60%/cover no-repeat;opacity:.18}
 section.cta>*{position:relative}
 .cta-title{font-family:'Bodoni Moda',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;letter-spacing:.08em;margin-bottom:1rem}
-.cta-sub{font-size:.7rem;letter-spacing:.25em;color:rgba(245,243,239,.80);text-transform:uppercase;margin-bottom:3rem;font-family:'Raleway',sans-serif}
+.cta-sub{font-size:.7rem;letter-spacing:.25em;color:rgba(245,243,239,.92);text-transform:uppercase;margin-bottom:3rem;font-family:'Raleway',sans-serif}
 .btn{display:inline-block;padding:1rem 3rem;border:1px solid var(--gold);color:var(--gold);font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;text-decoration:none;transition:background .4s,color .4s;font-family:'Raleway',sans-serif;font-weight:400;background:transparent}
 .btn:hover{background:var(--gold);color:var(--dark)}
 
@@ -161,8 +161,8 @@ section.cta>*{position:relative}
 /* FOOTER */
 footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.06)}
 .footer-logo img{height:40px;opacity:.45}
-.footer-copy{font-size:.55rem;letter-spacing:.2em;color:rgba(245,243,239,.80);font-family:'Raleway',sans-serif}
-.footer-social a{color:rgba(201,169,110,.80);text-decoration:none;transition:color .3s;display:flex;align-items:center}
+.footer-copy{font-size:.55rem;letter-spacing:.2em;color:rgba(245,243,239,.92);font-family:'Raleway',sans-serif}
+.footer-social a{color:rgba(201,169,110,.90);text-decoration:none;transition:color .3s;display:flex;align-items:center}
 .footer-social a:hover{color:var(--gold)}
 
 @media(max-width:900px){
@@ -180,15 +180,15 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
 
 /* ═══ HAMBURGER MOBILE ═══ */
 .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;background:none;border:none;cursor:pointer;padding:6px;z-index:201}
-.hamburger span{display:block;width:22px;height:1px;background:rgba(245,243,239,.75);transition:transform .4s cubic-bezier(0.22,1,0.36,1),opacity .3s,background .3s;transform-origin:center}
+.hamburger span{display:block;width:22px;height:1px;background:rgba(245,243,239,.92);transition:transform .4s cubic-bezier(0.22,1,0.36,1),opacity .3s,background .3s;transform-origin:center}
 .hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);background:var(--gold)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);background:var(--gold)}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(10,10,10,.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;pointer-events:none;transition:opacity .45s cubic-bezier(0.22,1,0.36,1)}
 .nav-overlay.open{opacity:1;pointer-events:auto}
-.nav-overlay a{font-family:'Raleway',sans-serif;font-size:1.8rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.80);text-decoration:none;transition:color .3s}
+.nav-overlay a{font-family:'Raleway',sans-serif;font-size:1.8rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s}
 .nav-overlay a:hover{color:var(--gold)}
-.nav-overlay .overlay-lang{font-size:.58rem;letter-spacing:.3em;color:rgba(245,243,239,.80);margin-top:1rem}
+.nav-overlay .overlay-lang{font-size:.58rem;letter-spacing:.3em;color:rgba(245,243,239,.92);margin-top:1rem}
 .nav-overlay .overlay-lang span{color:var(--gold)}
 @media(max-width:900px){.hamburger{display:flex}.nav-overlay{display:flex;pointer-events:none;visibility:hidden}.nav-overlay.open{pointer-events:auto;visibility:visible}}
 /* CTA améliorés */
@@ -373,7 +373,7 @@ button:focus:not(:focus-visible) {
 .photo-item:focus-within,
 .print-card:focus-within,
 .gallery-card:focus-within {
-  outline: 1px solid rgba(201,169,110,.80);
+  outline: 1px solid rgba(201,169,110,.90);
 }
 
 /* Réduction des animations si préférence utilisateur */
@@ -393,7 +393,7 @@ button:focus:not(:focus-visible) {
   bottom: 0; left: 0; right: 0;
   z-index: 999;
   background: rgba(10,10,10,.97);
-  border-top: 1px solid rgba(201,169,110,.80);
+  border-top: 1px solid rgba(201,169,110,.90);
   padding: 1.5rem 4rem;
   display: flex;
   align-items: center;
@@ -409,14 +409,14 @@ button:focus:not(:focus-visible) {
   font-size: .58rem;
   font-weight: 300;
   letter-spacing: .12em;
-  color: rgba(245,243,239,.80);
+  color: rgba(245,243,239,.92);
   line-height: 1.7;
   max-width: 680px;
 }
 .cookie-text a {
-  color: rgba(201,169,110,.7);
+  color: rgba(201,169,110,.90);
   text-decoration: none;
-  border-bottom: 1px solid rgba(201,169,110,.80);
+  border-bottom: 1px solid rgba(201,169,110,.90);
 }
 .cookie-text a:hover { color: var(--gold); }
 .cookie-actions {
@@ -443,7 +443,7 @@ button:focus:not(:focus-visible) {
 .cookie-btn-accept:hover { opacity: .85; }
 .cookie-btn-refuse {
   background: transparent;
-  color: rgba(245,243,239,.80);
+  color: rgba(245,243,239,.92);
   border: 1px solid rgba(255,255,255,.1);
 }
 .cookie-btn-refuse:hover { color: var(--light); border-color: rgba(255,255,255,.3); }
@@ -510,8 +510,8 @@ button:focus:not(:focus-visible) {
   <div style="display:flex;align-items:center;gap:1.5rem">
     <div style="display:flex;align-items:center;gap:.4rem">
     <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:var(--gold);cursor:pointer;padding:.2rem .4rem">FR</button>
-    <span style="color:rgba(245,243,239,.80);font-size:.6rem">/</span>
-    <button class="lang-btn" data-lang="en" onclick="setLang('en')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:rgba(245,243,239,.80);cursor:pointer;padding:.2rem .4rem">EN</button>
+    <span style="color:rgba(245,243,239,.92);font-size:.6rem">/</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:rgba(245,243,239,.92);cursor:pointer;padding:.2rem .4rem">EN</button>
   </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -934,7 +934,7 @@ if(hamburger&&navOverlay){
         b.style.color = 'var(--gold)';
         b.style.fontWeight = '400';
       } else {
-        b.style.color = 'rgba(245,243,239,.80)';
+        b.style.color = 'rgba(245,243,239,.92)';
         b.style.fontWeight = '300';
       }
     });

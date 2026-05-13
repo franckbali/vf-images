@@ -25,8 +25,8 @@ html{scroll-behavior:smooth;background:var(--dark)}
 body{background:var(--dark);color:var(--light);font-family:'Raleway',sans-serif;font-weight:300;overflow-x:hidden}
 
 .cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,.65);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,.25);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
-.cursor-ring.h{width:48px;height:48px;border-color:rgba(201,169,110,.5)}
+.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,.80);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
+.cursor-ring.h{width:48px;height:48px;border-color:rgba(201,169,110,.80)}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 4rem;transition:opacity .6s ease,transform .6s ease}
@@ -34,9 +34,9 @@ nav.hidden{opacity:0;transform:translateY(-8px);pointer-events:none}
 .logo img{height:60px;width:auto;display:block}
 .nav-right{display:flex;align-items:center;gap:2.5rem}
 nav ul{list-style:none;display:flex;gap:2rem}
-nav ul li a{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.5);text-decoration:none;transition:color .3s;font-weight:400}
+nav ul li a{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.80);text-decoration:none;transition:color .3s;font-weight:400}
 nav ul li a:hover,nav ul li a.active{color:var(--gold)}
-.lang{font-size:.6rem;letter-spacing:.15em;color:rgba(245,243,239,.55)}
+.lang{font-size:.6rem;letter-spacing:.15em;color:rgba(245,243,239,.80)}
 .lang span{color:var(--gold)}
 
 /* INTRO */
@@ -48,11 +48,11 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 .intro-back:hover{color:var(--gold)}
 .intro-back svg{transition:transform .3s}
 .intro-back:hover svg{transform:translateX(-3px)}
-.intro-label{font-size:.52rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,.6);margin-bottom:1.2rem;font-weight:400;animation:fadeUp 1.4s ease .3s both}
+.intro-label{font-size:.52rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,.80);margin-bottom:1.2rem;font-weight:400;animation:fadeUp 1.4s ease .3s both}
 .intro-title{font-family:'Raleway',sans-serif;font-size:clamp(3rem,8vw,7rem);font-weight:200;letter-spacing:.18em;text-transform:uppercase;color:var(--light);line-height:1;animation:fadeUp 1.4s ease .55s both;margin-bottom:1.2rem}
-.intro-count{font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.55);animation:fadeUp 1.4s ease .75s both}
+.intro-count{font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.80);animation:fadeUp 1.4s ease .75s both}
 .intro-scroll{margin-top:3rem;display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;animation:fadeUp 1.4s ease 1s both}
-.intro-scroll span{font-size:.45rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.55)}
+.intro-scroll span{font-size:.45rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.80)}
 .scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sp 2.2s ease-in-out infinite}
 @keyframes sp{0%,100%{opacity:.25}50%{opacity:.8}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
@@ -89,8 +89,8 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 .frame img{height:auto}
 
 /* CAPTIONS statiques */
-.caption-corner{position:absolute;bottom:2rem;right:2.5rem;font-size:.48rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,239,.60);font-family:'Raleway',sans-serif;font-weight:400;pointer-events:none}
-.caption-below{margin-top:.9rem;font-size:.48rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,239,.55);font-family:'Raleway',sans-serif;font-weight:400}
+.caption-corner{position:absolute;bottom:2rem;right:2.5rem;font-size:.48rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,239,.80);font-family:'Raleway',sans-serif;font-weight:400;pointer-events:none}
+.caption-below{margin-top:.9rem;font-size:.48rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,239,.80);font-family:'Raleway',sans-serif;font-weight:400}
 
 /* ═══════════════════════════════════════════
    HOVER DESCRIPTION — sur la photo
@@ -183,12 +183,12 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 .lb-inner:hover .lb-desc-title,.lb-inner.touched .lb-desc-title{opacity:1;transform:translateY(0)}
 .lb-desc-line{display:block;width:0;height:1px;background:var(--gold);opacity:.6;transition:width .55s ease .08s;margin-bottom:.7rem}
 .lb-inner:hover .lb-desc-line,.lb-inner.touched .lb-desc-line{width:28px}
-.lb-desc-text{font-family:'Lora',serif;font-size:.78rem;font-style:italic;line-height:1.7;color:rgba(245,243,239,.55);max-width:480px;transform:translateY(8px);opacity:0;transition:opacity .55s ease .12s,transform .55s ease .12s}
+.lb-desc-text{font-family:'Lora',serif;font-size:.78rem;font-style:italic;line-height:1.7;color:rgba(245,243,239,.80);max-width:480px;transform:translateY(8px);opacity:0;transition:opacity .55s ease .12s,transform .55s ease .12s}
 .lb-inner:hover .lb-desc-text,.lb-inner.touched .lb-desc-text{opacity:1;transform:translateY(0)}
 
-.lightbox-close{position:absolute;top:2rem;right:2.5rem;background:none;border:none;color:rgba(245,243,239,.35);font-size:1.1rem;transition:color .4s;padding:.5rem;font-weight:200}
+.lightbox-close{position:absolute;top:2rem;right:2.5rem;background:none;border:none;color:rgba(245,243,239,.80);font-size:1.1rem;transition:color .4s;padding:.5rem;font-weight:200}
 .lightbox-close:hover{color:var(--gold)}
-.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(245,243,239,.2);font-size:1.2rem;font-weight:200;padding:1rem 1.5rem;transition:color .35s}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(245,243,239,.80);font-size:1.2rem;font-weight:200;padding:1rem 1.5rem;transition:color .35s}
 .lightbox-nav:hover{color:rgba(201,169,110,.65)}
 .lightbox-prev{left:1rem}
 .lightbox-next{right:1rem}
@@ -197,7 +197,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05);margin-top:15vh}
 .footer-logo img{height:36px;opacity:.4}
 .footer-copy{font-size:.52rem;letter-spacing:.2em;color:rgba(245,243,239,.80)}
-.footer-social a{color:rgba(201,169,110,.45);text-decoration:none;transition:color .3s;display:flex;align-items:center}
+.footer-social a{color:rgba(201,169,110,.80);text-decoration:none;transition:color .3s;display:flex;align-items:center}
 .footer-social a:hover{color:var(--gold)}
 
 @media(max-width:768px){
@@ -222,12 +222,12 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
   cursor:none;
   transition:opacity .5s ease;
   background:rgba(201,169,110,0.80);
-  border-left:1px solid rgba(201,169,110,.35);
+  border-left:1px solid rgba(201,169,110,.80);
 }
 .panel-trigger.hidden{opacity:0;pointer-events:none}
 .trigger-line{
   width:1px;height:28px;
-  background:rgba(201,169,110,.45);
+  background:rgba(201,169,110,.80);
   transition:background .4s;
 }
 .panel-trigger:hover .trigger-line{background:var(--gold)}
@@ -275,7 +275,7 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
 .panel-close{
   position:absolute;top:2rem;right:2rem;
   background:none;border:none;
-  color:rgba(245,243,239,.60);
+  color:rgba(245,243,239,.80);
   font-size:1rem;font-weight:200;
   cursor:none;padding:.5rem;
   transition:color .3s;
@@ -335,7 +335,7 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
 .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);background:var(--gold)}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(10,10,10,.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;transition:opacity .45s}
 .nav-overlay.open{opacity:1}
-.nav-overlay a{font-family:'Raleway',sans-serif;font-size:1.8rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.65);text-decoration:none;transition:color .3s}
+.nav-overlay a{font-family:'Raleway',sans-serif;font-size:1.8rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.80);text-decoration:none;transition:color .3s}
 .nav-overlay a:hover{color:var(--gold)}
 @media(max-width:900px){.hamburger{display:flex}.nav-overlay{display:flex;pointer-events:none;visibility:hidden}.nav-overlay.open{pointer-events:auto;visibility:visible}}
 
@@ -436,7 +436,7 @@ button:focus:not(:focus-visible) {
 .photo-item:focus-within,
 .print-card:focus-within,
 .gallery-card:focus-within {
-  outline: 1px solid rgba(201,169,110,.5);
+  outline: 1px solid rgba(201,169,110,.80);
 }
 
 /* Réduction des animations si préférence utilisateur */
@@ -456,7 +456,7 @@ button:focus:not(:focus-visible) {
   bottom: 0; left: 0; right: 0;
   z-index: 999;
   background: rgba(10,10,10,.97);
-  border-top: 1px solid rgba(201,169,110,.2);
+  border-top: 1px solid rgba(201,169,110,.80);
   padding: 1.5rem 4rem;
   display: flex;
   align-items: center;
@@ -472,14 +472,14 @@ button:focus:not(:focus-visible) {
   font-size: .58rem;
   font-weight: 300;
   letter-spacing: .12em;
-  color: rgba(245,243,239,.5);
+  color: rgba(245,243,239,.80);
   line-height: 1.7;
   max-width: 680px;
 }
 .cookie-text a {
   color: rgba(201,169,110,.7);
   text-decoration: none;
-  border-bottom: 1px solid rgba(201,169,110,.3);
+  border-bottom: 1px solid rgba(201,169,110,.80);
 }
 .cookie-text a:hover { color: var(--gold); }
 .cookie-actions {
@@ -506,7 +506,7 @@ button:focus:not(:focus-visible) {
 .cookie-btn-accept:hover { opacity: .85; }
 .cookie-btn-refuse {
   background: transparent;
-  color: rgba(245,243,239,.4);
+  color: rgba(245,243,239,.80);
   border: 1px solid rgba(255,255,255,.1);
 }
 .cookie-btn-refuse:hover { color: var(--light); border-color: rgba(255,255,255,.3); }
@@ -603,8 +603,8 @@ button:focus:not(:focus-visible) {
   <div style="display:flex;align-items:center;gap:1.5rem">
     <div style="display:flex;align-items:center;gap:.4rem">
     <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:var(--gold);cursor:pointer;padding:.2rem .4rem">FR</button>
-    <span style="color:rgba(245,243,239,.2);font-size:.6rem">/</span>
-    <button class="lang-btn" data-lang="en" onclick="setLang('en')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:rgba(245,243,239,.4);cursor:pointer;padding:.2rem .4rem">EN</button>
+    <span style="color:rgba(245,243,239,.80);font-size:.6rem">/</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:rgba(245,243,239,.80);cursor:pointer;padding:.2rem .4rem">EN</button>
   </div>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -999,7 +999,7 @@ if(hamburger&&navOverlay){
         b.style.color = 'var(--gold)';
         b.style.fontWeight = '400';
       } else {
-        b.style.color = 'rgba(245,243,239,.4)';
+        b.style.color = 'rgba(245,243,239,.80)';
         b.style.fontWeight = '300';
       }
     });

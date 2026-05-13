@@ -25,18 +25,18 @@ html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--light);font-family:'Raleway',sans-serif;font-weight:300;overflow-x:hidden}
 
 .cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,.7);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,.28);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
-.cursor-ring.h{width:48px;height:48px;border-color:rgba(201,169,110,.52)}
+.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,.80);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
+.cursor-ring.h{width:48px;height:48px;border-color:rgba(201,169,110,.80)}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 4rem;background:linear-gradient(to bottom,rgba(10,10,10,.96),transparent);transition:opacity .6s,transform .6s}
 nav.hidden{opacity:0;transform:translateY(-8px);pointer-events:none}
 .logo img{height:80px;width:auto;display:block}
 nav ul{list-style:none;display:flex;gap:2.5rem}
-nav ul li a{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.7);text-decoration:none;transition:color .3s;font-weight:400}
+nav ul li a{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.80);text-decoration:none;transition:color .3s;font-weight:400}
 nav ul li a:hover{color:var(--gold)}
 nav ul li a.active{color:var(--gold)}
-.lang{font-size:.65rem;letter-spacing:.15em;color:rgba(245,243,239,.4)}
+.lang{font-size:.65rem;letter-spacing:.15em;color:rgba(245,243,239,.80)}
 .lang span{color:var(--gold)}
 
 /* HERO */
@@ -49,7 +49,7 @@ nav ul li a.active{color:var(--gold)}
 .hero-content{position:relative}
 .hero-eyebrow{font-size:.52rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,.65);margin-bottom:.9rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
 .hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:200;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1}
-.hero-sub{font-family:'Lora',serif;font-style:italic;font-size:.95rem;letter-spacing:.08em;color:rgba(245,243,239,.55);margin-top:.9rem;animation:fadeUp 1.2s ease .6s both}
+.hero-sub{font-family:'Lora',serif;font-style:italic;font-size:.95rem;letter-spacing:.08em;color:rgba(245,243,239,.80);margin-top:.9rem;animation:fadeUp 1.2s ease .6s both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
 /* FILTRES */
@@ -63,7 +63,7 @@ nav ul li a.active{color:var(--gold)}
   background:none;border:none;
   font-family:'Raleway',sans-serif;
   font-size:.56rem;letter-spacing:.35em;text-transform:uppercase;
-  color:rgba(245,243,239,.55);
+  color:rgba(245,243,239,.80);
   padding:.9rem 1.8rem;
   transition:color .35s;position:relative;font-weight:400;
 }
@@ -140,13 +140,13 @@ nav ul li a.active{color:var(--gold)}
 }
 .tag-article{
   background:rgba(10,10,10,.65);
-  color:rgba(245,243,239,.55);
+  color:rgba(245,243,239,.80);
   border:1px solid rgba(255,255,255,.08);
 }
 .tag-vlog{
-  background:rgba(201,169,110,.35);
+  background:rgba(201,169,110,.80);
   color:var(--gold);
-  border:1px solid rgba(201,169,110,.25);
+  border:1px solid rgba(201,169,110,.80);
 }
 .tag-vlog svg{opacity:.8}
 
@@ -161,7 +161,7 @@ nav ul li a.active{color:var(--gold)}
 }
 .card-date{
   font-size:.46rem;letter-spacing:.25em;
-  color:rgba(245,243,239,.55);font-weight:300;
+  color:rgba(245,243,239,.80);font-weight:300;
 }
 
 /* TITRES */
@@ -185,7 +185,7 @@ nav ul li a.active{color:var(--gold)}
   font-family:'Lora',serif;
   font-size:.8rem;font-style:italic;
   line-height:1.85;
-  color:rgba(245,243,239,.42);
+  color:rgba(245,243,239,.80);
   flex:1;margin-bottom:1.5rem;
 }
 .card-featured .card-excerpt{font-size:.88rem}
@@ -194,7 +194,7 @@ nav ul li a.active{color:var(--gold)}
 .card-read{
   display:flex;align-items:center;gap:.8rem;
   font-size:.5rem;letter-spacing:.38em;text-transform:uppercase;
-  color:rgba(201,169,110,.55);font-weight:400;
+  color:rgba(201,169,110,.80);font-weight:400;
   transition:color .3s;margin-top:auto;
 }
 .card:hover .card-read,
@@ -214,8 +214,8 @@ nav ul li a.active{color:var(--gold)}
 /* FOOTER */
 footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05)}
 .footer-logo img{height:40px;opacity:.4}
-.footer-copy{font-size:.52rem;letter-spacing:.2em;color:rgba(245,243,239,.45)}
-.footer-social a{color:rgba(201,169,110,.45);text-decoration:none;transition:color .3s;display:flex;align-items:center}
+.footer-copy{font-size:.52rem;letter-spacing:.2em;color:rgba(245,243,239,.80)}
+.footer-social a{color:rgba(201,169,110,.80);text-decoration:none;transition:color .3s;display:flex;align-items:center}
 .footer-social a:hover{color:var(--gold)}
 
 @media(max-width:900px){
@@ -239,7 +239,7 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
 .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);background:var(--gold)}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(10,10,10,.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;transition:opacity .45s}
 .nav-overlay.open{opacity:1}
-.nav-overlay a{font-family:'Raleway',sans-serif;font-size:1.8rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.65);text-decoration:none;transition:color .3s}
+.nav-overlay a{font-family:'Raleway',sans-serif;font-size:1.8rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.80);text-decoration:none;transition:color .3s}
 .nav-overlay a:hover{color:var(--gold)}
 @media(max-width:900px){.hamburger{display:flex}.nav-overlay{display:flex;pointer-events:none;visibility:hidden}.nav-overlay.open{pointer-events:auto;visibility:visible}}
 
@@ -361,7 +361,7 @@ button:focus:not(:focus-visible) {
 .photo-item:focus-within,
 .print-card:focus-within,
 .gallery-card:focus-within {
-  outline: 1px solid rgba(201,169,110,.5);
+  outline: 1px solid rgba(201,169,110,.80);
 }
 
 /* Réduction des animations si préférence utilisateur */
@@ -381,7 +381,7 @@ button:focus:not(:focus-visible) {
   bottom: 0; left: 0; right: 0;
   z-index: 999;
   background: rgba(10,10,10,.97);
-  border-top: 1px solid rgba(201,169,110,.2);
+  border-top: 1px solid rgba(201,169,110,.80);
   padding: 1.5rem 4rem;
   display: flex;
   align-items: center;
@@ -397,14 +397,14 @@ button:focus:not(:focus-visible) {
   font-size: .58rem;
   font-weight: 300;
   letter-spacing: .12em;
-  color: rgba(245,243,239,.5);
+  color: rgba(245,243,239,.80);
   line-height: 1.7;
   max-width: 680px;
 }
 .cookie-text a {
   color: rgba(201,169,110,.7);
   text-decoration: none;
-  border-bottom: 1px solid rgba(201,169,110,.3);
+  border-bottom: 1px solid rgba(201,169,110,.80);
 }
 .cookie-text a:hover { color: var(--gold); }
 .cookie-actions {
@@ -431,7 +431,7 @@ button:focus:not(:focus-visible) {
 .cookie-btn-accept:hover { opacity: .85; }
 .cookie-btn-refuse {
   background: transparent;
-  color: rgba(245,243,239,.4);
+  color: rgba(245,243,239,.80);
   border: 1px solid rgba(255,255,255,.1);
 }
 .cookie-btn-refuse:hover { color: var(--light); border-color: rgba(255,255,255,.3); }
@@ -492,8 +492,8 @@ button:focus:not(:focus-visible) {
   <div style="display:flex;align-items:center;gap:1.5rem">
     <div style="display:flex;align-items:center;gap:.4rem">
     <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:var(--gold);cursor:pointer;padding:.2rem .4rem">FR</button>
-    <span style="color:rgba(245,243,239,.2);font-size:.6rem">/</span>
-    <button class="lang-btn" data-lang="en" onclick="setLang('en')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:rgba(245,243,239,.4);cursor:pointer;padding:.2rem .4rem">EN</button>
+    <span style="color:rgba(245,243,239,.80);font-size:.6rem">/</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:rgba(245,243,239,.80);cursor:pointer;padding:.2rem .4rem">EN</button>
   </div>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -864,7 +864,7 @@ if(hamburger&&navOverlay){
         b.style.color = 'var(--gold)';
         b.style.fontWeight = '400';
       } else {
-        b.style.color = 'rgba(245,243,239,.4)';
+        b.style.color = 'rgba(245,243,239,.80)';
         b.style.fontWeight = '300';
       }
     });

@@ -26,18 +26,18 @@
 html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--light);font-family:'Raleway',sans-serif;font-weight:300;overflow-x:hidden;min-height:100vh}
 
-.cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,.90);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,.90);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
-.cursor-ring.h{width:52px;height:52px;border-color:rgba(201,169,110,.90)}
+.cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,1.0);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,1.0);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
+.cursor-ring.h{width:52px;height:52px;border-color:rgba(201,169,110,1.0)}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 4rem;background:linear-gradient(to bottom,rgba(10,10,10,.96),transparent)}
 .logo img{height:80px;width:auto;display:block}
 nav ul{list-style:none;display:flex;gap:2.5rem}
 nav ul li a{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s;font-weight:400}
-nav ul li a:hover,nav ul li a.active{color:var(--gold)}
+nav ul li a:hover,nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .lang{font-size:.65rem;letter-spacing:.15em;color:rgba(245,243,239,.92)}
-.lang span{color:var(--gold)}
+.lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* LAYOUT PRINCIPAL — 2 colonnes */
 .contact-layout{
@@ -68,7 +68,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 }
 .contact-eyebrow{
   font-size:.5rem;letter-spacing:.55em;text-transform:uppercase;
-  color:rgba(201,169,110,.90);font-weight:400;
+  color:rgba(201,169,110,1.0);font-weight:400;
   margin-bottom:1rem;
   animation:fadeUp 1.2s ease .2s both;
 }
@@ -101,10 +101,10 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 }
 .info-icon{
   width:32px;height:32px;flex-shrink:0;
-  border:1px solid rgba(201,169,110,.90);
+  border:1px solid rgba(201,169,110,1.0);
   border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  color:rgba(201,169,110,.90);
+  color:rgba(201,169,110,1.0);
   margin-top:.1rem;
 }
 .info-text p{
@@ -120,7 +120,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
   text-decoration:none;
   transition:color .3s;
 }
-.info-text a:hover{color:var(--gold)}
+.info-text a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 .contact-social{
   margin-top:2.5rem;padding-top:2rem;
@@ -136,11 +136,11 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
   display:flex;align-items:center;gap:.5rem;
   font-size:.5rem;letter-spacing:.25em;
   text-transform:uppercase;
-  color:rgba(201,169,110,.85);
+  color:rgba(201,169,110,1.0);
   text-decoration:none;
   transition:color .3s;
 }
-.social-link:hover{color:var(--gold)}
+.social-link:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* COLONNE DROITE — formulaire */
 .contact-right{
@@ -155,7 +155,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 }
 .form-intro-label{
   font-size:.5rem;letter-spacing:.5em;text-transform:uppercase;
-  color:rgba(201,169,110,.90);font-weight:400;margin-bottom:1rem;display:block;
+  color:rgba(201,169,110,1.0);font-weight:400;margin-bottom:1rem;display:block;
 }
 .form-intro-title{
   font-family:'Bodoni Moda',serif;
@@ -178,11 +178,11 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
   padding:.5rem 1.1rem;
   transition:border-color .35s,color .35s,background .35s;font-weight:400;
 }
-.subject-btn:hover{border-color:rgba(201,169,110,.90);color:rgba(245,243,239,.92)}
+.subject-btn:hover{border-color:rgba(201,169,110,1.0);color:rgba(245,243,239,.92)}
 .subject-btn.active{
-  border-color:rgba(201,169,110,.85);
-  color:var(--gold);
-  background:rgba(201,169,110,.85);
+  border-color:rgba(201,169,110,1.0);
+  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);
+  background:rgba(201,169,110,1.0);
 }
 
 /* CHAMPS */
@@ -206,7 +206,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 .form-input::placeholder,
 .form-textarea::placeholder{color:rgba(245,243,239,.92);font-weight:300}
 .form-input:focus,
-.form-textarea:focus{border-bottom-color:rgba(201,169,110,.90)}
+.form-textarea:focus{border-bottom-color:rgba(201,169,110,1.0)}
 .form-underline{
   position:absolute;bottom:0;left:0;
   width:0;height:1px;
@@ -226,17 +226,17 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 .submit-btn{
   display:inline-flex;align-items:center;gap:.9rem;
   padding:1rem 2.5rem;
-  border:1px solid rgba(201,169,110,.90);
+  border:1px solid rgba(201,169,110,1.0);
   background:none;
-  color:var(--gold);font-size:.55rem;
+  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-size:.55rem;
   letter-spacing:.38em;text-transform:uppercase;
   font-family:'Raleway',sans-serif;font-weight:400;
   cursor:none;
   transition:background .4s,border-color .4s,gap .4s;
 }
 .submit-btn:hover{
-  background:rgba(201,169,110,.85);
-  border-color:var(--gold);
+  background:rgba(201,169,110,1.0);
+  border-color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);
   gap:1.3rem;
 }
 .submit-btn svg{transition:transform .4s}
@@ -254,11 +254,11 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 }
 .success-icon{
   width:52px;height:52px;
-  border:1px solid rgba(201,169,110,.90);
+  border:1px solid rgba(201,169,110,1.0);
   border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.5rem;
-  color:var(--gold);
+  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);
 }
 .success-title{
   font-family:'Bodoni Moda',serif;
@@ -280,8 +280,8 @@ footer{
 }
 .footer-logo img{height:36px;opacity:.4}
 .footer-copy{font-size:.52rem;letter-spacing:.2em;color:rgba(245,243,239,.92)}
-.footer-social a{color:rgba(201,169,110,.85);text-decoration:none;transition:color .3s;display:flex}
-.footer-social a:hover{color:var(--gold)}
+.footer-social a{color:rgba(201,169,110,1.0);text-decoration:none;transition:color .3s;display:flex}
+.footer-social a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 @media(max-width:900px){
   nav{padding:1.5rem 2rem} nav ul{display:none}
@@ -301,7 +301,7 @@ footer{
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(10,10,10,.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;transition:opacity .45s cubic-bezier(0.22,1,0.36,1)}
 .nav-overlay.open{opacity:1}
 .nav-overlay a{font-family:'Raleway',sans-serif;font-size:1.8rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s}
-.nav-overlay a:hover{color:var(--gold)}
+.nav-overlay a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .nav-overlay .overlay-lang{font-size:.58rem;letter-spacing:.3em;color:rgba(245,243,239,.92);margin-top:1rem}
 @media(max-width:900px){.hamburger{display:flex}.nav-overlay{display:flex;pointer-events:none;visibility:hidden}.nav-overlay.open{pointer-events:auto;visibility:visible}}
 
@@ -483,7 +483,7 @@ button:focus:not(:focus-visible) {
 .photo-item:focus-within,
 .print-card:focus-within,
 .gallery-card:focus-within {
-  outline: 1px solid rgba(201,169,110,.90);
+  outline: 1px solid rgba(201,169,110,1.0);
 }
 
 /* Réduction des animations si préférence utilisateur */
@@ -531,7 +531,7 @@ button:focus:not(:focus-visible) {
   bottom: 0; left: 0; right: 0;
   z-index: 999;
   background: rgba(10,10,10,.97);
-  border-top: 1px solid rgba(201,169,110,.90);
+  border-top: 1px solid rgba(201,169,110,1.0);
   padding: 1.5rem 4rem;
   display: flex;
   align-items: center;
@@ -552,9 +552,9 @@ button:focus:not(:focus-visible) {
   max-width: 680px;
 }
 .cookie-text a {
-  color: rgba(201,169,110,.90);
+  color: rgba(201,169,110,1.0);
   text-decoration: none;
-  border-bottom: 1px solid rgba(201,169,110,.90);
+  border-bottom: 1px solid rgba(201,169,110,1.0);
 }
 .cookie-text a:hover { color: var(--gold); }
 .cookie-actions {
@@ -641,7 +641,7 @@ button:focus:not(:focus-visible) {
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem">
     <div style="display:flex;align-items:center;gap:.4rem">
-    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:var(--gold);cursor:pointer;padding:.2rem .4rem">FR</button>
+    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);cursor:pointer;padding:.2rem .4rem">FR</button>
     <span style="color:rgba(245,243,239,.92);font-size:.6rem">/</span>
     <button class="lang-btn" data-lang="en" onclick="setLang('en')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:rgba(245,243,239,.92);cursor:pointer;padding:.2rem .4rem">EN</button>
   </div>

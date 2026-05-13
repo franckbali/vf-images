@@ -24,9 +24,9 @@
 html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--light);font-family:'Raleway',sans-serif;font-weight:300;overflow-x:hidden}
 
-.cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,.90);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,.90);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
-.cursor-ring.h{width:48px;height:48px;border-color:rgba(201,169,110,.90)}
+.cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,1.0);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,1.0);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
+.cursor-ring.h{width:48px;height:48px;border-color:rgba(201,169,110,1.0)}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 4rem;background:linear-gradient(to bottom,rgba(10,10,10,.96),transparent);transition:opacity .6s,transform .6s}
@@ -34,10 +34,10 @@ nav.hidden{opacity:0;transform:translateY(-8px);pointer-events:none}
 .logo img{height:80px;width:auto;display:block}
 nav ul{list-style:none;display:flex;gap:2.5rem}
 nav ul li a{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s;font-weight:400}
-nav ul li a:hover{color:var(--gold)}
-nav ul li a.active{color:var(--gold)}
+nav ul li a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
+nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .lang{font-size:.65rem;letter-spacing:.15em;color:rgba(245,243,239,.92)}
-.lang span{color:var(--gold)}
+.lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* HERO */
 .hero{position:relative;height:45vh;display:flex;align-items:flex-end;padding:0 4rem 4rem;overflow:hidden}
@@ -47,7 +47,7 @@ nav ul li a.active{color:var(--gold)}
   transform:scale(1.03);animation:heroZoom 14s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.03)}to{transform:scale(1)}}
 .hero-content{position:relative}
-.hero-eyebrow{font-size:.52rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,.90);margin-bottom:.9rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
+.hero-eyebrow{font-size:.52rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:.9rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
 .hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:200;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1}
 .hero-sub{font-family:'Lora',serif;font-style:italic;font-size:.95rem;letter-spacing:.08em;color:rgba(245,243,239,.92);margin-top:.9rem;animation:fadeUp 1.2s ease .6s both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
@@ -72,9 +72,9 @@ nav ul li a.active{color:var(--gold)}
   height:1px;background:var(--gold);
   transition:left .45s cubic-bezier(0.22,1,0.36,1),right .45s cubic-bezier(0.22,1,0.36,1);
 }
-.filter-btn.active{color:var(--gold)}
+.filter-btn.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .filter-btn.active::after{left:0;right:0}
-.filter-btn:hover{color:rgba(201,169,110,.90)}
+.filter-btn:hover{color:rgba(201,169,110,1.0)}
 
 /* GRILLE */
 .blog-wrap{padding:4rem 4rem 8rem}
@@ -144,9 +144,9 @@ nav ul li a.active{color:var(--gold)}
   border:1px solid rgba(255,255,255,.08);
 }
 .tag-vlog{
-  background:rgba(201,169,110,.90);
-  color:var(--gold);
-  border:1px solid rgba(201,169,110,.90);
+  background:rgba(201,169,110,1.0);
+  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);
+  border:1px solid rgba(201,169,110,1.0);
 }
 .tag-vlog svg{opacity:.8}
 
@@ -157,7 +157,7 @@ nav ul li a.active{color:var(--gold)}
 }
 .card-tag{
   font-size:.46rem;letter-spacing:.38em;text-transform:uppercase;
-  color:var(--gold);font-weight:400;opacity:.8;
+  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-weight:400;opacity:.8;
 }
 .card-date{
   font-size:.46rem;letter-spacing:.25em;
@@ -194,11 +194,11 @@ nav ul li a.active{color:var(--gold)}
 .card-read{
   display:flex;align-items:center;gap:.8rem;
   font-size:.5rem;letter-spacing:.38em;text-transform:uppercase;
-  color:rgba(201,169,110,.90);font-weight:400;
+  color:rgba(201,169,110,1.0);font-weight:400;
   transition:color .3s;margin-top:auto;
 }
 .card:hover .card-read,
-.card-featured:hover .card-read{color:var(--gold)}
+.card-featured:hover .card-read{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .read-line{
   width:20px;height:1px;
   background:var(--gold);opacity:.4;
@@ -215,8 +215,8 @@ nav ul li a.active{color:var(--gold)}
 footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05)}
 .footer-logo img{height:40px;opacity:.4}
 .footer-copy{font-size:.52rem;letter-spacing:.2em;color:rgba(245,243,239,.92)}
-.footer-social a{color:rgba(201,169,110,.90);text-decoration:none;transition:color .3s;display:flex;align-items:center}
-.footer-social a:hover{color:var(--gold)}
+.footer-social a{color:rgba(201,169,110,1.0);text-decoration:none;transition:color .3s;display:flex;align-items:center}
+.footer-social a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 @media(max-width:900px){
   nav{padding:1.5rem 2rem} nav ul{display:none}
@@ -240,7 +240,7 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(10,10,10,.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;transition:opacity .45s}
 .nav-overlay.open{opacity:1}
 .nav-overlay a{font-family:'Raleway',sans-serif;font-size:1.8rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s}
-.nav-overlay a:hover{color:var(--gold)}
+.nav-overlay a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 @media(max-width:900px){.hamburger{display:flex}.nav-overlay{display:flex;pointer-events:none;visibility:hidden}.nav-overlay.open{pointer-events:auto;visibility:visible}}
 
 @media(max-width:768px){
@@ -361,7 +361,7 @@ button:focus:not(:focus-visible) {
 .photo-item:focus-within,
 .print-card:focus-within,
 .gallery-card:focus-within {
-  outline: 1px solid rgba(201,169,110,.90);
+  outline: 1px solid rgba(201,169,110,1.0);
 }
 
 /* Réduction des animations si préférence utilisateur */
@@ -381,7 +381,7 @@ button:focus:not(:focus-visible) {
   bottom: 0; left: 0; right: 0;
   z-index: 999;
   background: rgba(10,10,10,.97);
-  border-top: 1px solid rgba(201,169,110,.90);
+  border-top: 1px solid rgba(201,169,110,1.0);
   padding: 1.5rem 4rem;
   display: flex;
   align-items: center;
@@ -402,9 +402,9 @@ button:focus:not(:focus-visible) {
   max-width: 680px;
 }
 .cookie-text a {
-  color: rgba(201,169,110,.90);
+  color: rgba(201,169,110,1.0);
   text-decoration: none;
-  border-bottom: 1px solid rgba(201,169,110,.90);
+  border-bottom: 1px solid rgba(201,169,110,1.0);
 }
 .cookie-text a:hover { color: var(--gold); }
 .cookie-actions {
@@ -491,7 +491,7 @@ button:focus:not(:focus-visible) {
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem">
     <div style="display:flex;align-items:center;gap:.4rem">
-    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:var(--gold);cursor:pointer;padding:.2rem .4rem">FR</button>
+    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);cursor:pointer;padding:.2rem .4rem">FR</button>
     <span style="color:rgba(245,243,239,.92);font-size:.6rem">/</span>
     <button class="lang-btn" data-lang="en" onclick="setLang('en')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:rgba(245,243,239,.92);cursor:pointer;padding:.2rem .4rem">EN</button>
   </div>
@@ -649,9 +649,9 @@ button:focus:not(:focus-visible) {
 
 <main id="main-content">
 <section style="padding:5rem 4rem;text-align:center;border-top:1px solid rgba(255,255,255,.04)">
-  <p style="font-size:.52rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,169,110,.90);margin-bottom:1rem">Tirages Fine Art</p>
+  <p style="font-size:.52rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem">Tirages Fine Art</p>
   <h2 style="font-family:'Bodoni Moda',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:400;color:var(--light);margin-bottom:2.5rem" data-fr="Voir la collection Bali" data-en="View the Bali collection">Voir la collection Bali</h2>
-  <a href="boutique.html" style="display:inline-block;padding:1.1rem 3.5rem;border:1px solid var(--gold);color:var(--gold);font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;text-decoration:none;font-family:'Raleway',sans-serif" data-fr="Voir la collection Bali" data-en="View the Bali collection">Voir la collection Bali</a>
+  <a href="boutique.html" style="display:inline-block;padding:1.1rem 3.5rem;border:1px solid var(--gold);color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;text-decoration:none;font-family:'Raleway',sans-serif" data-fr="Voir la collection Bali" data-en="View the Bali collection">Voir la collection Bali</a>
 </section>
 </main>
 <footer role="contentinfo">

@@ -26,9 +26,9 @@
 html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--light);font-family:'Raleway',sans-serif;font-weight:300;overflow-x:hidden}
 
-.cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,.90);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,.90);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
-.cursor-ring.h{width:48px;height:48px;border-color:rgba(201,169,110,.90)}
+.cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,1.0);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,1.0);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
+.cursor-ring.h{width:48px;height:48px;border-color:rgba(201,169,110,1.0)}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 4rem;background:linear-gradient(to bottom,rgba(10,10,10,.96),transparent);transition:opacity .6s,transform .6s}
@@ -36,10 +36,10 @@ nav.hidden{opacity:0;transform:translateY(-8px);pointer-events:none}
 .logo img{height:80px;width:auto;display:block}
 nav ul{list-style:none;display:flex;gap:2.5rem}
 nav ul li a{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s;font-weight:400}
-nav ul li a:hover{color:var(--gold)}
-nav ul li a.active{color:var(--gold)}
+nav ul li a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
+nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .lang{font-size:.65rem;letter-spacing:.15em;color:rgba(245,243,239,.92)}
-.lang span{color:var(--gold)}
+.lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* HERO */
 .hero{position:relative;height:100vh;display:flex;align-items:flex-end;justify-content:flex-start;overflow:hidden;padding:0 5vw 7vh}
@@ -49,7 +49,7 @@ nav ul li a.active{color:var(--gold)}
   transform:scale(1.04);animation:heroZoom 14s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.04)}to{transform:scale(1)}}
 .hero-content{position:relative}
-.hero-eyebrow{font-size:.52rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,.90);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.4s ease .3s both}
+.hero-eyebrow{font-size:.52rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.4s ease .3s both}
 .hero-title{font-family:'Raleway',sans-serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:200;letter-spacing:.18em;text-transform:uppercase;color:var(--light);line-height:1;animation:fadeUp 1.4s ease .55s both;margin-bottom:1rem}
 .hero-sub{font-family:'Lora',serif;font-style:italic;font-size:clamp(.9rem,1.5vw,1.15rem);color:rgba(245,243,239,.92);letter-spacing:.08em;animation:fadeUp 1.4s ease .75s both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
@@ -83,7 +83,7 @@ nav ul li a.active{color:var(--gold)}
 .intro-photo-col:hover img{transform:scale(1.03)}
 
 /* ═══════ TEXTE STYLISTIQUE ═══════ */
-.section-label{font-size:.52rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,169,110,.90);font-weight:400;margin-bottom:1.5rem}
+.section-label{font-size:.52rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,169,110,1.0);font-weight:400;margin-bottom:1.5rem}
 .pull-quote{
   font-family:'Bodoni Moda',serif;
   font-size:clamp(1.4rem,2.8vw,2.1rem);
@@ -129,7 +129,7 @@ nav ul li a.active{color:var(--gold)}
 }
 .childhood-caption{
   font-size:.48rem;letter-spacing:.38em;text-transform:uppercase;
-  color:rgba(201,169,110,.90);margin-top:1.2rem;font-weight:400;
+  color:rgba(201,169,110,1.0);margin-top:1.2rem;font-weight:400;
   position:absolute;bottom:1.8rem;left:2rem;
 }
 
@@ -151,7 +151,7 @@ nav ul li a.active{color:var(--gold)}
 .quote-mark{
   font-family:'Bodoni Moda',serif;
   font-size:4rem;
-  color:rgba(201,169,110,.90);
+  color:rgba(201,169,110,1.0);
   line-height:.8;
   margin-bottom:1rem;
   display:block;
@@ -170,7 +170,7 @@ nav ul li a.active{color:var(--gold)}
 .quote-author{
   font-family:'Raleway',sans-serif;
   font-size:.55rem;letter-spacing:.45em;
-  text-transform:uppercase;color:var(--gold);opacity:.7;font-weight:400;
+  text-transform:uppercase;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);opacity:.7;font-weight:400;
 }
 
 /* ═══════ SECTION 4 — philosophie ═══════ */
@@ -211,7 +211,7 @@ nav ul li a.active{color:var(--gold)}
 .signature-img::before{
   content:'';position:absolute;
   top:-12px;left:-12px;right:12px;bottom:12px;
-  border:1px solid rgba(201,169,110,.90);
+  border:1px solid rgba(201,169,110,1.0);
   z-index:0;
 }
 .signature-img img{
@@ -223,7 +223,7 @@ nav ul li a.active{color:var(--gold)}
 .signature-name{
   font-family:'Lora',serif;
   font-size:2.2rem;font-style:italic;
-  color:var(--gold);margin-bottom:.6rem;
+  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);margin-bottom:.6rem;
 }
 .signature-role{
   font-size:.55rem;letter-spacing:.4em;
@@ -234,18 +234,18 @@ nav ul li a.active{color:var(--gold)}
 .contact-link{
   display:inline-flex;align-items:center;gap:.8rem;
   font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--gold);text-decoration:none;
-  border-bottom:1px solid rgba(201,169,110,.90);
+  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);text-decoration:none;
+  border-bottom:1px solid rgba(201,169,110,1.0);
   padding-bottom:.3rem;transition:border-color .3s;font-weight:400;
 }
-.contact-link:hover{border-color:var(--gold)}
+.contact-link:hover{border-color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* FOOTER */
 footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05)}
 .footer-logo img{height:40px;opacity:.4}
 .footer-copy{font-size:.52rem;letter-spacing:.2em;color:rgba(245,243,239,.92)}
-.footer-social a{color:rgba(201,169,110,.90);text-decoration:none;transition:color .3s;display:flex;align-items:center}
-.footer-social a:hover{color:var(--gold)}
+.footer-social a{color:rgba(201,169,110,1.0);text-decoration:none;transition:color .3s;display:flex;align-items:center}
+.footer-social a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 @media(max-width:900px){
   nav{padding:1.5rem 2rem} nav ul{display:none}
@@ -274,7 +274,7 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(10,10,10,.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;transition:opacity .45s}
 .nav-overlay.open{opacity:1}
 .nav-overlay a{font-family:'Raleway',sans-serif;font-size:1.8rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s}
-.nav-overlay a:hover{color:var(--gold)}
+.nav-overlay a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 @media(max-width:1024px){#nav{padding:1.4rem 3rem}.intro-text-col{padding:5rem 4vw}}
 @media(max-width:900px){#nav{padding:1.5rem 2rem}.hamburger{display:flex}.nav-overlay{display:flex}.logo img{height:56px}.section-intro{grid-template-columns:1fr;min-height:auto}.intro-text-col{padding:4rem 2rem}.intro-photo-col{height:60vw}footer{flex-direction:column;gap:1.2rem;text-align:center;padding:2.5rem 2rem}}
 @media(max-width:768px){.hero-title{font-size:clamp(2rem,7vw,4rem)}.intro-text-col{padding:3rem 1.8rem}.intro-photo-col{height:65vw}.pull-quote{font-size:clamp(1.1rem,3vw,1.6rem)}}
@@ -378,7 +378,7 @@ button:focus:not(:focus-visible) {
 .photo-item:focus-within,
 .print-card:focus-within,
 .gallery-card:focus-within {
-  outline: 1px solid rgba(201,169,110,.90);
+  outline: 1px solid rgba(201,169,110,1.0);
 }
 
 /* Réduction des animations si préférence utilisateur */
@@ -398,7 +398,7 @@ button:focus:not(:focus-visible) {
   bottom: 0; left: 0; right: 0;
   z-index: 999;
   background: rgba(10,10,10,.97);
-  border-top: 1px solid rgba(201,169,110,.90);
+  border-top: 1px solid rgba(201,169,110,1.0);
   padding: 1.5rem 4rem;
   display: flex;
   align-items: center;
@@ -419,9 +419,9 @@ button:focus:not(:focus-visible) {
   max-width: 680px;
 }
 .cookie-text a {
-  color: rgba(201,169,110,.90);
+  color: rgba(201,169,110,1.0);
   text-decoration: none;
-  border-bottom: 1px solid rgba(201,169,110,.90);
+  border-bottom: 1px solid rgba(201,169,110,1.0);
 }
 .cookie-text a:hover { color: var(--gold); }
 .cookie-actions {
@@ -620,11 +620,11 @@ button:focus:not(:focus-visible) {
     <p class="section-label" style="margin-bottom:2rem">Recognition</p>
     <h2 style="font-family:'Bodoni Moda',serif;font-size:clamp(1.5rem,3vw,2.5rem);font-weight:400;color:var(--light);margin-bottom:3rem">Works in private collections</h2>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:3rem">
-      <div style="border:1px solid rgba(201,169,110,.90);padding:2rem 1rem;text-align:center"><p style="font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem" data-fr="France" data-en="France">France</p><p style="font-size:.6rem;color:rgba(245,243,239,.92)">Paris · Lyon · Bordeaux</p></div>
-      <div style="border:1px solid rgba(201,169,110,.90);padding:2rem 1rem;text-align:center"><p style="font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">United States</p><p style="font-size:.6rem;color:rgba(245,243,239,.92)">New York · Los Angeles</p></div>
-      <div style="border:1px solid rgba(201,169,110,.90);padding:2rem 1rem;text-align:center"><p style="font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">Australia</p><p style="font-size:.6rem;color:rgba(245,243,239,.92)">Sydney · Melbourne</p></div>
+      <div style="border:1px solid rgba(201,169,110,1.0);padding:2rem 1rem;text-align:center"><p style="font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);margin-bottom:.5rem" data-fr="France" data-en="France">France</p><p style="font-size:.6rem;color:rgba(245,243,239,.92)">Paris · Lyon · Bordeaux</p></div>
+      <div style="border:1px solid rgba(201,169,110,1.0);padding:2rem 1rem;text-align:center"><p style="font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);margin-bottom:.5rem">United States</p><p style="font-size:.6rem;color:rgba(245,243,239,.92)">New York · Los Angeles</p></div>
+      <div style="border:1px solid rgba(201,169,110,1.0);padding:2rem 1rem;text-align:center"><p style="font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);margin-bottom:.5rem">Australia</p><p style="font-size:.6rem;color:rgba(245,243,239,.92)">Sydney · Melbourne</p></div>
     </div>
-    <a href="../en/shop.html" style="display:inline-block;padding:1.1rem 3.5rem;border:1px solid var(--gold);color:var(--gold);font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;text-decoration:none;font-family:'Raleway',sans-serif">Discover the prints</a>
+    <a href="../en/shop.html" style="display:inline-block;padding:1.1rem 3.5rem;border:1px solid var(--gold);color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;text-decoration:none;font-family:'Raleway',sans-serif">Discover the prints</a>
   </div>
 </section>
 </main>

@@ -26,20 +26,20 @@
 html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--light);font-family:'Raleway',sans-serif;font-weight:300;overflow-x:hidden}
 
-.cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,.90);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,.90);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
-.cursor-ring.h{width:52px;height:52px;border-color:rgba(201,169,110,.90)}
+.cursor{position:fixed;width:5px;height:5px;background:rgba(201,169,110,1.0);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+.cursor-ring{position:fixed;width:28px;height:28px;border:1px solid rgba(201,169,110,1.0);border-radius:50%;pointer-events:none;z-index:9998;transition:width .4s,height .4s,border-color .35s;transform:translate(-50%,-50%)}
+.cursor-ring.h{width:52px;height:52px;border-color:rgba(201,169,110,1.0)}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 4rem;background:linear-gradient(to bottom,rgba(10,10,10,.96),transparent)}
 .logo img{height:80px;width:auto;display:block}
 nav ul{list-style:none;display:flex;gap:2.5rem}
 nav ul li a{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s;font-weight:400}
-nav ul li a:hover,nav ul li a.active{color:var(--gold)}
+nav ul li a:hover,nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .lang{font-size:.65rem;letter-spacing:.15em;color:rgba(245,243,239,.92)}
 
 /* SWITCH LANGUE */
-.lang-switch{display:flex;align-items:center;gap:0;border:1px solid rgba(201,169,110,.90);overflow:hidden}
+.lang-switch{display:flex;align-items:center;gap:0;border:1px solid rgba(201,169,110,1.0);overflow:hidden}
 .lang-btn{
   background:none;border:none;
   font-family:'Raleway',sans-serif;
@@ -48,8 +48,8 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
   color:rgba(245,243,239,.92);
   transition:background .3s,color .3s;font-weight:400;
 }
-.lang-btn.active{background:rgba(201,169,110,.90);color:var(--gold)}
-.lang-btn:hover{color:var(--gold)}
+.lang-btn.active{background:rgba(201,169,110,1.0);color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
+.lang-btn:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* HERO */
 .hero{
@@ -57,7 +57,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
   background:var(--dark);
   border-bottom:1px solid rgba(255,255,255,.04);
 }
-.hero-eyebrow{font-size:.52rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,.90);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
+.hero-eyebrow{font-size:.52rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
 .hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:200;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1;margin-bottom:1.2rem}
 .hero-sub{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(245,243,239,.92);letter-spacing:.08em;animation:fadeUp 1.2s ease .6s both;max-width:540px;line-height:1.7}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
@@ -75,7 +75,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
   display:flex;align-items:center;gap:1rem;
 }
 .quality-item:last-child{border-right:none}
-.quality-icon{color:rgba(201,169,110,.90);flex-shrink:0}
+.quality-icon{color:rgba(201,169,110,1.0);flex-shrink:0}
 .quality-text p{font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.2rem}
 .quality-text span{font-size:.6rem;letter-spacing:.1em;color:rgba(245,243,239,.92);font-weight:300}
 
@@ -114,19 +114,19 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 .hover-cta{
   font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;
   color:rgba(245,243,239,.92);font-weight:400;
-  border-bottom:1px solid rgba(201,169,110,.90);
+  border-bottom:1px solid rgba(201,169,110,1.0);
   padding-bottom:.3rem;
 }
 
 .print-info{padding:1.6rem 1.8rem 2rem}
 .print-meta{margin-bottom:.5rem}
-.print-location{font-size:.46rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(201,169,110,.90);font-weight:400}
+.print-location{font-size:.46rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(201,169,110,1.0);font-weight:400}
 .print-title{font-family:'Bodoni Moda',serif;font-size:1.1rem;font-weight:400;letter-spacing:.03em;color:var(--light);margin-bottom:.9rem;line-height:1.25}
 .print-formats{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}
 .fmt-badge{font-size:.4rem;letter-spacing:.18em;color:rgba(245,243,239,.92);border:1px solid rgba(255,255,255,.06);padding:.25rem .6rem;font-weight:400}
 .print-price{display:flex;align-items:baseline;gap:.5rem}
 .price-from{font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:300}
-.price-amount{font-family:'Bodoni Moda',serif;font-size:1.1rem;color:var(--gold);font-weight:400}
+.price-amount{font-family:'Bodoni Moda',serif;font-size:1.1rem;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-weight:400}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(0.22,1,0.36,1),transform .9s cubic-bezier(0.22,1,0.36,1)}
@@ -179,9 +179,9 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
   transition:color .3s;padding:.5rem;font-weight:200;
   z-index:10;
 }
-.detail-close:hover{color:var(--gold)}
+.detail-close:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
-.detail-location{font-size:.46rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,169,110,.90);font-weight:400;margin-bottom:.7rem}
+.detail-location{font-size:.46rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,169,110,1.0);font-weight:400;margin-bottom:.7rem}
 .detail-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:400;letter-spacing:.03em;line-height:1.2;margin-bottom:1.5rem}
 .detail-divider{width:28px;height:1px;background:var(--gold);opacity:.4;margin-bottom:1.8rem}
 
@@ -195,8 +195,8 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
   transition:border-color .3s,color .3s,background .3s;font-weight:400;
 }
 .fmt-option:hover,.fmt-option.selected{
-  border-color:rgba(201,169,110,.90);
-  color:var(--gold);background:rgba(201,169,110,.85);
+  border-color:rgba(201,169,110,1.0);
+  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);background:rgba(201,169,110,1.0);
 }
 .detail-paper{font-size:.58rem;letter-spacing:.12em;color:rgba(245,243,239,.92);line-height:1.6}
 .detail-edition{font-size:.55rem;letter-spacing:.1em;color:rgba(245,243,239,.92);line-height:1.6;font-style:italic;font-family:'Lora',serif}
@@ -207,21 +207,21 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
   border-top:1px solid rgba(255,255,255,.05);
 }
 .detail-price-from{font-size:.46rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.92)}
-.detail-price{font-family:'Bodoni Moda',serif;font-size:1.6rem;color:var(--gold);font-weight:400}
+.detail-price{font-family:'Bodoni Moda',serif;font-size:1.6rem;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-weight:400}
 
 .order-btn{
   display:flex;align-items:center;justify-content:center;gap:.8rem;
   padding:1rem;
-  background:rgba(201,169,110,.85);
-  border:1px solid rgba(201,169,110,.90);
-  color:var(--gold);font-size:.55rem;
+  background:rgba(201,169,110,1.0);
+  border:1px solid rgba(201,169,110,1.0);
+  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-size:.55rem;
   letter-spacing:.32em;text-transform:uppercase;
   text-decoration:none;font-weight:400;
   transition:background .4s,border-color .4s;
   cursor:none;margin-bottom:1rem;
   font-family:'Raleway',sans-serif;
 }
-.order-btn:hover{background:rgba(201,169,110,.90);border-color:var(--gold)}
+.order-btn:hover{background:rgba(201,169,110,1.0);border-color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 .detail-shipping{
   font-size:.44rem;letter-spacing:.18em;text-transform:uppercase;
@@ -232,8 +232,8 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05)}
 .footer-logo img{height:40px;opacity:.4}
 .footer-copy{font-size:.52rem;letter-spacing:.2em;color:rgba(245,243,239,.92)}
-.footer-social a{color:rgba(201,169,110,.90);text-decoration:none;transition:color .3s;display:flex}
-.footer-social a:hover{color:var(--gold)}
+.footer-social a{color:rgba(201,169,110,1.0);text-decoration:none;transition:color .3s;display:flex}
+.footer-social a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 @media(max-width:1100px){.prints-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){
@@ -260,9 +260,9 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(10,10,10,.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;transition:opacity .45s cubic-bezier(0.22,1,0.36,1)}
 .nav-overlay.open{opacity:1}
 .nav-overlay a{font-family:'Raleway',sans-serif;font-size:1.8rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s}
-.nav-overlay a:hover{color:var(--gold)}
+.nav-overlay a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .nav-overlay .overlay-lang{font-size:.58rem;letter-spacing:.3em;color:rgba(245,243,239,.92);margin-top:1rem}
-.nav-overlay .overlay-lang span{color:var(--gold)}
+.nav-overlay .overlay-lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 @media(max-width:900px){.hamburger{display:flex}.nav-overlay{display:flex;pointer-events:none;visibility:hidden}.nav-overlay.open{pointer-events:auto;visibility:visible}}
 
 /* Réassurance acheteur */
@@ -274,7 +274,7 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
   gap:1rem;
 }
 .reassurance-item{display:flex;align-items:center;gap:.8rem}
-.reassurance-icon{color:rgba(201,169,110,.90);flex-shrink:0}
+.reassurance-icon{color:rgba(201,169,110,1.0);flex-shrink:0}
 .reassurance-text strong{display:block;font-size:.48rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.2rem}
 .reassurance-text span{font-size:.44rem;letter-spacing:.1em;color:rgba(245,243,239,.92)}
 @media(max-width:900px){.reassurance-strip{grid-template-columns:repeat(2,1fr);padding:1.5rem 2rem}}
@@ -458,7 +458,7 @@ button:focus:not(:focus-visible) {
 .photo-item:focus-within,
 .print-card:focus-within,
 .gallery-card:focus-within {
-  outline: 1px solid rgba(201,169,110,.90);
+  outline: 1px solid rgba(201,169,110,1.0);
 }
 
 /* Réduction des animations si préférence utilisateur */
@@ -478,7 +478,7 @@ button:focus:not(:focus-visible) {
   bottom: 0; left: 0; right: 0;
   z-index: 999;
   background: rgba(10,10,10,.97);
-  border-top: 1px solid rgba(201,169,110,.90);
+  border-top: 1px solid rgba(201,169,110,1.0);
   padding: 1.5rem 4rem;
   display: flex;
   align-items: center;
@@ -499,9 +499,9 @@ button:focus:not(:focus-visible) {
   max-width: 680px;
 }
 .cookie-text a {
-  color: rgba(201,169,110,.90);
+  color: rgba(201,169,110,1.0);
   text-decoration: none;
-  border-bottom: 1px solid rgba(201,169,110,.90);
+  border-bottom: 1px solid rgba(201,169,110,1.0);
 }
 .cookie-text a:hover { color: var(--gold); }
 .cookie-actions {

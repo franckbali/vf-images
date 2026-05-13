@@ -36,7 +36,7 @@ nav.hidden{opacity:0;transform:translateY(-8px);pointer-events:none}
 nav ul{list-style:none;display:flex;gap:2rem}
 nav ul li a{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.5);text-decoration:none;transition:color .3s;font-weight:400}
 nav ul li a:hover,nav ul li a.active{color:var(--gold)}
-.lang{font-size:.6rem;letter-spacing:.15em;color:rgba(245,243,239,.3)}
+.lang{font-size:.6rem;letter-spacing:.15em;color:rgba(245,243,239,.55)}
 .lang span{color:var(--gold)}
 
 /* INTRO */
@@ -50,9 +50,9 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 .intro-back:hover svg{transform:translateX(-3px)}
 .intro-label{font-size:.52rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,.6);margin-bottom:1.2rem;font-weight:400;animation:fadeUp 1.4s ease .3s both}
 .intro-title{font-family:'Raleway',sans-serif;font-size:clamp(3rem,8vw,7rem);font-weight:200;letter-spacing:.18em;text-transform:uppercase;color:var(--light);line-height:1;animation:fadeUp 1.4s ease .55s both;margin-bottom:1.2rem}
-.intro-count{font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.22);animation:fadeUp 1.4s ease .75s both}
+.intro-count{font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.55);animation:fadeUp 1.4s ease .75s both}
 .intro-scroll{margin-top:3rem;display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;animation:fadeUp 1.4s ease 1s both}
-.intro-scroll span{font-size:.45rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.22)}
+.intro-scroll span{font-size:.45rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.55)}
 .scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sp 2.2s ease-in-out infinite}
 @keyframes sp{0%,100%{opacity:.25}50%{opacity:.8}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
@@ -89,8 +89,8 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 .frame img{height:auto}
 
 /* CAPTIONS statiques */
-.caption-corner{position:absolute;bottom:2rem;right:2.5rem;font-size:.48rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,239,.28);font-family:'Raleway',sans-serif;font-weight:400;pointer-events:none}
-.caption-below{margin-top:.9rem;font-size:.48rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,239,.22);font-family:'Raleway',sans-serif;font-weight:400}
+.caption-corner{position:absolute;bottom:2rem;right:2.5rem;font-size:.48rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,239,.60);font-family:'Raleway',sans-serif;font-weight:400;pointer-events:none}
+.caption-below{margin-top:.9rem;font-size:.48rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,239,.55);font-family:'Raleway',sans-serif;font-weight:400}
 
 /* ═══════════════════════════════════════════
    HOVER DESCRIPTION — sur la photo
@@ -196,7 +196,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 /* FOOTER */
 footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05);margin-top:15vh}
 .footer-logo img{height:36px;opacity:.4}
-.footer-copy{font-size:.52rem;letter-spacing:.2em;color:rgba(245,243,239,.18)}
+.footer-copy{font-size:.52rem;letter-spacing:.2em;color:rgba(245,243,239,.45)}
 .footer-social a{color:rgba(201,169,110,.45);text-decoration:none;transition:color .3s;display:flex;align-items:center}
 .footer-social a:hover{color:var(--gold)}
 
@@ -222,7 +222,7 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
   cursor:none;
   transition:opacity .5s ease;
   background:rgba(201,169,110,0.04);
-  border-left:1px solid rgba(201,169,110,.12);
+  border-left:1px solid rgba(201,169,110,.35);
 }
 .panel-trigger.hidden{opacity:0;pointer-events:none}
 .trigger-line{
@@ -275,7 +275,7 @@ footer{padding:3rem 4rem;background:var(--dark);display:flex;justify-content:spa
 .panel-close{
   position:absolute;top:2rem;right:2rem;
   background:none;border:none;
-  color:rgba(245,243,239,.28);
+  color:rgba(245,243,239,.60);
   font-size:1rem;font-weight:200;
   cursor:none;padding:.5rem;
   transition:color .3s;

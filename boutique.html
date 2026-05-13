@@ -48,7 +48,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba
   color:rgba(245,243,239,.92);
   transition:background .3s,color .3s;font-weight:400;
 }
-.lang-btn.active{background:rgba(201,169,110,1.0);color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
+.lang-btn.active{background:rgba(201,169,110,1.0);color:#1a1410;text-shadow:none}
 .lang-btn:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* HERO */
@@ -589,6 +589,14 @@ button:focus:not(:focus-visible) {
   .panel-label{font-size:.75rem !important}
   .lb-desc-title{font-size:.85rem !important}
   .lb-desc-text{font-size:.95rem !important}
+}
+
+@media(max-width:900px){
+  .feature-title,.info-title{font-size:.85rem !important;letter-spacing:.2em}
+  .feature-desc,.info-desc{font-size:.9rem !important}
+  .card-title{font-size:1.1rem !important}
+  .card-price{font-size:1rem !important}
+  .card-format{font-size:.85rem !important}
 }
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">

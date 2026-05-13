@@ -36,7 +36,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 nav ul{list-style:none;display:flex;gap:2.5rem}
 nav ul li a{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.7);text-decoration:none;transition:color .3s;font-weight:400}
 nav ul li a:hover,nav ul li a.active{color:var(--gold)}
-.lang{font-size:.65rem;letter-spacing:.15em;color:rgba(245,243,239,.4)}
+.lang{font-size:.65rem;letter-spacing:.15em;color:rgba(245,243,239,.75)}
 .lang span{color:var(--gold)}
 
 /* LAYOUT PRINCIPAL — 2 colonnes */
@@ -83,7 +83,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 .contact-tagline{
   font-family:'Lora',serif;font-style:italic;
   font-size:.95rem;letter-spacing:.08em;
-  color:rgba(245,243,239,.35);
+  color:rgba(245,243,239,.80);
   margin-bottom:3.5rem;
   animation:fadeUp 1.2s ease .6s both;
   line-height:1.7;
@@ -104,7 +104,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
   border:1px solid rgba(201,169,110,.2);
   border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  color:rgba(201,169,110,.55);
+  color:rgba(201,169,110,.90);
   margin-top:.1rem;
 }
 .info-text p{
@@ -136,7 +136,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
   display:flex;align-items:center;gap:.5rem;
   font-size:.5rem;letter-spacing:.25em;
   text-transform:uppercase;
-  color:rgba(201,169,110,.45);
+  color:rgba(201,169,110,.85);
   text-decoration:none;
   transition:color .3s;
 }
@@ -155,7 +155,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 }
 .form-intro-label{
   font-size:.5rem;letter-spacing:.5em;text-transform:uppercase;
-  color:rgba(201,169,110,.55);font-weight:400;margin-bottom:1rem;display:block;
+  color:rgba(201,169,110,.90);font-weight:400;margin-bottom:1rem;display:block;
 }
 .form-intro-title{
   font-family:'Bodoni Moda',serif;
@@ -180,7 +180,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 }
 .subject-btn:hover{border-color:rgba(201,169,110,.3);color:rgba(245,243,239,.55)}
 .subject-btn.active{
-  border-color:rgba(201,169,110,.45);
+  border-color:rgba(201,169,110,.85);
   color:var(--gold);
   background:rgba(201,169,110,.06);
 }
@@ -280,7 +280,7 @@ footer{
 }
 .footer-logo img{height:36px;opacity:.4}
 .footer-copy{font-size:.52rem;letter-spacing:.2em;color:rgba(245,243,239,.45)}
-.footer-social a{color:rgba(201,169,110,.45);text-decoration:none;transition:color .3s;display:flex}
+.footer-social a{color:rgba(201,169,110,.85);text-decoration:none;transition:color .3s;display:flex}
 .footer-social a:hover{color:var(--gold)}
 
 @media(max-width:900px){
@@ -642,8 +642,8 @@ button:focus:not(:focus-visible) {
   <div style="display:flex;align-items:center;gap:1.5rem">
     <div style="display:flex;align-items:center;gap:.4rem">
     <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:var(--gold);cursor:pointer;padding:.2rem .4rem">FR</button>
-    <span style="color:rgba(245,243,239,.2);font-size:.6rem">/</span>
-    <button class="lang-btn" data-lang="en" onclick="setLang('en')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:rgba(245,243,239,.4);cursor:pointer;padding:.2rem .4rem">EN</button>
+    <span style="color:rgba(245,243,239,.70);font-size:.6rem">/</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')" style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;background:none;border:none;color:rgba(245,243,239,.75);cursor:pointer;padding:.2rem .4rem">EN</button>
   </div>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>

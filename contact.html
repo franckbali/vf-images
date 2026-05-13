@@ -971,6 +971,23 @@ window.addEventListener('load', function(){
     if(lang === 'en') window.setLang('en');
   });
 })();
+
+const hamburger=document.getElementById('hamburger');
+const navOverlay=document.getElementById('nav-overlay');
+if(hamburger&&navOverlay){
+  function toggleMenu(){
+    const isOpen=hamburger.classList.toggle('open');
+    navOverlay.classList.toggle('open',isOpen);
+    document.body.style.overflow=isOpen?'hidden':'';
+  }
+  hamburger.addEventListener('click',toggleMenu);
+  hamburger.addEventListener('touchstart',function(e){e.preventDefault();toggleMenu();},{passive:false});
+  navOverlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    hamburger.classList.remove('open');
+    navOverlay.classList.remove('open');
+    document.body.style.overflow='';
+  }));
+}
 </script>
 </body>
 </html>

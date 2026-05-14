@@ -238,7 +238,7 @@ to{opacity:1;transform:translateY(0)}}
   .prints-grid{grid-template-columns:1fr!important}
   .reassurance-strip{grid-template-columns:1fr!important}
   .quality-strip{grid-template-columns:1fr}
-  .hero-name,.hero-title{font-size:clamp(2.2rem,12vw,3.5rem);letter-spacing:.1em}
+  .hero-name,.hero-title{font-size:clamp(2.2rem,12vw,3.5rem);letter-spacing:.05em}
   .hero-tagline{font-size:1rem}
   nav{padding:1rem 1.2rem}
   
@@ -257,7 +257,7 @@ to{opacity:1;transform:translateY(0)}}
 
 /* ── TRÈS PETIT MOBILE (max 380px) ── */
 @media(max-width:380px){
-  .hero-name,.hero-title{font-size:2rem}
+  .hero-name,.hero-title{font-size:clamp(1.8rem,10vw,2.5rem)}
   
   nav{padding:.9rem 1rem}
   
@@ -460,7 +460,7 @@ button:focus:not(:focus-visible) {
   .about-signature{font-size:2rem;text-shadow:0 1px 8px rgba(0,0,0,.8)}
   .section-header{flex-direction:column;gap:.8rem;align-items:flex-start}
   .portfolio-header,.gallery-header{flex-direction:column;gap:.8rem}
-  .hero-name{font-size:clamp(2.5rem,12vw,4rem)}
+  .hero-name{font-size:clamp(2.5rem,12vw,4rem);letter-spacing:.05em}
   .cta-sub{font-size:.85rem;letter-spacing:.15em;color:rgba(245,243,239,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
   .panel-trigger{display:flex}
 }

@@ -499,11 +499,7 @@ button:focus:not(:focus-visible) {
 
 /* Boutons langue toujours cliquables */
 
-.lang-btn.active {
-  color: var(--gold) !important;
-  background: none !important;
-  border: none !important;
-}
+
 
 @media(max-width:900px){
   .hero-eyebrow{font-size:.95rem;letter-spacing:.35em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
@@ -833,8 +829,8 @@ button:focus:not(:focus-visible) {
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem">
     <div class="lang-switch">
-      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>

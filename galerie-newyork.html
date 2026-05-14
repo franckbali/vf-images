@@ -203,8 +203,9 @@ to{opacity:1;transform:translateY(0)}}
   padding:1.4rem 1rem;
   cursor:none;
   transition:opacity .5s ease;
-  background:rgba(201,169,110,1.0);
-  border-left:1px solid rgba(201,169,110,1.0);
+  background:rgba(10,10,10,.75);
+  border-left:1px solid rgba(201,169,110,.6);
+  backdrop-filter:blur(8px);
 }
 .panel-trigger.hidden{opacity:0;pointer-events:none}
 .trigger-line{
@@ -217,7 +218,7 @@ to{opacity:1;transform:translateY(0)}}
   font-family:'Raleway',sans-serif;
   font-size:0.75rem;letter-spacing:.38em;
   text-transform:uppercase;
-  color:rgba(245,243,239,.92);
+  color:rgba(201,169,110,1.0);
   writing-mode:vertical-rl;
   text-orientation:mixed;
   transition:color .4s;

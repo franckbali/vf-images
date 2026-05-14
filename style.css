@@ -16,7 +16,7 @@ body{background:var(--dark);color:var(--light);font-family:'Raleway',sans-serif;
 
 /* ── Navigation ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 4rem;transition:background .4s,backdrop-filter .4s}
-nav.scrolled{background:rgba(10,10,10,.5);backdrop-filter:blur(8px)}
+nav.scrolled{background:transparent}
 .logo img{height:60px;width:auto;display:block}
 nav ul{list-style:none;display:flex;gap:3rem}
 nav ul li a{font-size:0.80rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s;font-family:'Raleway',sans-serif;font-weight:400}

@@ -885,6 +885,15 @@ function closePanel(){
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape') closePanel();});
 
+const sidePanel = document.getElementById('sidePanel');
+sidePanel.addEventListener('touchmove', function(e){
+  e.stopPropagation();
+}, {passive:true});
+
+sidePanel.addEventListener('touchstart', function(e){
+  e.stopPropagation();
+}, {passive:true});
+
 
 const hamburger=document.getElementById('hamburger');
 const navOverlay=document.getElementById('nav-overlay');

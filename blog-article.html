@@ -21,7 +21,7 @@
 <style>
 /* NAV */
 
-nav.scrolled{background:transparent}
+
 
 nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
@@ -816,7 +816,7 @@ document.querySelectorAll('a,button,.tag-item,.video-play-btn').forEach(el=>{
 const nav=document.getElementById('nav');
 let ticking=false;
 window.addEventListener('scroll',()=>{
-  if(!ticking){requestAnimationFrame(()=>{nav.classList.toggle('scrolled',window.scrollY>50);ticking=false;});ticking=true;}
+  if(!ticking){requestAnimationFrame(()=>{nav.classList.toggle('scrolled',window.scrollY>80);ticking=false;});ticking=true;}
 });
 
 const obs=new IntersectionObserver(entries=>{

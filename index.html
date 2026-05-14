@@ -30,7 +30,7 @@
   url('images/bg.webp') center 30%/cover no-repeat;
   transform:scale(1.05);animation:heroZoom 16s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.05)}to{transform:scale(1)}}
-.hero-content{position:relative;text-align:center}
+.hero-content{position:relative;text-align:center;width:100%;margin:0 auto}
 .hero-eyebrow{font-family:'Raleway',sans-serif;font-size:0.80rem;letter-spacing:.6em;text-transform:uppercase;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);margin-bottom:1.4rem;animation:fadeUp 1.4s ease .4s both;font-weight:400;opacity:.9}
 .hero-divider{width:40px;height:1px;background:var(--gold);margin:0 auto 1.4rem;opacity:.8;animation:fadeUp 1.4s ease .55s both}
 .hero-name{font-family:'Raleway',sans-serif;font-size:clamp(3.5rem,10vw,8.5rem);font-weight:200;letter-spacing:.22em;line-height:1;color:var(--light);animation:fadeUp 1.4s ease .7s both;margin-bottom:.7rem;text-transform:uppercase}
@@ -147,7 +147,7 @@ section.cta>*{position:relative}
 @media(max-width:900px){
   nav{padding:1.5rem 2rem} 
   
-  .hero-name{font-size:3rem;letter-spacing:.15em}
+  .hero-name{font-size:3rem;letter-spacing:.1em;text-align:center}
   section.gallery-preview,section.about-strip,section.cta{padding:4rem 2rem}
   .photo-masonry{column-count:2}
   section.about-strip{grid-template-columns:1fr;gap:3rem}
@@ -217,7 +217,7 @@ section.cta>*{position:relative}
   .prints-grid{grid-template-columns:1fr!important}
   .reassurance-strip{grid-template-columns:1fr!important}
   .quality-strip{grid-template-columns:1fr}
-  .hero-name,.hero-title{font-size:clamp(2.2rem,12vw,3.5rem);letter-spacing:.1em}
+  .hero-name,.hero-title{font-size:clamp(2.2rem,12vw,3.5rem);letter-spacing:.05em;text-align:center}
   .hero-tagline{font-size:1rem}
   nav{padding:1rem 1.2rem}
   
@@ -236,7 +236,7 @@ section.cta>*{position:relative}
 
 /* ── TRÈS PETIT MOBILE (max 380px) ── */
 @media(max-width:380px){
-  .hero-name,.hero-title{font-size:2rem}
+  .hero-name,.hero-title{font-size:2rem;text-align:center;letter-spacing:.03em}
   
   nav{padding:.9rem 1rem}
   
@@ -439,7 +439,7 @@ button:focus:not(:focus-visible) {
   .about-signature{font-size:2rem;text-shadow:0 1px 8px rgba(0,0,0,.8)}
   .section-header{flex-direction:column;gap:.8rem;align-items:flex-start}
   .portfolio-header,.gallery-header{flex-direction:column;gap:.8rem}
-  .hero-name{font-size:clamp(2.5rem,12vw,4rem)}
+  .hero-name{font-size:clamp(2.5rem,12vw,4rem);text-align:center;letter-spacing:.05em}
   .cta-sub{font-size:.85rem;letter-spacing:.15em;color:rgba(245,243,239,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
   .panel-trigger{display:flex}
 }

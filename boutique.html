@@ -30,7 +30,8 @@
 /* HERO */
 .hero{position:relative;height:45vh;display:flex;align-items:flex-end;padding:0 4rem 4rem;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%),url('images/cta-bali.webp') center/cover no-repeat;z-index:0}
-.hero-eyebrow,.hero-title,.hero-sub{position:relative;z-index:1}
+
+.hero-content-wrap{position:relative;z-index:1}
 .hero-eyebrow{font-size:0.80rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
 .hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:200;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1;margin-bottom:1.2rem}
 .hero-sub{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(245,243,239,.92);letter-spacing:.08em;animation:fadeUp 1.2s ease .6s both;max-width:540px;line-height:1.7}
@@ -502,7 +503,8 @@ button:focus:not(:focus-visible) {
 
 @media(max-width:900px){
   .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%),url('images/cta-bali.webp') center/cover no-repeat;z-index:0}
-.hero-eyebrow,.hero-title,.hero-sub{position:relative;z-index:1}
+
+.hero-content-wrap{position:relative;z-index:1}
 .hero-eyebrow{font-size:.95rem;letter-spacing:.35em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
   .hero-prenom{font-size:1.3rem;letter-spacing:.4em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
   
@@ -855,7 +857,7 @@ button:focus:not(:focus-visible) {
 <main id="main-content">
 <div class="hero">
   <div class="hero-bg" style="background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%),url('images/cta-bali.webp') center/cover no-repeat"></div>
-  <p class="hero-eyebrow" data-fr="VF Images · Tirages Fine Art" data-en="VF Images · Fine Art Prints">VF Images · Tirages Fine Art</p>
+  <div style="position:relative;z-index:1"><p class="hero-eyebrow" data-fr="VF Images · Tirages Fine Art" data-en="VF Images · Fine Art Prints">VF Images · Tirages Fine Art</p>
   <h1 class="hero-title" data-fr="Boutique" data-en="Shop">Boutique</h1>
   <p class="hero-sub" data-fr="Des images pensées pour durer — tirées sur papiers d'exception, numérotées et livrées partout dans le monde via Printspace." data-en="Images made to last — printed on exceptional papers, numbered and shipped worldwide via Printspace.">Des images pensées pour durer — tirées sur papiers d'exception, numérotées et livrées partout dans le monde via Printspace.</p>
 </div>

@@ -28,7 +28,7 @@
 .lang-switch{display:flex;align-items:center;gap:0;border:none;overflow:hidden;background:none}
 
 /* HERO */
-.hero{padding:16rem 4rem 6rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.04)}
+.hero{position:relative;height:45vh;display:flex;align-items:flex-end;padding:0 4rem 4rem;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%),url('images/cta-bali.webp') center/cover no-repeat;z-index:0}
 .hero-eyebrow,.hero-title,.hero-sub{position:relative;z-index:1}
 .hero-eyebrow{font-size:0.80rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
@@ -550,6 +550,8 @@ button:focus:not(:focus-visible) {
   .card-price{font-size:1rem !important}
   .card-format{font-size:.85rem !important}
 }
+@media(max-width:768px){.hero{padding:0 2rem 3.5rem;height:38vh}}
+@media(max-width:480px){.hero{height:35vh;padding:0 2rem 3rem}}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">

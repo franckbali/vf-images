@@ -868,20 +868,24 @@ document.addEventListener('keydown',e=>{
 });
 
 function openPanel(){
+  var scrollY = window.scrollY;
   document.getElementById('sidePanel').classList.add('open');
   document.getElementById('panelOverlay').classList.add('active');
   document.getElementById('panelTrigger').classList.add('hidden');
-  document.body.style.overflow='hidden';
   document.body.style.position='fixed';
+  document.body.style.top='-'+scrollY+'px';
   document.body.style.width='100%';
+  document.body.dataset.scrollY = scrollY;
 }
 function closePanel(){
+  var scrollY = document.body.dataset.scrollY || 0;
   document.getElementById('sidePanel').classList.remove('open');
   document.getElementById('panelOverlay').classList.remove('active');
   setTimeout(()=>document.getElementById('panelTrigger').classList.remove('hidden'),500);
-  document.body.style.overflow='';
   document.body.style.position='';
+  document.body.style.top='';
   document.body.style.width='';
+  window.scrollTo(0, parseInt(scrollY));
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape') closePanel();});
 

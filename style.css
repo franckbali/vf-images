@@ -122,3 +122,10 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:flex;just
 @media(max-width:900px){
   .scroll-indicator{position:absolute!important;bottom:1.5rem!important;left:50%!important;transform:translateX(-50%)!important;align-items:center!important;display:flex!important;flex-direction:column!important}.scroll-indicator span{display:none!important}
 }
+
+@media(max-width:900px){
+  .hero-tagline{font-size:1.2rem!important}
+  .hero-fineart{font-size:1rem!important;letter-spacing:.12em!important}
+  .hero-eyebrow{font-size:1rem!important}
+  .hero-prenom{font-size:1.1rem!important}
+}

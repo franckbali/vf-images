@@ -1,0 +1,64 @@
+{
+    "galeries": [
+      {
+              "slug": "bali",
+              "titre": "Bali",
+              "sous_titre": "Temples, rites et instants sacrés",
+              "image_cover": "images/bali.jpg",
+              "orientation": "portrait",
+              "page": "galerie-bali.html",
+              "ordre": 1,
+              "visible": true
+      },
+      {
+              "slug": "new-york",
+              "titre": "New York",
+              "sous_titre": "La ville dans tous ses états",
+              "image_cover": "images/new-york.jpg",
+              "orientation": "landscape",
+              "page": "galerie-newyork.html",
+              "ordre": 2,
+              "visible": true
+      },
+      {
+              "slug": "ceremonies",
+              "titre": "Cérémonies",
+              "sous_titre": "L'âme de Bali en images",
+              "image_cover": "images/ceremonies.jpg",
+              "orientation": "landscape",
+              "page": "galerie-ceremonies.html",
+              "ordre": 3,
+              "visible": true
+      },
+      {
+              "slug": "voyages",
+              "titre": "Voyages",
+              "sous_titre": "Des déserts américains à l'Altiplano",
+              "image_cover": "images/voyages.jpg",
+              "orientation": "portrait",
+              "page": "galerie-voyages.html",
+              "ordre": 4,
+              "visible": true
+      },
+      {
+              "slug": "portraits",
+              "titre": "Portraits",
+              "sous_titre": "Visages du monde",
+              "image_cover": "images/portraits.jpg",
+              "orientation": "landscape",
+              "page": "galerie-portraits.html",
+              "ordre": 5,
+              "visible": true
+      },
+      {
+              "slug": "la-reunion",
+              "titre": "La Réunion",
+              "sous_titre": "L'île intense",
+              "image_cover": "images/la-reunion.jpg",
+              "orientation": "portrait",
+              "page": "galerie-lareunion.html",
+              "ordre": 6,
+              "visible": true
+      }
+        ]
+}

@@ -234,7 +234,32 @@ def main():
         print(f"\n   Formats acceptés : {', '.join(config['input_formats'])}")
         return
 
-    print(f"📂 {len(images)} image(s) à traiter dans '{input_dir}/'\n")
+    # Filtrer les photos déjà traitées (le JPG correspondant existe déjà dans images/)
+    new_images = []
+    skipped = []
+    for img_path in images:
+        name = get_output_name(img_path)
+        jpg_already = (output_dir / f"{name}.jpg").exists()
+        webp_already = list(output_dir.glob(f"{name}-*.webp"))
+        if jpg_already or webp_already:
+            skipped.append(img_path)
+        else:
+            new_images.append(img_path)
+
+    if skipped:
+        print(f"⏭️  {len(skipped)} photo(s) déjà traitée(s) — ignorée(s) :")
+        for s in skipped:
+            print(f"   · {s.name}")
+        print()
+
+    images = new_images
+
+    if not images:
+        print(f"✅ Toutes les photos sont déjà à jour dans '{output_dir}/'")
+        print(f"   Ajoutez de nouvelles photos dans '{input_dir}/' pour les traiter.")
+        return
+
+    print(f"📂 {len(images)} nouvelle(s) image(s) à traiter\n")
 
     results = []
     snippets = []

@@ -11,20 +11,23 @@ locale: fr
 collections:
   - name: "galeries"
     label: "Galeries photos"
-    file: "galeries.json"
-    fields:
+    files:
       - name: "galeries"
         label: "Liste des galeries"
-        widget: "list"
+        file: "galeries.json"
         fields:
-          - {label: "Titre", name: "titre", widget: "string"}
-          - {label: "Sous-titre", name: "sous_titre", widget: "string"}
-          - {label: "Image cover", name: "image_cover", widget: "image"}
-          - {label: "Orientation", name: "orientation", widget: "select", options: ["portrait", "landscape"]}
-          - {label: "Slug", name: "slug", widget: "string"}
-          - {label: "Page", name: "page", widget: "string"}
-          - {label: "Ordre", name: "ordre", widget: "number", value_type: "int"}
-          - {label: "Visible", name: "visible", widget: "boolean", default: true}
+          - name: "galeries"
+            label: "Galeries"
+            widget: "list"
+            fields:
+              - {label: "Titre", name: "titre", widget: "string"}
+              - {label: "Sous-titre", name: "sous_titre", widget: "string"}
+              - {label: "Image cover", name: "image_cover", widget: "image"}
+              - {label: "Orientation", name: "orientation", widget: "select", options: ["portrait", "landscape"]}
+              - {label: "Slug", name: "slug", widget: "string"}
+              - {label: "Page", name: "page", widget: "string"}
+              - {label: "Ordre", name: "ordre", widget: "number", value_type: "int"}
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
 
   - name: "blog"
     label: "Articles de blog"
@@ -41,17 +44,20 @@ collections:
 
   - name: "boutique"
     label: "Boutique"
-    file: "boutique.json"
-    fields:
-      - name: "produits"
+    files:
+      - name: "boutique"
         label: "Liste des produits"
-        widget: "list"
+        file: "boutique.json"
         fields:
-          - {label: "Titre", name: "titre", widget: "string"}
-          - {label: "Sous-titre", name: "sous_titre", widget: "string", required: false}
-          - {label: "Image", name: "image", widget: "image"}
-          - {label: "Prix (€)", name: "prix", widget: "number", value_type: "float"}
-          - {label: "Format", name: "format", widget: "string", required: false}
-          - {label: "Édition", name: "edition", widget: "string", required: false}
-          - {label: "Slug", name: "slug", widget: "string"}
-          - {label: "Visible", name: "visible", widget: "boolean", default: true}
+          - name: "produits"
+            label: "Produits"
+            widget: "list"
+            fields:
+              - {label: "Titre", name: "titre", widget: "string"}
+              - {label: "Sous-titre", name: "sous_titre", widget: "string", required: false}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Prix (€)", name: "prix", widget: "number", value_type: "float"}
+              - {label: "Format", name: "format", widget: "string", required: false}
+              - {label: "Édition", name: "edition", widget: "string", required: false}
+              - {label: "Slug", name: "slug", widget: "string"}
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}

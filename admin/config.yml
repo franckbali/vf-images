@@ -42,6 +42,35 @@ collections:
       - {label: "Image principale", name: "image", widget: "image", required: false}
       - {label: "Contenu", name: "body", widget: "markdown"}
 
+  - name: "accueil"
+    label: "Accueil"
+    files:
+      - name: "accueil"
+        label: "Photos de l'accueil"
+        file: "accueil.json"
+        fields:
+          - name: "portfolio"
+            label: "Portfolio (grille d'accueil)"
+            widget: "list"
+            fields:
+              - {label: "Fichier image", name: "fichier", widget: "image"}
+              - {label: "Légende",       name: "legende", widget: "string"}
+              - {label: "Visible",       name: "visible", widget: "boolean", default: true}
+          - name: "apropos"
+            label: "Photo — section À propos"
+            widget: "object"
+            fields:
+              - {label: "Fichier image", name: "fichier", widget: "image"}
+              - {label: "Légende",       name: "legende", widget: "string"}
+              - {label: "Visible",       name: "visible", widget: "boolean", default: true}
+          - name: "cta"
+            label: "Photo de fond — section CTA"
+            widget: "object"
+            fields:
+              - {label: "Fichier image", name: "fichier", widget: "image"}
+              - {label: "Légende",       name: "legende", widget: "string"}
+              - {label: "Visible",       name: "visible", widget: "boolean", default: true}
+
   - name: "boutique"
     label: "Boutique"
     files:

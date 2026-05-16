@@ -128,7 +128,7 @@ section.about-strip{padding:8rem 4rem;background:var(--dark2);display:grid;grid-
 
 /* CTA */
 section.cta{padding:10rem 4rem;text-align:center;position:relative;overflow:hidden}
-section.cta::before{content:'';position:absolute;inset:0;background:url('images/cta-bali.webp') center 60%/cover no-repeat;opacity:.18}
+section.cta::before{content:'';position:absolute;inset:0;background:var(--cta-bg,url('images/cta-bali.webp') center 60%/cover no-repeat);opacity:.18}
 section.cta>*{position:relative}
 .cta-title{font-family:'Bodoni Moda',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;letter-spacing:.08em;margin-bottom:1rem}
 .cta-sub{font-size:.7rem;letter-spacing:.25em;color:rgba(245,243,239,.92);text-transform:uppercase;margin-bottom:3rem;font-family:'Raleway',sans-serif}
@@ -560,133 +560,13 @@ button:focus:not(:focus-visible) {
     <p class="section-label">Portfolio</p>
     <a href="galerie-index.html" class="section-link" data-fr="Voir la galerie complète" data-en="View full gallery">Voir la galerie complète</a>
   </div>
-  <div class="photo-masonry">
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/faune-sacree-bali.jpg"
-        srcset="images/faune-sacree-bali-small.webp 640w, images/faune-sacree-bali-medium.webp 1200w, images/faune-sacree-bali-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Faune sacrée · Bali"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">Faune sacrée · Bali</span></div>
-    </div>
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/procession-barong-bali.jpg"
-        srcset="images/procession-barong-bali-small.webp 640w, images/procession-barong-bali-medium.webp 1200w, images/procession-barong-bali-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Procession Barong · Bali"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">Procession Barong · Bali</span></div>
-    </div>
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/coucher-de-soleil-bali.jpg"
-        srcset="images/coucher-de-soleil-bali-small.webp 640w, images/coucher-de-soleil-bali-medium.webp 1200w, images/coucher-de-soleil-bali-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Coucher de soleil · Bali"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">Coucher de soleil · Bali</span></div>
-    </div>
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/portrait-bali.jpg"
-        srcset="images/portrait-bali-small.webp 640w, images/portrait-bali-medium.webp 1200w, images/portrait-bali-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Portrait · Bali"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">Portrait · Bali</span></div>
-    </div>
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/enfant-ceremonie-bali.jpg"
-        srcset="images/enfant-ceremonie-bali-small.webp 640w, images/enfant-ceremonie-bali-medium.webp 1200w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Portrait · Bali"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">Portrait · Bali</span></div>
-    </div>
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/ceremonies-sur-la-plage-bali.jpg"
-        srcset="images/ceremonies-sur-la-plage-bali-small.webp 640w, images/ceremonies-sur-la-plage-bali-medium.webp 1200w, images/ceremonies-sur-la-plage-bali-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Cérémonies sur la plage · Bali"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">Cérémonies sur la plage · Bali</span></div>
-    </div>
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/altiplano-bolivia.jpg"
-        srcset="images/altiplano-bolivia-small.webp 640w, images/altiplano-bolivia-medium.webp 1200w, images/altiplano-bolivia-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Altiplano · Bolivia"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">Altiplano · Bolivia</span></div>
-    </div>
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/manhattan-new-york.jpg"
-        srcset="images/manhattan-new-york-small.webp 640w, images/manhattan-new-york-medium.webp 1200w, images/manhattan-new-york-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Manhattan · New York"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">Manhattan · New York</span></div>
-    </div>
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/fenetre-sur-locean-la-reunion.jpg"
-        srcset="images/fenetre-sur-locean-la-reunion-small.webp 640w, images/fenetre-sur-locean-la-reunion-medium.webp 1200w, images/fenetre-sur-locean-la-reunion-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Fenêtre sur l'océan · La Réunion"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">Fenêtre sur l'océan · La Réunion</span></div>
-    </div>
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/soho-new-york.jpg"
-        srcset="images/soho-new-york-small.webp 640w, images/soho-new-york-medium.webp 1200w, images/soho-new-york-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="SoHo · New York"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">SoHo · New York</span></div>
-    </div>
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/monument-valley-usa.jpg"
-        srcset="images/monument-valley-usa-small.webp 640w, images/monument-valley-usa-medium.webp 1200w, images/monument-valley-usa-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Monument Valley · USA"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">Monument Valley · USA</span></div>
-    </div>
-    <div class="photo-item" onclick="openLightbox(this)">
-      <img
-        src="images/rituels-offrandes-bali.jpg"
-        srcset="images/rituels-offrandes-bali-small.webp 640w, images/rituels-offrandes-bali-medium.webp 1200w, images/rituels-offrandes-bali-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Rituels & Offrandes · Bali"
-        loading="eager"
-        decoding="async">
-      <div class="photo-overlay"><span class="photo-caption">Rituels & Offrandes · Bali</span></div>
-    </div>
-  </div>
+  <div class="photo-masonry" id="photo-masonry"></div>
 </section>
 
 <section class="about-strip">
   <div class="about-image">
     <img
+        id="about-img"
         src="images/bali-instants-de-vie.jpg"
         srcset="images/bali-instants-de-vie-small.webp 640w, images/bali-instants-de-vie-medium.webp 1200w, images/bali-instants-de-vie-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -946,6 +826,56 @@ if(hamburger&&navOverlay){
   document.addEventListener('DOMContentLoaded', function(){
     if(lang === 'en') window.setLang('en');
   });
+})();
+</script>
+<script>
+/* ══ ACCUEIL — chargement dynamique depuis accueil.json ══ */
+(function(){
+  function makeSrcset(fichier){
+    var stem = fichier.replace(/\.[^.]+$/, '');
+    return stem+'-small.webp 640w, '+stem+'-medium.webp 1200w, '+stem+'-large.webp 1920w';
+  }
+
+  function buildPortfolio(photos){
+    var masonry = document.getElementById('photo-masonry');
+    if(!masonry) return;
+    var html = '';
+    photos.filter(function(p){ return p.visible !== false; }).forEach(function(p){
+      var esc = p.legende.replace(/"/g,'&quot;');
+      html += '<div class="photo-item" onclick="openLightbox(this)">';
+      html += '<img src="'+p.fichier+'" srcset="'+makeSrcset(p.fichier)+'"';
+      html += ' sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"';
+      html += ' alt="'+esc+'" loading="eager" decoding="async">';
+      html += '<div class="photo-overlay"><span class="photo-caption">'+p.legende+'</span></div>';
+      html += '</div>';
+    });
+    masonry.innerHTML = html;
+  }
+
+  function updateApropos(apropos){
+    if(!apropos || apropos.visible === false) return;
+    var img = document.getElementById('about-img');
+    if(!img) return;
+    img.src    = apropos.fichier;
+    img.srcset = makeSrcset(apropos.fichier);
+    img.alt    = apropos.legende;
+  }
+
+  function updateCta(cta){
+    if(!cta || cta.visible === false) return;
+    var section = document.querySelector('section.cta');
+    if(!section) return;
+    section.style.setProperty('--cta-bg', "url('"+cta.fichier+"') center 60%/cover no-repeat");
+  }
+
+  fetch('accueil.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if(data.portfolio) buildPortfolio(data.portfolio);
+      if(data.apropos)   updateApropos(data.apropos);
+      if(data.cta)       updateCta(data.cta);
+    })
+    .catch(function(e){ console.warn('[accueil.json]', e); });
 })();
 </script>
 </body>

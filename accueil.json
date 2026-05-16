@@ -1,17 +1,65 @@
 {
   "portfolio": [
-    {"fichier": "images/faune-sacree-bali.jpg",             "legende": "Faune sacrée · Bali",             "visible": true},
-    {"fichier": "images/procession-barong-bali.jpg",        "legende": "Procession Barong · Bali",        "visible": true},
-    {"fichier": "images/coucher-de-soleil-bali.jpg",        "legende": "Coucher de soleil · Bali",        "visible": true},
-    {"fichier": "images/portrait-bali.jpg",                 "legende": "Portrait · Bali",                 "visible": true},
-    {"fichier": "images/enfant-ceremonie-bali.jpg",         "legende": "Portrait · Bali",                 "visible": true},
-    {"fichier": "images/ceremonies-sur-la-plage-bali.jpg",  "legende": "Cérémonies sur la plage · Bali",  "visible": true},
-    {"fichier": "images/altiplano-bolivia.jpg",             "legende": "Altiplano · Bolivia",             "visible": true},
-    {"fichier": "images/manhattan-new-york.jpg",            "legende": "Manhattan · New York",            "visible": true},
-    {"fichier": "images/fenetre-sur-locean-la-reunion.jpg", "legende": "Fenêtre sur l'océan · La Réunion","visible": true},
-    {"fichier": "images/soho-new-york.jpg",                 "legende": "SoHo · New York",                "visible": true},
-    {"fichier": "images/monument-valley-usa.jpg",           "legende": "Monument Valley · USA",           "visible": true},
-    {"fichier": "images/rituels-offrandes-bali.jpg",        "legende": "Rituels & Offrandes · Bali",      "visible": true}
+    {
+      "fichier": "images/faune-sacree-bali.jpg",
+      "legende": "Faune sacrée · Bali",
+      "visible": true
+    },
+    {
+      "fichier": "images/procession-barong-bali.jpg",
+      "legende": "Procession Barong · Bali",
+      "visible": true
+    },
+    {
+      "fichier": "images/coucher-de-soleil-bali.jpg",
+      "legende": "Coucher de soleil · Bali",
+      "visible": true
+    },
+    {
+      "fichier": "images/portrait-bali.jpg",
+      "legende": "Portrait · Bali",
+      "visible": true
+    },
+    {
+      "fichier": "images/enfant-ceremonie-bali.jpg",
+      "legende": "Portrait · Bali",
+      "visible": true
+    },
+    {
+      "fichier": "images/ceremonies-sur-la-plage-bali.jpg",
+      "legende": "Cérémonies sur la plage · Bali",
+      "visible": true
+    },
+    {
+      "fichier": "images/altiplano-bolivia.jpg",
+      "legende": "Altiplano · Bolivia",
+      "visible": true
+    },
+    {
+      "fichier": "images/manhattan-new-york.jpg",
+      "legende": "Manhattan · New York",
+      "visible": true
+    },
+    {
+      "fichier": "images/fenetre-sur-locean-la-reunion.jpg",
+      "legende": "Fenêtre sur l'océan · La Réunion",
+      "visible": true
+    },
+    {
+      "fichier": "images/soho-new-york.jpg",
+      "legende": "SoHo · New York",
+      "visible": true
+    },
+    {
+      "fichier": "images/monument-valley-usa.jpg",
+      "legende": "Monument Valley · USA",
+      "visible": true
+    },
+    {
+      "fichier": "images/rituels-offrandes-bali.jpg",
+      "legende": "Rituels & Offrandes · Bali",
+      "visible": true
+    }
   ],
   "apropos": {
     "fichier": "images/bali-instants-de-vie.jpg",
@@ -19,7 +67,7 @@
     "visible": true
   },
   "cta": {
-    "fichier": "images/cta-bali.webp",
+    "fichier": "/images/DSC018461.jpg",
     "legende": "CTA Bali",
     "visible": true
   }

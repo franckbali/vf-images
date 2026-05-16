@@ -564,105 +564,7 @@ button:focus:not(:focus-visible) {
   </div>
 </div>
 
-<div class="galleries-grid">
-  
-    <a class="gallery-door portrait" href="galerie-index.html">
-      <img
-        src="images/bali.jpg"
-        srcset="images/bali-small.webp 640w, images/bali-medium.webp 1200w, images/bali-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Bali"
-        loading="eager"
-        decoding="async">
-      <div class="door-overlay">
-        <div class="door-content">
-          <span class="door-title">Bali</span>
-          <span class="door-line"></span>
-          <span class="door-sub" data-fr="Temples, rites et instants sacrés" data-en="Temples, rites and sacred moments">Temples, rites et instants sacrés</span>
-        </div>
-      </div>
-    </a>
-    <a class="gallery-door landscape" href="galerie-newyork.html">
-      <img
-        src="images/new-york.jpg"
-        srcset="images/new-york-small.webp 640w, images/new-york-medium.webp 1200w, images/new-york-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="New York"
-        loading="eager"
-        decoding="async">
-      <div class="door-overlay">
-        <div class="door-content">
-          <span class="door-title">New York</span>
-          <span class="door-line"></span>
-          <span class="door-sub" data-fr="La ville dans tous ses états" data-en="The city in all its moods">La ville dans tous ses états</span>
-        </div>
-      </div>
-    </a>
-    <a class="gallery-door landscape" href="galerie-index.html">
-      <img
-        src="images/ceremonies.jpg"
-        srcset="images/ceremonies-small.webp 640w, images/ceremonies-medium.webp 1200w, images/ceremonies-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Cérémonies"
-        loading="lazy"
-        decoding="async">
-      <div class="door-overlay">
-        <div class="door-content">
-          <span class="door-title">Cérémonies</span>
-          <span class="door-line"></span>
-          <span class="door-sub">L'âme de Bali en images</span>
-        </div>
-      </div>
-    </a>
-    <a class="gallery-door portrait" href="galerie-index.html">
-      <img
-        src="images/voyages.jpg"
-        srcset="images/voyages-small.webp 640w, images/voyages-medium.webp 1200w, images/voyages-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Voyages"
-        loading="lazy"
-        decoding="async">
-      <div class="door-overlay">
-        <div class="door-content">
-          <span class="door-title">Voyages</span>
-          <span class="door-line"></span>
-          <span class="door-sub">Des déserts américains à l'Altiplano</span>
-        </div>
-      </div>
-    </a>
-    <a class="gallery-door landscape" href="galerie-index.html">
-      <img
-        src="images/portraits.jpg"
-        srcset="images/portraits-small.webp 640w, images/portraits-medium.webp 1200w, images/portraits-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Portraits"
-        loading="lazy"
-        decoding="async">
-      <div class="door-overlay">
-        <div class="door-content">
-          <span class="door-title">Portraits</span>
-          <span class="door-line"></span>
-          <span class="door-sub">Visages du monde</span>
-        </div>
-      </div>
-    </a>
-    <a class="gallery-door portrait" href="galerie-index.html">
-      <img
-        src="images/la-reunion.jpg"
-        srcset="images/la-reunion-small.webp 640w, images/la-reunion-medium.webp 1200w, images/la-reunion-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="La Réunion"
-        loading="lazy"
-        decoding="async">
-      <div class="door-overlay">
-        <div class="door-content">
-          <span class="door-title">La Réunion</span>
-          <span class="door-line"></span>
-          <span class="door-sub">L'île intense</span>
-        </div>
-      </div>
-    </a>
-</div>
+<div class="galleries-grid" id="galleries-grid"></div>
 
 </main>
 <footer role="contentinfo">
@@ -841,9 +743,51 @@ if(hamburger&&navOverlay){
 })();
 </script>
 <script>
-
-
-
+(function(){
+  const grid = document.getElementById('galleries-grid');
+  if(!grid) return;
+  fetch('galeries.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      const ring = document.getElementById('ring');
+      const galeries = data.galeries
+        .filter(function(g){ return g.visible; })
+        .sort(function(a,b){ return a.ordre - b.ordre; });
+      galeries.forEach(function(g, i){
+        const a = document.createElement('a');
+        a.className = 'gallery-door ' + g.orientation;
+        a.href = g.page;
+        a.innerHTML =
+          '<img' +
+          ' src="' + g.image_cover + '"' +
+          ' srcset="images/' + g.slug + '-small.webp 640w,' +
+                   ' images/' + g.slug + '-medium.webp 1200w,' +
+                   ' images/' + g.slug + '-large.webp 1920w"' +
+          ' sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"' +
+          ' alt="' + g.titre + '"' +
+          ' loading="' + (i < 2 ? 'eager' : 'lazy') + '"' +
+          ' decoding="async">' +
+          '<div class="door-overlay"><div class="door-content">' +
+          '<span class="door-title">' + g.titre + '</span>' +
+          '<span class="door-line"></span>' +
+          '<span class="door-sub">' + g.sous_titre + '</span>' +
+          '</div></div>';
+        grid.appendChild(a);
+        if(ring){
+          a.addEventListener('mouseenter', function(){ ring.classList.add('h'); });
+          a.addEventListener('mouseleave', function(){ ring.classList.remove('h'); });
+        }
+        a.addEventListener('touchstart', function(e){
+          if(!a.classList.contains('touched')){
+            e.preventDefault();
+            document.querySelectorAll('.gallery-door.touched').forEach(function(d){ d.classList.remove('touched'); });
+            a.classList.add('touched');
+          }
+        }, {passive: false});
+      });
+    })
+    .catch(function(err){ console.warn('Erreur chargement galeries.json', err); });
+})();
 </script>
 <script>
 (function(){

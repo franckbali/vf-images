@@ -59,6 +59,16 @@
       "page": "galerie-lareunion.html",
       "ordre": 6,
       "visible": true
+    },
+    {
+      "titre": "Rizieres Tegalalang 01",
+      "sous_titre": "",
+      "image_cover": "images/rizieres-tegalalang-01.jpg",
+      "orientation": "landscape",
+      "slug": "rizieres-tegalalang-01",
+      "page": "galerie-rizieres-tegalalang-01.html",
+      "ordre": 7,
+      "visible": false
     }
   ]
 }

@@ -10,9 +10,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://vfimages.com/blog.html">
-<title>Blog – Photographie Fine Art & Bali | VF Images</title>
-<meta name="description" content="Récits photographiques de Bali et du monde. Techniques, coulisses des tirages Fine Art par Franck.">
-<meta property="og:title" content="Blog – VF Images">
+<title>Journal — Écrits & Lens of Wonder | VF Images</title>
+<meta name="description" content="Écrits contemplatifs sur la photographie et les voyages. Vlogs Bali et voyages par The Lens of Wonder — Instagram et YouTube de Franck.">
+<meta property="og:title" content="Journal — VF Images">
 <meta property="og:url" content="https://vfimages.com/blog.html">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,450 +21,406 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Lora:ital,wght@0,400;1,400&display=swap"></noscript>
 <link rel="stylesheet" href="style.css">
 <style>
-/* NAV */
 
-
-
+/* ── NAV ── */
 nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
-
 .lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
-/* HERO */
-.hero{position:relative;height:100vh;display:flex;align-items:flex-end;padding:0 4rem 4rem;overflow:hidden}
-.hero-bg{position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(10,10,10,.5) 0%,rgba(10,10,10,.15) 40%,rgba(10,10,10,.85) 100%),
+/* ── HERO ── */
+.hero{position:relative;height:72vh;display:flex;align-items:flex-end;padding:0 4rem 4.5rem;overflow:hidden}
+.hero-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(10,10,10,.45) 0%,rgba(10,10,10,.1) 40%,rgba(10,10,10,.9) 100%),
   url('images/bg.webp') center 25%/cover no-repeat;
-  transform:scale(1.03);animation:heroZoom 14s ease-out forwards}
+  transform:scale(1.03);animation:heroZoom 14s ease-out forwards;
+}
 @keyframes heroZoom{from{transform:scale(1.03)}to{transform:scale(1)}}
 .hero-content{position:relative}
-.hero-eyebrow{font-size:0.80rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:.9rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
-.hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:200;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1}
-.hero-sub{font-family:'Lora',serif;font-style:italic;font-size:.95rem;letter-spacing:.08em;color:rgba(245,243,239,.92);margin-top:.9rem;animation:fadeUp 1.2s ease .6s both}
+.hero-eyebrow{font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:.9rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
+.hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2.2rem,5.5vw,4.5rem);font-weight:200;letter-spacing:.22em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1}
+.hero-sub{font-family:'Lora',serif;font-style:italic;font-size:.9rem;letter-spacing:.08em;color:rgba(245,243,239,.65);margin-top:.9rem;animation:fadeUp 1.2s ease .6s both}
 
-/* FILTRES */
-.filters{
-  padding:3rem 4rem 0;
-  display:flex;align-items:center;
-  border-bottom:1px solid rgba(255,255,255,.05);
-  gap:0;
-}
-.filter-btn{
-  background:none;border:none;
-  font-family:'Raleway',sans-serif;
-  font-size:0.80rem;letter-spacing:.35em;text-transform:uppercase;
-  color:rgba(245,243,239,.92);
-  padding:.9rem 1.8rem;
-  transition:color .35s;position:relative;font-weight:400;
-}
-.filter-btn::after{
-  content:'';position:absolute;bottom:-1px;left:50%;right:50%;
-  height:1px;background:var(--gold);
-  transition:left .45s cubic-bezier(0.22,1,0.36,1),right .45s cubic-bezier(0.22,1,0.36,1);
-}
-.filter-btn.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
-.filter-btn.active::after{left:0;right:0}
-.filter-btn:hover{color:rgba(201,169,110,1.0)}
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .95s ease,transform .95s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
-/* GRILLE */
-.blog-wrap{padding:4rem 4rem 8rem}
+/* ══════════════════════════════════════
+   ZONE 1 — VF IMAGES : ÉCRITS
+══════════════════════════════════════ */
+.vf-zone{padding:6rem 4rem 7rem;background:var(--dark)}
 
-/* Layout asymétrique — featured grand + grille */
-.blog-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  grid-template-rows:auto;
-  gap:2px;
+.zone-intro{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:3.5rem;padding-bottom:2.5rem;
+  border-bottom:1px solid rgba(255,255,255,.04);
 }
+.zone-eyebrow{
+  font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:.52em;
+  text-transform:uppercase;color:rgba(201,169,110,.8);font-weight:400;margin-bottom:.6rem;
+}
+.zone-name{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(1.4rem,2.5vw,2rem);
+  font-weight:400;color:var(--light);letter-spacing:.02em;
+}
+.zone-link{
+  font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:.4em;
+  text-transform:uppercase;color:rgba(201,169,110,.6);font-weight:400;
+  text-decoration:none;display:flex;align-items:center;gap:.6rem;
+  transition:color .35s;white-space:nowrap;
+}
+.zone-link:hover{color:rgba(201,169,110,1.0)}
+.zone-link-line{width:16px;height:1px;background:currentColor;opacity:.5;transition:width .4s}
+.zone-link:hover .zone-link-line{width:28px}
 
-/* CARTE FEATURED */
-.card-featured{
-  grid-column:1 / -1;
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  background:var(--dark2);
-  cursor:none;
-  overflow:hidden;
+/* Featured article */
+.art-featured{
+  display:grid;grid-template-columns:1.35fr 1fr;
+  background:#111;margin-bottom:2px;cursor:none;overflow:hidden;
 }
-.card-featured .card-image{
-  height:100%;min-height:460px;
-  overflow:hidden;position:relative;
+.art-featured-img{position:relative;overflow:hidden;min-height:500px}
+.art-featured-img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:brightness(.76);
+  transition:transform 1.7s cubic-bezier(0.25,0.46,0.45,0.94),filter 1s ease;
 }
-.card-featured .card-body{
-  padding:3.5rem;
+.art-featured:hover .art-featured-img img{transform:scale(1.04);filter:brightness(.86)}
+.art-badge{
+  position:absolute;top:1.5rem;left:1.5rem;
+  font-family:'Raleway',sans-serif;font-size:0.60rem;letter-spacing:.4em;
+  text-transform:uppercase;font-weight:400;
+  padding:.35rem .9rem;
+  background:rgba(10,10,10,.65);border:1px solid rgba(255,255,255,.08);
+  color:rgba(245,243,239,.8);
+}
+.art-featured-body{
+  padding:4.5rem 3.5rem;
   display:flex;flex-direction:column;justify-content:center;
 }
 
-/* CARTE STANDARD */
-.card{
-  background:var(--dark2);
-  cursor:none;overflow:hidden;
+/* Standard card grid */
+.art-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px}
+.art-card{
+  background:#111;cursor:none;overflow:hidden;
   display:flex;flex-direction:column;
 }
-.card .card-image{
-  height:260px;overflow:hidden;position:relative;
-}
-.card .card-body{
-  padding:2rem 2rem 2.2rem;
-  display:flex;flex-direction:column;flex:1;
-}
-
-/* IMAGE */
-.card-image img{
+.art-card.reveal:nth-child(2){transition-delay:.12s}
+.art-card-img{height:290px;overflow:hidden;position:relative}
+.art-card-img img{
   width:100%;height:100%;object-fit:cover;display:block;
-  filter:brightness(.82);
-  transition:transform 1.4s cubic-bezier(0.25,0.46,0.45,0.94),filter 1s ease;
+  filter:brightness(.74);
+  transition:transform 1.5s cubic-bezier(0.25,0.46,0.45,0.94),filter 1s ease;
 }
-.card:hover .card-image img,
-.card-featured:hover .card-image img{
-  transform:scale(1.04);filter:brightness(.92);
-}
+.art-card:hover .art-card-img img{transform:scale(1.04);filter:brightness(.86)}
+.art-card-body{padding:2.2rem 2rem 2.5rem;display:flex;flex-direction:column;flex:1}
 
-/* TYPE BADGE */
-.card-type{
-  position:absolute;top:1.2rem;left:1.2rem;
-  display:inline-flex;align-items:center;gap:.4rem;
-  font-size:0.75rem;letter-spacing:.3em;text-transform:uppercase;
-  font-weight:400;padding:.4rem .8rem;
-  font-family:'Raleway',sans-serif;
+/* Shared article elements */
+.art-tag{
+  font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:.44em;
+  text-transform:uppercase;color:rgba(201,169,110,.75);font-weight:400;margin-bottom:.4rem;
 }
-.tag-article{
-  background:rgba(10,10,10,.65);
-  color:rgba(245,243,239,.92);
-  border:1px solid rgba(255,255,255,.08);
+.art-date{
+  font-family:'Raleway',sans-serif;font-size:0.62rem;letter-spacing:.25em;
+  color:rgba(245,243,239,.32);font-weight:300;margin-bottom:1.3rem;
 }
-.tag-vlog{
-  background:rgba(201,169,110,1.0);
-  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);
-  border:1px solid rgba(201,169,110,1.0);
-}
-.tag-vlog svg{opacity:.8}
-
-/* META */
-.card-meta{
-  display:flex;align-items:center;gap:1rem;
-  margin-bottom:1rem;
-}
-.card-tag{
-  font-size:0.75rem;letter-spacing:.38em;text-transform:uppercase;
-  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-weight:400;opacity:.8;
-}
-.card-date{
-  font-size:0.75rem;letter-spacing:.25em;
-  color:rgba(245,243,239,.92);font-weight:300;
-}
-
-/* TITRES */
-.card-title{
+.art-title{
   font-family:'Bodoni Moda',serif;
-  font-size:clamp(1.4rem,2.5vw,2rem);
-  font-weight:400;letter-spacing:.03em;
-  line-height:1.25;color:var(--light);
-  margin-bottom:1.2rem;
+  font-size:clamp(1.3rem,2.1vw,1.8rem);
+  font-weight:400;letter-spacing:.02em;line-height:1.25;color:var(--light);margin-bottom:1.1rem;
 }
-.card-title-sm{
+.art-title-sm{
   font-family:'Bodoni Moda',serif;
-  font-size:clamp(1.05rem,1.8vw,1.3rem);
-  font-weight:400;letter-spacing:.03em;
-  line-height:1.3;color:var(--light);
-  margin-bottom:.9rem;
+  font-size:clamp(1.05rem,1.4vw,1.25rem);
+  font-weight:400;letter-spacing:.02em;line-height:1.3;color:var(--light);margin-bottom:.9rem;
+}
+.art-excerpt{
+  font-family:'Lora',serif;font-size:.82rem;font-style:italic;
+  line-height:1.85;color:rgba(245,243,239,.52);flex:1;margin-bottom:1.5rem;
+}
+.art-read{
+  display:flex;align-items:center;gap:.7rem;
+  font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:.42em;
+  text-transform:uppercase;color:rgba(201,169,110,.55);font-weight:400;
+  margin-top:auto;transition:color .35s;
+}
+.art-featured:hover .art-read,.art-card:hover .art-read{color:rgba(201,169,110,1.0)}
+.art-read-line{width:16px;height:1px;background:currentColor;opacity:.4;transition:width .45s,opacity .45s}
+.art-featured:hover .art-read-line,.art-card:hover .art-read-line{width:30px;opacity:.8}
+
+/* ══════════════════════════════════════
+   PIVOT — THE LENS OF WONDER
+══════════════════════════════════════ */
+.low-pivot{
+  padding:7.5rem 4rem;
+  background:#111;text-align:center;
+  position:relative;overflow:hidden;
+}
+.pivot-deco{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(201,169,110,.03) 0%,transparent 65%);
+}
+/* Vertical line that grows on scroll-in */
+.pivot-line-v{
+  width:1px;height:0;background:rgba(201,169,110,.3);
+  margin:0 auto;
+  transition:height 1.3s cubic-bezier(0.22,1,0.36,1);
+}
+.low-pivot.in-view .pivot-line-v{height:60px}
+
+.pivot-eyebrow{
+  font-family:'Raleway',sans-serif;font-size:0.62rem;letter-spacing:.72em;
+  text-transform:uppercase;color:rgba(201,169,110,.45);font-weight:400;
+  margin:1.8rem 0 1.2rem;
+}
+.pivot-title{
+  font-family:'Bodoni Moda',serif;font-style:italic;
+  font-size:clamp(1.9rem,4vw,3.4rem);
+  font-weight:400;color:var(--light);line-height:1.18;
+  letter-spacing:.01em;margin:0 auto 1rem;
+  max-width:560px;
+}
+.pivot-sub{
+  font-family:'Lora',serif;font-style:italic;
+  font-size:.84rem;letter-spacing:.07em;
+  color:rgba(245,243,239,.35);margin-bottom:0;
 }
 
-/* EXCERPT */
-.card-excerpt{
-  font-family:'Lora',serif;
-  font-size:.8rem;font-style:italic;
-  line-height:1.85;
-  color:rgba(245,243,239,.92);
-  flex:1;margin-bottom:1.5rem;
+/* Horizontal gold line that extends on scroll-in */
+.pivot-line-h{
+  width:0;height:1px;background:rgba(201,169,110,.18);
+  margin:2.8rem auto;
+  transition:width 1.5s cubic-bezier(0.22,1,0.36,1) .2s;
 }
-.card-featured .card-excerpt{font-size:.88rem}
+.low-pivot.in-view .pivot-line-h{width:220px}
 
-/* LIRE */
-.card-read{
-  display:flex;align-items:center;gap:.8rem;
-  font-size:0.80rem;letter-spacing:.38em;text-transform:uppercase;
-  color:rgba(201,169,110,1.0);font-weight:400;
-  transition:color .3s;margin-top:auto;
+.pivot-stats{
+  display:flex;justify-content:center;gap:4.5rem;margin-bottom:3rem;
 }
-.card:hover .card-read,
-.card-featured:hover .card-read{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
-.read-line{
-  width:20px;height:1px;
-  background:var(--gold);opacity:.4;
-  transition:width .4s ease,opacity .4s;
+.pivot-stat-n{
+  font-family:'Raleway',sans-serif;font-size:1.5rem;
+  font-weight:200;letter-spacing:.1em;color:var(--light);
+  display:block;margin-bottom:.35rem;
 }
-.card:hover .read-line,
-.card-featured:hover .read-line{width:36px;opacity:.8}
+.pivot-stat-l{
+  font-family:'Raleway',sans-serif;font-size:0.58rem;
+  letter-spacing:.44em;text-transform:uppercase;
+  color:rgba(245,243,239,.28);font-weight:300;display:block;
+}
+.pivot-cta-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.pivot-cta{
+  display:inline-flex;align-items:center;gap:.65rem;
+  padding:.78rem 2.2rem;
+  font-family:'Raleway',sans-serif;font-size:0.62rem;letter-spacing:.4em;
+  text-transform:uppercase;font-weight:400;text-decoration:none;
+  border:1px solid rgba(255,255,255,.1);color:rgba(245,243,239,.5);
+  transition:border-color .4s,color .4s,background .4s;
+}
+.pivot-cta:hover{
+  border-color:rgba(201,169,110,.4);
+  color:rgba(201,169,110,1.0);background:rgba(201,169,110,.04);
+}
+.pivot-cta svg{opacity:.45;transition:opacity .4s}
+.pivot-cta:hover svg{opacity:1}
 
-/* REVEAL */
+/* ══════════════════════════════════════
+   ZONE 2 — THE LENS OF WONDER
+══════════════════════════════════════ */
+.low-zone{padding:6rem 4rem 8rem;background:#0d0d0d}
 
-/* FOOTER */
-.blog-cta{padding:5rem 4rem}
+.low-zone-intro{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:3.5rem;padding-bottom:2rem;
+  border-bottom:1px solid rgba(255,255,255,.03);
+}
+.low-zone-eyebrow{
+  font-family:'Raleway',sans-serif;font-size:0.62rem;letter-spacing:.52em;
+  text-transform:uppercase;color:rgba(201,169,110,.42);font-weight:400;margin-bottom:.5rem;
+}
+.low-zone-name{
+  font-family:'Raleway',sans-serif;font-weight:200;
+  font-size:clamp(1.1rem,2vw,1.65rem);
+  letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.88);
+}
 
+/* Sub-section headers (YouTube / Instagram) */
+.sub-header{display:flex;align-items:center;gap:1.2rem;margin-bottom:2rem}
+.sub-header-label{
+  font-family:'Raleway',sans-serif;font-size:0.60rem;letter-spacing:.48em;
+  text-transform:uppercase;color:rgba(245,243,239,.22);font-weight:300;white-space:nowrap;
+}
+.sub-header-line{flex:1;height:1px;background:rgba(255,255,255,.04)}
+
+/* YouTube grid — large card + 2 smaller */
+.yt-grid{
+  display:grid;
+  grid-template-columns:1.65fr 1fr 1fr;
+  gap:1.4rem;
+  margin-bottom:4.5rem;
+}
+.yt-card{cursor:none}
+.yt-thumb{position:relative;overflow:hidden;aspect-ratio:16/9;background:#111}
+.yt-thumb img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:brightness(.66) saturate(.78);
+  transition:transform 1.5s cubic-bezier(0.25,0.46,0.45,0.94),filter .8s ease;
+}
+.yt-card:hover .yt-thumb img{transform:scale(1.05);filter:brightness(.82) saturate(.9)}
+.yt-play{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:50px;height:50px;border-radius:50%;
+  background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .45s cubic-bezier(0.22,1,0.36,1);
+}
+.yt-card:hover .yt-play{
+  background:rgba(201,169,110,.18);border-color:rgba(201,169,110,.5);
+  transform:translate(-50%,-50%) scale(1.1);
+}
+.yt-play svg{margin-left:3px}
+.yt-duration{
+  position:absolute;bottom:.6rem;right:.65rem;
+  font-family:'Raleway',sans-serif;font-size:0.58rem;letter-spacing:.1em;
+  color:rgba(245,243,239,.75);background:rgba(10,10,10,.65);padding:.18rem .5rem;
+}
+.yt-body{padding:.95rem 0 0}
+.yt-low-badge{
+  font-family:'Raleway',sans-serif;font-size:0.58rem;letter-spacing:.42em;
+  text-transform:uppercase;color:rgba(201,169,110,.38);font-weight:400;
+  margin-bottom:.38rem;display:flex;align-items:center;gap:.5rem;
+}
+.yt-low-badge i{width:12px;height:1px;background:rgba(201,169,110,.3);display:inline-block;font-style:normal}
+.yt-title{
+  font-family:'Raleway',sans-serif;font-weight:300;
+  font-size:clamp(.88rem,1.05vw,.98rem);
+  color:rgba(245,243,239,.8);letter-spacing:.04em;line-height:1.45;margin-bottom:.42rem;
+}
+.yt-meta{
+  font-family:'Lora',serif;font-style:italic;
+  font-size:.72rem;color:rgba(245,243,239,.3);
+}
+.yt-grid .yt-card:nth-child(2).reveal{transition-delay:.1s}
+.yt-grid .yt-card:nth-child(3).reveal{transition-delay:.2s}
+
+/* Instagram strip */
+.ig-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem}
+.ig-label{
+  font-family:'Raleway',sans-serif;font-size:0.60rem;letter-spacing:.48em;
+  text-transform:uppercase;color:rgba(245,243,239,.22);font-weight:300;
+}
+.ig-follow-link{
+  font-family:'Raleway',sans-serif;font-size:0.60rem;letter-spacing:.36em;
+  text-transform:uppercase;color:rgba(201,169,110,.5);font-weight:400;
+  text-decoration:none;display:flex;align-items:center;gap:.45rem;transition:color .35s;
+}
+.ig-follow-link:hover{color:rgba(201,169,110,1.0)}
+.ig-arrow{transition:transform .35s}
+.ig-follow-link:hover .ig-arrow{transform:translateX(3px)}
+.ig-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:2px}
+.ig-post{
+  aspect-ratio:1;overflow:hidden;position:relative;
+  cursor:none;background:#111;
+}
+.ig-post img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:brightness(.65) saturate(.78);
+  transition:transform 1.3s cubic-bezier(0.25,0.46,0.45,0.94),filter .8s ease;
+}
+.ig-post:hover img{transform:scale(1.08);filter:brightness(.88) saturate(.95)}
+.ig-post-overlay{
+  position:absolute;inset:0;opacity:0;
+  background:rgba(201,169,110,.06);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .4s;
+}
+.ig-post:hover .ig-post-overlay{opacity:1}
+.ig-post-overlay svg{opacity:.5}
+
+/* ── CTA FOOTER ── */
+.blog-cta{padding:5.5rem 4rem;text-align:center;border-top:1px solid rgba(255,255,255,.04);background:var(--dark)}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1100px){
+  .yt-grid{grid-template-columns:1fr 1fr;gap:1.2rem}
+  .yt-grid .yt-card:first-child{grid-column:1/-1}
+}
 @media(max-width:900px){
   nav{padding:1.5rem 2rem}
   .blog-cta{padding:3.5rem 2rem}
-  .hero{padding:0 2rem 3.5rem;height:35vh}
-  .filters{padding:2rem 2rem 0;flex-wrap:wrap}
-  .filter-btn{padding:.7rem 1rem;font-size:0.80rem}
-  .blog-wrap{padding:3rem 1.5rem 6rem}
-  .blog-grid{grid-template-columns:1fr;gap:2px}
-  .card-featured{grid-template-columns:1fr}
-  .card-featured .card-image{min-height:260px}
-  .card-featured .card-body{padding:2rem}
-  
+  .hero{padding:0 2rem 3.5rem;height:55vh}
+  .vf-zone{padding:4rem 1.8rem 5rem}
+  .zone-intro{flex-direction:column;align-items:flex-start;gap:1.2rem}
+  .art-featured{grid-template-columns:1fr}
+  .art-featured-img{min-height:260px}
+  .art-featured-body{padding:2.2rem 1.8rem 2.5rem}
+  .art-grid{grid-template-columns:1fr;gap:2px}
+  .low-pivot{padding:5rem 2rem}
+  .pivot-stats{gap:2.5rem}
+  .low-zone{padding:4rem 1.8rem 5.5rem}
+  .low-zone-intro{flex-direction:column;align-items:flex-start;gap:1rem}
+  .yt-grid{grid-template-columns:1fr;gap:1.2rem}
+  .yt-grid .yt-card:first-child{grid-column:auto}
+  .ig-strip{grid-template-columns:repeat(3,1fr)}
 }
-
-@media(max-width:900px){}
-
-@media(max-width:768px){
-  .hero{height:35vh;padding:0 2rem 3rem}
-  .filters{padding:2rem 1.8rem 0;flex-wrap:wrap}
-  .filter-btn{padding:.7rem 1.2rem}
-  .blog-grid{gap:1.5rem;padding:3rem 1.8rem 5rem}
-  .article-body{padding:4rem 1.8rem 5rem}
-  .article-content{padding:0}
-  
+@media(max-width:600px){
+  .pivot-title{font-size:1.85rem}
+  .pivot-stats{gap:2rem}
+  .ig-strip{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:480px){
-  .hero{height:35vh}
-  .blog-cta{padding:2.5rem 1.2rem}
-  .filter-btn{padding:.6rem .9rem;font-size:0.75rem}
-  .blog-grid{padding:2.5rem 1.2rem 4rem;gap:1rem}
-  .article-body{padding:3rem 1.2rem 4rem}
-  
-}
-@media(max-width:380px){
-  
-  
+  .hero{height:50vh}
+  .art-card-img{height:220px}
+  .pivot-cta-row{flex-direction:column;align-items:center}
+  .pivot-cta{width:100%;max-width:260px;justify-content:center}
+  .blog-cta{padding:3rem 1.2rem}
+  .ig-strip{grid-template-columns:repeat(2,1fr)}
 }
 
 /* Curseur custom désactivé sur mobile */
 @media(max-width:900px){
   .cursor,.cursor-ring{display:none!important}
   body{cursor:auto!important}
-  a,button,.photo-item,.print-card,.btn,.fmt-option,.order-btn,.filter-btn{cursor:pointer!important}
+  a,button,.art-card,.art-featured,.yt-card,.ig-post{cursor:pointer!important}
 }
 
 /* ══ PROTECTION PHOTOS ══ */
-img {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  user-drag: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-.photo-item img,
-.print-image img,
-.gallery-card img,
-.detail-image img,
-.about-image img,
-.intro-photo-col img,
-.hero-bg,
-.card-image img {
-  pointer-events: none;
-  -webkit-touch-callout: none;
-}
-/* Watermark invisible CSS — décourage la capture d'écran automatisée */
-.photo-item::after,
-.print-image::after,
-.gallery-card::after,
-.detail-image::after {
-  content: '© VF Images — vfimages.com';
-  position: absolute;
-  bottom: 8px;
-  right: 10px;
-  font-size: .38rem;
-  letter-spacing: .12em;
-  color: rgba(255,255,255,.18);
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
-  pointer-events: none;
-  z-index: 10;
-  text-transform: uppercase;
+img{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.art-featured-img img,.art-card-img img,.yt-thumb img,.ig-post img{pointer-events:none;-webkit-touch-callout:none}
+.art-featured-img::after,.art-card-img::after{
+  content:'© VF Images — vfimages.com';
+  position:absolute;bottom:8px;right:10px;
+  font-size:.38rem;letter-spacing:.12em;
+  color:rgba(255,255,255,.14);font-family:'Raleway',sans-serif;font-weight:300;
+  pointer-events:none;z-index:10;text-transform:uppercase;
 }
 
-/* ══════════════════════════════════════
-   ACCESSIBILITÉ — Focus & Navigation clavier
-   ══════════════════════════════════════ */
+/* ══ ACCESSIBILITÉ ══ */
+.skip-link{position:absolute;top:-100px;left:1rem;background:var(--gold);color:var(--dark);padding:.6rem 1.2rem;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;font-family:'Raleway',sans-serif;font-weight:400;z-index:9999;transition:top .2s;border-radius:0}
+.skip-link:focus{top:1rem}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:0}
+a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 
-/* Skip link — navigation clavier */
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 1rem;
-  background: var(--gold);
-  color: var(--dark);
-  padding: .6rem 1.2rem;
-  font-size: .65rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  z-index: 9999;
-  transition: top .2s;
-  border-radius: 0;
-}
-.skip-link:focus {
-  top: 1rem;
-}
+/* ══ BANDEAU COOKIES ══ */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,.97);border-top:1px solid rgba(201,169,110,1.0);padding:1.5rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;transform:translateY(100%);transition:transform .5s cubic-bezier(0.22,1,0.36,1)}
+#cookie-banner.visible{transform:translateY(0)}
+#cookie-banner.hidden{transform:translateY(100%)}
+.cookie-text{font-family:'Raleway',sans-serif;font-size:.58rem;font-weight:300;letter-spacing:.12em;color:rgba(245,243,239,.92);line-height:1.7;max-width:680px}
+.cookie-text a{color:rgba(201,169,110,1.0);text-decoration:none;border-bottom:1px solid rgba(201,169,110,1.0)}
+.cookie-actions{display:flex;gap:1rem;flex-shrink:0}
+.cookie-btn{font-family:'Raleway',sans-serif;font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;font-weight:400;padding:.7rem 1.8rem;border:none;cursor:pointer;transition:background .3s,color .3s,opacity .3s;white-space:nowrap}
+.cookie-btn-accept{background:var(--gold);color:var(--dark)}.cookie-btn-accept:hover{opacity:.85}
+.cookie-btn-refuse{background:transparent;color:rgba(245,243,239,.92);border:1px solid rgba(255,255,255,.1)}.cookie-btn-refuse:hover{color:var(--light);border-color:rgba(255,255,255,.3)}
+@media(max-width:768px){#cookie-banner{flex-direction:column;padding:1.5rem 1.8rem;gap:1.2rem}.cookie-actions{width:100%}.cookie-btn{flex:1;text-align:center}}
+@media(max-width:480px){#cookie-banner{padding:1.2rem}.cookie-text{font-size:0.80rem}}
 
-/* Focus visible sur tous les éléments interactifs */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible,
-[tabindex]:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 3px;
-  border-radius: 0;
-}
-
-/* Supprimer outline par défaut uniquement si focus-visible géré */
-a:focus:not(:focus-visible),
-button:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* Navigation clavier visible sur les cartes */
-.photo-item:focus-within,
-.print-card:focus-within,
-.gallery-card:focus-within {
-  outline: 1px solid rgba(201,169,110,1.0);
-}
-
-/* Réduction des animations si préférence utilisateur */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* ══ BANDEAU COOKIES RGPD ══ */
-#cookie-banner {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 999;
-  background: rgba(10,10,10,.97);
-  border-top: 1px solid rgba(201,169,110,1.0);
-  padding: 1.5rem 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  transform: translateY(100%);
-  transition: transform .5s cubic-bezier(0.22,1,0.36,1);
-}
-#cookie-banner.visible { transform: translateY(0); }
-#cookie-banner.hidden  { transform: translateY(100%); }
-.cookie-text {
-  font-family: 'Raleway', sans-serif;
-  font-size: .58rem;
-  font-weight: 300;
-  letter-spacing: .12em;
-  color: rgba(245,243,239,.92);
-  line-height: 1.7;
-  max-width: 680px;
-}
-.cookie-text a {
-  color: rgba(201,169,110,1.0);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(201,169,110,1.0);
-}
-.cookie-text a:hover { color: var(--gold); }
-.cookie-actions {
-  display: flex;
-  gap: 1rem;
-  flex-shrink: 0;
-}
-.cookie-btn {
-  font-family: 'Raleway', sans-serif;
-  font-size: .52rem;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  font-weight: 400;
-  padding: .7rem 1.8rem;
-  border: none;
-  cursor: pointer;
-  transition: background .3s, color .3s, opacity .3s;
-  white-space: nowrap;
-}
-.cookie-btn-accept {
-  background: var(--gold);
-  color: var(--dark);
-}
-.cookie-btn-accept:hover { opacity: .85; }
-.cookie-btn-refuse {
-  background: transparent;
-  color: rgba(245,243,239,.92);
-  border: 1px solid rgba(255,255,255,.1);
-}
-.cookie-btn-refuse:hover { color: var(--light); border-color: rgba(255,255,255,.3); }
-@media(max-width:768px){
-  #cookie-banner { flex-direction:column; padding:1.5rem 1.8rem; gap:1.2rem; }
-  .cookie-actions { width:100%; }
-  .cookie-btn { flex:1; text-align:center; }
-}
-@media(max-width:480px){
-  #cookie-banner { padding:1.2rem; }
-  .cookie-text { font-size:0.80rem; }
-}
-
-/* Boutons langue toujours cliquables */
-
-.lang-btn.active {
-  color: var(--gold) !important;
-  background: none !important;
-  border: none !important;
-}
-
-@media(max-width:900px){
-  .hero-eyebrow{font-size:.95rem;letter-spacing:.35em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  .hero-prenom{font-size:1.3rem;letter-spacing:.4em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  
-  
-  .hero-tagline{font-size:1.35rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .hero-sub{font-size:1.2rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .about-signature{font-size:2rem;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  .section-header{flex-direction:column;gap:.8rem;align-items:flex-start}
-  .portfolio-header,.gallery-header{flex-direction:column;gap:.8rem}
-  .hero-name{font-size:clamp(2.5rem,12vw,4rem)}
-  .cta-sub{font-size:.85rem;letter-spacing:.15em;color:rgba(245,243,239,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .panel-trigger{display:flex}
-}
+.lang-btn.active{color:var(--gold)!important;background:none!important;border:none!important}
 
 @media(max-width:900px){
   body{font-size:16px}
-  p,li,span,a,button,input,textarea,select,label{min-font-size:14px}
-  [style*="font-size:.3"],[style*="font-size:.4"],[style*="font-size:.5"]{font-size:.85rem !important}
-  
-  
-  
-  .intro-scroll span,.scroll-indicator span{font-size:0.85rem !important}
-  .caption-corner,.caption-below{font-size:0.85rem !important}
-  .photo-caption{font-size:0.85rem !important}
-  .overlay-lang{font-size:.75rem !important}
-  
-  .form-label,.form-underline-label{font-size:.75rem !important}
-  .subject-btn{font-size:.72rem !important}
-  
-  
-  .hero-eyebrow,.hero-fineart{font-size:.9rem !important}
-  .about-body{font-size:1rem !important;line-height:1.9}
-  
-  .card-price,.card-format,.card-edition{font-size:.8rem !important}
-  .blog-meta,.blog-category,.article-meta{font-size:.8rem !important}
-  .panel-label{font-size:.75rem !important}
-  .lb-desc-title{font-size:.85rem !important}
-  .lb-desc-text{font-size:.95rem !important}
+  .overlay-lang{font-size:.75rem!important}
+  .hero-eyebrow{font-size:.9rem!important;letter-spacing:.35em}
+  .panel-trigger{display:flex}
 }
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -476,10 +432,6 @@ button:focus:not(:focus-visible) {
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="VF Images">
-
-<!-- Analytics Umami — RGPD friendly, sans cookies -->
-<!-- ⚠️  Remplacer 1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1 par votre ID sur umami.is -->
-
 </head>
 <body>
 <a href="#main-content" class="skip-link">Aller au contenu</a>
@@ -492,314 +444,394 @@ button:focus:not(:focus-visible) {
         src="images/logo_white2.png"
         srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="VF Images"
-        loading="eager"
-        decoding="async"></a>
+        alt="VF Images" loading="eager" decoding="async"></a>
   <ul>
     <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
     <li><a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
     <li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li>
     <li><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a></li>
-    <li><a href="blog.html" class="active" data-fr="Blog" data-en="Blog">Blog</a></li>
+    <li><a href="blog.html" class="active" data-fr="Journal" data-en="Journal">Journal</a></li>
     <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem">
     <div style="display:flex;align-items:center;gap:.4rem">
-    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
-    <span style="color:rgba(245,243,239,.92);font-size:0.85rem">/</span>
-    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-  </div>
+      <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+      <span style="color:rgba(245,243,239,.92);font-size:0.85rem">/</span>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav-overlay" id="nav-overlay">
-  <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a><a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
-  <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
-  <a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+  <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+  <a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
+  <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
+  <a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
+  <a href="blog.html" data-fr="Journal" data-en="Journal">Journal</a>
+  <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
   <div class="overlay-lang"><span>FR</span> / EN</div>
 </div>
 
+<!-- ══ HERO ══ -->
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">VF Images</p>
-    <h1 class="hero-title" data-fr="Blog & Vlog" data-en="Blog & Vlog">Blog & Vlog</h1>
-    <p class="hero-sub" data-fr="Récits, coulisses et regards sur le monde" data-en="Stories, behind the scenes and world perspectives">Récits, coulisses et regards sur le monde</p>
-  </div>
-</div>
-
-<div class="filters">
-  <button class="filter-btn active" data-filter="all" data-fr="Tout" data-en="All">Tout</button>
-  <button class="filter-btn" data-filter="article" data-fr="Articles" data-en="Articles">Articles</button>
-  <button class="filter-btn" data-filter="vlog" data-fr="Vlogs" data-en="Vlogs">Vlogs</button>
-  <button class="filter-btn" data-filter="bali" data-fr="Bali" data-en="Bali">Bali</button>
-  <button class="filter-btn" data-filter="voyages" data-fr="Voyages" data-en="Travels">Voyages</button>
-</div>
-
-<div class="blog-wrap">
-  <div class="blog-grid" id="blogGrid">
-    
-    <article class="card card-featured reveal" onclick="window.location='blog-article.html'">
-      <div class="card-image">
-        <img
-        src="images/le-barong-et-les-masques-du-temps.jpg"
-        srcset="images/le-barong-et-les-masques-du-temps-small.webp 640w, images/le-barong-et-les-masques-du-temps-medium.webp 1200w, images/le-barong-et-les-masques-du-temps-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Le Barong et les masques du temps"
-        loading="eager"
-        decoding="async">
-        <div class="card-type tag-article">Article</div>
-      </div>
-      <div class="card-body">
-        <div class="card-meta">
-          <span class="card-tag">Bali</span>
-          <span class="card-date">Avril 2026</span>
-        </div>
-        <h2 class="card-title">Le Barong et les masques du temps</h2>
-        <p class="card-excerpt">Il y a des cérémonies qui ne se regardent pas — elles se traversent. Le Barong était là, entre les frangipaniers, dans la lumière rasante du soir.</p>
-        <div class="card-read">
-          <span>Lire</span>
-          <div class="read-line"></div>
-        </div>
-      </div>
-    </article>
-    <article class="card reveal" onclick="window.location='blog-article.html'">
-      <div class="card-image">
-        <img
-        src="images/48h-a-manhattan-ce-que-la-ville-garde-pour-elle.jpg"
-        srcset="images/48h-a-manhattan-ce-que-la-ville-garde-pour-elle-small.webp 640w, images/48h-a-manhattan-ce-que-la-ville-garde-pour-elle-medium.webp 1200w, images/48h-a-manhattan-ce-que-la-ville-garde-pour-elle-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="48h à Manhattan — ce que la ville garde pour elle"
-        loading="eager"
-        decoding="async">
-        <div class="card-type tag-vlog"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>Vlog</div>
-      </div>
-      <div class="card-body">
-        <div class="card-meta">
-          <span class="card-tag">New York</span>
-          <span class="card-date">Mars 2026</span>
-        </div>
-        <h2 class="card-title-sm">48h à Manhattan — ce que la ville garde pour elle</h2>
-        <p class="card-excerpt">Un séjour court, une ville immense. J'avais un appareil, une paire de chaussures et l'envie de ne pas faire les mêmes photos que tout le monde.</p>
-        <div class="card-read">
-          <span>Lire</span>
-          <div class="read-line"></div>
-        </div>
-      </div>
-    </article>
-    <article class="card reveal" onclick="window.location='blog-article.html'">
-      <div class="card-image">
-        <img
-        src="images/une-fenetre-sur-locean.jpg"
-        srcset="images/une-fenetre-sur-locean-small.webp 640w, images/une-fenetre-sur-locean-medium.webp 1200w, images/une-fenetre-sur-locean-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Une fenêtre sur l'océan"
-        loading="lazy"
-        decoding="async">
-        <div class="card-type tag-article">Article</div>
-      </div>
-      <div class="card-body">
-        <div class="card-meta">
-          <span class="card-tag">La Réunion</span>
-          <span class="card-date">Février 2026</span>
-        </div>
-        <h2 class="card-title-sm">Une fenêtre sur l'océan</h2>
-        <p class="card-excerpt">L'île Intense, comme ils disent. Je n'avais pas prévu d'y rester aussi longtemps. La lumière du soir sur les palmiers en a décidé autrement.</p>
-        <div class="card-read">
-          <span>Lire</span>
-          <div class="read-line"></div>
-        </div>
-      </div>
-    </article>
-    <article class="card reveal" onclick="window.location='blog-article.html'">
-      <div class="card-image">
-        <img
-        src="images/filmer-bali-entre-jungle-et-rizieres.jpg"
-        srcset="images/filmer-bali-entre-jungle-et-rizieres-small.webp 640w, images/filmer-bali-entre-jungle-et-rizieres-medium.webp 1200w, images/filmer-bali-entre-jungle-et-rizieres-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Filmer Bali — entre jungle et rizières"
-        loading="lazy"
-        decoding="async">
-        <div class="card-type tag-vlog"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>Vlog</div>
-      </div>
-      <div class="card-body">
-        <div class="card-meta">
-          <span class="card-tag">Bali</span>
-          <span class="card-date">Janvier 2026</span>
-        </div>
-        <h2 class="card-title-sm">Filmer Bali — entre jungle et rizières</h2>
-        <p class="card-excerpt">Un matin dans les rizières d'Ubud, caméra à l'épaule. Pas de plan, pas de script — juste suivre la lumière et voir ce qu'elle révèle.</p>
-        <div class="card-read">
-          <span>Lire</span>
-          <div class="read-line"></div>
-        </div>
-      </div>
-    </article>
-    <article class="card reveal" onclick="window.location='blog-article.html'">
-      <div class="card-image">
-        <img
-        src="images/pourquoi-je-photographie-encore-en-noir-et-blanc.jpg"
-        srcset="images/pourquoi-je-photographie-encore-en-noir-et-blanc-small.webp 640w, images/pourquoi-je-photographie-encore-en-noir-et-blanc-medium.webp 1200w, images/pourquoi-je-photographie-encore-en-noir-et-blanc-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Pourquoi je photographie encore en noir et blanc"
-        loading="lazy"
-        decoding="async">
-        <div class="card-type tag-article">Article</div>
-      </div>
-      <div class="card-body">
-        <div class="card-meta">
-          <span class="card-tag">Réflexion</span>
-          <span class="card-date">Décembre 2025</span>
-        </div>
-        <h2 class="card-title-sm">Pourquoi je photographie encore en noir et blanc</h2>
-        <p class="card-excerpt">Dans un monde saturé de couleurs, le N&B est devenu mon espace de résistance. Une manière de voir plus loin que la surface des choses.</p>
-        <div class="card-read">
-          <span>Lire</span>
-          <div class="read-line"></div>
-        </div>
-      </div>
-    </article>
+    <p class="hero-eyebrow" data-fr="VF Images" data-en="VF Images">VF Images</p>
+    <h1 class="hero-title" data-fr="Journal" data-en="Journal">Journal</h1>
+    <p class="hero-sub" data-fr="Écrits, vlogs et regards sur le monde" data-en="Writings, vlogs and gazes upon the world">Écrits, vlogs et regards sur le monde</p>
   </div>
 </div>
 
 <main id="main-content">
-<section class="blog-cta" style="text-align:center;border-top:1px solid rgba(255,255,255,.04)">
-  <p style="font-size:0.80rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem">Tirages Fine Art</p>
-  <h2 style="font-family:'Bodoni Moda',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:400;color:var(--light);margin-bottom:2.5rem" data-fr="Voir la collection Bali" data-en="View the Bali collection">Voir la collection Bali</h2>
-  <a href="boutique.html" style="display:inline-block;padding:1.1rem 3.5rem;border:1px solid var(--gold);color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-size:0.85rem;letter-spacing:.35em;text-transform:uppercase;text-decoration:none;font-family:'Raleway',sans-serif" data-fr="Voir la collection Bali" data-en="View the Bali collection">Voir la collection Bali</a>
+
+<!-- ══════════════════════════════════════════════════
+     ZONE 1 — VF IMAGES : ÉCRITS
+══════════════════════════════════════════════════ -->
+<section class="vf-zone" aria-label="Articles VF Images">
+
+  <div class="zone-intro">
+    <div>
+      <p class="zone-eyebrow" data-fr="VF Images — Écrits" data-en="VF Images — Writings">VF Images — Écrits</p>
+      <h2 class="zone-name" data-fr="Réflexions & coulisses" data-en="Reflections & behind the scenes">Réflexions & coulisses</h2>
+    </div>
+    <a href="blog-article.html" class="zone-link">
+      <span data-fr="Tous les articles" data-en="All articles">Tous les articles</span>
+      <span class="zone-link-line"></span>
+    </a>
+  </div>
+
+  <!-- Article featured -->
+  <article class="art-featured reveal" onclick="window.location='blog-article.html'" role="link" tabindex="0" aria-label="Lire : Le Barong et les masques du temps">
+    <div class="art-featured-img">
+      <img src="images/le-barong-et-les-masques-du-temps.jpg"
+           srcset="images/le-barong-et-les-masques-du-temps-small.webp 640w, images/le-barong-et-les-masques-du-temps-medium.webp 1200w, images/le-barong-et-les-masques-du-temps-large.webp 1920w"
+           sizes="(max-width:900px) 100vw, 58vw"
+           alt="Le Barong et les masques du temps — cérémonie balinaise"
+           loading="eager" decoding="async">
+      <div class="art-badge" data-fr="Article" data-en="Article">Article</div>
+    </div>
+    <div class="art-featured-body">
+      <p class="art-tag" data-fr="Bali · Cérémonies" data-en="Bali · Ceremonies">Bali · Cérémonies</p>
+      <p class="art-date">Avril 2026</p>
+      <h2 class="art-title" data-fr="Le Barong et les masques du temps" data-en="The Barong and the Masks of Time">Le Barong et les masques du temps</h2>
+      <p class="art-excerpt" data-fr="Il y a des cérémonies qui ne se regardent pas — elles se traversent. Le Barong était là, entre les frangipaniers, dans la lumière rasante du soir. Je ne cherchais pas à photographier. J'étais simplement là." data-en="There are ceremonies you don't observe — you live through them. The Barong was there, between the frangipani trees, in the raking evening light. I wasn't trying to photograph. I was simply there.">Il y a des cérémonies qui ne se regardent pas — elles se traversent. Le Barong était là, entre les frangipaniers, dans la lumière rasante du soir. Je ne cherchais pas à photographier. J'étais simplement là.</p>
+      <div class="art-read">
+        <span data-fr="Lire" data-en="Read">Lire</span>
+        <span class="art-read-line"></span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Articles grid -->
+  <div class="art-grid">
+    <article class="art-card reveal" onclick="window.location='blog-article.html'" role="link" tabindex="0" aria-label="Lire : Une fenêtre sur l'océan">
+      <div class="art-card-img">
+        <img src="images/une-fenetre-sur-locean.jpg"
+             srcset="images/une-fenetre-sur-locean-small.webp 640w, images/une-fenetre-sur-locean-medium.webp 1200w"
+             sizes="(max-width:900px) 100vw, 50vw"
+             alt="Une fenêtre sur l'océan — La Réunion"
+             loading="lazy" decoding="async">
+        <div class="art-badge" data-fr="Article" data-en="Article">Article</div>
+      </div>
+      <div class="art-card-body">
+        <p class="art-tag" data-fr="La Réunion" data-en="La Réunion">La Réunion</p>
+        <p class="art-date">Février 2026</p>
+        <h3 class="art-title-sm" data-fr="Une fenêtre sur l'océan" data-en="A window on the ocean">Une fenêtre sur l'océan</h3>
+        <p class="art-excerpt" data-fr="L'île Intense, comme ils disent. Je n'avais pas prévu d'y rester aussi longtemps. La lumière du soir sur les palmiers en a décidé autrement." data-en="The Intense Island, as they say. I hadn't planned to stay so long. The evening light on the palm trees decided otherwise.">L'île Intense, comme ils disent. Je n'avais pas prévu d'y rester aussi longtemps. La lumière du soir sur les palmiers en a décidé autrement.</p>
+        <div class="art-read">
+          <span data-fr="Lire" data-en="Read">Lire</span>
+          <span class="art-read-line"></span>
+        </div>
+      </div>
+    </article>
+
+    <article class="art-card reveal" onclick="window.location='blog-article.html'" role="link" tabindex="0" aria-label="Lire : Pourquoi je photographie encore en noir et blanc">
+      <div class="art-card-img">
+        <img src="images/pourquoi-je-photographie-encore-en-noir-et-blanc.jpg"
+             srcset="images/pourquoi-je-photographie-encore-en-noir-et-blanc-small.webp 640w, images/pourquoi-je-photographie-encore-en-noir-et-blanc-medium.webp 1200w"
+             sizes="(max-width:900px) 100vw, 50vw"
+             alt="Pourquoi je photographie encore en noir et blanc"
+             loading="lazy" decoding="async">
+        <div class="art-badge" data-fr="Réflexion" data-en="Reflection">Réflexion</div>
+      </div>
+      <div class="art-card-body">
+        <p class="art-tag" data-fr="Photographie" data-en="Photography">Photographie</p>
+        <p class="art-date">Décembre 2025</p>
+        <h3 class="art-title-sm" data-fr="Pourquoi je photographie encore en noir et blanc" data-en="Why I still shoot in black and white">Pourquoi je photographie encore en noir et blanc</h3>
+        <p class="art-excerpt" data-fr="Dans un monde saturé de couleurs, le N&B est devenu mon espace de résistance. Une manière de voir plus loin que la surface des choses." data-en="In a world saturated with color, black and white has become my space of resistance. A way of seeing beyond the surface of things.">Dans un monde saturé de couleurs, le N&B est devenu mon espace de résistance. Une manière de voir plus loin que la surface des choses.</p>
+        <div class="art-read">
+          <span data-fr="Lire" data-en="Read">Lire</span>
+          <span class="art-read-line"></span>
+        </div>
+      </div>
+    </article>
+  </div>
+
 </section>
+
+
+<!-- ══════════════════════════════════════════════════
+     PIVOT — THE LENS OF WONDER
+══════════════════════════════════════════════════ -->
+<section class="low-pivot" id="low-pivot" aria-label="The Lens of Wonder">
+  <div class="pivot-deco"></div>
+
+  <div class="pivot-line-v"></div>
+
+  <p class="pivot-eyebrow">The Lens of Wonder</p>
+
+  <h2 class="pivot-title" data-fr="Le même regard, moins filtré" data-en="The same gaze, unfiltered">Le même regard, moins filtré</h2>
+
+  <p class="pivot-sub" data-fr="Vlogs, instants et coulisses — Bali et au-delà" data-en="Vlogs, moments and behind the scenes — Bali and beyond">Vlogs, instants et coulisses — Bali et au-delà</p>
+
+  <div class="pivot-line-h"></div>
+
+  <div class="pivot-stats">
+    <div>
+      <span class="pivot-stat-n">6 000</span>
+      <span class="pivot-stat-l" data-fr="Abonnés" data-en="Followers">Abonnés</span>
+    </div>
+    <div>
+      <span class="pivot-stat-n">IG + YT</span>
+      <span class="pivot-stat-l" data-fr="Plateformes" data-en="Platforms">Plateformes</span>
+    </div>
+    <div>
+      <span class="pivot-stat-n">Bali</span>
+      <span class="pivot-stat-l" data-fr="Basé à" data-en="Based in">Basé à</span>
+    </div>
+  </div>
+
+  <div class="pivot-cta-row">
+    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="pivot-cta" aria-label="Instagram The Lens of Wonder (nouvelle fenêtre)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <span>Instagram</span>
+    </a>
+    <a href="https://www.youtube.com/@thelensofwonder" target="_blank" rel="noopener" class="pivot-cta" aria-label="YouTube The Lens of Wonder (nouvelle fenêtre)">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+      <span>YouTube</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     ZONE 2 — THE LENS OF WONDER : VLOGS & INSTANTS
+══════════════════════════════════════════════════ -->
+<section class="low-zone" aria-label="Vlogs et contenus The Lens of Wonder">
+
+  <div class="low-zone-intro">
+    <div>
+      <p class="low-zone-eyebrow" data-fr="The Lens of Wonder" data-en="The Lens of Wonder">The Lens of Wonder</p>
+      <p class="low-zone-name" data-fr="Vlogs & Instants" data-en="Vlogs & Moments">Vlogs & Instants</p>
+    </div>
+    <a href="https://www.youtube.com/@thelensofwonder" target="_blank" rel="noopener" class="zone-link">
+      <span data-fr="Voir la chaîne" data-en="View channel">Voir la chaîne</span>
+      <span class="zone-link-line"></span>
+    </a>
+  </div>
+
+  <!-- Sub-header YouTube -->
+  <div class="sub-header">
+    <span class="sub-header-label">YouTube</span>
+    <div class="sub-header-line"></div>
+  </div>
+
+  <!-- YouTube grid -->
+  <div class="yt-grid">
+
+    <!-- YT card featured -->
+    <article class="yt-card reveal" onclick="window.open('https://www.youtube.com/@thelensofwonder','_blank')" role="link" tabindex="0" aria-label="Voir : Bali à l'aube sur YouTube">
+      <div class="yt-thumb">
+        <img src="images/filmer-bali-entre-jungle-et-rizieres.jpg"
+             srcset="images/filmer-bali-entre-jungle-et-rizieres-small.webp 640w, images/filmer-bali-entre-jungle-et-rizieres-medium.webp 1200w"
+             sizes="(max-width:900px) 100vw, 55vw"
+             alt="Bali à l'aube — vlog rizières Ubud"
+             loading="lazy" decoding="async">
+        <div class="yt-play">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(245,243,239,.92)" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <span class="yt-duration">12:34</span>
+      </div>
+      <div class="yt-body">
+        <p class="yt-low-badge"><i></i><span>The Lens of Wonder</span></p>
+        <h3 class="yt-title" data-fr="Bali à l'aube — un matin dans les rizières d'Ubud" data-en="Bali at dawn — a morning in Ubud's rice fields">Bali à l'aube — un matin dans les rizières d'Ubud</h3>
+        <p class="yt-meta" data-fr="Bali · Mars 2026" data-en="Bali · March 2026">Bali · Mars 2026</p>
+      </div>
+    </article>
+
+    <!-- YT card small 1 -->
+    <article class="yt-card reveal" onclick="window.open('https://www.youtube.com/@thelensofwonder','_blank')" role="link" tabindex="0" aria-label="Voir : 48h à Manhattan sur YouTube">
+      <div class="yt-thumb">
+        <img src="images/48h-a-manhattan-ce-que-la-ville-garde-pour-elle.jpg"
+             srcset="images/48h-a-manhattan-ce-que-la-ville-garde-pour-elle-small.webp 640w, images/48h-a-manhattan-ce-que-la-ville-garde-pour-elle-medium.webp 1200w"
+             sizes="(max-width:900px) 100vw, 25vw"
+             alt="48h à Manhattan — vlog"
+             loading="lazy" decoding="async">
+        <div class="yt-play">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(245,243,239,.92)" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <span class="yt-duration">8:17</span>
+      </div>
+      <div class="yt-body">
+        <p class="yt-low-badge"><i></i><span>The Lens of Wonder</span></p>
+        <h3 class="yt-title" data-fr="48h à Manhattan — filmer la ville sans la mimer" data-en="48h in Manhattan — filming the city without mimicking it">48h à Manhattan — filmer la ville sans la mimer</h3>
+        <p class="yt-meta" data-fr="New York · Janvier 2026" data-en="New York · January 2026">New York · Janvier 2026</p>
+      </div>
+    </article>
+
+    <!-- YT card small 2 -->
+    <article class="yt-card reveal" onclick="window.open('https://www.youtube.com/@thelensofwonder','_blank')" role="link" tabindex="0" aria-label="Voir : Cérémonie Barong sur YouTube">
+      <div class="yt-thumb">
+        <img src="images/le-barong-et-les-masques-du-temps.jpg"
+             srcset="images/le-barong-et-les-masques-du-temps-small.webp 640w, images/le-barong-et-les-masques-du-temps-medium.webp 1200w"
+             sizes="(max-width:900px) 100vw, 25vw"
+             alt="Cérémonie Barong à Bali — vlog"
+             loading="lazy" decoding="async">
+        <div class="yt-play">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(245,243,239,.92)" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <span class="yt-duration">16:02</span>
+      </div>
+      <div class="yt-body">
+        <p class="yt-low-badge"><i></i><span>The Lens of Wonder</span></p>
+        <h3 class="yt-title" data-fr="Cérémonie Barong — l'autre Bali" data-en="Barong ceremony — the other Bali">Cérémonie Barong — l'autre Bali</h3>
+        <p class="yt-meta" data-fr="Bali · Novembre 2025" data-en="Bali · November 2025">Bali · Novembre 2025</p>
+      </div>
+    </article>
+
+  </div><!-- /yt-grid -->
+
+  <!-- Sub-header Instagram -->
+  <div class="sub-header">
+    <span class="sub-header-label">Instagram</span>
+    <div class="sub-header-line"></div>
+  </div>
+  <div class="ig-header">
+    <span class="ig-label">@thelensofwonder</span>
+    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-follow-link" aria-label="Suivre @thelensofwonder sur Instagram (nouvelle fenêtre)">
+      <span data-fr="Suivre" data-en="Follow">Suivre</span>
+      <span class="ig-arrow">→</span>
+    </a>
+  </div>
+
+  <!-- Instagram grid -->
+  <div class="ig-strip">
+    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — rizières Bali">
+      <img src="images/filmer-bali-entre-jungle-et-rizieres.jpg" alt="Rizières de Bali" loading="lazy" decoding="async">
+      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
+    </a>
+    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — Barong">
+      <img src="images/le-barong-et-les-masques-du-temps.jpg" alt="Barong — Bali" loading="lazy" decoding="async">
+      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
+    </a>
+    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — Manhattan">
+      <img src="images/48h-a-manhattan-ce-que-la-ville-garde-pour-elle.jpg" alt="Manhattan — New York" loading="lazy" decoding="async">
+      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
+    </a>
+    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — océan La Réunion">
+      <img src="images/une-fenetre-sur-locean.jpg" alt="Océan — La Réunion" loading="lazy" decoding="async">
+      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
+    </a>
+    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — noir et blanc">
+      <img src="images/pourquoi-je-photographie-encore-en-noir-et-blanc.jpg" alt="Photographie noir et blanc" loading="lazy" decoding="async">
+      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
+    </a>
+    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — jungle Bali">
+      <img src="images/filmer-bali-entre-jungle-et-rizieres.jpg" alt="Jungle — Bali" loading="lazy" decoding="async">
+      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
+    </a>
+  </div><!-- /ig-strip -->
+
+</section>
+
+
+<!-- ══ CTA ══ -->
+<section class="blog-cta">
+  <p style="font-family:'Raleway',sans-serif;font-size:0.68rem;letter-spacing:.42em;text-transform:uppercase;color:rgba(201,169,110,.8);margin-bottom:1rem" data-fr="Tirages Fine Art" data-en="Fine Art Prints">Tirages Fine Art</p>
+  <h2 style="font-family:'Bodoni Moda',serif;font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:400;color:var(--light);margin-bottom:2.5rem;letter-spacing:.02em" data-fr="Voir la collection" data-en="View the collection">Voir la collection</h2>
+  <a href="boutique.html" style="display:inline-block;padding:1.1rem 3.5rem;border:1px solid rgba(201,169,110,.35);color:rgba(201,169,110,.85);font-family:'Raleway',sans-serif;font-size:0.68rem;letter-spacing:.4em;text-transform:uppercase;text-decoration:none;transition:border-color .35s,color .35s" data-fr="Explorer la boutique" data-en="Explore the shop">Explorer la boutique</a>
+</section>
+
 </main>
+
 <footer role="contentinfo">
   <div class="footer-logo"><img
         src="images/logo_white2.png"
         srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="VF Images"
-        loading="lazy"
-        decoding="async"></div>
+        alt="VF Images" loading="lazy" decoding="async"></div>
   <div class="footer-copy">© 2026 VF Images. Tous droits réservés. · <a href="mentions-legales.html" style="color:inherit;text-decoration:none" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a></div>
   <div class="footer-social">
-    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" aria-label="Suivre VF Images sur Instagram (nouvelle fenêtre)"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" aria-label="Instagram The Lens of Wonder (nouvelle fenêtre)"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
   </div>
 </footer>
 
 <script>
+/* ── Cursor ── */
 const cur=document.getElementById('cur'),ring=document.getElementById('ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
 (function a(){if(!document.hidden){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';}requestAnimationFrame(a)})();
-document.querySelectorAll('a,button,.card,.card-featured').forEach(el=>{
+document.querySelectorAll('a,button,.art-card,.art-featured,.yt-card,.ig-post').forEach(el=>{
   el.addEventListener('mouseenter',()=>ring.classList.add('h'));
   el.addEventListener('mouseleave',()=>ring.classList.remove('h'));
 });
 
+/* ── Nav scroll ── */
 const nav=document.querySelector('nav');
 let ticking=false;
 window.addEventListener('scroll',()=>{
   if(!ticking){requestAnimationFrame(()=>{if(nav)nav.classList.toggle('scrolled',window.scrollY>80);ticking=false;});ticking=true;}
 });
 
+/* ── Reveal on scroll ── */
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-},{threshold:0.06});
+},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-/* Filtres */
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f=btn.dataset.filter;
-    document.querySelectorAll('.card,.card-featured').forEach(card=>{
-      if(f==='all'){card.style.display='';return;}
-      const tag=card.querySelector('.card-tag')?.textContent.toLowerCase()||'';
-      const type=card.querySelector('.card-type')?.textContent.toLowerCase()||'';
-      const show=(f==='article'&&type.includes('article'))||
-                 (f==='vlog'&&type.includes('vlog'))||
-                 (f==='bali'&&tag.includes('bali'))||
-                 (f==='voyages'&&(tag.includes('york')||tag.includes('réunion')||tag.includes('réflexion')));
-      card.style.display=show?'':'none';
-    });
-  });
-});
+/* ── Pivot animation (lines grow on enter) ── */
+const pivotEl=document.getElementById('low-pivot');
+if(pivotEl){
+  const pivotObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in-view');});
+  },{threshold:0.25});
+  pivotObs.observe(pivotEl);
+}
 
+/* ── Hamburger ── */
 const hamburger=document.getElementById('hamburger');
 const navOverlay=document.getElementById('nav-overlay');
 if(hamburger&&navOverlay){
-  hamburger.addEventListener('click',()=>{const o=hamburger.classList.toggle('open');navOverlay.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';hamburger.setAttribute('aria-expanded', o);});
-  navOverlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hamburger.classList.remove('open');navOverlay.classList.remove('open');document.body.style.overflow='';}));
+  hamburger.addEventListener('click',()=>{
+    const o=hamburger.classList.toggle('open');
+    navOverlay.classList.toggle('open',o);
+    document.body.style.overflow=o?'hidden':'';
+    hamburger.setAttribute('aria-expanded',o);
+  });
+  navOverlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    hamburger.classList.remove('open');navOverlay.classList.remove('open');document.body.style.overflow='';
+  }));
 }
+
+/* ── Keyboard nav for article/yt cards ── */
+document.querySelectorAll('[role="link"]').forEach(el=>{
+  el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')el.click();});
+});
 </script>
+
 <script>
-/* ══════════════════════════════════════════
-   PROTECTION PHOTOS — VF Images
-   ══════════════════════════════════════════ */
+/* ── Protection photos ── */
 (function(){
-  // 1. Bloquer clic droit sur tout le document
-  document.addEventListener('contextmenu', function(e){
-    if(e.target.tagName === 'IMG' || e.target.closest('.photo-item, .print-image, .gallery-card, .detail-image')){
-      e.preventDefault();
-      return false;
-    }
+  document.addEventListener('contextmenu',function(e){
+    if(e.target.tagName==='IMG'||e.target.closest('.art-featured-img,.art-card-img,.yt-thumb,.ig-post')){e.preventDefault();return false;}
   });
-
-  // 2. Bloquer drag & drop des images
-  document.addEventListener('dragstart', function(e){
-    if(e.target.tagName === 'IMG'){
-      e.preventDefault();
-      return false;
-    }
+  document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG'){e.preventDefault();return false;}});
+  document.addEventListener('keydown',function(e){
+    if((e.ctrlKey||e.metaKey)&&e.key==='s'){e.preventDefault();return false;}
+    if((e.ctrlKey||e.metaKey)&&e.key==='u'){e.preventDefault();return false;}
   });
-
-  // 3. Bloquer Ctrl+S (enregistrer la page), Ctrl+U (voir source)
-  // Note : F12 (DevTools) ne peut pas être bloqué de façon fiable — inutile d'essayer
-  document.addEventListener('keydown', function(e){
-    // Ctrl+S ou Cmd+S
-    if((e.ctrlKey || e.metaKey) && e.key === 's'){
-      e.preventDefault();
-      return false;
-    }
-    // Ctrl+U ou Cmd+U (voir source)
-    if((e.ctrlKey || e.metaKey) && e.key === 'u'){
-      e.preventDefault();
-      return false;
-    }
-    // Ctrl+Shift+I (DevTools) — tentative
-    if((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'i'){
-      e.preventDefault();
-      return false;
-    }
-  });
-
-  // 4. Bloquer la sélection de texte sur les zones images
-  document.addEventListener('selectstart', function(e){
-    if(e.target.tagName === 'IMG'){
-      e.preventDefault();
-      return false;
-    }
-  });
-
-  // 5. Bloquer le menu de téléchargement via touch long-press (iOS/Android)
-  document.addEventListener('touchstart', function(e){
-    if(e.target.tagName === 'IMG'){
-      e.target.setAttribute('draggable', 'false');
-    }
-  }, {passive: true});
-
-  // 6. Supprimer l'URL src des images du DOM après chargement
-  // (rend le clic-droit → "Ouvrir l'image" inutile)
-  window.addEventListener('load', function(){
-    document.querySelectorAll('.photo-item img, .print-image img, .gallery-card img, .detail-image img, .intro-photo-col img').forEach(function(img){
-      // Stocker le src, remplacer par data-src protégé
-      if(img.complete && img.src && !img.src.startsWith('data:')){
-        img.setAttribute('data-protected', 'true');
-        // Rendre le pointer-events nul (déjà fait en CSS, renforcé ici)
-        img.style.pointerEvents = 'none';
-        img.setAttribute('draggable', 'false');
-        img.setAttribute('oncontextmenu', 'return false;');
-      }
-    });
-  });
+  document.addEventListener('touchstart',function(e){if(e.target.tagName==='IMG'){e.target.setAttribute('draggable','false');}},{passive:true});
 })();
 </script>
 
@@ -811,88 +843,51 @@ if(hamburger&&navOverlay){
     <a href="mentions-legales.html">En savoir plus</a>
   </p>
   <div class="cookie-actions">
-    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
-    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
+    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" data-fr="Refuser" data-en="Decline">Refuser</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" data-fr="Accepter" data-en="Accept">Accepter</button>
   </div>
 </div>
 <script>
-/* ══ GESTION COOKIES RGPD ══ */
 (function(){
-  const COOKIE_KEY = 'vf_analytics_consent';
-  const banner = document.getElementById('cookie-banner');
-  if(!banner) return;
-
-  const consent = localStorage.getItem(COOKIE_KEY);
-
-  // Afficher le bandeau si pas encore de choix
-  if(consent === null){
-    setTimeout(() => banner.classList.add('visible'), 800);
-  }
-
-  // Charger Umami seulement si consentement donné
-  if(consent === 'accepted'){
-    loadAnalytics();
-  }
-
-  window.cookieAccept = function(){
-    localStorage.setItem(COOKIE_KEY, 'accepted');
-    banner.classList.remove('visible');
-    banner.classList.add('hidden');
-    loadAnalytics();
-    // Tracker l'event consentement (sans cookie, anonyme)
-    if(window.umami) umami.track('cookie-accept');
-  };
-
-  window.cookieRefuse = function(){
-    localStorage.setItem(COOKIE_KEY, 'refused');
-    banner.classList.remove('visible');
-    banner.classList.add('hidden');
-  };
-
+  const COOKIE_KEY='vf_analytics_consent';
+  const banner=document.getElementById('cookie-banner');
+  if(!banner)return;
+  const consent=localStorage.getItem(COOKIE_KEY);
+  if(consent===null){setTimeout(()=>banner.classList.add('visible'),800);}
+  if(consent==='accepted'){loadAnalytics();}
+  window.cookieAccept=function(){localStorage.setItem(COOKIE_KEY,'accepted');banner.classList.remove('visible');banner.classList.add('hidden');loadAnalytics();};
+  window.cookieRefuse=function(){localStorage.setItem(COOKIE_KEY,'refused');banner.classList.remove('visible');banner.classList.add('hidden');};
   function loadAnalytics(){
-      if(document.querySelector('[data-website-id]')) return;
-      var s=document.createElement('script');
-      s.defer=true;
-      s.src='https://analytics.umami.is/script.js';
-      s.setAttribute('data-website-id','1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1');
-      document.head.appendChild(s);
-    // Ne charger Umami que si consentement
-    const existing = document.querySelector('[data-website-id]');
-    if(existing && !existing.src.includes('loaded')){
-      // Umami est déjà en defer — il se charge automatiquement
-      // Ici on pourrait aussi l'activer dynamiquement si nécessaire
-    }
+    if(document.querySelector('[data-website-id]'))return;
+    var s=document.createElement('script');s.defer=true;
+    s.src='https://analytics.umami.is/script.js';
+    s.setAttribute('data-website-id','1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1');
+    document.head.appendChild(s);
   }
 })();
 </script>
+
 <script>
-
-
-
-</script>
-<script>
+/* ── Bilingue ── */
 (function(){
-  var lang = localStorage.getItem('vf_lang') || 'fr';
-  window.setLang = function(l){
-    lang = l;
-    localStorage.setItem('vf_lang', l);
+  var lang=localStorage.getItem('vf_lang')||'fr';
+  window.setLang=function(l){
+    lang=l;
+    localStorage.setItem('vf_lang',l);
     document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
-      el.textContent = el.getAttribute('data-' + l);
+      var val=el.getAttribute('data-'+l);
+      if(!val)return;
+      /* innerHTML pour les valeurs contenant du HTML */
+      if(val.indexOf('<')!==-1){el.innerHTML=val;}
+      else{el.textContent=val;}
     });
-    document.documentElement.lang = l;
+    document.documentElement.lang=l;
     document.querySelectorAll('.lang-btn').forEach(function(b){
-      if(b.getAttribute('data-lang') === l){
-        b.style.color = 'var(--gold)';
-        b.style.fontWeight = '400';
-      } else {
-        b.style.color = 'rgba(245,243,239,.92)';
-        b.style.fontWeight = '300';
-      }
+      if(b.getAttribute('data-lang')===l){b.style.color='var(--gold)';b.style.fontWeight='400';}
+      else{b.style.color='rgba(245,243,239,.92)';b.style.fontWeight='300';}
     });
   };
-  document.addEventListener('DOMContentLoaded', function(){
-    if(lang === 'en') window.setLang('en');
-  });
+  document.addEventListener('DOMContentLoaded',function(){if(lang==='en')window.setLang('en');});
 })();
 </script>
 </body>

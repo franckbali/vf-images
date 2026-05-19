@@ -41,8 +41,7 @@
 .intro-label{font-size:0.80rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1.2rem;font-weight:400;animation:fadeUp 1.4s ease .3s both}
 .intro-title{font-family:'Raleway',sans-serif;font-size:clamp(3rem,8vw,7rem);font-weight:200;letter-spacing:.18em;text-transform:uppercase;color:var(--light);line-height:1;animation:fadeUp 1.4s ease .55s both;margin-bottom:1.2rem}
 .intro-count{font-size:0.80rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.92);animation:fadeUp 1.4s ease .75s both}
-.intro-scroll{margin-top:3rem;display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;animation:fadeUp 1.4s ease 1s both}
-.intro-scroll span{font-size:0.75rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.92)}
+.intro-scroll{position:absolute;bottom:5vh;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:.6rem;animation:fadeUp 1.4s ease 1s both}
 .scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sp 2.2s ease-in-out infinite}
 @keyframes sp{0%,100%{opacity:.25}50%{opacity:.8}}
 
@@ -593,19 +592,19 @@ button:focus:not(:focus-visible) {
 
 <div class="panel-trigger" id="panelTrigger" onclick="openPanel()">
   <div class="trigger-line"></div>
-  <span class="trigger-label">La série</span>
+  <span class="trigger-label" data-fr="La série" data-en="The series">La série</span>
   <div class="trigger-line"></div>
 </div>
 
 <div class="side-panel" id="sidePanel">
   <button class="panel-close" onclick="closePanel()">&#x2715;</button>
   <p class="panel-label">VF Images · New York</p>
-  <h2 class="panel-title">L'autre<br>New York</h2>
+  <h2 class="panel-title"><span data-fr="L'autre" data-en="The other">L'autre</span><br>New York</h2>
   <div class="panel-divider"></div>
   <div class="panel-body">
-<p>New York se photographie comme on respire — par à-coups, entre deux rues, dans la lumière grise d'un matin de novembre.</p>
-<p>Ces images ne cherchent pas à montrer la ville spectacle. Elles cherchent l'autre New York — celui des câbles du pont Brooklyn au petit matin, des escaliers de secours habités, des regards perdus dans le bruit.</p>
-<p>Une ville qui ne dort jamais, mais qui sait, parfois, se tenir immobile.</p>
+<p data-fr="New York se photographie comme on respire — par à-coups, entre deux rues, dans la lumière grise d'un matin de novembre." data-en="New York is photographed like breathing — in bursts, between two streets, in the grey light of a November morning.">New York se photographie comme on respire — par à-coups, entre deux rues, dans la lumière grise d'un matin de novembre.</p>
+<p data-fr="Ces images ne cherchent pas à montrer la ville spectacle. Elles cherchent l'autre New York — celui des câbles du pont Brooklyn au petit matin, des escaliers de secours habités, des regards perdus dans le bruit." data-en="These images do not seek to show the spectacular city. They seek the other New York — the Brooklyn Bridge cables at dawn, inhabited fire escapes, gazes lost in the noise.">Ces images ne cherchent pas à montrer la ville spectacle. Elles cherchent l'autre New York — celui des câbles du pont Brooklyn au petit matin, des escaliers de secours habités, des regards perdus dans le bruit.</p>
+<p data-fr="Une ville qui ne dort jamais, mais qui sait, parfois, se tenir immobile." data-en="A city that never sleeps, but knows, sometimes, how to hold still.">Une ville qui ne dort jamais, mais qui sait, parfois, se tenir immobile.</p>
 </div>
   
 </div>
@@ -672,17 +671,16 @@ button:focus:not(:focus-visible) {
     <p class="intro-label">VF Images · Portfolio</p>
     <h1 class="intro-title">New York</h1>
     <p class="intro-count">8 photographies</p>
-    <div class="intro-scroll">
-      <span data-fr="Défiler" data-en="Scroll">Défiler</span>
-      <div class="scroll-line"></div>
-    </div>
+  </div>
+  <div class="intro-scroll">
+    <div class="scroll-line"></div>
   </div>
 </div>
 
 <!-- SÉQUENCE -->
 
 
-<div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="Manhattan from Above" data-desc="L'Empire State Building domine une mer de béton. Depuis le sommet du 30 Rock, New York s'étend à l'infini.">
+<div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="Manhattan from Above" data-desc="L'Empire State Building domine une mer de béton. Depuis le sommet du 30 Rock, New York s'étend à l'infini." data-desc-en="The Empire State Building towers over a sea of concrete. From the top of 30 Rock, New York stretches to infinity.">
   <img
         src="images/manhattan-from-above.jpg"
         srcset="images/manhattan-from-above-small.webp 640w, images/manhattan-from-above-medium.webp 1200w, images/manhattan-from-above-large.webp 1920w"
@@ -692,7 +690,7 @@ button:focus:not(:focus-visible) {
         decoding="async"><div class="caption-corner">Manhattan from Above</div>
 </div>
 <div class="gap"></div>
-<div class="block wide reveal" onclick="openLightbox(this)" data-title="Brooklyn Bridge" data-desc="Les câbles du pont comme autant de fils tendus vers le ciel gris de Manhattan. Une géométrie parfaite, suspendue entre deux rives.">
+<div class="block wide reveal" onclick="openLightbox(this)" data-title="Brooklyn Bridge" data-desc="Les câbles du pont comme autant de fils tendus vers le ciel gris de Manhattan. Une géométrie parfaite, suspendue entre deux rives." data-desc-en="The bridge cables, like threads stretched toward Manhattan's grey sky. A perfect geometry, suspended between two shores.">
   <img
         src="images/brooklyn-bridge.jpg"
         srcset="images/brooklyn-bridge-small.webp 640w, images/brooklyn-bridge-medium.webp 1200w, images/brooklyn-bridge-large.webp 1920w"
@@ -703,7 +701,7 @@ button:focus:not(:focus-visible) {
 </div>
 <div class="gap"></div>
 <div class="block offset reveal">
-  <div class="frame offset-left" onclick="openLightbox(this)" data-title="Brooklyn Bridge II" data-desc="Vu depuis les jardins de Brooklyn, le pont se dévoile à travers un rideau de feuilles. Le noir et blanc efface le temps.">
+  <div class="frame offset-left" onclick="openLightbox(this)" data-title="Brooklyn Bridge II" data-desc="Vu depuis les jardins de Brooklyn, le pont se dévoile à travers un rideau de feuilles. Le noir et blanc efface le temps." data-desc-en="Seen from the Brooklyn gardens, the bridge reveals itself through a curtain of leaves. Black and white erases time.">
     <img
         src="images/brooklyn-bridge-ii.jpg"
         srcset="images/brooklyn-bridge-ii-small.webp 640w, images/brooklyn-bridge-ii-medium.webp 1200w, images/brooklyn-bridge-ii-large.webp 1920w"
@@ -714,7 +712,7 @@ button:focus:not(:focus-visible) {
   </div>
 </div>
 <div class="gap"></div>
-<div class="block wide reveal" onclick="openLightbox(this)" data-title="Manhattan Skyline" data-desc="Un taxi jaune flou à l'avant-plan, les tours qui percent le brouillard. New York se raconte dans chaque couche de distance.">
+<div class="block wide reveal" onclick="openLightbox(this)" data-title="Manhattan Skyline" data-desc="Un taxi jaune flou à l'avant-plan, les tours qui percent le brouillard. New York se raconte dans chaque couche de distance." data-desc-en="A blurred yellow cab in the foreground, towers piercing the fog. New York reveals itself in every layer of distance.">
   <img
         src="images/manhattan-skyline.jpg"
         srcset="images/manhattan-skyline-small.webp 640w, images/manhattan-skyline-medium.webp 1200w, images/manhattan-skyline-large.webp 1920w"
@@ -725,7 +723,7 @@ button:focus:not(:focus-visible) {
 </div>
 <div class="gap"></div>
 <div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="Fire Escape" data-desc="Deux habitants d'un immeuble du Lower East Side, suspendus entre ciel et rue. La ville ordinaire, saisie dans l'extraordinaire.">
+  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="Fire Escape" data-desc="Deux habitants d'un immeuble du Lower East Side, suspendus entre ciel et rue. La ville ordinaire, saisie dans l'extraordinaire." data-desc-en="Two residents of a Lower East Side building, suspended between sky and street. The ordinary city, caught in the extraordinary.">
     <img
         src="images/fire-escape.jpg"
         srcset="images/fire-escape-small.webp 640w, images/fire-escape-medium.webp 1200w, images/fire-escape-large.webp 1920w"
@@ -737,7 +735,7 @@ button:focus:not(:focus-visible) {
 </div>
 <div class="gap"></div>
 <div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="The Vessel" data-desc="Hudson Yards. L'architecture cuivrée du Vessel se reflète en milliers de facettes. Une ruche géante tournée vers le ciel.">
+  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="The Vessel" data-desc="Hudson Yards. L'architecture cuivrée du Vessel se reflète en milliers de facettes. Une ruche géante tournée vers le ciel." data-desc-en="Hudson Yards. The Vessel's copper architecture reflects in thousands of facets. A giant beehive turned toward the sky.">
     <img
         src="images/the-vessel.jpg"
         srcset="images/the-vessel-small.webp 640w, images/the-vessel-medium.webp 1200w, images/the-vessel-large.webp 1920w"
@@ -748,7 +746,7 @@ button:focus:not(:focus-visible) {
   </div>
 </div>
 <div class="gap"></div>
-<div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="SoHo" data-desc="Les escaliers de secours de SoHo dessinent une dentelle de fer sur les façades blanches. La ville comme partition graphique.">
+<div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="SoHo" data-desc="Les escaliers de secours de SoHo dessinent une dentelle de fer sur les façades blanches. La ville comme partition graphique." data-desc-en="SoHo's fire escapes trace an iron lacework across white façades. The city as a graphic score.">
   <img
         src="images/soho.jpg"
         srcset="images/soho-small.webp 640w, images/soho-medium.webp 1200w, images/soho-large.webp 1920w"
@@ -759,7 +757,7 @@ button:focus:not(:focus-visible) {
 </div>
 <div class="gap"></div>
 <div class="block offset reveal">
-  <div class="frame offset-right" onclick="openLightbox(this)" data-title="Quarters Only" data-desc="Sur une plateforme d'observation, une lunette en acier attend le prochain regard. La ville, derrière, ne dort jamais.">
+  <div class="frame offset-right" onclick="openLightbox(this)" data-title="Quarters Only" data-desc="Sur une plateforme d'observation, une lunette en acier attend le prochain regard. La ville, derrière, ne dort jamais." data-desc-en="On an observation platform, a steel telescope awaits the next gaze. The city behind it never sleeps.">
     <img
         src="images/quarters-only.jpg"
         srcset="images/quarters-only-small.webp 640w, images/quarters-only-medium.webp 1200w, images/quarters-only-large.webp 1920w"
@@ -817,9 +815,12 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     d.className='photo-desc';
     d.innerHTML='<p class="desc-title">'+(el.dataset.title||'')+'</p>'
               +'<span class="desc-line"></span>'
-              +'<p class="desc-text">'+(el.dataset.desc||'')+'</p>';
+              +'<p class="desc-text" data-fr="'+(el.dataset.desc||'')+'" data-en="'+(el.dataset.descEn||el.dataset.desc||'')+'">'+(el.dataset.desc||'')+'</p>';
     el.appendChild(d);
   });
+  /* Apply language to newly created overlays */
+  var _initLang = localStorage.getItem('vf_lang') || 'fr';
+  if(_initLang === 'en' && window.setLang) window.setLang('en');
 
   // Touch mobile : description pendant le contact, tap rapide = lightbox
   var tStart=0;
@@ -875,9 +876,10 @@ function openLightbox(el){
 }
 
 function loadPhoto(el){
+  var useLang = localStorage.getItem('vf_lang') || 'fr';
   lbImg.src=el.querySelector('img').src;
   lbTitle.textContent=el.dataset.title||'';
-  lbText.textContent=el.dataset.desc||'';
+  lbText.textContent=(useLang==='en' && el.dataset.descEn) ? el.dataset.descEn : (el.dataset.desc||'');
 }
 
 function navigateLightbox(dir){
@@ -1139,6 +1141,11 @@ if(hamburger&&navOverlay){
         b.style.fontWeight = '300';
       }
     });
+    /* Refresh lightbox description if open */
+    if(typeof lb !== 'undefined' && lb.classList.contains('open')){
+      var _items = allClickable();
+      if(_items[currentIndex]) loadPhoto(_items[currentIndex]);
+    }
   };
   document.addEventListener('DOMContentLoaded', function(){
     if(lang === 'en') window.setLang('en');

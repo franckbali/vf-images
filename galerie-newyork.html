@@ -96,8 +96,8 @@
   transition:opacity .65s cubic-bezier(0.22,1,0.36,1);
   pointer-events:none;
 }
-.block:hover .photo-desc,
-.frame:hover .photo-desc{opacity:1}
+.block.hovered .photo-desc,
+.frame.hovered .photo-desc,
 .block.touched .photo-desc,
 .frame.touched .photo-desc{opacity:1}
 
@@ -114,8 +114,8 @@
              transform .55s cubic-bezier(0.22,1,0.36,1) .05s;
   margin-bottom:.7rem;
 }
-.block:hover .desc-title,
-.frame:hover .desc-title,
+.block.hovered .desc-title,
+.frame.hovered .desc-title,
 .block.touched .desc-title,
 .frame.touched .desc-title{opacity:1;transform:translateY(0)}
 
@@ -125,8 +125,8 @@
   transition:width .6s cubic-bezier(0.22,1,0.36,1) .1s;
   margin-bottom:.9rem;
 }
-.block:hover .desc-line,
-.frame:hover .desc-line,
+.block.hovered .desc-line,
+.frame.hovered .desc-line,
 .block.touched .desc-line,
 .frame.touched .desc-line{width:30px}
 
@@ -142,8 +142,8 @@
   transition:opacity .6s cubic-bezier(0.22,1,0.36,1) .15s,
              transform .6s cubic-bezier(0.22,1,0.36,1) .15s;
 }
-.block:hover .desc-text,
-.frame:hover .desc-text,
+.block.hovered .desc-text,
+.frame.hovered .desc-text,
 .block.touched .desc-text,
 .frame.touched .desc-text{opacity:1;transform:translateY(0)}
 
@@ -808,40 +808,61 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:0.07,rootMargin:'0px 0px -4% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-/* Génère les overlays .photo-desc depuis data-title / data-desc */
-document.querySelectorAll('.block[data-title],.frame[data-title]').forEach(function(el){
-  var title=el.getAttribute('data-title')||'';
-  var desc=el.getAttribute('data-desc')||'';
-  var d=document.createElement('div');
-  d.className='photo-desc';
-  d.innerHTML='<p class="desc-title">'+title+'</p><span class="desc-line"></span><p class="desc-text">'+desc+'</p>';
-  el.appendChild(d);
-});
+/* ── Descriptions photo : génération + hover desktop + touch mobile ── */
+(function(){
+  // 1. Créer les overlays depuis data-title/data-desc
+  document.querySelectorAll('.block[data-title],.frame[data-title]').forEach(function(el){
+    var d=document.createElement('div');
+    d.className='photo-desc';
+    d.innerHTML='<p class="desc-title">'+(el.dataset.title||'')+'</p>'
+              +'<span class="desc-line"></span>'
+              +'<p class="desc-text">'+(el.dataset.desc||'')+'</p>';
+    el.appendChild(d);
+  });
 
-/* Touch : description visible pendant le contact, disparaît au relâchement */
-var _touchStartTime=0;
-document.querySelectorAll('.block,.frame').forEach(el=>{
-  el.addEventListener('touchstart',e=>{
-    _touchStartTime=Date.now();
-    document.querySelectorAll('.block.touched,.frame.touched').forEach(t=>t.classList.remove('touched'));
-    el.classList.add('touched');
+  // 2. Éléments cliquables uniquement (pas les wrappers .block.offset sans onclick)
+  var items=document.querySelectorAll('.block[onclick],.frame[onclick]');
+
+  items.forEach(function(el){
+    // Desktop : mouseenter/mouseleave → classe .hovered
+    el.addEventListener('mouseenter',function(){ el.classList.add('hovered'); });
+    el.addEventListener('mouseleave',function(){ el.classList.remove('hovered'); });
+
+    // Mobile touch
+    var tStart=0;
+    el.addEventListener('touchstart',function(e){
+      e.stopPropagation(); // empêche la remontée vers .block parent
+      tStart=Date.now();
+      document.querySelectorAll('.hovered,.touched').forEach(function(t){
+        t.classList.remove('hovered','touched');
+      });
+      el.classList.add('touched');
+    },{passive:true});
+
+    el.addEventListener('touchmove',function(e){
+      e.stopPropagation();
+      el.classList.remove('touched');
+    },{passive:true});
+
+    el.addEventListener('touchend',function(e){
+      e.stopPropagation();
+      var dt=Date.now()-tStart;
+      el.classList.remove('touched');
+      if(dt<250){
+        e.preventDefault(); // bloque le click event qui suivrait
+        openLightbox(el);
+      }
+    },{passive:false}); // passive:false requis pour preventDefault
+  });
+
+  // Clic en dehors → masquer
+  document.addEventListener('touchstart',function(e){
+    if(!e.target.closest('.block[onclick],.frame[onclick]'))
+      document.querySelectorAll('.hovered,.touched').forEach(function(t){
+        t.classList.remove('hovered','touched');
+      });
   },{passive:true});
-  el.addEventListener('touchend',e=>{
-    var dt=Date.now()-_touchStartTime;
-    // tap rapide (< 200ms) → ouvrir lightbox
-    if(dt<200) openLightbox(el);
-    // dans tous les cas, masquer la description après 400ms
-    setTimeout(()=>el.classList.remove('touched'),400);
-  },{passive:true});
-  el.addEventListener('touchmove',e=>{
-    // scroll → masquer immédiatement
-    el.classList.remove('touched');
-  },{passive:true});
-});
-document.addEventListener('touchstart',e=>{
-  if(!e.target.closest('.block,.frame'))
-    document.querySelectorAll('.block.touched,.frame.touched').forEach(t=>t.classList.remove('touched'));
-},{passive:true});
+})();
 
 /* Lightbox */
 const lb=document.getElementById('lightbox');

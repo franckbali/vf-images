@@ -54,17 +54,8 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   text-decoration:none;
   background:var(--dark3);
   cursor:none;
+  aspect-ratio:4/3;
 }
-.gallery-door.portrait{aspect-ratio:2/3}
-.gallery-door.landscape{aspect-ratio:3/2}
-
-/* Disposition spéciale pour 6 galeries en grille équilibrée */
-.gallery-door:nth-child(1){grid-column:1;grid-row:1}
-.gallery-door:nth-child(2){grid-column:2;grid-row:1}
-.gallery-door:nth-child(3){grid-column:3;grid-row:1}
-.gallery-door:nth-child(4){grid-column:1;grid-row:2}
-.gallery-door:nth-child(5){grid-column:2;grid-row:2}
-.gallery-door:nth-child(6){grid-column:3;grid-row:2}
 
 /* Image */
 .gallery-door img{
@@ -147,16 +138,14 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 /* FOOTER */
 
 @media(max-width:900px){
-  nav{padding:1.5rem 2rem} 
-  
+  nav{padding:1.5rem 2rem}
+
   .page-hero{padding:0 2rem 3rem;height:35vh}
   .galleries-grid{grid-template-columns:repeat(2,1fr);padding:3rem 2rem 6rem}
-  .gallery-door:nth-child(n){grid-column:auto;grid-row:auto}
-  
+
 }
 @media(max-width:480px){
   .galleries-grid{grid-template-columns:1fr;padding:2rem 1.5rem 5rem}
-  .gallery-door.portrait,.gallery-door.landscape{aspect-ratio:4/3}
 }
 
 @media(max-width:900px){}
@@ -768,6 +757,8 @@ if(hamburger&&navOverlay){
         const a = document.createElement('a');
         a.className = 'gallery-door ' + g.orientation;
         a.href = g.page;
+        var titreEn = g.titre_en || g.titre;
+        var sousTitreEn = g.sous_titre_en || g.sous_titre;
         a.innerHTML =
           '<img' +
           ' src="' + g.image_cover + '"' +
@@ -779,9 +770,9 @@ if(hamburger&&navOverlay){
           ' loading="' + (i < 2 ? 'eager' : 'lazy') + '"' +
           ' decoding="async">' +
           '<div class="door-overlay"><div class="door-content">' +
-          '<span class="door-title">' + g.titre + '</span>' +
+          '<span class="door-title" data-fr="' + g.titre + '" data-en="' + titreEn + '">' + g.titre + '</span>' +
           '<span class="door-line"></span>' +
-          '<span class="door-sub">' + g.sous_titre + '</span>' +
+          '<span class="door-sub" data-fr="' + g.sous_titre + '" data-en="' + sousTitreEn + '">' + g.sous_titre + '</span>' +
           '</div></div>';
         grid.appendChild(a);
         /* gallery doors don't grow the cursor ring — they're full-height tiles */
@@ -793,6 +784,9 @@ if(hamburger&&navOverlay){
           }
         }, {passive: false});
       });
+      /* Apply current language to the newly created door elements */
+      var currentLang = localStorage.getItem('vf_lang') || 'fr';
+      if(currentLang === 'en' && window.setLang) window.setLang('en');
     })
     .catch(function(err){ console.warn('Erreur chargement galeries.json', err); });
 })();

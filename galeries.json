@@ -2,7 +2,9 @@
   "galeries": [
     {
       "titre": "Bali",
+      "titre_en": "Bali",
       "sous_titre": "Temples, rites et instants vrais",
+      "sous_titre_en": "Temples, rites and genuine moments",
       "image_cover": "images/bali.jpg",
       "orientation": "portrait",
       "slug": "bali",
@@ -12,7 +14,9 @@
     },
     {
       "titre": "New York",
+      "titre_en": "New York",
       "sous_titre": "La ville dans tous ses états",
+      "sous_titre_en": "The city in all its moods",
       "image_cover": "images/new-york.jpg",
       "orientation": "landscape",
       "slug": "new-york",
@@ -22,7 +26,9 @@
     },
     {
       "titre": "Cérémonies",
+      "titre_en": "Ceremonies",
       "sous_titre": "L'âme de Bali en images",
+      "sous_titre_en": "The soul of Bali in images",
       "image_cover": "images/ceremonies.jpg",
       "orientation": "landscape",
       "slug": "ceremonies",
@@ -32,7 +38,9 @@
     },
     {
       "titre": "Voyages",
+      "titre_en": "Travels",
       "sous_titre": "Des déserts américains à l'Altiplano",
+      "sous_titre_en": "From American deserts to the Altiplano",
       "image_cover": "images/voyages.jpg",
       "orientation": "portrait",
       "slug": "voyages",
@@ -42,7 +50,9 @@
     },
     {
       "titre": "Portraits",
+      "titre_en": "Portraits",
       "sous_titre": "Visages du monde",
+      "sous_titre_en": "Faces of the world",
       "image_cover": "images/portraits.jpg",
       "orientation": "landscape",
       "slug": "portraits",
@@ -52,7 +62,9 @@
     },
     {
       "titre": "La Réunion",
+      "titre_en": "Réunion Island",
       "sous_titre": "L'île intense",
+      "sous_titre_en": "The intense island",
       "image_cover": "images/la-reunion.jpg",
       "orientation": "portrait",
       "slug": "la-reunion",
@@ -62,7 +74,9 @@
     },
     {
       "titre": "Rizieres Tegalalang 01",
+      "titre_en": "Tegalalang Rice Fields 01",
       "sous_titre": "",
+      "sous_titre_en": "",
       "image_cover": "images/rizieres-tegalalang-01.jpg",
       "orientation": "landscape",
       "slug": "rizieres-tegalalang-01",

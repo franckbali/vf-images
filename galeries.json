@@ -83,6 +83,16 @@
       "page": "galerie-rizieres-tegalalang-01.html",
       "ordre": 7,
       "visible": false
+    },
+    {
+      "titre": "Portrait Bali 01",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-01.jpg",
+      "orientation": "landscape",
+      "slug": "portrait-bali-01",
+      "page": "galerie-portrait-bali-01.html",
+      "ordre": 8,
+      "visible": false
     }
   ]
 }

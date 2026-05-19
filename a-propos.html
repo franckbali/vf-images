@@ -193,7 +193,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 }
 .signature-img img{
   width:100%;height:100%;
-  object-fit:cover;object-position:center center;
+  object-fit:cover;object-position:center top;
   filter:brightness(.78) saturate(.85);
   transition:transform 12s ease;
   display:block;
@@ -234,13 +234,13 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   
   .hero{padding:0 2rem 5vh}
   .section-intro,.section-childhood{grid-template-columns:1fr}
-  .intro-photo-col{height:60vw}
-  .childhood-photo{height:60vw;order:-1}
+  .intro-photo-col{height:90vw}
+  .childhood-photo{height:90vw;order:-1}
   .intro-text-col{padding:5rem 2rem}
   .childhood-text{padding:4rem 2rem}
   .section-philosophy{grid-template-columns:1fr;gap:3rem;padding:6rem 2rem}
   .signature-block{grid-template-columns:1fr}
-  .signature-img{height:65vw}
+  .signature-img{height:90vw}
   .signature-text{padding:4rem 2rem}
   .section-quote{padding:8rem 2rem}
   
@@ -253,9 +253,9 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 @media(max-width:480px){.recognition-section{padding:3rem 1.2rem}}
 
 @media(max-width:1024px){#nav{padding:1.4rem 3rem}.intro-text-col{padding:5rem 4vw}}
-@media(max-width:900px){#nav{padding:1.5rem 2rem}.section-intro{grid-template-columns:1fr;min-height:auto}.intro-text-col{padding:4rem 2rem}.intro-photo-col{height:60vw}}
-@media(max-width:768px){.hero-title{font-size:clamp(2rem,7vw,4rem)}.intro-text-col{padding:3rem 1.8rem}.intro-photo-col{height:65vw}.pull-quote{font-size:clamp(1.1rem,3vw,1.6rem)}}
-@media(max-width:480px){#nav{padding:1rem 1.2rem}.intro-text-col{padding:2.5rem 1.2rem}.intro-photo-col{height:72vw}}
+@media(max-width:900px){#nav{padding:1.5rem 2rem}.section-intro{grid-template-columns:1fr;min-height:auto}.intro-text-col{padding:4rem 2rem}.intro-photo-col{height:90vw}}
+@media(max-width:768px){.hero-title{font-size:clamp(2rem,7vw,4rem)}.intro-text-col{padding:3rem 1.8rem}.intro-photo-col{height:95vw}.pull-quote{font-size:clamp(1.1rem,3vw,1.6rem)}}
+@media(max-width:480px){#nav{padding:1rem 1.2rem}.intro-text-col{padding:2.5rem 1.2rem}.intro-photo-col{height:100vw}}
 @media(max-width:380px){}
 
 /* Curseur custom désactivé sur mobile */
@@ -520,7 +520,7 @@ button:focus:not(:focus-visible) {
     <li><a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
     <li><a href="a-propos.html" class="active" data-fr="À propos" data-en="About">À propos</a></li>
     <li><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a></li>
-    <li><a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a></li>
+    <li><a href="blog.html" data-fr="Journal" data-en="Journal">Journal</a></li>
     <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem">
@@ -535,7 +535,7 @@ button:focus:not(:focus-visible) {
 <div class="nav-overlay" id="nav-overlay">
   <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a><a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
   <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
-  <a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+  <a href="blog.html" data-fr="Journal" data-en="Journal">Journal</a><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
   <div class="overlay-lang"><span>FR</span> / EN</div>
 </div>
 
@@ -782,7 +782,16 @@ if(hamburger&&navOverlay){
     lang = l;
     localStorage.setItem('vf_lang', l);
     document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
-      el.textContent = el.getAttribute('data-' + l);
+      var val = el.getAttribute('data-' + l);
+      if(!val) return;
+      if(el.children.length > 0){
+        /* Element has child nodes (icons, SVG…) — only update the text node */
+        for(var i=0;i<el.childNodes.length;i++){
+          var n=el.childNodes[i];
+          if(n.nodeType===3 && n.textContent.trim()){n.textContent='\n      '+val+'\n      ';break;}
+        }
+      } else if(val.indexOf('<')!==-1){ el.innerHTML=val; }
+      else { el.textContent=val; }
     });
     document.documentElement.lang = l;
     document.querySelectorAll('.lang-btn').forEach(function(b){

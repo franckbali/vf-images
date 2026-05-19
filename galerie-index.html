@@ -531,7 +531,7 @@ button:focus:not(:focus-visible) {
     <li><a href="galerie-index.html" class="active" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
     <li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li>
     <li><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a></li>
-    <li><a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a></li>
+    <li><a href="blog.html" data-fr="Journal" data-en="Journal">Journal</a></li>
     <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem">
@@ -548,7 +548,7 @@ button:focus:not(:focus-visible) {
   <a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
   <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
   <a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
-  <a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a>
+  <a href="blog.html" data-fr="Journal" data-en="Journal">Journal</a>
   <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
   <div class="overlay-lang"><span>FR</span> / EN</div>
 </div>
@@ -586,7 +586,7 @@ const cur=document.getElementById('cur'),ring=document.getElementById('ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
 (function a(){if(!document.hidden){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';}requestAnimationFrame(a)})();
-document.querySelectorAll('a,.gallery-door').forEach(el=>{
+document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('mouseenter',()=>ring.classList.add('h'));
   el.addEventListener('mouseleave',()=>ring.classList.remove('h'));
 });
@@ -784,10 +784,7 @@ if(hamburger&&navOverlay){
           '<span class="door-sub">' + g.sous_titre + '</span>' +
           '</div></div>';
         grid.appendChild(a);
-        if(ring){
-          a.addEventListener('mouseenter', function(){ ring.classList.add('h'); });
-          a.addEventListener('mouseleave', function(){ ring.classList.remove('h'); });
-        }
+        /* gallery doors don't grow the cursor ring — they're full-height tiles */
         a.addEventListener('touchstart', function(e){
           if(!a.classList.contains('touched')){
             e.preventDefault();
@@ -807,7 +804,15 @@ if(hamburger&&navOverlay){
     lang = l;
     localStorage.setItem('vf_lang', l);
     document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
-      el.textContent = el.getAttribute('data-' + l);
+      var val = el.getAttribute('data-' + l);
+      if(!val) return;
+      if(el.children.length > 0){
+        for(var i=0;i<el.childNodes.length;i++){
+          var n=el.childNodes[i];
+          if(n.nodeType===3 && n.textContent.trim()){n.textContent='\n      '+val+'\n      ';break;}
+        }
+      } else if(val.indexOf('<')!==-1){ el.innerHTML=val; }
+      else { el.textContent=val; }
     });
     document.documentElement.lang = l;
     document.querySelectorAll('.lang-btn').forEach(function(b){

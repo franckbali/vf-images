@@ -96,7 +96,7 @@
   transition:opacity .65s cubic-bezier(0.22,1,0.36,1);
   pointer-events:none;
 }
-.block:hover .photo-desc,
+.block:not(.fullscreen):hover .photo-desc,
 .frame:hover .photo-desc,
 .block.touched .photo-desc,
 .frame.touched .photo-desc{opacity:1}
@@ -114,7 +114,7 @@
              transform .55s cubic-bezier(0.22,1,0.36,1) .05s;
   margin-bottom:.7rem;
 }
-.block:hover .desc-title,
+.block:not(.fullscreen):hover .desc-title,
 .frame:hover .desc-title,
 .block.touched .desc-title,
 .frame.touched .desc-title{opacity:1;transform:translateY(0)}
@@ -125,7 +125,7 @@
   transition:width .6s cubic-bezier(0.22,1,0.36,1) .1s;
   margin-bottom:.9rem;
 }
-.block:hover .desc-line,
+.block:not(.fullscreen):hover .desc-line,
 .frame:hover .desc-line,
 .block.touched .desc-line,
 .frame.touched .desc-line{width:30px}
@@ -142,7 +142,7 @@
   transition:opacity .6s cubic-bezier(0.22,1,0.36,1) .15s,
              transform .6s cubic-bezier(0.22,1,0.36,1) .15s;
 }
-.block:hover .desc-text,
+.block:not(.fullscreen):hover .desc-text,
 .frame:hover .desc-text,
 .block.touched .desc-text,
 .frame.touched .desc-text{opacity:1;transform:translateY(0)}
@@ -164,14 +164,14 @@
   transition:opacity .55s cubic-bezier(0.22,1,0.36,1);
   pointer-events:none;
 }
-.lb-inner:hover .lb-desc{opacity:1}
+.lb-inner.photo-hover .lb-desc{opacity:1}
 .lb-inner.touched .lb-desc{opacity:1}
 .lb-desc-title{font-family:'Raleway',sans-serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.5rem;transform:translateY(6px);opacity:0;transition:opacity .5s ease .05s,transform .5s ease .05s}
-.lb-inner:hover .lb-desc-title,.lb-inner.touched .lb-desc-title{opacity:1;transform:translateY(0)}
+.lb-inner.photo-hover .lb-desc-title,.lb-inner.touched .lb-desc-title{opacity:1;transform:translateY(0)}
 .lb-desc-line{display:block;width:0;height:1px;background:var(--gold);opacity:.6;transition:width .55s ease .08s;margin-bottom:.7rem}
-.lb-inner:hover .lb-desc-line,.lb-inner.touched .lb-desc-line{width:28px}
+.lb-inner.photo-hover .lb-desc-line,.lb-inner.touched .lb-desc-line{width:28px}
 .lb-desc-text{font-family:'Lora',serif;font-size:.78rem;font-style:italic;line-height:1.7;color:rgba(245,243,239,.92);max-width:480px;transform:translateY(8px);opacity:0;transition:opacity .55s ease .12s,transform .55s ease .12s}
-.lb-inner:hover .lb-desc-text,.lb-inner.touched .lb-desc-text{opacity:1;transform:translateY(0)}
+.lb-inner.photo-hover .lb-desc-text,.lb-inner.touched .lb-desc-text{opacity:1;transform:translateY(0)}
 
 .lightbox-close{position:absolute;top:2rem;right:2.5rem;background:none;border:none;color:rgba(245,243,239,.92);font-size:1.1rem;transition:color .4s;padding:.5rem;font-weight:200;z-index:10}
 .lightbox-close:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
@@ -640,7 +640,7 @@ button:focus:not(:focus-visible) {
     <li><a href="galerie-index.html" class="active" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
     <li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li>
     <li><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a></li>
-    <li><a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a></li>
+    <li><a href="blog.html" data-fr="Journal" data-en="Journal">Journal</a></li>
     <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem">
@@ -655,7 +655,7 @@ button:focus:not(:focus-visible) {
 <div class="nav-overlay" id="nav-overlay">
   <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a><a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
   <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
-  <a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+  <a href="blog.html" data-fr="Journal" data-en="Journal">Journal</a><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
   <div class="overlay-lang"><span>FR</span> / EN</div>
 </div>
 
@@ -878,18 +878,25 @@ function loadPhoto(el){
   lbImg.src=el.querySelector('img').src;
   lbTitle.textContent=el.dataset.title||'';
   lbText.textContent=el.dataset.desc||'';
-  lbImg.style.opacity='';lbImg.style.transform='';
 }
 
 function navigateLightbox(dir){
   const items=allClickable();
   currentIndex=(currentIndex+dir+items.length)%items.length;
+  lbImg.style.transition='none';
   lbImg.style.opacity='0';lbImg.style.transform='scale(0.97)';
-  setTimeout(()=>{loadPhoto(items[currentIndex]);lbImg.style.opacity='1';lbImg.style.transform='scale(1)';},220);
+  setTimeout(()=>{
+    loadPhoto(items[currentIndex]);
+    requestAnimationFrame(()=>{
+      lbImg.style.transition='';
+      lbImg.style.opacity='1';lbImg.style.transform='scale(1)';
+    });
+  },220);
 }
 
 function closeLightbox(){
   lb.classList.add('closing');lb.classList.remove('open');
+  lbInner.classList.remove('photo-hover','touched');
   setTimeout(()=>{lb.classList.remove('closing');document.body.style.overflow='';lbImg.src='';},800);
 }
 
@@ -897,6 +904,25 @@ function handleLightboxClick(e){
   if(e.target===lbImg||e.target.closest('.lightbox-nav,.lightbox-close,.lb-inner')) return;
   closeLightbox();
 }
+
+/* Description lightbox : visible uniquement quand le curseur est sur la zone rendue de la photo */
+function isOverRenderedPhoto(x,y){
+  const r=lbImg.getBoundingClientRect();
+  const nw=lbImg.naturalWidth||1, nh=lbImg.naturalHeight||1;
+  const scale=Math.min(r.width/nw, r.height/nh);
+  const rw=nw*scale, rh=nh*scale;
+  const rx=r.left+(r.width-rw)/2, ry=r.top+(r.height-rh)/2;
+  return x>=rx && x<=rx+rw && y>=ry && y<=ry+rh;
+}
+/* Écoute sur document entier pour ne manquer aucun mouvement */
+document.addEventListener('mousemove',function(e){
+  if(!lb.classList.contains('open')) return;
+  if(isOverRenderedPhoto(e.clientX,e.clientY)){
+    lbInner.classList.add('photo-hover');
+  } else {
+    lbInner.classList.remove('photo-hover');
+  }
+});
 
 /* Touch lightbox desc */
 lbInner.addEventListener('touchstart',()=>lbInner.classList.toggle('touched'),{passive:true});
@@ -1093,7 +1119,15 @@ if(hamburger&&navOverlay){
     lang = l;
     localStorage.setItem('vf_lang', l);
     document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
-      el.textContent = el.getAttribute('data-' + l);
+      var val = el.getAttribute('data-' + l);
+      if(!val) return;
+      if(el.children.length > 0){
+        for(var i=0;i<el.childNodes.length;i++){
+          var n=el.childNodes[i];
+          if(n.nodeType===3 && n.textContent.trim()){n.textContent='\n      '+val+'\n      ';break;}
+        }
+      } else if(val.indexOf('<')!==-1){ el.innerHTML=val; }
+      else { el.textContent=val; }
     });
     document.documentElement.lang = l;
     document.querySelectorAll('.lang-btn').forEach(function(b){

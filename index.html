@@ -38,7 +38,7 @@
 .hero-prenom-line{width:28px;height:1px;background:rgba(201,169,110,1.0)}
 .hero-prenom{font-family:'Raleway',sans-serif;font-size:.9rem;font-weight:400;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);opacity:1}
 .hero-tagline{font-family:'Lora',serif;font-size:clamp(1.15rem,2vw,1.55rem);font-style:italic;font-weight:400;letter-spacing:.12em;color:rgba(245,243,239,.92);animation:fadeUp 1.4s ease 1s both}
-.scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:fadeUp 1.4s ease 1.6s both}
+.scroll-indicator{position:absolute;bottom:2.5rem;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:fadeUp 1.4s ease 1.6s both}
 .scroll-indicator span{font-size:0.75rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.92);font-family:'Raleway',sans-serif}
 .scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sp 2s ease-in-out infinite}
 @keyframes sp{0%,100%{opacity:.3}50%{opacity:1}}
@@ -507,7 +507,7 @@ button:focus:not(:focus-visible) {
     <li><a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
     <li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li>
     <li><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a></li>
-    <li><a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a></li>
+    <li><a href="blog.html" data-fr="Journal" data-en="Journal">Journal</a></li>
     <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem">
@@ -528,7 +528,7 @@ button:focus:not(:focus-visible) {
   <a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
   <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
   <a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
-  <a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a>
+  <a href="blog.html" data-fr="Journal" data-en="Journal">Journal</a>
   <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
   <div class="overlay-lang"><span>FR</span> / EN</div>
 </div>
@@ -592,7 +592,7 @@ const cur=document.getElementById('cur'),ring=document.getElementById('ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
 (function a(){if(!document.hidden){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';}requestAnimationFrame(a)})();
-document.querySelectorAll('a,button,.photo-item,.btn').forEach(el=>{
+document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('mouseenter',()=>ring.classList.add('h'));
   el.addEventListener('mouseleave',()=>ring.classList.remove('h'));
 });
@@ -797,7 +797,15 @@ if(hamburger&&navOverlay){
     lang = l;
     localStorage.setItem('vf_lang', l);
     document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
-      el.textContent = el.getAttribute('data-' + l);
+      var val = el.getAttribute('data-' + l);
+      if(!val) return;
+      if(el.children.length > 0){
+        for(var i=0;i<el.childNodes.length;i++){
+          var n=el.childNodes[i];
+          if(n.nodeType===3 && n.textContent.trim()){n.textContent='\n      '+val+'\n      ';break;}
+        }
+      } else if(val.indexOf('<')!==-1){ el.innerHTML=val; }
+      else { el.textContent=val; }
     });
     document.documentElement.lang = l;
     document.querySelectorAll('.lang-btn').forEach(function(b){

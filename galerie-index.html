@@ -591,20 +591,25 @@ document.querySelectorAll('a,.gallery-door').forEach(el=>{
   el.addEventListener('mouseleave',()=>ring.classList.remove('h'));
 });
 
-/* Touch mobile — 1er tap = hover, 2e tap = navigation */
+/* Touch mobile — description visible pendant le contact, tap rapide = navigation */
+var _dtStart=0;
 document.querySelectorAll('.gallery-door').forEach(door=>{
   door.addEventListener('touchstart',e=>{
-    if(!door.classList.contains('touched')){
-      e.preventDefault();
-      document.querySelectorAll('.gallery-door.touched').forEach(d=>d.classList.remove('touched'));
-      door.classList.add('touched');
-    }
-  },{passive:false});
+    _dtStart=Date.now();
+    document.querySelectorAll('.gallery-door.touched').forEach(d=>d.classList.remove('touched'));
+    door.classList.add('touched');
+  },{passive:true});
+  door.addEventListener('touchend',e=>{
+    setTimeout(()=>door.classList.remove('touched'),400);
+  },{passive:true});
+  door.addEventListener('touchmove',e=>{
+    door.classList.remove('touched');
+  },{passive:true});
 });
 document.addEventListener('touchstart',e=>{
   if(!e.target.closest('.gallery-door'))
     document.querySelectorAll('.gallery-door.touched').forEach(d=>d.classList.remove('touched'));
-});
+},{passive:true});
 
 const hamburger=document.getElementById('hamburger');
 const navOverlay=document.getElementById('nav-overlay');

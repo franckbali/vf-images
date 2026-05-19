@@ -790,7 +790,7 @@ const cur=document.getElementById('cur'),ring=document.getElementById('ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
 (function a(){if(!document.hidden){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';}requestAnimationFrame(a)})();
-document.querySelectorAll('a,button,.block,.frame,.panel-trigger,.panel-overlay').forEach(el=>{
+document.querySelectorAll('a,button,.panel-trigger').forEach(el=>{
   el.addEventListener('mouseenter',()=>ring.classList.add('h'));
   el.addEventListener('mouseleave',()=>ring.classList.remove('h'));
 });
@@ -808,19 +808,30 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:0.07,rootMargin:'0px 0px -4% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-/* Touch hover sur les blocs */
+/* Touch : description visible pendant le contact, disparaît au relâchement */
+var _touchStartTime=0;
 document.querySelectorAll('.block,.frame').forEach(el=>{
   el.addEventListener('touchstart',e=>{
-    const already=el.classList.contains('touched');
+    _touchStartTime=Date.now();
     document.querySelectorAll('.block.touched,.frame.touched').forEach(t=>t.classList.remove('touched'));
-    if(!already) el.classList.add('touched');
-    else openLightbox(el);
+    el.classList.add('touched');
+  },{passive:true});
+  el.addEventListener('touchend',e=>{
+    var dt=Date.now()-_touchStartTime;
+    // tap rapide (< 200ms) → ouvrir lightbox
+    if(dt<200) openLightbox(el);
+    // dans tous les cas, masquer la description après 400ms
+    setTimeout(()=>el.classList.remove('touched'),400);
+  },{passive:true});
+  el.addEventListener('touchmove',e=>{
+    // scroll → masquer immédiatement
+    el.classList.remove('touched');
   },{passive:true});
 });
 document.addEventListener('touchstart',e=>{
   if(!e.target.closest('.block,.frame'))
     document.querySelectorAll('.block.touched,.frame.touched').forEach(t=>t.classList.remove('touched'));
-});
+},{passive:true});
 
 /* Lightbox */
 const lb=document.getElementById('lightbox');

@@ -182,29 +182,27 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* ═══════ SIGNATURE ═══════ */
 .signature-block{
-  padding:8rem 6vw;
-  display:flex;
-  align-items:center;
-  gap:6rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  min-height:75vh;
   border-top:1px solid rgba(255,255,255,.05);
 }
-.signature-text{flex:1}
 .signature-img{
-  width:220px;height:280px;
-  overflow:hidden;flex-shrink:0;
-  position:relative;
-}
-.signature-img::before{
-  content:'';position:absolute;
-  top:-12px;left:-12px;right:12px;bottom:12px;
-  border:1px solid rgba(201,169,110,1.0);
-  z-index:0;
+  position:relative;overflow:hidden;
 }
 .signature-img img{
-  width:100%;height:100%;object-fit:cover;
-  object-position:center top;
-  filter:brightness(.82);
-  position:relative;z-index:1;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center center;
+  filter:brightness(.78) saturate(.85);
+  transition:transform 12s ease;
+  display:block;
+}
+.signature-block:hover .signature-img img{transform:scale(1.03)}
+.signature-text{
+  padding:7rem 6vw;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--dark2);
 }
 .signature-name{
   font-family:'Lora',serif;
@@ -241,8 +239,9 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   .intro-text-col{padding:5rem 2rem}
   .childhood-text{padding:4rem 2rem}
   .section-philosophy{grid-template-columns:1fr;gap:3rem;padding:6rem 2rem}
-  .signature-block{flex-direction:column;gap:3rem;padding:5rem 2rem}
-  .signature-img{width:160px;height:200px}
+  .signature-block{grid-template-columns:1fr}
+  .signature-img{height:65vw}
+  .signature-text{padding:4rem 2rem}
   .section-quote{padding:8rem 2rem}
   
 }
@@ -574,10 +573,10 @@ button:focus:not(:focus-visible) {
 <div class="signature-block reveal">
   <div class="signature-img">
     <img
-        src="images/franck.jpg"
-        srcset="images/franck-small.webp 640w, images/franck-medium.webp 1200w, images/franck-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Franck"
+        src="images/franck-enfant-dans-un-train.jpg"
+        srcset="images/franck-enfant-dans-un-train-small.webp 640w, images/franck-enfant-dans-un-train-medium.webp 1200w, images/franck-enfant-dans-un-train-large.webp 1920w"
+        sizes="(max-width:900px) 100vw, 50vw"
+        alt="Franck enfant dans un train — le regard déjà tourné vers l'horizon"
         loading="lazy"
         decoding="async">
   </div>

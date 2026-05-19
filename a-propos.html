@@ -247,6 +247,12 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   
 }
 
+/* Reconnaissance section — responsive overrides */
+.recognition-section{padding:6rem 4rem}
+.recognition-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+@media(max-width:900px){.recognition-section{padding:4rem 2rem}.recognition-grid{grid-template-columns:1fr;gap:1rem}}
+@media(max-width:480px){.recognition-section{padding:3rem 1.2rem}}
+
 @media(max-width:1024px){#nav{padding:1.4rem 3rem}.intro-text-col{padding:5rem 4vw}}
 @media(max-width:900px){#nav{padding:1.5rem 2rem}.section-intro{grid-template-columns:1fr;min-height:auto}.intro-text-col{padding:4rem 2rem}.intro-photo-col{height:60vw}}
 @media(max-width:768px){.hero-title{font-size:clamp(2rem,7vw,4rem)}.intro-text-col{padding:3rem 1.8rem}.intro-photo-col{height:65vw}.pull-quote{font-size:clamp(1.1rem,3vw,1.6rem)}}
@@ -638,11 +644,11 @@ button:focus:not(:focus-visible) {
 </div>
 
 
-<section style="padding:6rem 4rem;background:var(--dark);border-top:1px solid rgba(255,255,255,.04)">
+<section class="recognition-section" style="background:var(--dark);border-top:1px solid rgba(255,255,255,.04)">
   <div style="max-width:900px;margin:0 auto;text-align:center">
     <p class="section-label" style="margin-bottom:2rem" data-fr="Reconnaissance" data-en="Recognition">Reconnaissance</p>
     <h2 style="font-family:'Bodoni Moda',serif;font-size:clamp(1.5rem,3vw,2.5rem);font-weight:400;color:var(--light);margin-bottom:3rem" data-fr="Oeuvres dans des collections privées" data-en="Works in private collections">Oeuvres dans des collections privées</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:3rem">
+    <div class="recognition-grid" style="margin-bottom:3rem">
       <div style="border:1px solid rgba(201,169,110,1.0);padding:2rem 1rem;text-align:center"><p style="font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);margin-bottom:.5rem" data-fr="France" data-en="France">France</p><p style="font-size:0.85rem;color:rgba(245,243,239,.92)">Paris · Lyon · Bordeaux</p></div>
       <div style="border:1px solid rgba(201,169,110,1.0);padding:2rem 1rem;text-align:center"><p style="font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);margin-bottom:.5rem" data-fr="États-Unis" data-en="United States">États-Unis</p><p style="font-size:0.85rem;color:rgba(245,243,239,.92)">New York · Los Angeles</p></div>
       <div style="border:1px solid rgba(201,169,110,1.0);padding:2rem 1rem;text-align:center"><p style="font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);margin-bottom:.5rem" data-fr="Australie" data-en="Australia">Australie</p><p style="font-size:0.85rem;color:rgba(245,243,239,.92)">Sydney · Melbourne</p></div>

@@ -96,8 +96,8 @@
   transition:opacity .65s cubic-bezier(0.22,1,0.36,1);
   pointer-events:none;
 }
-.block.hovered .photo-desc,
-.frame.hovered .photo-desc,
+.block:hover .photo-desc,
+.frame:hover .photo-desc,
 .block.touched .photo-desc,
 .frame.touched .photo-desc{opacity:1}
 
@@ -114,8 +114,8 @@
              transform .55s cubic-bezier(0.22,1,0.36,1) .05s;
   margin-bottom:.7rem;
 }
-.block.hovered .desc-title,
-.frame.hovered .desc-title,
+.block:hover .desc-title,
+.frame:hover .desc-title,
 .block.touched .desc-title,
 .frame.touched .desc-title{opacity:1;transform:translateY(0)}
 
@@ -125,8 +125,8 @@
   transition:width .6s cubic-bezier(0.22,1,0.36,1) .1s;
   margin-bottom:.9rem;
 }
-.block.hovered .desc-line,
-.frame.hovered .desc-line,
+.block:hover .desc-line,
+.frame:hover .desc-line,
 .block.touched .desc-line,
 .frame.touched .desc-line{width:30px}
 
@@ -142,8 +142,8 @@
   transition:opacity .6s cubic-bezier(0.22,1,0.36,1) .15s,
              transform .6s cubic-bezier(0.22,1,0.36,1) .15s;
 }
-.block.hovered .desc-text,
-.frame.hovered .desc-text,
+.block:hover .desc-text,
+.frame:hover .desc-text,
 .block.touched .desc-text,
 .frame.touched .desc-text{opacity:1;transform:translateY(0)}
 
@@ -808,9 +808,10 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:0.07,rootMargin:'0px 0px -4% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-/* ── Descriptions photo : génération + hover desktop + touch mobile ── */
+/* ── Descriptions photo : génération + touch mobile ── */
 (function(){
-  // 1. Créer les overlays depuis data-title/data-desc
+  // Créer les overlays depuis data-title/data-desc
+  // CSS :hover gère l'affichage desktop (se désactive aussi au scroll)
   document.querySelectorAll('.block[data-title],.frame[data-title]').forEach(function(el){
     var d=document.createElement('div');
     d.className='photo-desc';
@@ -820,22 +821,13 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     el.appendChild(d);
   });
 
-  // 2. Éléments cliquables uniquement (pas les wrappers .block.offset sans onclick)
-  var items=document.querySelectorAll('.block[onclick],.frame[onclick]');
-
-  items.forEach(function(el){
-    // Desktop : mouseenter/mouseleave → classe .hovered
-    el.addEventListener('mouseenter',function(){ el.classList.add('hovered'); });
-    el.addEventListener('mouseleave',function(){ el.classList.remove('hovered'); });
-
-    // Mobile touch
-    var tStart=0;
+  // Touch mobile : description pendant le contact, tap rapide = lightbox
+  var tStart=0;
+  document.querySelectorAll('.block[onclick],.frame[onclick]').forEach(function(el){
     el.addEventListener('touchstart',function(e){
-      e.stopPropagation(); // empêche la remontée vers .block parent
+      e.stopPropagation();
       tStart=Date.now();
-      document.querySelectorAll('.hovered,.touched').forEach(function(t){
-        t.classList.remove('hovered','touched');
-      });
+      document.querySelectorAll('.touched').forEach(function(t){ t.classList.remove('touched'); });
       el.classList.add('touched');
     },{passive:true});
 
@@ -846,21 +838,22 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
     el.addEventListener('touchend',function(e){
       e.stopPropagation();
-      var dt=Date.now()-tStart;
       el.classList.remove('touched');
-      if(dt<250){
-        e.preventDefault(); // bloque le click event qui suivrait
+      if(Date.now()-tStart<250){
+        e.preventDefault();
         openLightbox(el);
       }
-    },{passive:false}); // passive:false requis pour preventDefault
+    },{passive:false});
   });
 
-  // Clic en dehors → masquer
+  // Scroll → supprimer .touched (nettoyage)
+  window.addEventListener('scroll',function(){
+    document.querySelectorAll('.touched').forEach(function(t){ t.classList.remove('touched'); });
+  },{passive:true});
+
   document.addEventListener('touchstart',function(e){
     if(!e.target.closest('.block[onclick],.frame[onclick]'))
-      document.querySelectorAll('.hovered,.touched').forEach(function(t){
-        t.classList.remove('hovered','touched');
-      });
+      document.querySelectorAll('.touched').forEach(function(t){ t.classList.remove('touched'); });
   },{passive:true});
 })();
 

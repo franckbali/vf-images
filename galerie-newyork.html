@@ -75,8 +75,8 @@
 .frame.offset-right{width:52vw;margin-left:auto;margin-right:0;position:relative}
 .frame img{height:auto}
 
-/* CAPTIONS statiques */
-.caption-corner{position:absolute;bottom:2rem;right:2.5rem;font-size:0.75rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,239,.92);font-family:'Raleway',sans-serif;font-weight:400;pointer-events:none}
+/* CAPTIONS statiques — masquées, remplacées par photo-desc au hover */
+.caption-corner{display:none}
 .caption-below{margin-top:.9rem;font-size:0.75rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,239,.92);font-family:'Raleway',sans-serif;font-weight:400}
 
 /* ═══════════════════════════════════════════
@@ -807,6 +807,16 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');});
 },{threshold:0.07,rootMargin:'0px 0px -4% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* Génère les overlays .photo-desc depuis data-title / data-desc */
+document.querySelectorAll('.block[data-title],.frame[data-title]').forEach(function(el){
+  var title=el.getAttribute('data-title')||'';
+  var desc=el.getAttribute('data-desc')||'';
+  var d=document.createElement('div');
+  d.className='photo-desc';
+  d.innerHTML='<p class="desc-title">'+title+'</p><span class="desc-line"></span><p class="desc-text">'+desc+'</p>';
+  el.appendChild(d);
+});
 
 /* Touch : description visible pendant le contact, disparaît au relâchement */
 var _touchStartTime=0;

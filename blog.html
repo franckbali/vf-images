@@ -9,6 +9,7 @@
 <link rel="dns-prefetch" href="https://www.instagram.com">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://vfimages.com/blog.html">
 <title>Blog – Photographie Fine Art & Bali | VF Images</title>
 <meta name="description" content="Récits photographiques de Bali et du monde. Techniques, coulisses des tirages Fine Art par Franck.">
 <meta property="og:title" content="Blog – VF Images">
@@ -39,7 +40,6 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .hero-eyebrow{font-size:0.80rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:.9rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
 .hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:200;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1}
 .hero-sub{font-family:'Lora',serif;font-style:italic;font-size:.95rem;letter-spacing:.08em;color:rgba(245,243,239,.92);margin-top:.9rem;animation:fadeUp 1.2s ease .6s both}
-to{opacity:1;transform:translateY(0)}}
 
 /* FILTRES */
 .filters{
@@ -199,10 +199,11 @@ to{opacity:1;transform:translateY(0)}}
 /* REVEAL */
 
 /* FOOTER */
+.blog-cta{padding:5rem 4rem}
 
 @media(max-width:900px){
-  nav{padding:1.5rem 2rem} 
-  
+  nav{padding:1.5rem 2rem}
+  .blog-cta{padding:3.5rem 2rem}
   .hero{padding:0 2rem 3.5rem;height:35vh}
   .filters{padding:2rem 2rem 0;flex-wrap:wrap}
   .filter-btn{padding:.7rem 1rem;font-size:0.80rem}
@@ -227,6 +228,7 @@ to{opacity:1;transform:translateY(0)}}
 }
 @media(max-width:480px){
   .hero{height:35vh}
+  .blog-cta{padding:2.5rem 1.2rem}
   .filter-btn{padding:.6rem .9rem;font-size:0.75rem}
   .blog-grid{padding:2.5rem 1.2rem 4rem;gap:1rem}
   .article-body{padding:3rem 1.2rem 4rem}
@@ -477,7 +479,7 @@ button:focus:not(:focus-visible) {
 
 <!-- Analytics Umami — RGPD friendly, sans cookies -->
 <!-- ⚠️  Remplacer 1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1 par votre ID sur umami.is -->
-<script defer src="https://analytics.umami.is/script.js" data-website-id="1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1"></script>
+
 </head>
 <body>
 <a href="#main-content" class="skip-link">Aller au contenu</a>
@@ -488,7 +490,7 @@ button:focus:not(:focus-visible) {
 <nav role="navigation" aria-label="Navigation principale">
   <a href="index.html" class="logo"><img
         src="images/logo_white2.png"
-        srcset="images/logo-small.png 640w, images/logo-medium.png 1200w, images/logo-large.png 1920w"
+        srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="VF Images"
         loading="eager"
@@ -514,23 +516,24 @@ button:focus:not(:focus-visible) {
   <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a><a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
   <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
   <a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+  <div class="overlay-lang"><span>FR</span> / EN</div>
 </div>
 
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">VF Images</p>
-    <h1 class="hero-title">Blog & Vlog</h1>
-    <p class="hero-sub">Récits, coulisses et regards sur le monde</p>
+    <h1 class="hero-title" data-fr="Blog & Vlog" data-en="Blog & Vlog">Blog & Vlog</h1>
+    <p class="hero-sub" data-fr="Récits, coulisses et regards sur le monde" data-en="Stories, behind the scenes and world perspectives">Récits, coulisses et regards sur le monde</p>
   </div>
 </div>
 
 <div class="filters">
-  <button class="filter-btn active" data-filter="all">Tout</button>
-  <button class="filter-btn" data-filter="article">Articles</button>
-  <button class="filter-btn" data-filter="vlog">Vlogs</button>
-  <button class="filter-btn" data-filter="bali">Bali</button>
-  <button class="filter-btn" data-filter="voyages">Voyages</button>
+  <button class="filter-btn active" data-filter="all" data-fr="Tout" data-en="All">Tout</button>
+  <button class="filter-btn" data-filter="article" data-fr="Articles" data-en="Articles">Articles</button>
+  <button class="filter-btn" data-filter="vlog" data-fr="Vlogs" data-en="Vlogs">Vlogs</button>
+  <button class="filter-btn" data-filter="bali" data-fr="Bali" data-en="Bali">Bali</button>
+  <button class="filter-btn" data-filter="voyages" data-fr="Voyages" data-en="Travels">Voyages</button>
 </div>
 
 <div class="blog-wrap">
@@ -660,7 +663,7 @@ button:focus:not(:focus-visible) {
 </div>
 
 <main id="main-content">
-<section style="padding:5rem 4rem;text-align:center;border-top:1px solid rgba(255,255,255,.04)">
+<section class="blog-cta" style="text-align:center;border-top:1px solid rgba(255,255,255,.04)">
   <p style="font-size:0.80rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem">Tirages Fine Art</p>
   <h2 style="font-family:'Bodoni Moda',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:400;color:var(--light);margin-bottom:2.5rem" data-fr="Voir la collection Bali" data-en="View the Bali collection">Voir la collection Bali</h2>
   <a href="boutique.html" style="display:inline-block;padding:1.1rem 3.5rem;border:1px solid var(--gold);color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-size:0.85rem;letter-spacing:.35em;text-transform:uppercase;text-decoration:none;font-family:'Raleway',sans-serif" data-fr="Voir la collection Bali" data-en="View the Bali collection">Voir la collection Bali</a>
@@ -669,7 +672,7 @@ button:focus:not(:focus-visible) {
 <footer role="contentinfo">
   <div class="footer-logo"><img
         src="images/logo_white2.png"
-        srcset="images/logo-small.png 640w, images/logo-medium.png 1200w, images/logo-large.png 1920w"
+        srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="VF Images"
         loading="lazy"
@@ -847,6 +850,12 @@ if(hamburger&&navOverlay){
   };
 
   function loadAnalytics(){
+      if(document.querySelector('[data-website-id]')) return;
+      var s=document.createElement('script');
+      s.defer=true;
+      s.src='https://analytics.umami.is/script.js';
+      s.setAttribute('data-website-id','1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1');
+      document.head.appendChild(s);
     // Ne charger Umami que si consentement
     const existing = document.querySelector('[data-website-id]');
     if(existing && !existing.src.includes('loaded')){

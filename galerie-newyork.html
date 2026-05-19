@@ -9,6 +9,7 @@
 <link rel="dns-prefetch" href="https://www.instagram.com">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://vfimages.com/galerie-newyork.html">
 <title>New York — Tirages Fine Art | VF Images</title>
 <meta name="description" content="Collection photographique New York par Franck. Manhattan, SoHo, Brooklyn en tirages Fine Art édition limitée.">
 <meta property="og:title" content="Galerie New York – VF Images">
@@ -44,7 +45,6 @@
 .intro-scroll span{font-size:0.75rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.92)}
 .scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sp 2.2s ease-in-out infinite}
 @keyframes sp{0%,100%{opacity:.25}50%{opacity:.8}}
-to{opacity:1;transform:translateY(0)}}
 
 /* GAPS */
 .gap{height:20vh}
@@ -483,6 +483,9 @@ button:focus:not(:focus-visible) {
   #cookie-banner { flex-direction:column; padding:1.5rem 1.8rem; gap:1.2rem; }
   .cookie-actions { width:100%; }
   .cookie-btn { flex:1; text-align:center; }
+  /* Lightbox — zones de touch plus grandes sur mobile */
+  .lightbox-close{padding:1rem;top:1rem;right:1rem;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
+  .lightbox-nav{padding:1.2rem 2rem;min-height:44px}
 }
 @media(max-width:480px){
   #cookie-banner { padding:1.2rem; }
@@ -580,7 +583,7 @@ button:focus:not(:focus-visible) {
 
 <!-- Analytics Umami — RGPD friendly, sans cookies -->
 <!-- ⚠️  Remplacer 1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1 par votre ID sur umami.is -->
-<script defer src="https://analytics.umami.is/script.js" data-website-id="1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1"></script>
+
 </head>
 <body>
 <a href="#main-content" class="skip-link">Aller au contenu</a>
@@ -627,7 +630,7 @@ button:focus:not(:focus-visible) {
 <nav role="navigation" aria-label="Navigation principale">
   <a href="index.html" class="logo"><img
         src="images/logo_white2.png"
-        srcset="images/logo-small.png 640w, images/logo-medium.png 1200w, images/logo-large.png 1920w"
+        srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="VF Images"
         loading="eager"
@@ -770,7 +773,7 @@ button:focus:not(:focus-visible) {
 <footer role="contentinfo">
   <div class="footer-logo"><img
         src="images/logo_white2.png"
-        srcset="images/logo-small.png 640w, images/logo-medium.png 1200w, images/logo-large.png 1920w"
+        srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="VF Images"
         loading="lazy"
@@ -1027,6 +1030,12 @@ if(hamburger&&navOverlay){
   };
 
   function loadAnalytics(){
+      if(document.querySelector('[data-website-id]')) return;
+      var s=document.createElement('script');
+      s.defer=true;
+      s.src='https://analytics.umami.is/script.js';
+      s.setAttribute('data-website-id','1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1');
+      document.head.appendChild(s);
     // Ne charger Umami que si consentement
     const existing = document.querySelector('[data-website-id]');
     if(existing && !existing.src.includes('loaded')){

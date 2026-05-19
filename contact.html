@@ -9,6 +9,7 @@
 <link rel="dns-prefetch" href="https://www.instagram.com">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://vfimages.com/contact.html">
 <title>Contact – VF Images | Photographe Fine Art Bali</title>
 <meta name="description" content="Contactez Franck pour des projets photographiques, commandes privées ou questions sur les tirages Fine Art. Basé à Bali, disponible dans le monde.">
 <meta property="og:title" content="Contact – VF Images">
@@ -76,7 +77,6 @@
   line-height:1.7;
   max-width:340px;
 }
-to{opacity:1;transform:translateY(0)}}
 
 /* INFOS DE CONTACT */
 .contact-infos{
@@ -634,7 +634,7 @@ button:focus:not(:focus-visible) {
 
 <!-- Analytics Umami — RGPD friendly, sans cookies -->
 <!-- ⚠️  Remplacer 1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1 par votre ID sur umami.is -->
-<script defer src="https://analytics.umami.is/script.js" data-website-id="1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1"></script>
+
 </head>
 <body>
 <a href="#main-content" class="skip-link">Aller au contenu</a>
@@ -645,7 +645,7 @@ button:focus:not(:focus-visible) {
 <nav role="navigation" aria-label="Navigation principale">
   <a href="index.html" class="logo"><img
         src="images/logo_white2.png"
-        srcset="images/logo-small.png 640w, images/logo-medium.png 1200w, images/logo-large.png 1920w"
+        srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="VF Images"
         loading="eager"
@@ -806,7 +806,7 @@ button:focus:not(:focus-visible) {
 <footer role="contentinfo">
     <div class="footer-logo"><img
         src="images/logo_white2.png"
-        srcset="images/logo-small.png 640w, images/logo-medium.png 1200w, images/logo-large.png 1920w"
+        srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="VF Images"
         loading="eager"
@@ -952,6 +952,12 @@ window.addEventListener('load', function(){
   };
 
   function loadAnalytics(){
+      if(document.querySelector('[data-website-id]')) return;
+      var s=document.createElement('script');
+      s.defer=true;
+      s.src='https://analytics.umami.is/script.js';
+      s.setAttribute('data-website-id','1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1');
+      document.head.appendChild(s);
     // Ne charger Umami que si consentement
     const existing = document.querySelector('[data-website-id]');
     if(existing && !existing.src.includes('loaded')){

@@ -9,6 +9,7 @@
 <link rel="dns-prefetch" href="https://www.instagram.com">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://vfimages.com/boutique.html">
 <title>Boutique Tirages Fine Art – VF Images</title>
 <meta name="description" content="Tirages Fine Art de Bali et du monde. Éditions limitées numérotées, papier Hahnemühle museum. Livraison internationale 7-10 jours.">
 <meta property="og:title" content="Boutique Fine Art – VF Images">
@@ -34,7 +35,6 @@
 .hero-eyebrow{font-size:0.80rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
 .hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:200;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1;margin-bottom:1.2rem}
 .hero-sub{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(245,243,239,.92);letter-spacing:.08em;animation:fadeUp 1.2s ease .6s both;max-width:540px;line-height:1.7}
-to{opacity:1;transform:translateY(0)}}
 
 /* INFOS QUALITÉ */
 .quality-strip{
@@ -564,7 +564,7 @@ button:focus:not(:focus-visible) {
 
 <!-- Analytics Umami — RGPD friendly, sans cookies -->
 <!-- ⚠️  Remplacer 1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1 par votre ID sur umami.is -->
-<script defer src="https://analytics.umami.is/script.js" data-website-id="1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1"></script>
+
 </head>
 <body>
 <a href="#main-content" class="skip-link">Aller au contenu</a>
@@ -818,7 +818,7 @@ button:focus:not(:focus-visible) {
         srcset="images/logo-small.png 640w, images/logo-medium.png 1200w, images/logo-large.png 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="VF Images"
-        loading="lazy"
+        loading="eager"
         decoding="async"></a>
   <ul>
     <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
@@ -1096,7 +1096,7 @@ button:focus:not(:focus-visible) {
         alt="VF Images"
         loading="lazy"
         decoding="async"></div>
-  <div class="footer-copy" data-fr="© 2026 VF Images. Tous droits réservés. · <a href="mentions-legales.html" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.1)">Mentions légales</a>" data-en="© 2026 VF Images. All rights reserved.">© 2026 VF Images. Tous droits réservés. · <a href="mentions-legales.html" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.1)" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a></div>
+  <div class="footer-copy">© 2026 VF Images. Tous droits réservés. · <a href="mentions-legales.html" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.1)" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a></div>
   <div class="footer-social">
     <a href="https://www.instagram.com/thelensofwonder/" target="_blank" aria-label="Suivre VF Images sur Instagram (nouvelle fenêtre)"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
   </div>
@@ -1293,6 +1293,12 @@ if(hamburger&&navOverlay){
   };
 
   function loadAnalytics(){
+      if(document.querySelector('[data-website-id]')) return;
+      var s=document.createElement('script');
+      s.defer=true;
+      s.src='https://analytics.umami.is/script.js';
+      s.setAttribute('data-website-id','1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1');
+      document.head.appendChild(s);
     // Ne charger Umami que si consentement
     const existing = document.querySelector('[data-website-id]');
     if(existing && !existing.src.includes('loaded')){
@@ -1312,6 +1318,7 @@ if(hamburger&&navOverlay){
   var lang = localStorage.getItem('vf_lang') || 'fr';
   window.setLang = function(l){
     lang = l;
+    if(typeof currentLang !== 'undefined') currentLang = l;
     localStorage.setItem('vf_lang', l);
     document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
       el.textContent = el.getAttribute('data-' + l);

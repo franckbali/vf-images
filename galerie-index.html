@@ -9,6 +9,7 @@
 <link rel="dns-prefetch" href="https://www.instagram.com">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://vfimages.com/galerie-index.html">
 <title>Galeries Photo – Bali, New York, Monde | VF Images</title>
 <meta name="description" content="Explorez les galeries de Franck : Bali, New York, La Réunion, Bolivie. Photographies Fine Art disponibles en tirage limité.">
 <meta property="og:title" content="Galeries – VF Images">
@@ -35,7 +36,6 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .page-hero-eyebrow{font-size:0.80rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:.9rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
 .page-hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:200;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1}
 .page-hero-sub{font-family:'Lora',serif;font-style:italic;font-size:.95rem;letter-spacing:.08em;color:rgba(245,243,239,.92);margin-top:1rem;animation:fadeUp 1.2s ease .6s both}
-to{opacity:1;transform:translateY(0)}}
 
 /* GRILLE GALERIES */
 .galleries-grid{
@@ -510,7 +510,7 @@ button:focus:not(:focus-visible) {
 
 <!-- Analytics Umami — RGPD friendly, sans cookies -->
 <!-- ⚠️  Remplacer 1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1 par votre ID sur umami.is -->
-<script defer src="https://analytics.umami.is/script.js" data-website-id="1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1"></script>
+
 </head>
 <body>
 <a href="#main-content" class="skip-link">Aller au contenu</a>
@@ -551,16 +551,16 @@ button:focus:not(:focus-visible) {
   <a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a>
   <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
   <div class="overlay-lang"><span>FR</span> / EN</div>
-
-<main id="main-content">
 </div>
 
+<main id="main-content">
+
 <div class="page-hero">
-  <div class="page-hero-bg" style="background:linear-gradient(to bottom,rgba(10,10,10,.5) 0%,rgba(10,10,10,.15) 40%,rgba(10,10,10,.72) 100%),url('images/bg-galerie.webp') center 25%/cover no-repeat;animation:heroZoom 14s ease-out forwards"></div>
+  <div class="page-hero-bg" style="background:linear-gradient(to bottom,rgba(10,10,10,.5) 0%,rgba(10,10,10,.15) 40%,rgba(10,10,10,.72) 100%),url('images/brooklyn-bridge-ii.jpg') center 62%/cover no-repeat;animation:heroZoom 14s ease-out forwards"></div>
   <div class="page-hero-content">
     <p class="page-hero-eyebrow">VF Images</p>
     <h1 class="page-hero-title" data-fr="Galerie" data-en="Gallery">Galerie</h1>
-    <p class="page-hero-sub">Choisissez une collection</p>
+    <p class="page-hero-sub" data-fr="Choisissez une collection" data-en="Choose a collection">Choisissez une collection</p>
   </div>
 </div>
 
@@ -733,6 +733,12 @@ if(hamburger&&navOverlay){
   };
 
   function loadAnalytics(){
+      if(document.querySelector('[data-website-id]')) return;
+      var s=document.createElement('script');
+      s.defer=true;
+      s.src='https://analytics.umami.is/script.js';
+      s.setAttribute('data-website-id','1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1');
+      document.head.appendChild(s);
     // Ne charger Umami que si consentement
     const existing = document.querySelector('[data-website-id]');
     if(existing && !existing.src.includes('loaded')){

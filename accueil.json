@@ -62,12 +62,12 @@
     }
   ],
   "apropos": {
-    "fichier": "/images/une-fenetre-sur-locean.jpg",
+    "fichier": "images/une-fenetre-sur-locean.jpg",
     "legende": "Bali, instants de vie",
     "visible": true
   },
   "cta": {
-    "fichier": "/images/DSC018461.jpg",
+    "fichier": "images/DSC018461.jpg",
     "legende": "CTA Bali",
     "visible": true
   }

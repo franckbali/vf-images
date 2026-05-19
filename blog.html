@@ -693,10 +693,10 @@ document.querySelectorAll('a,button,.card,.card-featured').forEach(el=>{
   el.addEventListener('mouseleave',()=>ring.classList.remove('h'));
 });
 
-const nav=document.getElementById('nav');
+const nav=document.querySelector('nav');
 let ticking=false;
 window.addEventListener('scroll',()=>{
-  if(!ticking){requestAnimationFrame(()=>{nav.classList.toggle('scrolled',window.scrollY>80);ticking=false;});ticking=true;}
+  if(!ticking){requestAnimationFrame(()=>{if(nav)nav.classList.toggle('scrolled',window.scrollY>80);ticking=false;});ticking=true;}
 });
 
 const obs=new IntersectionObserver(entries=>{

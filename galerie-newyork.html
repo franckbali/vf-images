@@ -173,9 +173,9 @@
 .lb-desc-text{font-family:'Lora',serif;font-size:.78rem;font-style:italic;line-height:1.7;color:rgba(245,243,239,.92);max-width:480px;transform:translateY(8px);opacity:0;transition:opacity .55s ease .12s,transform .55s ease .12s}
 .lb-inner:hover .lb-desc-text,.lb-inner.touched .lb-desc-text{opacity:1;transform:translateY(0)}
 
-.lightbox-close{position:absolute;top:2rem;right:2.5rem;background:none;border:none;color:rgba(245,243,239,.92);font-size:1.1rem;transition:color .4s;padding:.5rem;font-weight:200}
+.lightbox-close{position:absolute;top:2rem;right:2.5rem;background:none;border:none;color:rgba(245,243,239,.92);font-size:1.1rem;transition:color .4s;padding:.5rem;font-weight:200;z-index:10}
 .lightbox-close:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
-.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(245,243,239,.92);font-size:1.2rem;font-weight:200;padding:1rem 1.5rem;transition:color .35s}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(245,243,239,.92);font-size:1.2rem;font-weight:200;padding:1rem 1.5rem;transition:color .35s;z-index:10}
 .lightbox-nav:hover{color:rgba(201,169,110,1.0)}
 .lightbox-prev{left:1rem}
 .lightbox-next{right:1rem}
@@ -656,6 +656,7 @@ button:focus:not(:focus-visible) {
   <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a><a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
   <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
   <a href="blog.html" data-fr="Blog" data-en="Blog">Blog</a><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+  <div class="overlay-lang"><span>FR</span> / EN</div>
 </div>
 
 <main id="main-content">
@@ -795,10 +796,10 @@ document.querySelectorAll('a,button,.block,.frame,.panel-trigger,.panel-overlay'
 });
 
 /* Nav hide on scroll */
-const nav=document.getElementById('nav');
+const nav=document.querySelector('nav');
 let ticking=false;
 window.addEventListener('scroll',()=>{
-  if(!ticking){requestAnimationFrame(()=>{nav.classList.toggle('hidden',window.scrollY>100);ticking=false;});ticking=true;}
+  if(!ticking){requestAnimationFrame(()=>{if(nav)nav.classList.toggle('hidden',window.scrollY>100);ticking=false;});ticking=true;}
 });
 
 /* Reveal */

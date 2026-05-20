@@ -84,7 +84,6 @@ section.gallery-preview{padding:8rem 4rem;background:var(--dark)}
   width:100%;height:100%;
   object-fit:contain;display:block;
   opacity:0;
-  transition:opacity 1.1s cubic-bezier(0.4,0,0.2,1);
   will-change:opacity;
 }
 .lightbox-img.lb-show{opacity:1}
@@ -646,7 +645,10 @@ function openLightboxAt(index){
   lb.classList.remove('closing');
   lb.classList.add('open');
   document.body.style.overflow='hidden';
-  requestAnimationFrame(()=>lbFront.classList.add('lb-show'));
+  requestAnimationFrame(()=>{
+    lbFront.style.transition='opacity 420ms ease-out';
+    lbFront.classList.add('lb-show');
+  });
 }
 
 function transitionToPhoto(newIndex){
@@ -654,23 +656,28 @@ function transitionToPhoto(newIndex){
   isTransitioning=true;
   const p=photos[newIndex];
   const cap=getCaption(p);
-  // Charger la nouvelle photo sur l'image de fond
-  lbBack.src=p.fichier;
-  lbBack.alt=cap;
-  lbBack.style.zIndex='2'; lbFront.style.zIndex='1';
+  // Pré-charger la nouvelle image en arrière-plan
+  lbBack.src=p.fichier; lbBack.alt=cap;
   const doSwap=()=>{
-    // Dissolution simultanée : nouvelle monte, ancienne descend
-    lbBack.classList.add('lb-show');
-    setTimeout(()=>lbFront.classList.remove('lb-show'),80);
+    // 1. Fade-out rapide de l'image courante (260ms)
+    lbFront.style.transition='opacity 260ms ease-in';
+    lbFront.classList.remove('lb-show');
+    // 2. Après 220ms (pendant le fade-out), fade-in de la nouvelle (380ms ease-out)
     setTimeout(()=>{
-      // Échange des rôles pour la prochaine transition
-      lbBack.style.zIndex=''; lbFront.style.zIndex='';
-      [lbFront,lbBack]=[lbBack,lbFront];
-      currentPhotoIndex=newIndex;
-      lbCap.textContent=cap;
-      updateCounter();
-      isTransitioning=false;
-    },1150);
+      lbBack.style.zIndex='2'; lbFront.style.zIndex='1';
+      lbBack.style.transition='opacity 380ms ease-out';
+      lbBack.classList.add('lb-show');
+      // 3. Nettoyage après fin du fade-in
+      setTimeout(()=>{
+        lbFront.style.transition=''; lbBack.style.transition='';
+        lbBack.style.zIndex=''; lbFront.style.zIndex='';
+        [lbFront,lbBack]=[lbBack,lbFront];
+        currentPhotoIndex=newIndex;
+        lbCap.textContent=cap;
+        updateCounter();
+        isTransitioning=false;
+      },400);
+    },220);
   };
   if(lbBack.complete&&lbBack.naturalWidth) doSwap();
   else{ lbBack.onload=doSwap; lbBack.onerror=doSwap; }

@@ -317,6 +317,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .ig-arrow{transition:transform .35s}
 .ig-follow-link:hover .ig-arrow{transform:translateX(3px)}
 .ig-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:2px}
+.ig-behold{width:100%;--behold-background:transparent;--behold-gap:2px}
 .ig-post{
   aspect-ratio:1;overflow:hidden;position:relative;
   cursor:none;background:#111;
@@ -699,33 +700,11 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
     </a>
   </div>
 
-  <!-- Instagram grid -->
-  <div class="ig-strip">
-    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — rizières Bali">
-      <img src="images/filmer-bali-entre-jungle-et-rizieres.jpg" alt="Rizières de Bali" loading="lazy" decoding="async">
-      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
-    </a>
-    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — Barong">
-      <img src="images/le-barong-et-les-masques-du-temps.jpg" alt="Barong — Bali" loading="lazy" decoding="async">
-      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
-    </a>
-    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — Manhattan">
-      <img src="images/48h-a-manhattan-ce-que-la-ville-garde-pour-elle.jpg" alt="Manhattan — New York" loading="lazy" decoding="async">
-      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
-    </a>
-    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — océan La Réunion">
-      <img src="images/une-fenetre-sur-locean.jpg" alt="Océan — La Réunion" loading="lazy" decoding="async">
-      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
-    </a>
-    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — noir et blanc">
-      <img src="images/pourquoi-je-photographie-encore-en-noir-et-blanc.jpg" alt="Photographie noir et blanc" loading="lazy" decoding="async">
-      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
-    </a>
-    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-post" aria-label="Post Instagram — jungle Bali">
-      <img src="images/filmer-bali-entre-jungle-et-rizieres.jpg" alt="Jungle — Bali" loading="lazy" decoding="async">
-      <div class="ig-post-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,243,239,.65)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,243,239,.65)" stroke="none"/></svg></div>
-    </a>
-  </div><!-- /ig-strip -->
+  <!-- Instagram feed live — Behold widget -->
+  <div class="ig-behold">
+    <behold-widget feed-id="xASgXxbEeMit6r1bIwp6"></behold-widget>
+    <script>(() => { const d=document,s=d.createElement("script");s.type="module";s.src="https://w.behold.so/widget.js";d.head.append(s); })();</script>
+  </div>
 
 </section>
 

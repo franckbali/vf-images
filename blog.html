@@ -317,10 +317,9 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .ig-arrow{transition:transform .35s}
 .ig-follow-link:hover .ig-arrow{transform:translateX(3px)}
 .ig-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:2px}
-.ig-behold{width:100%;opacity:.55;transition:opacity .4s;--behold-background:transparent;--behold-gap:1px;--behold-columns:12}
+.ig-behold{max-width:480px;opacity:.55;transition:opacity .4s}
 .ig-behold:hover{opacity:.8}
-@media(max-width:900px){.ig-behold{--behold-columns:8}}
-@media(max-width:480px){.ig-behold{--behold-columns:6}}
+@media(max-width:900px){.ig-behold{max-width:100%}}
 .ig-post{
   aspect-ratio:1;overflow:hidden;position:relative;
   cursor:none;background:#111;
@@ -705,7 +704,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
   <!-- Instagram feed live — Behold widget -->
   <div class="ig-behold">
-    <behold-widget feed-id="xASgXxbEeMit6r1bIwp6"></behold-widget>
+    <behold-widget feed-id="xASgXxbEeMit6r1bIwp6" columns="6"></behold-widget>
     <script>(() => { const d=document,s=d.createElement("script");s.type="module";s.src="https://w.behold.so/widget.js";d.head.append(s); })();</script>
   </div>
 

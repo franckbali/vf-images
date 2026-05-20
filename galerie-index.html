@@ -811,9 +811,11 @@ if(hamburger&&navOverlay){
     document.documentElement.lang = l;
     document.querySelectorAll('.lang-btn').forEach(function(b){
       if(b.getAttribute('data-lang') === l){
+        b.classList.add('active');
         b.style.color = 'var(--gold)';
         b.style.fontWeight = '400';
       } else {
+        b.classList.remove('active');
         b.style.color = 'rgba(245,243,239,.92)';
         b.style.fontWeight = '300';
       }

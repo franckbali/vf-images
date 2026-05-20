@@ -69,26 +69,25 @@ section.gallery-preview{padding:8rem 4rem;background:var(--dark)}
   opacity:1;pointer-events:all;
   background:rgba(5,5,5,.95);
 }
+/* Conteneur crossfade — deux images superposées */
+#lb-img-wrap{
+  position:relative;
+  width:88vw;height:86vh;
+  display:flex;align-items:center;justify-content:center;
+  transform:scale(0.94);opacity:0;
+  transition:transform .9s cubic-bezier(0.22,1,0.36,1),opacity .7s ease;
+}
+.lightbox.open #lb-img-wrap{transform:scale(1);opacity:1}
+.lightbox.closing #lb-img-wrap{transform:scale(0.96);opacity:0;transition:transform .55s ease,opacity .45s ease}
 .lightbox-img{
-  max-width:88vw;max-height:86vh;
-  width:auto;height:auto;
+  position:absolute;inset:0;
+  width:100%;height:100%;
   object-fit:contain;display:block;
-  transform:scale(0.92) translateY(12px);
   opacity:0;
-  transition:transform .8s cubic-bezier(0.22,1,0.36,1),
-             opacity .7s cubic-bezier(0.22,1,0.36,1);
-  will-change:transform,opacity;
+  transition:opacity 1.1s cubic-bezier(0.4,0,0.2,1);
+  will-change:opacity;
 }
-.lightbox.open .lightbox-img{
-  transform:scale(1) translateY(0);
-  opacity:1;
-}
-.lightbox.closing .lightbox-img{
-  transform:scale(0.94) translateY(8px);
-  opacity:0;
-  transition:transform .6s cubic-bezier(0.22,1,0.36,1),
-             opacity .5s ease;
-}
+.lightbox-img.lb-show{opacity:1}
 .lightbox-close{
   position:absolute;top:2rem;right:2.5rem;
   background:none;border:none;
@@ -498,7 +497,10 @@ button:focus:not(:focus-visible) {
   <button class="lb-nav lb-nav-prev" onclick="goPrev(event)" aria-label="Photo précédente">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
   </button>
-  <img loading="eager" decoding="async" class="lightbox-img" id="lightbox-img" src="" alt="">
+  <div id="lb-img-wrap">
+    <img loading="eager" decoding="async" class="lightbox-img" id="lb-img-a" src="" alt="">
+    <img loading="eager" decoding="async" class="lightbox-img" id="lb-img-b" src="" alt="">
+  </div>
   <button class="lb-nav lb-nav-next" onclick="goNext(event)" aria-label="Photo suivante">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
   </button>
@@ -610,55 +612,68 @@ document.querySelectorAll('a,button').forEach(el=>{
 });
 
 const lb=document.getElementById('lightbox');
-const lbImg=document.getElementById('lightbox-img');
 const lbCap=document.getElementById('lightbox-caption');
 const lbCounter=document.getElementById('lb-counter');
+const lbA=document.getElementById('lb-img-a');
+const lbB=document.getElementById('lb-img-b');
 
 var photos=[];
 var currentPhotoIndex=-1;
 var isTransitioning=false;
+var lbFront=lbA; // image actuellement visible
+var lbBack=lbB;  // image suivante (cachée)
 
-function openLightboxAt(index){
-  currentPhotoIndex=index;
-  const p=photos[index];
-  const lang=localStorage.getItem('vf_lang')||'fr';
-  const cap=lang==='en'?(p.legende_en||p.legende):p.legende;
-  lbImg.style.transition='';lbImg.style.opacity='';lbImg.style.transform='';
-  lbImg.src=p.fichier;
-  lbImg.alt=cap;
-  lbCap.textContent=cap;
-  updateCounter();
-  lb.classList.remove('closing');
-  requestAnimationFrame(()=>{
-    lb.classList.add('open');
-    document.body.style.overflow='hidden';
-  });
+function getCaption(p){
+  var lang=localStorage.getItem('vf_lang')||'fr';
+  return lang==='en'?(p.legende_en||p.legende):p.legende;
 }
 
 function updateCounter(){
   if(lbCounter&&photos.length>1) lbCounter.textContent=(currentPhotoIndex+1)+' / '+photos.length;
 }
 
+function openLightboxAt(index){
+  currentPhotoIndex=index;
+  const p=photos[index];
+  const cap=getCaption(p);
+  // Réinitialiser les deux images
+  lbA.className='lightbox-img'; lbB.className='lightbox-img';
+  lbFront=lbA; lbBack=lbB;
+  lbFront.src=p.fichier; lbFront.alt=cap;
+  lbBack.src='';
+  lbCap.textContent=cap;
+  updateCounter();
+  lb.classList.remove('closing');
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+  requestAnimationFrame(()=>lbFront.classList.add('lb-show'));
+}
+
 function transitionToPhoto(newIndex){
   if(isTransitioning) return;
   isTransitioning=true;
-  lbImg.style.transition='opacity .38s ease';
-  lbImg.style.opacity='0';
-  setTimeout(()=>{
-    currentPhotoIndex=newIndex;
-    const p=photos[newIndex];
-    const lang=localStorage.getItem('vf_lang')||'fr';
-    const cap=lang==='en'?(p.legende_en||p.legende):p.legende;
-    lbImg.src=p.fichier;
-    lbImg.alt=cap;
-    lbCap.textContent=cap;
-    updateCounter();
-    requestAnimationFrame(()=>requestAnimationFrame(()=>{
-      lbImg.style.transition='opacity .7s cubic-bezier(0.25,0.46,0.45,0.94)';
-      lbImg.style.opacity='1';
-      setTimeout(()=>{lbImg.style.transition='';isTransitioning=false;},720);
-    }));
-  },380);
+  const p=photos[newIndex];
+  const cap=getCaption(p);
+  // Charger la nouvelle photo sur l'image de fond
+  lbBack.src=p.fichier;
+  lbBack.alt=cap;
+  lbBack.style.zIndex='2'; lbFront.style.zIndex='1';
+  const doSwap=()=>{
+    // Dissolution simultanée : nouvelle monte, ancienne descend
+    lbBack.classList.add('lb-show');
+    setTimeout(()=>lbFront.classList.remove('lb-show'),80);
+    setTimeout(()=>{
+      // Échange des rôles pour la prochaine transition
+      lbBack.style.zIndex=''; lbFront.style.zIndex='';
+      [lbFront,lbBack]=[lbBack,lbFront];
+      currentPhotoIndex=newIndex;
+      lbCap.textContent=cap;
+      updateCounter();
+      isTransitioning=false;
+    },1150);
+  };
+  if(lbBack.complete&&lbBack.naturalWidth) doSwap();
+  else{ lbBack.onload=doSwap; lbBack.onerror=doSwap; }
 }
 
 function goPrev(e){if(e)e.stopPropagation();if(photos.length<2)return;transitionToPhoto((currentPhotoIndex-1+photos.length)%photos.length);}
@@ -667,12 +682,16 @@ function goNext(e){if(e)e.stopPropagation();if(photos.length<2)return;transition
 function closeLightbox(){
   lb.classList.add('closing');
   lb.classList.remove('open');
-  lbImg.style.transition='';lbImg.style.opacity='';lbImg.style.transform='';
-  setTimeout(()=>{lb.classList.remove('closing');document.body.style.overflow='';lbImg.src='';},700);
+  setTimeout(()=>{
+    lb.classList.remove('closing');
+    document.body.style.overflow='';
+    lbA.src=''; lbB.src='';
+    lbA.className='lightbox-img'; lbB.className='lightbox-img';
+  },600);
 }
 
 function handleLightboxClick(e){
-  if(e.target===lbImg||e.target.closest('.lightbox-close')||e.target.closest('.lb-nav')) return;
+  if(e.target.closest('#lb-img-wrap')||e.target.closest('.lightbox-close')||e.target.closest('.lb-nav')) return;
   if(e.target===lb) closeLightbox();
 }
 

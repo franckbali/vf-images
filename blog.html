@@ -303,7 +303,6 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .yt-grid .yt-card:nth-child(3).reveal{transition-delay:.2s}
 
 /* Instagram strip */
-.ig-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem}
 .ig-label{
   font-family:'Raleway',sans-serif;font-size:0.60rem;letter-spacing:.48em;
   text-transform:uppercase;color:rgba(245,243,239,.22);font-weight:300;
@@ -688,45 +687,6 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
   </div><!-- /yt-grid -->
 
-  <!-- Sub-header Instagram -->
-  <div class="sub-header">
-    <span class="sub-header-label">Instagram</span>
-    <div class="sub-header-line"></div>
-  </div>
-  <div class="ig-header">
-    <span class="ig-label">@thelensofwonder</span>
-    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" rel="noopener" class="ig-follow-link" aria-label="Suivre @thelensofwonder sur Instagram (nouvelle fenêtre)">
-      <span data-fr="Suivre" data-en="Follow">Suivre</span>
-      <span class="ig-arrow">→</span>
-    </a>
-  </div>
-
-  <!-- Instagram feed live — Behold widget -->
-  <div class="ig-behold">
-    <behold-widget feed-id="xASgXxbEeMit6r1bIwp6"></behold-widget>
-    <script>(() => { const d=document,s=d.createElement("script");s.type="module";s.src="https://w.behold.so/widget.js";d.head.append(s); })();</script>
-    <script>
-    (function(){
-      function hideBranding(){
-        var w=document.querySelector('behold-widget');
-        if(!w)return;
-        // Light DOM
-        w.querySelectorAll('a[href*="behold"],div[class*="brand"],div[class*="credit"],div[class*="made"],div[class*="footer"]').forEach(function(el){el.style.display='none';});
-        // Shadow DOM
-        if(w.shadowRoot){
-          w.shadowRoot.querySelectorAll('a[href*="behold"],div[class*="brand"],div[class*="credit"],div[class*="made"],div[class*="footer"],span[class*="brand"]').forEach(function(el){el.style.display='none';});
-        }
-      }
-      var observer=new MutationObserver(hideBranding);
-      document.addEventListener('DOMContentLoaded',function(){
-        hideBranding();
-        observer.observe(document.body,{childList:true,subtree:true});
-        setTimeout(hideBranding,1000);
-        setTimeout(hideBranding,3000);
-      });
-    })();
-    </script>
-  </div>
 
 </section>
 

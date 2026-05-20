@@ -319,7 +319,6 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .ig-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:2px}
 .ig-behold{width:100%;max-width:720px;margin:0 auto;opacity:.5;transition:opacity .4s}
 .ig-behold:hover{opacity:.75}
-.ig-behold behold-widget::part(footer),[class*="behold"i][class*="brand"i],[class*="behold"i][class*="credit"i],[class*="behold"i][class*="made"i],[data-behold-footer],behold-widget [slot="footer"]{display:none!important;visibility:hidden!important;height:0!important;overflow:hidden!important}
 .ig-post{
   aspect-ratio:1;overflow:hidden;position:relative;
   cursor:none;background:#111;
@@ -706,6 +705,27 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
   <div class="ig-behold">
     <behold-widget feed-id="xASgXxbEeMit6r1bIwp6"></behold-widget>
     <script>(() => { const d=document,s=d.createElement("script");s.type="module";s.src="https://w.behold.so/widget.js";d.head.append(s); })();</script>
+    <script>
+    (function(){
+      function hideBranding(){
+        var w=document.querySelector('behold-widget');
+        if(!w)return;
+        // Light DOM
+        w.querySelectorAll('a[href*="behold"],div[class*="brand"],div[class*="credit"],div[class*="made"],div[class*="footer"]').forEach(function(el){el.style.display='none';});
+        // Shadow DOM
+        if(w.shadowRoot){
+          w.shadowRoot.querySelectorAll('a[href*="behold"],div[class*="brand"],div[class*="credit"],div[class*="made"],div[class*="footer"],span[class*="brand"]').forEach(function(el){el.style.display='none';});
+        }
+      }
+      var observer=new MutationObserver(hideBranding);
+      document.addEventListener('DOMContentLoaded',function(){
+        hideBranding();
+        observer.observe(document.body,{childList:true,subtree:true});
+        setTimeout(hideBranding,1000);
+        setTimeout(hideBranding,3000);
+      });
+    })();
+    </script>
   </div>
 
 </section>

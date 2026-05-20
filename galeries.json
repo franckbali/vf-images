@@ -93,6 +93,16 @@
       "page": "galerie-portrait-bali-01.html",
       "ordre": 8,
       "visible": false
+    },
+    {
+      "titre": "Portrait Bali 02",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-02.jpg",
+      "orientation": "landscape",
+      "slug": "portrait-bali-02",
+      "page": "galerie-portrait-bali-02.html",
+      "ordre": 9,
+      "visible": false
     }
   ]
 }

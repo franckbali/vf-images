@@ -885,21 +885,16 @@ function loadPhoto(el){
 function navigateLightbox(dir){
   const items=allClickable();
   currentIndex=(currentIndex+dir+items.length)%items.length;
-  // 1. Fade-out rapide
-  lbImg.style.transition='opacity 220ms ease-in, transform 220ms ease-in';
+  // Fade-out 180ms, puis fade-in démarre exactement au même moment (zero gap)
+  lbImg.style.transition='opacity 180ms ease-in';
   lbImg.style.opacity='0';
-  lbImg.style.transform='scale(0.97)';
   setTimeout(()=>{
     loadPhoto(items[currentIndex]);
-    // 2. Double rAF : attendre que le navigateur peigne src à opacity:0
-    requestAnimationFrame(()=>{
-      requestAnimationFrame(()=>{
-        lbImg.style.transition='opacity 400ms ease-out, transform 400ms cubic-bezier(0.22,1,0.36,1)';
-        lbImg.style.opacity='1';
-        lbImg.style.transform='scale(1)';
-      });
-    });
-  },240);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      lbImg.style.transition='opacity 420ms ease-out';
+      lbImg.style.opacity='1';
+    }));
+  },180);
 }
 
 function closeLightbox(){

@@ -1183,17 +1183,18 @@ if(hamburger&&navOverlay){
 <script>document.addEventListener('DOMContentLoaded',function(){
   var fab=document.querySelector('.gallery-fab');
   if(!fab)return;
-  var shown=false;
-  function showFab(){
-    if(shown)return;
-    shown=true;
-    fab.classList.add('visible');
-    fab.style.cssText='opacity:1!important;transform:translateY(0)!important;pointer-events:auto!important;';
+  function updateFab(){
+    if(window.scrollY>50){
+      fab.classList.add('visible');
+      fab.style.cssText='opacity:1!important;transform:translateY(0)!important;pointer-events:auto!important;';
+    } else {
+      fab.classList.remove('visible');
+      fab.style.cssText='opacity:0!important;transform:translateY(6px)!important;pointer-events:none!important;';
+    }
   }
-  window.addEventListener('scroll',function(){if(window.scrollY>50)showFab();},{passive:true});
-  setTimeout(showFab,5000);
+  window.addEventListener('scroll',updateFab,{passive:true});
 });
 </script>
-<a href="galerie-index.html" class="gallery-fab" aria-label="Retour à la galerie"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg><span data-fr="Galerie" data-en="Gallery">Galerie</span></a>
+<a href="galerie-index.html" class="gallery-fab" aria-label="Retour à la galerie"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg><span data-fr="Galeries" data-en="Galleries">Galeries</span></a>
 </body>
 </html>

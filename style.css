@@ -138,26 +138,17 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:flex;just
 /* ── Gallery FAB — raccourci galerie toujours visible ── */
 .gallery-fab{
   position:fixed;bottom:2rem;left:2rem;z-index:1001;
-  display:flex;align-items:center;gap:.55rem;
-  padding:.65rem 1.3rem;
-  border:1px solid rgba(201,169,110,.25);
-  background:rgba(10,10,10,.82);
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  color:rgba(245,243,239,.65);
-  font-family:'Raleway',sans-serif;font-size:0.60rem;letter-spacing:.38em;
-  text-transform:uppercase;text-decoration:none;
-  opacity:0;pointer-events:none;transform:translateY(8px);
-  transition:opacity .5s ease,transform .5s ease,border-color .35s,color .35s;
-  cursor:pointer;
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:'Raleway',sans-serif;font-size:0.80rem;letter-spacing:.4em;
+  text-transform:uppercase;text-decoration:none;font-weight:400;
+  color:var(--gold);
+  opacity:0;pointer-events:none;transform:translateY(6px);
+  transition:opacity .45s ease,transform .45s ease,text-shadow .3s;
 }
 .gallery-fab.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
-.gallery-fab:hover{
-  border-color:rgba(201,169,110,.7);
-  color:var(--gold);
-  background:rgba(10,10,10,.92);
-}
-.gallery-fab svg{flex-shrink:0;opacity:.7;transition:opacity .35s}
-.gallery-fab:hover svg{opacity:1}
+.gallery-fab:hover{text-shadow:0 0 20px rgba(201,169,110,.4)}
+.gallery-fab svg{flex-shrink:0;transition:transform .3s}
+.gallery-fab:hover svg{transform:translateX(-3px)}
 @media(max-width:768px){
-  .gallery-fab{bottom:1.2rem;left:1.2rem;padding:.55rem 1rem;font-size:0.58rem;letter-spacing:.3em}
+  .gallery-fab{bottom:1.2rem;left:1.2rem;font-size:0.75rem}
 }

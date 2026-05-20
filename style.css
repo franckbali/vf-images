@@ -137,7 +137,7 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:flex;just
 
 /* ── Gallery FAB — raccourci galerie toujours visible ── */
 .gallery-fab{
-  position:fixed;bottom:2rem;left:2rem;z-index:300;
+  position:fixed;bottom:2rem;left:2rem;z-index:1001;
   display:flex;align-items:center;gap:.55rem;
   padding:.65rem 1.3rem;
   border:1px solid rgba(201,169,110,.25);

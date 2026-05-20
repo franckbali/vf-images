@@ -642,8 +642,10 @@ function updateCounter(){
 function transitionToPhoto(newIndex){
   if(isTransitioning) return;
   isTransitioning=true;
-  lbImg.style.transition='opacity .5s ease';
+  // Début du fade-out
+  lbImg.style.transition='opacity .6s cubic-bezier(0.4,0,0.2,1)';
   lbImg.style.opacity='0';
+  // Change la photo à mi-chemin du fade-out (image encore légèrement visible)
   setTimeout(()=>{
     currentPhotoIndex=newIndex;
     const p=photos[newIndex];
@@ -653,12 +655,13 @@ function transitionToPhoto(newIndex){
     lbImg.alt=cap;
     lbCap.textContent=cap;
     updateCounter();
+    // Fade-in qui démarre immédiatement — chevauchement naturel
     requestAnimationFrame(()=>{
-      lbImg.style.transition='opacity .6s ease';
+      lbImg.style.transition='opacity .85s cubic-bezier(0.4,0,0.2,1)';
       lbImg.style.opacity='1';
-      setTimeout(()=>{lbImg.style.transition='';isTransitioning=false;},620);
+      setTimeout(()=>{lbImg.style.transition='';isTransitioning=false;},860);
     });
-  },500);
+  },300);
 }
 
 function goPrev(e){if(e)e.stopPropagation();if(photos.length<2)return;transitionToPhoto((currentPhotoIndex-1+photos.length)%photos.length);}

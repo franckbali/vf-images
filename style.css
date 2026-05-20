@@ -146,9 +146,11 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:flex;just
   color:rgba(245,243,239,.65);
   font-family:'Raleway',sans-serif;font-size:0.60rem;letter-spacing:.38em;
   text-transform:uppercase;text-decoration:none;
-  transition:border-color .35s,color .35s,background .35s;
+  opacity:0;pointer-events:none;transform:translateY(8px);
+  transition:opacity .5s ease,transform .5s ease,border-color .35s,color .35s;
   cursor:pointer;
 }
+.gallery-fab.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
 .gallery-fab:hover{
   border-color:rgba(201,169,110,.7);
   color:var(--gold);

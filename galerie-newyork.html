@@ -1179,11 +1179,17 @@ if(hamburger&&navOverlay){
 <script>(function(){
   var fab=document.querySelector('.gallery-fab');
   if(!fab)return;
+  function showFab(){
+    fab.classList.add('visible');
+    fab.style.opacity='1';
+    fab.style.transform='translateY(0)';
+    fab.style.pointerEvents='auto';
+  }
   var trigger=document.querySelector('.block,.frame');
-  if(!trigger){fab.classList.add('visible');return;}
+  if(!trigger){showFab();return;}
   var obs=new IntersectionObserver(function(entries){
-    if(entries[0].isIntersecting){fab.classList.add('visible');obs.disconnect();}
-  },{threshold:0.1});
+    if(entries[0].isIntersecting){showFab();obs.disconnect();}
+  },{threshold:0.05});
   obs.observe(trigger);
 })();</script>
 <a href="galerie-index.html" class="gallery-fab" aria-label="Retour à la galerie"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg><span data-fr="Galerie" data-en="Gallery">Galerie</span></a>

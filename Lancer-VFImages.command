@@ -14,7 +14,7 @@ echo "╚═══════════════════════�
 echo ""
 
 # Vérifier que le dossier photos-originales existe et contient des photos
-NB_PHOTOS=$(ls photos-originales/*.jpg photos-originales/*.jpeg photos-originales/*.png 2>/dev/null | wc -l | tr -d ' ')
+NB_PHOTOS=$(ls photos-originales/*.jpg photos-originales/*.jpeg photos-originales/*.JPG photos-originales/*.JPEG photos-originales/*.png 2>/dev/null | wc -l | tr -d ' ')
 
 if [ "$NB_PHOTOS" -eq "0" ]; then
     echo "⚠️  Aucune photo trouvée dans photos-originales/"

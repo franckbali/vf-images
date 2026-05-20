@@ -134,3 +134,28 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:flex;just
   .photo-scroll, .photos-container, .gallery-photos{overflow-x:hidden!important;max-width:100vw!important}
   .photo-item img{max-width:100%!important}
 }
+
+/* ── Gallery FAB — raccourci galerie toujours visible ── */
+.gallery-fab{
+  position:fixed;bottom:2rem;left:2rem;z-index:300;
+  display:flex;align-items:center;gap:.55rem;
+  padding:.65rem 1.3rem;
+  border:1px solid rgba(201,169,110,.25);
+  background:rgba(10,10,10,.82);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  color:rgba(245,243,239,.65);
+  font-family:'Raleway',sans-serif;font-size:0.60rem;letter-spacing:.38em;
+  text-transform:uppercase;text-decoration:none;
+  transition:border-color .35s,color .35s,background .35s;
+  cursor:pointer;
+}
+.gallery-fab:hover{
+  border-color:rgba(201,169,110,.7);
+  color:var(--gold);
+  background:rgba(10,10,10,.92);
+}
+.gallery-fab svg{flex-shrink:0;opacity:.7;transition:opacity .35s}
+.gallery-fab:hover svg{opacity:1}
+@media(max-width:768px){
+  .gallery-fab{bottom:1.2rem;left:1.2rem;padding:.55rem 1rem;font-size:0.58rem;letter-spacing:.3em}
+}

@@ -3,61 +3,73 @@
     {
       "fichier": "images/faune-sacree-bali.jpg",
       "legende": "Faune sacrée · Bali",
+      "legende_en": "Sacred Wildlife · Bali",
       "visible": true
     },
     {
       "fichier": "images/procession-barong-bali.jpg",
       "legende": "Procession Barong · Bali",
+      "legende_en": "Barong Procession · Bali",
       "visible": true
     },
     {
       "fichier": "images/coucher-de-soleil-bali.jpg",
       "legende": "Coucher de soleil · Bali",
+      "legende_en": "Sunset · Bali",
       "visible": true
     },
     {
       "fichier": "images/portrait-bali.jpg",
       "legende": "Portrait · Bali",
+      "legende_en": "Portrait · Bali",
       "visible": true
     },
     {
       "fichier": "images/enfant-ceremonie-bali.jpg",
       "legende": "Portrait · Bali",
+      "legende_en": "Portrait · Bali",
       "visible": true
     },
     {
       "fichier": "images/ceremonies-sur-la-plage-bali.jpg",
       "legende": "Cérémonies sur la plage · Bali",
+      "legende_en": "Beach Ceremonies · Bali",
       "visible": true
     },
     {
       "fichier": "images/altiplano-bolivia.jpg",
       "legende": "Altiplano · Bolivia",
+      "legende_en": "Altiplano · Bolivia",
       "visible": true
     },
     {
       "fichier": "images/manhattan-new-york.jpg",
       "legende": "Manhattan · New York",
+      "legende_en": "Manhattan · New York",
       "visible": true
     },
     {
       "fichier": "images/fenetre-sur-locean-la-reunion.jpg",
       "legende": "Fenêtre sur l'océan · La Réunion",
+      "legende_en": "Window on the Ocean · Réunion",
       "visible": true
     },
     {
       "fichier": "images/soho-new-york.jpg",
       "legende": "SoHo · New York",
+      "legende_en": "SoHo · New York",
       "visible": true
     },
     {
       "fichier": "images/monument-valley-usa.jpg",
       "legende": "Monument Valley · USA",
+      "legende_en": "Monument Valley · USA",
       "visible": true
     },
     {
       "fichier": "images/rituels-offrandes-bali.jpg",
       "legende": "Rituels & Offrandes · Bali",
+      "legende_en": "Rituals & Offerings · Bali",
       "visible": true
     }
   ],

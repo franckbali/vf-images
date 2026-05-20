@@ -145,8 +145,8 @@ def process_image(input_path, output_dir, config):
             webp_size = webp_path.stat().st_size
             generated.append(('WebP', size_name, target_w, webp_size, webp_path.name))
 
-        # ── JPG fallback (taille medium uniquement) ──
-        ratio = min(config['sizes']['medium'], orig_w) / orig_w
+        # ── JPG fallback (taille large — pour heroes CSS plein écran) ──
+        ratio = min(config['sizes']['large'], orig_w) / orig_w
         fb_w = int(orig_w * ratio)
         fb_h = int(orig_h * ratio)
         fallback = img.resize((fb_w, fb_h), Image.LANCZOS)

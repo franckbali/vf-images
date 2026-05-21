@@ -3,14 +3,14 @@ CODE HTML À COPIER DANS VOS PAGES
 Remplacez [DESCRIPTION] par le texte alternatif
 ════════════════════════════════════════════════════════════
 
-<!-- portrait-bali-02 -->
+<!-- portrait-bali-003 -->
 <picture>
   <source
     type="image/webp"
-    srcset="images/portrait-bali-02-small.webp 640w, images/portrait-bali-02-medium.webp 1200w, images/portrait-bali-02-large.webp 1920w"
+    srcset="images/portrait-bali-003-small.webp 640w, images/portrait-bali-003-medium.webp 1200w, images/portrait-bali-003-large.webp 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/portrait-bali-02.jpg"
+    src="images/portrait-bali-003.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"

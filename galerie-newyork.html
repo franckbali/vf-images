@@ -53,7 +53,7 @@
 /* BLOCS COMMUNS */
 .block{position:relative}
 .block img,.frame img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.95);transition:transform 14s ease,filter .8s ease}
-.block:not(.fullscreen):hover img,.frame:hover img{filter:brightness(1)}
+.block[data-title]:hover img,.frame:hover img{filter:brightness(1)}
 
 
 /* FULLSCREEN */
@@ -72,9 +72,9 @@
 
 /* OFFSET */
 .block.offset{padding:0 5vw}
-.frame.offset-left{width:52vw;margin-left:0;margin-right:auto;position:relative}
-.frame.offset-right{width:52vw;margin-left:auto;margin-right:0;position:relative}
-.frame img{height:auto}
+.frame.offset-left{width:52vw;height:68vh;overflow:hidden;margin-left:0;margin-right:auto;position:relative}
+.frame.offset-right{width:52vw;height:68vh;overflow:hidden;margin-left:auto;margin-right:0;position:relative}
+.frame.offset-left img,.frame.offset-right img{width:100%;height:100%;object-fit:cover}
 
 /* CAPTIONS statiques — masquées, remplacées par photo-desc au hover */
 .caption-corner{display:none}
@@ -93,7 +93,7 @@
   transition:opacity .65s cubic-bezier(0.22,1,0.36,1);
   pointer-events:none;
 }
-.block:not(.fullscreen):hover .photo-desc,
+.block[data-title]:hover .photo-desc,
 .frame:hover .photo-desc,
 .block.touched .photo-desc,
 .frame.touched .photo-desc{opacity:1}
@@ -111,7 +111,7 @@
              transform .55s cubic-bezier(0.22,1,0.36,1) .05s;
   margin-bottom:.7rem;
 }
-.block:not(.fullscreen):hover .desc-title,
+.block[data-title]:hover .desc-title,
 .frame:hover .desc-title,
 .block.touched .desc-title,
 .frame.touched .desc-title{opacity:1;transform:translateY(0)}
@@ -122,7 +122,7 @@
   transition:width .6s cubic-bezier(0.22,1,0.36,1) .1s;
   margin-bottom:.9rem;
 }
-.block:not(.fullscreen):hover .desc-line,
+.block[data-title]:hover .desc-line,
 .frame:hover .desc-line,
 .block.touched .desc-line,
 .frame.touched .desc-line{width:30px}
@@ -139,7 +139,7 @@
   transition:opacity .6s cubic-bezier(0.22,1,0.36,1) .15s,
              transform .6s cubic-bezier(0.22,1,0.36,1) .15s;
 }
-.block:not(.fullscreen):hover .desc-text,
+.block[data-title]:hover .desc-text,
 .frame:hover .desc-text,
 .block.touched .desc-text,
 .frame.touched .desc-text{opacity:1;transform:translateY(0)}
@@ -182,7 +182,7 @@
 @media(max-width:768px){
   nav{padding:1.5rem 2rem} 
   
-  .frame.centered-sm,.frame.offset-left,.frame.offset-right{width:88vw;margin:0 auto}
+  .frame.centered-sm,.frame.offset-left,.frame.offset-right{width:88vw;height:auto;margin:0 auto}
   .gallery-intro{padding:0 2rem 5vh}
   .gap{height:12vh}
   
@@ -552,7 +552,7 @@ button:focus:not(:focus-visible) {
   .photo-scroll{overflow-x:hidden!important}
   .photo-item{max-width:100vw!important;overflow:hidden!important}
   html{overflow-x:hidden!important}body{overflow-x:hidden!important;position:relative!important}
-  .frame.centered-sm,.frame.offset-left,.frame.offset-right{width:100%!important;margin:0!important}
+  .frame.centered-sm,.frame.offset-left,.frame.offset-right{width:100%!important;height:auto!important;margin:0!important}
   .block.centered,.block.offset{padding:0!important;display:block!important;margin:0!important}
   .block{margin-bottom:0!important;gap:0!important}
   .gap{height:3rem!important}

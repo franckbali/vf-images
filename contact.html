@@ -261,13 +261,16 @@
 /* FOOTER */
 
 @media(max-width:900px){
-  nav{padding:1.5rem 2rem} 
-  
+  nav{padding:1.5rem 2rem}
+  /* Contact layout — empilé, aéré */
   .contact-layout{grid-template-columns:1fr}
-  .contact-left{min-height:55vw}
-  .contact-left-content{padding:2rem;padding-top:8rem}
-  .contact-right{padding:4rem 2rem}
-  
+  .contact-left{min-height:65vw}
+  .contact-left-content{padding:1.8rem;padding-top:6rem}
+  .contact-right{padding:5rem 1.8rem 6rem}
+  /* Textes contact */
+  .contact-eyebrow{font-size:1rem!important;letter-spacing:.2em!important}
+  .contact-tagline{font-size:clamp(1.4rem,5vw,2rem)!important;letter-spacing:.08em!important}
+  .contact-desc{font-size:1rem!important;line-height:1.85!important;letter-spacing:0!important}
 }
 
 @media(max-width:900px){}
@@ -567,17 +570,8 @@ button:focus:not(:focus-visible) {
 }
 
 @media(max-width:900px){
-  .hero-eyebrow{font-size:.95rem;letter-spacing:.35em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  .hero-prenom{font-size:1.3rem;letter-spacing:.4em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  
-  
-  .hero-tagline{font-size:1.35rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .hero-sub{font-size:1.2rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .about-signature{font-size:2rem;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  .section-header{flex-direction:column;gap:.8rem;align-items:flex-start}
-  .portfolio-header,.gallery-header{flex-direction:column;gap:.8rem}
-  .hero-name{font-size:clamp(2.5rem,12vw,4rem)}
-  .cta-sub{font-size:.85rem;letter-spacing:.15em;color:rgba(245,243,239,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  .hero-eyebrow{font-size:1rem!important;letter-spacing:.2em!important}
+  .cta-sub{font-size:.9rem!important;letter-spacing:.12em!important}
   .panel-trigger{display:flex}
 }
 
@@ -619,8 +613,8 @@ button:focus:not(:focus-visible) {
   .lb-desc-title{font-size:.9rem !important}
   .lb-desc-text{font-size:1rem !important}
 }
-@media(max-width:768px){.hero{padding:0 2rem 3.5rem;height:35vh}}
-@media(max-width:480px){.hero{height:35vh;padding:0 2rem 3rem}}
+@media(max-width:768px){.hero{padding:0 1.8rem 3.5rem;height:50vh}}
+@media(max-width:480px){.hero{height:50vh;padding:0 1.5rem 3rem}}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">

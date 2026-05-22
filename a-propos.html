@@ -227,23 +227,37 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 /* FOOTER */
 
 @media(max-width:900px){
-  nav{padding:1.5rem 2rem} 
-  
-  
-  
-  
-  .hero{padding:0 2rem 5vh}
+  nav{padding:1.5rem 2rem}
+  /* Hero — désactiver animation GPU, texte plus lisible */
+  .hero-bg{animation:none!important;transform:scale(1)!important}
+  .hero{padding:0 1.8rem 5vh;height:50vh}
+  .hero-eyebrow{font-size:1rem!important;letter-spacing:.2em!important}
+  .hero-title{font-size:clamp(2.2rem,9vw,3.5rem)!important}
+  .hero-sub{font-size:1rem!important}
+  /* Sections — layout empilé, aéré */
   .section-intro,.section-childhood{grid-template-columns:1fr}
-  .intro-photo-col{height:90vw}
-  .childhood-photo{height:90vw;order:-1}
-  .intro-text-col{padding:5rem 2rem}
-  .childhood-text{padding:4rem 2rem}
-  .section-philosophy{grid-template-columns:1fr;gap:3rem;padding:6rem 2rem}
+  .intro-photo-col{height:75vw}
+  .childhood-photo{height:70vw;order:-1}
+  /* Texte : plus grand, meilleure lisibilité */
+  .intro-text-col{padding:5rem 1.8rem}
+  .childhood-text{padding:4.5rem 1.8rem}
+  .body-text{font-size:1.05rem!important;line-height:2!important;letter-spacing:0!important}
+  .body-text p{margin-bottom:1.8rem!important}
+  .pull-quote{font-size:clamp(1.15rem,4vw,1.5rem)!important;line-height:1.5!important}
+  /* Philosophy */
+  .section-philosophy{grid-template-columns:1fr;gap:3rem;padding:5.5rem 1.8rem}
+  .philosophy-left .philosophy-title{font-size:clamp(1.5rem,6vw,2rem)!important;margin-bottom:2rem!important}
+  /* Signature */
   .signature-block{grid-template-columns:1fr}
-  .signature-img{height:90vw}
-  .signature-text{padding:4rem 2rem}
-  .section-quote{padding:8rem 2rem}
-  
+  .signature-img{height:70vw}
+  .signature-text{padding:4.5rem 1.8rem}
+  .signature-name{font-size:1.9rem!important}
+  .signature-role{font-size:.9rem!important;letter-spacing:.2em!important}
+  .contact-link{font-size:.9rem!important;letter-spacing:.18em!important}
+  /* Quote section */
+  .section-quote{padding:6rem 1.8rem}
+  .big-quote{font-size:clamp(1.1rem,4vw,1.6rem)!important}
+  .quote-author{font-size:.88rem!important;letter-spacing:.22em!important}
 }
 
 /* Reconnaissance section — responsive overrides */
@@ -252,11 +266,9 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 @media(max-width:900px){.recognition-section{padding:4rem 2rem}.recognition-grid{grid-template-columns:1fr;gap:1rem}}
 @media(max-width:480px){.recognition-section{padding:3rem 1.2rem}}
 
-@media(max-width:1024px){#nav{padding:1.4rem 3rem}.intro-text-col{padding:5rem 4vw}}
-@media(max-width:900px){#nav{padding:1.5rem 2rem}.section-intro{grid-template-columns:1fr;min-height:auto}.intro-text-col{padding:4rem 2rem}.intro-photo-col{height:90vw}}
-@media(max-width:768px){.hero-title{font-size:clamp(2rem,7vw,4rem)}.intro-text-col{padding:3rem 1.8rem}.intro-photo-col{height:95vw}.pull-quote{font-size:clamp(1.1rem,3vw,1.6rem)}}
-@media(max-width:480px){#nav{padding:1rem 1.2rem}.intro-text-col{padding:2.5rem 1.2rem}.intro-photo-col{height:100vw}}
-@media(max-width:380px){}
+@media(max-width:1024px){.intro-text-col{padding:5rem 4vw}}
+@media(max-width:768px){.hero-title{font-size:clamp(2rem,7vw,4rem)}.intro-text-col{padding:3.5rem 1.8rem}.intro-photo-col{height:70vw}}
+@media(max-width:480px){nav{padding:1rem 1.2rem}.intro-text-col{padding:3rem 1.5rem}.intro-photo-col{height:75vw}.section-quote{padding:5rem 1.5rem}}
 
 /* Curseur custom désactivé sur mobile */
 @media(max-width:900px){

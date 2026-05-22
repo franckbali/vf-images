@@ -139,21 +139,29 @@ section.cta>*{position:relative}
 
 @media(max-width:900px){
   .hero-eyebrow{text-align:center!important;letter-spacing:.15em!important}
-  .hero-tagline{text-align:center!important}
-  .hero-fineart{text-align:center!important;letter-spacing:.1em!important}
+  .hero-tagline{text-align:center!important;font-size:clamp(1.15rem,4vw,1.45rem)!important}
+  .hero-fineart{text-align:center!important;letter-spacing:.1em!important;font-size:.92rem!important}
   .hero-prenom-wrap{justify-content:center!important}
+  /* Désactiver le Ken Burns — lourd sur GPU mobile */
+  .hero-bg{animation:none!important;transform:scale(1)!important}
+  /* Scroll indicator plus lisible */
+  .scroll-indicator span{font-size:1rem!important;letter-spacing:.18em!important}
 }
 @media(max-width:900px){
-  nav{padding:1.5rem 2rem} 
-  
-  section.gallery-preview,section.about-strip,section.cta{padding:4rem 2rem}
-  .photo-masonry{column-count:2}
-  section.about-strip{grid-template-columns:1fr;gap:3rem}
-  
+  nav{padding:1.5rem 2rem}
+  /* Galerie — photos plein bord, sans marge latérale */
+  section.gallery-preview{padding:5rem 0!important}
+  .section-header{padding:0 1.8rem 3rem!important;margin-bottom:0!important}
+  .photo-masonry{column-count:2;column-gap:3px;margin:0}
+  /* About — plus d'espace, plus aéré */
+  section.about-strip{padding:5rem 1.8rem!important;grid-template-columns:1fr;gap:3.5rem}
+  .about-image::before{top:-8px;left:-8px;right:8px;bottom:8px}
+  .about-body{font-size:1.05rem!important;line-height:1.9!important;letter-spacing:0!important}
+  /* CTA */
+  section.cta{padding:7rem 1.8rem!important}
   .lightbox-img{max-width:95vw;max-height:80vh}
-  
 }
-@media(max-width:500px){.photo-masonry{column-count:1}}
+@media(max-width:500px){.photo-masonry{column-count:2;column-gap:2px}}
 
 /* ═══ HAMBURGER MOBILE ═══ */
 
@@ -180,9 +188,11 @@ section.cta>*{position:relative}
 /* ── TABLETTE (max 768px) ── */
 @media(max-width:768px){
   nav{padding:1.2rem 1.8rem}
-  
-  section.gallery-preview,section.about-strip,section.cta{padding:4rem 1.8rem}
-  .photo-masonry{column-count:2;column-gap:4px}
+  /* Gallery full-bleed */
+  section.gallery-preview{padding:4rem 0!important}
+  .section-header{padding:0 1.5rem 2.5rem!important}
+  section.about-strip,section.cta{padding:4rem 1.8rem}
+  .photo-masonry{column-count:2;column-gap:3px}
   section.about-strip{grid-template-columns:1fr;gap:2.5rem}
   .about-image::before{top:-10px;left:-10px;right:10px;bottom:10px}
   .cta-title{font-size:clamp(2rem,5vw,3rem)}
@@ -204,24 +214,24 @@ section.cta>*{position:relative}
   .blog-grid{gap:1.5rem;padding:3rem 1.8rem 5rem}
   .page-header{padding:8rem 2rem 3rem}
   .content{padding:3rem 1.8rem 5rem}
-  
-  
   .galleries-grid{grid-template-columns:1fr!important}
 }
 
 /* ── MOBILE (max 480px) ── */
 @media(max-width:480px){
-  .photo-masonry{column-count:1}
   .prints-grid{grid-template-columns:1fr!important}
   .reassurance-strip{grid-template-columns:1fr!important}
   .quality-strip{grid-template-columns:1fr}
-  .hero-tagline{font-size:1rem}
   nav{padding:1rem 1.2rem}
-  
   .hero{padding:12rem 1.5rem 3.5rem}
-  section.gallery-preview,section.cta{padding:3rem 1.2rem}
-  section.about-strip{padding:3rem 1.2rem;gap:2rem}
-  .about-body{font-size:.82rem}
+  /* Gallery full-bleed, 2 colonnes maintenues */
+  section.gallery-preview{padding:4rem 0!important}
+  .section-header{padding:0 1.5rem 2.5rem!important}
+  /* About : aéré, texte lisible */
+  section.about-strip{padding:4.5rem 1.5rem!important;gap:2.5rem!important}
+  .about-body{font-size:1.05rem!important;line-height:1.9!important;letter-spacing:0!important}
+  /* CTA */
+  section.cta{padding:6rem 1.5rem!important}
   .shop-wrap{padding:2rem 1.2rem 4rem}
   .page-header{padding:7rem 1.5rem 2.5rem}
   .content{padding:2.5rem 1.5rem 4rem}
@@ -414,56 +424,32 @@ button:focus:not(:focus-visible) {
 }
 @media(max-width:480px){
   #cookie-banner { padding:1.2rem; }
-  .cookie-text { font-size:0.80rem; }
+  .cookie-text { font-size:0.90rem; }
 }
 
 /* Boutons langue toujours cliquables */
-
 .lang-btn.active {
   color: var(--gold) !important;
   background: none !important;
   border: none !important;
 }
 
-
-  
-  
-  .hero-tagline{font-size:1.35rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+@media(max-width:900px){
+  .hero-tagline{font-size:clamp(1.15rem,4vw,1.45rem)!important;text-shadow:0 1px 8px rgba(0,0,0,.9)}
   .hero-sub{font-size:1.2rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .about-signature{font-size:2rem;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  .section-header{flex-direction:column;gap:.8rem;align-items:flex-start}
-  .portfolio-header,.gallery-header{flex-direction:column;gap:.8rem}
-  .cta-sub{font-size:.85rem;letter-spacing:.15em;color:rgba(245,243,239,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .panel-trigger{display:flex}
+  .about-signature{font-size:2rem!important;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+  .cta-sub{font-size:.9rem!important;letter-spacing:.12em;color:rgba(245,243,239,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
 }
 
 @media(max-width:900px){
-  body{font-size:16px}
-  p,li,span,a,button,input,textarea,select,label{min-font-size:14px}
-  [style*="font-size:.3"],[style*="font-size:.4"],[style*="font-size:.5"]{font-size:.85rem !important}
-  
-  
-  
-  .intro-scroll span,.scroll-indicator span{font-size:0.85rem !important}
-  .caption-corner,.caption-below{font-size:0.85rem !important}
-  .photo-caption{font-size:0.85rem !important}
-  .overlay-lang{font-size:.75rem !important}
-  
-  .form-label,.form-underline-label{font-size:.75rem !important}
-  .subject-btn{font-size:.72rem !important}
-  
-  
-  .hero-eyebrow,.hero-fineart{font-size:.9rem !important}
-  .about-body{font-size:1rem !important;line-height:1.9}
-  
-  .card-price,.card-format,.card-edition{font-size:.8rem !important}
-  .blog-meta,.blog-category,.article-meta{font-size:.8rem !important}
-  .panel-label{font-size:.75rem !important}
-  .lb-desc-title{font-size:.85rem !important}
-  .lb-desc-text{font-size:.95rem !important}
-}
-
-@media(max-width:900px){
+  body{font-size:18px}
+  .scroll-indicator span{font-size:1rem!important;letter-spacing:.18em!important}
+  .photo-caption{font-size:1rem!important}
+  .overlay-lang{font-size:.90rem!important}
+  .hero-eyebrow,.hero-fineart{font-size:.95rem!important}
+  .about-body{font-size:1.05rem!important;line-height:1.9!important;letter-spacing:0!important}
+  .card-price,.card-format,.card-edition{font-size:.9rem!important}
+  .blog-meta,.blog-category,.article-meta{font-size:.9rem!important}
 }
 
 .hero-name{font-family:'Raleway',sans-serif;font-size:clamp(3.5rem,10vw,8.5rem);font-weight:200;letter-spacing:.1em;text-indent:.1em;line-height:1;color:var(--light);animation:fadeUp 1.4s ease .7s both;margin-bottom:.7rem;text-transform:uppercase;text-align:center;width:100%;display:block}

@@ -204,19 +204,29 @@
 
 @media(max-width:1100px){.prints-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){
-  nav{padding:1.5rem 2rem} 
-  
-  .hero{padding:12rem 2rem 4rem}
+  nav{padding:1.5rem 2rem}
+  /* Hero — 50vh, contenu en bas */
+  .hero{height:50vh!important;padding:0 1.8rem 4vh!important;flex-direction:column!important;justify-content:flex-end!important;align-items:flex-start!important}
+  .hero-eyebrow{font-size:1rem!important;letter-spacing:.2em!important}
+  .hero-title{font-size:clamp(1.8rem,7vw,3rem)!important;letter-spacing:.1em!important}
+  .hero-sub{font-size:.95rem!important;line-height:1.6!important;max-width:100%!important}
+  /* Qualité strip — empilé */
   .quality-strip{grid-template-columns:1fr}
-  .quality-item{padding:1.5rem 2rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
-  .shop-wrap{padding:3rem 1.5rem 6rem}
-  .prints-grid{grid-template-columns:1fr 1fr;gap:2px}
+  .quality-item{padding:1.5rem 1.8rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
+  .quality-text p{font-size:.95rem!important;letter-spacing:.15em!important}
+  .quality-text span{font-size:1rem!important;letter-spacing:.06em!important}
+  /* Grille tirages — 2 colonnes propres */
+  .shop-wrap{padding:4rem 0 7rem}
+  .prints-grid{grid-template-columns:1fr 1fr;gap:3px;padding:0}
+  /* Réassurance */
+  .reassurance-text strong{font-size:.9rem!important;letter-spacing:.15em!important}
+  .reassurance-text span{font-size:.9rem!important;letter-spacing:.06em!important}
+  /* Detail */
   .detail-inner{grid-template-columns:1fr}
-  .detail-image{height:50vw;position:relative}
-  .detail-info{padding:2rem 1.5rem}
-  
+  .detail-image{height:60vw;position:relative}
+  .detail-info{padding:2.5rem 1.8rem}
 }
-@media(max-width:500px){.prints-grid{grid-template-columns:1fr}}
+@media(max-width:500px){.prints-grid{grid-template-columns:1fr 1fr}}
 
 /* ═══ HAMBURGER MOBILE ═══ */
 
@@ -501,56 +511,21 @@ button:focus:not(:focus-visible) {
 
 
 @media(max-width:900px){
-  .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%),url('images/ceremonie-plage-bali.jpg') center/cover no-repeat;z-index:0}
-.hero-eyebrow,.hero-title,.hero-sub{position:relative;z-index:1}
-.hero-eyebrow{font-size:.95rem;letter-spacing:.35em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  .hero-prenom{font-size:1.3rem;letter-spacing:.4em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  
-  
-  .hero-tagline{font-size:1.35rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .hero-sub{font-size:1.2rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .about-signature{font-size:2rem;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  .section-header{flex-direction:column;gap:.8rem;align-items:flex-start}
-  .portfolio-header,.gallery-header{flex-direction:column;gap:.8rem}
-  .hero-name{font-size:clamp(2.5rem,12vw,4rem)}
-  .cta-sub{font-size:.85rem;letter-spacing:.15em;color:rgba(245,243,239,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .panel-trigger{display:flex}
+  body{font-size:18px}
+  .overlay-lang{font-size:.90rem!important}
+  .cta-sub{font-size:.9rem!important;letter-spacing:.12em!important}
+  /* Cartes tirages */
+  .card-title{font-size:1.05rem!important;letter-spacing:.08em!important}
+  .card-price{font-size:1.1rem!important}
+  .card-format,.card-edition{font-size:.9rem!important;letter-spacing:.08em!important}
+  .print-location{font-size:.85rem!important;letter-spacing:.2em!important}
+  /* Features & infos */
+  .feature-title,.info-title{font-size:.95rem!important;letter-spacing:.18em!important}
+  .feature-desc,.info-desc{font-size:1rem!important;line-height:1.85!important}
+  /* Detail page */
+  .detail-label{font-size:.9rem!important;letter-spacing:.2em!important}
+  .detail-paper,.detail-edition{font-size:1rem!important}
 }
-
-@media(max-width:900px){
-  body{font-size:16px}
-  p,li,span,a,button,input,textarea,select,label{min-font-size:14px}
-  [style*="font-size:.3"],[style*="font-size:.4"],[style*="font-size:.5"]{font-size:.85rem !important}
-  
-  
-  
-  .intro-scroll span,.scroll-indicator span{font-size:0.85rem !important}
-  .caption-corner,.caption-below{font-size:0.85rem !important}
-  .photo-caption{font-size:0.85rem !important}
-  .overlay-lang{font-size:.75rem !important}
-  
-  .form-label,.form-underline-label{font-size:.75rem !important}
-  .subject-btn{font-size:.72rem !important}
-  
-  
-  .hero-eyebrow,.hero-fineart{font-size:.9rem !important}
-  .about-body{font-size:1rem !important;line-height:1.9}
-  
-  .card-price,.card-format,.card-edition{font-size:.8rem !important}
-  .blog-meta,.blog-category,.article-meta{font-size:.8rem !important}
-  .panel-label{font-size:.75rem !important}
-  .lb-desc-title{font-size:.85rem !important}
-  .lb-desc-text{font-size:.95rem !important}
-}
-
-@media(max-width:900px){
-  .feature-title,.info-title{font-size:.85rem !important;letter-spacing:.2em}
-  .feature-desc,.info-desc{font-size:.9rem !important}
-  .card-title{font-size:1.1rem !important}
-  .card-price{font-size:1rem !important}
-  .card-format{font-size:.85rem !important}
-}
-@media(max-width:900px){.hero{padding:0 2rem 3.5rem!important;height:50vh!important;display:flex!important;flex-direction:column!important;justify-content:flex-end!important;align-items:flex-start!important}.hero-sub{display:none!important}.hero-eyebrow{display:block!important;width:100%!important;margin-bottom:.5rem!important}}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">

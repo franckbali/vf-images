@@ -93,16 +93,18 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:flex;just
 
 /* ── MOBILE GLOBAL — lisibilité ── */
 @media(max-width:900px){
-  /* Textes */
-  body{font-size:16px}
-  .section-label{font-size:0.90rem!important;letter-spacing:.25em}
-  .section-link{font-size:0.90rem!important}
-  .btn{font-size:0.80rem!important;padding:.9rem 2rem;letter-spacing:.25em}
-  .footer-copy{font-size:0.80rem!important}
-  .footer-social a{font-size:0.80rem!important}
-  .cookie-text{font-size:0.80rem!important}
-  .lang-btn{font-size:0.85rem!important}
-  .nav-overlay .overlay-lang{font-size:0.80rem!important}
+  /* Textes — taille de base augmentée */
+  body{font-size:17px}
+  .section-label{font-size:0.95rem!important;letter-spacing:.15em}
+  .section-link{font-size:0.95rem!important;letter-spacing:.15em}
+  .btn{font-size:0.90rem!important;padding:.9rem 2rem;letter-spacing:.18em}
+  .footer-copy{font-size:0.85rem!important;letter-spacing:.1em}
+  .footer-social a{font-size:0.85rem!important}
+  .cookie-text{font-size:0.82rem!important;letter-spacing:.06em}
+  .lang-btn{font-size:0.90rem!important}
+  .nav-overlay .overlay-lang{font-size:0.85rem!important;letter-spacing:.15em}
+  /* Menu hamburger — texte plus lisible */
+  .nav-overlay a{letter-spacing:.15em!important}
 
   /* Lang buttons — reset Safari */
   .lang-btn{-webkit-appearance:none!important;appearance:none!important;background:none!important;border:none!important}

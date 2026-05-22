@@ -895,15 +895,9 @@ function setCaption(el){
 }
 
 function getBestSrc(el){
-  /* Préfère la large webp du srcset, sinon le src jpg */
+  /* currentSrc = URL déjà chargée par le navigateur (en cache, affichage immédiat) */
   const img=el.querySelector('img');
-  const srcset=img.getAttribute('srcset')||'';
-  if(srcset){
-    const parts=srcset.split(',').map(s=>s.trim().split(/\s+/));
-    const largest=parts[parts.length-1];
-    if(largest&&largest[0]) return largest[0];
-  }
-  return img.src;
+  return img.currentSrc||img.src;
 }
 
 function openLightbox(el){

@@ -57,7 +57,7 @@
 
 
 /* FULLSCREEN */
-.block.fullscreen{width:100vw;height:100vh;overflow:hidden}
+.block.fullscreen{width:100vw;height:100vh;height:100dvh;overflow:hidden}
 .block.fullscreen img{height:100%;transition:transform 14s ease}
 .block.fullscreen.visible img{transform:scale(1.04)}
 
@@ -169,10 +169,10 @@
 .lb-desc-text{font-family:'Lora',serif;font-size:.92rem;font-style:italic;line-height:1.7;color:rgba(245,243,239,.92);max-width:480px;transform:translateY(8px);opacity:0;transition:opacity .55s ease .12s,transform .55s ease .12s}
 .lb-inner.photo-hover .lb-desc-text,.lb-inner.touched .lb-desc-text{opacity:1;transform:translateY(0)}
 
-.lightbox-close{position:absolute;top:2rem;right:2.5rem;background:none;border:none;color:rgba(245,243,239,.92);font-size:1.1rem;transition:color .4s;padding:.5rem;font-weight:200;z-index:10}
-.lightbox-close:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
-.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(245,243,239,.92);font-size:1.2rem;font-weight:200;padding:1rem 1.5rem;transition:color .35s;z-index:10}
-.lightbox-nav:hover{color:rgba(201,169,110,1.0)}
+.lightbox-close{position:absolute;top:1.5rem;right:1.5rem;background:rgba(10,10,10,.6);border:1px solid rgba(245,243,239,.2);border-radius:50%;color:rgba(245,243,239,.92);font-size:1.1rem;transition:color .4s,background .3s;padding:0;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-weight:200;z-index:10;cursor:pointer}
+.lightbox-close:hover{color:var(--gold);background:rgba(30,30,30,.8)}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,10,10,.5);border:1px solid rgba(245,243,239,.15);border-radius:50%;color:rgba(245,243,239,.92);font-size:1.1rem;font-weight:200;width:48px;height:48px;display:flex;align-items:center;justify-content:center;transition:color .35s,background .3s;z-index:10;padding:0;cursor:pointer}
+.lightbox-nav:hover{color:rgba(201,169,110,1.0);background:rgba(30,30,30,.8)}
 .lightbox-prev{left:1rem}
 .lightbox-next{right:1rem}
 
@@ -481,8 +481,11 @@ button:focus:not(:focus-visible) {
   .cookie-actions { width:100%; }
   .cookie-btn { flex:1; text-align:center; }
   /* Lightbox — zones de touch plus grandes sur mobile */
-  .lightbox-close{padding:1rem;top:1rem;right:1rem;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
-  .lightbox-nav{padding:1.2rem 2rem;min-height:44px}
+  .lightbox-close{width:52px;height:52px;font-size:1.3rem;top:1rem;right:1rem}
+  .lightbox-nav{width:52px;height:52px}
+  .lightbox-nav svg{width:22px;height:22px}
+  .lightbox-prev{left:.5rem}
+  .lightbox-next{right:.5rem}
 }
 @media(max-width:480px){
   #cookie-banner { padding:1.2rem; }
@@ -613,8 +616,8 @@ button:focus:not(:focus-visible) {
 
 <div class="lightbox" id="lightbox" onclick="handleLightboxClick(event)">
   <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer la lightbox">&#x2715;</button>
-  <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1);event.stopPropagation()">&#8592;</button>
-  <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1);event.stopPropagation()">&#8594;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1);event.stopPropagation()" aria-label="Photo précédente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+  <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1);event.stopPropagation()" aria-label="Photo suivante"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
   <div class="lb-inner" id="lb-inner">
     <img loading="eager" decoding="async" class="lightbox-img" id="lb-img-a" src="" alt="">
     <img loading="eager" decoding="async" class="lightbox-img" id="lb-img-b" src="" alt="">
@@ -884,12 +887,24 @@ function setCaption(el){
   lbText.textContent=(useLang==='en'&&el.dataset.descEn)?el.dataset.descEn:(el.dataset.desc||'');
 }
 
+function getBestSrc(el){
+  /* Préfère la large webp du srcset, sinon le src jpg */
+  const img=el.querySelector('img');
+  const srcset=img.getAttribute('srcset')||'';
+  if(srcset){
+    const parts=srcset.split(',').map(s=>s.trim().split(/\s+/));
+    const largest=parts[parts.length-1];
+    if(largest&&largest[0]) return largest[0];
+  }
+  return img.src;
+}
+
 function openLightbox(el){
   const items=allClickable();
   currentIndex=items.indexOf(el);
   lbImgA.className='lightbox-img'; lbImgB.className='lightbox-img';
   lbFront=lbImgA; lbBack=lbImgB;
-  lbFront.src=el.querySelector('img').src;
+  lbFront.src=getBestSrc(el);
   lbBack.src='';
   setCaption(el);
   lb.classList.remove('closing');
@@ -898,7 +913,9 @@ function openLightbox(el){
   requestAnimationFrame(()=>{
     lb.classList.add('open');
     document.body.style.overflow='hidden';
-    requestAnimationFrame(()=>lbFront.classList.add('lb-show'));
+    const showImg=()=>requestAnimationFrame(()=>lbFront.classList.add('lb-show'));
+    if(lbFront.complete&&lbFront.naturalWidth>0){showImg();}
+    else{lbFront.onload=showImg; lbFront.onerror=showImg;}
   });
 }
 
@@ -908,7 +925,7 @@ function navigateLightbox(dir){
   const items=allClickable();
   currentIndex=(currentIndex+dir+items.length)%items.length;
   const el=items[currentIndex];
-  lbBack.src=el.querySelector('img').src;
+  lbBack.src=getBestSrc(el);
   const doSwap=()=>{
     lbBack.style.zIndex='2'; lbFront.style.zIndex='1';
     lbBack.classList.add('lb-show');

@@ -358,24 +358,6 @@ img {
   pointer-events: none;
   -webkit-touch-callout: none;
 }
-/* Watermark invisible CSS — décourage la capture d'écran automatisée */
-.photo-item::after,
-.print-image::after,
-.gallery-card::after,
-.detail-image::after {
-  content: '© VF Images — vfimages.com';
-  position: absolute;
-  bottom: 8px;
-  right: 10px;
-  font-size: .38rem;
-  letter-spacing: .12em;
-  color: rgba(255,255,255,.18);
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
-  pointer-events: none;
-  z-index: 10;
-  text-transform: uppercase;
-}
 
 /* ══════════════════════════════════════
    ACCESSIBILITÉ — Focus & Navigation clavier

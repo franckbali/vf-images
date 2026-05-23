@@ -34,13 +34,13 @@
 .gallery-intro-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.6) 0%,rgba(10,10,10,.2) 40%,rgba(10,10,10,.9) 100%),url('images/brooklyn-bridge-ii-large.webp') center 50%/cover no-repeat;transform:scale(1.04);animation:heroZoom 14s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.04)}to{transform:scale(1)}}
 .gallery-intro-content{position:relative}
-.intro-back{display:inline-flex;align-items:center;gap:.6rem;font-size:0.80rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,169,110,1.0);text-decoration:none;margin-bottom:2rem;transition:color .3s;font-weight:400}
+.intro-back{display:inline-flex;align-items:center;gap:.6rem;font-size:0.80rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,110,1.0);text-decoration:none;margin-bottom:2rem;transition:color .3s;font-weight:400}
 .intro-back:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .intro-back svg{transition:transform .3s}
 .intro-back:hover svg{transform:translateX(-3px)}
-.intro-label{font-size:0.80rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1.2rem;font-weight:400;animation:fadeUp 1.4s ease .3s both}
+.intro-label{font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1.2rem;font-weight:400;animation:fadeUp 1.4s ease .3s both}
 .intro-title{font-family:'Raleway',sans-serif;font-size:clamp(3rem,8vw,7rem);font-weight:200;letter-spacing:.18em;text-transform:uppercase;color:var(--light);line-height:1;animation:fadeUp 1.4s ease .55s both;margin-bottom:1.2rem}
-.intro-count{font-size:0.80rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.92);animation:fadeUp 1.4s ease .75s both}
+.intro-count{font-size:0.80rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,243,239,.92);animation:fadeUp 1.4s ease .75s both}
 .intro-scroll{position:absolute;bottom:5vh;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:.6rem;animation:fadeUp 1.4s ease 1s both}
 .scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sp 2.2s ease-in-out infinite}
 @keyframes sp{0%,100%{opacity:.25}50%{opacity:.8}}
@@ -52,8 +52,8 @@
 
 /* BLOCS COMMUNS */
 .block{position:relative}
-.block img,.frame img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.95);transition:transform 14s ease,filter .8s ease}
-.block.hovered img,.frame.hovered img{filter:brightness(1)}
+.block img,.frame img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.04) saturate(1.06);transition:transform 14s ease,filter .8s ease}
+.block.hovered img,.frame.hovered img{filter:contrast(1.06) saturate(1.1)}
 
 
 /* FULLSCREEN */
@@ -264,7 +264,7 @@
 .panel-close:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 .panel-label{
-  font-size:0.75rem;letter-spacing:.5em;
+  font-size:0.75rem;letter-spacing:.28em;
   text-transform:uppercase;
   color:rgba(201,169,110,1.0);
   font-weight:400;margin-bottom:1.8rem;
@@ -502,7 +502,7 @@ button:focus:not(:focus-visible) {
 
 @media(max-width:900px){
   .hero-eyebrow{font-size:.95rem;letter-spacing:.35em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  .hero-prenom{font-size:1.3rem;letter-spacing:.4em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+  .hero-prenom{font-size:1.3rem;letter-spacing:.22em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
   
   
   .hero-tagline{font-size:1.35rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
@@ -596,7 +596,33 @@ button:focus:not(:focus-visible) {
 
 <!-- Analytics Umami — RGPD friendly, sans cookies -->
 <!-- ⚠️  Remplacer 1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1 par votre ID sur umami.is -->
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ImageGallery",
+      "name": "Galerie New York — VF Images",
+      "description": "Photographies Fine Art de New York : Brooklyn Bridge, Manhattan skyline, scènes de rue. Tirages en édition limitée.",
+      "url": "https://www.vfimages.com/galerie-newyork.html",
+      "author": { "@id": "https://www.vfimages.com/#franck" },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "New York",
+        "address": { "@type": "PostalAddress", "addressCountry": "US" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.vfimages.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Galerie", "item": "https://www.vfimages.com/galerie-index.html" },
+        { "@type": "ListItem", "position": 3, "name": "New York", "item": "https://www.vfimages.com/galerie-newyork.html" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Aller au contenu</a>
@@ -642,7 +668,7 @@ button:focus:not(:focus-visible) {
 </div>
 
 <nav role="navigation" aria-label="Navigation principale">
-  <a href="index.html" class="logo"><img
+  <a href="index.html" class="logo"><img width="1024" height="1024"
         src="images/logo_white2.png"
         srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -696,7 +722,7 @@ button:focus:not(:focus-visible) {
 
 
 <div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="Manhattan from Above" data-desc="L'Empire State Building domine une mer de béton. Depuis le sommet du 30 Rock, New York s'étend à l'infini." data-desc-en="The Empire State Building towers over a sea of concrete. From the top of 30 Rock, New York stretches to infinity.">
-  <img
+  <img width="1333" height="2000"
         src="images/manhattan-from-above.jpg"
         srcset="images/manhattan-from-above-small.webp 640w, images/manhattan-from-above-medium.webp 1200w, images/manhattan-from-above-large.webp 1920w"
         sizes="100vw"
@@ -706,7 +732,7 @@ button:focus:not(:focus-visible) {
 </div>
 <div class="gap"></div>
 <div class="block wide reveal" onclick="openLightbox(this)" data-title="Brooklyn Bridge" data-desc="Les câbles du pont comme autant de fils tendus vers le ciel gris de Manhattan. Une géométrie parfaite, suspendue entre deux rives." data-desc-en="The bridge cables, like threads stretched toward Manhattan's grey sky. A perfect geometry, suspended between two shores.">
-  <img
+  <img width="2000" height="1328"
         src="images/brooklyn-bridge.jpg"
         srcset="images/brooklyn-bridge-small.webp 640w, images/brooklyn-bridge-medium.webp 1200w, images/brooklyn-bridge-large.webp 1920w"
         sizes="100vw"
@@ -717,7 +743,7 @@ button:focus:not(:focus-visible) {
 <div class="gap"></div>
 <div class="block offset reveal">
   <div class="frame offset-left" onclick="openLightbox(this)" data-title="Brooklyn Bridge II" data-desc="Vu depuis les jardins de Brooklyn, le pont se dévoile à travers un rideau de feuilles. Le noir et blanc efface le temps." data-desc-en="Seen from the Brooklyn gardens, the bridge reveals itself through a curtain of leaves. Black and white erases time.">
-    <img
+    <img width="2000" height="1333"
         src="images/brooklyn-bridge-ii.jpg"
         srcset="images/brooklyn-bridge-ii-small.webp 640w, images/brooklyn-bridge-ii-medium.webp 1200w, images/brooklyn-bridge-ii-large.webp 1920w"
         sizes="(max-width:900px) 100vw, 52vw"
@@ -728,7 +754,7 @@ button:focus:not(:focus-visible) {
 </div>
 <div class="gap"></div>
 <div class="block wide reveal" onclick="openLightbox(this)" data-title="Manhattan Skyline" data-desc="Un taxi jaune flou à l'avant-plan, les tours qui percent le brouillard. New York se raconte dans chaque couche de distance." data-desc-en="A blurred yellow cab in the foreground, towers piercing the fog. New York reveals itself in every layer of distance.">
-  <img
+  <img width="2000" height="1333"
         src="images/manhattan-skyline.jpg"
         srcset="images/manhattan-skyline-small.webp 640w, images/manhattan-skyline-medium.webp 1200w, images/manhattan-skyline-large.webp 1920w"
         sizes="100vw"
@@ -739,7 +765,7 @@ button:focus:not(:focus-visible) {
 <div class="gap"></div>
 <div class="block centered reveal">
   <div class="frame centered-sm" onclick="openLightbox(this)" data-title="Fire Escape" data-desc="Deux habitants d'un immeuble du Lower East Side, suspendus entre ciel et rue. La ville ordinaire, saisie dans l'extraordinaire." data-desc-en="Two residents of a Lower East Side building, suspended between sky and street. The ordinary city, caught in the extraordinary.">
-    <img
+    <img width="1372" height="2000"
         src="images/fire-escape.jpg"
         srcset="images/fire-escape-small.webp 640w, images/fire-escape-medium.webp 1200w, images/fire-escape-large.webp 1920w"
         sizes="(max-width:900px) 100vw, 45vw"
@@ -751,7 +777,7 @@ button:focus:not(:focus-visible) {
 <div class="gap"></div>
 <div class="block centered reveal">
   <div class="frame centered-sm" onclick="openLightbox(this)" data-title="The Vessel" data-desc="Hudson Yards. L'architecture cuivrée du Vessel se reflète en milliers de facettes. Une ruche géante tournée vers le ciel." data-desc-en="Hudson Yards. The Vessel's copper architecture reflects in thousands of facets. A giant beehive turned toward the sky.">
-    <img
+    <img width="1333" height="2000"
         src="images/the-vessel.jpg"
         srcset="images/the-vessel-small.webp 640w, images/the-vessel-medium.webp 1200w, images/the-vessel-large.webp 1920w"
         sizes="(max-width:900px) 100vw, 45vw"
@@ -762,7 +788,7 @@ button:focus:not(:focus-visible) {
 </div>
 <div class="gap"></div>
 <div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="SoHo" data-desc="Les escaliers de secours de SoHo dessinent une dentelle de fer sur les façades blanches. La ville comme partition graphique." data-desc-en="SoHo's fire escapes trace an iron lacework across white façades. The city as a graphic score.">
-  <img
+  <img width="2000" height="1333"
         src="images/soho.jpg"
         srcset="images/soho-small.webp 640w, images/soho-medium.webp 1200w, images/soho-large.webp 1920w"
         sizes="100vw"
@@ -773,7 +799,7 @@ button:focus:not(:focus-visible) {
 <div class="gap"></div>
 <div class="block offset reveal">
   <div class="frame offset-right" onclick="openLightbox(this)" data-title="Quarters Only" data-desc="Sur une plateforme d'observation, une lunette en acier attend le prochain regard. La ville, derrière, ne dort jamais." data-desc-en="On an observation platform, a steel telescope awaits the next gaze. The city behind it never sleeps.">
-    <img
+    <img width="2000" height="1333"
         src="images/quarters-only.jpg"
         srcset="images/quarters-only-small.webp 640w, images/quarters-only-medium.webp 1200w, images/quarters-only-large.webp 1920w"
         sizes="(max-width:900px) 100vw, 52vw"
@@ -787,7 +813,7 @@ button:focus:not(:focus-visible) {
 
 </main>
 <footer role="contentinfo">
-  <div class="footer-logo"><img
+  <div class="footer-logo"><img width="1024" height="1024"
         src="images/logo_white2.png"
         srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"

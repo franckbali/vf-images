@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Page introuvable — VF Images</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400&display=swap"></noscript>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      display:flex;align-items:center;justify-content:center;
+      min-height:100vh;
+      background:var(--dark);
+      color:var(--light);
+      font-family:'Raleway',sans-serif;
+      text-align:center;
+      padding:2rem;
+    }
+    .wrap{max-width:480px}
+    .code{
+      font-family:'Raleway',sans-serif;
+      font-weight:200;
+      font-size:clamp(6rem,20vw,10rem);
+      letter-spacing:.05em;
+      color:var(--gold);
+      opacity:.18;
+      line-height:1;
+      margin-bottom:-.5rem;
+    }
+    .brand{
+      font-family:'Raleway',sans-serif;
+      font-weight:200;
+      font-size:clamp(1rem,4vw,1.4rem);
+      letter-spacing:.45em;
+      text-transform:uppercase;
+      color:var(--gold);
+      margin-bottom:2.5rem;
+    }
+    .divider{
+      width:36px;height:1px;
+      background:var(--gold);
+      opacity:.5;
+      margin:0 auto 2.5rem;
+    }
+    .msg{
+      font-family:'Bodoni Moda',serif;
+      font-style:italic;
+      font-size:clamp(1.1rem,3vw,1.35rem);
+      font-weight:400;
+      color:rgba(245,243,239,.85);
+      line-height:1.6;
+      margin-bottom:3rem;
+    }
+    .links{
+      display:flex;align-items:center;justify-content:center;
+      gap:2rem;flex-wrap:wrap;
+    }
+    .links a{
+      font-family:'Raleway',sans-serif;
+      font-size:0.75rem;
+      letter-spacing:.3em;
+      text-transform:uppercase;
+      color:rgba(245,243,239,.7);
+      text-decoration:none;
+      border-bottom:1px solid rgba(245,243,239,.2);
+      padding-bottom:.2rem;
+      transition:color .3s,border-color .3s;
+    }
+    .links a:hover{color:var(--gold);border-color:var(--gold)}
+    .links a.primary{
+      padding:.85rem 2.5rem;
+      border:1px solid rgba(201,169,110,.5);
+      color:var(--gold);
+      border-bottom-width:1px;
+    }
+    .links a.primary:hover{background:var(--gold);color:var(--dark)}
+
+    @media(max-width:480px){
+      .links{flex-direction:column;gap:1.5rem}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="code">404</div>
+  <p class="brand">VF Images</p>
+  <div class="divider"></div>
+  <p class="msg">La page que vous cherchez<br>s'est égarée quelque part entre Bali et New York.</p>
+  <div class="links">
+    <a href="index.html" class="primary">Accueil</a>
+    <a href="galerie-index.html">Galerie</a>
+    <a href="boutique.html">Boutique</a>
+  </div>
+</div>
+</body>
+</html>

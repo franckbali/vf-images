@@ -5,7 +5,7 @@
 
 /* ── Reset & Variables ── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--gold:#c9a96e;--dark:#0a0a0a;--dark2:#111;--dark3:#1a1a1a;--light:#f5f3ef;--text:rgba(245,243,239,.92)}
+:root{--gold:#b08c4a;--dark:#0d0b08;--dark2:#14110d;--dark3:#1c1812;--light:#f5f3ef;--text:rgba(245,243,239,.92);--cream-warm:#dcd4c0;--cream-soft:rgba(220,212,192,.65)}
 html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--light);font-family:'Raleway',sans-serif;font-weight:300;overflow-x:hidden}
 
@@ -49,8 +49,9 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 .btn:hover{background:var(--gold);color:var(--dark)}
 
 /* ── Sections communes ── */
-.section-label{font-size:0.80rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-family:'Raleway',sans-serif;font-weight:400}
-.section-link{font-size:0.80rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:.2rem;transition:border-color .3s;white-space:nowrap;font-family:'Raleway',sans-serif;font-weight:400}
+.section-label{font-size:0.80rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-warm);font-family:'Raleway',sans-serif;font-weight:400}
+.section-link{font-size:0.80rem;letter-spacing:.25em;text-transform:uppercase;color:var(--cream-warm);text-decoration:none;border-bottom:1px solid var(--cream-soft);padding-bottom:.2rem;transition:color .3s,border-color .3s;white-space:nowrap;font-family:'Raleway',sans-serif;font-weight:400}
+.section-link:hover{color:var(--gold);border-color:var(--gold)}
 
 /* ── Footer ── */
 footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
@@ -118,7 +119,7 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:flex;just
 @media(max-width:900px){
   .hero-home{flex-direction:column!important;justify-content:center!important;align-items:center!important}
   .hero-home .hero-content{width:100%!important;max-width:100%!important;padding:0!important;box-sizing:border-box!important;text-align:center!important;align-items:center!important;display:flex!important;flex-direction:column!important;flex:0 0 auto!important}
-  .hero-name{text-align:center!important;width:100%!important;letter-spacing:0!important;display:block!important;padding:0!important;box-sizing:border-box!important;text-transform:uppercase!important}
+  .hero-name{text-align:center!important;width:100%!important;letter-spacing:-0.005em!important;display:block!important;padding:0!important;box-sizing:border-box!important;text-transform:none!important}
 }
 
 @media(max-width:900px){
@@ -141,7 +142,7 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:flex;just
 .gallery-fab{
   position:fixed;bottom:2rem;left:2rem;z-index:1001;
   display:inline-flex;align-items:center;gap:.6rem;
-  font-family:'Raleway',sans-serif;font-size:0.80rem;letter-spacing:.4em;
+  font-family:'Raleway',sans-serif;font-size:0.80rem;letter-spacing:.22em;
   text-transform:uppercase;text-decoration:none;font-weight:400;
   color:var(--gold);
   opacity:0;pointer-events:none;transform:translateY(6px);
@@ -154,3 +155,31 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:flex;just
 @media(max-width:768px){
   .gallery-fab{bottom:1.2rem;left:1.2rem;font-size:0.75rem}
 }
+
+/* ── Action 37 : Micro-typographie — Drop-cap & text-wrap ── */
+.dropcap::first-letter{
+  font-family:'Bodoni Moda',serif;
+  font-style:italic;
+  font-weight:500;
+  color:var(--gold);
+  float:left;
+  font-size:4.5rem;
+  line-height:0.9;
+  padding:0.35rem 0.55rem 0 0;
+}
+body{text-wrap:pretty}
+
+/* ── Action 38 : Grain SVG argentique ── */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  opacity:0.22;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+}
+main,nav,footer{position:relative;z-index:2}
+/* Désactivé sur petits mobiles pour éviter les saccades GPU */
+@media(max-width:600px){body::before{display:none}}

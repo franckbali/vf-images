@@ -32,7 +32,7 @@
 .hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:0 4rem 7vh;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.04)}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%),url('images/ceremonie-plage-bali.jpg') center/cover no-repeat;z-index:0}
 .hero-eyebrow,.hero-title,.hero-sub{position:relative;z-index:1}
-.hero-eyebrow{font-size:0.80rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
+.hero-eyebrow{font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
 .hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:200;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1;margin-bottom:1.2rem}
 .hero-sub{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(245,243,239,.92);letter-spacing:.08em;animation:fadeUp 1.2s ease .6s both;max-width:540px;line-height:1.7}
 
@@ -73,10 +73,12 @@
 .print-image.landscape{aspect-ratio:3/2}
 .print-image img{
   width:100%;height:100%;object-fit:cover;display:block;
-  filter:brightness(.95)saturate(1.0);
+  filter:contrast(1.04) saturate(1.06);
   transition:transform 1.5s cubic-bezier(0.25,0.46,0.45,0.94),filter 1s ease;
 }
-.print-card:hover .print-image img{transform:scale(1.05);filter:brightness(.6)}
+.print-card:hover .print-image img{transform:scale(1.05);filter:contrast(1.06) saturate(1.1) brightness(.85)}
+/* Action 39 : Split-tone overlay cinématique */
+.print-image::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(135deg,rgba(40,60,90,0.08) 0%,transparent 50%,rgba(60,30,15,0.06) 100%);mix-blend-mode:soft-light}
 
 .print-hover{
   position:absolute;inset:0;
@@ -134,7 +136,7 @@
 }
 .detail-image img{
   width:100%;height:100%;
-  object-fit:cover;filter:brightness(.78);display:block;
+  object-fit:cover;filter:none;display:block;
 }
 .detail-info{
   padding:3rem 2.5rem;
@@ -153,11 +155,11 @@
 }
 .detail-close:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
-.detail-location{font-size:0.75rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,169,110,1.0);font-weight:400;margin-bottom:.7rem}
+.detail-location{font-size:0.75rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,110,1.0);font-weight:400;margin-bottom:.7rem}
 .detail-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:400;letter-spacing:.03em;line-height:1.2;margin-bottom:1.5rem}
 .detail-divider{width:28px;height:1px;background:var(--gold);opacity:.4;margin-bottom:1.8rem}
 
-.detail-label{font-size:0.75rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.6rem;margin-top:1.4rem}
+.detail-label{font-size:0.75rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.6rem;margin-top:1.4rem}
 .detail-formats{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem}
 .fmt-option{
   background:none;border:1px solid rgba(255,255,255,.08);
@@ -539,7 +541,65 @@ button:focus:not(:focus-visible) {
 
 <!-- Analytics Umami — RGPD friendly, sans cookies -->
 <!-- ⚠️  Remplacer 1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1 par votre ID sur umami.is -->
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.vfimages.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Boutique", "item": "https://www.vfimages.com/boutique.html" }
+      ]
+    },
+    {
+      "@type": "VisualArtwork",
+      "name": "Faune Sacrée",
+      "creator": { "@id": "https://www.vfimages.com/#franck" },
+      "artMedium": "Tirage Fine Art sur papier Hahnemühle Photo Rag",
+      "locationCreated": "Forêt des singes, Ubud, Bali",
+      "url": "https://www.vfimages.com/boutique.html",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "95",
+        "highPrice": "280",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "VisualArtwork",
+      "name": "Procession Barong",
+      "creator": { "@id": "https://www.vfimages.com/#franck" },
+      "artMedium": "Tirage Fine Art sur papier Hahnemühle Photo Rag",
+      "locationCreated": "Bali, Indonésie",
+      "url": "https://www.vfimages.com/boutique.html",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "95",
+        "highPrice": "280",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "VisualArtwork",
+      "name": "Manhattan",
+      "creator": { "@id": "https://www.vfimages.com/#franck" },
+      "artMedium": "Tirage Fine Art sur papier Fuji Crystal",
+      "locationCreated": "New York, États-Unis",
+      "url": "https://www.vfimages.com/boutique.html",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "85",
+        "highPrice": "260",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Aller au contenu</a>
@@ -556,7 +616,7 @@ button:focus:not(:focus-visible) {
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
       <div class="detail-image">
-        <img
+        <img width="1697" height="2000"
         src="images/faune-sacree.jpg"
         srcset="images/faune-sacree-small.webp 640w, images/faune-sacree-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -584,10 +644,10 @@ button:focus:not(:focus-visible) {
         </div>
 
         <a href="#" target="_blank" class="order-btn">
-          <span data-fr="Commander via Printspace" data-en="Order via Printspace">Commander via Printspace</span>
+          <span data-fr="Commander ce tirage" data-en="Order this print">Commander ce tirage</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
-        <p class="detail-shipping" data-fr="Livraison mondiale · Emballage sécurisé · Certificat d'authenticité" data-en="Worldwide shipping · Secure packaging · Certificate of authenticity">Livraison mondiale · Emballage sécurisé · Certificat d'authenticité</p>
+        <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité" data-en="Hahnemühle printing · 7–10 days delivery · Certificate of authenticity">Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité</p>
       </div>
     </div>
   </div>
@@ -595,7 +655,7 @@ button:focus:not(:focus-visible) {
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
       <div class="detail-image">
-        <img
+        <img width="1333" height="2000"
         src="images/procession-barong.jpg"
         srcset="images/procession-barong-small.webp 640w, images/procession-barong-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -623,10 +683,10 @@ button:focus:not(:focus-visible) {
         </div>
 
         <a href="#" target="_blank" class="order-btn">
-          <span data-fr="Commander via Printspace" data-en="Order via Printspace">Commander via Printspace</span>
+          <span data-fr="Commander ce tirage" data-en="Order this print">Commander ce tirage</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
-        <p class="detail-shipping" data-fr="Livraison mondiale · Emballage sécurisé · Certificat d'authenticité" data-en="Worldwide shipping · Secure packaging · Certificate of authenticity">Livraison mondiale · Emballage sécurisé · Certificat d'authenticité</p>
+        <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité" data-en="Hahnemühle printing · 7–10 days delivery · Certificate of authenticity">Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité</p>
       </div>
     </div>
   </div>
@@ -634,7 +694,7 @@ button:focus:not(:focus-visible) {
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
       <div class="detail-image">
-        <img
+        <img width="2000" height="1333"
         src="images/rituels-offrandes.jpg"
         srcset="images/rituels-offrandes-small.webp 640w, images/rituels-offrandes-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -662,10 +722,10 @@ button:focus:not(:focus-visible) {
         </div>
 
         <a href="#" target="_blank" class="order-btn">
-          <span data-fr="Commander via Printspace" data-en="Order via Printspace">Commander via Printspace</span>
+          <span data-fr="Commander ce tirage" data-en="Order this print">Commander ce tirage</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
-        <p class="detail-shipping" data-fr="Livraison mondiale · Emballage sécurisé · Certificat d'authenticité" data-en="Worldwide shipping · Secure packaging · Certificate of authenticity">Livraison mondiale · Emballage sécurisé · Certificat d'authenticité</p>
+        <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité" data-en="Hahnemühle printing · 7–10 days delivery · Certificate of authenticity">Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité</p>
       </div>
     </div>
   </div>
@@ -673,7 +733,7 @@ button:focus:not(:focus-visible) {
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
       <div class="detail-image">
-        <img
+        <img width="2000" height="1476"
         src="images/portrait-bali.jpg"
         srcset="images/portrait-bali-small.webp 640w, images/portrait-bali-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -701,10 +761,10 @@ button:focus:not(:focus-visible) {
         </div>
 
         <a href="#" target="_blank" class="order-btn">
-          <span data-fr="Commander via Printspace" data-en="Order via Printspace">Commander via Printspace</span>
+          <span data-fr="Commander ce tirage" data-en="Order this print">Commander ce tirage</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
-        <p class="detail-shipping" data-fr="Livraison mondiale · Emballage sécurisé · Certificat d'authenticité" data-en="Worldwide shipping · Secure packaging · Certificate of authenticity">Livraison mondiale · Emballage sécurisé · Certificat d'authenticité</p>
+        <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité" data-en="Hahnemühle printing · 7–10 days delivery · Certificate of authenticity">Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité</p>
       </div>
     </div>
   </div>
@@ -712,7 +772,7 @@ button:focus:not(:focus-visible) {
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
       <div class="detail-image">
-        <img
+        <img width="1333" height="2000"
         src="images/manhattan.jpg"
         srcset="images/manhattan-small.webp 640w, images/manhattan-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -740,10 +800,10 @@ button:focus:not(:focus-visible) {
         </div>
 
         <a href="#" target="_blank" class="order-btn">
-          <span data-fr="Commander via Printspace" data-en="Order via Printspace">Commander via Printspace</span>
+          <span data-fr="Commander ce tirage" data-en="Order this print">Commander ce tirage</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
-        <p class="detail-shipping" data-fr="Livraison mondiale · Emballage sécurisé · Certificat d'authenticité" data-en="Worldwide shipping · Secure packaging · Certificate of authenticity">Livraison mondiale · Emballage sécurisé · Certificat d'authenticité</p>
+        <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité" data-en="Hahnemühle printing · 7–10 days delivery · Certificate of authenticity">Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité</p>
       </div>
     </div>
   </div>
@@ -751,7 +811,7 @@ button:focus:not(:focus-visible) {
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
       <div class="detail-image">
-        <img
+        <img width="1333" height="2000"
         src="images/fenetre-sur-locean.jpg"
         srcset="images/fenetre-sur-locean-small.webp 640w, images/fenetre-sur-locean-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -779,16 +839,16 @@ button:focus:not(:focus-visible) {
         </div>
 
         <a href="#" target="_blank" class="order-btn">
-          <span data-fr="Commander via Printspace" data-en="Order via Printspace">Commander via Printspace</span>
+          <span data-fr="Commander ce tirage" data-en="Order this print">Commander ce tirage</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
-        <p class="detail-shipping" data-fr="Livraison mondiale · Emballage sécurisé · Certificat d'authenticité" data-en="Worldwide shipping · Secure packaging · Certificate of authenticity">Livraison mondiale · Emballage sécurisé · Certificat d'authenticité</p>
+        <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité" data-en="Hahnemühle printing · 7–10 days delivery · Certificate of authenticity">Impression Hahnemühle · Livraison 7–10 jours · Certificat d'authenticité</p>
       </div>
     </div>
   </div>
 
 <nav role="navigation" aria-label="Navigation principale">
-  <a href="index.html" class="logo"><img
+  <a href="index.html" class="logo"><img width="1024" height="1024"
         src="images/logo_white2.png"
         srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -912,7 +972,7 @@ button:focus:not(:focus-visible) {
     
     <div class="print-card" data-id="sacred-monkey" onclick="openDetail('sacred-monkey')">
       <div class="print-image portrait">
-        <img
+        <img width="1697" height="2000"
         src="images/faune-sacree.jpg"
         srcset="images/faune-sacree-small.webp 640w, images/faune-sacree-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -937,7 +997,7 @@ button:focus:not(:focus-visible) {
     </div>
     <div class="print-card" data-id="barong" onclick="openDetail('barong')">
       <div class="print-image portrait">
-        <img
+        <img width="1333" height="2000"
         src="images/procession-barong.jpg"
         srcset="images/procession-barong-small.webp 640w, images/procession-barong-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -962,7 +1022,7 @@ button:focus:not(:focus-visible) {
     </div>
     <div class="print-card" data-id="offrandes" onclick="openDetail('offrandes')">
       <div class="print-image landscape">
-        <img
+        <img width="2000" height="1333"
         src="images/rituels-offrandes.jpg"
         srcset="images/rituels-offrandes-small.webp 640w, images/rituels-offrandes-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -987,7 +1047,7 @@ button:focus:not(:focus-visible) {
     </div>
     <div class="print-card" data-id="portrait" onclick="openDetail('portrait')">
       <div class="print-image landscape">
-        <img
+        <img width="2000" height="1476"
         src="images/portrait-bali.jpg"
         srcset="images/portrait-bali-small.webp 640w, images/portrait-bali-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -1012,7 +1072,7 @@ button:focus:not(:focus-visible) {
     </div>
     <div class="print-card" data-id="manhattan" onclick="openDetail('manhattan')">
       <div class="print-image portrait">
-        <img
+        <img width="1333" height="2000"
         src="images/manhattan.jpg"
         srcset="images/manhattan-small.webp 640w, images/manhattan-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -1037,7 +1097,7 @@ button:focus:not(:focus-visible) {
     </div>
     <div class="print-card" data-id="fenetre" onclick="openDetail('fenetre')">
       <div class="print-image portrait">
-        <img
+        <img width="1333" height="2000"
         src="images/fenetre-sur-locean.jpg"
         srcset="images/fenetre-sur-locean-small.webp 640w, images/fenetre-sur-locean-medium.webp 1200w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -1065,7 +1125,7 @@ button:focus:not(:focus-visible) {
 
 </main>
 <footer role="contentinfo">
-  <div class="footer-logo"><img
+  <div class="footer-logo"><img width="1024" height="1024"
         src="images/logo_white2.png"
         srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"

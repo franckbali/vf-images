@@ -39,7 +39,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   transform:scale(1.04);animation:heroZoom 14s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.04)}to{transform:scale(1)}}
 .hero-content{position:relative}
-.hero-eyebrow{font-size:0.80rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.4s ease .3s both}
+.hero-eyebrow{font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.4s ease .3s both}
 .hero-title{font-family:'Raleway',sans-serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:200;letter-spacing:.18em;text-transform:uppercase;color:var(--light);line-height:1;animation:fadeUp 1.4s ease .55s both;margin-bottom:1rem}
 .hero-sub{font-family:'Lora',serif;font-style:italic;font-size:clamp(.9rem,1.5vw,1.15rem);color:rgba(245,243,239,.92);letter-spacing:.08em;animation:fadeUp 1.4s ease .75s both}
 
@@ -156,7 +156,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 }
 .quote-author{
   font-family:'Raleway',sans-serif;
-  font-size:0.80rem;letter-spacing:.45em;
+  font-size:0.80rem;letter-spacing:.25em;
   text-transform:uppercase;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);opacity:.7;font-weight:400;
 }
 
@@ -210,7 +210,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);margin-bottom:.6rem;
 }
 .signature-role{
-  font-size:0.80rem;letter-spacing:.4em;
+  font-size:0.80rem;letter-spacing:.22em;
   text-transform:uppercase;
   color:rgba(245,243,239,.92);font-weight:400;
   margin-bottom:2.5rem;
@@ -459,7 +459,7 @@ button:focus:not(:focus-visible) {
 
 @media(max-width:900px){
   .hero-eyebrow{font-size:.95rem;letter-spacing:.35em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  .hero-prenom{font-size:1.3rem;letter-spacing:.4em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+  .hero-prenom{font-size:1.3rem;letter-spacing:.22em;text-shadow:0 1px 8px rgba(0,0,0,.8)}
 
 
   .hero-tagline{font-size:1.35rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
@@ -511,7 +511,36 @@ button:focus:not(:focus-visible) {
 
 <!-- Analytics Umami — RGPD friendly, sans cookies -->
 <!-- ⚠️  Remplacer 1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1 par votre ID sur umami.is -->
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.vfimages.com/#franck",
+      "name": "Franck V.",
+      "jobTitle": "Photographe Fine Art",
+      "description": "Photographe Fine Art basé à Bali depuis 2016. Spécialisé dans les cérémonies balinaises, les paysages d'Indonésie et les portraits authentiques.",
+      "url": "https://www.vfimages.com/a-propos.html",
+      "image": "https://www.vfimages.com/images/portrait-bali-01.jpg",
+      "sameAs": ["https://www.instagram.com/thelensofwonder/"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ID",
+        "addressLocality": "Bali"
+      },
+      "knowsAbout": ["Photographie Fine Art", "Bali", "Cérémonies balinaises", "Tirages museum"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.vfimages.com/" },
+        { "@type": "ListItem", "position": 2, "name": "À propos", "item": "https://www.vfimages.com/a-propos.html" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Aller au contenu</a>
@@ -520,7 +549,7 @@ button:focus:not(:focus-visible) {
 <div class="cursor-ring" id="ring"></div>
 
 <nav id="nav" role="navigation" aria-label="Navigation principale">
-  <a href="index.html" class="logo"><img
+  <a href="index.html" class="logo"><img width="1024" height="1024"
         src="images/logo_white2.png"
         srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -571,7 +600,7 @@ button:focus:not(:focus-visible) {
         <p class="body-text" style="margin-top:1.5rem" data-fr="Mon déclencheur photographique est né lors d&apos;une procession Barong à l&apos;aube, dans un village de l&apos;intérieur des terres. La lumière rasante traversait les masques dorés, les visages en transe, les fleurs d&apos;offrandes. La photographie n&apos;est pas une capture — c&apos;est une conversation muette avec le monde." data-en="My photographic trigger was born during a Barong procession at dawn, in an inland village. The raking light crossed the golden masks, the faces in trance, the offering flowers. Photography is not a capture — it is a silent conversation with the world.">Mon déclencheur photographique est né lors d&apos;une procession Barong à l&apos;aube, dans un village de l&apos;intérieur des terres. La lumière rasante traversait les masques dorés, les visages en transe, les fleurs d&apos;offrandes. La photographie n&apos;est pas une capture — c&apos;est une conversation muette avec le monde.</p>
       </div>
   <div class="intro-photo-col reveal">
-    <img
+    <img width="1500" height="2000"
         src="images/franck-enfant.jpg"
         srcset="images/franck-enfant-small.webp 640w, images/franck-enfant-medium.webp 1200w, images/franck-enfant-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
@@ -584,7 +613,7 @@ button:focus:not(:focus-visible) {
 <!-- SIGNATURE -->
 <div class="signature-block reveal">
   <div class="signature-img">
-    <img
+    <img width="1500" height="2000"
         src="images/franck-enfant-dans-un-train.jpg"
         srcset="images/franck-enfant-dans-un-train-small.webp 640w, images/franck-enfant-dans-un-train-medium.webp 1200w, images/franck-enfant-dans-un-train-large.webp 1920w"
         sizes="(max-width:900px) 100vw, 50vw"
@@ -606,7 +635,7 @@ button:focus:not(:focus-visible) {
 </div>
 </main>
 <footer role="contentinfo">
-  <div class="footer-logo"><img
+  <div class="footer-logo"><img width="1024" height="1024"
         src="images/logo_white2.png"
         srcset="images/logo-small.webp 640w, images/logo-medium.webp 1200w, images/logo-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"

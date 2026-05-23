@@ -54,11 +54,11 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 .section-link:hover{color:var(--gold);border-color:var(--gold)}
 
 /* ── Footer ── */
-footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:grid;grid-template-columns:1fr auto 1fr;grid-template-areas:"copy logo social";align-items:center;gap:2rem}
+footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"logo copy social";align-items:center;gap:2rem}
 .footer-logo{grid-area:logo}
-.footer-logo img{height:56px;width:auto;opacity:.8}
-.footer-copy{grid-area:copy;font-size:0.80rem;letter-spacing:.2em;color:rgba(245,243,239,.92)}
-.footer-social{grid-area:social;display:flex;gap:1.5rem;justify-self:end}
+.footer-logo img{height:48px;width:auto;opacity:.8}
+.footer-copy{grid-area:copy;font-size:0.80rem;letter-spacing:.2em;color:rgba(245,243,239,.92);text-align:center}
+.footer-social{grid-area:social;display:flex;gap:1.5rem}
 .footer-social a{font-size:0.80rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s}
 .footer-social a:hover{color:var(--gold)}
 

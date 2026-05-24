@@ -43,7 +43,10 @@
 .scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sp 2s ease-in-out infinite}
 @keyframes sp{0%,100%{opacity:.3}50%{opacity:1}}
 
-section.gallery-preview{padding:12rem 4rem;background:var(--dark)}
+.home-fineart-strip{padding:2.2rem 4rem;text-align:center;background:var(--dark);border-bottom:1px solid rgba(255,255,255,.04)}
+.home-fineart-strip p{font-family:'Raleway',sans-serif;font-size:.72rem;font-weight:300;letter-spacing:.32em;text-transform:uppercase;color:rgba(201,169,110,.65);margin:0}
+
+section.gallery-preview{padding:10rem 4rem;background:var(--dark)}
 .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem}
 
 .photo-masonry{column-count:3;column-gap:5px}
@@ -144,8 +147,9 @@ section.cta>*{position:relative}
 @media(max-width:900px){
   .hero-eyebrow{text-align:center!important;letter-spacing:.15em!important}
   .hero-tagline{text-align:center!important;font-size:clamp(1.15rem,4vw,1.45rem)!important}
-  .hero-fineart{text-align:center!important;letter-spacing:.1em!important;font-size:.92rem!important}
   .hero-prenom-wrap{justify-content:center!important}
+  .home-fineart-strip{padding:1.6rem 1.8rem}
+  .home-fineart-strip p{letter-spacing:.18em!important;font-size:.68rem!important}
   /* Désactiver le Ken Burns — lourd sur GPU mobile */
   .hero-bg{animation:none!important;transform:scale(1)!important}
   /* Scroll indicator plus lisible */
@@ -438,10 +442,10 @@ button:focus:not(:focus-visible) {
   .blog-meta,.blog-category,.article-meta{font-size:.9rem!important}
 }
 
-.hero-name{font-family:'Bodoni Moda',serif;font-size:clamp(3.5rem,10vw,8.5rem);font-weight:400;letter-spacing:-0.005em;line-height:1;color:var(--light);animation:fadeUp 1.4s ease .7s both;margin-bottom:.7rem;text-transform:none;text-align:center;width:100%;display:block}
-.hero-name em{font-style:italic;color:var(--gold)}
+.hero-name{font-family:'Raleway',sans-serif;font-size:clamp(3rem,9vw,7.5rem);font-weight:200;letter-spacing:.38em;line-height:1;color:var(--light);animation:fadeUp 1.4s ease .7s both;margin-bottom:.7rem;text-transform:uppercase;text-align:center;width:100%;display:block;padding-left:.38em}
+.hero-name em{font-style:normal;color:var(--gold)}
 @media(max-width:900px){
-  .hero-home .hero-name{font-size:clamp(2.4rem,10.5vw,3.6rem)!important;letter-spacing:-0.005em!important;text-align:center!important;width:100%!important;display:block!important;padding:0!important;box-sizing:border-box!important;text-transform:none!important}
+  .hero-home .hero-name{font-size:clamp(2.2rem,9vw,3.4rem)!important;letter-spacing:.22em!important;padding:0 0 0 .22em!important;text-align:center!important;width:100%!important;display:block!important;box-sizing:border-box!important}
 }
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -559,7 +563,7 @@ button:focus:not(:focus-visible) {
 <section class="hero hero-home">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow" data-fr="Photographie · Bali & le Monde" data-en="Photography · Bali & the World">Photographie · Bali & le Monde</p>
+    <p class="hero-eyebrow" data-fr="Photographie" data-en="Photography">Photographie</p>
     <div class="hero-divider"></div>
     <h1 class="hero-name"><em>VF</em> Images</h1>
     <div class="hero-prenom-wrap">
@@ -567,14 +571,17 @@ button:focus:not(:focus-visible) {
       <span class="hero-prenom">Franck Vinel</span>
       <span class="hero-prenom-line"></span>
     </div>
-    <p class="hero-tagline" data-fr="ce que je vois" data-en="what I see">ce que je vois</p>
-    <p class="hero-fineart" style="font-family:'Raleway',sans-serif;font-size:.85rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-shadow:0 2px 10px rgba(0,0,0,.9),0 0 20px rgba(201,169,110,.6);opacity:1;margin-top:1.4rem;animation:fadeUp 1.4s ease 1.2s both" data-fr="Tirages Fine Art · Éditions limitées · Livraison mondiale" data-en="Fine Art Prints · Limited Editions · Worldwide Shipping">Tirages Fine Art · Éditions limitées · Livraison mondiale</p>
+    <p class="hero-tagline" data-fr="à travers mes yeux..." data-en="through my eyes...">à travers mes yeux...</p>
   </div>
   <div class="scroll-indicator">
     <span data-fr="Découvrir" data-en="Discover">Découvrir</span>
     <div class="scroll-line"></div>
   </div>
 </section>
+
+<div class="home-fineart-strip">
+  <p data-fr="Tirages Fine Art · Éditions limitées · Livraison mondiale" data-en="Fine Art Prints · Limited Editions · Worldwide Shipping">Tirages Fine Art · Éditions limitées · Livraison mondiale</p>
+</div>
 
 <section class="gallery-preview">
   <div class="section-header">

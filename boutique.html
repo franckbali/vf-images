@@ -106,7 +106,7 @@
 
 /* REVEAL */
 
-/* ═══ MODALE DÉTAIL ═══ */
+/* ═══ MODALE DÉTAIL — large format avec mockup intégré ═══ */
 .modal-overlay{
   position:fixed;inset:0;background:rgba(5,5,5,0);
   z-index:800;pointer-events:none;
@@ -116,33 +116,77 @@
 
 .detail-modal{
   position:fixed;top:0;right:0;
-  width:min(680px,100vw);height:100vh;
+  width:min(980px,100vw);height:100vh;
   background:var(--dark);
   z-index:900;
   transform:translateX(100%);
   transition:transform .75s cubic-bezier(0.22,1,0.36,1);
-  overflow-y:auto;
+  overflow:hidden;
   border-left:1px solid rgba(255,255,255,.05);
 }
 .detail-modal.open{transform:translateX(0)}
 
 .detail-inner{
-  display:grid;grid-template-columns:1fr 1fr;
-  min-height:100vh;
+  display:grid;
+  grid-template-columns:400px 1fr;
+  height:100vh;
+  overflow:hidden;
 }
-.detail-image{
-  position:sticky;top:0;
+
+/* ── Côté gauche : mockup salon ── */
+.modal-viz-wrap{
+  position:relative;
+  background:var(--dark2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:2rem 1.5rem 3rem;
+  border-right:1px solid rgba(255,255,255,.06);
   height:100vh;overflow:hidden;
 }
-.detail-image img{
-  width:100%;height:100%;
-  object-fit:cover;filter:none;display:block;
+.modal-viz-scene{
+  position:relative;
+  width:100%;max-width:300px;
+  aspect-ratio:3/4;
+  overflow:hidden;border-radius:4px;
+  box-shadow:0 24px 70px rgba(0,0,0,.7);
+  background-image:url('images/salon-room.jpg');
+  background-size:cover;background-position:center center;
 }
+.modal-viz-scene::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.04) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,.22) 100%);
+  pointer-events:none;z-index:0;
+}
+.modal-viz-frame-area{
+  position:absolute;
+  top:4%;left:8%;right:8%;bottom:40%;
+  display:flex;align-items:center;justify-content:center;
+  z-index:1;
+}
+.modal-viz-frame{
+  position:relative;
+  transition:width .5s cubic-bezier(.22,1,.36,1),height .5s cubic-bezier(.22,1,.36,1);
+  flex-shrink:0;line-height:0;
+}
+.modal-viz-frame img{
+  display:block;width:100%;height:100%;
+  object-fit:cover;
+  box-shadow:0 2px 6px rgba(0,0,0,.55),0 8px 24px rgba(0,0,0,.42),0 20px 50px rgba(0,0,0,.22);
+  pointer-events:none;user-select:none;-webkit-user-drag:none;
+}
+.modal-viz-badge{
+  margin-top:1.2rem;
+  font-family:'Raleway',sans-serif;font-size:.65rem;letter-spacing:.28em;
+  text-transform:uppercase;color:rgba(245,243,239,.45);
+  text-align:center;
+}
+
+/* ── Côté droit : informations ── */
 .detail-info{
   padding:3rem 2.5rem;
   display:flex;flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   overflow-y:auto;
+  height:100vh;
 }
 
 .detail-close{
@@ -155,8 +199,8 @@
 }
 .detail-close:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
-.detail-location{font-size:0.75rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,110,1.0);font-weight:400;margin-bottom:.7rem}
-.detail-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:400;letter-spacing:.03em;line-height:1.2;margin-bottom:1.5rem}
+.detail-location{font-size:0.75rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,110,1.0);font-weight:400;margin-bottom:.7rem;margin-top:2rem}
+.detail-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.2rem,2vw,1.7rem);font-weight:400;letter-spacing:.03em;line-height:1.2;margin-bottom:1.5rem}
 .detail-divider{width:28px;height:1px;background:var(--gold);opacity:.4;margin-bottom:1.8rem}
 
 .detail-label{font-size:0.75rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.6rem;margin-top:1.4rem}
@@ -165,12 +209,13 @@
   background:none;border:1px solid rgba(255,255,255,.08);
   font-family:'Raleway',sans-serif;font-size:0.75rem;
   letter-spacing:.15em;color:rgba(245,243,239,.92);
-  padding:.4rem .9rem;
-  transition:border-color .3s,color .3s,background .3s;font-weight:400;
+  padding:.5rem 1rem;
+  transition:border-color .3s,color .3s,background .3s;font-weight:400;cursor:pointer;
 }
-.fmt-option:hover,.fmt-option.selected{
-  border-color:rgba(201,169,110,1.0);
-  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);background:rgba(201,169,110,1.0);
+.fmt-option:hover{border-color:rgba(201,169,110,.5);color:rgba(201,169,110,.8)}
+.fmt-option.selected{
+  border-color:var(--gold);color:var(--dark);
+  background:var(--gold);text-shadow:none;
 }
 .detail-paper{font-size:0.80rem;letter-spacing:.12em;color:rgba(245,243,239,.92);line-height:1.6}
 .detail-edition{font-size:0.80rem;letter-spacing:.1em;color:rgba(245,243,239,.92);line-height:1.6;font-style:italic;font-family:'Lora',serif}
@@ -188,18 +233,18 @@
   padding:1rem;
   background:rgba(201,169,110,1.0);
   border:1px solid rgba(201,169,110,1.0);
-  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-size:0.80rem;
+  color:var(--dark);font-size:0.80rem;
   letter-spacing:.32em;text-transform:uppercase;
   text-decoration:none;font-weight:400;
   transition:background .4s,border-color .4s;
-  cursor:none;margin-bottom:1rem;
+  cursor:pointer;margin-bottom:1rem;
   font-family:'Raleway',sans-serif;
 }
-.order-btn:hover{background:rgba(201,169,110,1.0);border-color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
+.order-btn:hover{background:rgba(176,140,74,.9);border-color:rgba(176,140,74,.9)}
 
 .detail-shipping{
-  font-size:0.75rem;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(245,243,239,.92);text-align:center;line-height:1.8;
+  font-size:0.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(245,243,239,.5);text-align:center;line-height:1.8;
 }
 
 /* FOOTER */
@@ -223,10 +268,11 @@
   /* Réassurance */
   .reassurance-text strong{font-size:.9rem!important;letter-spacing:.15em!important}
   .reassurance-text span{font-size:.9rem!important;letter-spacing:.06em!important}
-  /* Detail */
-  .detail-inner{grid-template-columns:1fr}
-  .detail-image{height:60vw;position:relative}
-  .detail-info{padding:2.5rem 1.8rem}
+  /* Detail modale — empilé sur mobile */
+  .detail-inner{grid-template-columns:1fr;overflow-y:auto;height:auto}
+  .modal-viz-wrap{height:auto;padding:2rem 1.5rem 1rem}
+  .modal-viz-scene{max-width:220px}
+  .detail-info{height:auto;padding:2rem 1.8rem;overflow-y:visible}
 }
 @media(max-width:500px){.prints-grid{grid-template-columns:1fr 1fr}}
 
@@ -281,8 +327,9 @@
   .quality-item{padding:1.2rem 1.5rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
   .reassurance-strip{grid-template-columns:repeat(2,1fr)!important;padding:1.2rem 1.8rem}
   .detail-inner{grid-template-columns:1fr}
-  .detail-image{height:55vw;position:relative}
-  .detail-info{padding:2rem 1.5rem}
+  .modal-viz-wrap{height:auto;padding:1.5rem 1rem .8rem}
+  .modal-viz-scene{max-width:180px}
+  .detail-info{height:auto;padding:1.8rem 1.5rem}
   .hero{padding:14rem 2rem 4rem}
   .hero-title{font-size:clamp(2rem,7vw,4rem)}
   .section-intro{grid-template-columns:1fr;min-height:auto}
@@ -597,14 +644,15 @@ button:focus:not(:focus-visible) {
   <div class="detail-modal" id="detail-sacred-monkey">
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
-      <div class="detail-image">
-        <img width="1697" height="2000"
-        src="images/faune-sacree.jpg"
-        srcset="images/faune-sacree-small.webp 640w, images/faune-sacree-medium.webp 1200w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Faune Sacrée"
-        loading="eager"
-        decoding="async">
+      <div class="modal-viz-wrap">
+        <div class="modal-viz-scene">
+          <div class="modal-viz-frame-area">
+            <div class="modal-viz-frame">
+              <img src="images/faune-sacree.jpg" class="modal-viz-artwork" alt="" draggable="false">
+            </div>
+          </div>
+        </div>
+        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="Forêt des singes · Bali" data-en="Sacred Monkey Forest · Bali">Forêt des singes · Bali</p>
@@ -636,14 +684,15 @@ button:focus:not(:focus-visible) {
   <div class="detail-modal" id="detail-barong">
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
-      <div class="detail-image">
-        <img width="1333" height="2000"
-        src="images/procession-barong.jpg"
-        srcset="images/procession-barong-small.webp 640w, images/procession-barong-medium.webp 1200w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Procession Barong"
-        loading="eager"
-        decoding="async">
+      <div class="modal-viz-wrap">
+        <div class="modal-viz-scene">
+          <div class="modal-viz-frame-area">
+            <div class="modal-viz-frame">
+              <img src="images/procession-barong.jpg" class="modal-viz-artwork" alt="" draggable="false">
+            </div>
+          </div>
+        </div>
+        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="Cérémonie · Bali" data-en="Ceremony · Bali">Cérémonie · Bali</p>
@@ -675,14 +724,15 @@ button:focus:not(:focus-visible) {
   <div class="detail-modal" id="detail-offrandes">
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
-      <div class="detail-image">
-        <img width="2000" height="1333"
-        src="images/rituels-offrandes.jpg"
-        srcset="images/rituels-offrandes-small.webp 640w, images/rituels-offrandes-medium.webp 1200w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Rituels & Offrandes"
-        loading="eager"
-        decoding="async">
+      <div class="modal-viz-wrap">
+        <div class="modal-viz-scene">
+          <div class="modal-viz-frame-area">
+            <div class="modal-viz-frame">
+              <img src="images/rituels-offrandes.jpg" class="modal-viz-artwork" alt="" draggable="false">
+            </div>
+          </div>
+        </div>
+        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="Temple · Bali" data-en="Temple · Bali">Temple · Bali</p>
@@ -714,14 +764,15 @@ button:focus:not(:focus-visible) {
   <div class="detail-modal" id="detail-portrait">
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
-      <div class="detail-image">
-        <img width="2000" height="1476"
-        src="images/portrait-bali.jpg"
-        srcset="images/portrait-bali-small.webp 640w, images/portrait-bali-medium.webp 1200w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Portrait · Bali"
-        loading="lazy"
-        decoding="async">
+      <div class="modal-viz-wrap">
+        <div class="modal-viz-scene">
+          <div class="modal-viz-frame-area">
+            <div class="modal-viz-frame">
+              <img src="images/portrait-bali.jpg" class="modal-viz-artwork" alt="" draggable="false">
+            </div>
+          </div>
+        </div>
+        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="Ubud · Bali" data-en="Ubud · Bali">Ubud · Bali</p>
@@ -753,14 +804,15 @@ button:focus:not(:focus-visible) {
   <div class="detail-modal" id="detail-manhattan">
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
-      <div class="detail-image">
-        <img width="1333" height="2000"
-        src="images/manhattan.jpg"
-        srcset="images/manhattan-small.webp 640w, images/manhattan-medium.webp 1200w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Manhattan"
-        loading="lazy"
-        decoding="async">
+      <div class="modal-viz-wrap">
+        <div class="modal-viz-scene">
+          <div class="modal-viz-frame-area">
+            <div class="modal-viz-frame">
+              <img src="images/manhattan.jpg" class="modal-viz-artwork" alt="" draggable="false">
+            </div>
+          </div>
+        </div>
+        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="New York · USA" data-en="New York · USA">New York · USA</p>
@@ -792,14 +844,15 @@ button:focus:not(:focus-visible) {
   <div class="detail-modal" id="detail-fenetre">
     <div class="detail-inner">
       <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
-      <div class="detail-image">
-        <img width="1333" height="2000"
-        src="images/fenetre-sur-locean.jpg"
-        srcset="images/fenetre-sur-locean-small.webp 640w, images/fenetre-sur-locean-medium.webp 1200w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="Fenêtre sur l'Océan"
-        loading="lazy"
-        decoding="async">
+      <div class="modal-viz-wrap">
+        <div class="modal-viz-scene">
+          <div class="modal-viz-frame-area">
+            <div class="modal-viz-frame">
+              <img src="images/fenetre-sur-locean.jpg" class="modal-viz-artwork" alt="" draggable="false">
+            </div>
+          </div>
+        </div>
+        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="La Réunion" data-en="Réunion Island">La Réunion</p>
@@ -1105,266 +1158,7 @@ button:focus:not(:focus-visible) {
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════
-     VISUALISEUR — VOTRE TIRAGE DANS VOTRE ESPACE
-════════════════════════════════════════════════════ -->
-<style>
-.viz-section{padding:8rem 4rem 6rem;text-align:center}
-.viz-section .section-label{display:block;font-family:'Raleway',sans-serif;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
-.viz-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:400;color:var(--cream);margin:0 0 3.5rem;letter-spacing:.04em}
 
-/* ── Layout principal ── */
-/* Scène portrait à gauche (fixe), contrôles à droite */
-.viz-layout{display:grid;grid-template-columns:360px 1fr;gap:3.5rem;align-items:start;max-width:1000px;margin:0 auto;text-align:left}
-@media(max-width:900px){.viz-layout{grid-template-columns:1fr;gap:2rem}}
-
-/* ── Scène — photo salon-room.jpg (portrait 3:4, 1083×1452) ── */
-.viz-scene-wrap{position:relative}
-.viz-scene{
-  position:relative;
-  width:100%;
-  /* Ratio exact de la photo : 1083/1452 ≈ 3/4 */
-  aspect-ratio:3/4;
-  overflow:hidden;
-  border-radius:6px;
-  box-shadow:0 24px 70px rgba(0,0,0,.65);
-  background-image:url('images/salon-room.jpg');
-  background-size:cover;
-  background-position:center center;
-}
-/* Ombre douce sous le tirage pour qu'il se détache du mur clair */
-.viz-scene::after{
-  content:'';
-  position:absolute;inset:0;
-  background:linear-gradient(to bottom,
-    rgba(0,0,0,.04) 0%,
-    rgba(0,0,0,.0)  55%,
-    rgba(0,0,0,.20) 100%
-  );
-  pointer-events:none;
-  z-index:0;
-}
-
-/* ── Tirage direct — zone mur (haut de la photo, ~62% de hauteur) ── */
-/* Photo salon : mur lisse clair = top 0–62%, fauteuil = 62–85%, sol = 85–100% */
-.viz-frame-area{
-  position:absolute;
-  top:4%;left:8%;right:8%;
-  bottom:40%;   /* laisse visible le fauteuil + table basse */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:1;
-}
-.viz-frame{
-  position:relative;
-  transition:width .6s cubic-bezier(.22,1,.36,1),height .6s cubic-bezier(.22,1,.36,1);
-  flex-shrink:0;
-  line-height:0;
-}
-/* Tirage direct — impression sur alu/verre sans cadre */
-.viz-frame img{
-  display:block;
-  width:100%;height:100%;
-  object-fit:cover;
-  box-shadow:
-    0 2px 6px rgba(0,0,0,.5),
-    0 8px 24px rgba(0,0,0,.4),
-    0 20px 50px rgba(0,0,0,.22);
-}
-
-/* ── Badge taille ── */
-.viz-size-badge{
-  position:absolute;bottom:-2.2rem;left:50%;transform:translateX(-50%);
-  font-family:'Raleway',sans-serif;font-size:.72rem;letter-spacing:.25em;
-  text-transform:uppercase;color:rgba(245,243,239,.6);white-space:nowrap;
-}
-
-/* ── Contrôles ── */
-.viz-controls{display:flex;flex-direction:column;gap:2.5rem}
-.viz-control-label{
-  font-family:'Raleway',sans-serif;font-size:.68rem;letter-spacing:.3em;
-  text-transform:uppercase;color:rgba(201,169,110,.85);margin-bottom:1rem;
-}
-
-/* Boutons format */
-.viz-size-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
-.viz-size-btn{
-  background:none;
-  border:1px solid rgba(255,255,255,.1);
-  color:var(--cream);
-  padding:.9rem .8rem;
-  cursor:pointer;
-  text-align:left;
-  transition:border-color .3s,background .3s;
-  border-radius:2px;
-  font-family:'Raleway',sans-serif;
-}
-.viz-size-btn:hover{border-color:rgba(201,169,110,.5);background:rgba(201,169,110,.05)}
-.viz-size-btn.active{border-color:var(--gold);background:rgba(201,169,110,.08)}
-.vsb-dims{display:block;font-size:.9rem;letter-spacing:.08em;font-weight:600}
-.vsb-unit{font-size:.65rem;letter-spacing:.2em;color:rgba(245,243,239,.5);margin-left:.2rem}
-.vsb-hint{display:block;font-size:.62rem;letter-spacing:.15em;color:rgba(245,243,239,.4);margin-top:.3rem;text-transform:uppercase}
-
-/* Grille miniatures */
-.viz-thumb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
-.viz-thumb{
-  aspect-ratio:1;overflow:hidden;cursor:pointer;
-  border:2px solid transparent;transition:border-color .3s,transform .3s;
-  border-radius:2px;
-}
-.viz-thumb:hover{transform:scale(1.05);border-color:rgba(201,169,110,.5)}
-.viz-thumb.active{border-color:var(--gold)}
-.viz-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-</style>
-
-<section class="viz-section reveal">
-  <span class="section-label" data-fr="VISUALISEZ" data-en="VISUALIZE">VISUALISEZ</span>
-  <h2 data-fr="Votre tirage dans votre espace" data-en="Your print in your space">Votre tirage dans votre espace</h2>
-
-  <div class="viz-layout">
-
-    <!-- ── Scène salon ── -->
-    <div class="viz-scene-wrap">
-      <div class="viz-scene" id="vizScene">
-        <!-- Photo salon en fond, tirage positionné sur la zone mur -->
-        <div class="viz-frame-area">
-          <div class="viz-frame" id="vizFrame">
-            <img src="images/faune-sacree.jpg" id="vizArtwork" alt="Tirage sélectionné">
-          </div>
-        </div>
-      </div>
-      <div class="viz-size-badge">
-        <span id="vizSizeLabel">30 × 40 cm</span>
-      </div>
-    </div>
-
-    <!-- ── Contrôles ── -->
-    <div class="viz-controls">
-
-      <!-- Format -->
-      <div>
-        <div class="viz-control-label" data-fr="FORMAT D'IMPRESSION" data-en="PRINT SIZE">FORMAT D'IMPRESSION</div>
-        <div class="viz-size-grid" id="vizSizeGrid">
-          <!-- rempli par JS selon l'œuvre -->
-        </div>
-      </div>
-
-      <!-- Œuvre -->
-      <div>
-        <div class="viz-control-label" data-fr="CHOISIR UNE ŒUVRE" data-en="CHOOSE AN ARTWORK">CHOISIR UNE ŒUVRE</div>
-        <div class="viz-thumb-grid" id="vizThumbGrid">
-          <!-- rempli par JS -->
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<script>
-/* ════ VISUALISEUR ════ */
-(function(){
-  // Catalogue des œuvres + formats (largeur × hauteur en cm)
-  const artworks = [
-    {src:'images/faune-sacree.jpg',    title:'Faune Sacrée',       formats:[[30,40],[40,60],[60,90],[80,120]]},
-    {src:'images/procession-barong.jpg',title:'Procession',         formats:[[30,40],[40,60],[60,90],[80,120]]},
-    {src:'images/rituels-offrandes.jpg',title:'Rituels',            formats:[[30,40],[40,60],[60,90],[80,120]]},
-    {src:'images/portrait-bali.jpg',   title:'Portrait Bali',       formats:[[30,40],[40,60],[60,90],[80,120]]},
-    {src:'images/manhattan.jpg',       title:'Manhattan',           formats:[[40,27],[60,40],[90,60],[120,80]]},
-    {src:'images/fenetre-sur-locean.jpg',title:'Fenêtre Océan',     formats:[[30,40],[40,60],[60,90],[80,120]]},
-  ];
-
-  const HINTS_FR = ['Petit format','Moyen format','Grand format','Très grand format'];
-  const HINTS_EN = ['Small print','Medium print','Large print','Extra large'];
-
-  let activeArtwork = 0;
-  let activeSize    = 0;
-
-  const scene     = document.getElementById('vizScene');
-  const frame     = document.getElementById('vizFrame');
-  const artwork   = document.getElementById('vizArtwork');
-  const sizeLabel = document.getElementById('vizSizeLabel');
-  const sizeGrid  = document.getElementById('vizSizeGrid');
-  const thumbGrid = document.getElementById('vizThumbGrid');
-
-  // ── Calibrage sur salon-room.jpg (1083×1452, portrait 3:4) ──
-  // Fauteuil crème visible en bas : largeur réelle ≈ 80 cm → ~28% de la largeur de la photo.
-  // Cela donne : 1 cm ≈ sceneW × 0.28 / 80 = sceneW × 0.0035 px.
-  // On amplifie légèrement (×1.35) pour la lisibilité sans trop s'éloigner du réel.
-  // Le mur clair occupe top 62% → la zone utile est (62% - 8% top - 8% bottom) × sceneH.
-  function getScale(){
-    // Echelle réaliste basée sur le mobilier de la photo
-    const realPxPerCm = scene.offsetWidth * 0.0035; // ≈ 1 cm en px
-    const scale = realPxPerCm * 1.35;
-    // Sécurité : le format 120cm ne doit pas dépasser la zone mur disponible
-    const wallH = scene.offsetHeight * 0.50; // zone mur utile
-    const maxW  = scene.offsetWidth  * 0.82;
-    return Math.min(scale, wallH / 120, maxW / 120);
-  }
-
-  function updateFrame(w, h){
-    const scale = getScale();
-    const pw = Math.round(w * scale);
-    const ph = Math.round(h * scale);
-    frame.style.width  = pw + 'px';
-    frame.style.height = ph + 'px';
-    sizeLabel.textContent = w + ' × ' + h + ' cm';
-  }
-
-  function buildSizes(artIdx){
-    const fmts = artworks[artIdx].formats;
-    const lang = document.documentElement.lang || 'fr';
-    sizeGrid.innerHTML = '';
-    fmts.forEach((fmt, i) => {
-      const btn = document.createElement('button');
-      btn.className = 'viz-size-btn' + (i === activeSize ? ' active' : '');
-      btn.innerHTML = `<span class="vsb-dims">${fmt[0]}×${fmt[1]}</span><span class="vsb-unit">cm</span><span class="vsb-hint">${HINTS_FR[i]}</span>`;
-      btn.addEventListener('click', () => {
-        sizeGrid.querySelectorAll('.viz-size-btn').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        activeSize = i;
-        updateFrame(fmt[0], fmt[1]);
-      });
-      sizeGrid.appendChild(btn);
-    });
-    // appliquer le format actif
-    activeSize = Math.min(activeSize, fmts.length - 1);
-    updateFrame(fmts[activeSize][0], fmts[activeSize][1]);
-  }
-
-  function buildThumbs(){
-    thumbGrid.innerHTML = '';
-    artworks.forEach((art, i) => {
-      const wrap = document.createElement('div');
-      wrap.className = 'viz-thumb' + (i === activeArtwork ? ' active' : '');
-      const img = document.createElement('img');
-      img.src = art.src; img.alt = art.title; img.loading = 'lazy';
-      wrap.appendChild(img);
-      wrap.addEventListener('click', () => {
-        thumbGrid.querySelectorAll('.viz-thumb').forEach(t=>t.classList.remove('active'));
-        wrap.classList.add('active');
-        activeArtwork = i;
-        artwork.src = art.src;
-        artwork.alt = art.title;
-        activeSize = 0;
-        buildSizes(i);
-      });
-      thumbGrid.appendChild(wrap);
-    });
-  }
-
-  // Init
-  buildThumbs();
-  buildSizes(0);
-
-  // Hover cursor sur les éléments interactifs
-  document.querySelectorAll('.viz-size-btn,.viz-thumb').forEach(el=>{
-    el.addEventListener('mouseenter',()=>document.getElementById('ring')?.classList.add('h'));
-    el.addEventListener('mouseleave',()=>document.getElementById('ring')?.classList.remove('h'));
-  });
-})();
-</script>
 
 </main>
 <footer role="contentinfo">
@@ -1400,11 +1194,14 @@ let currentLang='fr';
 
 /* ═══ MODALE DÉTAIL ═══ */
 function openDetail(id){
-  document.getElementById('detail-'+id).classList.add('open');
+  const modal=document.getElementById('detail-'+id);
+  modal.classList.add('open');
   document.getElementById('modalOverlay').classList.add('active');
   document.body.style.overflow='hidden';
-  // Appliquer la langue courante dans la modale
   setLang(currentLang);
+  // Initialiser le mockup : sélectionner le premier format
+  const firstFmt=modal.querySelector('.fmt-option');
+  if(firstFmt) selectFormat(firstFmt);
 }
 function closeDetail(){
   document.querySelectorAll('.detail-modal.open').forEach(m=>m.classList.remove('open'));
@@ -1412,6 +1209,31 @@ function closeDetail(){
   document.body.style.overflow='';
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+
+/* ═══ VISUALISEUR MOCKUP — mis à jour au clic format ═══ */
+function updateModalViz(modal, w, h){
+  const scene=modal.querySelector('.modal-viz-scene');
+  const frame=modal.querySelector('.modal-viz-frame');
+  const label=modal.querySelector('.modal-viz-label');
+  if(!scene||!frame) return;
+  function applyScale(){
+    const sw=scene.offsetWidth;
+    const sh=scene.offsetHeight;
+    if(!sw||!sh){
+      // Scene pas encore dimensionnée (ex. 1er appel) — réessayer
+      setTimeout(applyScale, 80);
+      return;
+    }
+    const wallH=sh*0.50;
+    const maxW =sw*0.82;
+    const realScale=sw*0.0035*1.35;
+    const scale=Math.min(realScale, wallH/120, maxW/120);
+    frame.style.width =Math.round(w*scale)+'px';
+    frame.style.height=Math.round(h*scale)+'px';
+    if(label) label.textContent=w+' × '+h+' cm';
+  }
+  applyScale();
+}
 
 /* ═══ PRIX PAR FORMAT ═══ */
 const FORMAT_PRICES={
@@ -1425,6 +1247,7 @@ function selectFormat(btn){
   modal.querySelectorAll('.fmt-option').forEach(b=>b.classList.remove('selected'));
   btn.classList.add('selected');
   const fmt=btn.textContent.trim();
+  // Mise à jour du prix
   const price=FORMAT_PRICES[fmt];
   if(price){
     const priceEl=modal.querySelector('.detail-price');
@@ -1434,6 +1257,9 @@ function selectFormat(btn){
       if(fromEl) fromEl.style.display='none';
     }
   }
+  // Mise à jour du mockup salon
+  const parts=fmt.split('×').map(Number);
+  if(parts.length===2) updateModalViz(modal, parts[0], parts[1]);
 }
 
 // Hamburger menu

@@ -124,7 +124,7 @@
 .panel-overlay.active{background:rgba(5,5,5,.5);pointer-events:all}
 .side-panel{position:fixed;top:0;right:0;width:min(460px,90vw);height:100vh;background:rgba(8,8,8,.98);z-index:499;display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem;transform:translateX(100%);transition:transform .75s cubic-bezier(0.22,1,0.36,1);border-left:1px solid rgba(255,255,255,.05)}
 .side-panel.open{transform:translateX(0)}
-.panel-close{position:absolute;top:2rem;right:2rem;background:none;border:none;color:rgba(245,243,239,.92);font-size:1rem;font-weight:200;cursor:none;padding:.5rem;transition:color .3s;line-height:1}
+.panel-close{position:absolute;top:2rem;right:2rem;background:none;border:none;color:rgba(245,243,239,.92);font-size:1rem;font-weight:200;cursor:pointer;padding:.5rem;transition:color .3s;line-height:1}
 .panel-close:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .panel-label{font-size:0.75rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(201,169,110,1.0);font-weight:400;margin-bottom:1.8rem;opacity:0;transform:translateY(12px);transition:opacity .55s ease .25s,transform .55s ease .25s}
 .side-panel.open .panel-label{opacity:1;transform:translateY(0)}
@@ -189,6 +189,10 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
 @media(max-width:900px){
   body{font-size:18px}
+  .gallery-intro{height:85vh!important}
+  .intro-title{font-size:clamp(2.2rem,10vw,3.2rem)!important;letter-spacing:.05em!important}
+  .intro-label{font-size:1rem!important;letter-spacing:.2em!important}
+  .intro-count{font-size:1rem!important;letter-spacing:.15em!important}
   .intro-scroll{display:none!important}
   .panel-trigger{display:none!important}
   .gallery-intro-bg{animation:none!important;transform:scale(1)!important}
@@ -207,6 +211,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
   .panel-trigger{display:flex!important;right:0!important;position:fixed!important}
   .block.fullscreen,.block.wide{width:100%!important;max-width:100%!important}
   .gallery-intro{width:100%!important}
+  .panel-close{position:fixed!important;top:1rem!important;right:1rem!important;z-index:10000!important;padding:1rem!important;cursor:pointer!important;font-size:1.2rem!important}
   .lb-desc-title{font-size:1.2rem!important;letter-spacing:.15em!important;color:rgba(245,243,239,1)!important}
   .lb-desc-text{font-size:1.1rem!important;line-height:1.8!important;color:rgba(245,243,239,1)!important}
   .caption-below{font-size:1rem!important;letter-spacing:.12em!important;text-align:center!important;padding:0 1rem!important}
@@ -345,26 +350,30 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
 <!-- SÉQUENCE -->
 
+<!-- portrait-bali-02 : landscape 1920x1279 → fullscreen -->
 <div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="La Danseuse" data-desc="Le masque se pose, les yeux se concentrent. Avant la danse, il y a ce moment de transformation." data-desc-en="The mask is applied, the eyes focus. Before the dance, there is this moment of transformation.">
   <img src="images/portrait-bali-02.jpg" alt="La Danseuse" loading="eager" decoding="async">
   <div class="caption-corner">La Danseuse</div>
 </div>
 <div class="gap"></div>
 
+<!-- portrait-bali-007 : portrait 1333x2000 → centered-sm -->
 <div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="L'Âge des Dieux" data-desc="Dans les rides de son visage, le temps de Bali tout entier." data-desc-en="In the wrinkles of her face, all of Bali's time.">
-    <img src="images/portrait-bali.jpg" alt="L'Âge des Dieux" loading="lazy" decoding="async">
-    <div class="caption-corner">L'Âge des Dieux</div>
+  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="Célébration" data-desc="Sous les parasols sacrés, un visage rayonnant. La joie comme offrande." data-desc-en="Under the sacred parasols, a radiant face. Joy as offering.">
+    <img src="images/portrait-bali-007.jpg" alt="Célébration" loading="lazy" decoding="async">
+    <div class="caption-corner">Célébration</div>
   </div>
 </div>
 <div class="gap"></div>
 
+<!-- portrait-bali-006 : landscape 1920x1279 → wide -->
 <div class="block wide reveal" onclick="openLightbox(this)" data-title="Le Cortège" data-desc="Ils avancent ensemble, en blanc, vers la cérémonie. La communauté comme force collective." data-desc-en="They move together, in white, toward the ceremony. The community as collective force.">
   <img src="images/portrait-bali-006.jpg" alt="Le Cortège" loading="lazy" decoding="async">
   <div class="caption-corner">Le Cortège</div>
 </div>
 <div class="gap"></div>
 
+<!-- portrait-bali-010 : landscape 1920x1279 → offset-left -->
 <div class="block offset reveal">
   <div class="frame offset-left" onclick="openLightbox(this)" data-title="Parure d'Or" data-desc="Une parure royale, des yeux levés vers le rite. L'or de Bali sur une peau jeune." data-desc-en="A royal adornment, eyes raised toward the rite. Bali's gold on young skin.">
     <img src="images/portrait-bali-010.jpg" alt="Parure d'Or" loading="lazy" decoding="async">
@@ -373,28 +382,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 </div>
 <div class="gap"></div>
 
-<div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="Sagesse" data-desc="Il rit. Et dans ce rire, toute la légèreté d'une vie longue et accomplie." data-desc-en="He laughs. And in that laughter, all the lightness of a long, fulfilled life.">
-    <img src="images/portrait-bali-003.jpg" alt="Sagesse" loading="lazy" decoding="async">
-    <div class="caption-corner">Sagesse</div>
-  </div>
-</div>
-<div class="gap"></div>
-
-<div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="Mélancolie" data-desc="Un profil perdu dans ses pensées, au bord du bruit du monde." data-desc-en="A profile lost in thought, on the edge of the world's noise.">
-  <img src="images/portrait-bali-011.jpg" alt="Mélancolie" loading="lazy" decoding="async">
-  <div class="caption-corner">Mélancolie</div>
-</div>
-<div class="gap"></div>
-
-<div class="block offset reveal">
-  <div class="frame offset-right" onclick="openLightbox(this)" data-title="Célébration" data-desc="Sous les parasols sacrés, un visage rayonnant. La joie comme offrande." data-desc-en="Under the sacred parasols, a radiant face. Joy as offering.">
-    <img src="images/portrait-bali-007.jpg" alt="Célébration" loading="lazy" decoding="async">
-    <div class="caption-corner">Célébration</div>
-  </div>
-</div>
-<div class="gap"></div>
-
+<!-- portrait-bali-004 : portrait 1333x2000 → centered-sm -->
 <div class="block centered reveal">
   <div class="frame centered-sm" onclick="openLightbox(this)" data-title="L'Éveil" data-desc="Les yeux levés vers quelque chose que nous ne voyons pas encore." data-desc-en="Eyes lifted toward something we cannot yet see.">
     <img src="images/portrait-bali-004.jpg" alt="L'Éveil" loading="lazy" decoding="async">
@@ -403,28 +391,48 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 </div>
 <div class="gap"></div>
 
-<div class="block wide reveal" onclick="openLightbox(this)" data-title="Les Années" data-desc="Chaque ride est une histoire. Son visage est un atlas." data-desc-en="Every wrinkle is a story. Her face is an atlas.">
-  <img src="images/portrait-bali-012.jpg" alt="Les Années" loading="lazy" decoding="async">
-  <div class="caption-corner">Les Années</div>
+<!-- portrait-bali-011 : portrait 1333x2000 → fullscreen -->
+<div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="Mélancolie" data-desc="Un profil perdu dans ses pensées, au bord du bruit du monde." data-desc-en="A profile lost in thought, on the edge of the world's noise.">
+  <img src="images/portrait-bali-011.jpg" alt="Mélancolie" loading="lazy" decoding="async">
+  <div class="caption-corner">Mélancolie</div>
 </div>
 <div class="gap"></div>
 
-<div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="Transmission" data-desc="Entre les mains de l'ancienne et les yeux du petit, quelque chose passe — invisible et essentiel." data-desc-en="Between the elder's hands and the child's eyes, something passes — invisible and essential.">
-    <img src="images/portrait-bali-005.jpg" alt="Transmission" loading="lazy" decoding="async">
-    <div class="caption-corner">Transmission</div>
+<!-- portrait-bali-003 : landscape 1920x1279 → offset-right -->
+<div class="block offset reveal">
+  <div class="frame offset-right" onclick="openLightbox(this)" data-title="Sagesse" data-desc="Il rit. Et dans ce rire, toute la légèreté d'une vie longue et accomplie." data-desc-en="He laughs. And in that laughter, all the lightness of a long, fulfilled life.">
+    <img src="images/portrait-bali-003.jpg" alt="Sagesse" loading="lazy" decoding="async">
+    <div class="caption-corner">Sagesse</div>
   </div>
 </div>
 <div class="gap"></div>
 
-<div class="block offset reveal">
-  <div class="frame offset-left" onclick="openLightbox(this)" data-title="Regard" data-desc="Un regard direct, calme, ancré dans la procession." data-desc-en="A direct gaze, calm, anchored in the procession.">
+<!-- portrait-bali-008 : portrait 1333x2000 → centered-sm -->
+<div class="block centered reveal">
+  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="Regard" data-desc="Un regard direct, calme, ancré dans la procession." data-desc-en="A direct gaze, calm, anchored in the procession.">
     <img src="images/portrait-bali-008.jpg" alt="Regard" loading="lazy" decoding="async">
     <div class="caption-corner">Regard</div>
   </div>
 </div>
 <div class="gap"></div>
 
+<!-- portrait-bali-012 : landscape 1920x1279 → wide -->
+<div class="block wide reveal" onclick="openLightbox(this)" data-title="Les Années" data-desc="Chaque ride est une histoire. Son visage est un atlas." data-desc-en="Every wrinkle is a story. Her face is an atlas.">
+  <img src="images/portrait-bali-012.jpg" alt="Les Années" loading="lazy" decoding="async">
+  <div class="caption-corner">Les Années</div>
+</div>
+<div class="gap"></div>
+
+<!-- portrait-bali-005 : landscape 1920x1279 → offset-left -->
+<div class="block offset reveal">
+  <div class="frame offset-left" onclick="openLightbox(this)" data-title="Transmission" data-desc="Entre les mains de l'ancienne et les yeux du petit, quelque chose passe — invisible et essentiel." data-desc-en="Between the elder's hands and the child's eyes, something passes — invisible and essential.">
+    <img src="images/portrait-bali-005.jpg" alt="Transmission" loading="lazy" decoding="async">
+    <div class="caption-corner">Transmission</div>
+  </div>
+</div>
+<div class="gap"></div>
+
+<!-- portrait-bali-009 : portrait 1333x2000 → centered-sm -->
 <div class="block centered reveal">
   <div class="frame centered-sm" onclick="openLightbox(this)" data-title="L'Offrande" data-desc="Elle sourit en portant le monde sur sa tête." data-desc-en="She smiles while carrying the world on her head.">
     <img src="images/portrait-bali-009.jpg" alt="L'Offrande" loading="lazy" decoding="async">
@@ -433,6 +441,14 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 </div>
 <div class="gap"></div>
 
+<!-- portrait-bali.jpg : landscape 2000x1476 → wide -->
+<div class="block wide reveal" onclick="openLightbox(this)" data-title="L'Âge des Dieux" data-desc="Dans les rides de son visage, le temps de Bali tout entier." data-desc-en="In the wrinkles of her face, all of Bali's time.">
+  <img src="images/portrait-bali.jpg" alt="L'Âge des Dieux" loading="lazy" decoding="async">
+  <div class="caption-corner">L'Âge des Dieux</div>
+</div>
+<div class="gap"></div>
+
+<!-- portrait-bali-01 : landscape 1920x1279 → offset-right -->
 <div class="block offset reveal">
   <div class="frame offset-right" onclick="openLightbox(this)" data-title="Le Geste" data-desc="Ce pouce levé comme une victoire offerte à l'objectif." data-desc-en="That raised thumb like a victory offered to the lens.">
     <img src="images/portrait-bali-01.jpg" alt="Le Geste" loading="lazy" decoding="async">
@@ -441,6 +457,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 </div>
 <div class="gap"></div>
 
+<!-- portrait-bolivie-001 : portrait 1333x2000 → fullscreen -->
 <div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="Sourire des Andes" data-desc="Depuis l'Altiplano bolivien, un sourire qui traverse les distances." data-desc-en="From the Bolivian Altiplano, a smile that crosses distances.">
   <img src="images/portrait-bolivie-001.jpg" alt="Sourire des Andes" loading="lazy" decoding="async">
   <div class="caption-corner">Sourire des Andes</div>

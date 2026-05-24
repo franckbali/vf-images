@@ -97,7 +97,7 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:grid;grid
 /* ── MOBILE GLOBAL — lisibilité ── */
 @media(max-width:900px){
   /* Textes — taille de base augmentée */
-  body{font-size:18px}
+  body{font-size:20px}
   .section-label{font-size:1rem!important;letter-spacing:.15em}
   .section-link{font-size:1rem!important;letter-spacing:.15em}
   .btn{font-size:1rem!important;padding:.9rem 2rem;letter-spacing:.18em}

@@ -1215,7 +1215,7 @@ button:focus:not(:focus-visible) {
   pointer-events:none;
 }
 
-/* ── Cadre / tirage ── */
+/* ── Tirage direct (sans cadre) ── */
 .viz-frame-area{
   position:absolute;
   top:0;left:0;right:0;
@@ -1225,47 +1225,19 @@ button:focus:not(:focus-visible) {
   justify-content:center;
 }
 .viz-frame{
-  --fw:160px;--fh:213px;
-  width:var(--fw);
-  height:var(--fh);
   position:relative;
-  transition:width .55s cubic-bezier(.22,1,.36,1),height .55s cubic-bezier(.22,1,.36,1);
+  transition:width .6s cubic-bezier(.22,1,.36,1),height .6s cubic-bezier(.22,1,.36,1);
   flex-shrink:0;
+  line-height:0;
 }
-/* Passe-partout blanc */
-.viz-mat{
-  position:absolute;inset:0;
-  border:clamp(8px,2.5%,18px) solid #f5f2ee;
-  background:#f5f2ee;
-  box-shadow:
-    inset 0 0 0 1px rgba(0,0,0,.06),
-    0 4px 20px rgba(0,0,0,.25),
-    0 20px 60px rgba(0,0,0,.15);
-  z-index:1;
-  overflow:hidden;
-}
-.viz-mat img{
+/* Photo directement — impression sur alu/verre, pas de cadre */
+.viz-frame img{
+  display:block;
   width:100%;height:100%;
   object-fit:cover;
-  display:block;
-}
-/* Cadre bois */
-.viz-frame-border{
-  position:absolute;inset:-6px;
-  border:6px solid #6b5040;
-  background:transparent;
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.12),
-    inset 2px 2px 4px rgba(0,0,0,.3),
-    3px 3px 12px rgba(0,0,0,.35);
-  z-index:2;
-  pointer-events:none;
-}
-/* Reflet vitre */
-.viz-glass{
-  position:absolute;inset:0;z-index:3;
-  background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,transparent 60%);
-  pointer-events:none;
+    0 6px 20px rgba(0,0,0,.45),
+    0 20px 60px rgba(0,0,0,.25);
 }
 
 /* ── Badge taille ── */
@@ -1328,14 +1300,10 @@ button:focus:not(:focus-visible) {
         <div class="viz-furniture"></div>
         <div class="viz-vase"></div>
 
-        <!-- Cadre -->
+        <!-- Tirage direct sur le mur -->
         <div class="viz-frame-area">
           <div class="viz-frame" id="vizFrame">
-            <div class="viz-mat">
-              <img src="images/faune-sacree.jpg" id="vizArtwork" alt="Tirage sélectionné">
-            </div>
-            <div class="viz-frame-border"></div>
-            <div class="viz-glass"></div>
+            <img src="images/faune-sacree.jpg" id="vizArtwork" alt="Tirage sélectionné">
           </div>
         </div>
 
@@ -1389,14 +1357,13 @@ button:focus:not(:focus-visible) {
     {src:'images/fenetre-sur-locean.jpg',title:'Fenêtre Océan',     formats:[[30,40],[40,60],[60,90],[80,120]]},
   ];
 
-  // Échelle: 1cm = Xpx dans la scène (calibré pour aspect 16/10)
-  const PX_PER_CM = 3.6;
   const HINTS_FR = ['Petit format','Moyen format','Grand format','Très grand format'];
   const HINTS_EN = ['Small print','Medium print','Large print','Extra large'];
 
   let activeArtwork = 0;
   let activeSize    = 0;
 
+  const scene     = document.getElementById('vizScene');
   const frame     = document.getElementById('vizFrame');
   const artwork   = document.getElementById('vizArtwork');
   const sizeLabel = document.getElementById('vizSizeLabel');
@@ -1404,15 +1371,21 @@ button:focus:not(:focus-visible) {
   const sizeGrid  = document.getElementById('vizSizeGrid');
   const thumbGrid = document.getElementById('vizThumbGrid');
 
+  // Calcule l'échelle px/cm dynamiquement selon la taille réelle de la scène
+  // Le plus grand format (120cm max) doit tenir dans 65% de la hauteur mur
+  function getScale(){
+    const wallH = scene.offsetHeight * 0.66; // hauteur utile du mur (hors sol + marge)
+    const maxW  = scene.offsetWidth  * 0.60; // largeur max du tirage
+    return Math.min(wallH / 120, maxW / 120); // calibré sur la dimension max 120cm
+  }
+
   function updateFrame(w, h){
-    const pw = w * PX_PER_CM;
-    const ph = h * PX_PER_CM;
-    frame.style.setProperty('--fw', pw + 'px');
-    frame.style.setProperty('--fh', ph + 'px');
+    const scale = getScale();
+    const pw = Math.round(w * scale);
+    const ph = Math.round(h * scale);
     frame.style.width  = pw + 'px';
     frame.style.height = ph + 'px';
-    shadow.style.setProperty('--vsw', (pw * 0.85) + 'px');
-    shadow.style.width = (pw * 0.85) + 'px';
+    if(shadow){ shadow.style.width = Math.round(pw * 0.9) + 'px'; }
     sizeLabel.textContent = w + ' × ' + h + ' cm';
   }
 

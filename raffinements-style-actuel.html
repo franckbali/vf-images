@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raffinements — style actuel VF Images</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Lora:ital,wght@0,400;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --dark: #0a0a0a;
+    --dark2: #111;
+    --dark3: #1a1a1a;
+    --gold: #c9a96e;
+    --gold-soft: rgba(201,169,110,.12);
+    --gold-line: rgba(201,169,110,.25);
+    --light: #f5f3ef;
+    --text: rgba(245,243,239,.7);
+    --text-muted: rgba(245,243,239,.4);
+
+    /* Versions raffinées (proposées plus bas) */
+    --dark-warm: #0d0b08;
+    --dark2-warm: #141108;
+    --gold-aged: #b08c4a;
+    --gold-aged-soft: rgba(176,140,74,.14);
+    --cream-warm: #dcd4c0;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    text-wrap: pretty;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    min-height: 85vh;
+    padding: 7rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    position: relative;
+  }
+  .cover-eyebrow {
+    font-size: .68rem;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 3rem;
+    opacity: .9;
+  }
+  .cover h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -.005em;
+    margin-bottom: 2.2rem;
+    max-width: 980px;
+  }
+  .cover h1 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  .cover-deck {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--text);
+    max-width: 700px;
+    line-height: 1.65;
+    margin-bottom: 4rem;
+  }
+  .cover-toc {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--gold-line);
+  }
+  .toc-item {
+    padding: 1.3rem 1.4rem;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    transition: border-color .3s;
+  }
+  .toc-item:hover { border-color: var(--gold-line); }
+  .toc-num {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: .35rem;
+  }
+  .toc-name {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--light);
+    margin-bottom: .3rem;
+    letter-spacing: -.005em;
+    line-height: 1.25;
+  }
+  .toc-effect {
+    font-size: .6rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ─── INTRO ─── */
+  .intro {
+    padding: 5rem 5rem;
+    max-width: 900px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .intro p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text);
+    margin-bottom: 1.3rem;
+  }
+  .intro p strong { color: var(--light); font-weight: 500; }
+  .intro p em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--gold);
+  }
+  .intro-callout {
+    margin: 2rem 0;
+    padding: 1.5rem 1.8rem;
+    border-left: 2px solid var(--gold);
+    background: var(--gold-soft);
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(245,243,239,.85);
+  }
+
+  /* ─── REFINEMENT BLOCK ─── */
+  .refinement {
+    padding: 6rem 5rem;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .ref-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    align-items: baseline;
+  }
+  .ref-num {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 1;
+    opacity: .9;
+  }
+  .ref-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -.005em;
+    margin-bottom: .8rem;
+  }
+  .ref-title em { font-style: italic; color: var(--gold); }
+  .ref-deck {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text);
+    max-width: 700px;
+    line-height: 1.55;
+  }
+
+  /* Body */
+  .ref-body p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.1rem;
+    max-width: 780px;
+  }
+  .ref-body p strong { color: var(--light); font-weight: 500; }
+  .ref-body p em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* Before / After demonstration */
+  .demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 3rem 0;
+  }
+  .demo-pane {
+    padding: 3rem 2.5rem;
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,.05);
+    position: relative;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .demo-label {
+    position: absolute;
+    top: 1rem; left: 1.5rem;
+    font-size: .58rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+  }
+  .demo-label.after {
+    color: var(--gold);
+    opacity: .85;
+  }
+  .demo-pane.warm {
+    background: var(--dark-warm);
+  }
+
+  /* Code blocks */
+  .code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .82rem;
+    background: var(--dark3);
+    border-left: 2px solid var(--gold-line);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    color: rgba(245,243,239,.85);
+    line-height: 1.65;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .code .c { color: rgba(201,169,110,.55); font-style: italic; }
+  .code .k { color: var(--gold); }
+  code.inline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .82em;
+    background: var(--dark3);
+    color: var(--gold);
+    padding: .12em .45em;
+  }
+
+  /* Effort + Impact tags */
+  .ref-meta {
+    display: flex;
+    gap: .6rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,.05);
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: .55rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    padding: .3rem .75rem;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+  }
+  .tag-time { background: var(--dark3); color: var(--text-muted); border: 1px solid rgba(255,255,255,.08); }
+  .tag-effect { background: var(--gold-soft); color: var(--gold); border: 1px solid var(--gold-line); }
+  .tag-files { background: rgba(120,160,210,.08); color: #93b3d4; border: 1px solid rgba(120,160,210,.18); }
+
+  /* ─── DEMO 1 — Palette refinement (subtle) ─── */
+  .swatch-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem;
+    margin: 1.5rem 0 1rem;
+  }
+  .swatch-mini {
+    aspect-ratio: 5/3;
+    padding: .9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .swatch-mini-hex {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    font-weight: 500;
+  }
+  .swatch-mini-label {
+    font-size: .55rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    margin-bottom: .25rem;
+    opacity: .8;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  /* ─── DEMO 2 — Wordmark ─── */
+  .wordmark-demo {
+    text-align: center;
+    padding: 3rem 0;
+  }
+  .wordmark-current {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    letter-spacing: .22em;
+    line-height: 1;
+    color: var(--light);
+  }
+  .wordmark-new {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+    letter-spacing: -.005em;
+    line-height: 1;
+    color: var(--light);
+  }
+  .wordmark-new em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .wordmark-sub {
+    font-family: 'Raleway', sans-serif;
+    font-size: .85rem;
+    letter-spacing: .45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 1.2rem;
+    opacity: .85;
+    font-weight: 400;
+  }
+
+  /* ─── DEMO 3 — Grain overlay ─── */
+  .grain-demo {
+    position: relative;
+    background: linear-gradient(135deg, #1a1410, #0a0a0a);
+    min-height: 280px;
+    padding: 3rem;
+    overflow: hidden;
+  }
+  .grain-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+    opacity: .22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  .grain-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .grain-content h4 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: .8rem;
+  }
+  .grain-content p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: rgba(245,243,239,.7);
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: .95rem;
+  }
+
+  /* ─── DEMO 4 — Typography micro ─── */
+  .typo-demo {
+    background: var(--dark2);
+    padding: 3rem;
+    border: 1px solid rgba(255,255,255,.05);
+  }
+  .typo-demo .dropcap::first-letter {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold);
+    float: left;
+    font-size: 4.5rem;
+    line-height: .9;
+    padding: .35rem .55rem 0 0;
+  }
+  .typo-demo p {
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text);
+    max-width: 640px;
+  }
+  .typo-demo p em { font-style: italic; color: var(--light); }
+  .typo-demo .pull-after {
+    margin: 2rem 0 1rem;
+    padding: 1.5rem 0 1.5rem 2.2rem;
+    border-left: 2px solid var(--gold);
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: var(--light);
+    max-width: 620px;
+  }
+
+  /* ─── DEMO 5 — Gold rarefied ─── */
+  .gold-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .gold-card {
+    padding: 2rem;
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,.05);
+    position: relative;
+  }
+  .gold-card .eb { font-size: .6rem; letter-spacing: .35em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 400; }
+  .gold-card .t { font-family: 'Bodoni Moda', serif; font-size: 1.4rem; font-weight: 400; line-height: 1.3; margin-bottom: .8rem; }
+  .gold-card .d { width: 32px; height: 1px; margin-bottom: 1rem; }
+  .gold-card .p { font-family: 'Lora', serif; font-style: italic; font-size: .92rem; opacity: .65; line-height: 1.65; }
+  .gold-card .b { display: inline-block; margin-top: 1.2rem; padding: .65rem 1.4rem; font-size: .58rem; letter-spacing: .3em; text-transform: uppercase; border: 1px solid; font-family: 'Raleway', sans-serif; font-weight: 400; }
+
+  /* Avant: gold everywhere */
+  .gold-card.before .eb { color: var(--gold); }
+  .gold-card.before .t { color: var(--light); }
+  .gold-card.before .t em { color: var(--gold); font-style: italic; }
+  .gold-card.before .d { background: var(--gold); }
+  .gold-card.before .b { border-color: var(--gold); color: var(--gold); }
+
+  /* Après: gold rare */
+  .gold-card.after .eb { color: var(--cream-warm); opacity: .75; }
+  .gold-card.after .t { color: var(--light); }
+  .gold-card.after .t em { color: var(--gold); font-style: italic; }
+  .gold-card.after .d { background: rgba(245,243,239,.25); }
+  .gold-card.after .b { border-color: rgba(245,243,239,.25); color: var(--cream-warm); }
+  .gold-card.after .b:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ─── DEMO 6 — Whitespace ─── */
+  .ws-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .ws-card {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,.05);
+    text-align: center;
+    overflow: hidden;
+  }
+  .ws-card.before { padding: 2rem; }
+  .ws-card.after { padding: 5rem 2rem; }
+  .ws-card .eb { font-size: .58rem; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .ws-card .t { font-family: 'Bodoni Moda', serif; font-size: 1.7rem; font-weight: 400; margin-bottom: .8rem; }
+  .ws-card .d { width: 28px; height: 1px; background: var(--gold); margin: 0 auto 1.2rem; opacity: .6; }
+  .ws-card .p { font-family: 'Lora', serif; font-style: italic; font-size: .9rem; color: var(--text); max-width: 350px; margin: 0 auto; }
+
+  /* ─── DEMO 7 — Image treatment ─── */
+  .img-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .img-card {
+    aspect-ratio: 4/3;
+    background:
+      radial-gradient(circle at 30% 35%, #d4632a 0%, #8a3416 30%, #2a1408 75%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .img-card.before {
+    filter: brightness(.82) saturate(.92);
+  }
+  .img-card.after {
+    filter: contrast(1.04) saturate(1.06);
+  }
+  .img-card.after::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(40,60,90,.08) 0%, transparent 50%, rgba(60,30,15,.06) 100%);
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+  .img-card-label {
+    position: absolute;
+    bottom: .8rem; left: 1rem;
+    font-size: .55rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: rgba(245,243,239,.95);
+    font-weight: 500;
+    z-index: 2;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  }
+
+  /* ─── DEMO 8 — Captions ─── */
+  .caption-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .cap-card {
+    padding: 1.5rem;
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,.05);
+  }
+  .cap-card .cap-img {
+    aspect-ratio: 3/2;
+    background:
+      radial-gradient(circle at 40% 35%, #c08842 0%, #5a3a18 40%, #1a1220 80%, #0e1320 100%);
+    margin-bottom: 1rem;
+  }
+  .cap-before {
+    font-size: .58rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: rgba(245,243,239,.5);
+    font-family: 'Raleway', sans-serif;
+  }
+  .cap-after-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    margin-bottom: .35rem;
+    color: var(--light);
+  }
+  .cap-after-title em { font-style: italic; color: var(--gold); }
+  .cap-after-meta {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: .85rem;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: .6rem;
+  }
+  .cap-after-edition {
+    font-family: 'Raleway', sans-serif;
+    font-size: .58rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: .75;
+  }
+
+  /* ─── PRIORITY ─── */
+  .priority-section {
+    padding: 7rem 5rem;
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
+    border-top: 1px solid var(--gold-line);
+  }
+  .priority-head {
+    margin-bottom: 3rem;
+  }
+  .priority-head .eb {
+    font-size: .68rem;
+    letter-spacing: .42em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+  .priority-head h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -.005em;
+    max-width: 900px;
+  }
+  .priority-head h2 em { font-style: italic; color: var(--gold); }
+  .priority-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  .priority-card {
+    padding: 2rem;
+    background: var(--dark);
+    border: 1px solid var(--gold-line);
+    border-left-width: 3px;
+  }
+  .priority-card .rank {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 2.5rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .priority-card h4 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: .8rem;
+    color: var(--light);
+  }
+  .priority-card p {
+    font-size: .92rem;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .priority-card p em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* ─── CLOSING ─── */
+  .closing {
+    padding: 7rem 5rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+  .closing-statement {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+    line-height: 1.3;
+    color: var(--light);
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    font-weight: 400;
+  }
+  .closing-statement em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  .closing-sig {
+    font-size: .6rem;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-family: 'Raleway', sans-serif;
+  }
+
+  @media (max-width: 1080px) {
+    .cover, .intro, .refinement, .priority-section, .closing { padding-left: 1.6rem; padding-right: 1.6rem; }
+    .cover { padding-top: 4rem; padding-bottom: 3rem; }
+    .refinement { padding-top: 4rem; padding-bottom: 4rem; }
+    .priority-section, .closing { padding-top: 5rem; padding-bottom: 5rem; }
+    .ref-head { grid-template-columns: 1fr; gap: 1rem; }
+    .ref-num { font-size: 2.5rem; }
+    .demo, .gold-demo, .ws-demo, .img-demo, .caption-demo { grid-template-columns: 1fr; }
+    .swatch-row { grid-template-columns: repeat(2, 1fr); }
+    .priority-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ─── COVER ─── -->
+  <div class="cover">
+    <div>
+      <p class="cover-eyebrow">Pour Franck · Mai 2026 · Raffinements internes</p>
+      <h1>On garde votre style. On le rend <em>plus exact.</em></h1>
+      <p class="cover-deck">Huit raffinements dans votre vocabulaire actuel — noir, or, Raleway, Bodoni, Lora. Aucun changement d'identité. Seulement les détails de qualité qui séparent un dark+gold générique d'un dark+gold magnifique. Vous ne devenez pas un autre site : vous devenez la meilleure version du vôtre.</p>
+    </div>
+
+    <div class="cover-toc">
+      <div class="toc-item">
+        <div class="toc-num">I.</div>
+        <div class="toc-name">Affiner les noirs et les ors</div>
+        <div class="toc-effect">Subtil · Peau du site</div>
+      </div>
+      <div class="toc-item">
+        <div class="toc-num">II.</div>
+        <div class="toc-name">Le wordmark en Bodoni</div>
+        <div class="toc-effect">Fort · Signature</div>
+      </div>
+      <div class="toc-item">
+        <div class="toc-num">III.</div>
+        <div class="toc-name">Grain et texture</div>
+        <div class="toc-effect">Subtil · Matière</div>
+      </div>
+      <div class="toc-item">
+        <div class="toc-num">IV.</div>
+        <div class="toc-name">L'or rendu rare</div>
+        <div class="toc-effect">Fort · Hiérarchie</div>
+      </div>
+      <div class="toc-item">
+        <div class="toc-num">V.</div>
+        <div class="toc-name">Micro-typographie</div>
+        <div class="toc-effect">Fort · Soin éditorial</div>
+      </div>
+      <div class="toc-item">
+        <div class="toc-num">VI.</div>
+        <div class="toc-name">Espace amplifié</div>
+        <div class="toc-effect">Fort · Respiration</div>
+      </div>
+      <div class="toc-item">
+        <div class="toc-num">VII.</div>
+        <div class="toc-name">Traitement photo cinéma</div>
+        <div class="toc-effect">Subtil · Image</div>
+      </div>
+      <div class="toc-item">
+        <div class="toc-num">VIII.</div>
+        <div class="toc-name">Légendes enrichies</div>
+        <div class="toc-effect">Fort · Gravité</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── INTRO ─── -->
+  <div class="intro">
+    <p>Un site beau dans son style n'est pas un site qui change. C'est un site qui <em>tient mieux</em> chaque détail qu'il a choisi. Les sites qu'on admire — qu'ils utilisent du noir et or, du cream et marine, ou du blanc pur — partagent une seule chose : <strong>chaque pixel a été pensé deux fois</strong>. Pas dix fois. Pas trente. Deux fois. La première pour décider, la deuxième pour affiner.</p>
+    <p>Les huit raffinements qui suivent sont la deuxième passe sur votre site. Aucun ne demande de re-choisir. Aucun ne change votre langage. Tous ramènent vos décisions actuelles vers leur version la plus rigoureuse — celle qui les rend indistinguables d'un site fait par un studio professionnel, alors que vous le faites vous-même.</p>
+    <div class="intro-callout">
+      La règle de cette livraison : si vous trouvez la version « avant » plus belle que la version « après », gardez l'avant. Tous les raffinements sont des suggestions, pas des verdicts.
+    </div>
+    <p>Chaque section ci-dessous propose le raffinement, montre l'effet, et donne à Claude Code le snippet CSS exact à appliquer. Vous décidez par section, pas en bloc.</p>
+  </div>
+
+  <!-- ─── I. PALETTE REFINEMENT ─── -->
+  <section class="refinement" id="palette">
+    <div class="ref-head">
+      <span class="ref-num">I.</span>
+      <div>
+        <h3 class="ref-title">Affiner <em>les noirs et les ors</em>.</h3>
+        <p class="ref-deck">Votre palette actuelle est bonne. Elle pourrait être un demi-cran plus chaude, un demi-cran moins « digital ». Trois pixels de différence, beaucoup d'écart à l'œil.</p>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>Le <strong>#0a0a0a</strong> que vous utilisez est un noir parfaitement neutre — c'est-à-dire un noir d'écran. Sous l'œil, il a une légère froideur cyan que les écrans modernes amplifient. Les sites qui font le mieux le dark + or chaud (Aman Resorts, Karl Lagerfeld archive, Magnum exhibitions) utilisent <strong>un noir tiède</strong> — autour de <code class="inline">#0d0b08</code> à <code class="inline">#14110d</code>. C'est imperceptible isolé, mais en combinaison avec l'or, ça change la <em>température</em> de toute l'interface.</p>
+
+      <p>Pour l'or : votre <strong>#c9a96e</strong> est bien dosé en luminosité, mais il tend vers le jaune-mimosa. Un or « antique » — type laiton vieilli — est plus proche de <code class="inline">#b08c4a</code> ou <code class="inline">#a88748</code>. Moins flashy, plus « patiné », plus crédible pour un photographe Fine Art. C'est l'or des moulures de musée, pas l'or des paillettes.</p>
+
+      <div class="swatch-row">
+        <div class="swatch-mini" style="background:#0a0a0a;color:#f5f3ef;border:1px solid rgba(255,255,255,.08);">
+          <span class="swatch-mini-label">Noir actuel</span>
+          <span class="swatch-mini-hex">#0A0A0A</span>
+        </div>
+        <div class="swatch-mini" style="background:#0d0b08;color:#f5f3ef;border:1px solid rgba(255,255,255,.08);">
+          <span class="swatch-mini-label">Noir tiède</span>
+          <span class="swatch-mini-hex">#0D0B08</span>
+        </div>
+        <div class="swatch-mini" style="background:#c9a96e;color:#0a0a0a;">
+          <span class="swatch-mini-label">Or actuel</span>
+          <span class="swatch-mini-hex">#C9A96E</span>
+        </div>
+        <div class="swatch-mini" style="background:#b08c4a;color:#0a0a0a;">
+          <span class="swatch-mini-label">Or laiton</span>
+          <span class="swatch-mini-hex">#B08C4A</span>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="demo-pane" style="background:#0a0a0a;">
+          <div class="demo-label">Avant</div>
+          <div style="text-align:center;">
+            <p style="font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:#c9a96e;margin-bottom:1rem;">Bali · Photographie</p>
+            <h4 style="font-family:'Bodoni Moda',serif;font-size:2rem;font-weight:400;margin-bottom:.6rem;">Procession <em style="color:#c9a96e;">Barong</em></h4>
+            <div style="width:28px;height:1px;background:#c9a96e;margin:0 auto 1rem;"></div>
+            <p style="font-family:'Lora',serif;font-style:italic;font-size:.9rem;color:rgba(245,243,239,.6);">Galungan, temple d'Ubud</p>
+          </div>
+        </div>
+        <div class="demo-pane warm">
+          <div class="demo-label after">Après</div>
+          <div style="text-align:center;">
+            <p style="font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:#b08c4a;margin-bottom:1rem;">Bali · Photographie</p>
+            <h4 style="font-family:'Bodoni Moda',serif;font-size:2rem;font-weight:400;margin-bottom:.6rem;">Procession <em style="color:#b08c4a;font-style:italic;">Barong</em></h4>
+            <div style="width:28px;height:1px;background:#b08c4a;margin:0 auto 1rem;"></div>
+            <p style="font-family:'Lora',serif;font-style:italic;font-size:.9rem;color:rgba(245,243,239,.6);">Galungan, temple d'Ubud</p>
+          </div>
+        </div>
+      </div>
+
+      <p>L'écart se ressent surtout quand on les voit côte-à-côte. La version chaude paraît <em>plus tenue</em>, plus « tissu », moins « pixel ». L'or laiton ne brille pas comme un néon — il rayonne comme une bordure de cadre. C'est exactement ce qu'on veut pour vendre du fine art.</p>
+
+      <div class="code"><span class="c">/* Dans :root, remplacer */</span>
+<span class="k">--dark</span>:   <span class="c">/* #0a0a0a */</span> #0d0b08;
+<span class="k">--dark2</span>:  <span class="c">/* #111    */</span> #14110d;
+<span class="k">--dark3</span>:  <span class="c">/* #1a1a1a */</span> #1c1812;
+<span class="k">--gold</span>:   <span class="c">/* #c9a96e */</span> #b08c4a;</div>
+
+      <div class="ref-meta">
+        <span class="tag tag-time">15 min</span>
+        <span class="tag tag-effect">Subtil mais structurel</span>
+        <span class="tag tag-files">style.css global</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── II. WORDMARK ─── -->
+  <section class="refinement" id="wordmark">
+    <div class="ref-head">
+      <span class="ref-num">II.</span>
+      <div>
+        <h3 class="ref-title">Le wordmark <em>en Bodoni</em>.</h3>
+        <p class="ref-deck">Votre logotype actuel est en Raleway 200 — le réglage par défaut de tous les générateurs de logo. Une typographie suffit à le rendre vôtre. Vous avez déjà Bodoni Moda chargée. Servez-vous-en.</p>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>Vous chargez déjà Bodoni Moda pour vos titres de section. Pourquoi votre signature de marque reste-t-elle en Raleway light, alors que <em>tout le reste du site sérieux est en Bodoni</em> ? C'est une incohérence interne qui dévalorise le signal principal du site.</p>
+
+      <p>Le passage en Bodoni Moda transforme un acronyme typographié en <strong>vraie signature éditoriale</strong>. Le contraste fort des serifs Bodoni, particulièrement en italique sur le « VF », crée une signature reconnaissable sans qu'on ait besoin d'un logo dessiné par un designer.</p>
+
+      <div class="demo">
+        <div class="demo-pane">
+          <div class="demo-label">Avant — Raleway light</div>
+          <div class="wordmark-demo">
+            <div class="wordmark-current">VF IMAGES</div>
+            <div class="wordmark-sub" style="letter-spacing:.5em;">Franck</div>
+          </div>
+        </div>
+        <div class="demo-pane">
+          <div class="demo-label after">Après — Bodoni Moda</div>
+          <div class="wordmark-demo">
+            <div class="wordmark-new"><em>VF</em> Images</div>
+            <div class="wordmark-sub">Franck Vinel</div>
+          </div>
+        </div>
+      </div>
+
+      <p>Trois micro-décisions dans la version « après » :</p>
+      <p>(1) <strong>VF en italique</strong>, Images en romain — la signature personnelle (vos initiales) est mise en valeur par le contraste de styles.<br>
+      (2) <strong>« Images » avec une majuscule</strong> seulement, plutôt qu'en caps. La typographie Bodoni est suffisamment riche pour porter sans capitales — les serifs créent la dignité que le tracking exagéré ne pouvait que mimer.<br>
+      (3) <strong>Votre nom complet</strong> sous le wordmark. « Franck » seul est familier, presque enfantin pour un site fine art. « Franck Vinel » est éditorial.</p>
+
+      <div class="code"><span class="c">/* Dans le HTML — remplacer le wordmark actuel */</span>
+&lt;<span class="k">div</span> class=<span class="c">"hero-name"</span>&gt;
+  &lt;<span class="k">em</span>&gt;VF&lt;/<span class="k">em</span>&gt; Images
+&lt;/<span class="k">div</span>&gt;
+
+<span class="c">/* CSS — remplacer la règle .hero-name */</span>
+.hero-name {
+  <span class="k">font-family</span>: 'Bodoni Moda', serif;
+  <span class="k">font-weight</span>: 400;
+  <span class="k">font-size</span>: clamp(3rem, 8vw, 6rem);
+  <span class="k">letter-spacing</span>: -0.005em;
+  <span class="k">text-transform</span>: none;
+  <span class="k">line-height</span>: 1;
+}
+.hero-name em {
+  <span class="k">font-style</span>: italic;
+  <span class="k">color</span>: var(--gold);
+}</div>
+
+      <div class="ref-meta">
+        <span class="tag tag-time">30 min</span>
+        <span class="tag tag-effect">Fort · Identité</span>
+        <span class="tag tag-files">index.html + style.css</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── III. GRAIN ─── -->
+  <section class="refinement" id="grain">
+    <div class="ref-head">
+      <span class="ref-num">III.</span>
+      <div>
+        <h3 class="ref-title">Grain et <em>texture</em>.</h3>
+        <p class="ref-deck">Le défaut du dark mode en CSS pur est sa planéité. Une couche de grain ultra-discrète sur les fonds sombres ajoute la matière qui sépare un écran d'un papier photographique.</p>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>Quand vous regardez un tirage Fine Art, vous voyez de la matière : grain argentique, micro-textures du papier, irrégularités infimes. Quand vous regardez un fond noir CSS, vous voyez du vide pur. C'est une différence subliminale mais réelle : <em>le vide pur signale l'écran, le grain signale la photographie</em>.</p>
+
+      <p>Une couche de SVG noise en <code class="inline">mix-blend-mode: overlay</code> à 18-25% d'opacité, posée en <code class="inline">position: fixed</code> au-dessus de l'arrière-plan mais sous le contenu, ajoute exactement ce qu'il faut. C'est invisible à la lecture, mais l'œil le ressent.</p>
+
+      <div class="demo">
+        <div class="demo-pane" style="background: linear-gradient(135deg, #1a1410, #0a0a0a);">
+          <div class="demo-label">Avant — fond uniforme</div>
+          <div style="text-align:center;height:100%;display:flex;flex-direction:column;justify-content:center;">
+            <h4 style="font-family:'Bodoni Moda',serif;font-size:2rem;font-weight:400;margin-bottom:.8rem;">Le sacré, <em style="color:var(--gold);font-style:italic;">à hauteur de regard</em></h4>
+            <p style="font-family:'Lora',serif;font-style:italic;color:rgba(245,243,239,.7);max-width:500px;margin:0 auto;font-size:.95rem;">Photographies des cérémonies, des lumières et des visages de Bali.</p>
+          </div>
+        </div>
+        <div class="grain-demo">
+          <div class="demo-label after" style="color: var(--gold);">Après — grain subtil</div>
+          <div class="grain-overlay"></div>
+          <div class="grain-content">
+            <h4>Le sacré, <em style="color:var(--gold);font-style:italic;">à hauteur de regard</em></h4>
+            <p>Photographies des cérémonies, des lumières et des visages de Bali.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>L'effet est plus marqué sur un grand écran et en pleine page. Sur les zones très chargées en image (hero plein écran), le grain n'apparaît pas. Sur les fonds noirs unis (À propos, contact, transitions), il fait toute la différence.</p>
+
+      <div class="code"><span class="c">/* SVG noise inline — à mettre dans body::before */</span>
+<span class="k">body::before</span> {
+  <span class="k">content</span>: '';
+  <span class="k">position</span>: fixed;
+  <span class="k">inset</span>: 0;
+  <span class="k">z-index</span>: 1;
+  <span class="k">pointer-events</span>: none;
+  <span class="k">opacity</span>: 0.22;
+  <span class="k">mix-blend-mode</span>: overlay;
+  <span class="k">background-image</span>: url(<span class="c">"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E"</span>);
+}
+<span class="c">/* Veiller à ce que le contenu reste au-dessus */</span>
+<span class="k">main, nav, footer</span> { <span class="k">position</span>: relative; <span class="k">z-index</span>: 2; }</div>
+
+      <div class="ref-meta">
+        <span class="tag tag-time">20 min</span>
+        <span class="tag tag-effect">Subtil · Matière</span>
+        <span class="tag tag-files">style.css global</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── IV. GOLD RAREFIED ─── -->
+  <section class="refinement" id="rare-gold">
+    <div class="ref-head">
+      <span class="ref-num">IV.</span>
+      <div>
+        <h3 class="ref-title">L'or rendu <em>rare</em>.</h3>
+        <p class="ref-deck">Sur votre site actuel, l'or apparaît dans une vingtaine d'éléments par page : eyebrows, dividers, hovers, accents, prix, signatures, boutons. Trop. Une matière précieuse perd sa valeur dès qu'elle est partout.</p>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>Hermès met de l'orange sur deux objets par boutique : le sac et le sigle. Pas sur les fauteuils, pas sur les murs, pas sur les tickets de caisse. C'est cette <em>rareté</em> qui fait que l'orange Hermès reste un signal et non un papier peint.</p>
+
+      <p>Appliquez la même règle à votre or : <strong>maximum trois usages par page</strong>. Tout le reste qui était en or devient soit du blanc cassé chaud (#dcd4c0), soit du texte normal. Le résultat est paradoxal : il y a moins d'or, et pourtant l'or se voit infiniment plus.</p>
+
+      <div class="gold-demo">
+        <div class="gold-card before">
+          <div class="demo-label" style="position:absolute;top:.8rem;left:1rem;">Avant — or partout</div>
+          <p class="eb" style="margin-top: 1.2rem;">Collection Bali</p>
+          <h4 class="t">Procession <em>Barong</em></h4>
+          <div class="d"></div>
+          <p class="p">Galungan, temple d'Ubud — l'instant où les masques quittent l'enceinte du temple.</p>
+          <a class="b">Voir le tirage</a>
+        </div>
+        <div class="gold-card after">
+          <div class="demo-label after" style="position:absolute;top:.8rem;left:1rem;">Après — or rare</div>
+          <p class="eb" style="margin-top: 1.2rem;">Collection Bali</p>
+          <h4 class="t">Procession <em>Barong</em></h4>
+          <div class="d"></div>
+          <p class="p">Galungan, temple d'Ubud — l'instant où les masques quittent l'enceinte du temple.</p>
+          <a class="b">Voir le tirage</a>
+        </div>
+      </div>
+
+      <p>Dans la version « après » : seul le mot <em>Barong</em> garde l'or. L'eyebrow, le divider, le bouton passent en cream warm muet. L'œil va <strong>directement</strong> sur Barong au lieu de patiner sur trois éléments concurrents. La hiérarchie s'éclaire d'elle-même.</p>
+
+      <p><strong>Règle pratique :</strong> par page, choisissez trois moments où l'or doit absolument être. Ce sont vos points d'or. Partout ailleurs, le gris clair chaud suffit. Pour la homepage : (1) le wordmark dans le hero, (2) un mot italique dans la tagline, (3) le bouton CTA principal. Trois, pas plus.</p>
+
+      <div class="code"><span class="c">/* Ajouter une variable cream warm pour remplacer 80% des ors */</span>
+<span class="k">:root</span> {
+  <span class="k">--cream-warm</span>: #dcd4c0;
+  <span class="k">--cream-soft</span>: rgba(220,212,192,.65);
+}
+
+<span class="c">/* Eyebrows, dividers, labels qui étaient en or */</span>
+.section-label,
+.eyebrow,
+.divider-line {
+  <span class="k">color</span>: var(--cream-warm);
+  <span class="k">background</span>: var(--cream-soft);
+}
+
+<span class="c">/* Boutons : passer du gold au cream warm sauf le CTA principal */</span>
+.btn:not(.btn-primary) {
+  <span class="k">color</span>: var(--cream-warm);
+  <span class="k">border-color</span>: rgba(245,243,239,.25);
+}
+.btn:not(.btn-primary):hover {
+  <span class="k">color</span>: var(--gold);
+  <span class="k">border-color</span>: var(--gold);
+}
+
+<span class="c">/* Seul le CTA principal garde l'or de base */</span>
+.btn-primary {
+  <span class="k">color</span>: var(--gold);
+  <span class="k">border-color</span>: var(--gold);
+}</div>
+
+      <div class="ref-meta">
+        <span class="tag tag-time">1 h (audit + édition)</span>
+        <span class="tag tag-effect">Fort · Hiérarchie</span>
+        <span class="tag tag-files">style.css + tous les HTML</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── V. MICRO-TYPOGRAPHY ─── -->
+  <section class="refinement" id="micro-typo">
+    <div class="ref-head">
+      <span class="ref-num">V.</span>
+      <div>
+        <h3 class="ref-title">Micro-<em>typographie</em>.</h3>
+        <p class="ref-deck">Les détails qui ne se nomment pas mais que l'œil enregistre : drop-caps, pull-quotes en Bodoni italic, gestion des veuves et orphelines, kerning des labels. Le travail invisible qui fait paraître le site écrit par un éditeur.</p>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>Trois interventions précises, qui agissent ensemble :</p>
+
+      <p><strong>(1) Drop-cap sur les ouvertures de paragraphe</strong> — réservé à l'À propos et aux articles de blog. Une grande Bodoni italique dorée pour la première lettre du premier paragraphe. C'est un signal éditorial fort, qui dit « ceci est un texte qui mérite d'être lu lentement ».</p>
+
+      <p><strong>(2) Pull-quotes en Bodoni italic</strong> — pour les phrases-clés extraites du corps de texte (À propos, articles, page Process). Grande taille, italique, marge gauche or, encadrement par espace. Donne du rythme à la lecture.</p>
+
+      <p><strong>(3) Text-wrap pretty et tracking réduit</strong> — votre letter-spacing de 0.55em sur les eyebrows est un tic de 2018. Ramener à 0.25-0.3em. Ajouter <code class="inline">text-wrap: pretty</code> en CSS partout pour gérer automatiquement les veuves (mots seuls en fin de ligne) et les orphelines.</p>
+
+      <div class="typo-demo">
+        <p class="dropcap">Bali m'a trouvé avant que je ne la cherche. C'est ainsi que je raconte aujourd'hui le moment où j'ai posé mon premier appareil sur les marches d'un temple, à Ubud, un matin de Galungan. <em>Je ne savais pas encore que je passerais les années suivantes à chercher exactement ce que j'avais vu cet instant-là.</em></p>
+
+        <div class="pull-after">« Photographier n'est pas saisir un moment. C'est attendre suffisamment longtemps pour que le moment vous reconnaisse. »</div>
+      </div>
+
+      <div class="code"><span class="c">/* (1) Drop-cap sur les ouvertures */</span>
+.dropcap::first-letter {
+  <span class="k">font-family</span>: 'Bodoni Moda', serif;
+  <span class="k">font-style</span>: italic;
+  <span class="k">font-weight</span>: 500;
+  <span class="k">color</span>: var(--gold);
+  <span class="k">float</span>: left;
+  <span class="k">font-size</span>: 4.5rem;
+  <span class="k">line-height</span>: 0.9;
+  <span class="k">padding</span>: 0.35rem 0.55rem 0 0;
+}
+
+<span class="c">/* (2) Pull-quotes éditoriaux */</span>
+.pull-quote {
+  <span class="k">margin</span>: 2rem 0;
+  <span class="k">padding</span>: 1.5rem 0 1.5rem 2.2rem;
+  <span class="k">border-left</span>: 2px solid var(--gold);
+  <span class="k">font-family</span>: 'Bodoni Moda', serif;
+  <span class="k">font-style</span>: italic;
+  <span class="k">font-size</span>: 1.5rem;
+  <span class="k">line-height</span>: 1.4;
+  <span class="k">color</span>: var(--light);
+}
+
+<span class="c">/* (3) text-wrap + tracking réduit */</span>
+body { <span class="k">text-wrap</span>: pretty; }
+
+.eyebrow, .section-label {
+  <span class="k">letter-spacing</span>: 0.25em; <span class="c">/* anciennement 0.55em */</span>
+}</div>
+
+      <div class="ref-meta">
+        <span class="tag tag-time">2 h (édition + tests)</span>
+        <span class="tag tag-effect">Fort · Lecture</span>
+        <span class="tag tag-files">style.css + À propos + Blog</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── VI. WHITESPACE ─── -->
+  <section class="refinement" id="whitespace">
+    <div class="ref-head">
+      <span class="ref-num">VI.</span>
+      <div>
+        <h3 class="ref-title">Espace <em>amplifié</em>.</h3>
+        <p class="ref-deck">Vos sections respirent déjà bien. Elles peuvent respirer encore deux fois plus. C'est la différence entre un site soigné et un site monumental.</p>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>Le réflexe Squarespace est de remplir l'espace. Le réflexe muséal est de le creuser. <em>Plus une œuvre est précieuse, plus on lui donne de mur autour.</em> Vos sections actuelles sont à 6-8rem de padding vertical. Les sites premium qui vendent du Fine Art sont à 10-14rem.</p>
+
+      <p>L'inconvénient : il faut scroller plus longtemps. L'avantage : chaque section devient un événement plutôt qu'un item d'une liste. Pour un site qui doit faire ressentir la rareté, c'est un investissement crucial.</p>
+
+      <div class="ws-demo">
+        <div class="ws-card before">
+          <div class="demo-label" style="position:relative;top:auto;left:auto;margin-bottom:1rem;">Avant — section à 2rem</div>
+          <p class="eb">Collection Bali</p>
+          <h4 class="t">Cérémonies & Lumières</h4>
+          <div class="d"></div>
+          <p class="p">Trente photographies prises entre 2022 et 2025.</p>
+        </div>
+        <div class="ws-card after">
+          <div class="demo-label after" style="position:relative;top:auto;left:auto;margin-bottom:1rem;">Après — section à 5rem</div>
+          <p class="eb">Collection Bali</p>
+          <h4 class="t">Cérémonies & Lumières</h4>
+          <div class="d"></div>
+          <p class="p">Trente photographies prises entre 2022 et 2025.</p>
+        </div>
+      </div>
+
+      <p>Notez : le contenu est <em>strictement identique</em>. Seule la respiration change. Et pourtant la deuxième pièce paraît plus chère.</p>
+
+      <p><strong>Règle pratique :</strong> doubler le padding vertical des sections principales (de 6rem à 10rem, ou de 8rem à 12rem). Diviser par 1.5 la densité de la grille du portfolio (3 colonnes à 50% de la largeur d'écran maximum, au lieu de full-width). Quand vous hésitez à remplir, laissez vide.</p>
+
+      <div class="code"><span class="c">/* Doubler le padding vertical des grandes sections */</span>
+.gallery-preview,
+.about-strip,
+.cta,
+.boutique-section {
+  <span class="k">padding</span>: 10rem 4rem; <span class="c">/* anciennement 6rem */</span>
+}
+
+<span class="c">/* Réduire la densité de la grille portfolio */</span>
+.photo-masonry {
+  <span class="k">max-width</span>: 1400px;
+  <span class="k">margin</span>: 0 auto;
+  <span class="k">column-count</span>: 3;
+  <span class="k">column-gap</span>: 12px; <span class="c">/* anciennement 5px */</span>
+}
+
+<span class="c">/* Espace entre les sections */</span>
+section + section {
+  <span class="k">border-top</span>: 1px solid rgba(255,255,255,.05);
+}</div>
+
+      <div class="ref-meta">
+        <span class="tag tag-time">45 min</span>
+        <span class="tag tag-effect">Fort · Présence</span>
+        <span class="tag tag-files">style.css global</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── VII. IMAGE TREATMENT ─── -->
+  <section class="refinement" id="image-treatment">
+    <div class="ref-head">
+      <span class="ref-num">VII.</span>
+      <div>
+        <h3 class="ref-title">Traitement photo <em>cinématique</em>.</h3>
+        <p class="ref-deck">Le filtre <code class="inline">brightness(.82) saturate(.92)</code> appliqué partout est un raccourci. Un vrai grading cinéma — split-tone subtil et courbe de contraste — donne le même effet de cohérence sans désaturer.</p>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>Votre filtre actuel <strong>désature et assombrit uniformément</strong>. Toutes les photos passent à 82% de luminosité et 92% de saturation. C'est une cohérence à la grosse hache. Le problème : une photo au bord du sous-exposé devient illisible, une photo très saturée perd ses couleurs vives, et toutes paraissent légèrement « ternes ».</p>
+
+      <p>Le grading cinéma fait l'inverse : il <em>préserve la saturation</em> et même la légèrement augmente, mais il <strong>déplace la température</strong>. Les ombres glissent vers un cyan-bleu très léger (les noirs deviennent « profonds » plutôt que neutres), les hautes lumières glissent vers un ambre chaud (les blancs deviennent « solaires »). Ça crée la même cohérence visuelle, mais sans rien voler aux photos.</p>
+
+      <div class="img-demo">
+        <div class="img-card before">
+          <div class="img-card-label">Avant — brightness(.82)</div>
+        </div>
+        <div class="img-card after">
+          <div class="img-card-label">Après — split-tone</div>
+        </div>
+      </div>
+
+      <p>L'effet est plus probant sur de vraies photos de Bali (les feux, les fleurs d'offrandes, les masques) que sur un dégradé de démo. À tester impérativement sur 3-4 de vos photos avant de généraliser.</p>
+
+      <p><strong>Option Lightroom (idéal) :</strong> appliquer un preset split-tone à toutes vos exports. Plus de filtre CSS du tout — vous livrez les images dans leur état final.</p>
+
+      <p><strong>Option CSS (rapide) :</strong> remplacer <code class="inline">brightness(.82) saturate(.92)</code> par une combinaison plus subtile. Voici le snippet :</p>
+
+      <div class="code"><span class="c">/* Remplacer le filtre actuel — sur toutes les images du site */</span>
+.photo-item img,
+.about-image img,
+.print-image img {
+  <span class="k">filter</span>:
+    <span class="k">contrast</span>(1.04)
+    <span class="k">saturate</span>(1.06);  <span class="c">/* on AUGMENTE la saturation */</span>
+}
+
+<span class="c">/* Ajouter un overlay split-tone par-dessus chaque image */</span>
+.photo-item,
+.about-image,
+.print-image {
+  <span class="k">position</span>: relative;
+}
+.photo-item::after,
+.about-image::after,
+.print-image::after {
+  <span class="k">content</span>: '';
+  <span class="k">position</span>: absolute;
+  <span class="k">inset</span>: 0;
+  <span class="k">pointer-events</span>: none;
+  <span class="k">background</span>: linear-gradient(135deg,
+    <span class="k">rgba</span>(40, 60, 90, 0.08) 0%,
+    <span class="k">transparent</span> 50%,
+    <span class="k">rgba</span>(60, 30, 15, 0.06) 100%
+  );
+  <span class="k">mix-blend-mode</span>: soft-light;
+}</div>
+
+      <div class="ref-meta">
+        <span class="tag tag-time">1 h (édition + tests)</span>
+        <span class="tag tag-effect">Subtil · Image</span>
+        <span class="tag tag-files">style.css global</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── VIII. CAPTIONS ─── -->
+  <section class="refinement" id="captions">
+    <div class="ref-head">
+      <span class="ref-num">VIII.</span>
+      <div>
+        <h3 class="ref-title">Légendes <em>enrichies</em>.</h3>
+        <p class="ref-deck">Une photo sans légende est un poster. Une photo avec un titre, un lieu, une date, une circonstance et un numéro d'édition est une œuvre. Le passage est purement textuel — et il change tout.</p>
+      </div>
+    </div>
+
+    <div class="ref-body">
+      <p>Vos légendes actuelles sont des labels : « Faune sacrée · Bali » en capitales espacées à 0.55rem. C'est correct pour une grille de vignettes, mais quand on agrandit la photo (lightbox, panneau produit, à propos), une vraie légende muséale change la perception.</p>
+
+      <p>Format proposé en trois lignes :</p>
+
+      <p style="margin-left: 1.5rem; font-style: italic; color: var(--cream-warm); margin-bottom: .8rem;">Titre en Bodoni — italique sur le mot-clé<br>
+      Lieu, date, circonstance en Lora italic petite<br>
+      Numéro d'édition en Raleway label or, en bas</p>
+
+      <p>C'est exactement ce que vous lisez sous les œuvres dans les catalogues d'exposition Magnum, Lumas, Steidl. C'est aussi ce que verra l'acheteur quand son tirage arrivera avec son certificat — la cohérence entre site et certificat construit la confiance.</p>
+
+      <div class="caption-demo">
+        <div class="cap-card">
+          <div class="cap-img"></div>
+          <div class="demo-label" style="position:relative;top:auto;left:auto;margin-bottom:.8rem;">Avant</div>
+          <p class="cap-before">Faune sacrée · Bali</p>
+        </div>
+        <div class="cap-card">
+          <div class="cap-img"></div>
+          <div class="demo-label after" style="position:relative;top:auto;left:auto;margin-bottom:.8rem;">Après</div>
+          <h4 class="cap-after-title"><em>Faune</em> sacrée</h4>
+          <p class="cap-after-meta">Pura Tirta Empul, Ubud — Galungan, mars 2024</p>
+          <p class="cap-after-edition">Édition 7 / 30 · Hahnemühle Photo Rag</p>
+        </div>
+      </div>
+
+      <p>Trois lignes au lieu d'une seule. Mais surtout : <em>trois lignes qui racontent quelque chose</em>. Le visiteur sait <strong>quoi</strong> il regarde, <strong>où et quand</strong> c'était, et <strong>combien d'exemplaires existent</strong>. C'est la matière première de la conversion à 500€.</p>
+
+      <div class="code"><span class="c">/* Structure HTML enrichie pour chaque légende */</span>
+&lt;<span class="k">div</span> class=<span class="c">"caption"</span>&gt;
+  &lt;<span class="k">h3</span> class=<span class="c">"caption-title"</span>&gt;
+    &lt;<span class="k">em</span>&gt;Faune&lt;/<span class="k">em</span>&gt; sacrée
+  &lt;/<span class="k">h3</span>&gt;
+  &lt;<span class="k">p</span> class=<span class="c">"caption-meta"</span>&gt;
+    Pura Tirta Empul, Ubud — Galungan, mars 2024
+  &lt;/<span class="k">p</span>&gt;
+  &lt;<span class="k">p</span> class=<span class="c">"caption-edition"</span>&gt;
+    Édition 7 / 30 · Hahnemühle Photo Rag
+  &lt;/<span class="k">p</span>&gt;
+&lt;/<span class="k">div</span>&gt;
+
+<span class="c">/* CSS */</span>
+.caption-title {
+  <span class="k">font-family</span>: 'Bodoni Moda', serif;
+  <span class="k">font-size</span>: 1.2rem;
+  <span class="k">font-weight</span>: 400;
+  <span class="k">color</span>: var(--light);
+  <span class="k">margin-bottom</span>: 0.35rem;
+}
+.caption-title em {
+  <span class="k">font-style</span>: italic;
+  <span class="k">color</span>: var(--gold);
+}
+.caption-meta {
+  <span class="k">font-family</span>: 'Lora', serif;
+  <span class="k">font-style</span>: italic;
+  <span class="k">font-size</span>: 0.88rem;
+  <span class="k">color</span>: var(--text);
+  <span class="k">margin-bottom</span>: 0.6rem;
+}
+.caption-edition {
+  <span class="k">font-size</span>: 0.6rem;
+  <span class="k">letter-spacing</span>: 0.25em;
+  <span class="k">text-transform</span>: uppercase;
+  <span class="k">color</span>: var(--gold);
+  <span class="k">opacity</span>: 0.75;
+}</div>
+
+      <div class="ref-meta">
+        <span class="tag tag-time">3 h (rédaction des légendes)</span>
+        <span class="tag tag-effect">Fort · Gravité éditoriale</span>
+        <span class="tag tag-files">tous les HTML photos + boutique</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRIORITY ─── -->
+  <section class="priority-section">
+    <div class="priority-head">
+      <p class="eb">Si vous n'en faites que trois</p>
+      <h2>Les trois qui transforment <em>le plus, pour le moins cher</em>.</h2>
+    </div>
+
+    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text); max-width: 800px;">Si vous ne voulez pas tout faire — et c'est probablement sage — ces trois raffinements sont ceux qui donnent le plus de retour pour le moins d'effort. Ils peuvent se faire en un weekend.</p>
+
+    <div class="priority-grid">
+      <div class="priority-card">
+        <div class="rank">I.</div>
+        <h4>Le wordmark en Bodoni</h4>
+        <p>Le changement le plus visible, en 30 minutes. Votre signature dans le hero cesse de ressembler à un placeholder pour devenir <em>une vraie marque éditoriale</em>. Si vous ne faites qu'un seul raffinement, faites celui-ci.</p>
+      </div>
+      <div class="priority-card">
+        <div class="rank">II.</div>
+        <h4>L'or rendu rare</h4>
+        <p>Une heure d'audit, et l'or que vous utilisez perd 80% de ses apparitions — ce qui le rend <em>infiniment plus précieux</em>. C'est le geste le plus discipliné, et le plus muséal, des huit.</p>
+      </div>
+      <div class="priority-card">
+        <div class="rank">III.</div>
+        <h4>Légendes enrichies</h4>
+        <p>Le seul raffinement qui demande de la rédaction et non du CSS. Mais c'est aussi celui qui transforme le plus vos photographies aux yeux d'un acheteur. Une légende riche <em>fabrique l'œuvre</em>.</p>
+      </div>
+      <div class="priority-card">
+        <div class="rank">IV.</div>
+        <h4>Bonus : grain SVG</h4>
+        <p>20 minutes, et toutes vos pages sombres gagnent une matière argentique. Subtil au point d'être inconscient — mais l'œil le voit, et le site cesse d'avoir l'air <em>« plat web »</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CLOSING ─── -->
+  <div class="closing">
+    <p class="closing-statement">Votre style n'a jamais été le problème. <em>Ce sont les détails de mise en œuvre qui le faisaient paraître moins fini qu'il n'est.</em></p>
+    <p class="closing-sig">Raffinements — VF Images · Mai 2026</p>
+  </div>
+
+</body>
+</html>

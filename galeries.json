@@ -113,6 +113,106 @@
       "page": "galerie-portrait-bali-003.html",
       "ordre": 10,
       "visible": false
+    },
+    {
+      "titre": "Portrait Bali 004",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-004.jpg",
+      "orientation": "portrait",
+      "slug": "portrait-bali-004",
+      "page": "galerie-portrait-bali-004.html",
+      "ordre": 11,
+      "visible": false
+    },
+    {
+      "titre": "Portrait Bali 005",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-005.jpg",
+      "orientation": "landscape",
+      "slug": "portrait-bali-005",
+      "page": "galerie-portrait-bali-005.html",
+      "ordre": 12,
+      "visible": false
+    },
+    {
+      "titre": "Portrait Bali 006",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-006.jpg",
+      "orientation": "landscape",
+      "slug": "portrait-bali-006",
+      "page": "galerie-portrait-bali-006.html",
+      "ordre": 13,
+      "visible": false
+    },
+    {
+      "titre": "Portrait Bali 007",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-007.jpg",
+      "orientation": "portrait",
+      "slug": "portrait-bali-007",
+      "page": "galerie-portrait-bali-007.html",
+      "ordre": 14,
+      "visible": false
+    },
+    {
+      "titre": "Portrait Bali 008",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-008.jpg",
+      "orientation": "portrait",
+      "slug": "portrait-bali-008",
+      "page": "galerie-portrait-bali-008.html",
+      "ordre": 15,
+      "visible": false
+    },
+    {
+      "titre": "Portrait Bali 009",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-009.jpg",
+      "orientation": "portrait",
+      "slug": "portrait-bali-009",
+      "page": "galerie-portrait-bali-009.html",
+      "ordre": 16,
+      "visible": false
+    },
+    {
+      "titre": "Portrait Bali 010",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-010.jpg",
+      "orientation": "landscape",
+      "slug": "portrait-bali-010",
+      "page": "galerie-portrait-bali-010.html",
+      "ordre": 17,
+      "visible": false
+    },
+    {
+      "titre": "Portrait Bali 011",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-011.jpg",
+      "orientation": "portrait",
+      "slug": "portrait-bali-011",
+      "page": "galerie-portrait-bali-011.html",
+      "ordre": 18,
+      "visible": false
+    },
+    {
+      "titre": "Portrait Bali 012",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-012.jpg",
+      "orientation": "landscape",
+      "slug": "portrait-bali-012",
+      "page": "galerie-portrait-bali-012.html",
+      "ordre": 19,
+      "visible": false
+    },
+    {
+      "titre": "Portrait Bolivie 001",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bolivie-001.jpg",
+      "orientation": "portrait",
+      "slug": "portrait-bolivie-001",
+      "page": "galerie-portrait-bolivie-001.html",
+      "ordre": 20,
+      "visible": false
     }
   ]
 }

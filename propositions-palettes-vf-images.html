@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trois propositions de palette — VF Images</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Raleway:wght@200;300;400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* ─── DOCUMENT CHROME — neutre ─── */
+  html { scroll-behavior: smooth; }
+  body {
+    background: #f0ece4;
+    color: #1a1a1a;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    min-height: 90vh;
+    padding: 7rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid #2a2520;
+  }
+  .cover-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: .72rem;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    color: #6b2424;
+    font-weight: 500;
+    margin-bottom: 3rem;
+  }
+  .cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -.015em;
+    color: #1a1a1a;
+    max-width: 1000px;
+    margin-bottom: 2.5rem;
+  }
+  .cover h1 em {
+    font-style: italic;
+    color: #6b2424;
+    font-weight: 500;
+  }
+  .cover-deck {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    color: #4a4540;
+    max-width: 700px;
+    line-height: 1.55;
+    margin-bottom: 4rem;
+  }
+  .cover-toc {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-top: 2.5rem;
+    border-top: 1px solid #c0b8a8;
+  }
+  .toc-item {
+    flex: 1;
+    min-width: 240px;
+    padding: 1.5rem;
+    border: 1px solid #c0b8a8;
+    background: rgba(255,255,255,.3);
+  }
+  .toc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #6b2424;
+    margin-bottom: .5rem;
+  }
+  .toc-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: .35rem;
+    letter-spacing: -.005em;
+  }
+  .toc-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: .72rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #8a857e;
+  }
+
+  /* ─── INTRO / VERDICT ─── */
+  .intro {
+    padding: 6rem 5rem;
+    border-bottom: 1px solid #2a2520;
+    max-width: 900px;
+  }
+  .intro-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: .65rem;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    color: #6b2424;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    letter-spacing: -.005em;
+  }
+  .intro p {
+    font-size: 1.1rem;
+    line-height: 1.85;
+    margin-bottom: 1.4rem;
+    color: #1a1a1a;
+  }
+  .intro p em {
+    font-style: italic;
+    color: #6b2424;
+  }
+  .intro p strong {
+    font-weight: 500;
+  }
+
+  /* ─── DIRECTION SHOW — chaque direction occupe sa propre scène ─── */
+  .show {
+    padding: 6rem 5rem 7rem;
+    position: relative;
+  }
+  .show-label {
+    font-family: 'Inter', sans-serif;
+    font-size: .7rem;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    opacity: .8;
+  }
+  .show-name {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    margin-bottom: 1.5rem;
+  }
+  .show-deck {
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.55;
+    max-width: 660px;
+    margin-bottom: 4rem;
+    opacity: .85;
+  }
+
+  /* ─── MOCK UI INSIDE A SHOW ─── */
+  .mock-hero {
+    margin: 3rem 0 4rem;
+    padding: 5rem 3rem;
+    text-align: center;
+    border: 1px solid currentColor;
+    border-opacity: .15;
+    position: relative;
+  }
+  .mock-hero-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: .65rem;
+    letter-spacing: .45em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1.3rem;
+    opacity: .75;
+  }
+  .mock-hero-divider {
+    width: 32px; height: 1px;
+    margin: 0 auto 1.3rem;
+    background: currentColor;
+    opacity: .35;
+  }
+  .mock-hero-mark {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -.005em;
+    margin-bottom: 1.2rem;
+  }
+  .mock-hero-mark em {
+    font-style: italic;
+  }
+  .mock-hero-tagline {
+    font-style: italic;
+    font-size: 1.1rem;
+    opacity: .65;
+    margin-bottom: 2.5rem;
+  }
+  .mock-hero-btn {
+    display: inline-block;
+    padding: .9rem 2.8rem;
+    border: 1px solid currentColor;
+    font-family: 'Inter', sans-serif;
+    font-size: .72rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  /* ─── PALETTE GRID ─── */
+  .palette-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 3rem 0;
+  }
+  .swatch {
+    aspect-ratio: 4/5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.2rem;
+    position: relative;
+  }
+  .swatch-label {
+    font-family: 'Inter', sans-serif;
+    font-size: .58rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: .8;
+    margin-bottom: .4rem;
+  }
+  .swatch-hex {
+    font-family: 'Inter', monospace;
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: .03em;
+  }
+  .swatch-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: .82rem;
+    margin-top: .35rem;
+    opacity: .75;
+  }
+
+  /* ─── MOCK PRODUCT CARD ─── */
+  .mock-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 4rem 0;
+    padding: 2.5rem;
+    border: 1px solid currentColor;
+    border-opacity: .15;
+  }
+  .mock-product-img {
+    aspect-ratio: 4/5;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .mock-product-info { display: flex; flex-direction: column; justify-content: space-between; }
+  .mock-product-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: .6rem;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: .7;
+    margin-bottom: 1rem;
+  }
+  .mock-product-title {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .mock-product-title em { font-style: italic; }
+  .mock-product-desc {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.65;
+    opacity: .75;
+    margin-bottom: 1.5rem;
+  }
+  .mock-product-edition {
+    font-family: 'Inter', sans-serif;
+    font-size: .68rem;
+    letter-spacing: .15em;
+    margin-bottom: 1rem;
+    opacity: .65;
+  }
+  .mock-product-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .mock-formats {
+    display: flex;
+    gap: .4rem;
+    margin-bottom: 1.5rem;
+  }
+  .mock-format {
+    font-family: 'Inter', sans-serif;
+    font-size: .68rem;
+    letter-spacing: .12em;
+    padding: .5rem .8rem;
+    border: 1px solid currentColor;
+    opacity: .55;
+  }
+  .mock-format.active { opacity: 1; }
+
+  /* ─── REASONING ─── */
+  .reasoning {
+    margin: 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .reasoning-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: .65rem;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    opacity: .65;
+  }
+  .reasoning-col p {
+    font-size: 1.02rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .reasoning-col p em { font-style: italic; }
+  .reasoning-col p strong { font-weight: 500; }
+
+  .pull {
+    margin: 3rem 0;
+    padding: 2rem 0 2rem 3rem;
+    border-left: 2px solid currentColor;
+    border-opacity: .4;
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    max-width: 760px;
+  }
+  .pull-attr {
+    display: block;
+    margin-top: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: .65rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: .65;
+  }
+
+  .show-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid currentColor;
+    border-top-color: rgba(127,127,127,.25);
+  }
+  .meta-item {
+    font-family: 'Inter', sans-serif;
+  }
+  .meta-item dt {
+    font-size: .58rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: .55;
+    margin-bottom: .4rem;
+  }
+  .meta-item dd {
+    font-size: .9rem;
+    line-height: 1.5;
+  }
+
+  /* ─── DIRECTION 1 — VOLCANIC EARTH ─── */
+  .show.volcanic {
+    background: #1a1410;
+    color: #f4ede0;
+    border-bottom: 1px solid #2a2520;
+  }
+  .show.volcanic .show-label { color: #d4632a; }
+  .show.volcanic .mock-hero-eyebrow { color: #d4632a; }
+  .show.volcanic .mock-hero-mark em { color: #d4632a; }
+  .show.volcanic .mock-hero { border-color: rgba(244,237,224,.15); }
+  .show.volcanic .mock-product { border-color: rgba(244,237,224,.15); }
+  .show.volcanic .mock-product-img {
+    background:
+      radial-gradient(circle at 30% 30%, #d4632a 0%, #8a3416 30%, #1a1410 80%),
+      linear-gradient(135deg, #b8513a, #5a2818);
+    background-blend-mode: multiply;
+  }
+  .show.volcanic .mock-product-eyebrow { color: #d4632a; }
+  .show.volcanic .mock-product-price { color: #d4632a; }
+  .show.volcanic .mock-format.active { background: rgba(212,99,42,.12); border-color: #d4632a; color: #d4632a; }
+  .show.volcanic .pull { border-color: #d4632a; }
+
+  /* ─── DIRECTION 2 — MUSEUM OFF-WHITE ─── */
+  .show.museum {
+    background: #f6f1e8;
+    color: #1a1a1a;
+    border-bottom: 1px solid #c0b8a8;
+  }
+  .show.museum .show-label { color: #a0501a; }
+  .show.museum .mock-hero-eyebrow { color: #a0501a; }
+  .show.museum .mock-hero-mark em { color: #a0501a; }
+  .show.museum .mock-hero { border-color: rgba(26,26,26,.15); }
+  .show.museum .mock-product { border-color: rgba(26,26,26,.15); }
+  .show.museum .mock-product-img {
+    background:
+      radial-gradient(circle at 35% 35%, #d49960 0%, #8c5828 35%, #3a2412 100%);
+  }
+  .show.museum .mock-product-eyebrow { color: #a0501a; }
+  .show.museum .mock-product-price { color: #1a1a1a; }
+  .show.museum .mock-format.active { background: rgba(160,80,26,.08); border-color: #a0501a; color: #a0501a; }
+  .show.museum .pull { border-color: #a0501a; }
+
+  /* ─── DIRECTION 3 — TWILIGHT CEREMONY ─── */
+  .show.twilight {
+    background: #0e1320;
+    color: #e8e2d2;
+    border-bottom: 1px solid #1a2030;
+  }
+  .show.twilight .show-label { color: #c08842; }
+  .show.twilight .mock-hero-eyebrow { color: #c08842; }
+  .show.twilight .mock-hero-mark em { color: #c08842; }
+  .show.twilight .mock-hero { border-color: rgba(232,226,210,.15); }
+  .show.twilight .mock-product { border-color: rgba(232,226,210,.15); }
+  .show.twilight .mock-product-img {
+    background:
+      radial-gradient(ellipse at 40% 40%, #c08842 0%, #5a3a18 40%, #1a1220 80%, #0e1320 100%);
+  }
+  .show.twilight .mock-product-eyebrow { color: #c08842; }
+  .show.twilight .mock-product-price { color: #c08842; }
+  .show.twilight .mock-format.active { background: rgba(192,136,66,.12); border-color: #c08842; color: #c08842; }
+  .show.twilight .pull { border-color: #c08842; }
+
+  /* ─── RECOMMENDATION ─── */
+  .recommendation {
+    padding: 7rem 5rem;
+    background: #f0ece4;
+    color: #1a1a1a;
+    border-top: 1px solid #2a2520;
+  }
+  .rec-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: .68rem;
+    letter-spacing: .42em;
+    text-transform: uppercase;
+    color: #6b2424;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .rec h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -.01em;
+    margin-bottom: 2rem;
+    max-width: 900px;
+  }
+  .rec h2 em {
+    font-style: italic;
+    color: #6b2424;
+    font-weight: 500;
+  }
+  .rec p {
+    font-size: 1.12rem;
+    line-height: 1.85;
+    max-width: 760px;
+    margin-bottom: 1.4rem;
+    color: #1a1a1a;
+  }
+  .rec p strong { font-weight: 500; }
+  .rec p em { font-style: italic; color: #6b2424; }
+
+  .rec-versus {
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid #c0b8a8;
+  }
+  .rec-versus > div {
+    padding: 1.8rem;
+    border-right: 1px solid #c0b8a8;
+  }
+  .rec-versus > div:last-child { border-right: none; }
+  .rec-versus h5 {
+    font-family: 'Inter', sans-serif;
+    font-size: .58rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: #8a857e;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .rec-versus .verdict {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #1a1a1a;
+  }
+  .rec-versus .verdict em { font-style: italic; color: #6b2424; }
+  .rec-versus .star {
+    color: #6b2424;
+    font-size: 1.2rem;
+    margin-top: .8rem;
+    letter-spacing: .15em;
+  }
+
+  /* ─── HANDOFF SECTION ─── */
+  .handoff {
+    padding: 6rem 5rem;
+    background: #ede7dc;
+    color: #1a1a1a;
+    border-top: 1px solid #2a2520;
+  }
+  .handoff h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    letter-spacing: -.005em;
+  }
+  .handoff p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.4rem;
+    max-width: 760px;
+  }
+  .handoff ol {
+    margin: 1rem 0 1rem 1.5rem;
+    padding-left: 1rem;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .handoff ol li {
+    margin-bottom: .6rem;
+  }
+  .handoff code {
+    font-family: 'Inter', monospace;
+    font-size: .85em;
+    background: rgba(26,26,26,.06);
+    padding: .1em .4em;
+  }
+
+  @media (max-width: 1080px) {
+    .cover { padding: 4rem 1.6rem 3rem; min-height: auto; }
+    .intro, .show, .recommendation, .handoff { padding-left: 1.6rem; padding-right: 1.6rem; }
+    .show { padding-top: 4rem; padding-bottom: 4rem; }
+    .palette-row { grid-template-columns: repeat(2, 1fr); }
+    .mock-product { grid-template-columns: 1fr; }
+    .reasoning { grid-template-columns: 1fr; gap: 1.5rem; }
+    .rec-versus { grid-template-columns: 1fr; }
+    .rec-versus > div { border-right: none; border-bottom: 1px solid #c0b8a8; }
+    .rec-versus > div:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ─── COVER ─── -->
+  <div class="cover">
+    <div>
+      <div class="cover-eyebrow">Trois directions chromatiques · pour Franck, VF Images</div>
+      <h1>L'or et le noir vous ressemblent moins que <em>la terre, la pierre et le saffron</em>.</h1>
+      <p class="cover-deck">Trois propositions de palette tirées de la matière de vos photographies elles-mêmes. Aucun rebrand : seulement un changement de variables CSS et de quelques traitements d'image. Chacune servirait votre travail mieux que la combinaison actuelle. À vous de choisir laquelle.</p>
+    </div>
+
+    <div class="cover-toc">
+      <div class="toc-item">
+        <div class="toc-num">I.</div>
+        <div class="toc-name">Volcanic earth</div>
+        <div class="toc-tagline">Terre cuite · nuit chaude</div>
+      </div>
+      <div class="toc-item">
+        <div class="toc-num">II.</div>
+        <div class="toc-name">Museum off-white</div>
+        <div class="toc-tagline">Crème ivoire · ocre profond</div>
+      </div>
+      <div class="toc-item">
+        <div class="toc-num">III.</div>
+        <div class="toc-name">Twilight ceremony</div>
+        <div class="toc-tagline">Bleu nuit · saffron</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── INTRO ─── -->
+  <div class="intro">
+    <p class="intro-tag">Pourquoi changer la palette actuelle</p>
+    <h2>L'or et le noir vous ont servi jusqu'ici. Ils ne vous serviront pas pour la suite.</h2>
+    <p>Votre palette actuelle — noir #0a0a0a, or #c9a96e, crème #f5f3ef — n'est pas mauvaise. Elle est <em>générique</em>. C'est précisément le trio par défaut de tout template fine art Squarespace 2018-2025. Or vous photographiez quelque chose qui n'a rien de générique : <strong>les cérémonies de Bali, les masques du Barong, les processions à l'aube, les couleurs vives des offrandes</strong>. Votre matériau a une chromatique propre, identifiable, vivante. La palette actuelle <em>contredit</em> ce matériau au lieu de le servir.</p>
+    <p>Les trois propositions qui suivent ne sortent pas d'un mood-board générique. Elles sortent de <strong>vos propres photographies</strong>. Chaque couleur a une raison d'être dans le travail que vous montrez : la terre volcanique de Batur, les murs crème d'Ubud, le ciel bleu profond du Galungan au coucher, le saffron des robes de prêtres. Ce sont des couleurs <em>déjà présentes dans vos images</em> — on ne fait que les remonter à la surface du site.</p>
+    <p>Vous restez dans l'esprit éditorial sobre actuel. Vous gardez votre typo. Vous gardez votre architecture. <strong>Seules les variables CSS bougent</strong> — et avec elles, le rapport entre votre site et votre travail. Coût : zéro. Effort technique : une demi-journée pour Claude Code. Effet : un site qui cesse d'imiter le luxe générique et qui commence à être <em>spécifique à vous</em>.</p>
+  </div>
+
+  <!-- ═══ DIRECTION I — VOLCANIC EARTH ═══ -->
+  <section class="show volcanic">
+    <div class="show-label">Direction I</div>
+    <h2 class="show-name">Volcanic earth.</h2>
+    <p class="show-deck">Le brun-noir de la pierre volcanique de Batur, le crème sun-bleached des murs de Tampaksiring, la terracotta des toits et des tilakas. Une palette tirée du sol et de la pierre de Bali.</p>
+
+    <!-- HERO MOCK -->
+    <div class="mock-hero">
+      <div class="mock-hero-eyebrow">Photographie · Bali</div>
+      <div class="mock-hero-divider"></div>
+      <div class="mock-hero-mark">VF <em>Images</em></div>
+      <div class="mock-hero-tagline">Le sacré, à hauteur de regard.</div>
+      <a class="mock-hero-btn">Découvrir les collections</a>
+    </div>
+
+    <!-- PALETTE -->
+    <div class="palette-row">
+      <div class="swatch" style="background:#1a1410;color:#f4ede0;">
+        <span class="swatch-label">Fond</span>
+        <span class="swatch-hex">#1A1410</span>
+        <span class="swatch-role">Pierre volcanique</span>
+      </div>
+      <div class="swatch" style="background:#2a2018;color:#f4ede0;">
+        <span class="swatch-label">Surface</span>
+        <span class="swatch-hex">#2A2018</span>
+        <span class="swatch-role">Bois sombre</span>
+      </div>
+      <div class="swatch" style="background:#f4ede0;color:#1a1410;">
+        <span class="swatch-label">Texte</span>
+        <span class="swatch-hex">#F4EDE0</span>
+        <span class="swatch-role">Crème ivoire</span>
+      </div>
+      <div class="swatch" style="background:#d4632a;color:#f4ede0;">
+        <span class="swatch-label">Accent</span>
+        <span class="swatch-hex">#D4632A</span>
+        <span class="swatch-role">Terre cuite</span>
+      </div>
+    </div>
+
+    <!-- PRODUCT CARD MOCK -->
+    <div class="mock-product">
+      <div class="mock-product-img"></div>
+      <div class="mock-product-info">
+        <div>
+          <div class="mock-product-eyebrow">Collection Bali · Cérémonies</div>
+          <h3 class="mock-product-title">Procession <em>Barong</em></h3>
+          <p class="mock-product-desc">Galungan, temple d'Ubud — l'instant où les masques quittent l'enceinte du temple, dans la lumière rasante du matin.</p>
+          <div class="mock-product-edition">Édition limitée — 7 sur 30 disponibles</div>
+        </div>
+        <div>
+          <div class="mock-formats">
+            <span class="mock-format active">30×40</span>
+            <span class="mock-format">40×60</span>
+            <span class="mock-format">60×90</span>
+            <span class="mock-format">80×120</span>
+          </div>
+          <div class="mock-product-price">95 €</div>
+          <a class="mock-hero-btn">Commander ce tirage</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- REASONING -->
+    <div class="reasoning">
+      <div class="reasoning-col">
+        <h4>Ce que ça dit de vous</h4>
+        <p>Un photographe qui <em>vit</em> à Bali, qui en connaît la pierre et la terre, qui ne se contente pas de photographier le pittoresque. La terre cuite est la couleur des temples, des toits, des tilakas — c'est <strong>un brun-rouge spécifique à votre lieu</strong>. Aucun template Squarespace ne l'utilise.</p>
+        <p>L'œil reconnaît immédiatement : ce n'est pas du « luxe générique ». C'est une terre, un sol, un climat. Le site sent la chaleur tropicale et la pierre chauffée par le soleil.</p>
+      </div>
+      <div class="reasoning-col">
+        <h4>Comment vos photos s'y intègrent</h4>
+        <p>Vos photographies de cérémonies — Barong, Galungan, Nyepi — sont remplies de rouges (tilakas, fleurs, tissus) et de jaunes-or (offrandes, parures, lumière de l'aube). Sur fond brun-noir chaud, ces tons <strong>résonnent au lieu de jurer</strong>. La saturation de vos photos est respectée, voire amplifiée.</p>
+        <p>Avantage technique : conservez le mode sombre (vous y êtes habitué et la nav fonctionne déjà), mais sortez du noir froid neutre vers un noir <em>habité</em>.</p>
+      </div>
+    </div>
+
+    <p class="pull">L'or est une convention de luxe. La terre cuite est une appartenance.<span class="pull-attr">Direction I — note de bord</span></p>
+
+    <dl class="show-meta">
+      <div class="meta-item"><dt>Risque</dt><dd>Faible. Variation tonale du dark mode actuel.</dd></div>
+      <div class="meta-item"><dt>Effort technique</dt><dd>2 h — uniquement variables CSS</dd></div>
+      <div class="meta-item"><dt>Subjects qui gagnent</dt><dd>Cérémonies, processions, scènes d'intérieur, portraits chauds</dd></div>
+      <div class="meta-item"><dt>Référence à étudier</dt><dd>aman.com (hôtellerie luxe asiatique), the-print-space.com</dd></div>
+    </dl>
+  </section>
+
+  <!-- ═══ DIRECTION II — MUSEUM OFF-WHITE ═══ -->
+  <section class="show museum">
+    <div class="show-label">Direction II</div>
+    <h2 class="show-name">Museum off-white.</h2>
+    <p class="show-deck">L'ivoire chaud des catalogues d'exposition, l'ocre profond des terres balinaises au coucher. La direction la plus radicale, la plus muséale, la plus respectueuse de vos œuvres.</p>
+
+    <!-- HERO MOCK -->
+    <div class="mock-hero">
+      <div class="mock-hero-eyebrow">Photographie · Bali</div>
+      <div class="mock-hero-divider"></div>
+      <div class="mock-hero-mark">VF <em>Images</em></div>
+      <div class="mock-hero-tagline">Bali, vue de l'intérieur.</div>
+      <a class="mock-hero-btn">Découvrir les collections</a>
+    </div>
+
+    <!-- PALETTE -->
+    <div class="palette-row">
+      <div class="swatch" style="background:#f6f1e8;color:#1a1a1a;border:1px solid #c0b8a8;">
+        <span class="swatch-label">Fond</span>
+        <span class="swatch-hex">#F6F1E8</span>
+        <span class="swatch-role">Crème ivoire</span>
+      </div>
+      <div class="swatch" style="background:#ede5d4;color:#1a1a1a;border:1px solid #c0b8a8;">
+        <span class="swatch-label">Surface</span>
+        <span class="swatch-hex">#EDE5D4</span>
+        <span class="swatch-role">Papier vieilli</span>
+      </div>
+      <div class="swatch" style="background:#1a1a1a;color:#f6f1e8;">
+        <span class="swatch-label">Texte</span>
+        <span class="swatch-hex">#1A1A1A</span>
+        <span class="swatch-role">Encre profonde</span>
+      </div>
+      <div class="swatch" style="background:#a0501a;color:#f6f1e8;">
+        <span class="swatch-label">Accent</span>
+        <span class="swatch-hex">#A0501A</span>
+        <span class="swatch-role">Ocre brûlé</span>
+      </div>
+    </div>
+
+    <!-- PRODUCT CARD MOCK -->
+    <div class="mock-product">
+      <div class="mock-product-img"></div>
+      <div class="mock-product-info">
+        <div>
+          <div class="mock-product-eyebrow">Collection Bali · Cérémonies</div>
+          <h3 class="mock-product-title">Procession <em>Barong</em></h3>
+          <p class="mock-product-desc">Galungan, temple d'Ubud — l'instant où les masques quittent l'enceinte du temple, dans la lumière rasante du matin.</p>
+          <div class="mock-product-edition">Édition limitée — 7 sur 30 disponibles</div>
+        </div>
+        <div>
+          <div class="mock-formats">
+            <span class="mock-format active">30×40</span>
+            <span class="mock-format">40×60</span>
+            <span class="mock-format">60×90</span>
+            <span class="mock-format">80×120</span>
+          </div>
+          <div class="mock-product-price">95 €</div>
+          <a class="mock-hero-btn">Commander ce tirage</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- REASONING -->
+    <div class="reasoning">
+      <div class="reasoning-col">
+        <h4>Ce que ça dit de vous</h4>
+        <p>Un photographe représenté, traité comme un peintre. Le fond clair est la convention historique des <em>musées et des catalogues d'exposition</em> — Magnum Print Sales, Lumas, MoMA store, Pace Gallery, David Zwirner. Vos références marchandes sérieuses (Lumas) sont toutes sur fond clair.</p>
+        <p>Le site bascule d'un univers « portfolio cinématique » vers un univers « institution / éditeur d'art ». C'est <strong>la direction la plus ambitieuse symboliquement</strong>, mais elle déplace votre place dans la chaîne de valeur.</p>
+      </div>
+      <div class="reasoning-col">
+        <h4>Comment vos photos s'y intègrent</h4>
+        <p>Sur fond clair, vos photographies retrouvent leur saturation native. L'acheteur les voit <strong>telles qu'elles seront chez lui</strong>, accrochées sur un mur clair. Le filtre <code>brightness(.82) saturate(.92)</code> devient inutile et nocif — on le retire entièrement.</p>
+        <p>Risque réel : certaines photos très sombres (intérieurs de temples, scènes nocturnes) peuvent perdre en dramaturgie. À compenser par une lightbox sombre conservée, ou un fond uniquement gris-clair (#ede5d4) pour ces collections-là.</p>
+      </div>
+    </div>
+
+    <!-- B&W BONUS ARGUMENT -->
+    <div style="margin: 3rem 0; padding: 2rem 2.5rem; border: 1px solid rgba(26,26,26,.15); background: rgba(160,80,26,.04);">
+      <h4 style="font-family:'Inter',sans-serif;font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;font-weight:500;color:#a0501a;margin-bottom:1rem;">★ Pour le noir et blanc et les portraits</h4>
+      <p style="font-size:1.05rem;line-height:1.75;color:#1a1a1a;margin-bottom:1rem;">Cette palette est <strong>la convention muséale historique du noir et blanc</strong>. Avedon, Lindbergh, Karsh, Salgado, Yarrow lorsqu'il expose : tous présentent leurs portraits N&B sur fond ivoire-crème. C'est la couleur des cimaises de musée depuis 1850 et la couleur des catalogues Taschen, Steidl, Aperture. <em>L'ivoire chaud ne « teinte » pas les gris neutres du N&B — il les met en valeur comme un cadre passe-partout.</em></p>
+      <p style="font-size:1.05rem;line-height:1.75;color:#1a1a1a;">Avantage décisif pour vous : <strong>cette palette honore également vos deux registres</strong>. Les couleurs vives des cérémonies balinaises (rouges tilakas, jaunes safran, verts rizières) retrouvent leur saturation native sur cream. Les portraits N&B trouvent leur cadre muséal. Le site ne prend parti pour aucun des deux — il les sert tous les deux.</p>
+    </div>
+
+    <p class="pull">Quand on vend des œuvres, on les présente comme un musée — pas comme un cinéma.<span class="pull-attr">Direction II — note de bord</span></p>
+
+    <dl class="show-meta">
+      <div class="meta-item"><dt>Risque</dt><dd>Modéré. Inversion du mode (dark → light) demande un travail visuel plus important.</dd></div>
+      <div class="meta-item"><dt>Effort technique</dt><dd>4-6 h — variables CSS + ajustement de tous les filtres image + audit lightbox</dd></div>
+      <div class="meta-item"><dt>Subjects qui gagnent</dt><dd>Tous, en particulier les œuvres saturées et lumineuses</dd></div>
+      <div class="meta-item"><dt>Référence à étudier</dt><dd>lumas.com, magnumphotos.com/print-sales</dd></div>
+    </dl>
+  </section>
+
+  <!-- ═══ DIRECTION III — TWILIGHT CEREMONY ═══ -->
+  <section class="show twilight">
+    <div class="show-label">Direction III</div>
+    <h2 class="show-name">Twilight ceremony.</h2>
+    <p class="show-deck">Le bleu profond du ciel balinais à la tombée du jour, le saffron des robes de prêtres et de la flamme votive. Une palette nocturne et habitée — la direction la plus dramatique des trois.</p>
+
+    <!-- HERO MOCK -->
+    <div class="mock-hero">
+      <div class="mock-hero-eyebrow">Photographie · Bali</div>
+      <div class="mock-hero-divider"></div>
+      <div class="mock-hero-mark">VF <em>Images</em></div>
+      <div class="mock-hero-tagline">Le sacré, à hauteur de regard.</div>
+      <a class="mock-hero-btn">Découvrir les collections</a>
+    </div>
+
+    <!-- PALETTE -->
+    <div class="palette-row">
+      <div class="swatch" style="background:#0e1320;color:#e8e2d2;">
+        <span class="swatch-label">Fond</span>
+        <span class="swatch-hex">#0E1320</span>
+        <span class="swatch-role">Ciel crépusculaire</span>
+      </div>
+      <div class="swatch" style="background:#1a2030;color:#e8e2d2;">
+        <span class="swatch-label">Surface</span>
+        <span class="swatch-hex">#1A2030</span>
+        <span class="swatch-role">Bleu profond</span>
+      </div>
+      <div class="swatch" style="background:#e8e2d2;color:#0e1320;">
+        <span class="swatch-label">Texte</span>
+        <span class="swatch-hex">#E8E2D2</span>
+        <span class="swatch-role">Lune pâle</span>
+      </div>
+      <div class="swatch" style="background:#c08842;color:#0e1320;">
+        <span class="swatch-label">Accent</span>
+        <span class="swatch-hex">#C08842</span>
+        <span class="swatch-role">Saffron / flamme</span>
+      </div>
+    </div>
+
+    <!-- PRODUCT CARD MOCK -->
+    <div class="mock-product">
+      <div class="mock-product-img"></div>
+      <div class="mock-product-info">
+        <div>
+          <div class="mock-product-eyebrow">Collection Bali · Cérémonies</div>
+          <h3 class="mock-product-title">Procession <em>Barong</em></h3>
+          <p class="mock-product-desc">Galungan, temple d'Ubud — l'instant où les masques quittent l'enceinte du temple, dans la lumière rasante du matin.</p>
+          <div class="mock-product-edition">Édition limitée — 7 sur 30 disponibles</div>
+        </div>
+        <div>
+          <div class="mock-formats">
+            <span class="mock-format active">30×40</span>
+            <span class="mock-format">40×60</span>
+            <span class="mock-format">60×90</span>
+            <span class="mock-format">80×120</span>
+          </div>
+          <div class="mock-product-price">95 €</div>
+          <a class="mock-hero-btn">Commander ce tirage</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- REASONING -->
+    <div class="reasoning">
+      <div class="reasoning-col">
+        <h4>Ce que ça dit de vous</h4>
+        <p>Un photographe du <em>seuil</em> — de l'heure entre chien et loup, entre profane et sacré. Le bleu nuit dit le rituel, la cérémonie, le silence avant l'aube. Le saffron est la couleur des moines, du feu votif, des fleurs d'offrande.</p>
+        <p>C'est <strong>la direction la plus narrative</strong> — celle qui raconte un univers spécifique. Risque : c'est aussi la plus marquée, qui peut paraître excessive si vos photographies couvrent d'autres registres (photographies urbaines de New York, paysages secs de Bolivie).</p>
+      </div>
+      <div class="reasoning-col">
+        <h4>Comment vos photos s'y intègrent</h4>
+        <p>Magnifiquement pour les photographies de cérémonies, processions, scènes d'aube ou de crépuscule. Moins évidemment pour les photographies très claires ou très saturées en couleurs froides.</p>
+        <p>Le saffron #c08842 — distinct de votre or actuel — n'évoque pas le luxe générique. Il évoque <em>une flamme spécifique</em>. Plus chaud, plus végétal, plus identifié.</p>
+      </div>
+    </div>
+
+    <p class="pull">Le bleu nuit n'est pas un fond. C'est une heure — celle où la cérémonie commence.<span class="pull-attr">Direction III — note de bord</span></p>
+
+    <dl class="show-meta">
+      <div class="meta-item"><dt>Risque</dt><dd>Modéré-fort. La palette est marquée — convient parfaitement à Bali, peut sembler étrange pour NY ou Bolivie.</dd></div>
+      <div class="meta-item"><dt>Effort technique</dt><dd>2-3 h — variables CSS + ajustement température images</dd></div>
+      <div class="meta-item"><dt>Subjects qui gagnent</dt><dd>Cérémonies, scènes nocturnes, lumière de feu</dd></div>
+      <div class="meta-item"><dt>Référence à étudier</dt><dd>davidalansmith.com, marcoyebra.com, sites Aman Resorts</dd></div>
+    </dl>
+  </section>
+
+  <!-- ═══ RECOMMENDATION (révisée pour N&B + couleur) ═══ -->
+  <div class="recommendation">
+    <p class="rec-tag">Recommandation — révisée mai 2026</p>
+    <h2>Direction II — <em>Museum off-white</em> — pour qui honore le noir et blanc <em>et</em> la couleur.</h2>
+
+    <p style="font-style:italic;color:#4a4540;background:rgba(107,36,36,.06);padding:1.2rem 1.5rem;border-left:2px solid #6b2424;margin-bottom:2rem;">Mise à jour suite à un échange avec Franck : « J'aime profondément le noir et blanc mais je suis obligé de faire honneur aux couleurs que je croise, et notamment à Bali elles sont riches. » Cette double exigence — rigueur du N&B et fidélité aux couleurs — déplace la recommandation initiale.</p>
+
+    <p>Les trois directions restent défendables, mais une seule honore <em>également</em> les deux registres qui composent votre travail. C'est la direction II.</p>
+
+    <p><strong>Premièrement, le cream + encre est la palette historique du noir et blanc fine art.</strong> Tous les livres et expositions de référence — Avedon, Lindbergh, Karsh, Salgado, Yarrow — présentent leurs N&B sur fond ivoire. Ce n'est pas une convention décorative : c'est une nécessité optique. L'ivoire chaud ne teinte pas les gris neutres du N&B, il les met en valeur comme un cadre passe-partout. À l'inverse, un fond brun chaud (direction I) ou bleu nuit (direction III) <em>colore</em> visuellement les portraits N&B et leur fait perdre leur neutralité tonale.</p>
+
+    <p><strong>Deuxièmement, la même palette sert vos couleurs balinaises.</strong> Le fond clair est la condition pour que les rouges des tilakas, les jaunes safran des offrandes, les verts profonds des rizières <em>chantent</em>. Sur fond sombre, ces couleurs sont absorbées. Sur cream, elles vibrent. C'est exactement ce que font Lumas, Magnum Print Sales, et tous les éditeurs sérieux de tirages couleur fine art.</p>
+
+    <p><strong>Troisièmement, c'est la seule direction qui ne prend pas parti.</strong> Direction I dit « photographe de cérémonies chaudes ». Direction III dit « photographe de crépuscule ». Direction II dit <em>« photographe »</em>, et laisse vos œuvres définir le reste. Pour un artiste qui refuse de se limiter à un registre — précisément votre cas — c'est la position la plus juste.</p>
+
+    <div class="rec-versus">
+      <div>
+        <h5>Actuel — Noir + Or</h5>
+        <p class="verdict">Générique. Cliché 2018-2025. <em>À quitter.</em></p>
+      </div>
+      <div>
+        <h5>I. Volcanic earth</h5>
+        <p class="verdict">Belle pour la couleur. <em>Teinte le N&B.</em></p>
+        <p class="star">★ ★</p>
+      </div>
+      <div>
+        <h5>II. Museum off-white</h5>
+        <p class="verdict">Honore N&B et couleur également. <em>Recommandée.</em></p>
+        <p class="star">★ ★ ★</p>
+      </div>
+      <div>
+        <h5>III. Twilight ceremony</h5>
+        <p class="verdict">Fight le N&B. Très typée Bali.</p>
+        <p class="star">★</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;margin:3rem 0 1rem;letter-spacing:-.005em;">Direction IV — <em style="font-style:italic;color:#6b2424;">Galerie monochrome</em> — à garder en option</h3>
+    <p>Il existe une quatrième direction, plus radicale, que je n'avais pas proposée initialement parce qu'elle suppose une orientation N&B forte. Si dans 2-3 ans votre travail bascule majoritairement vers le N&B et le portrait, cette direction devient envisageable :</p>
+    <p style="margin-left:1.5rem;font-family:'Inter',monospace;font-size:.95rem;line-height:1.8;color:#1a1a1a;">Fond ivoire pur <code style="background:rgba(26,26,26,.06);padding:.1em .4em;">#f6f1e8</code> · Texte graphite <code style="background:rgba(26,26,26,.06);padding:.1em .4em;">#1a1a1a</code> · <strong>Accent : aucun ou oxblood discret</strong> <code style="background:rgba(26,26,26,.06);padding:.1em .4em;">#6b2424</code> · Hiérarchie par poids typographique uniquement</p>
+    <p>C'est la palette de David Yarrow, des catalogues Magnum, des expositions Lindbergh chez Taschen. Aucun accent chromatique = la photographie est <em>la</em> couleur. Direction la plus rigoureuse — mais aussi la plus radicale et la moins versatile pour vos cérémonies balinaises.</p>
+    <p style="font-style:italic;color:#4a4540;font-size:1rem;margin-top:1rem;">À garder en réserve. Pour aujourd'hui, la direction II vous donne 90% du bénéfice avec 100% de la versatilité.</p>
+
+    <p style="font-style:italic;color:#4a4540;font-size:1.05rem;max-width:760px;margin-top:3rem;padding-top:2rem;border-top:1px solid #c0b8a8;"><strong style="color:#1a1a1a;">Conclusion :</strong> commencez la direction II en mockup. C'est le coût technique le plus important des trois (4-6h car le mode bascule de sombre à clair), mais c'est aussi <strong style="color:#1a1a1a;">la décision la plus durable</strong>. Bien faite, vous n'aurez plus besoin de retoucher la palette pendant 5 ans, quel que soit le sens dans lequel votre travail évolue.</p>
+  </div>
+
+  <!-- ═══ HANDOFF ═══ -->
+  <div class="handoff">
+    <h3>Pour Claude Code — comment produire les visuels</h3>
+    <p>Une fois que Franck a choisi une direction (ou demande à en voir une concrètement appliquée à son site avant de choisir), Claude Code applique la procédure suivante :</p>
+    <ol>
+      <li>Lire l'audit (<code>AUDIT.md</code>) pour récupérer la liste des fichiers HTML existants.</li>
+      <li>Copier <code>vf-images-v15.html</code> en <code>mockup-[direction].html</code> (par exemple <code>mockup-volcanic.html</code>).</li>
+      <li>Dans le nouveau fichier, ne modifier que :
+        <ul style="margin: .8rem 0 .8rem 1.5rem; font-size: 1rem;">
+          <li>Les <code>:root</code> CSS variables : <code>--dark</code>, <code>--dark2</code>, <code>--dark3</code>, <code>--gold</code>, <code>--light</code></li>
+          <li>Les filtres image <code>brightness()</code>/<code>saturate()</code> si la direction l'exige (museum demande <code>filter: none</code> partout)</li>
+          <li>Aucun changement de structure HTML, aucun changement de typographie</li>
+        </ul>
+      </li>
+      <li>Faire la même copie pour <code>vf-boutique.html</code> → <code>mockup-[direction]-boutique.html</code>.</li>
+      <li>Présenter à Franck les 2 mockups côte à côte pour validation.</li>
+      <li>Si validé : appliquer les changements à tous les fichiers réels du site en une seule passe (find-and-replace global sur les variables CSS).</li>
+    </ol>
+
+    <p><strong>Tableau des variables à substituer</strong> selon la direction choisie :</p>
+
+    <div style="overflow-x:auto;margin:1.5rem 0;">
+    <table style="width:100%;border-collapse:collapse;font-family:'Inter',monospace;font-size:.85rem;">
+      <thead>
+        <tr style="border-bottom:2px solid #2a2520;">
+          <th style="text-align:left;padding:.8rem 1rem;font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#8a857e;font-weight:500;">Variable</th>
+          <th style="text-align:left;padding:.8rem 1rem;font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#8a857e;font-weight:500;">Actuel</th>
+          <th style="text-align:left;padding:.8rem 1rem;font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#8a857e;font-weight:500;">I. Volcanic</th>
+          <th style="text-align:left;padding:.8rem 1rem;font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#8a857e;font-weight:500;">II. Museum</th>
+          <th style="text-align:left;padding:.8rem 1rem;font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#8a857e;font-weight:500;">III. Twilight</th>
+        </tr>
+      </thead>
+      <tbody style="font-size:.85rem;line-height:1.6;">
+        <tr style="border-bottom:1px solid #d8cfc0;"><td style="padding:.8rem 1rem;">--dark</td><td style="padding:.8rem 1rem;">#0a0a0a</td><td style="padding:.8rem 1rem;">#1a1410</td><td style="padding:.8rem 1rem;">#f6f1e8</td><td style="padding:.8rem 1rem;">#0e1320</td></tr>
+        <tr style="border-bottom:1px solid #d8cfc0;"><td style="padding:.8rem 1rem;">--dark2</td><td style="padding:.8rem 1rem;">#111</td><td style="padding:.8rem 1rem;">#2a2018</td><td style="padding:.8rem 1rem;">#ede5d4</td><td style="padding:.8rem 1rem;">#1a2030</td></tr>
+        <tr style="border-bottom:1px solid #d8cfc0;"><td style="padding:.8rem 1rem;">--dark3</td><td style="padding:.8rem 1rem;">#1a1a1a</td><td style="padding:.8rem 1rem;">#36281e</td><td style="padding:.8rem 1rem;">#e0d8c5</td><td style="padding:.8rem 1rem;">#252c40</td></tr>
+        <tr style="border-bottom:1px solid #d8cfc0;"><td style="padding:.8rem 1rem;">--gold</td><td style="padding:.8rem 1rem;">#c9a96e</td><td style="padding:.8rem 1rem;">#d4632a</td><td style="padding:.8rem 1rem;">#a0501a</td><td style="padding:.8rem 1rem;">#c08842</td></tr>
+        <tr><td style="padding:.8rem 1rem;">--light</td><td style="padding:.8rem 1rem;">#f5f3ef</td><td style="padding:.8rem 1rem;">#f4ede0</td><td style="padding:.8rem 1rem;">#1a1a1a</td><td style="padding:.8rem 1rem;">#e8e2d2</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>Note importante pour la direction II (Museum off-white) :</strong> la couleur <code>--light</code> devient sombre car le mode bascule (background clair, texte sombre). Claude Code doit alors aussi :</p>
+    <ul style="margin: .5rem 0 1rem 1.5rem; font-size: 1rem; line-height: 1.8;">
+      <li>Retirer <code>filter: brightness(.82) saturate(.92)</code> partout (les photos vivent maintenant sur fond clair, le filtre les écraserait)</li>
+      <li>Ajuster la lightbox : fond noir profond conservé (cinéma) ou fond crème selon préférence — à tester</li>
+      <li>Le curseur custom doré devient <code>--gold</code> qui est désormais ocre brûlé → toujours visible sur fond clair, donc OK</li>
+    </ul>
+
+    <p style="font-style:italic;color:#4a4540;margin-top:2rem;">Claude Code peut produire les 3 mockups en une seule session de 2-3 heures. Franck les regarde, choisit, et l'application au reste du site se fait dans une deuxième session.</p>
+  </div>
+
+</body>
+</html>

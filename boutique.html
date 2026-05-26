@@ -1351,6 +1351,22 @@ function openDetail(id){
   document.getElementById('modalOverlay').classList.add('active');
   document.body.style.overflow='hidden';
   setLang(currentLang);
+  // Charger le papier depuis le catalogue si data-photo-id présent
+  const photoId = modal.dataset.photoId;
+  if(photoId){
+    fetch('/catalogue.json')
+      .then(r=>r.json())
+      .then(data=>{
+        const photo = data.photos.find(p=>p.id===photoId);
+        if(photo){
+          const paperEl = modal.querySelector('.detail-paper');
+          if(paperEl){
+            const val = currentLang==='en' ? photo.paper_en : photo.paper_fr;
+            if(val){ paperEl.textContent=val; paperEl.setAttribute('data-fr',photo.paper_fr); paperEl.setAttribute('data-en',photo.paper_en); }
+          }
+        }
+      }).catch(()=>{});
+  }
   // Initialiser le mockup : sélectionner le premier format
   const firstFmt=modal.querySelector('.fmt-option');
   if(firstFmt) selectFormat(firstFmt);

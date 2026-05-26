@@ -1273,7 +1273,13 @@ function closeDetail(){
   document.getElementById('modalOverlay').classList.remove('active');
   document.body.style.overflow='';
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    const fs=document.getElementById('viz-fullscreen');
+    if(fs&&fs.classList.contains('open')){ closeVizFullscreen(); }
+    else{ closeDetail(); }
+  }
+});
 
 /* ═══ VISUALISEUR MOCKUP — mis à jour au clic format ═══ */
 function updateModalViz(modal, w, h){
@@ -1421,15 +1427,6 @@ function closeVizFullscreen(){
   document.body.style.overflow='';
 }
 
-document.getElementById('viz-fs-close')&&
-  document.getElementById('viz-fs-close').addEventListener('click',closeVizFullscreen);
-document.getElementById('viz-fullscreen')&&
-  document.getElementById('viz-fullscreen').addEventListener('click',function(e){
-    if(e.target===this) closeVizFullscreen();
-  });
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape') closeVizFullscreen();
-});
 window.addEventListener('resize',()=>{
   const fs=document.getElementById('viz-fullscreen');
   if(fs&&fs.classList.contains('open')) _applyVizFs();
@@ -1535,8 +1532,8 @@ if(hamburger&&navOverlay){
 </script>
 
 <!-- FULLSCREEN MOCKUP OVERLAY -->
-<div id="viz-fullscreen" role="dialog" aria-modal="true" aria-label="Vue plein écran">
-  <button id="viz-fs-close" aria-label="Fermer">&#x2715; <span style="font-size:.6rem;letter-spacing:.3em;vertical-align:middle">ESC</span></button>
+<div id="viz-fullscreen" role="dialog" aria-modal="true" aria-label="Vue plein écran" onclick="if(event.target===this)closeVizFullscreen()">
+  <button id="viz-fs-close" aria-label="Fermer" onclick="closeVizFullscreen()">&#x2715; <span style="font-size:.6rem;letter-spacing:.3em;vertical-align:middle">ESC</span></button>
   <div class="viz-fs-scene">
     <div class="viz-fs-frame-area">
       <div class="viz-fs-frame">

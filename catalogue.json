@@ -1,0 +1,58 @@
+{
+  "photos": [
+    {
+      "id": "portrait-bali-012",
+      "title_fr": "Portrait · Bali",
+      "title_en": "Portrait · Bali",
+      "location_fr": "Ubud · Bali",
+      "location_en": "Ubud · Bali",
+      "image": "images/portrait-bali-012.jpg",
+      "creativehub_product_id": "PLACEHOLDER_A_REMPLIR",
+      "formats": [
+        {
+          "label": "45×30",
+          "price_eur": 95,
+          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR"
+        },
+        {
+          "label": "60×40",
+          "price_eur": 135,
+          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR"
+        },
+        {
+          "label": "100×70",
+          "price_eur": 390,
+          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR",
+          "limited_edition": 7
+        }
+      ]
+    },
+    {
+      "id": "portrait-bali-369",
+      "title_fr": "Portrait · Bali",
+      "title_en": "Portrait · Bali",
+      "location_fr": "Ubud · Bali",
+      "location_en": "Ubud · Bali",
+      "image": "images/portrait-bali-369.jpg",
+      "creativehub_product_id": "PLACEHOLDER_A_REMPLIR",
+      "formats": [
+        {
+          "label": "45×30",
+          "price_eur": 95,
+          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR"
+        },
+        {
+          "label": "60×40",
+          "price_eur": 135,
+          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR"
+        },
+        {
+          "label": "100×70",
+          "price_eur": 390,
+          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR",
+          "limited_edition": 7
+        }
+      ]
+    }
+  ]
+}

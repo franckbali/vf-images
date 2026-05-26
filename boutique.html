@@ -184,6 +184,73 @@
   text-align:center;
 }
 
+/* ── Bouton expand mockup ── */
+.viz-expand-btn{
+  position:absolute;bottom:.9rem;right:.9rem;
+  background:none;border:none;cursor:pointer;
+  color:rgba(245,243,239,.35);
+  padding:.35rem;line-height:0;
+  transition:color .3s,transform .3s;
+  z-index:10;
+}
+.viz-expand-btn:hover{color:var(--gold);transform:scale(1.2)}
+
+/* ── Overlay plein écran mockup ── */
+#viz-fullscreen{
+  position:fixed;inset:0;z-index:1100;
+  background:rgba(10,10,10,.96);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;
+  opacity:0;pointer-events:none;visibility:hidden;
+  transition:opacity .4s cubic-bezier(.22,1,.36,1);
+}
+#viz-fullscreen.open{opacity:1;pointer-events:auto;visibility:visible}
+#viz-fs-close{
+  position:absolute;top:1.5rem;right:2rem;
+  background:none;border:none;cursor:pointer;
+  font-family:'Raleway',sans-serif;font-size:.75rem;letter-spacing:.25em;
+  text-transform:uppercase;color:rgba(245,243,239,.5);
+  transition:color .3s;padding:.5rem;
+}
+#viz-fs-close:hover{color:var(--gold)}
+.viz-fs-scene{
+  position:relative;
+  background-image:url('images/salon-gris-moderne.png');
+  background-size:cover;background-position:center top;
+  overflow:hidden;border-radius:4px;
+  box-shadow:0 32px 90px rgba(0,0,0,.8);
+  transition:width .3s,height .3s;
+}
+.viz-fs-scene::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.04) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,.22) 100%);
+  pointer-events:none;z-index:0;
+}
+.viz-fs-frame-area{
+  position:absolute;
+  top:4%;left:12%;right:3%;bottom:43%;
+  display:flex;align-items:center;justify-content:center;z-index:1;
+}
+.viz-fs-frame{
+  position:relative;flex-shrink:0;
+  border:2px solid #0d0b08;background:#f0ede6;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.6),0 12px 32px rgba(0,0,0,.45),0 24px 60px rgba(0,0,0,.28);
+  transition:width .3s,height .3s;
+}
+.viz-fs-frame img{
+  display:block;flex-shrink:0;object-fit:cover;
+  box-shadow:0 1px 3px rgba(0,0,0,.35);
+  pointer-events:none;user-select:none;-webkit-user-drag:none;
+}
+.viz-fs-label{
+  font-family:'Raleway',sans-serif;font-size:.65rem;letter-spacing:.28em;
+  text-transform:uppercase;color:rgba(245,243,239,.4);
+}
+@media(max-width:900px){
+  .viz-expand-btn{bottom:.6rem;right:.6rem}
+  #viz-fs-close{top:1rem;right:1.2rem}
+}
+
 /* ── Côté droit : informations ── */
 .detail-info{
   padding:3rem 2.5rem;
@@ -1295,6 +1362,89 @@ function selectFormat(btn){
   if(parts.length===2) updateModalViz(modal, parts[0], parts[1]);
 }
 
+/* ═══ FULLSCREEN MOCKUP ═══ */
+let _vizFsW=30,_vizFsH=45;
+
+function _applyVizFs(){
+  const fs=document.getElementById('viz-fullscreen');
+  if(!fs) return;
+  const scene=fs.querySelector('.viz-fs-scene');
+  const frame=fs.querySelector('.viz-fs-frame');
+  const img=fs.querySelector('.viz-fs-img');
+  if(!scene||!frame) return;
+  const vw=window.innerWidth, vh=window.innerHeight;
+  // Scène 2:3 — tient dans 90vw × 88vh
+  let sw=Math.min(vh*0.88*(2/3), vw*0.90);
+  let sh=sw*(3/2);
+  scene.style.width=Math.round(sw)+'px';
+  scene.style.height=Math.round(sh)+'px';
+  // Cadre
+  const wallH=sh*0.50, maxW=sw*0.82;
+  const realScale=sw*0.0035*1.35;
+  const scale=Math.min(realScale,wallH/120,maxW/120);
+  const w=_vizFsW, h=_vizFsH;
+  const fw=Math.round(w*scale), fh=Math.round(h*scale);
+  frame.style.width=fw+'px'; frame.style.height=fh+'px';
+  const bSide=2;
+  const mx=Math.min(10,Math.max(3,Math.round(Math.min(fw,fh)*0.07)));
+  const my=Math.max(2,Math.round(bSide*(h-w)/w+(h/w)*mx));
+  if(img){
+    img.style.width=Math.max(1,fw-2*bSide-2*mx)+'px';
+    img.style.height=Math.max(1,fh-2*bSide-2*my)+'px';
+  }
+}
+
+function openVizFullscreen(wrap){
+  const modal=wrap.closest('.detail-modal');
+  const srcImg=wrap.querySelector('.modal-viz-frame img');
+  const labelEl=wrap.querySelector('.modal-viz-label');
+  const fs=document.getElementById('viz-fullscreen');
+  if(!fs||!srcImg) return;
+  // Récupère les dimensions actuelles du format sélectionné
+  const selBtn=modal&&modal.querySelector('.fmt-option.selected');
+  if(selBtn){
+    const parts=selBtn.textContent.trim().split('×').map(Number);
+    if(parts.length===2){_vizFsW=parts[0];_vizFsH=parts[1];}
+  }
+  const fsImg=fs.querySelector('.viz-fs-img');
+  if(fsImg){fsImg.src=srcImg.src;fsImg.alt=srcImg.alt;}
+  const fsLabel=fs.querySelector('.viz-fs-label');
+  if(fsLabel) fsLabel.textContent=labelEl?labelEl.textContent:'';
+  _applyVizFs();
+  fs.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeVizFullscreen(){
+  const fs=document.getElementById('viz-fullscreen');
+  if(fs) fs.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.getElementById('viz-fs-close')&&
+  document.getElementById('viz-fs-close').addEventListener('click',closeVizFullscreen);
+document.getElementById('viz-fullscreen')&&
+  document.getElementById('viz-fullscreen').addEventListener('click',function(e){
+    if(e.target===this) closeVizFullscreen();
+  });
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') closeVizFullscreen();
+});
+window.addEventListener('resize',()=>{
+  const fs=document.getElementById('viz-fullscreen');
+  if(fs&&fs.classList.contains('open')) _applyVizFs();
+});
+
+// Injection des boutons expand dans chaque mockup
+document.querySelectorAll('.modal-viz-wrap').forEach(wrap=>{
+  const btn=document.createElement('button');
+  btn.className='viz-expand-btn';
+  btn.setAttribute('aria-label','Voir en plein écran');
+  btn.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>';
+  btn.addEventListener('click',()=>openVizFullscreen(wrap));
+  wrap.appendChild(btn);
+});
+
 // Hamburger menu
 const hamburger=document.getElementById('hamburger');
 const navOverlay=document.getElementById('nav-overlay');
@@ -1383,6 +1533,19 @@ if(hamburger&&navOverlay){
   });
 })();
 </script>
+
+<!-- FULLSCREEN MOCKUP OVERLAY -->
+<div id="viz-fullscreen" role="dialog" aria-modal="true" aria-label="Vue plein écran">
+  <button id="viz-fs-close" aria-label="Fermer">&#x2715; <span style="font-size:.6rem;letter-spacing:.3em;vertical-align:middle">ESC</span></button>
+  <div class="viz-fs-scene">
+    <div class="viz-fs-frame-area">
+      <div class="viz-fs-frame">
+        <img class="viz-fs-img" src="" alt="" draggable="false">
+      </div>
+    </div>
+  </div>
+  <p class="viz-fs-label"></p>
+</div>
 
 <!-- BANDEAU COOKIES RGPD -->
 <div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">

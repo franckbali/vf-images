@@ -317,6 +317,15 @@
   font-size:0.72rem;letter-spacing:.18em;text-transform:uppercase;
   color:rgba(245,243,239,.5);text-align:center;line-height:1.8;
 }
+.contact-row-link{
+  display:block;text-align:center;margin-top:1rem;
+  font-family:'Raleway',sans-serif;font-size:0.68rem;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(245,243,239,.3);
+  text-decoration:none;border-bottom:1px solid rgba(245,243,239,.12);
+  padding-bottom:.15rem;
+  transition:color .3s,border-color .3s;
+}
+.contact-row-link:hover{color:var(--cream-warm);border-color:rgba(220,212,192,.4)}
 
 /* FOOTER */
 
@@ -874,6 +883,7 @@ button:focus:not(:focus-visible) {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </button>
         <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison offerte en Europe · Certificat d'authenticité" data-en="Hahnemühle printing · Free shipping in Europe · Certificate of authenticity">Impression Hahnemühle · Livraison offerte en Europe · Certificat d'authenticité</p>
+        <a href="mailto:contact@vfimages.com" class="contact-row-link" data-fr="Livraison hors Europe · Me contacter" data-en="Shipping outside Europe · Contact me">Livraison hors Europe · Me contacter</a>
       </div>
     </div>
   </div>
@@ -920,6 +930,7 @@ button:focus:not(:focus-visible) {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </button>
         <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison offerte en Europe · Certificat d'authenticité" data-en="Hahnemühle printing · Free shipping in Europe · Certificate of authenticity">Impression Hahnemühle · Livraison offerte en Europe · Certificat d'authenticité</p>
+        <a href="mailto:contact@vfimages.com" class="contact-row-link" data-fr="Livraison hors Europe · Me contacter" data-en="Shipping outside Europe · Contact me">Livraison hors Europe · Me contacter</a>
       </div>
     </div>
   </div>
@@ -1437,6 +1448,20 @@ function selectFormat(btn){
   // Mise à jour du mockup salon
   const parts=fmt.split('×').map(Number);
   if(parts.length===2) updateModalViz(modal, parts[0], parts[1]);
+
+  // Mise à jour lien email ROW
+  const rowLink = modal.querySelector('.contact-row-link');
+  if(rowLink){
+    const title = modal.querySelector('.detail-title');
+    const photoTitle = title ? title.textContent.trim() : 'tirage';
+    const subjectFr = encodeURIComponent('Livraison hors Europe — ' + photoTitle + ' ' + fmt + ' cm');
+    const subjectEn = encodeURIComponent('Shipping outside Europe — ' + photoTitle + ' ' + fmt + ' cm');
+    const bodyFr = encodeURIComponent('Bonjour,\n\nJe suis intéressé(e) par le tirage "' + photoTitle + '" en format ' + fmt + ' cm.\n\nPourriez-vous m\'indiquer les frais de livraison pour mon pays ?\n\nMerci');
+    const bodyEn = encodeURIComponent('Hello,\n\nI am interested in the print "' + photoTitle + '" in ' + fmt + ' cm format.\n\nCould you let me know the shipping cost for my country?\n\nThank you');
+    const subject = currentLang === 'en' ? subjectEn : subjectFr;
+    const body = currentLang === 'en' ? bodyEn : bodyFr;
+    rowLink.href = 'mailto:contact@vfimages.com?subject=' + subject + '&body=' + body;
+  }
 }
 
 /* ═══ CHECKOUT STRIPE ═══ */

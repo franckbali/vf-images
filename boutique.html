@@ -772,7 +772,7 @@ button:focus:not(:focus-visible) {
         <div class="modal-viz-scene">
           <div class="modal-viz-frame-area">
             <div class="modal-viz-frame">
-              <img src="images/portrait-bali.jpg" class="modal-viz-artwork" alt="" draggable="false">
+              <img src="images/portrait-bali-012.jpg" class="modal-viz-artwork" alt="" draggable="false">
             </div>
           </div>
         </div>
@@ -784,20 +784,25 @@ button:focus:not(:focus-visible) {
         <div class="detail-divider"></div>
 
         <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
-        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×22</button><button class="fmt-option" onclick="selectFormat(this)">40×30</button><button class="fmt-option" onclick="selectFormat(this)">60×45</button><button class="fmt-option" onclick="selectFormat(this)">80×60</button></div>
+        <div class="detail-formats">
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="95" data-stripe="https://buy.stripe.com/dRmdR84cYbGkdDKbMj1RC00">30×45</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="135" data-stripe="https://buy.stripe.com/bJe28q7pa4dS2Z62bJ1RC01">40×60</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="390" data-stripe="https://buy.stripe.com/7sY3cueRCh0EaryaIf1RC02" data-edition-label-fr="Édition limitée · 7 exemplaires" data-edition-label-en="Limited edition · 7 prints">70×100</button>
+        </div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
         <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fine Art Baryta" data-en="Hahnemühle Photo Rag · Fine Art Baryta">Hahnemühle Photo Rag · Fine Art Baryta</p>
 
         <p class="detail-label" data-fr="Édition" data-en="Edition">Édition</p>
-        <p class="detail-edition" data-fr="Tirage numéroté · Édition limitée à 20 exemplaires" data-en="Numbered print · Limited edition of 20">Tirage numéroté · Édition limitée à 20 exemplaires</p>
+        <p class="detail-edition" data-fr="Tirage numéroté · Édition limitée" data-en="Numbered print · Limited edition">Tirage numéroté · Édition limitée</p>
+        <p class="detail-edition-badge" style="display:none;margin-top:.4rem;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-family:'Raleway',sans-serif"></p>
 
         <div class="detail-price-row">
           <span class="detail-price-from" data-fr="À partir de" data-en="From">À partir de</span>
-          <span class="detail-price">110€</span>
+          <span class="detail-price">95€</span>
         </div>
 
-        <a href="#" target="_blank" class="order-btn">
+        <a href="https://buy.stripe.com/dRmdR84cYbGkdDKbMj1RC00" target="_blank" class="order-btn">
           <span data-fr="Commander ce tirage" data-en="Order this print">Commander ce tirage</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
@@ -1252,8 +1257,9 @@ function selectFormat(btn){
   modal.querySelectorAll('.fmt-option').forEach(b=>b.classList.remove('selected'));
   btn.classList.add('selected');
   const fmt=btn.textContent.trim();
-  // Mise à jour du prix
-  const price=FORMAT_PRICES[fmt];
+
+  // Prix : data-price sur le bouton, sinon FORMAT_PRICES
+  const price=btn.dataset.price||FORMAT_PRICES[fmt];
   if(price){
     const priceEl=modal.querySelector('.detail-price');
     if(priceEl){
@@ -1262,6 +1268,28 @@ function selectFormat(btn){
       if(fromEl) fromEl.style.display='none';
     }
   }
+
+  // Lien Stripe : data-stripe sur le bouton
+  const orderBtn=modal.querySelector('.order-btn');
+  if(orderBtn&&btn.dataset.stripe){
+    orderBtn.href=btn.dataset.stripe;
+  }
+
+  // Badge édition limitée spéciale (ex : 70×100 / 7ex)
+  const badge=modal.querySelector('.detail-edition-badge');
+  if(badge){
+    const labelFr=btn.dataset.editionLabelFr;
+    const labelEn=btn.dataset.editionLabelEn;
+    if(labelFr){
+      badge.style.display='block';
+      badge.setAttribute('data-fr',labelFr);
+      badge.setAttribute('data-en',labelEn||labelFr);
+      badge.textContent=currentLang==='en'?(labelEn||labelFr):labelFr;
+    } else {
+      badge.style.display='none';
+    }
+  }
+
   // Mise à jour du mockup salon
   const parts=fmt.split('×').map(Number);
   if(parts.length===2) updateModalViz(modal, parts[0], parts[1]);

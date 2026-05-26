@@ -166,16 +166,13 @@
   position:relative;
   transition:width .5s cubic-bezier(.22,1,.36,1),height .5s cubic-bezier(.22,1,.36,1);
   flex-shrink:0;line-height:0;
-  box-sizing:border-box;
   border:2px solid #0d0b08;
-  padding:8%;
-  background:#f0ede6;
-  box-shadow:0 4px 12px rgba(0,0,0,.6),0 12px 32px rgba(0,0,0,.45),0 24px 60px rgba(0,0,0,.28);
+  /* box-shadow défini dynamiquement par JS pour le passe-partout proportionnel */
+  box-shadow:inset 0 0 0 6px #f0ede6,0 4px 12px rgba(0,0,0,.6),0 12px 32px rgba(0,0,0,.45),0 24px 60px rgba(0,0,0,.28);
 }
 .modal-viz-frame img{
   display:block;width:100%;height:100%;
   object-fit:cover;
-  box-shadow:inset 0 0 6px rgba(0,0,0,.15),0 1px 3px rgba(0,0,0,.25);
   pointer-events:none;user-select:none;-webkit-user-drag:none;
 }
 .modal-viz-badge{
@@ -1222,8 +1219,13 @@ function updateModalViz(modal, w, h){
     const maxW =sw*0.82;
     const realScale=sw*0.0035*1.35;
     const scale=Math.min(realScale, wallH/120, maxW/120);
-    frame.style.width =Math.round(w*scale)+'px';
-    frame.style.height=Math.round(h*scale)+'px';
+    const fw=Math.round(w*scale);
+    const fh=Math.round(h*scale);
+    frame.style.width =fw+'px';
+    frame.style.height=fh+'px';
+    // Passe-partout proportionnel : 7% du petit côté, min 3px max 10px
+    const mat=Math.min(10,Math.max(3,Math.round(Math.min(fw,fh)*0.07)));
+    frame.style.boxShadow=`inset 0 0 0 ${mat}px #f0ede6,0 4px 12px rgba(0,0,0,.6),0 12px 32px rgba(0,0,0,.45),0 24px 60px rgba(0,0,0,.28)`;
     if(label) label.textContent=w+' × '+h+' cm';
   }
   applyScale();

@@ -3,14 +3,14 @@ CODE HTML À COPIER DANS VOS PAGES
 Remplacez [DESCRIPTION] par le texte alternatif
 ════════════════════════════════════════════════════════════
 
-<!-- portrait-bali-004 -->
+<!-- bridge-newyork-001 -->
 <picture>
   <source
     type="image/webp"
-    srcset="images/portrait-bali-004-small.webp 640w, images/portrait-bali-004-medium.webp 1200w"
+    srcset="images/bridge-newyork-001-small.webp 640w, images/bridge-newyork-001-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/portrait-bali-004.jpg"
+    src="images/bridge-newyork-001.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -18,14 +18,14 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- portrait-bali-005 -->
+<!-- bridge-newyork-002 -->
 <picture>
   <source
     type="image/webp"
-    srcset="images/portrait-bali-005-small.webp 640w, images/portrait-bali-005-medium.webp 1200w, images/portrait-bali-005-large.webp 1920w"
+    srcset="images/bridge-newyork-002-small.webp 640w, images/bridge-newyork-002-medium.webp 1200w, images/bridge-newyork-002-large.webp 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/portrait-bali-005.jpg"
+    src="images/bridge-newyork-002.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -33,122 +33,32 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- portrait-bali-006 -->
+<!-- lama-bolivie-001 -->
 <picture>
   <source
     type="image/webp"
-    srcset="images/portrait-bali-006-small.webp 640w, images/portrait-bali-006-medium.webp 1200w, images/portrait-bali-006-large.webp 1920w"
+    srcset="images/lama-bolivie-001-small.webp 640w, images/lama-bolivie-001-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/portrait-bali-006.jpg"
+    src="images/lama-bolivie-001.jpg"
+    alt="[DESCRIPTION]"
+    loading="lazy"
+    decoding="async"
+    width="1200"
+    height="auto">
+</picture>
+
+<!-- portrait-bali-369 -->
+<picture>
+  <source
+    type="image/webp"
+    srcset="images/portrait-bali-369-small.webp 640w, images/portrait-bali-369-medium.webp 1200w, images/portrait-bali-369-large.webp 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <img
+    src="images/portrait-bali-369.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
     width="1920"
-    height="auto">
-</picture>
-
-<!-- portrait-bali-007 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/portrait-bali-007-small.webp 640w, images/portrait-bali-007-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/portrait-bali-007.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- portrait-bali-008 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/portrait-bali-008-small.webp 640w, images/portrait-bali-008-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/portrait-bali-008.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- portrait-bali-009 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/portrait-bali-009-small.webp 640w, images/portrait-bali-009-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/portrait-bali-009.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- portrait-bali-010 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/portrait-bali-010-small.webp 640w, images/portrait-bali-010-medium.webp 1200w, images/portrait-bali-010-large.webp 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/portrait-bali-010.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1920"
-    height="auto">
-</picture>
-
-<!-- portrait-bali-011 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/portrait-bali-011-small.webp 640w, images/portrait-bali-011-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/portrait-bali-011.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- portrait-bali-012 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/portrait-bali-012-small.webp 640w, images/portrait-bali-012-medium.webp 1200w, images/portrait-bali-012-large.webp 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/portrait-bali-012.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1920"
-    height="auto">
-</picture>
-
-<!-- portrait-bolivie-001 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/portrait-bolivie-001-small.webp 640w, images/portrait-bolivie-001-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/portrait-bolivie-001.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
     height="auto">
 </picture>

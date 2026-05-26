@@ -213,6 +213,46 @@
       "page": "galerie-portrait-bolivie-001.html",
       "ordre": 20,
       "visible": false
+    },
+    {
+      "titre": "Bridge Newyork 001",
+      "sous_titre": "",
+      "image_cover": "images/bridge-newyork-001.jpg",
+      "orientation": "portrait",
+      "slug": "bridge-newyork-001",
+      "page": "galerie-bridge-newyork-001.html",
+      "ordre": 21,
+      "visible": false
+    },
+    {
+      "titre": "Bridge Newyork 002",
+      "sous_titre": "",
+      "image_cover": "images/bridge-newyork-002.jpg",
+      "orientation": "landscape",
+      "slug": "bridge-newyork-002",
+      "page": "galerie-bridge-newyork-002.html",
+      "ordre": 22,
+      "visible": false
+    },
+    {
+      "titre": "Lama Bolivie 001",
+      "sous_titre": "",
+      "image_cover": "images/lama-bolivie-001.jpg",
+      "orientation": "portrait",
+      "slug": "lama-bolivie-001",
+      "page": "galerie-lama-bolivie-001.html",
+      "ordre": 23,
+      "visible": false
+    },
+    {
+      "titre": "Portrait Bali 369",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-369.jpg",
+      "orientation": "landscape",
+      "slug": "portrait-bali-369",
+      "page": "galerie-portrait-bali-369.html",
+      "ordre": 24,
+      "visible": false
     }
   ]
 }

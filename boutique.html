@@ -358,7 +358,8 @@
   .reassurance-text strong{font-size:.9rem!important;letter-spacing:.15em!important}
   .reassurance-text span{font-size:.9rem!important;letter-spacing:.06em!important}
   /* Detail modale — empilé + scrollable sur mobile */
-  .detail-inner{grid-template-columns:1fr;height:100vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .detail-modal{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+  .detail-inner{grid-template-columns:1fr;height:auto;overflow:visible}
   .modal-viz-wrap{height:auto;padding:2rem 1.5rem 1rem;flex-shrink:0}
   .modal-viz-scene{max-width:260px}
   .detail-info{height:auto;padding:2rem 1.8rem;overflow-y:visible;padding-bottom:4rem}
@@ -419,7 +420,7 @@
   .quality-strip{grid-template-columns:1fr 1fr}
   .quality-item{padding:1.2rem 1.5rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
   .reassurance-strip{grid-template-columns:repeat(2,1fr)!important;padding:1.2rem 1.8rem}
-  .detail-inner{grid-template-columns:1fr;height:100vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .detail-inner{grid-template-columns:1fr;height:auto;overflow:visible}
   .modal-viz-wrap{height:auto;padding:1.5rem 1rem .8rem;flex-shrink:0}
   .modal-viz-scene{max-width:220px}
   .detail-info{height:auto;padding:1.8rem 1.5rem;padding-bottom:4rem}
@@ -1386,11 +1387,8 @@ function openDetail(id){
   // Initialiser le mockup : sélectionner le premier format
   const firstFmt=modal.querySelector('.fmt-option');
   if(firstFmt) selectFormat(firstFmt);
-  // Reset scroll après que tout soit rendu (selectFormat + updateModalViz ont un timeout de 80ms)
-  setTimeout(()=>{
-    const inner=modal.querySelector('.detail-inner');
-    if(inner) inner.scrollTop=0;
-  }, 150);
+  // Reset scroll en haut après rendu complet
+  setTimeout(()=>{ modal.scrollTop=0; }, 150);
 }
 function closeDetail(){
   document.querySelectorAll('.detail-modal.open').forEach(m=>m.classList.remove('open'));

@@ -357,11 +357,11 @@
   /* Réassurance */
   .reassurance-text strong{font-size:.9rem!important;letter-spacing:.15em!important}
   .reassurance-text span{font-size:.9rem!important;letter-spacing:.06em!important}
-  /* Detail modale — empilé sur mobile */
-  .detail-inner{grid-template-columns:1fr;overflow-y:auto;height:auto}
-  .modal-viz-wrap{height:auto;padding:2rem 1.5rem 1rem}
+  /* Detail modale — empilé + scrollable sur mobile */
+  .detail-inner{grid-template-columns:1fr;height:100vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .modal-viz-wrap{height:auto;padding:2rem 1.5rem 1rem;flex-shrink:0}
   .modal-viz-scene{max-width:260px}
-  .detail-info{height:auto;padding:2rem 1.8rem;overflow-y:visible}
+  .detail-info{height:auto;padding:2rem 1.8rem;overflow-y:visible;padding-bottom:4rem}
   /* Lien ROW — zone tactile élargie */
   .contact-row-link{padding:.75rem 0;margin-top:.6rem;font-size:0.75rem}
   /* Fullscreen — masquer "ESC" sur touch */
@@ -419,10 +419,10 @@
   .quality-strip{grid-template-columns:1fr 1fr}
   .quality-item{padding:1.2rem 1.5rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
   .reassurance-strip{grid-template-columns:repeat(2,1fr)!important;padding:1.2rem 1.8rem}
-  .detail-inner{grid-template-columns:1fr}
-  .modal-viz-wrap{height:auto;padding:1.5rem 1rem .8rem}
+  .detail-inner{grid-template-columns:1fr;height:100vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .modal-viz-wrap{height:auto;padding:1.5rem 1rem .8rem;flex-shrink:0}
   .modal-viz-scene{max-width:220px}
-  .detail-info{height:auto;padding:1.8rem 1.5rem}
+  .detail-info{height:auto;padding:1.8rem 1.5rem;padding-bottom:4rem}
   /* Ordre : bouton pleine largeur + lien ROW bien espacé */
   .order-btn{font-size:0.9rem!important;letter-spacing:.2em!important;padding:1.1rem!important}
   .contact-row-link{font-size:0.78rem;padding:.7rem 0}

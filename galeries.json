@@ -353,6 +353,16 @@
       "page": "galerie-rituels-bali-004.html",
       "ordre": 34,
       "visible": false
+    },
+    {
+      "titre": "Portraits Bali 014",
+      "sous_titre": "",
+      "image_cover": "images/portraits-bali-014.jpg",
+      "orientation": "portrait",
+      "slug": "portraits-bali-014",
+      "page": "galerie-portraits-bali-014.html",
+      "ordre": 35,
+      "visible": false
     }
   ]
 }

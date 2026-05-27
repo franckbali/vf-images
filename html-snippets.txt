@@ -3,104 +3,14 @@ CODE HTML À COPIER DANS VOS PAGES
 Remplacez [DESCRIPTION] par le texte alternatif
 ════════════════════════════════════════════════════════════
 
-<!-- faune-bali-001 -->
+<!-- portraits-bali-014 -->
 <picture>
   <source
     type="image/webp"
-    srcset="images/faune-bali-001-small.webp 640w, images/faune-bali-001-medium.webp 1200w"
+    srcset="images/portraits-bali-014-small.webp 640w, images/portraits-bali-014-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/faune-bali-001.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- faune-bali-002 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/faune-bali-002-small.webp 640w, images/faune-bali-002-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/faune-bali-002.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- faune-bali-003 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/faune-bali-003-small.webp 640w, images/faune-bali-003-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/faune-bali-003.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- portraits-bali-013 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/portraits-bali-013-small.webp 640w, images/portraits-bali-013-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/portraits-bali-013.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- rituels-bali-002 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/rituels-bali-002-small.webp 640w, images/rituels-bali-002-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/rituels-bali-002.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- rituels-bali-003 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/rituels-bali-003-small.webp 640w, images/rituels-bali-003-medium.webp 1200w, images/rituels-bali-003-large.webp 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/rituels-bali-003.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1920"
-    height="auto">
-</picture>
-
-<!-- rituels-bali-004 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/rituels-bali-004-small.webp 640w, images/rituels-bali-004-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/rituels-bali-004.jpg"
+    src="images/portraits-bali-014.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"

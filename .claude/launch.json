@@ -4,8 +4,8 @@
     {
       "name": "vf-images",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "."],
-      "port": 4200,
+      "runtimeArgs": ["serve", ".", "-l", "4202"],
+      "port": 4202,
       "autoPort": false
     }
   ]

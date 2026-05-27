@@ -169,7 +169,7 @@ section.cta>*{position:relative}
   section.cta{padding:7rem 1.8rem!important}
   .lightbox-img{max-width:95vw;max-height:80vh}
 }
-@media(max-width:500px){.photo-masonry{column-count:2;column-gap:2px}}
+@media(max-width:500px){.photo-masonry{gap:2px}.photo-col{gap:2px}}
 
 /* ═══ HAMBURGER MOBILE ═══ */
 
@@ -200,7 +200,9 @@ section.cta>*{position:relative}
   section.gallery-preview{padding:6.5rem 0 4rem!important}
   .section-header{padding:0 1.5rem 2.5rem!important}
   section.about-strip,section.cta{padding:4rem 1.8rem}
-  .photo-masonry{column-count:2;column-gap:3px}
+  .photo-masonry{display:flex!important;column-count:unset;gap:3px}
+  .photo-col{flex:1;display:flex;flex-direction:column;gap:3px}
+  .photo-item{margin-bottom:0}
   section.about-strip{grid-template-columns:1fr;gap:2.5rem}
   .about-image::before{top:-10px;left:-10px;right:10px;bottom:10px}
   .cta-title{font-size:clamp(2rem,5vw,3rem)}
@@ -912,23 +914,46 @@ if(hamburger&&navOverlay){
     return stem+'-small.webp 640w, '+stem+'-medium.webp 1200w, '+stem+'-large.webp 1920w';
   }
 
+  function makePhotoHTML(p, idx){
+    var esc = p.legende.replace(/"/g,'&quot;');
+    var escEn = (p.legende_en||p.legende).replace(/"/g,'&quot;');
+    var wAttr = p.w ? ' width="'+p.w+'" height="'+p.h+'"' : '';
+    var h = '<div class="photo-item" onclick="openLightboxAt('+idx+')">';
+    h += '<img src="'+p.fichier+'" srcset="'+makeSrcset(p.fichier)+'"';
+    h += ' sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"';
+    h += wAttr+' alt="'+esc+'" loading="'+(idx < 3 ? 'eager' : 'lazy')+'" decoding="async">';
+    h += '<div class="photo-overlay"><span class="photo-caption" data-fr="'+esc+'" data-en="'+escEn+'">'+esc+'</span></div>';
+    h += '</div>';
+    return h;
+  }
+
   function buildPortfolio(data){
     photos = data.filter(function(p){ return p.visible !== false; });
     var masonry = document.getElementById('photo-masonry');
     if(!masonry) return;
-    var html = '';
-    photos.forEach(function(p, i){
-      var esc = p.legende.replace(/"/g,'&quot;');
-      var escEn = (p.legende_en||p.legende).replace(/"/g,'&quot;');
-      var wAttr = p.w ? ' width="'+p.w+'" height="'+p.h+'"' : '';
-      html += '<div class="photo-item" onclick="openLightboxAt('+i+')">';
-      html += '<img src="'+p.fichier+'" srcset="'+makeSrcset(p.fichier)+'"';
-      html += ' sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"';
-      html += wAttr+' alt="'+esc+'" loading="'+(i < 3 ? 'eager' : 'lazy')+'" decoding="async">';
-      html += '<div class="photo-overlay"><span class="photo-caption" data-fr="'+esc+'" data-en="'+escEn+'">'+esc+'</span></div>';
-      html += '</div>';
-    });
-    masonry.innerHTML = html;
+
+    var isMobile = window.innerWidth <= 768;
+
+    if(isMobile){
+      /* Mobile : 2 colonnes flexbox height-balanced */
+      var col0 = [], col1 = [], h0 = 0, h1 = 0;
+      photos.forEach(function(p){
+        var r = (p.w && p.h) ? p.h / p.w : 1.5;
+        if(h0 <= h1){ col0.push(p); h0 += r; }
+        else         { col1.push(p); h1 += r; }
+      });
+      masonry.innerHTML =
+        '<div class="photo-col">' +
+          col0.map(function(p){ return makePhotoHTML(p, photos.indexOf(p)); }).join('') +
+        '</div>' +
+        '<div class="photo-col">' +
+          col1.map(function(p){ return makePhotoHTML(p, photos.indexOf(p)); }).join('') +
+        '</div>';
+    } else {
+      /* Desktop : liste plate, CSS column-count:3 */
+      masonry.innerHTML = photos.map(function(p, i){ return makePhotoHTML(p, i); }).join('');
+    }
+
     var lang = localStorage.getItem('vf_lang')||'fr';
     if(lang==='en' && window.setLang) window.setLang('en');
   }

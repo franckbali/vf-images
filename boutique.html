@@ -295,7 +295,8 @@
   background:var(--gold);text-shadow:none;
 }
 .detail-paper{font-size:0.80rem;letter-spacing:.12em;color:rgba(245,243,239,.92);line-height:1.6}
-.detail-edition{font-size:0.80rem;letter-spacing:.1em;color:rgba(245,243,239,.92);line-height:1.6;font-style:italic;font-family:'Lora',serif}
+.detail-edition{font-size:0.80rem;letter-spacing:.1em;color:rgba(245,243,239,.55);line-height:1.6;font-style:italic;font-family:'Lora',serif;transition:color .3s}
+.detail-edition.edition-limitee{color:var(--gold);font-style:normal;letter-spacing:.18em;font-family:'Raleway',sans-serif;font-size:0.72rem;text-transform:uppercase}
 
 .detail-price-row{
   display:flex;align-items:baseline;gap:.7rem;
@@ -758,13 +759,13 @@ button:focus:not(:focus-visible) {
         <div class="detail-divider"></div>
 
         <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
-        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)">80×120</button></div>
+        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires" data-edition-label-en="Limited edition · 7 prints">80×120</button></div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
         <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fuji Crystal" data-en="Hahnemühle Photo Rag · Fuji Crystal">Hahnemühle Photo Rag · Fuji Crystal</p>
 
         <p class="detail-label" data-fr="Édition" data-en="Edition">Édition</p>
-        <p class="detail-edition" data-fr="Tirage numéroté · Édition limitée à 30 exemplaires" data-en="Numbered print · Limited edition of 30">Tirage numéroté · Édition limitée à 30 exemplaires</p>
+        <p class="detail-edition" data-fr="Tirage ouvert" data-en="Open edition">Tirage ouvert</p>
 
         <div class="detail-price-row">
           <span class="detail-price-from" data-fr="À partir de" data-en="From">À partir de</span>
@@ -799,13 +800,13 @@ button:focus:not(:focus-visible) {
         <div class="detail-divider"></div>
 
         <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
-        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)">80×120</button></div>
+        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires" data-edition-label-en="Limited edition · 7 prints">80×120</button></div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
         <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fuji Crystal" data-en="Hahnemühle Photo Rag · Fuji Crystal">Hahnemühle Photo Rag · Fuji Crystal</p>
 
         <p class="detail-label" data-fr="Édition" data-en="Edition">Édition</p>
-        <p class="detail-edition" data-fr="Tirage numéroté · Édition limitée à 30 exemplaires" data-en="Numbered print · Limited edition of 30">Tirage numéroté · Édition limitée à 30 exemplaires</p>
+        <p class="detail-edition" data-fr="Tirage ouvert" data-en="Open edition">Tirage ouvert</p>
 
         <div class="detail-price-row">
           <span class="detail-price-from" data-fr="À partir de" data-en="From">À partir de</span>
@@ -840,7 +841,7 @@ button:focus:not(:focus-visible) {
         <div class="detail-divider"></div>
 
         <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
-        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">40×27</button><button class="fmt-option" onclick="selectFormat(this)">60×40</button><button class="fmt-option" onclick="selectFormat(this)">90×60</button><button class="fmt-option" onclick="selectFormat(this)">120×80</button></div>
+        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">40×27</button><button class="fmt-option" onclick="selectFormat(this)">60×40</button><button class="fmt-option" onclick="selectFormat(this)">90×60</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires" data-edition-label-en="Limited edition · 7 prints">120×80</button></div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
         <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fuji Crystal" data-en="Hahnemühle Photo Rag · Fuji Crystal">Hahnemühle Photo Rag · Fuji Crystal</p>
@@ -891,8 +892,7 @@ button:focus:not(:focus-visible) {
         <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fine Art Baryta" data-en="Hahnemühle Photo Rag · Fine Art Baryta">Hahnemühle Photo Rag · Fine Art Baryta</p>
 
         <p class="detail-label" data-fr="Édition" data-en="Edition">Édition</p>
-        <p class="detail-edition" data-fr="Tirage numéroté · Édition limitée" data-en="Numbered print · Limited edition">Tirage numéroté · Édition limitée</p>
-        <p class="detail-edition-badge" style="display:none;margin-top:.4rem;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-family:'Raleway',sans-serif"></p>
+        <p class="detail-edition" data-fr="Tirage ouvert" data-en="Open edition">Tirage ouvert</p>
 
         <div class="detail-price-row">
           <span class="detail-price-from" data-fr="À partir de" data-en="From">À partir de</span>
@@ -938,8 +938,7 @@ button:focus:not(:focus-visible) {
         <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fine Art Baryta" data-en="Hahnemühle Photo Rag · Fine Art Baryta">Hahnemühle Photo Rag · Fine Art Baryta</p>
 
         <p class="detail-label" data-fr="Édition" data-en="Edition">Édition</p>
-        <p class="detail-edition" data-fr="Tirage numéroté · Édition limitée" data-en="Numbered print · Limited edition">Tirage numéroté · Édition limitée</p>
-        <p class="detail-edition-badge" style="display:none;margin-top:.4rem;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-family:'Raleway',sans-serif"></p>
+        <p class="detail-edition" data-fr="Tirage ouvert" data-en="Open edition">Tirage ouvert</p>
 
         <div class="detail-price-row">
           <span class="detail-price-from" data-fr="À partir de" data-en="From">À partir de</span>
@@ -974,13 +973,13 @@ button:focus:not(:focus-visible) {
         <div class="detail-divider"></div>
 
         <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
-        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)">80×120</button></div>
+        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires" data-edition-label-en="Limited edition · 7 prints">80×120</button></div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
         <p class="detail-paper" data-fr="Fine Art Baryta · Fuji Crystal" data-en="Fine Art Baryta · Fuji Crystal">Fine Art Baryta · Fuji Crystal</p>
 
         <p class="detail-label" data-fr="Édition" data-en="Edition">Édition</p>
-        <p class="detail-edition" data-fr="Tirage numéroté · Édition limitée à 25 exemplaires" data-en="Numbered print · Limited edition of 25">Tirage numéroté · Édition limitée à 25 exemplaires</p>
+        <p class="detail-edition" data-fr="Tirage ouvert" data-en="Open edition">Tirage ouvert</p>
 
         <div class="detail-price-row">
           <span class="detail-price-from" data-fr="À partir de" data-en="From">À partir de</span>
@@ -1021,7 +1020,7 @@ button:focus:not(:focus-visible) {
         <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fuji Crystal" data-en="Hahnemühle Photo Rag · Fuji Crystal">Hahnemühle Photo Rag · Fuji Crystal</p>
 
         <p class="detail-label" data-fr="Édition" data-en="Edition">Édition</p>
-        <p class="detail-edition" data-fr="Tirage numéroté · Édition limitée à 30 exemplaires" data-en="Numbered print · Limited edition of 30">Tirage numéroté · Édition limitée à 30 exemplaires</p>
+        <p class="detail-edition" data-fr="Tirage ouvert" data-en="Open edition">Tirage ouvert</p>
 
         <div class="detail-price-row">
           <span class="detail-price-from" data-fr="À partir de" data-en="From">À partir de</span>
@@ -1474,20 +1473,28 @@ function selectFormat(btn){
     orderBtn.href=btn.dataset.stripe;
   }
 
-  // Badge édition limitée spéciale (ex : 70×100 / 7ex)
-  const badge=modal.querySelector('.detail-edition-badge');
-  if(badge){
+  // Texte + style d'édition selon format sélectionné
+  const editionEl=modal.querySelector('.detail-edition');
+  if(editionEl){
     const labelFr=btn.dataset.editionLabelFr;
     const labelEn=btn.dataset.editionLabelEn;
     if(labelFr){
-      badge.style.display='block';
-      badge.setAttribute('data-fr',labelFr);
-      badge.setAttribute('data-en',labelEn||labelFr);
-      badge.textContent=currentLang==='en'?(labelEn||labelFr):labelFr;
+      editionEl.textContent=currentLang==='en'?(labelEn||labelFr):labelFr;
+      editionEl.setAttribute('data-fr',labelFr);
+      editionEl.setAttribute('data-en',labelEn||labelFr);
+      editionEl.classList.add('edition-limitee');
     } else {
-      badge.style.display='none';
+      const openFr='Tirage ouvert';
+      const openEn='Open edition';
+      editionEl.textContent=currentLang==='en'?openEn:openFr;
+      editionEl.setAttribute('data-fr',openFr);
+      editionEl.setAttribute('data-en',openEn);
+      editionEl.classList.remove('edition-limitee');
     }
   }
+  // Badge édition (masqué — info maintenant dans .detail-edition)
+  const badge=modal.querySelector('.detail-edition-badge');
+  if(badge) badge.style.display='none';
 
   // Mise à jour du mockup salon
   const parts=fmt.split('×').map(Number);

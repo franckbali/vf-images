@@ -55,9 +55,9 @@
       "visible": true
     },
     {
-      "fichier": "images/soho-new-york.jpg",
-      "legende": "SoHo · New York",
-      "legende_en": "SoHo · New York",
+      "fichier": "images/faune-bali-001.jpg",
+      "legende": "Faune · Bali",
+      "legende_en": "Wildlife · Bali",
       "visible": true
     },
     {
@@ -70,7 +70,7 @@
       "fichier": "images/rituels-offrandes-bali.jpg",
       "legende": "Rituels & Offrandes · Bali",
       "legende_en": "Rituals & Offerings · Bali",
-      "visible": true
+      "visible": false
     }
   ],
   "apropos": {

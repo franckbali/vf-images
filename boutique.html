@@ -248,7 +248,13 @@
 }
 @media(max-width:900px){
   .viz-expand-btn{bottom:.6rem;right:.6rem}
-  #viz-fs-close{top:1rem;right:1.2rem}
+  #viz-fs-close{top:1rem;right:1.2rem;font-size:.85rem;padding:.7rem}
+  .viz-fs-label{font-size:.6rem;letter-spacing:.18em}
+}
+@media(max-width:480px){
+  /* Fullscreen — scène max 95vw sur petit mobile */
+  .viz-fs-scene{border-radius:2px}
+  #viz-fs-close{top:.7rem;right:.9rem}
 }
 
 /* ── Côté droit : informations ── */
@@ -301,17 +307,20 @@
 
 .order-btn{
   display:flex;align-items:center;justify-content:center;gap:.8rem;
+  width:100%;
   padding:1rem;
   background:rgba(201,169,110,1.0);
   border:1px solid rgba(201,169,110,1.0);
   color:var(--dark);font-size:0.80rem;
   letter-spacing:.32em;text-transform:uppercase;
   text-decoration:none;font-weight:400;
-  transition:background .4s,border-color .4s;
+  -webkit-appearance:none;appearance:none;
+  transition:background .4s,border-color .4s,opacity .3s;
   cursor:pointer;margin-bottom:1rem;
   font-family:'Raleway',sans-serif;
 }
 .order-btn:hover{background:rgba(176,140,74,.9);border-color:rgba(176,140,74,.9)}
+.order-btn:disabled{opacity:.55;cursor:not-allowed;pointer-events:none}
 
 .detail-shipping{
   font-size:0.72rem;letter-spacing:.18em;text-transform:uppercase;
@@ -351,8 +360,12 @@
   /* Detail modale — empilé sur mobile */
   .detail-inner{grid-template-columns:1fr;overflow-y:auto;height:auto}
   .modal-viz-wrap{height:auto;padding:2rem 1.5rem 1rem}
-  .modal-viz-scene{max-width:220px}
+  .modal-viz-scene{max-width:260px}
   .detail-info{height:auto;padding:2rem 1.8rem;overflow-y:visible}
+  /* Lien ROW — zone tactile élargie */
+  .contact-row-link{padding:.75rem 0;margin-top:.6rem;font-size:0.75rem}
+  /* Fullscreen — masquer "ESC" sur touch */
+  #viz-fs-close span{display:none}
 }
 @media(max-width:500px){.prints-grid{grid-template-columns:1fr 1fr}}
 
@@ -408,8 +421,11 @@
   .reassurance-strip{grid-template-columns:repeat(2,1fr)!important;padding:1.2rem 1.8rem}
   .detail-inner{grid-template-columns:1fr}
   .modal-viz-wrap{height:auto;padding:1.5rem 1rem .8rem}
-  .modal-viz-scene{max-width:180px}
+  .modal-viz-scene{max-width:220px}
   .detail-info{height:auto;padding:1.8rem 1.5rem}
+  /* Ordre : bouton pleine largeur + lien ROW bien espacé */
+  .order-btn{font-size:0.9rem!important;letter-spacing:.2em!important;padding:1.1rem!important}
+  .contact-row-link{font-size:0.78rem;padding:.7rem 0}
   .hero{padding:14rem 2rem 4rem}
   .hero-title{font-size:clamp(2rem,7vw,4rem)}
   .section-intro{grid-template-columns:1fr;min-height:auto}

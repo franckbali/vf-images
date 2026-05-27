@@ -283,6 +283,76 @@
       "page": "galerie-rituels-bali-001.html",
       "ordre": 27,
       "visible": false
+    },
+    {
+      "titre": "Faune Bali 001",
+      "sous_titre": "",
+      "image_cover": "images/faune-bali-001.jpg",
+      "orientation": "portrait",
+      "slug": "faune-bali-001",
+      "page": "galerie-faune-bali-001.html",
+      "ordre": 28,
+      "visible": false
+    },
+    {
+      "titre": "Faune Bali 002",
+      "sous_titre": "",
+      "image_cover": "images/faune-bali-002.jpg",
+      "orientation": "portrait",
+      "slug": "faune-bali-002",
+      "page": "galerie-faune-bali-002.html",
+      "ordre": 29,
+      "visible": false
+    },
+    {
+      "titre": "Faune Bali 003",
+      "sous_titre": "",
+      "image_cover": "images/faune-bali-003.jpg",
+      "orientation": "portrait",
+      "slug": "faune-bali-003",
+      "page": "galerie-faune-bali-003.html",
+      "ordre": 30,
+      "visible": false
+    },
+    {
+      "titre": "Portraits Bali 013",
+      "sous_titre": "",
+      "image_cover": "images/portraits-bali-013.jpg",
+      "orientation": "portrait",
+      "slug": "portraits-bali-013",
+      "page": "galerie-portraits-bali-013.html",
+      "ordre": 31,
+      "visible": false
+    },
+    {
+      "titre": "Rituels Bali 002",
+      "sous_titre": "",
+      "image_cover": "images/rituels-bali-002.jpg",
+      "orientation": "portrait",
+      "slug": "rituels-bali-002",
+      "page": "galerie-rituels-bali-002.html",
+      "ordre": 32,
+      "visible": false
+    },
+    {
+      "titre": "Rituels Bali 003",
+      "sous_titre": "",
+      "image_cover": "images/rituels-bali-003.jpg",
+      "orientation": "landscape",
+      "slug": "rituels-bali-003",
+      "page": "galerie-rituels-bali-003.html",
+      "ordre": 33,
+      "visible": false
+    },
+    {
+      "titre": "Rituels Bali 004",
+      "sous_titre": "",
+      "image_cover": "images/rituels-bali-004.jpg",
+      "orientation": "portrait",
+      "slug": "rituels-bali-004",
+      "page": "galerie-rituels-bali-004.html",
+      "ordre": 34,
+      "visible": false
     }
   ]
 }

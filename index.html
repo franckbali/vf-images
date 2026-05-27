@@ -49,8 +49,9 @@
 section.gallery-preview{padding:10rem 4rem;background:var(--dark)}
 .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem}
 
-.photo-masonry{column-count:3;column-gap:5px}
-.photo-item{break-inside:avoid;position:relative;overflow:hidden;background:var(--dark3);margin-bottom:5px}
+.photo-masonry{display:flex;gap:5px;align-items:flex-start}
+.photo-col{flex:1;display:flex;flex-direction:column;gap:5px}
+.photo-item{position:relative;overflow:hidden;background:var(--dark3)}
 .photo-item img{width:100%;height:auto;display:block;transition:transform 1.4s cubic-bezier(0.25,0.46,0.45,0.94),filter 1.2s ease;filter:contrast(1.04) saturate(1.06);will-change:transform}
 .photo-item:hover img{transform:scale(1.04);filter:contrast(1.06) saturate(1.1)}
 /* Action 39 : Split-tone overlay cinématique */
@@ -160,7 +161,8 @@ section.cta>*{position:relative}
   /* Galerie — photos plein bord, sans marge latérale */
   section.gallery-preview{padding:5rem 0!important}
   .section-header{padding:0 1.8rem 3rem!important;margin-bottom:0!important;flex-direction:column!important;align-items:flex-start!important;gap:.8rem!important}
-  .photo-masonry{column-count:2;column-gap:3px;margin:0}
+  .photo-masonry{gap:3px;margin:0}
+  .photo-col{gap:3px}
   /* About — plus d'espace, plus aéré */
   section.about-strip{padding:5rem 1.8rem!important;grid-template-columns:1fr;gap:3.5rem}
   .about-image::before{top:-8px;left:-8px;right:8px;bottom:8px}
@@ -169,7 +171,7 @@ section.cta>*{position:relative}
   section.cta{padding:7rem 1.8rem!important}
   .lightbox-img{max-width:95vw;max-height:80vh}
 }
-@media(max-width:500px){.photo-masonry{column-count:2;column-gap:2px}}
+@media(max-width:500px){.photo-masonry{gap:2px}.photo-col{gap:2px}}
 
 /* ═══ HAMBURGER MOBILE ═══ */
 
@@ -200,7 +202,8 @@ section.cta>*{position:relative}
   section.gallery-preview{padding:6.5rem 0 4rem!important}
   .section-header{padding:0 1.5rem 2.5rem!important}
   section.about-strip,section.cta{padding:4rem 1.8rem}
-  .photo-masonry{column-count:2;column-gap:3px}
+  .photo-masonry{gap:3px}
+  .photo-col{gap:3px}
   section.about-strip{grid-template-columns:1fr;gap:2.5rem}
   .about-image::before{top:-10px;left:-10px;right:10px;bottom:10px}
   .cta-title{font-size:clamp(2rem,5vw,3rem)}
@@ -916,18 +919,39 @@ if(hamburger&&navOverlay){
     photos = data.filter(function(p){ return p.visible !== false; });
     var masonry = document.getElementById('photo-masonry');
     if(!masonry) return;
-    var html = '';
-    photos.forEach(function(p, i){
-      var esc = p.legende.replace(/"/g,'&quot;');
-      var escEn = (p.legende_en||p.legende).replace(/"/g,'&quot;');
-      html += '<div class="photo-item" onclick="openLightboxAt('+i+')">';
-      var wAttr = p.w ? ' width="'+p.w+'" height="'+p.h+'"' : '';
-      html += '<img src="'+p.fichier+'" srcset="'+makeSrcset(p.fichier)+'"';
-      html += ' sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"';
-      html += wAttr+' alt="'+esc+'" loading="'+(i < 3 ? 'eager' : 'lazy')+'" decoding="async">';
-      html += '<div class="photo-overlay"><span class="photo-caption" data-fr="'+esc+'" data-en="'+escEn+'">'+esc+'</span></div>';
-      html += '</div>';
+
+    /* Nombre de colonnes selon viewport */
+    var numCols = window.innerWidth <= 768 ? 2 : 3;
+
+    /* Distribution height-balanced (algorithme glouton) */
+    var cols = [], colH = [];
+    for(var c = 0; c < numCols; c++){ cols.push([]); colH.push(0); }
+    photos.forEach(function(p){
+      var ratio = (p.w && p.h) ? p.h / p.w : 1.5;
+      var min = 0;
+      for(var c = 1; c < numCols; c++){ if(colH[c] < colH[min]) min = c; }
+      cols[min].push(p);
+      colH[min] += ratio;
     });
+
+    var html = '';
+    for(var c = 0; c < numCols; c++){
+      html += '<div class="photo-col">';
+      cols[c].forEach(function(p){
+        var idx = photos.indexOf(p);
+        var esc = p.legende.replace(/"/g,'&quot;');
+        var escEn = (p.legende_en||p.legende).replace(/"/g,'&quot;');
+        var wAttr = p.w ? ' width="'+p.w+'" height="'+p.h+'"' : '';
+        html += '<div class="photo-item" onclick="openLightboxAt('+idx+')">';
+        html += '<img src="'+p.fichier+'" srcset="'+makeSrcset(p.fichier)+'"';
+        html += ' sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"';
+        html += wAttr+' alt="'+esc+'" loading="eager" decoding="async">';
+        html += '<div class="photo-overlay"><span class="photo-caption" data-fr="'+esc+'" data-en="'+escEn+'">'+esc+'</span></div>';
+        html += '</div>';
+      });
+      html += '</div>';
+    }
+
     masonry.innerHTML = html;
     var lang = localStorage.getItem('vf_lang')||'fr';
     if(lang==='en' && window.setLang) window.setLang('en');

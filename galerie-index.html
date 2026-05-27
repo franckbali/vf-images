@@ -761,12 +761,14 @@ if(hamburger&&navOverlay){
         a.href = g.page;
         var titreEn = g.titre_en || g.titre;
         var sousTitreEn = g.sous_titre_en || g.sous_titre;
+        // Dérive le srcset depuis image_cover (stem sans extension ni suffixe -large/-medium/-small)
+        var coverStem = g.image_cover.replace(/\.[^.]+$/, '').replace(/-(large|medium|small)$/, '');
         a.innerHTML =
           '<img' +
           ' src="' + g.image_cover + '"' +
-          ' srcset="images/' + g.slug + '-small.webp 640w,' +
-                   ' images/' + g.slug + '-medium.webp 1200w,' +
-                   ' images/' + g.slug + '-large.webp 1920w"' +
+          ' srcset="' + coverStem + '-small.webp 640w,' +
+                   ' ' + coverStem + '-medium.webp 1200w,' +
+                   ' ' + coverStem + '-large.webp 1920w"' +
           ' sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"' +
           ' alt="' + g.titre + '"' +
           ' loading="' + (i < 2 ? 'eager' : 'lazy') + '"' +

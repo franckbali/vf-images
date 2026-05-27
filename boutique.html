@@ -1366,6 +1366,9 @@ function openDetail(id){
   modal.classList.add('open');
   document.getElementById('modalOverlay').classList.add('active');
   document.body.style.overflow='hidden';
+  // Reset scroll en haut à chaque ouverture
+  const inner=modal.querySelector('.detail-inner');
+  if(inner) inner.scrollTop=0;
   setLang(currentLang);
   // Charger le papier depuis le catalogue si data-photo-id présent
   const photoId = modal.dataset.photoId;

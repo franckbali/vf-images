@@ -363,6 +363,16 @@
       "page": "galerie-portraits-bali-014.html",
       "ordre": 35,
       "visible": false
+    },
+    {
+      "titre": "Sifnos Grece 001",
+      "sous_titre": "",
+      "image_cover": "images/sifnos-grece-001.jpg",
+      "orientation": "landscape",
+      "slug": "sifnos-grece-001",
+      "page": "galerie-sifnos-grece-001.html",
+      "ordre": 36,
+      "visible": false
     }
   ]
 }

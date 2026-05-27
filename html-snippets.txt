@@ -3,17 +3,17 @@ CODE HTML À COPIER DANS VOS PAGES
 Remplacez [DESCRIPTION] par le texte alternatif
 ════════════════════════════════════════════════════════════
 
-<!-- portraits-bali-014 -->
+<!-- sifnos-grece-001 -->
 <picture>
   <source
     type="image/webp"
-    srcset="images/portraits-bali-014-small.webp 640w, images/portraits-bali-014-medium.webp 1200w"
+    srcset="images/sifnos-grece-001-small.webp 640w, images/sifnos-grece-001-medium.webp 1200w, images/sifnos-grece-001-large.webp 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/portraits-bali-014.jpg"
+    src="images/sifnos-grece-001.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
-    width="1200"
+    width="1920"
     height="auto">
 </picture>

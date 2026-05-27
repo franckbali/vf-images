@@ -921,9 +921,10 @@ if(hamburger&&navOverlay){
       var esc = p.legende.replace(/"/g,'&quot;');
       var escEn = (p.legende_en||p.legende).replace(/"/g,'&quot;');
       html += '<div class="photo-item" onclick="openLightboxAt('+i+')">';
+      var wAttr = p.w ? ' width="'+p.w+'" height="'+p.h+'"' : '';
       html += '<img src="'+p.fichier+'" srcset="'+makeSrcset(p.fichier)+'"';
       html += ' sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"';
-      html += ' alt="'+esc+'" loading="'+(i < 3 ? 'eager' : 'lazy')+'" decoding="async">';
+      html += wAttr+' alt="'+esc+'" loading="'+(i < 3 ? 'eager' : 'lazy')+'" decoding="async">';
       html += '<div class="photo-overlay"><span class="photo-caption" data-fr="'+esc+'" data-en="'+escEn+'">'+esc+'</span></div>';
       html += '</div>';
     });
@@ -948,7 +949,7 @@ if(hamburger&&navOverlay){
     section.style.setProperty('--cta-bg', "url('"+cta.fichier+"') center 60%/cover no-repeat");
   }
 
-  fetch('accueil.json')
+  fetch('accueil.json', {cache: 'no-cache'})
     .then(function(r){ return r.json(); })
     .then(function(data){
       if(data.portfolio) buildPortfolio(data.portfolio);

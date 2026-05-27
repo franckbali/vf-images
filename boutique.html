@@ -360,9 +360,10 @@
   /* Detail modale — empilé + scrollable sur mobile */
   .detail-modal{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
   .detail-inner{grid-template-columns:1fr;height:auto;overflow:visible}
-  .modal-viz-wrap{height:auto;padding:2rem 1.5rem 1rem;flex-shrink:0}
-  .modal-viz-scene{max-width:260px}
-  .detail-info{height:auto;padding:2rem 1.8rem 8rem;overflow-y:visible}
+  .modal-viz-wrap{height:auto;padding:1.2rem 1.5rem .8rem;flex-shrink:0}
+  .modal-viz-scene{max-width:180px}
+  .modal-viz-badge{margin-top:.6rem;font-size:.55rem}
+  .detail-info{height:auto;padding:1.5rem 1.8rem 6rem;overflow-y:visible}
   /* Lien ROW — zone tactile élargie */
   .contact-row-link{padding:.75rem 0;margin-top:.6rem;font-size:0.75rem}
   /* Fullscreen — masquer "ESC" sur touch */
@@ -421,9 +422,9 @@
   .quality-item{padding:1.2rem 1.5rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
   .reassurance-strip{grid-template-columns:repeat(2,1fr)!important;padding:1.2rem 1.8rem}
   .detail-inner{grid-template-columns:1fr;height:auto;overflow:visible}
-  .modal-viz-wrap{height:auto;padding:1.5rem 1rem .8rem;flex-shrink:0}
-  .modal-viz-scene{max-width:220px}
-  .detail-info{height:auto;padding:1.8rem 1.5rem 8rem}
+  .modal-viz-wrap{height:auto;padding:1rem .8rem .6rem;flex-shrink:0}
+  .modal-viz-scene{max-width:160px}
+  .detail-info{height:auto;padding:1.5rem 1.5rem 6rem}
   /* Ordre : bouton pleine largeur + lien ROW bien espacé */
   .order-btn{font-size:0.9rem!important;letter-spacing:.2em!important;padding:1.1rem!important}
   .contact-row-link{font-size:0.78rem;padding:.7rem 0}
@@ -1387,8 +1388,11 @@ function openDetail(id){
   // Initialiser le mockup : sélectionner le premier format
   const firstFmt=modal.querySelector('.fmt-option');
   if(firstFmt) selectFormat(firstFmt);
-  // Reset scroll en haut après rendu complet
-  setTimeout(()=>{ modal.scrollTop=0; }, 150);
+  // Sur mobile : scroll vers le bas pour que le bouton commander soit visible
+  setTimeout(()=>{
+    if(window.innerWidth<=900) modal.scrollTop=modal.scrollHeight;
+    else modal.scrollTop=0;
+  }, 160);
 }
 function closeDetail(){
   document.querySelectorAll('.detail-modal.open').forEach(m=>m.classList.remove('open'));

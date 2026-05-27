@@ -1366,9 +1366,6 @@ function openDetail(id){
   modal.classList.add('open');
   document.getElementById('modalOverlay').classList.add('active');
   document.body.style.overflow='hidden';
-  // Reset scroll en haut à chaque ouverture
-  const inner=modal.querySelector('.detail-inner');
-  if(inner) inner.scrollTop=0;
   setLang(currentLang);
   // Charger le papier depuis le catalogue si data-photo-id présent
   const photoId = modal.dataset.photoId;
@@ -1389,6 +1386,11 @@ function openDetail(id){
   // Initialiser le mockup : sélectionner le premier format
   const firstFmt=modal.querySelector('.fmt-option');
   if(firstFmt) selectFormat(firstFmt);
+  // Reset scroll après que tout soit rendu (selectFormat + updateModalViz ont un timeout de 80ms)
+  setTimeout(()=>{
+    const inner=modal.querySelector('.detail-inner');
+    if(inner) inner.scrollTop=0;
+  }, 150);
 }
 function closeDetail(){
   document.querySelectorAll('.detail-modal.open').forEach(m=>m.classList.remove('open'));

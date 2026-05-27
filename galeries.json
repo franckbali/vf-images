@@ -253,6 +253,36 @@
       "page": "galerie-portrait-bali-369.html",
       "ordre": 24,
       "visible": false
+    },
+    {
+      "titre": "Groupe Bali 001",
+      "sous_titre": "",
+      "image_cover": "images/groupe-bali-001.jpg",
+      "orientation": "landscape",
+      "slug": "groupe-bali-001",
+      "page": "galerie-groupe-bali-001.html",
+      "ordre": 25,
+      "visible": false
+    },
+    {
+      "titre": "Paysages Bali 001",
+      "sous_titre": "",
+      "image_cover": "images/paysages-bali-001.jpg",
+      "orientation": "portrait",
+      "slug": "paysages-bali-001",
+      "page": "galerie-paysages-bali-001.html",
+      "ordre": 26,
+      "visible": false
+    },
+    {
+      "titre": "Rituels Bali 001",
+      "sous_titre": "",
+      "image_cover": "images/rituels-bali-001.jpg",
+      "orientation": "portrait",
+      "slug": "rituels-bali-001",
+      "page": "galerie-rituels-bali-001.html",
+      "ordre": 27,
+      "visible": false
     }
   ]
 }

@@ -3,29 +3,14 @@ CODE HTML À COPIER DANS VOS PAGES
 Remplacez [DESCRIPTION] par le texte alternatif
 ════════════════════════════════════════════════════════════
 
-<!-- bridge-newyork-001 -->
+<!-- groupe-bali-001 -->
 <picture>
   <source
     type="image/webp"
-    srcset="images/bridge-newyork-001-small.webp 640w, images/bridge-newyork-001-medium.webp 1200w"
+    srcset="images/groupe-bali-001-small.webp 640w, images/groupe-bali-001-medium.webp 1200w, images/groupe-bali-001-large.webp 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/bridge-newyork-001.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- bridge-newyork-002 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/bridge-newyork-002-small.webp 640w, images/bridge-newyork-002-medium.webp 1200w, images/bridge-newyork-002-large.webp 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/bridge-newyork-002.jpg"
+    src="images/groupe-bali-001.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -33,14 +18,14 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- lama-bolivie-001 -->
+<!-- paysages-bali-001 -->
 <picture>
   <source
     type="image/webp"
-    srcset="images/lama-bolivie-001-small.webp 640w, images/lama-bolivie-001-medium.webp 1200w"
+    srcset="images/paysages-bali-001-small.webp 640w, images/paysages-bali-001-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/lama-bolivie-001.jpg"
+    src="images/paysages-bali-001.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -48,17 +33,17 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- portrait-bali-369 -->
+<!-- rituels-bali-001 -->
 <picture>
   <source
     type="image/webp"
-    srcset="images/portrait-bali-369-small.webp 640w, images/portrait-bali-369-medium.webp 1200w, images/portrait-bali-369-large.webp 1920w"
+    srcset="images/rituels-bali-001-small.webp 640w, images/rituels-bali-001-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/portrait-bali-369.jpg"
+    src="images/rituels-bali-001.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
-    width="1920"
+    width="1200"
     height="auto">
 </picture>

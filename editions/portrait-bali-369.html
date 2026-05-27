@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portrait · Bali — Édition Limitée · VF Images</title>
+  <meta name="description" content="Tirage Fine Art en édition limitée à 7 exemplaires. Hahnemühle Photo Rag · Fine Art Baryta · 100×70 cm.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:    #0a0a0a;
+      --gold:    #c9a96e;
+      --cream:   #f5f3ef;
+      --dim:     rgba(245,243,239,.45);
+      --dim2:    rgba(245,243,239,.18);
+      --gold-bg: rgba(201,169,110,.06);
+      --gold-bd: rgba(201,169,110,.22);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.8rem 3rem;
+      border-bottom: 1px solid var(--gold-bd);
+    }
+    .header-logo {
+      font-size: .7rem;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 400;
+    }
+    .lang-btn {
+      font-size: .65rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--dim);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Raleway', sans-serif;
+      transition: color .3s;
+      padding: .4rem .6rem;
+    }
+    .lang-btn:hover { color: var(--cream); }
+
+    /* ── Layout ── */
+    .edition-wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem 7rem;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    /* ── Photo ── */
+    .photo-col { position: sticky; top: 2.5rem; }
+    .edition-photo {
+      width: 100%;
+      display: block;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+    .photo-caption {
+      font-size: .6rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-top: .9rem;
+      text-align: right;
+    }
+
+    /* ── Info col ── */
+    .info-col { padding-top: .5rem; }
+
+    .edition-location {
+      font-size: .62rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: .7rem;
+    }
+    .edition-title {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 2.1rem;
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--cream);
+      margin-bottom: 2rem;
+    }
+    .gold-line {
+      width: 2.5rem;
+      height: 1px;
+      background: var(--gold);
+      opacity: .5;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Counter block ── */
+    .counter-block {
+      background: var(--gold-bg);
+      border: 1px solid var(--gold-bd);
+      padding: 2.2rem 2rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    .counter-eyebrow {
+      font-size: .58rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 1.1rem;
+    }
+    .counter-number {
+      font-size: 3.2rem;
+      font-weight: 300;
+      letter-spacing: .08em;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: .5rem;
+      transition: color .5s;
+    }
+    .counter-number.soldout { color: var(--dim2); }
+    .counter-sub {
+      font-size: .62rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 1.4rem;
+    }
+    /* dots — 7 cercles, dorés = vendus */
+    .counter-dots {
+      display: flex;
+      gap: .45rem;
+      justify-content: center;
+    }
+    .dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,.4);
+      background: rgba(201,169,110,.12);
+      transition: background .4s;
+    }
+    .dot.sold {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* ── Detail rows ── */
+    .detail-rows { margin-bottom: 2rem; }
+    .d-row { margin-bottom: 1.4rem; }
+    .d-label {
+      font-size: .58rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: .28rem;
+    }
+    .d-value {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: .9rem;
+      color: var(--cream);
+      line-height: 1.5;
+    }
+
+    /* ── Authenticity note ── */
+    .auth-note {
+      font-size: .65rem;
+      letter-spacing: .12em;
+      color: var(--dim);
+      line-height: 1.7;
+      border-top: 1px solid var(--dim2);
+      padding-top: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .62rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-decoration: none;
+      border-bottom: 1px solid var(--dim2);
+      padding-bottom: .15rem;
+      transition: color .3s, border-color .3s;
+    }
+    .back-link:hover { color: var(--cream); border-color: rgba(245,243,239,.3); }
+
+    /* ── Footer ── */
+    .page-footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--gold-bd);
+      font-size: .58rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    /* ── Mobile ── */
+    @media(max-width: 720px) {
+      .edition-wrap { grid-template-columns: 1fr; gap: 2.5rem; padding: 2.5rem 1.5rem 4rem; }
+      .photo-col { position: static; }
+      .page-header { padding: 1.4rem 1.5rem; }
+      .edition-title { font-size: 1.6rem; }
+      .counter-number { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a href="/index.html" class="header-logo">VF Images</a>
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+  </header>
+
+  <main class="edition-wrap">
+
+    <div class="photo-col">
+      <img src="/images/portrait-bali-369.jpg" class="edition-photo" alt="Portrait · Bali — VF Images" draggable="false">
+      <p class="photo-caption">© Franck Vinel</p>
+    </div>
+
+    <div class="info-col">
+      <p class="edition-location" id="el-location">Ubud · Bali</p>
+      <h1 class="edition-title" id="el-title">Portrait · Bali</h1>
+      <div class="gold-line"></div>
+
+      <div class="counter-block">
+        <p class="counter-eyebrow" id="el-eyebrow">Édition Limitée · 100 × 70 cm</p>
+        <div class="counter-number" id="el-number">…</div>
+        <p class="counter-sub" id="el-sub">exemplaires disponibles</p>
+        <div class="counter-dots" id="el-dots"></div>
+      </div>
+
+      <div class="detail-rows">
+        <div class="d-row">
+          <p class="d-label" id="el-lbl-paper">Papier</p>
+          <p class="d-value" id="el-paper">Hahnemühle Photo Rag · Fine Art Baryta</p>
+        </div>
+        <div class="d-row">
+          <p class="d-label" id="el-lbl-format">Format</p>
+          <p class="d-value">100 × 70 cm</p>
+        </div>
+        <div class="d-row">
+          <p class="d-label" id="el-lbl-artist">Photographe</p>
+          <p class="d-value">Franck Vinel</p>
+        </div>
+      </div>
+
+      <p class="auth-note" id="el-auth">
+        Chaque exemplaire est accompagné d'un certificat d'authenticité numéroté et signé par l'artiste.
+      </p>
+
+      <a href="/boutique.html" class="back-link" id="el-back">← Retour à la boutique</a>
+    </div>
+
+  </main>
+
+  <footer class="page-footer">
+    <span id="el-footer">© VF Images · Tous droits réservés</span>
+  </footer>
+
+  <script>
+    const PHOTO_ID = 'portrait-bali-369';
+
+    const T = {
+      fr: {
+        eyebrow:    'Édition Limitée · 100 × 70 cm',
+        sub:        'exemplaires disponibles',
+        subSoldOut: 'Édition épuisée',
+        lblPaper:   'Papier',
+        lblFormat:  'Format',
+        lblArtist:  'Photographe',
+        auth:       'Chaque exemplaire est accompagné d\'un certificat d\'authenticité numéroté et signé par l\'artiste.',
+        back:       '← Retour à la boutique',
+        footer:     '© VF Images · Tous droits réservés',
+        langToggle: 'EN',
+      },
+      en: {
+        eyebrow:    'Limited Edition · 100 × 70 cm',
+        sub:        'prints available',
+        subSoldOut: 'Edition sold out',
+        lblPaper:   'Paper',
+        lblFormat:  'Size',
+        lblArtist:  'Photographer',
+        auth:       'Each print comes with a hand-numbered and signed certificate of authenticity.',
+        back:       '← Back to shop',
+        footer:     '© VF Images · All rights reserved',
+        langToggle: 'FR',
+      }
+    };
+
+    let lang = 'fr';
+    let editionData = null;
+
+    function applyLang(l) {
+      const t = T[l];
+      document.getElementById('el-eyebrow').textContent  = t.eyebrow;
+      document.getElementById('el-lbl-paper').textContent = t.lblPaper;
+      document.getElementById('el-lbl-format').textContent = t.lblFormat;
+      document.getElementById('el-lbl-artist').textContent = t.lblArtist;
+      document.getElementById('el-auth').textContent     = t.auth;
+      document.getElementById('el-back').textContent     = t.back;
+      document.getElementById('el-footer').textContent   = t.footer;
+      document.getElementById('langBtn').textContent     = t.langToggle;
+      if (editionData) {
+        const e = editionData.editions[0];
+        document.getElementById('el-location').textContent = editionData['location_' + l] || editionData.location_fr;
+        document.getElementById('el-title').textContent    = editionData['title_' + l]    || editionData.title_fr;
+        document.getElementById('el-paper').textContent    = editionData['paper_' + l]    || editionData.paper_fr;
+        renderCounter(e, l);
+      }
+    }
+
+    function toggleLang() {
+      lang = lang === 'fr' ? 'en' : 'fr';
+      applyLang(lang);
+    }
+
+    function renderCounter(e, l) {
+      const numEl = document.getElementById('el-number');
+      const subEl = document.getElementById('el-sub');
+      numEl.textContent = e.available;
+      if (e.available === 0) {
+        numEl.classList.add('soldout');
+        subEl.textContent = T[l].subSoldOut;
+      } else {
+        numEl.classList.remove('soldout');
+        subEl.textContent = T[l].sub;
+      }
+      // dots
+      const dotsEl = document.getElementById('el-dots');
+      dotsEl.innerHTML = '';
+      for (let i = 0; i < e.total; i++) {
+        const d = document.createElement('div');
+        d.className = 'dot' + (i < e.sold ? ' sold' : '');
+        dotsEl.appendChild(d);
+      }
+    }
+
+    // Fetch live data
+    fetch('/api/edition-status?id=' + PHOTO_ID)
+      .then(r => r.json())
+      .then(data => {
+        editionData = data;
+        applyLang(lang);
+      })
+      .catch(() => {
+        // Fallback statique si l'API est indisponible
+        document.getElementById('el-number').textContent = '7';
+        const dotsEl = document.getElementById('el-dots');
+        for (let i = 0; i < 7; i++) {
+          const d = document.createElement('div');
+          d.className = 'dot';
+          dotsEl.appendChild(d);
+        }
+      });
+
+    applyLang(lang);
+  </script>
+
+</body>
+</html>

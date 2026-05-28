@@ -378,18 +378,22 @@
 
 /* Réassurance acheteur */
 .reassurance-strip{
-  display:grid;grid-template-columns:repeat(2,1fr);
+  display:flex;justify-content:center;
   border-top:1px solid rgba(255,255,255,.04);
   border-bottom:1px solid rgba(255,255,255,.04);
-  padding:1.8rem 4rem;
-  gap:1rem;
+  padding:0;
 }
-.reassurance-item{display:flex;align-items:center;gap:.8rem}
+.reassurance-item{
+  display:flex;align-items:center;gap:1.2rem;
+  padding:2.2rem 5rem;
+  border-right:1px solid rgba(255,255,255,.04);
+}
+.reassurance-item:last-child{border-right:none}
 .reassurance-icon{color:rgba(201,169,110,1.0);flex-shrink:0}
-.reassurance-text strong{display:block;font-size:0.75rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.2rem}
-.reassurance-text span{font-size:0.75rem;letter-spacing:.1em;color:rgba(245,243,239,.92)}
-@media(max-width:900px){.reassurance-strip{grid-template-columns:repeat(2,1fr);padding:1.5rem 2rem}}
-@media(max-width:500px){.reassurance-strip{grid-template-columns:1fr}}
+.reassurance-text strong{display:block;font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.2rem}
+.reassurance-text span{font-size:0.85rem;letter-spacing:.1em;color:rgba(245,243,239,.92);font-weight:300}
+@media(max-width:900px){.reassurance-strip{flex-direction:column;align-items:stretch}.reassurance-item{padding:1.5rem 2rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}.reassurance-item:last-child{border-bottom:none}}
+@media(max-width:500px){.reassurance-item{padding:1.2rem 1.5rem}}
 
 /* ═══════════════════════════════════════
    RESPONSIVE — Tablette & Mobile complet

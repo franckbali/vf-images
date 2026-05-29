@@ -160,22 +160,25 @@
 .lightbox-prev{left:1rem}
 .lightbox-next{right:1rem}
 
-/* DUO — deux portraits côte à côte à proportions naturelles */
-.block.duo{display:flex;gap:4px;width:100vw;align-items:flex-start}
-.block.duo .frame{flex:1;overflow:hidden;position:relative;cursor:pointer}
-.block.duo .frame img{width:100%;height:auto;display:block;filter:contrast(1.04) saturate(1.06);transition:filter .8s ease}
-.block.duo .frame.hovered img{filter:contrast(1.06) saturate(1.1)}
+/* PHOTO FORMAT NATUREL — pas de crop, height:auto */
+.block.nat{display:flex;justify-content:center;width:100vw}
+.block.nat .frame-nat{overflow:hidden;position:relative;cursor:pointer}
+.block.nat .frame-nat img{width:100%;height:auto;display:block;filter:contrast(1.04) saturate(1.06);transition:filter .8s ease}
+.block.nat .frame-nat.hovered img{filter:contrast(1.06) saturate(1.1)}
+/* Taille portrait : variable selon importance éditoriale */
+.block.nat.lg .frame-nat{width:min(52vw,700px)}
+.block.nat.md .frame-nat{width:min(40vw,540px)}
+/* Paysage : pleine largeur */
+.block.nat.full .frame-nat{width:100vw}
 
 @media(max-width:768px){
   nav{padding:1.5rem 2rem}
-  .frame.centered-sm{width:78vw;aspect-ratio:2/3;margin:0 auto}
-  .frame.offset-left,.frame.offset-right{width:88vw;aspect-ratio:3/2;margin:0 auto}
   .gallery-intro{padding:0 2rem 5vh}
   .gap{height:12vh}
   .photo-desc{padding:1.5rem 1.5rem}
   .desc-text{font-size:.75rem}
-  .block.duo{flex-direction:column;gap:3px}
-  .block.duo .frame{width:100%}
+  .block.nat.lg .frame-nat,.block.nat.md .frame-nat{width:86vw}
+  .block.nat.full .frame-nat{width:100vw}
 }
 
 .panel-trigger{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;align-items:center;gap:.8rem;padding:1.4rem 1rem;cursor:none;transition:opacity .5s ease;background:rgba(10,10,10,.75);border-left:1px solid rgba(201,169,110,.6);backdrop-filter:blur(8px)}
@@ -412,84 +415,88 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
 <!-- SÉQUENCE -->
 
-<div class="block fullscreen reveal" onclick="openLightbox(this)"
-  data-title="Offrandes · Bali"
-  data-desc="Les canang sari, posés à l'aube comme une conversation silencieuse avec les dieux. Fleurs, encens, prière — l'île commence sa journée ainsi."
-  data-desc-en="Canang sari, placed at dawn like a silent conversation with the gods. Flowers, incense, prayer — this is how the island begins its day.">
-  <img width="1518" height="2000"
-    src="images/offrandes-bali-002.jpg"
-    srcset="images/offrandes-bali-002-small.webp 640w, images/offrandes-bali-002-medium.webp 1200w, images/offrandes-bali-002-large.webp 1920w"
-    sizes="100vw"
-    alt="Offrandes · Bali"
-    loading="eager"
-    decoding="async">
+<!-- 1. Offrandes — portrait grand format -->
+<div class="block nat lg reveal">
+  <div class="frame-nat" onclick="openLightbox(this)"
+    data-title="Offrandes · Bali"
+    data-desc="Les canang sari, posés à l'aube comme une conversation silencieuse avec les dieux. Fleurs, encens, prière — l'île commence sa journée ainsi."
+    data-desc-en="Canang sari, placed at dawn like a silent conversation with the gods. Flowers, incense, prayer — this is how the island begins its day.">
+    <img width="1518" height="2000"
+      src="images/offrandes-bali-002.jpg"
+      srcset="images/offrandes-bali-002-small.webp 640w, images/offrandes-bali-002-medium.webp 1200w, images/offrandes-bali-002-large.webp 1920w"
+      sizes="(max-width:768px) 86vw, 52vw"
+      alt="Offrandes · Bali"
+      loading="eager"
+      decoding="async">
+  </div>
 </div>
 
 <div class="gap"></div>
 
-<div class="block wide reveal" onclick="openLightbox(this)"
-  data-title="Rituels · Bali"
-  data-desc="La cérémonie n'appartient pas au temps ordinaire. Elle en est l'interruption sacrée — le moment où l'invisible se rend présent."
-  data-desc-en="The ceremony does not belong to ordinary time. It is its sacred interruption — the moment when the invisible makes itself present.">
-  <img width="1920" height="1279"
-    src="images/rituels-bali-003.jpg"
-    srcset="images/rituels-bali-003-small.webp 640w, images/rituels-bali-003-medium.webp 1200w, images/rituels-bali-003-large.webp 1920w"
-    sizes="100vw"
-    alt="Rituels · Bali"
-    loading="eager"
-    decoding="async">
+<!-- 2. Rituels-003 — paysage pleine largeur -->
+<div class="block nat full reveal">
+  <div class="frame-nat" onclick="openLightbox(this)"
+    data-title="Rituels · Bali"
+    data-desc="La cérémonie n'appartient pas au temps ordinaire. Elle en est l'interruption sacrée — le moment où l'invisible se rend présent."
+    data-desc-en="The ceremony does not belong to ordinary time. It is its sacred interruption — the moment when the invisible makes itself present.">
+    <img width="1920" height="1279"
+      src="images/rituels-bali-003.jpg"
+      srcset="images/rituels-bali-003-small.webp 640w, images/rituels-bali-003-medium.webp 1200w, images/rituels-bali-003-large.webp 1920w"
+      sizes="100vw"
+      alt="Rituels · Bali"
+      loading="eager"
+      decoding="async">
+  </div>
 </div>
 
 <div class="gap"></div>
 
-<div class="block duo reveal">
-  <div class="frame" onclick="openLightbox(this)"
+<!-- 3. Rituels-002 — portrait moyen -->
+<div class="block nat md reveal">
+  <div class="frame-nat" onclick="openLightbox(this)"
     data-title="Rituels · Bali"
     data-desc="Chaque geste, chaque voile, chaque fleur porte une intention que l'œil seul ne suffit pas à saisir. Il faut rester, attendre, et voir."
     data-desc-en="Every gesture, every veil, every flower carries an intention the eye alone cannot grasp. One must stay, wait, and truly see.">
     <img width="1333" height="2000"
       src="images/rituels-bali-002.jpg"
       srcset="images/rituels-bali-002-small.webp 640w, images/rituels-bali-002-medium.webp 1200w, images/rituels-bali-002-large.webp 1920w"
-      sizes="(max-width:768px) 100vw, 50vw"
+      sizes="(max-width:768px) 86vw, 40vw"
       alt="Rituels · Bali"
       loading="eager"
       decoding="async">
-    <div class="photo-desc">
-      <p class="desc-title">Rituels · Bali</p>
-      <span class="desc-line"></span>
-      <p class="desc-text">Chaque geste, chaque voile, chaque fleur porte une intention que l'œil seul ne suffit pas à saisir.</p>
-    </div>
   </div>
-  <div class="frame" onclick="openLightbox(this)"
+</div>
+
+<div class="gap"></div>
+
+<!-- 4. Rituels-001 — portrait grand format -->
+<div class="block nat lg reveal">
+  <div class="frame-nat" onclick="openLightbox(this)"
     data-title="Rituels · Bali"
     data-desc="La dévotion s'exprime dans le détail — les mains jointes, l'encens qui monte, la lumière filtrée par les arbres sacrés."
     data-desc-en="Devotion expressed in detail — clasped hands, rising incense, light filtered through sacred trees.">
     <img width="1333" height="2000"
       src="images/rituels-bali-001.jpg"
       srcset="images/rituels-bali-001-small.webp 640w, images/rituels-bali-001-medium.webp 1200w, images/rituels-bali-001-large.webp 1920w"
-      sizes="(max-width:768px) 100vw, 50vw"
+      sizes="(max-width:768px) 86vw, 52vw"
       alt="Rituels · Bali"
       loading="eager"
       decoding="async">
-    <div class="photo-desc">
-      <p class="desc-title">Rituels · Bali</p>
-      <span class="desc-line"></span>
-      <p class="desc-text">La dévotion s'exprime dans le détail — les mains jointes, l'encens qui monte, la lumière filtrée par les arbres sacrés.</p>
-    </div>
   </div>
 </div>
 
 <div class="gap"></div>
 
-<div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)"
+<!-- 5. Temple-004 — portrait moyen -->
+<div class="block nat md reveal">
+  <div class="frame-nat" onclick="openLightbox(this)"
     data-title="Temple · Bali"
     data-desc="Le temple comme passage entre deux mondes. La pierre noire de mousse, l'air chargé de prières anciennes et de fumée d'encens."
     data-desc-en="The temple as passage between two worlds. Stone darkened with moss, the air heavy with ancient prayers and incense smoke.">
     <img width="1333" height="2000"
       src="images/temple-bali-004.jpg"
       srcset="images/temple-bali-004-small.webp 640w, images/temple-bali-004-medium.webp 1200w, images/temple-bali-004-large.webp 1920w"
-      sizes="(max-width:900px) 100vw, 38vw"
+      sizes="(max-width:768px) 86vw, 40vw"
       alt="Temple · Bali"
       loading="eager"
       decoding="async">
@@ -498,17 +505,20 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
 <div class="gap"></div>
 
-<div class="block fullscreen reveal" onclick="openLightbox(this)"
-  data-title="Temple · Bali"
-  data-desc="Bali sacré — là où chaque porte est un seuil, chaque statue une présence, chaque fleur une offrande renouvelée à l'infini."
-  data-desc-en="Sacred Bali — where every door is a threshold, every statue a presence, every flower an offering renewed endlessly.">
-  <img width="1354" height="2000"
-    src="images/temple-bali-002.jpg"
-    srcset="images/temple-bali-002-small.webp 640w, images/temple-bali-002-medium.webp 1200w, images/temple-bali-002-large.webp 1920w"
-    sizes="100vw"
-    alt="Temple · Bali"
-    loading="eager"
-    decoding="async">
+<!-- 6. Temple-002 — portrait grand format, fermeture -->
+<div class="block nat lg reveal">
+  <div class="frame-nat" onclick="openLightbox(this)"
+    data-title="Temple · Bali"
+    data-desc="Bali sacré — là où chaque porte est un seuil, chaque statue une présence, chaque fleur une offrande renouvelée à l'infini."
+    data-desc-en="Sacred Bali — where every door is a threshold, every statue a presence, every flower an offering renewed endlessly.">
+    <img width="1354" height="2000"
+      src="images/temple-bali-002.jpg"
+      srcset="images/temple-bali-002-small.webp 640w, images/temple-bali-002-medium.webp 1200w, images/temple-bali-002-large.webp 1920w"
+      sizes="(max-width:768px) 86vw, 52vw"
+      alt="Temple · Bali"
+      loading="eager"
+      decoding="async">
+  </div>
 </div>
 
 <div class="gap"></div>
@@ -557,13 +567,13 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.visible)').forEach(el=>el
   var _initLang=localStorage.getItem('vf_lang')||'fr';
   if(_initLang==='en'&&window.setLang) window.setLang('en');
 
-  document.querySelectorAll('.block[onclick],.frame[onclick]').forEach(function(el){
+  document.querySelectorAll('.block[onclick],.frame[onclick],.frame-nat[onclick]').forEach(function(el){
     el.addEventListener('mouseenter',function(){ el.classList.add('hovered'); });
     el.addEventListener('mouseleave',function(){ el.classList.remove('hovered'); });
   });
 
   var tStart=0,tMoved=false;
-  document.querySelectorAll('.block[onclick],.frame[onclick]').forEach(function(el){
+  document.querySelectorAll('.block[onclick],.frame[onclick],.frame-nat[onclick]').forEach(function(el){
     el.addEventListener('touchstart',function(e){
       tStart=Date.now();tMoved=false;
       document.querySelectorAll('.touched').forEach(function(t){ t.classList.remove('touched'); });
@@ -579,7 +589,7 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.visible)').forEach(el=>el
     document.querySelectorAll('.touched').forEach(function(t){ t.classList.remove('touched'); });
   },{passive:true});
   document.addEventListener('touchstart',function(e){
-    if(!e.target.closest('.block[onclick],.frame[onclick]'))
+    if(!e.target.closest('.block[onclick],.frame[onclick],.frame-nat[onclick]'))
       document.querySelectorAll('.touched').forEach(function(t){ t.classList.remove('touched'); });
   },{passive:true});
 })();
@@ -593,7 +603,7 @@ const lbInner=document.getElementById('lb-inner');
 let currentIndex=0;
 let lbFront=lbImgA,lbBack=lbImgB;
 let isTransitioning=false;
-const allClickable=()=>[...document.querySelectorAll('.block[onclick],.frame[onclick]')];
+const allClickable=()=>[...document.querySelectorAll('.block[onclick],.frame[onclick],.frame-nat[onclick]')];
 
 function setCaption(el){
   var useLang=localStorage.getItem('vf_lang')||'fr';

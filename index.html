@@ -914,14 +914,14 @@ if(hamburger&&navOverlay){
     return stem+'-small.webp 640w, '+stem+'-medium.webp 1200w, '+stem+'-large.webp 1920w';
   }
 
-  function makePhotoHTML(p, idx){
+  function makePhotoHTML(p, idx, eager){
     var esc = p.legende.replace(/"/g,'&quot;');
     var escEn = (p.legende_en||p.legende).replace(/"/g,'&quot;');
     var wAttr = p.w ? ' width="'+p.w+'" height="'+p.h+'"' : '';
     var h = '<div class="photo-item" onclick="openLightboxAt('+idx+')">';
     h += '<img src="'+p.fichier+'" srcset="'+makeSrcset(p.fichier)+'"';
     h += ' sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"';
-    h += wAttr+' alt="'+esc+'" loading="'+(idx < 3 ? 'eager' : 'lazy')+'" decoding="async">';
+    h += wAttr+' alt="'+esc+'" loading="'+(eager || idx < 3 ? 'eager' : 'lazy')+'" decoding="async">';
     h += '<div class="photo-overlay"><span class="photo-caption" data-fr="'+esc+'" data-en="'+escEn+'">'+esc+'</span></div>';
     h += '</div>';
     return h;
@@ -944,10 +944,10 @@ if(hamburger&&navOverlay){
       });
       masonry.innerHTML =
         '<div class="photo-col">' +
-          col0.map(function(p){ return makePhotoHTML(p, photos.indexOf(p)); }).join('') +
+          col0.map(function(p){ return makePhotoHTML(p, photos.indexOf(p), true); }).join('') +
         '</div>' +
         '<div class="photo-col">' +
-          col1.map(function(p){ return makePhotoHTML(p, photos.indexOf(p)); }).join('') +
+          col1.map(function(p){ return makePhotoHTML(p, photos.indexOf(p), true); }).join('') +
         '</div>';
     } else {
       /* Desktop : liste plate, CSS column-count:3 */

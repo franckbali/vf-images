@@ -15,9 +15,9 @@
       "visible": true
     },
     {
-      "fichier": "images/rituels-bali-001.jpg",
-      "legende": "Rituels · Bali",
-      "legende_en": "Rituals · Bali",
+      "fichier": "images/athenes-grece-002.jpg",
+      "legende": "Athènes · Grèce",
+      "legende_en": "Athens · Greece",
       "w": 1333, "h": 2000,
       "visible": true
     },
@@ -36,10 +36,10 @@
       "visible": true
     },
     {
-      "fichier": "images/ceremonies-sur-la-plage-bali.jpg",
-      "legende": "Cérémonies sur la plage · Bali",
-      "legende_en": "Beach Ceremonies · Bali",
-      "w": 2000, "h": 1333,
+      "fichier": "images/street-kuala-lumpur-001.jpg",
+      "legende": "Street · Kuala Lumpur",
+      "legende_en": "Street · Kuala Lumpur",
+      "w": 1920, "h": 1279,
       "visible": true
     },
     {
@@ -71,9 +71,9 @@
       "visible": true
     },
     {
-      "fichier": "images/groupe-bali-001.jpg",
-      "legende": "L'âme de Bali",
-      "legende_en": "The Soul of Bali",
+      "fichier": "images/ait-ben-haddou-maroc-001.jpg",
+      "legende": "Aït Benhaddou · Maroc",
+      "legende_en": "Aït Benhaddou · Morocco",
       "w": 1920, "h": 1279,
       "visible": true
     },

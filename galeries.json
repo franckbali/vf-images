@@ -493,6 +493,16 @@
       "page": "galerie-athenes-grece-002.html",
       "ordre": 48,
       "visible": false
+    },
+    {
+      "titre": "Offrandes Bali 002",
+      "sous_titre": "",
+      "image_cover": "images/offrandes-bali-002.jpg",
+      "orientation": "portrait",
+      "slug": "offrandes-bali-002",
+      "page": "galerie-offrandes-bali-002.html",
+      "ordre": 49,
+      "visible": false
     }
   ]
 }

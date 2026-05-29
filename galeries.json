@@ -483,6 +483,16 @@
       "page": "galerie-street-kuala-lumpur-001.html",
       "ordre": 47,
       "visible": false
+    },
+    {
+      "titre": "Athenes Grece 002",
+      "sous_titre": "",
+      "image_cover": "images/athenes-grece-002.jpg",
+      "orientation": "portrait",
+      "slug": "athenes-grece-002",
+      "page": "galerie-athenes-grece-002.html",
+      "ordre": 48,
+      "visible": false
     }
   ]
 }

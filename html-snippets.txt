@@ -3,77 +3,17 @@ CODE HTML À COPIER DANS VOS PAGES
 Remplacez [DESCRIPTION] par le texte alternatif
 ════════════════════════════════════════════════════════════
 
-<!-- ait-ben-haddou-maroc-001 -->
+<!-- athenes-grece-002 -->
 <picture>
   <source
     type="image/webp"
-    srcset="images/ait-ben-haddou-maroc-001-small.webp 640w, images/ait-ben-haddou-maroc-001-medium.webp 1200w, images/ait-ben-haddou-maroc-001-large.webp 1920w"
+    srcset="images/athenes-grece-002-small.webp 640w, images/athenes-grece-002-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/ait-ben-haddou-maroc-001.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1920"
-    height="auto">
-</picture>
-
-<!-- athenes-grece-001 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/athenes-grece-001-small.webp 640w, images/athenes-grece-001-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/athenes-grece-001.jpg"
+    src="images/athenes-grece-002.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
     width="1200"
-    height="auto">
-</picture>
-
-<!-- machu-picchu-perou-001 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/machu-picchu-perou-001-small.webp 640w, images/machu-picchu-perou-001-medium.webp 1200w, images/machu-picchu-perou-001-large.webp 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/machu-picchu-perou-001.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1920"
-    height="auto">
-</picture>
-
-<!-- machu-picchu-perou-002 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/machu-picchu-perou-002-small.webp 640w, images/machu-picchu-perou-002-medium.webp 1200w, images/machu-picchu-perou-002-large.webp 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/machu-picchu-perou-002.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1920"
-    height="auto">
-</picture>
-
-<!-- street-kuala-lumpur-001 -->
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/street-kuala-lumpur-001-small.webp 640w, images/street-kuala-lumpur-001-medium.webp 1200w, images/street-kuala-lumpur-001-large.webp 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/street-kuala-lumpur-001.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1920"
     height="auto">
 </picture>

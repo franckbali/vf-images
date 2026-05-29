@@ -1,17 +1,17 @@
 {
   "portfolio": [
     {
+      "fichier": "images/offrandes-bali-001.jpg",
+      "legende": "Offrandes · Bali",
+      "legende_en": "Offerings · Bali",
+      "w": 1333, "h": 2000,
+      "visible": true
+    },
+    {
       "fichier": "images/faune-sacree-bali.jpg",
       "legende": "Faune sacrée · Bali",
       "legende_en": "Sacred Wildlife · Bali",
       "w": 1697, "h": 2000,
-      "visible": true
-    },
-    {
-      "fichier": "images/procession-barong-bali.jpg",
-      "legende": "Procession Barong · Bali",
-      "legende_en": "Barong Procession · Bali",
-      "w": 1333, "h": 2000,
       "visible": true
     },
     {
@@ -50,17 +50,17 @@
       "visible": true
     },
     {
+      "fichier": "images/temple-bali-004.jpg",
+      "legende": "Temple · Bali",
+      "legende_en": "Temple · Bali",
+      "w": 1333, "h": 2000,
+      "visible": true
+    },
+    {
       "fichier": "images/manhattan-new-york.jpg",
       "legende": "Manhattan · New York",
       "legende_en": "Manhattan · New York",
       "w": 2000, "h": 1333,
-      "visible": true
-    },
-    {
-      "fichier": "images/paysages-bali-001.jpg",
-      "legende": "Paysages · Bali",
-      "legende_en": "Landscapes · Bali",
-      "w": 1333, "h": 2000,
       "visible": true
     },
     {
@@ -76,6 +76,20 @@
       "legende_en": "The Soul of Bali",
       "w": 1920, "h": 1279,
       "visible": true
+    },
+    {
+      "fichier": "images/procession-barong-bali.jpg",
+      "legende": "Procession Barong · Bali",
+      "legende_en": "Barong Procession · Bali",
+      "w": 1333, "h": 2000,
+      "visible": false
+    },
+    {
+      "fichier": "images/paysages-bali-001.jpg",
+      "legende": "Paysages · Bali",
+      "legende_en": "Landscapes · Bali",
+      "w": 1333, "h": 2000,
+      "visible": false
     },
     {
       "fichier": "images/portrait-bali-369.jpg",

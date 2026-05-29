@@ -34,7 +34,7 @@
       "slug": "ceremonies",
       "page": "galerie-ceremonies.html",
       "ordre": 3,
-      "visible": true
+      "visible": false
     },
     {
       "titre": "Voyages",
@@ -46,7 +46,7 @@
       "slug": "voyages",
       "page": "galerie-voyages.html",
       "ordre": 4,
-      "visible": true
+      "visible": false
     },
     {
       "titre": "Portraits",
@@ -70,6 +70,7 @@
       "slug": "la-reunion",
       "page": "galerie-lareunion.html",
       "ordre": 6,
+      "visible": false,
       "visible": true
     },
     {

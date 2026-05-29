@@ -413,6 +413,76 @@
       "page": "galerie-temple-bali-004.html",
       "ordre": 40,
       "visible": false
+    },
+    {
+      "titre": "Faune Bali 004",
+      "sous_titre": "",
+      "image_cover": "images/faune-bali-004.jpg",
+      "orientation": "portrait",
+      "slug": "faune-bali-004",
+      "page": "galerie-faune-bali-004.html",
+      "ordre": 41,
+      "visible": false
+    },
+    {
+      "titre": "Sky Line New York 001",
+      "sous_titre": "",
+      "image_cover": "images/sky-line-new-york-001.jpg",
+      "orientation": "landscape",
+      "slug": "sky-line-new-york-001",
+      "page": "galerie-sky-line-new-york-001.html",
+      "ordre": 42,
+      "visible": false
+    },
+    {
+      "titre": "Ait Ben Haddou Maroc 001",
+      "sous_titre": "",
+      "image_cover": "images/ait-ben-haddou-maroc-001.jpg",
+      "orientation": "landscape",
+      "slug": "ait-ben-haddou-maroc-001",
+      "page": "galerie-ait-ben-haddou-maroc-001.html",
+      "ordre": 43,
+      "visible": false
+    },
+    {
+      "titre": "Athenes Grece 001",
+      "sous_titre": "",
+      "image_cover": "images/athenes-grece-001.jpg",
+      "orientation": "portrait",
+      "slug": "athenes-grece-001",
+      "page": "galerie-athenes-grece-001.html",
+      "ordre": 44,
+      "visible": false
+    },
+    {
+      "titre": "Machu Picchu Perou 001",
+      "sous_titre": "",
+      "image_cover": "images/machu-picchu-perou-001.jpg",
+      "orientation": "landscape",
+      "slug": "machu-picchu-perou-001",
+      "page": "galerie-machu-picchu-perou-001.html",
+      "ordre": 45,
+      "visible": false
+    },
+    {
+      "titre": "Machu Picchu Perou 002",
+      "sous_titre": "",
+      "image_cover": "images/machu-picchu-perou-002.jpg",
+      "orientation": "landscape",
+      "slug": "machu-picchu-perou-002",
+      "page": "galerie-machu-picchu-perou-002.html",
+      "ordre": 46,
+      "visible": false
+    },
+    {
+      "titre": "Street Kuala Lumpur 001",
+      "sous_titre": "",
+      "image_cover": "images/street-kuala-lumpur-001.jpg",
+      "orientation": "landscape",
+      "slug": "street-kuala-lumpur-001",
+      "page": "galerie-street-kuala-lumpur-001.html",
+      "ordre": 47,
+      "visible": false
     }
   ]
 }

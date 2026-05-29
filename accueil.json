@@ -8,10 +8,10 @@
       "visible": true
     },
     {
-      "fichier": "images/faune-sacree-bali.jpg",
-      "legende": "Faune sacrée · Bali",
-      "legende_en": "Sacred Wildlife · Bali",
-      "w": 1697, "h": 2000,
+      "fichier": "images/faune-bali-004.jpg",
+      "legende": "Faune · Bali",
+      "legende_en": "Wildlife · Bali",
+      "w": 1333, "h": 2000,
       "visible": true
     },
     {
@@ -57,10 +57,10 @@
       "visible": true
     },
     {
-      "fichier": "images/manhattan-new-york.jpg",
-      "legende": "Manhattan · New York",
-      "legende_en": "Manhattan · New York",
-      "w": 2000, "h": 1333,
+      "fichier": "images/sky-line-new-york-001.jpg",
+      "legende": "Skyline · New York",
+      "legende_en": "Skyline · New York",
+      "w": 1920, "h": 1279,
       "visible": true
     },
     {

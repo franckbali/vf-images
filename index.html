@@ -940,12 +940,10 @@ if(hamburger&&navOverlay){
     var isMobile = window.innerWidth <= 768;
 
     if(isMobile){
-      /* Mobile : 2 colonnes flexbox height-balanced */
-      var col0 = [], col1 = [], h0 = 0, h1 = 0;
-      photos.forEach(function(p){
-        var r = (p.w && p.h) ? p.h / p.w : 1.5;
-        if(h0 <= h1){ col0.push(p); h0 += r; }
-        else         { col1.push(p); h1 += r; }
+      /* Mobile : 2 colonnes alternées — respecte l'ordre de accueil.json */
+      var col0 = [], col1 = [];
+      photos.forEach(function(p, i){
+        if(i % 2 === 0) col0.push(p); else col1.push(p);
       });
       masonry.innerHTML =
         '<div class="photo-col">' +

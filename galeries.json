@@ -373,6 +373,46 @@
       "page": "galerie-sifnos-grece-001.html",
       "ordre": 36,
       "visible": false
+    },
+    {
+      "titre": "Offrandes Bali 001",
+      "sous_titre": "",
+      "image_cover": "images/offrandes-bali-001.jpg",
+      "orientation": "portrait",
+      "slug": "offrandes-bali-001",
+      "page": "galerie-offrandes-bali-001.html",
+      "ordre": 37,
+      "visible": false
+    },
+    {
+      "titre": "Rizieres Black And White Bali 001",
+      "sous_titre": "",
+      "image_cover": "images/rizieres-black-and-white-bali-001.jpg",
+      "orientation": "landscape",
+      "slug": "rizieres-black-and-white-bali-001",
+      "page": "galerie-rizieres-black-and-white-bali-001.html",
+      "ordre": 38,
+      "visible": false
+    },
+    {
+      "titre": "Temple Bali 002",
+      "sous_titre": "",
+      "image_cover": "images/temple-bali-002.jpg",
+      "orientation": "portrait",
+      "slug": "temple-bali-002",
+      "page": "galerie-temple-bali-002.html",
+      "ordre": 39,
+      "visible": false
+    },
+    {
+      "titre": "Temple Bali 004",
+      "sous_titre": "",
+      "image_cover": "images/temple-bali-004.jpg",
+      "orientation": "portrait",
+      "slug": "temple-bali-004",
+      "page": "galerie-temple-bali-004.html",
+      "ordre": 40,
+      "visible": false
     }
   ]
 }

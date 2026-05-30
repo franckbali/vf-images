@@ -657,7 +657,6 @@ function openLightboxAt(index){
   updateCounter();
   lb.classList.remove('closing');
   lb.classList.add('open');
-  document.body.style.overflow='hidden';
   requestAnimationFrame(()=>{
     lbFront.style.transition='opacity 420ms ease-out';
     lbFront.classList.add('lb-show');
@@ -702,7 +701,6 @@ function goNext(e){if(e)e.stopPropagation();if(photos.length<2)return;transition
 function closeLightbox(){
   lb.classList.add('closing');
   lb.classList.remove('open');
-  document.body.style.overflow=''; /* restauré immédiatement */
   setTimeout(()=>{
     lb.classList.remove('closing');
     lbA.src=''; lbB.src='';

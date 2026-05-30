@@ -563,8 +563,6 @@ function openLightbox(el){
   lbFront.onload=showImg;lbFront.onerror=showImg;lbFront.src=getBestSrc(el);
   requestAnimationFrame(()=>{
     lb.classList.add('open');
-    document.body.dataset.lbScroll=window.scrollY;
-    document.body.style.cssText+='position:fixed;top:-'+window.scrollY+'px;width:100%;overflow:hidden';
     if(lbFront.complete&&lbFront.naturalWidth>0) showImg();
   });
 }
@@ -592,15 +590,11 @@ function closeLightbox(){
   lb.classList.add('closing');lb.classList.remove('open');
   lbInner.classList.remove('photo-hover','touched');
   var fab=document.querySelector('.gallery-fab');if(fab&&fab.classList.contains('visible'))fab.style.opacity='1';
-  const scrollY=parseInt(document.body.dataset.lbScroll||'0');
-  /* Restaurer le scroll après que le lightbox soit devenu invisible (800ms) */
   setTimeout(()=>{
     lb.classList.remove('closing');
     lbImgA.src='';lbImgB.src='';
     lbImgA.className='lightbox-img';lbImgB.className='lightbox-img';
     lbFront=lbImgA;lbBack=lbImgB;
-    document.body.style.position='';document.body.style.top='';document.body.style.width='';document.body.style.overflow='';
-    window.scrollTo(0,scrollY);
   },820);
 }
 function handleLightboxClick(e){

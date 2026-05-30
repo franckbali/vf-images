@@ -523,6 +523,16 @@
       "page": "galerie-sifnos-grece-002.html",
       "ordre": 51,
       "visible": false
+    },
+    {
+      "titre": "Hummingbird Costa Rica 001",
+      "sous_titre": "",
+      "image_cover": "images/hummingbird-costa-rica-001.jpg",
+      "orientation": "portrait",
+      "slug": "hummingbird-costa-rica-001",
+      "page": "galerie-hummingbird-costa-rica-001.html",
+      "ordre": 52,
+      "visible": false
     }
   ]
 }

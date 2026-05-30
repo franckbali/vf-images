@@ -436,6 +436,8 @@ button:focus:not(:focus-visible) {
   .hero-sub{font-size:1.2rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
   .about-signature{font-size:2rem!important;text-shadow:0 1px 8px rgba(0,0,0,.8)}
   .cta-sub{font-size:.9rem!important;letter-spacing:.12em;color:rgba(245,243,239,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  /* Lightbox — bouton fermer plus grand sur mobile */
+  .lightbox-close{width:52px!important;height:52px!important;font-size:1.4rem!important;top:1rem!important;right:1rem!important;background:rgba(10,10,10,.7)!important;border:1px solid rgba(245,243,239,.2)!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important}
 }
 
 @media(max-width:900px){
@@ -700,17 +702,17 @@ function goNext(e){if(e)e.stopPropagation();if(photos.length<2)return;transition
 function closeLightbox(){
   lb.classList.add('closing');
   lb.classList.remove('open');
+  document.body.style.overflow=''; /* restauré immédiatement */
   setTimeout(()=>{
     lb.classList.remove('closing');
-    document.body.style.overflow='';
     lbA.src=''; lbB.src='';
     lbA.className='lightbox-img'; lbB.className='lightbox-img';
   },600);
 }
 
 function handleLightboxClick(e){
-  if(e.target.closest('#lb-img-wrap')||e.target.closest('.lightbox-close')||e.target.closest('.lb-nav')) return;
-  if(e.target===lb) closeLightbox();
+  if(e.target.closest('#lb-img-wrap, .lightbox-close, .lb-nav, .lightbox-caption, .lb-counter')) return;
+  closeLightbox();
 }
 
 document.addEventListener('keydown',e=>{

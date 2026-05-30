@@ -70,7 +70,6 @@
       "slug": "la-reunion",
       "page": "galerie-lareunion.html",
       "ordre": 6,
-      "visible": false,
       "visible": true
     },
     {
@@ -503,6 +502,26 @@
       "slug": "offrandes-bali-002",
       "page": "galerie-offrandes-bali-002.html",
       "ordre": 49,
+      "visible": false
+    },
+    {
+      "titre": "Offrandes Bali 003",
+      "sous_titre": "",
+      "image_cover": "images/offrandes-bali-003.jpg",
+      "orientation": "landscape",
+      "slug": "offrandes-bali-003",
+      "page": "galerie-offrandes-bali-003.html",
+      "ordre": 50,
+      "visible": false
+    },
+    {
+      "titre": "Sifnos Grece 002",
+      "sous_titre": "",
+      "image_cover": "images/sifnos-grece-002.jpg",
+      "orientation": "portrait",
+      "slug": "sifnos-grece-002",
+      "page": "galerie-sifnos-grece-002.html",
+      "ordre": 51,
       "visible": false
     }
   ]

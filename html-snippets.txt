@@ -3,14 +3,29 @@ CODE HTML À COPIER DANS VOS PAGES
 Remplacez [DESCRIPTION] par le texte alternatif
 ════════════════════════════════════════════════════════════
 
-<!-- offrandes-bali-002 -->
+<!-- offrandes-bali-003 -->
 <picture>
   <source
     type="image/webp"
-    srcset="images/offrandes-bali-002-small.webp 640w, images/offrandes-bali-002-medium.webp 1200w"
+    srcset="images/offrandes-bali-003-small.webp 640w, images/offrandes-bali-003-medium.webp 1200w, images/offrandes-bali-003-large.webp 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/offrandes-bali-002.jpg"
+    src="images/offrandes-bali-003.jpg"
+    alt="[DESCRIPTION]"
+    loading="lazy"
+    decoding="async"
+    width="1920"
+    height="auto">
+</picture>
+
+<!-- sifnos-grece-002 -->
+<picture>
+  <source
+    type="image/webp"
+    srcset="images/sifnos-grece-002-small.webp 640w, images/sifnos-grece-002-medium.webp 1200w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <img
+    src="images/sifnos-grece-002.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"

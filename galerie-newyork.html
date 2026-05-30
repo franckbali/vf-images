@@ -307,11 +307,18 @@
 
 @media(max-width:900px){}
 
-/* Curseur custom désactivé sur mobile */
-@media(max-width:900px){
+/* Curseur custom désactivé sur mobile/tablette tactile */
+@media(max-width:900px),(pointer:coarse){
   .cursor,.cursor-ring{display:none!important}
   body{cursor:auto!important}
   a,button,.photo-item,.print-card,.btn,.fmt-option,.order-btn,.filter-btn{cursor:pointer!important}
+}
+/* Titres toujours visibles sur tactile */
+@media(pointer:coarse){
+  .photo-desc{background:linear-gradient(to top,rgba(10,10,10,.65) 0%,transparent 55%)}
+  .desc-title{opacity:1!important;transform:translateY(0)!important;font-size:1.1rem!important;letter-spacing:.18em!important;color:rgba(245,243,239,1)!important}
+  .desc-line{width:22px!important}
+  .desc-text{opacity:0!important}
 }
 
 /* ══ PROTECTION PHOTOS ══ */

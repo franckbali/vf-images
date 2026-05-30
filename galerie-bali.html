@@ -217,9 +217,12 @@
   body{cursor:auto!important}
   a,button,.photo-item,.print-card,.btn,.panel-trigger{cursor:pointer!important}
 }
-/* Descriptions visibles sur tactile */
+/* Descriptions & titres toujours visibles sur tactile */
 @media(pointer:coarse){
-  .photo-desc{background:linear-gradient(to top,rgba(10,10,10,.6) 0%,transparent 50%)}
+  .photo-desc{background:linear-gradient(to top,rgba(10,10,10,.65) 0%,transparent 55%)}
+  .desc-title{opacity:1!important;transform:translateY(0)!important;font-size:1.1rem!important;letter-spacing:.18em!important;color:rgba(245,243,239,1)!important}
+  .desc-line{width:22px!important}
+  .desc-text{opacity:0!important} /* texte long masqué, seulement le titre */
 }
 
 /* ══ PROTECTION PHOTOS ══ */

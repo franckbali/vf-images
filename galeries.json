@@ -533,6 +533,36 @@
       "page": "galerie-hummingbird-costa-rica-001.html",
       "ordre": 52,
       "visible": false
+    },
+    {
+      "titre": "Portrait Bali 015",
+      "sous_titre": "",
+      "image_cover": "images/portrait-bali-015.jpg",
+      "orientation": "landscape",
+      "slug": "portrait-bali-015",
+      "page": "galerie-portrait-bali-015.html",
+      "ordre": 53,
+      "visible": false
+    },
+    {
+      "titre": "Rizieres Bali 001",
+      "sous_titre": "",
+      "image_cover": "images/rizieres-bali-001.jpg",
+      "orientation": "landscape",
+      "slug": "rizieres-bali-001",
+      "page": "galerie-rizieres-bali-001.html",
+      "ordre": 54,
+      "visible": false
+    },
+    {
+      "titre": "Sifnos Grece 003",
+      "sous_titre": "",
+      "image_cover": "images/sifnos-grece-003.jpg",
+      "orientation": "portrait",
+      "slug": "sifnos-grece-003",
+      "page": "galerie-sifnos-grece-003.html",
+      "ordre": 55,
+      "visible": false
     }
   ]
 }

@@ -47,8 +47,10 @@
 
 /* BANDEAU ÉDITORIAL */
 .serie-bandeau{width:100vw;background:var(--dark);padding:4rem 6vw;display:flex;flex-direction:column;align-items:center;gap:1.4rem;border-top:1px solid rgba(201,169,110,.25);border-bottom:1px solid rgba(201,169,110,.25)}
-.serie-line{width:32px;height:1px;background:var(--gold);opacity:.5}
-.serie-text{font-family:'Raleway',sans-serif;font-style:italic;font-weight:200;font-size:clamp(1rem,1.8vw,1.25rem);line-height:2;color:rgba(245,243,239,.82);text-align:center;max-width:620px;letter-spacing:.04em}
+.serie-line{width:0;height:1px;background:var(--gold);opacity:0;transition:width 1s cubic-bezier(.4,0,.2,1),opacity .8s ease}
+.serie-line.visible{width:80px;opacity:.55}
+.serie-text{font-family:'Raleway',sans-serif;font-style:italic;font-weight:200;font-size:clamp(1rem,1.8vw,1.25rem);line-height:2;color:rgba(245,243,239,.82);text-align:center;max-width:620px;letter-spacing:.04em;opacity:0;transform:translateY(10px);transition:opacity 1s ease .4s,transform 1s ease .4s}
+.serie-text.visible{opacity:1;transform:translateY(0)}
 @media(max-width:768px){.serie-bandeau{padding:3rem 2rem}.serie-text{font-size:1rem;line-height:1.8}}
 
 /* GAPS */
@@ -826,9 +828,9 @@ const obs=new IntersectionObserver(entries=>{
     }
   });
 },{threshold:0.01});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.reveal,.serie-line,.serie-text').forEach(el=>obs.observe(el));
 /* Fallback iOS : forcer visible après 4s si toujours invisible */
-setTimeout(()=>document.querySelectorAll('.reveal:not(.visible)').forEach(el=>el.classList.add('visible')),4000);
+setTimeout(()=>document.querySelectorAll('.reveal:not(.visible),.serie-line:not(.visible),.serie-text:not(.visible)').forEach(el=>el.classList.add('visible')),4000);
 
 /* ── Descriptions photo : génération + touch mobile ── */
 (function(){

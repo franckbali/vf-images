@@ -170,7 +170,8 @@
   border-top:1px solid rgba(201,169,110,.25);
   border-bottom:1px solid rgba(201,169,110,.25);
 }
-.serie-line{width:32px;height:1px;background:var(--gold);opacity:.5}
+.serie-line{width:0;height:1px;background:var(--gold);opacity:0;transition:width 1s cubic-bezier(.4,0,.2,1),opacity .8s ease}
+.serie-line.visible{width:80px;opacity:.55}
 .serie-text{
   font-family:'Raleway',sans-serif;
   font-style:italic;
@@ -572,8 +573,8 @@ window.addEventListener('scroll',()=>{
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:0.01});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-setTimeout(()=>document.querySelectorAll('.reveal:not(.visible)').forEach(el=>el.classList.add('visible')),4000);
+document.querySelectorAll('.reveal,.serie-line,.serie-text').forEach(el=>obs.observe(el));
+setTimeout(()=>document.querySelectorAll('.reveal:not(.visible),.serie-line:not(.visible),.serie-text:not(.visible)').forEach(el=>el.classList.add('visible')),4000);
 
 (function(){
   document.querySelectorAll('.block[data-title],.frame[data-title]').forEach(function(el){

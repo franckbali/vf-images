@@ -1,8 +1,8 @@
 {
   "galeries": [
     {
-      "titre": "Bali",
-      "titre_en": "Bali",
+      "titre": "Temples, rites et offrandes",
+      "titre_en": "Temples, rites and offerings",
       "sous_titre": "Temples, rites et instants vrais",
       "sous_titre_en": "Temples, rites and genuine moments",
       "image_cover": "images/offrandes-bali.jpg",
@@ -13,8 +13,8 @@
       "visible": true
     },
     {
-      "titre": "New York",
-      "titre_en": "New York",
+      "titre": "Le tumulte et l'instant",
+      "titre_en": "The tumult and the instant",
       "sous_titre": "La ville dans tous ses états",
       "sous_titre_en": "The city in all its moods",
       "image_cover": "images/new-york.jpg",

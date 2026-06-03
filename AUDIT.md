@@ -228,19 +228,13 @@ Le CSS reste libre (`width:100%; height:auto`).
 
 ---
 
-## `[ ]` 11. Galeries à construire — décision reportée
+## `[x]` 11. Galeries à construire
 
 **Temps :** 15 min (masquer) ou 3 h (construire) · **Impact :** 🔥 Crédibilité
 
-> **État :** ⏳ Décision prise (mai 2026) : laisser les cartes visibles pour l'instant, construire les vraies galeries ultérieurement. La 404.html est maintenant en place pour amortir les erreurs.
+> **État :** ✅ Fait (juin 2026). `galerie-bali.html` créée avec 6 photos en mise en page éditoriale (offrandes, rituels, temples). `galerie-portraits.html` créée. Cérémonies, Voyages, La Réunion masquées (`"visible": false`). Les 3 galeries actives (Bali, New York, Portraits) ont toutes un bandeau éditorial animé avec traits or, un texte de série, et un bandeau contact en bas.
 
-**Décision à prendre avec Franck :**
-
-**Option A — rapide (15 min) :** passer `"visible": false` pour Cérémonies, Voyages, Portraits, La Réunion dans `galeries.json`. Ne laisser que Bali (à créer) + New York (existante).
-
-**Option B — ambitieuse (3 h, recommandée) :** copier `galerie-newyork.html` en `galerie-bali.html`, remplacer les images par les photos Bali existantes, ajuster les textes. Bali est le cœur de marque, doit exister.
-
-**Fichiers :** `galeries.json` + nouveau `galerie-bali.html` éventuellement
+**Fichiers :** `galeries.json` + `galerie-bali.html` + `galerie-portraits.html`
 
 ---
 
@@ -500,9 +494,9 @@ Sur GitHub Pages, le fichier `404.html` à la racine est servi automatiquement.
 
 ---
 
-# Synthèse — Revue Claude Code, mai 2026
+# Synthèse — Revue Claude Code, juin 2026
 
-> Revue effectuée le 22 mai 2026 par Claude Code. Code vérifié fichier par fichier sur : index.html, a-propos.html, boutique.html, blog.html, contact.html, galerie-index.html, galerie-newyork.html, style.css, galeries.json, sitemap.xml.
+> Revue initiale : 22 mai 2026. Mise à jour : 3 juin 2026.
 
 ---
 
@@ -512,20 +506,20 @@ Sur GitHub Pages, le fichier `404.html` à la racine est servi automatiquement.
 | Page | Fichier | Finition (1-5) | Notes |
 |------|---------|----------------|-------|
 | Accueil | `index.html` | ★★★★☆ 4/5 | Hero impactant, galerie preview, about strip, CTA. Mobile redesign fait. |
-| Galerie index | `galerie-index.html` | ★★★☆☆ 3/5 | Bonne structure dynamique (galeries.json), mais 5/6 cartes → 404. |
-| Galerie New York | `galerie-newyork.html` | ★★★★★ 5/5 | La page la plus travaillée. Lightbox, scroll, mobile, iOS corrigés. |
+| Galerie index | `galerie-index.html` | ★★★★☆ 4/5 | 3 galeries actives (Bali, NY, Portraits), 3 masquées. Sous-titres à jour. |
+| Galerie Bali | `galerie-bali.html` | ★★★★☆ 4/5 | Créée juin 2026. 6 photos, bandeau animé, bandeau contact, bilingue. |
+| Galerie New York | `galerie-newyork.html` | ★★★★★ 5/5 | Lightbox, scroll, mobile, iOS corrigés. Bandeau animé + contact. |
+| Galerie Portraits | `galerie-portraits.html` | ★★★★☆ 4/5 | Créée juin 2026. Bandeau éditorial, texte de série, bandeau contact. |
 | À propos | `a-propos.html` | ★★★★☆ 4/5 | Storytelling fort, photos bien intégrées. Mobile amélioré. |
 | Boutique | `boutique.html` | ★★★☆☆ 3/5 | 6 œuvres, format buttons, prix partiellement dynamiques. Manque process photos, stock. |
 | Blog | `blog.html` | ★★★☆☆ 3/5 | Structure solide. 1 article seulement. Pas de newsletter. |
-| Contact | `contact.html` | ★★★★☆ 4/5 | Formspree opérationnel (1/50 test). Hero photo fixé. |
+| Contact | `contact.html` | ★★★★☆ 4/5 | Formspree opérationnel. Hero photo fixé. |
 | Mentions légales | `mentions-legales.html` | ★★★☆☆ 3/5 | Existe, suffisant. |
 
 ### Pages manquantes (priorité décroissante)
-1. `galerie-bali.html` — **critique** (Bali est le cœur de marque)
-2. `404.html` — **urgent** (5 galleries mènent à 404 GitHub)
-3. `process.html` — important pour crédibilité boutique
-4. Articles de blog (2 supplémentaires)
-5. `galerie-ceremonies.html`, `galerie-voyages.html`, `galerie-portraits.html`, `galerie-lareunion.html` — long terme
+1. `process.html` — important pour crédibilité boutique
+2. Articles de blog (2 supplémentaires)
+3. `galerie-ceremonies.html`, `galerie-voyages.html`, `galerie-lareunion.html` — long terme
 
 ### Dépendances techniques
 - **Printspace** : URLs non renseignées (boutons `href="#"`). Dépend de Franck pour les vraies URLs.
@@ -535,22 +529,22 @@ Sur GitHub Pages, le fichier `404.html` à la racine est servi automatiquement.
 
 ---
 
-## B. Top 5 actions prioritaires
+## B. Top 5 actions prioritaires (au 3 juin 2026)
 
-### 🥇 01. Régler les 5 galeries qui font 404 (action 11) — 15 min
-**Ratio impact/effort maximal.** Tout visiteur qui clique sur Cérémonies, Voyages, Portraits, La Réunion, ou Bali depuis la galerie index tombe sur une page 404. C'est le bug de crédibilité le plus grave actuellement. **Solution immédiate :** passer `"visible": false` pour les 4 galeries non construites dans `galeries.json`. Laisser Bali en `visible: true` pour signaler la priorité de construction.
+### 🥇 01. Remplir la boutique avec les vraies URLs Printspace
+**Bloquant pour les ventes.** Les 6 boutons « Commander » pointent encore vers `href="#"`. Sans les vraies URLs Printspace, la boutique ne peut pas vendre. Dépend de Franck.
 
-### 🥈 02. Créer 404.html (action 15) — 30 min
-**Complémentaire à l'action 11.** Les erreurs 404 existent déjà (galleries manquantes) et en existeront d'autres. Une 404 GitHub par défaut casse complètement l'identité du site. Créer `404.html` dans le langage visuel en 30 min.
+### 🥈 02. Alt texts descriptifs sur toutes les images (action 22) — 1 h 30
+**SEO + accessibilité.** La majorité des `alt` sont trop courts ou vides. Claude Code peut proposer les textes et faire le batch-update.
 
-### 🥉 03. Masquer le toggle FR/EN (action 01) — 5 min
-**5 minutes, fort impact crédibilité.** C'est le ratio effort/impact le plus favorable du document. Une ligne de CSS dans `style.css`. Le visiteur anglophone qui clique sur EN et reste en français perd confiance instantanément.
+### 🥉 03. Google Search Console (action 20) — côté Franck
+**Le sitemap et robots.txt sont en place.** Il reste uniquement à créer le compte Search Console et soumettre le sitemap — 15 min côté Franck, aucun code à écrire.
 
-### 4️⃣ 04. Retirer le filtre sur les images détail boutique (action 02) — 10 min
-**Directement lié à la conversion.** Le `.detail-image img { filter: brightness(.78) }` (boutique.html ligne 137) assombrit les œuvres dans le panneau d'achat. L'acheteur doit voir les couleurs réelles pour passer commande.
+### 4️⃣ 04. Page process.html (action 27)
+**Crédibilité boutique.** Expliquer comment les tirages sont fabriqués. Peut être fait en texte seul dans un premier temps, sans attendre les photos process.
 
-### 5️⃣ 05. Choisir la direction de palette (action 31) — décision Franck
-**Prérequis stratégique.** Toutes les actions CSS (05, 06, 02) sont impactées par ce choix. Si la palette change ensuite, le travail de fine-tuning CSS est à refaire. La Direction II (Museum off-white) est recommandée. Claude Code peut produire un mockup `mockup-museum.html` en 2-3 h pour que Franck visualise avant de décider.
+### 5️⃣ 05. Newsletter Brevo (action 25)
+**Conversion long terme.** Aucun formulaire email en place. Dépend de Franck pour créer le compte Brevo, puis Claude Code intègre en 2 h.
 
 ---
 
@@ -570,49 +564,23 @@ Sur GitHub Pages, le fichier `404.html` à la racine est servi automatiquement.
 - **Google Search Console** : compte à créer et propriété à vérifier pour action 20
 
 ### Décisions techniques préalables
-- **Action 11** : masquer les galeries mortes (Option A, 15 min) ou construire galerie-bali.html (Option B, 3 h) ?
 - **Action 31** : quelle direction de palette — décision avant toute refonte CSS
 
 ---
 
 ## D. Roadmap proposée
 
-### Sprint 1 — Ce soir (< 2 h total)
+### Sprint suivant — prochaines sessions
 | # | Action | Durée | Qui |
 |---|--------|-------|-----|
-| 11 (A) | Masquer les 4 galeries mortes dans galeries.json | 5 min | Claude Code |
-| 15 | Créer 404.html | 30 min | Claude Code |
-| 01 | Masquer toggle FR/EN dans style.css | 5 min | Claude Code |
-| 02 | Retirer brightness(.78) sur .detail-image img | 10 min | Claude Code |
-| 20 | Créer robots.txt | 5 min | Claude Code |
-
-**Total Sprint 1 : ~55 min Claude Code + décision Franck sur action 11**
-
-### Sprint 2 — Ce weekend
-| # | Action | Durée | Qui |
-|---|--------|-------|-----|
-| 31 | Mockup palette Museum off-white | 2-3 h | Claude Code |
-| 08 | Reformuler CTA Printspace | 10 min | Claude Code |
-| 05 | Réduire letter-spacing global | 20 min | Claude Code |
-| 06 | Plancher 0.72rem labels fonctionnels desktop | 25 min | Claude Code |
-| 22 | Proposer alt texts + batch-update | 1 h | Claude Code + validation Franck |
-| 10 | Ajouter width/height aux img | 1 h 30 | Claude Code |
-| 19 | Schema.org JSON-LD | 2 h | Claude Code |
-
-**Total Sprint 2 : ~7-8 h Claude Code**
-
-### Sprint 3 — Ce mois (un soir par semaine)
-| # | Action | Durée | Qui |
-|---|--------|-------|-----|
-| 11 (B) | Construire galerie-bali.html | 3 h | Claude Code |
+| 22 | Alt texts descriptifs + batch-update | 1 h 30 | Claude Code + validation Franck |
+| 20 | Soumettre sitemap Google Search Console | 15 min | Franck |
+| 27 | Page process.html (texte seul, sans photos) | 2 h | Claude Code |
+| 25 | Newsletter Brevo (si compte créé) | 2 h | Claude Code |
 | 12 | Prix par produit (si grille Printspace dispo) | 2 h | Claude Code |
 | 13 | Compteur stock « Reste X/30 » | 1 h | Claude Code |
-| 18 | Remplacer tagline (si décidée) | 5 min | Claude Code |
-| 25 | Newsletter Brevo (si compte créé) | 2 h | Claude Code |
-| 27 | Page process.html (si photos dispo) | 3 h | Claude Code |
-
-**Total Sprint 3 : conditionnel aux livrables Franck**
+| 24 | 2 articles de blog supplémentaires | 3 h | Franck + Claude Code |
 
 ---
 
-> **Note finale :** Le site est techniquement solide et visuellement cohérent. Les 5 actions du Sprint 1 représentent moins d'une heure de travail et éliminent les problèmes de crédibilité les plus visibles. La décision palette (action 31) est le choix stratégique qui débloquera la suite du travail de fine-tuning visuel.
+> **Note finale (3 juin 2026) :** Les galeries Bali et Portraits sont en ligne. Les 3 galeries actives ont un bandeau éditorial animé et un bandeau contact en bas. Le principal bloquant pour les ventes reste les URLs Printspace manquantes. Le travail visuel et éditorial est en bonne voie.

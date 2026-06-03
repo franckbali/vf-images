@@ -183,6 +183,11 @@ body::before{
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
 }
 main,footer{position:relative;z-index:2}
+.contact-bandeau{width:100%;background:var(--dark);padding:3.5rem 6vw;display:flex;justify-content:center;border-top:1px solid rgba(201,169,110,.2)}
+.contact-bandeau-text{font-family:'Raleway',sans-serif;font-style:italic;font-weight:200;font-size:clamp(.9rem,1.4vw,1.1rem);line-height:1.9;color:rgba(245,243,239,.65);text-align:center;max-width:560px;letter-spacing:.03em}
+.contact-bandeau-text a{color:rgba(201,169,110,.9);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3);transition:color .3s,border-color .3s}
+.contact-bandeau-text a:hover{color:var(--gold);border-color:var(--gold)}
+@media(max-width:768px){.contact-bandeau{padding:2.5rem 2rem}}
 /* nav est déjà position:fixed z-index:200 — pas besoin de surcharge */
 /* Désactivé sur petits mobiles pour éviter les saccades GPU */
 @media(max-width:600px){body::before{display:none}}

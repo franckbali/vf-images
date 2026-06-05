@@ -940,6 +940,10 @@ if(hamburger&&navOverlay){
     var isMobile = window.innerWidth <= 768;
 
     if(isMobile){
+      /* Mobile : swap Athènes ↔ Temple Bali */
+      var iA = photos.findIndex(function(p){ return p.fichier.indexOf('athenes-grece-002') !== -1; });
+      var iT = photos.findIndex(function(p){ return p.fichier.indexOf('temple-bali-004') !== -1; });
+      if(iA !== -1 && iT !== -1){ var tmp=photos[iA]; photos[iA]=photos[iT]; photos[iT]=tmp; }
       /* Mobile : 2 colonnes alternées — respecte l'ordre de accueil.json */
       var col0 = [], col1 = [];
       photos.forEach(function(p, i){

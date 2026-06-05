@@ -200,9 +200,8 @@ section.cta>*{position:relative}
   section.gallery-preview{padding:6.5rem 0 4rem!important}
   .section-header{padding:0 1.5rem 2.5rem!important}
   section.about-strip,section.cta{padding:4rem 1.8rem}
-  .photo-masonry{display:flex!important;column-count:unset;gap:3px}
-  .photo-col{flex:1;display:flex;flex-direction:column;gap:3px}
-  .photo-item{margin-bottom:0}
+  .photo-masonry{display:block!important;column-count:unset}
+  .photo-item{margin-bottom:3px;width:100%}
   section.about-strip{grid-template-columns:1fr;gap:2.5rem}
   .about-image::before{top:-10px;left:-10px;right:10px;bottom:10px}
   .cta-title{font-size:clamp(2rem,5vw,3rem)}
@@ -940,22 +939,8 @@ if(hamburger&&navOverlay){
     var isMobile = window.innerWidth <= 768;
 
     if(isMobile){
-      /* Mobile : swap Athènes ↔ Temple Bali */
-      var iA = photos.findIndex(function(p){ return p.fichier.indexOf('athenes-grece-002') !== -1; });
-      var iT = photos.findIndex(function(p){ return p.fichier.indexOf('temple-bali-004') !== -1; });
-      if(iA !== -1 && iT !== -1){ var tmp=photos[iA]; photos[iA]=photos[iT]; photos[iT]=tmp; }
-      /* Mobile : 2 colonnes alternées — respecte l'ordre de accueil.json */
-      var col0 = [], col1 = [];
-      photos.forEach(function(p, i){
-        if(i % 2 === 0) col0.push(p); else col1.push(p);
-      });
-      masonry.innerHTML =
-        '<div class="photo-col">' +
-          col0.map(function(p){ return makePhotoHTML(p, photos.indexOf(p), true); }).join('') +
-        '</div>' +
-        '<div class="photo-col">' +
-          col1.map(function(p){ return makePhotoHTML(p, photos.indexOf(p), true); }).join('') +
-        '</div>';
+      /* Mobile : 1 colonne pleine largeur */
+      masonry.innerHTML = photos.map(function(p, i){ return makePhotoHTML(p, i, true); }).join('');
     } else {
       /* Desktop : liste plate, CSS column-count:3 */
       masonry.innerHTML = photos.map(function(p, i){ return makePhotoHTML(p, i); }).join('');

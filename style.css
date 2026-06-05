@@ -98,16 +98,19 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:grid;grid
 @media(max-width:900px){
   /* Textes — taille de base augmentée */
   body{font-size:20px}
-  .section-label{font-size:1rem!important;letter-spacing:.15em}
-  .section-link{font-size:1rem!important;letter-spacing:.15em}
-  .btn{font-size:1rem!important;padding:.9rem 2rem;letter-spacing:.18em}
-  .footer-copy{font-size:0.90rem!important;letter-spacing:.1em}
-  .footer-social a{font-size:0.90rem!important}
-  .cookie-text{font-size:0.88rem!important;letter-spacing:.06em}
-  .lang-btn{font-size:1rem!important}
-  .nav-overlay .overlay-lang{font-size:0.90rem!important;letter-spacing:.15em}
+  .section-label{font-size:1.1rem!important;letter-spacing:.12em}
+  .section-link{font-size:1.1rem!important;letter-spacing:.12em}
+  .btn{font-size:1.1rem!important;padding:.9rem 2rem;letter-spacing:.15em}
+  .footer-copy{font-size:1rem!important;letter-spacing:.08em}
+  .footer-social a{font-size:1rem!important}
+  .cookie-text{font-size:1rem!important;letter-spacing:.04em}
+  .lang-btn{font-size:1.1rem!important}
+  .nav-overlay .overlay-lang{font-size:1rem!important;letter-spacing:.12em}
+  .photo-caption{font-size:1.05rem!important}
+  .serie-text{font-size:1.1rem!important;line-height:1.85!important}
+  .contact-bandeau-text{font-size:1rem!important}
   /* Menu hamburger — texte plus lisible */
-  .nav-overlay a{letter-spacing:.15em!important}
+  .nav-overlay a{letter-spacing:.12em!important;font-size:1.8rem!important}
 
   /* Lang buttons — reset Safari */
   .lang-btn{-webkit-appearance:none!important;appearance:none!important;background:none!important;border:none!important}

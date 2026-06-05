@@ -244,10 +244,16 @@ Le CSS reste libre (`width:100%; height:auto`).
 
 > **État :** ⏳ En attente — compte Whitewall Pro en cours de création (juin 2026). À coder quand le compte est activé et les premières URLs produits disponibles.
 
-**Contexte :**
-- ~50 photos prévues en boutique au total
-- ~15 en édition collector (Whitewall) · ~35 en tirage Fine Art standard (Printspace)
-- Les deux options coexistent sur la même œuvre quand applicable
+**Contexte — 3 niveaux de tirage :**
+| Niveau | Partenaire | Tailles | Spécificité |
+|--------|-----------|---------|-------------|
+| Fine Art ouvert | Printspace | Petites/moyennes | Hahnemühle standard |
+| Fine Art limité | Printspace | Petites/moyennes | Numéroté, certificat d'authenticité |
+| Édition Collector | Whitewall | Très grandes tailles | Papiers ultra premium, exclusif |
+
+- ~50 photos en boutique au total
+- ~15 en édition collector (Whitewall) — uniquement pour les très grandes tailles et papiers premium
+- Toutes les autres via Printspace (ouvert ou limité)
 
 **Ce qui est décidé :**
 - **Toggle Fine Art / Collector** dans le panneau détail — l'acheteur reste face à l'œuvre, change d'onglet, voit prix + description + bouton adapté

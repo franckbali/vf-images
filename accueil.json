@@ -15,9 +15,9 @@
       "visible": true
     },
     {
-      "fichier": "images/athenes-grece-002.jpg",
-      "legende": "Athènes · Grèce",
-      "legende_en": "Athens · Greece",
+      "fichier": "images/temple-bali-004.jpg",
+      "legende": "Temple · Bali",
+      "legende_en": "Temple · Bali",
       "w": 1333, "h": 2000,
       "visible": true
     },
@@ -50,9 +50,9 @@
       "visible": true
     },
     {
-      "fichier": "images/temple-bali-004.jpg",
-      "legende": "Temple · Bali",
-      "legende_en": "Temple · Bali",
+      "fichier": "images/athenes-grece-002.jpg",
+      "legende": "Athènes · Grèce",
+      "legende_en": "Athens · Greece",
       "w": 1333, "h": 2000,
       "visible": true
     },

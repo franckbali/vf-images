@@ -988,27 +988,5 @@ if(hamburger&&navOverlay){
 })();
 </script>
 <script>(function(){var fab=document.querySelector('.gallery-fab');if(!fab)return;window.addEventListener('scroll',function(){fab.classList.toggle('visible',window.scrollY>400);},{passive:true});})();</script>
-<script>
-/* ── Nav : fond sombre dès que le hero est dépassé ── */
-(function(){
-  var nav = document.querySelector('nav');
-  var hero = document.querySelector('.hero-home');
-  if(!nav || !hero) return;
-  function updateNav(){
-    var heroBottom = hero.getBoundingClientRect().bottom;
-    if(heroBottom <= 60){
-      nav.style.background = 'rgba(10,10,10,0.92)';
-      nav.style.backdropFilter = 'blur(8px)';
-      nav.style.webkitBackdropFilter = 'blur(8px)';
-    } else {
-      nav.style.background = '';
-      nav.style.backdropFilter = '';
-      nav.style.webkitBackdropFilter = '';
-    }
-  }
-  window.addEventListener('scroll', updateNav, {passive:true});
-  updateNav();
-})();
-</script>
 </body>
 </html>

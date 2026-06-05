@@ -238,6 +238,31 @@ Le CSS reste libre (`width:100%; height:auto`).
 
 ---
 
+## `[ ]` 32. Éditions Collector via Whitewall
+
+**Temps :** 2 h (code) · **Impact :** 🔥 Conversion + Crédibilité
+
+> **État :** ⏳ En attente — compte Whitewall Pro en cours de création (juin 2026). À coder quand le compte est activé et les premières URLs produits disponibles.
+
+**Contexte :**
+- ~50 photos prévues en boutique au total
+- ~15 en édition collector (Whitewall) · ~35 en tirage Fine Art standard (Printspace)
+- Les deux options coexistent sur la même œuvre quand applicable
+
+**Ce qui est décidé :**
+- **Toggle Fine Art / Collector** dans le panneau détail — l'acheteur reste face à l'œuvre, change d'onglet, voit prix + description + bouton adapté
+- **Bouton Collector** → formulaire contact pré-rempli avec le nom de l'œuvre (pas d'URL Whitewall directe — commande gérée manuellement par Franck)
+- **Badge discret** sur les cartes de la grille boutique pour signaler les œuvres disponibles en collector
+
+**Prérequis avant de coder :**
+1. Compte Whitewall Pro activé
+2. Liste des ~15 œuvres collectors décidée
+3. Au moins quelques URLs produits Whitewall pour tester
+
+**Fichiers :** `boutique.html`
+
+---
+
 ## `[~]` 12. Prix dynamiques par format dans la boutique
 
 **Temps :** 2 h · **Impact :** 🔥 Conversion

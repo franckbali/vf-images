@@ -431,23 +431,25 @@ button:focus:not(:focus-visible) {
 }
 
 @media(max-width:900px){
-  .hero-tagline{font-size:clamp(1.15rem,4vw,1.45rem)!important;text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .hero-sub{font-size:1.2rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
-  .about-signature{font-size:2rem!important;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-  .cta-sub{font-size:.9rem!important;letter-spacing:.12em;color:rgba(245,243,239,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  .hero-tagline{font-size:clamp(1.2rem,4vw,1.5rem)!important;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  .hero-sub{font-size:1.3rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  .about-signature{font-size:2.2rem!important;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+  .cta-sub{font-size:1rem!important;letter-spacing:.1em;color:rgba(245,243,239,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  .section-title{font-size:clamp(2.2rem,7vw,3rem)!important}
+  .cta-title{font-size:clamp(2.2rem,7vw,3.2rem)!important}
   /* Lightbox — bouton fermer plus grand sur mobile */
   .lightbox-close{width:52px!important;height:52px!important;font-size:1.4rem!important;top:1rem!important;right:1rem!important;background:rgba(10,10,10,.7)!important;border:1px solid rgba(245,243,239,.2)!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important}
 }
 
 @media(max-width:900px){
   body{font-size:18px}
-  .scroll-indicator span{font-size:1rem!important;letter-spacing:.18em!important}
-  .photo-caption{font-size:1rem!important}
-  .overlay-lang{font-size:.90rem!important}
-  .hero-eyebrow,.hero-fineart{font-size:.95rem!important}
-  .about-body{font-size:1.05rem!important;line-height:1.9!important;letter-spacing:0!important}
-  .card-price,.card-format,.card-edition{font-size:.9rem!important}
-  .blog-meta,.blog-category,.article-meta{font-size:.9rem!important}
+  .scroll-indicator span{font-size:1.05rem!important;letter-spacing:.15em!important}
+  .photo-caption{font-size:1.1rem!important}
+  .overlay-lang{font-size:1rem!important}
+  .hero-eyebrow,.hero-fineart{font-size:1.05rem!important}
+  .about-body{font-size:1.15rem!important;line-height:1.9!important;letter-spacing:0!important}
+  .card-price,.card-format,.card-edition{font-size:1rem!important}
+  .blog-meta,.blog-category,.article-meta{font-size:1rem!important}
 }
 
 .hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,9rem);font-weight:300;letter-spacing:.28em;line-height:1;color:var(--light);animation:fadeUp 1.4s ease .7s both;margin-bottom:.7rem;text-transform:uppercase;text-align:center;width:100%;display:block;padding-left:.28em}
@@ -939,6 +941,10 @@ if(hamburger&&navOverlay){
     var isMobile = window.innerWidth <= 768;
 
     if(isMobile){
+      /* Mobile : swap Athènes ↔ Temple Bali */
+      var iA = photos.findIndex(function(p){ return p.fichier.indexOf('athenes-grece-002') !== -1; });
+      var iT = photos.findIndex(function(p){ return p.fichier.indexOf('temple-bali-004') !== -1; });
+      if(iA !== -1 && iT !== -1){ var tmp=photos[iA]; photos[iA]=photos[iT]; photos[iT]=tmp; }
       /* Mobile : 1 colonne pleine largeur */
       masonry.innerHTML = photos.map(function(p, i){ return makePhotoHTML(p, i, true); }).join('');
     } else {

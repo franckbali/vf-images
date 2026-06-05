@@ -98,19 +98,23 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:grid;grid
 @media(max-width:900px){
   /* Textes — taille de base augmentée */
   body{font-size:20px}
-  .section-label{font-size:1.1rem!important;letter-spacing:.12em}
-  .section-link{font-size:1.1rem!important;letter-spacing:.12em}
-  .btn{font-size:1.1rem!important;padding:.9rem 2rem;letter-spacing:.15em}
-  .footer-copy{font-size:1rem!important;letter-spacing:.08em}
-  .footer-social a{font-size:1rem!important}
-  .cookie-text{font-size:1rem!important;letter-spacing:.04em}
-  .lang-btn{font-size:1.1rem!important}
-  .nav-overlay .overlay-lang{font-size:1rem!important;letter-spacing:.12em}
-  .photo-caption{font-size:1.05rem!important}
-  .serie-text{font-size:1.1rem!important;line-height:1.85!important}
-  .contact-bandeau-text{font-size:1rem!important}
+  .section-label{font-size:1.2rem!important;letter-spacing:.1em}
+  .section-link{font-size:1.2rem!important;letter-spacing:.1em}
+  .btn{font-size:1.15rem!important;padding:.9rem 2rem;letter-spacing:.12em}
+  .footer-copy{font-size:1.05rem!important;letter-spacing:.06em}
+  .footer-social a{font-size:1.05rem!important}
+  .cookie-text{font-size:1.05rem!important;letter-spacing:.03em}
+  .lang-btn{font-size:1.15rem!important}
+  .nav-overlay .overlay-lang{font-size:1.05rem!important;letter-spacing:.1em}
+  .photo-caption{font-size:1.15rem!important}
+  .serie-text{font-size:1.15rem!important;line-height:1.85!important}
+  .contact-bandeau-text{font-size:1.05rem!important}
+  .art-title{font-size:clamp(1.5rem,5.5vw,2rem)!important}
+  .art-title-sm{font-size:clamp(1.3rem,4.5vw,1.6rem)!important}
+  .art-excerpt{font-size:1.05rem!important;line-height:1.9!important}
+  .intro-title{font-size:clamp(2.5rem,10vw,4rem)!important}
   /* Menu hamburger — texte plus lisible */
-  .nav-overlay a{letter-spacing:.12em!important;font-size:1.8rem!important}
+  .nav-overlay a{letter-spacing:.1em!important;font-size:2rem!important}
 
   /* Lang buttons — reset Safari */
   .lang-btn{-webkit-appearance:none!important;appearance:none!important;background:none!important;border:none!important}

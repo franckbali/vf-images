@@ -74,3 +74,20 @@ Collections CMS créées mais vides. Aucun article ni produit encore.
 ## Par où commencer chaque session
 
 Lire `galeries.json` et la structure de `galerie-index.html` en premier pour comprendre l'état actuel, puis demander à Fra quelle priorité traiter.
+
+## État au 1er juin 2026 — Dernière session
+
+### Fichiers modifiés (branche `claude/wizardly-montalcini-0056ce`)
+Ces changements sont dans `.claude/worktrees/wizardly-montalcini-0056ce/` — pas encore mergés sur main.
+
+### Ce qui a été fait
+- Palette affinée : or plus sombre, fonds plus chauds
+- Nouvelles variables --cream-warm et --cream-soft
+- Grain argentique SVG sur body::before (désactivé mobile)
+- Split-tone overlay cinématique sur les photos
+- Hero redessiné, lightbox crossfade, galerie masonry
+- Responsive complet sur index.html, boutique.html, galerie-newyork.html
+
+### Prochaine session — par où commencer
+1. Merger la worktree sur main depuis Claude Code
+2. Demander à Fra quelle priorité traiter ensuite

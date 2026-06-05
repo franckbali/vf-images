@@ -643,56 +643,47 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
   <div class="yt-grid">
 
     <!-- YT card 1 -->
-    <article class="yt-card reveal" onclick="window.open('https://www.youtube.com/watch?v=Imlxpynb0qM','_blank')" role="link" tabindex="0" aria-label="Voir sur YouTube — The Lens of Wonder">
-      <div class="yt-thumb">
-        <img width="1280" height="720"
-             src="https://img.youtube.com/vi/Imlxpynb0qM/maxresdefault.jpg"
-             alt="Vlog Bali — The Lens of Wonder"
-             loading="lazy" decoding="async">
-        <div class="yt-play">
+    <article class="yt-card reveal" tabindex="0" aria-label="Réveil à Amed : à la rencontre des pêcheurs balinais">
+      <div class="yt-thumb yt-lazy" data-ytid="Imlxpynb0qM">
+        <img width="1280" height="720" src="https://img.youtube.com/vi/Imlxpynb0qM/maxresdefault.jpg" alt="Réveil à Amed : à la rencontre des pêcheurs balinais" loading="lazy" decoding="async">
+        <div class="yt-play" onclick="loadYTCard(this.parentElement)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(245,243,239,.92)" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         </div>
       </div>
       <div class="yt-body">
         <p class="yt-low-badge"><i></i><span>The Lens of Wonder</span></p>
-        <h3 class="yt-title">Bali · The Lens of Wonder</h3>
-        <p class="yt-meta">Bali · 2025</p>
+        <h3 class="yt-title">Réveil à Amed : à la rencontre des pêcheurs balinais</h3>
+        <p class="yt-meta">Bali · 2025 · <a href="https://www.youtube.com/watch?v=Imlxpynb0qM" target="_blank" rel="noopener" style="color:rgba(201,169,110,.6);text-decoration:none">Voir sur YouTube ↗</a></p>
       </div>
     </article>
 
     <!-- YT card 2 -->
-    <article class="yt-card reveal" onclick="window.open('https://www.youtube.com/watch?v=OYRhqWETiic','_blank')" role="link" tabindex="0" aria-label="Voir sur YouTube — Melasti 2025">
-      <div class="yt-thumb">
-        <img width="1280" height="720"
-             src="https://img.youtube.com/vi/OYRhqWETiic/maxresdefault.jpg"
-             alt="Melasti 2025 · Petitenget Bali — The Lens of Wonder"
-             loading="lazy" decoding="async">
-        <div class="yt-play">
+    <article class="yt-card reveal" tabindex="0" aria-label="Tout simplement Bali">
+      <div class="yt-thumb yt-lazy" data-ytid="OYRhqWETiic">
+        <img width="1280" height="720" src="https://img.youtube.com/vi/OYRhqWETiic/maxresdefault.jpg" alt="Tout simplement Bali" loading="lazy" decoding="async">
+        <div class="yt-play" onclick="loadYTCard(this.parentElement)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(245,243,239,.92)" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         </div>
       </div>
       <div class="yt-body">
         <p class="yt-low-badge"><i></i><span>The Lens of Wonder</span></p>
-        <h3 class="yt-title">Melasti 2025 · Petitenget, Bali</h3>
-        <p class="yt-meta">Bali · Mars 2025</p>
+        <h3 class="yt-title">Tout simplement Bali</h3>
+        <p class="yt-meta">Bali · 2025 · <a href="https://www.youtube.com/watch?v=OYRhqWETiic" target="_blank" rel="noopener" style="color:rgba(201,169,110,.6);text-decoration:none">Voir sur YouTube ↗</a></p>
       </div>
     </article>
 
     <!-- YT card 3 -->
-    <article class="yt-card reveal" onclick="window.open('https://www.youtube.com/watch?v=hLWum5wnx9M','_blank')" role="link" tabindex="0" aria-label="Voir sur YouTube — The Lens of Wonder">
-      <div class="yt-thumb">
-        <img width="1280" height="720"
-             src="https://img.youtube.com/vi/hLWum5wnx9M/maxresdefault.jpg"
-             alt="Vlog Bali — The Lens of Wonder"
-             loading="lazy" decoding="async">
-        <div class="yt-play">
+    <article class="yt-card reveal" tabindex="0" aria-label="Cérémonie de Melasti sur la plage de Petitenget">
+      <div class="yt-thumb yt-lazy" data-ytid="hLWum5wnx9M">
+        <img width="1280" height="720" src="https://img.youtube.com/vi/hLWum5wnx9M/maxresdefault.jpg" alt="Cérémonie de Melasti sur la plage de Petitenget" loading="lazy" decoding="async">
+        <div class="yt-play" onclick="loadYTCard(this.parentElement)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(245,243,239,.92)" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         </div>
       </div>
       <div class="yt-body">
         <p class="yt-low-badge"><i></i><span>The Lens of Wonder</span></p>
-        <h3 class="yt-title">The Lens of Wonder · Bali</h3>
-        <p class="yt-meta">Bali · 2025</p>
+        <h3 class="yt-title">Cérémonie de Melasti sur la plage de Petitenget</h3>
+        <p class="yt-meta">Bali · Mars 2025 · <a href="https://www.youtube.com/watch?v=hLWum5wnx9M" target="_blank" rel="noopener" style="color:rgba(201,169,110,.6);text-decoration:none">Voir sur YouTube ↗</a></p>
       </div>
     </article>
 
@@ -771,6 +762,20 @@ if(hamburger&&navOverlay){
 document.querySelectorAll('[role="link"]').forEach(el=>{
   el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')el.click();});
 });
+
+/* ── YouTube lazy embed in vlog cards ── */
+function loadYTCard(wrapper){
+  var ytid=wrapper.dataset.ytid;
+  if(!ytid) return;
+  var iframe=document.createElement('iframe');
+  iframe.src='https://www.youtube.com/embed/'+ytid+'?autoplay=1&rel=0&modestbranding=1';
+  iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen=true;
+  iframe.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:none';
+  wrapper.style.position='relative';
+  wrapper.innerHTML='';
+  wrapper.appendChild(iframe);
+}
 </script>
 
 <script>

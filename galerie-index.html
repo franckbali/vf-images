@@ -61,14 +61,14 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .gallery-door img{
   width:100%;height:100%;
   object-fit:cover;display:block;
-  filter:brightness(.72) saturate(.85);
+  filter:brightness(1) saturate(1);
   transition:transform 1.6s cubic-bezier(0.25,0.46,0.45,0.94),
              filter 1.3s ease;
   will-change:transform,filter;
 }
 .gallery-door:hover img{
   transform:scale(1.07);
-  filter:brightness(.45) saturate(.7);
+  filter:brightness(.6) saturate(.85);
 }
 
 /* Overlay */
@@ -129,7 +129,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .gallery-door:hover .door-sub{opacity:1;transform:translateY(0)}
 
 /* Touch mobile */
-.gallery-door.touched img{transform:scale(1.07);filter:brightness(.45) saturate(.7)}
+.gallery-door.touched img{transform:scale(1.07);filter:brightness(.6) saturate(.85)}
 .gallery-door.touched .door-overlay{background:rgba(8,8,8,.2)}
 .gallery-door.touched .door-title{opacity:1;transform:translateY(0)}
 .gallery-door.touched .door-line{width:36px;opacity:.7}
@@ -156,7 +156,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   }
 
   /* Titres toujours visibles */
-  .gallery-door img{filter:brightness(.55) saturate(.8)!important}
+  .gallery-door img{filter:brightness(1) saturate(1)!important}
   .door-title{opacity:1!important;transform:translateY(0)!important;font-size:1.9rem!important;letter-spacing:.14em!important}
   .door-line{width:28px!important;opacity:.6!important}
   .door-sub{opacity:1!important;transform:translateY(0)!important;font-size:1.15rem!important;letter-spacing:.08em!important}

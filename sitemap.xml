@@ -1,57 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ── Page d'accueil ── -->
   <url>
-    <loc>https://vf-images.com/index.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://vfimages.com/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en"/>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vf-images.com/galerie-index.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://vfimages.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ── Galeries ── -->
+  <url>
+    <loc>https://vfimages.com/galerie-index</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/galerie-index"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/gallery"/>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vf-images.com/galerie-newyork.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://vfimages.com/en/gallery</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/galerie-index"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/gallery"/>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vf-images.com/boutique.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://vfimages.com/galerie-bali</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/galerie-bali"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vfimages.com/galerie-bali"/>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vf-images.com/blog.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://vfimages.com/galerie-newyork</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/galerie-newyork"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/gallery-newyork"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vfimages.com/en/gallery-newyork</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/galerie-newyork"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/gallery-newyork"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vfimages.com/galerie-portraits</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/galerie-portraits"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vfimages.com/galerie-portraits"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Boutique ── -->
+  <url>
+    <loc>https://vfimages.com/boutique</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/boutique"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/shop"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vfimages.com/en/shop</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/boutique"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/shop"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Éditions limitées ── -->
+  <url>
+    <loc>https://vfimages.com/editions/portrait-bali-012</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/editions/portrait-bali-012"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vfimages.com/editions/portrait-bali-012"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vfimages.com/editions/portrait-bali-369</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/editions/portrait-bali-369"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vfimages.com/editions/portrait-bali-369"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ── À propos ── -->
+  <url>
+    <loc>https://vfimages.com/a-propos</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/about"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://vfimages.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/about"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ── Contact ── -->
+  <url>
+    <loc>https://vfimages.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/contact"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://vfimages.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/contact"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ── Journal / Blog ── -->
+  <url>
+    <loc>https://vfimages.com/blog</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/blog"/>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vf-images.com/blog-article.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://vfimages.com/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/blog"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://vfimages.com/blog-article</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/blog-article"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/blog-article"/>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://vf-images.com/a-propos.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://vf-images.com/contact.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://vfimages.com/en/blog-article</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/blog-article"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/blog-article"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://vf-images.com/mentions-legales.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://vfimages.com/blog-article-reunion</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/blog-article-reunion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vfimages.com/blog-article-reunion"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
+
 </urlset>

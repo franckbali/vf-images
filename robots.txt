@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /boutique_backup
+Disallow: /propositions-palettes-vf-images
+Disallow: /raffinements-style-actuel
 
-Sitemap: https://www.vfimages.com/sitemap.xml
+Sitemap: https://vfimages.com/sitemap.xml

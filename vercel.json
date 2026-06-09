@@ -1,6 +1,16 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/gallery.html", "destination": "/en/gallery", "permanent": true },
+    { "source": "/gallery",      "destination": "/en/gallery", "permanent": true },
+    { "source": "/shop.html",    "destination": "/en/shop",    "permanent": true },
+    { "source": "/shop",         "destination": "/en/shop",    "permanent": true },
+    { "source": "/about.html",   "destination": "/en/about",   "permanent": true },
+    { "source": "/about",        "destination": "/en/about",   "permanent": true },
+    { "source": "/legal.html",   "destination": "/mentions-legales", "permanent": true },
+    { "source": "/legal",        "destination": "/mentions-legales", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*).html",

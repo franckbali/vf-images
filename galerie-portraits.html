@@ -67,12 +67,28 @@
 .frame.offset-left,.frame.offset-right{width:min(52vw,740px);aspect-ratio:3/2;overflow:hidden;position:relative;margin:0}
 .frame.offset-left img,.frame.offset-right img{width:100%;height:100%;object-fit:cover}
 
-/* CAPTIONS */
+/* CAPTIONS — apparaissent sous la photo au hover */
 .caption-corner{display:none}
-.caption-below{margin-top:.9rem;font-size:0.75rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,239,.92);font-family:'Raleway',sans-serif;font-weight:400}
+.caption-below{
+  margin-top:.7rem;
+  font-size:0.72rem;letter-spacing:.26em;
+  text-transform:uppercase;
+  color:rgba(245,243,239,.6);
+  font-family:'Raleway',sans-serif;font-weight:400;
+  opacity:0;transform:translateY(5px);
+  transition:opacity .45s ease,transform .45s ease;
+  padding-left:2px;
+}
+.block.hovered+.caption-below,.frame.hovered+.caption-below,
+.block.touched+.caption-below,.frame.touched+.caption-below{opacity:1;transform:translateY(0)}
 
-/* HOVER DESCRIPTION */
-.photo-desc{
+/* Zoom subtil au hover */
+.frame.hovered img{transform:scale(1.03);transition:transform 1.2s ease,filter .8s ease}
+.frame.touched img{transform:scale(1.03)}
+
+/* HOVER DESCRIPTION — masquée (texte dans lightbox uniquement) */
+.photo-desc{display:none!important}
+.photo-desc-off{
   position:absolute;inset:0;
   display:flex;flex-direction:column;
   justify-content:flex-end;
@@ -134,6 +150,9 @@
   .cursor,.cursor-ring{display:none!important}
   body{cursor:auto!important}
   a,button,.photo-item,.print-card,.btn,.fmt-option,.order-btn,.filter-btn{cursor:pointer!important}
+}
+@media(pointer:coarse){
+  .caption-below{opacity:1!important;transform:translateY(0)!important;font-size:1rem!important;letter-spacing:.14em!important;color:rgba(245,243,239,.75)!important}
 }
 
 /* ══ PROTECTION PHOTOS ══ */
@@ -463,12 +482,10 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.visible),.serie-line:not(
 /* Descriptions photo */
 (function(){
   document.querySelectorAll('.block[data-title],.frame[data-title]').forEach(function(el){
-    var d=document.createElement('div');
-    d.className='photo-desc';
-    d.innerHTML='<p class="desc-title">'+(el.dataset.title||'')+'</p>'
-              +'<span class="desc-line"></span>'
-              +'<p class="desc-text" data-fr="'+(el.dataset.desc||'')+'" data-en="'+(el.dataset.descEn||el.dataset.desc||'')+'">'+(el.dataset.desc||'')+'</p>';
-    el.appendChild(d);
+    var cap=document.createElement('p');
+    cap.className='caption-below';
+    cap.textContent=el.dataset.title||'';
+    el.insertAdjacentElement('afterend',cap);
   });
   var _initLang=localStorage.getItem('vf_lang')||'fr';
   if(_initLang==='en'&&window.setLang) window.setLang('en');

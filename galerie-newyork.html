@@ -340,9 +340,7 @@
   a,button,.photo-item,.print-card,.btn,.fmt-option,.order-btn,.filter-btn{cursor:pointer!important}
 }
 /* Titres toujours visibles sur tactile */
-@media(pointer:coarse){
-  .caption-below{opacity:1!important;transform:translateY(0)!important;font-size:1rem!important;letter-spacing:.14em!important;color:rgba(245,243,239,.75)!important}
-}
+/* captions mobiles : apparaissent au touché (JS toggle), pas toujours visibles */
 
 /* ══ PROTECTION PHOTOS ══ */
 img {
@@ -875,8 +873,6 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.visible),.serie-line:not(
     el.addEventListener('touchstart',function(e){
       tStart=Date.now();
       tMoved=false;
-      document.querySelectorAll('.touched').forEach(function(t){ t.classList.remove('touched'); });
-      el.classList.add('touched');
     },{passive:true});
 
     el.addEventListener('touchmove',function(e){
@@ -885,11 +881,15 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.visible),.serie-line:not(
     },{passive:true});
 
     el.addEventListener('touchend',function(e){
-      el.classList.remove('touched');
-      // Ouvrir lightbox seulement si c'est un vrai tap (pas un scroll)
-      if(!tMoved && Date.now()-tStart<250){
+      if(!tMoved && Date.now()-tStart<350){
         e.preventDefault();
-        openLightbox(el);
+        if(el.classList.contains('touched')){
+          el.classList.remove('touched');
+          openLightbox(el);
+        } else {
+          document.querySelectorAll('.touched').forEach(function(t){ t.classList.remove('touched'); });
+          el.classList.add('touched');
+        }
       }
     },{passive:false});
   });

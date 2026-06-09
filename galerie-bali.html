@@ -262,9 +262,7 @@
   a,button,.photo-item,.print-card,.btn,.panel-trigger{cursor:pointer!important}
 }
 /* Captions toujours visibles sur mobile/tactile */
-@media(pointer:coarse){
-  .caption-below{opacity:1!important;transform:translateY(0)!important;font-size:1rem!important;letter-spacing:.14em!important;color:rgba(245,243,239,.75)!important}
-}
+/* captions mobiles : apparaissent au touché (JS toggle), pas toujours visibles */
 
 /* ══ PROTECTION PHOTOS ══ */
 img{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
@@ -611,13 +609,19 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.visible),.serie-line:not(
   document.querySelectorAll('.block[onclick],.frame[onclick],.frame-nat[onclick]').forEach(function(el){
     el.addEventListener('touchstart',function(e){
       tStart=Date.now();tMoved=false;
-      document.querySelectorAll('.touched').forEach(function(t){ t.classList.remove('touched'); });
-      el.classList.add('touched');
     },{passive:true});
     el.addEventListener('touchmove',function(e){ tMoved=true;el.classList.remove('touched'); },{passive:true});
     el.addEventListener('touchend',function(e){
-      el.classList.remove('touched');
-      if(!tMoved&&Date.now()-tStart<250){ e.preventDefault(); openLightbox(el); }
+      if(!tMoved&&Date.now()-tStart<350){
+        e.preventDefault();
+        if(el.classList.contains('touched')){
+          el.classList.remove('touched');
+          openLightbox(el);
+        } else {
+          document.querySelectorAll('.touched').forEach(function(t){ t.classList.remove('touched'); });
+          el.classList.add('touched');
+        }
+      }
     },{passive:false});
   });
   window.addEventListener('scroll',function(){

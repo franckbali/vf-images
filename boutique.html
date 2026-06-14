@@ -372,9 +372,10 @@
   /* Detail modale — empilé + scrollable sur mobile */
   .detail-modal{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
   .detail-inner{grid-template-columns:1fr;height:auto;overflow:visible}
-  .modal-viz-wrap{display:none}
-  .detail-info{padding-top:4rem}
-  .detail-info{height:auto;padding:1.5rem 1.8rem 6rem;overflow-y:visible}
+  .modal-viz-wrap{height:auto;padding:2rem 1.5rem 1.2rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0}
+  .modal-viz-scene{max-width:260px;aspect-ratio:2/3}
+  .modal-viz-badge{margin-top:.8rem;font-size:.6rem}
+  .detail-info{height:auto;padding:2rem 1.5rem 6rem;overflow-y:visible}
   /* Lien ROW — zone tactile élargie */
   .contact-row-link{padding:.75rem 0;margin-top:.6rem;font-size:0.75rem}
   /* Fullscreen — masquer "ESC" sur touch */

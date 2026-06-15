@@ -456,6 +456,14 @@ Sur GitHub Pages, le fichier `404.html` à la racine est servi automatiquement.
 
 ---
 
+## `[ ]` 33. Google Business Profile + Google Merchant Center
+
+**Temps :** 1 h · **Impact :** ⚡ Visibilité / Shopping
+
+> **État :** ❌ Non fait. Deux outils gratuits à envisager : **Google Business Profile** (fiche crédibilité + avis clients, apparaît dans Maps) et **Google Merchant Center** (tirages visibles dans l'onglet Google Shopping sur des requêtes type "tirage fine art Bali"). Les deux sont gratuits. À faire une fois la boutique opérationnelle (URLs Printspace en place).
+
+---
+
 ## `[ ]` 30. Témoignage demandé à chaque nouvelle vente
 
 **Temps :** 5 min/vente (Franck) · **Impact :** 🔥 Crédibilité

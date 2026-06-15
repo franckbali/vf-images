@@ -360,11 +360,11 @@ Sur GitHub Pages, le fichier `404.html` à la racine est servi automatiquement.
 
 ---
 
-## `[~]` 20. Sitemap.xml + robots.txt + Google Search Console
+## `[x]` 20. Sitemap.xml + robots.txt + Google Search Console
 
 **Temps :** 1 h · **Impact :** ⚡ SEO
 
-> **État :** ⚠ Presque complet. `sitemap.xml` ✅ existait déjà. `robots.txt` ✅ créé (mai 2026) — pointe vers sitemap. **Reste :** côté Franck uniquement — créer compte Google Search Console et soumettre le sitemap.
+> **État :** ✅ Complet. `sitemap.xml` ✅ existait déjà. `robots.txt` ✅ créé (mai 2026) — pointe vers sitemap. Google Search Console ✅ créé par Franck (juin 2026).
 
 **Fichiers :** nouveau `robots.txt`
 
@@ -568,8 +568,7 @@ Sur GitHub Pages, le fichier `404.html` à la racine est servi automatiquement.
 ### 🥈 02. Alt texts descriptifs sur toutes les images (action 22) — 1 h 30
 **SEO + accessibilité.** La majorité des `alt` sont trop courts ou vides. Claude Code peut proposer les textes et faire le batch-update.
 
-### 🥉 03. Google Search Console (action 20) — côté Franck
-**Le sitemap et robots.txt sont en place.** Il reste uniquement à créer le compte Search Console et soumettre le sitemap — 15 min côté Franck, aucun code à écrire.
+### ~~🥉 03. Google Search Console (action 20)~~ ✅ Fait par Franck (juin 2026)
 
 ### 4️⃣ 04. Page process.html (action 27)
 **Crédibilité boutique.** Expliquer comment les tirages sont fabriqués. Peut être fait en texte seul dans un premier temps, sans attendre les photos process.

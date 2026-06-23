@@ -3,14 +3,18 @@ CODE HTML À COPIER DANS VOS PAGES
 Remplacez [DESCRIPTION] par le texte alternatif
 ════════════════════════════════════════════════════════════
 
-<!-- portrait-bali-015 -->
+<!-- cari-feu-de-bois-la-reunion-001 -->
 <picture>
   <source
+    type="image/avif"
+    srcset="images/cari-feu-de-bois-la-reunion-001-small.avif 640w, images/cari-feu-de-bois-la-reunion-001-medium.avif 1200w, images/cari-feu-de-bois-la-reunion-001-large.avif 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
     type="image/webp"
-    srcset="images/portrait-bali-015-small.webp 640w, images/portrait-bali-015-medium.webp 1200w, images/portrait-bali-015-large.webp 1920w"
+    srcset="images/cari-feu-de-bois-la-reunion-001-small.webp 640w, images/cari-feu-de-bois-la-reunion-001-medium.webp 1200w, images/cari-feu-de-bois-la-reunion-001-large.webp 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/portrait-bali-015.jpg"
+    src="images/cari-feu-de-bois-la-reunion-001.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -18,29 +22,56 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- rizieres-bali-001 -->
+<!-- cari-feu-de-bois-la-reunion-002 -->
 <picture>
   <source
+    type="image/avif"
+    srcset="images/cari-feu-de-bois-la-reunion-002-small.avif 640w, images/cari-feu-de-bois-la-reunion-002-medium.avif 1200w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
     type="image/webp"
-    srcset="images/rizieres-bali-001-small.webp 640w, images/rizieres-bali-001-medium.webp 1200w, images/rizieres-bali-001-large.webp 1920w"
+    srcset="images/cari-feu-de-bois-la-reunion-002-small.webp 640w, images/cari-feu-de-bois-la-reunion-002-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/rizieres-bali-001.jpg"
+    src="images/cari-feu-de-bois-la-reunion-002.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
-    width="1920"
+    width="1200"
     height="auto">
 </picture>
 
-<!-- sifnos-grece-003 -->
+<!-- cari-feu-de-bois-la-reunion-003 -->
 <picture>
   <source
+    type="image/avif"
+    srcset="images/cari-feu-de-bois-la-reunion-003-small.avif 640w, images/cari-feu-de-bois-la-reunion-003-medium.avif 1200w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
     type="image/webp"
-    srcset="images/sifnos-grece-003-small.webp 640w, images/sifnos-grece-003-medium.webp 1200w"
+    srcset="images/cari-feu-de-bois-la-reunion-003-small.webp 640w, images/cari-feu-de-bois-la-reunion-003-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/sifnos-grece-003.jpg"
+    src="images/cari-feu-de-bois-la-reunion-003.jpg"
+    alt="[DESCRIPTION]"
+    loading="lazy"
+    decoding="async"
+    width="1200"
+    height="auto">
+</picture>
+
+<!-- cari-feu-de-bois-la-reunion-004 -->
+<picture>
+  <source
+    type="image/avif"
+    srcset="images/cari-feu-de-bois-la-reunion-004-small.avif 640w, images/cari-feu-de-bois-la-reunion-004-medium.avif 1200w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
+    type="image/webp"
+    srcset="images/cari-feu-de-bois-la-reunion-004-small.webp 640w, images/cari-feu-de-bois-la-reunion-004-medium.webp 1200w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <img
+    src="images/cari-feu-de-bois-la-reunion-004.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"

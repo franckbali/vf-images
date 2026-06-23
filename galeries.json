@@ -563,6 +563,46 @@
       "page": "galerie-sifnos-grece-003.html",
       "ordre": 55,
       "visible": false
+    },
+    {
+      "titre": "Cari Feu De Bois La Reunion 001",
+      "sous_titre": "",
+      "image_cover": "images/cari-feu-de-bois-la-reunion-001.jpg",
+      "orientation": "landscape",
+      "slug": "cari-feu-de-bois-la-reunion-001",
+      "page": "galerie-cari-feu-de-bois-la-reunion-001.html",
+      "ordre": 56,
+      "visible": false
+    },
+    {
+      "titre": "Cari Feu De Bois La Reunion 002",
+      "sous_titre": "",
+      "image_cover": "images/cari-feu-de-bois-la-reunion-002.jpg",
+      "orientation": "portrait",
+      "slug": "cari-feu-de-bois-la-reunion-002",
+      "page": "galerie-cari-feu-de-bois-la-reunion-002.html",
+      "ordre": 57,
+      "visible": false
+    },
+    {
+      "titre": "Cari Feu De Bois La Reunion 003",
+      "sous_titre": "",
+      "image_cover": "images/cari-feu-de-bois-la-reunion-003.jpg",
+      "orientation": "portrait",
+      "slug": "cari-feu-de-bois-la-reunion-003",
+      "page": "galerie-cari-feu-de-bois-la-reunion-003.html",
+      "ordre": 58,
+      "visible": false
+    },
+    {
+      "titre": "Cari Feu De Bois La Reunion 004",
+      "sous_titre": "",
+      "image_cover": "images/cari-feu-de-bois-la-reunion-004.jpg",
+      "orientation": "portrait",
+      "slug": "cari-feu-de-bois-la-reunion-004",
+      "page": "galerie-cari-feu-de-bois-la-reunion-004.html",
+      "ordre": 59,
+      "visible": false
     }
   ]
 }

@@ -38,12 +38,9 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* HERO ARTICLE */
 .article-hero{position:relative;height:90vh;display:flex;align-items:flex-end;padding:0 5vw 7vh;overflow:hidden}
-.article-hero-bg{
-  position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(10,10,10,.3) 0%,rgba(10,10,10,.05) 35%,rgba(10,10,10,.92) 100%),
-  url('images/une-fenetre-sur-locean.jpg') center 50%/cover no-repeat;
-  transform:scale(1.04);animation:heroZoom 14s ease-out forwards;
-}
+.article-hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
+.article-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.3) 0%,rgba(10,10,10,.05) 35%,rgba(10,10,10,.92) 100%)}
+.article-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;transform:scale(1.04);animation:heroZoom 14s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.04)}to{transform:scale(1)}}
 .article-hero-content{position:relative;max-width:720px}
 .hero-back{display:inline-flex;align-items:center;gap:.5rem;font-size:0.75rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,110,1.0);text-decoration:none;margin-bottom:2rem;transition:color .3s;font-weight:400}
@@ -128,7 +125,13 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 <!-- HERO -->
 <div class="article-hero">
-  <div class="article-hero-bg"></div>
+  <div class="article-hero-bg">
+    <picture>
+      <source type="image/avif" srcset="images/une-fenetre-sur-locean-h640.avif 640w, images/une-fenetre-sur-locean-h1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="images/une-fenetre-sur-locean-h640.webp 640w, images/une-fenetre-sur-locean-h1280.webp 1280w" sizes="100vw">
+      <img class="article-hero-img" src="images/une-fenetre-sur-locean-h1280.webp" alt="" width="1333" height="2000" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
   <div class="article-hero-content">
     <a href="blog.html" class="hero-back">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>

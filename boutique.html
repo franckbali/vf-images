@@ -41,7 +41,9 @@
 
 /* HERO */
 .hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:0 4rem 7vh;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.04)}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%),url('images/sifnos-grece-001.jpg') center/cover no-repeat;z-index:0}
+.hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%)}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}
 .hero-eyebrow,.hero-title,.hero-sub{position:relative;z-index:1}
 .hero-eyebrow{font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
 .hero-title{font-family:'Raleway',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:200;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1;margin-bottom:1.2rem}
@@ -1087,7 +1089,13 @@ button:focus:not(:focus-visible) {
 <!-- HERO -->
 <main id="main-content">
 <div class="hero">
-  <div class="hero-bg" style="background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%),url('images/sifnos-grece-001.jpg') center/cover no-repeat"></div>
+  <div class="hero-bg">
+    <picture>
+      <source type="image/avif" srcset="images/sifnos-grece-001-h640.avif 640w, images/sifnos-grece-001-h1280.avif 1280w, images/sifnos-grece-001-h1920.avif 1920w" sizes="100vw">
+      <source type="image/webp" srcset="images/sifnos-grece-001-h640.webp 640w, images/sifnos-grece-001-h1280.webp 1280w, images/sifnos-grece-001-h1920.webp 1920w" sizes="100vw">
+      <img class="hero-img" src="images/sifnos-grece-001-h1280.webp" alt="" width="1920" height="1279" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
   <p class="hero-eyebrow" data-fr="VF Images · Tirages Fine Art" data-en="VF Images · Fine Art Prints">VF Images</p>
   <h1 class="hero-title" data-fr="Boutique" data-en="Shop">Boutique</h1>
   <p class="hero-sub" data-fr="Des images pensées pour durer — tirées sur papiers d'exception, numérotées et livrées partout dans le monde." data-en="Images made to last — printed on exceptional papers, numbered and shipped worldwide.">Des images pensées pour durer — tirées sur papiers d'exception, numérotées et livrées partout dans le monde.</p>

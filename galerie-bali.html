@@ -38,7 +38,9 @@
 
 /* INTRO */
 .gallery-intro{height:100vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:0 5vw 6vh;position:relative;overflow:hidden}
-.gallery-intro-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.5) 0%,rgba(10,10,10,.15) 40%,rgba(10,10,10,.9) 100%),url('images/rituels-bali-003-large.webp') center 40%/cover no-repeat;transform:scale(1.04);animation:heroZoom 14s ease-out forwards}
+.gallery-intro-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
+.gallery-intro-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.5) 0%,rgba(10,10,10,.15) 40%,rgba(10,10,10,.9) 100%)}
+.gallery-intro-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;transform:scale(1.04);animation:heroZoom 14s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.04)}to{transform:scale(1)}}
 .gallery-intro-content{position:relative}
 .intro-back{display:inline-flex;align-items:center;gap:.6rem;font-size:0.80rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,110,1.0);text-decoration:none;margin-bottom:2rem;transition:color .3s;font-weight:400}
@@ -434,7 +436,13 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
 <!-- INTRO -->
 <div class="gallery-intro">
-  <div class="gallery-intro-bg"></div>
+  <div class="gallery-intro-bg">
+    <picture>
+      <source type="image/avif" srcset="images/rituels-bali-003-h640.avif 640w, images/rituels-bali-003-h1280.avif 1280w, images/rituels-bali-003-h1920.avif 1920w" sizes="100vw">
+      <source type="image/webp" srcset="images/rituels-bali-003-h640.webp 640w, images/rituels-bali-003-h1280.webp 1280w, images/rituels-bali-003-h1920.webp 1920w" sizes="100vw">
+      <img class="gallery-intro-img" src="images/rituels-bali-003-h1280.webp" alt="" width="1920" height="1279" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
   <div class="gallery-intro-content">
     <a href="galerie-index.html" class="intro-back">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>

@@ -50,13 +50,14 @@
   position:relative;
   overflow:hidden;
 }
-.contact-photo{
+.contact-photo{position:absolute;inset:0;overflow:hidden}
+.contact-photo-img{
   position:absolute;inset:0;
-  background:url('images/portrait-bali-01.jpg') 38% 58%/cover no-repeat;
+  width:100%;height:100%;object-fit:cover;object-position:38% 58%;
   filter:brightness(.65);
   transition:transform 14s ease;
 }
-.contact-left:hover .contact-photo{transform:scale(1.03)}
+.contact-left:hover .contact-photo-img{transform:scale(1.03)}
 .contact-left-content{
   position:relative;
   height:100%;
@@ -683,7 +684,13 @@ button:focus:not(:focus-visible) {
 
   <!-- GAUCHE -->
   <div class="contact-left">
-    <div class="contact-photo"></div>
+    <div class="contact-photo">
+      <picture>
+        <source type="image/avif" srcset="images/portrait-bali-01-h640.avif 640w, images/portrait-bali-01-h1280.avif 1280w, images/portrait-bali-01-h1920.avif 1920w" sizes="(max-width:900px) 100vw, 45vw">
+        <source type="image/webp" srcset="images/portrait-bali-01-h640.webp 640w, images/portrait-bali-01-h1280.webp 1280w, images/portrait-bali-01-h1920.webp 1920w" sizes="(max-width:900px) 100vw, 45vw">
+        <img class="contact-photo-img" src="images/portrait-bali-01-h1280.webp" alt="" width="1920" height="1279" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
     <div class="contact-left-content">
       <p class="contact-eyebrow">VF Images · Bali</p>
       <h1 class="contact-title">Contact</h1>

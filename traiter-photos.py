@@ -31,6 +31,9 @@ CONFIG = {
     # Qualité WebP (85 = excellent rapport qualité/poids, 92 = quasi-lossless)
     "webp_quality": 87,
 
+    # Qualité AVIF (format moderne, ~2× plus léger que WebP à qualité égale)
+    "avif_quality": 60,
+
     # Fallback JPG pour navigateurs anciens (qualité légèrement inférieure)
     "jpg_quality": 82,
 
@@ -145,6 +148,15 @@ def process_image(input_path, output_dir, config):
             webp_size = webp_path.stat().st_size
             generated.append(('WebP', size_name, target_w, webp_size, webp_path.name))
 
+            # ── AVIF (format moderne, ~2× plus léger que WebP) ──
+            try:
+                avif_path = out_dir / f"{name}-{size_name}.avif"
+                resized.save(avif_path, 'AVIF', quality=config['avif_quality'])
+                avif_size = avif_path.stat().st_size
+                generated.append(('AVIF', size_name, target_w, avif_size, avif_path.name))
+            except Exception as e:
+                print(f"     ⚠️  AVIF ignoré ({size_name}) : {e}")
+
         # ── JPG fallback (taille large — pour heroes CSS plein écran) ──
         ratio = min(config['sizes']['large'], orig_w) / orig_w
         fb_w = int(orig_w * ratio)
@@ -183,19 +195,25 @@ def generate_html_snippet(result):
 
     webp_files = [(sz, w, fn) for fmt, sz, w, _, fn in files if fmt == 'WebP']
     webp_files.sort(key=lambda x: x[1])  # Trier par largeur
+    avif_files = [(sz, w, fn) for fmt, sz, w, _, fn in files if fmt == 'AVIF']
+    avif_files.sort(key=lambda x: x[1])
 
     if not webp_files:
         return ""
 
     srcset_webp = ", ".join(f"images/{fn} {w}w" for sz, w, fn in webp_files)
+    srcset_avif = ", ".join(f"images/{fn} {w}w" for sz, w, fn in avif_files)
     jpg_fallback = f"images/{name}.jpg"
 
-    # Trouver la taille medium pour le src par défaut
-    default_src = next((f"images/{fn}" for sz, w, fn in webp_files if sz == 'medium'), f"images/{webp_files[-1][2]}")
+    avif_source = (f'''  <source
+    type="image/avif"
+    srcset="{srcset_avif}"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+''' if avif_files else "")
 
     snippet = f'''<!-- {name} -->
 <picture>
-  <source
+{avif_source}  <source
     type="image/webp"
     srcset="{srcset_webp}"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">

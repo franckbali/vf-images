@@ -58,6 +58,19 @@
 .home-fineart-strip{padding:2.2rem 4rem;text-align:center;background:var(--dark);border-bottom:1px solid rgba(255,255,255,.04)}
 .home-fineart-strip p{font-family:'Raleway',sans-serif;font-size:.72rem;font-weight:300;letter-spacing:.32em;text-transform:uppercase;color:rgba(201,169,110,.65);margin:0}
 
+/* Manifeste éditorial — le regard avant le commerce */
+.home-manifesto{padding:8rem 4rem 7rem;background:var(--dark);text-align:center;display:flex;flex-direction:column;align-items:center}
+.home-manifesto .manifesto-mark{font-family:'Raleway',sans-serif;font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:2.2rem;font-weight:400}
+.home-manifesto blockquote{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.5;color:rgba(245,243,239,.92);max-width:840px;margin:0;letter-spacing:.01em}
+.home-manifesto .manifesto-sign{font-family:'Raleway',sans-serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(245,243,239,.45);margin-top:2.5rem;font-weight:400}
+.home-manifesto .manifesto-line{width:40px;height:1px;background:var(--gold);opacity:.6;margin:2.5rem auto 0}
+@media(max-width:900px){
+  .home-manifesto{padding:5rem 1.8rem 4.5rem}
+  .home-manifesto blockquote{font-size:clamp(1.4rem,5.5vw,1.9rem)!important;line-height:1.55!important}
+  .home-manifesto .manifesto-mark{font-size:.9rem!important;letter-spacing:.25em!important}
+  .home-manifesto .manifesto-sign{font-size:.9rem!important}
+}
+
 section.gallery-preview{padding:10rem 4rem;background:var(--dark)}
 .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem}
 
@@ -595,6 +608,13 @@ button:focus:not(:focus-visible) {
     <span data-fr="Découvrir" data-en="Discover">Découvrir</span>
     <div class="scroll-line"></div>
   </div>
+</section>
+
+<section class="home-manifesto">
+  <p class="manifesto-mark" data-fr="Le regard" data-en="The gaze">Le regard</p>
+  <blockquote data-fr="Je ne photographie pas des lieux. Je photographie l'instant où ils deviennent vrais — un regard, un geste, une lumière qui ne reviendra pas." data-en="I don't photograph places. I photograph the moment they become true — a gaze, a gesture, a light that will never return.">Je ne photographie pas des lieux. Je photographie l'instant où ils deviennent vrais — un regard, un geste, une lumière qui ne reviendra pas.</blockquote>
+  <p class="manifesto-sign">Franck Vinel</p>
+  <span class="manifesto-line"></span>
 </section>
 
 <div class="home-fineart-strip">

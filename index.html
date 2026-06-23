@@ -36,13 +36,13 @@
 <style>
 .lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
-.hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero{position:relative;height:100vh;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;
   background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%),
   url('images/bg.webp') center 30%/cover no-repeat;
   transform:scale(1.05);animation:heroZoom 16s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.05)}to{transform:scale(1)}}
-.hero-content{position:relative;text-align:center;width:100%;max-width:100%;margin:0;padding:0;display:flex;flex-direction:column;align-items:center;box-sizing:border-box;transform:translateY(-10vh)}
+.hero-content{position:relative;text-align:center;width:100%;max-width:100%;margin:0;padding:0 0 15vh;display:flex;flex-direction:column;align-items:center;box-sizing:border-box}
 .hero-eyebrow{font-family:'Raleway',sans-serif;font-size:0.80rem;letter-spacing:.6em;text-transform:uppercase;color:var(--cream-warm);margin-bottom:.5rem;animation:fadeUp 1.4s ease .4s both;font-weight:400;opacity:.9}
 .hero-fineart{font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,169,110,.7);margin-bottom:1.4rem;animation:fadeUp 1.4s ease .52s both;font-weight:400}
 .hero-divider{width:40px;height:1px;background:var(--cream-warm);margin:0 auto 1.4rem;opacity:.6;animation:fadeUp 1.4s ease .55s both}
@@ -478,7 +478,7 @@ button:focus:not(:focus-visible) {
   .blog-meta,.blog-category,.article-meta{font-size:1rem!important}
 }
 
-.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,9rem);font-weight:300;letter-spacing:.28em;line-height:1;color:var(--light);animation:fadeUp 1.4s ease .7s both;margin-bottom:.7rem;text-transform:uppercase;text-align:center;width:100%;display:block;padding-left:.28em}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7.5vw,6.8rem);font-weight:300;letter-spacing:.28em;line-height:1;color:var(--light);animation:fadeUp 1.4s ease .7s both;margin-bottom:.7rem;text-transform:uppercase;text-align:center;width:100%;display:block;padding-left:.28em}
 .hero-name em{font-style:normal;color:var(--light)}
 @media(max-width:900px){
   .hero-home .hero-name{font-size:clamp(3.7rem,12vw,5.2rem)!important;letter-spacing:.14em!important;padding:0!important;text-align:center!important;width:100%!important;display:block!important;box-sizing:border-box!important}

@@ -15,10 +15,12 @@ body{background:var(--dark);color:var(--light);font-family:'Raleway',sans-serif;
 .cursor-ring.h{width:48px;height:48px;border-color:var(--gold)}
 
 /* ── Navigation ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 4rem;transition:background .4s,backdrop-filter .4s}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 4rem;transition:transform .55s cubic-bezier(0.22,1,0.36,1),background .4s,backdrop-filter .4s}
 nav.scrolled{background:transparent}
-/* Voile dégradé permanent : garantit la lisibilité de la nav quel que soit le contenu qui défile dessous, sans fond opaque */
-nav::before{content:'';position:absolute;left:0;right:0;top:0;height:220%;pointer-events:none;z-index:-1;background:linear-gradient(to bottom,rgba(8,8,8,.55) 0%,rgba(8,8,8,.28) 45%,rgba(8,8,8,0) 100%)}
+/* Voile dégradé : garantit la lisibilité de la nav quel que soit le contenu qui défile dessous, sans fond opaque */
+nav::before{content:'';position:absolute;left:0;right:0;top:0;height:200%;pointer-events:none;z-index:-1;background:linear-gradient(to bottom,rgba(8,8,8,.82) 0%,rgba(8,8,8,.5) 42%,rgba(8,8,8,0) 100%)}
+/* Hide-on-scroll : sur les galeries, la nav s'efface quand on entre dans les photos (intention d'origine, CSS manquant) */
+nav.hidden{transform:translateY(-110%)}
 .logo img{height:80px;width:auto;display:block}
 nav ul{list-style:none;display:flex;gap:3rem}
 nav ul li a{font-size:0.80rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s;font-family:'Raleway',sans-serif;font-weight:400}

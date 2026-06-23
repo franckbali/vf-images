@@ -37,12 +37,13 @@
 .lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 .hero{position:relative;height:100vh;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%),
-  url('images/bg.webp') center 30%/cover no-repeat;
+.hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
+.hero-bg::after{content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%)}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;
   transform:scale(1.05);animation:heroZoom 16s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.05)}to{transform:scale(1)}}
-.hero-content{position:relative;text-align:center;width:100%;max-width:100%;margin:0;padding:0 0 15vh;display:flex;flex-direction:column;align-items:center;box-sizing:border-box}
+.hero-content{position:relative;z-index:2;text-align:center;width:100%;max-width:100%;margin:0;padding:0 0 15vh;display:flex;flex-direction:column;align-items:center;box-sizing:border-box}
 .hero-eyebrow{font-family:'Raleway',sans-serif;font-size:0.80rem;letter-spacing:.6em;text-transform:uppercase;color:var(--cream-warm);margin-bottom:.5rem;animation:fadeUp 1.4s ease .4s both;font-weight:400;opacity:.9}
 .hero-fineart{font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,169,110,.7);margin-bottom:1.4rem;animation:fadeUp 1.4s ease .52s both;font-weight:400}
 .hero-divider{width:40px;height:1px;background:var(--cream-warm);margin:0 auto 1.4rem;opacity:.6;animation:fadeUp 1.4s ease .55s both}
@@ -591,7 +592,13 @@ button:focus:not(:focus-visible) {
 
 <main id="main-content">
 <section class="hero hero-home">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <picture>
+      <source type="image/avif" srcset="images/bg-h640.avif 640w, images/bg-h1280.avif 1280w, images/bg-h1920.avif 1920w" sizes="100vw">
+      <source type="image/webp" srcset="images/bg-h640.webp 640w, images/bg-h1280.webp 1280w, images/bg-h1920.webp 1920w" sizes="100vw">
+      <img class="hero-img" src="images/bg-h1280.webp" alt="" width="2000" height="1393" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
   <div class="hero-content">
     <p class="hero-eyebrow" data-fr="Photographie" data-en="Photography">Photographie</p>
     <p class="hero-fineart" data-fr="Bali et le Monde" data-en="Bali and the World">Bali et le Monde</p>

@@ -186,11 +186,11 @@ Le backend reste identique — seul le texte change.
 
 # II. Actions « ce weekend » — 1 à 3 h chacune
 
-## `[~]` 09. Optimiser images en AVIF/WebP avec squoosh.app
+## `[x]` 09. Optimiser images en AVIF/WebP
 
 **Temps :** 2 h · **Impact :** 🔥 Performance
 
-> **État :** ⚠ Partiel. WebP bien en place : les `<img>` du site utilisent `srcset` avec variantes `-small.webp 640w`, `-medium.webp 1200w`, `-large.webp 1920w` (boutique, galerie-newyork, footer). Les fichiers WebP existent dans `/images/`. **Manque :** AVIF non fait (le plus impactant, -75% de poids). Les images en background CSS (heroes) ne peuvent pas utiliser `<picture>` — c'est une limite de l'archi actuelle.
+> **État :** ✅ Fait (juin 2026). WebP + AVIF en place. Les 11 heroes ont été **convertis de fond CSS en vraies balises `<picture>`** (la limite « background CSS » de l'archi est levée) avec sources AVIF + WebP responsive (640/1280/1920, `sizes="100vw"`) et dégradé déplacé en `::after`. Vérifié en live : le navigateur charge l'AVIF (`bg-h1920.avif`, etc.). Gains : hero accueil mobile ~400 Ko → **24 Ko** (640px AVIF). Le script `traiter-photos.py` génère désormais l'AVIF automatiquement et émet la balise `<source type="image/avif">` dans ses snippets. *Reste optionnel : `cta-bali.webp` (fond de section CTA, 400px) non converti — non prioritaire.*
 
 **Comment :**
 1. Identifier les images du hero et du portfolio

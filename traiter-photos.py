@@ -12,7 +12,6 @@ Aucune configuration requise. Le script gère tout automatiquement.
 import os
 import sys
 import re
-import json
 import unicodedata
 import shutil
 from pathlib import Path
@@ -56,10 +55,6 @@ CONFIG = {
 # ══════════════════════════════════════════
 # UTILITAIRES
 # ══════════════════════════════════════════
-
-def humanize_slug(slug):
-    """Convertit 'bali-plage' en 'Bali Plage'"""
-    return ' '.join(word.capitalize() for word in slug.split('-'))
 
 def slugify(text):
     """Convertit 'Procession Barong · Bali' en 'procession-barong-bali'"""
@@ -227,51 +222,6 @@ def generate_html_snippet(result):
 </picture>'''
     return snippet
 
-def update_galeries_json(results):
-    """Ajoute dans galeries.json les nouvelles galeries détectées"""
-    galeries_path = Path('galeries.json')
-
-    if galeries_path.exists():
-        with open(galeries_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-    else:
-        data = {"galeries": []}
-
-    existing_slugs = {g['slug'] for g in data['galeries']}
-    max_ordre = max((g['ordre'] for g in data['galeries']), default=0)
-
-    added = []
-    for result in results:
-        if not result['success']:
-            continue
-        slug = result['name']
-        if slug in existing_slugs:
-            continue
-
-        max_ordre += 1
-        entry = {
-            "titre": humanize_slug(slug),
-            "sous_titre": "",
-            "image_cover": f"images/{slug}.jpg",
-            "orientation": result['orientation'],
-            "slug": slug,
-            "page": f"galerie-{slug}.html",
-            "ordre": max_ordre,
-            "visible": False
-        }
-        data['galeries'].append(entry)
-        existing_slugs.add(slug)
-        added.append(slug)
-
-    if added:
-        with open(galeries_path, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"\n📋 galeries.json : {len(added)} nouvelle(s) entrée(s) ajoutée(s)")
-        for slug in added:
-            print(f"   · {slug}  (visible: false — à activer manuellement)")
-
-    return added
-
 
 def main():
     config = CONFIG
@@ -366,10 +316,10 @@ def main():
             f.write("\n\n".join(snippets))
         print(f"📋 Code HTML généré dans : {snippets_file}")
 
-    # ── Mettre à jour galeries.json ──
-    successful_results = [r for r in results if r['success']]
-    if successful_results:
-        update_galeries_json(successful_results)
+    # ── Galeries ──
+    # NOTE : on ne crée PLUS une « galerie » par photo (ça polluait galeries.json
+    # avec une entrée par image). Les galeries sont des collections curées, gérées
+    # à la main ou via le CMS Sveltia. Le script se contente d'optimiser les images.
 
 if __name__ == '__main__':
     main()

@@ -202,3 +202,22 @@ main,footer{position:relative;z-index:2}
 /* nav est déjà position:fixed z-index:200 — pas besoin de surcharge */
 /* Désactivé sur petits mobiles pour éviter les saccades GPU */
 @media(max-width:600px){body::before{display:none}}
+
+/* ── Césures : équilibre les lignes des textes d'affichage pour éviter
+   les articles/prépositions orphelins en fin de ligne (ex. « à », « les », « de l'île » seuls).
+   text-wrap:balance ne s'applique qu'aux blocs courts (≈6 lignes max) — parfait pour titres,
+   sous-titres, extraits et citations. Le corps de texte reste en text-wrap:pretty (body). ── */
+.serie-text,.serie-text-p,
+.art-title,.art-excerpt,
+.pull-quote,.big-quote,.philosophy-title,
+.article-title,.article-lead,.article-body blockquote,
+.hero-sub,.hero-tagline,
+.detail-title,.print-title,
+.cta-title,.section-title,
+.intro-title,.page-hero-sub,.door-sub,
+.form-intro-title,
+.contact-bandeau-text{
+  text-wrap:balance;
+}
+/* Bandeaux éditoriaux découpés en paragraphes : espacement entre eux (le gap flex fait le reste) */
+.serie-text+.serie-text{margin-top:1.2rem}

@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Lora:ital,wght@0,400;1,400;1,500&family=Cormorant+Garamond:wght@300;400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Lora:ital,wght@0,400;1,400;1,500&family=Cormorant+Garamond:wght@300;400&display=swap"></noscript>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <style>
 .lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
@@ -63,6 +63,8 @@
 .home-manifesto{padding:8rem 4rem 7rem;background:var(--dark);text-align:center;display:flex;flex-direction:column;align-items:center}
 .home-manifesto .manifesto-mark{font-family:'Raleway',sans-serif;font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:2.2rem;font-weight:400}
 .home-manifesto blockquote{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.5;color:rgba(245,243,239,.92);max-width:840px;margin:0;letter-spacing:.01em}
+.home-manifesto blockquote .mani-s{display:block;text-wrap:balance}
+.home-manifesto blockquote .mani-s+.mani-s{margin-top:.5rem}
 .home-manifesto .manifesto-sign{font-family:'Raleway',sans-serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(245,243,239,.45);margin-top:2.5rem;font-weight:400}
 .home-manifesto .manifesto-line{width:40px;height:1px;background:var(--gold);opacity:.6;margin:2.5rem auto 0}
 @media(max-width:900px){
@@ -619,7 +621,10 @@ button:focus:not(:focus-visible) {
 
 <section class="home-manifesto">
   <p class="manifesto-mark" data-fr="Le regard" data-en="The gaze">Le regard</p>
-  <blockquote data-fr="Je ne photographie pas des lieux. Je photographie l'instant où ils deviennent vrais — un regard, un geste, une lumière qui ne reviendra pas." data-en="I don't photograph places. I photograph the moment they become true — a gaze, a gesture, a light that will never return.">Je ne photographie pas des lieux. Je photographie l'instant où ils deviennent vrais — un regard, un geste, une lumière qui ne reviendra pas.</blockquote>
+  <blockquote>
+    <span class="mani-s" data-fr="Je ne photographie pas des lieux." data-en="I don't photograph places.">Je ne photographie pas des lieux.</span>
+    <span class="mani-s" data-fr="Je photographie l'instant où ils deviennent vrais — un regard, un geste, une lumière qui ne reviendra pas." data-en="I photograph the moment they become true — a gaze, a gesture, a light that will never return.">Je photographie l'instant où ils deviennent vrais — un regard, un geste, une lumière qui ne reviendra pas.</span>
+  </blockquote>
   <p class="manifesto-sign">Franck Vinel</p>
   <span class="manifesto-line"></span>
 </section>

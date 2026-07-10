@@ -599,11 +599,7 @@ document.querySelectorAll('a,button,.panel-trigger').forEach(el=>{
   el.addEventListener('mouseleave',()=>ring.classList.remove('h'));
 });
 
-const nav=document.querySelector('nav');
-let ticking=false;
-window.addEventListener('scroll',()=>{
-  if(!ticking){requestAnimationFrame(()=>{if(nav)nav.classList.toggle('hidden',window.scrollY>100);ticking=false;});ticking=true;}
-});
+/* Nav hide-on-scroll : logique partagée dans nav-scroll.js (hide sur scroll bas, show sur scroll haut) */
 
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});

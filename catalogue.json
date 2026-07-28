@@ -9,23 +9,22 @@
       "image": "images/portrait-bali-012.jpg",
       "paper_fr": "Hahnemühle Photo Rag · Fine Art Baryta",
       "paper_en": "Hahnemühle Photo Rag · Fine Art Baryta",
-      "creativehub_product_id": "PLACEHOLDER_A_REMPLIR",
       "formats": [
         {
           "label": "45×30",
           "price_eur": 95,
-          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR"
+          "creativehub_variant_id": "V-N1TIIHYI"
         },
         {
           "label": "60×40",
-          "price_eur": 135,
-          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR"
+          "price_eur": 190,
+          "creativehub_variant_id": "V-2LRL800N"
         },
         {
           "label": "100×70",
-          "price_eur": 390,
-          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR",
-          "limited_edition": 7,
+          "price_eur": 690,
+          "creativehub_variant_id": "V-GYLTS2EJ",
+          "limited_edition": 15,
           "sold_count": 0
         }
       ]
@@ -39,23 +38,80 @@
       "image": "images/portrait-bali-369.jpg",
       "paper_fr": "Hahnemühle Photo Rag · Fine Art Baryta",
       "paper_en": "Hahnemühle Photo Rag · Fine Art Baryta",
-      "creativehub_product_id": "PLACEHOLDER_A_REMPLIR",
       "formats": [
         {
           "label": "45×30",
           "price_eur": 95,
-          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR"
+          "creativehub_variant_id": "V-HR9WVHRR"
         },
         {
           "label": "60×40",
-          "price_eur": 135,
-          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR"
+          "price_eur": 190,
+          "creativehub_variant_id": "V-5IIU2AG8"
         },
         {
           "label": "100×70",
-          "price_eur": 390,
-          "creativehub_variant_id": "PLACEHOLDER_A_REMPLIR",
-          "limited_edition": 7,
+          "price_eur": 690,
+          "creativehub_variant_id": "V-2DR8I9G2",
+          "limited_edition": 15,
+          "sold_count": 0
+        }
+      ]
+    },
+    {
+      "id": "hummingbird-costa-rica-001",
+      "title_fr": "Colibri · Costa Rica",
+      "title_en": "Hummingbird · Costa Rica",
+      "location_fr": "Costa Rica",
+      "location_en": "Costa Rica",
+      "image": "images/hummingbird-costa-rica-001.jpg",
+      "paper_fr": "Hahnemühle Photo Rag · Fine Art Baryta",
+      "paper_en": "Hahnemühle Photo Rag · Fine Art Baryta",
+      "formats": [
+        {
+          "label": "30×45",
+          "price_eur": 95,
+          "creativehub_variant_id": "V-BIXYVFC6"
+        },
+        {
+          "label": "40×60",
+          "price_eur": 190,
+          "creativehub_variant_id": "V-A50VLI9I"
+        },
+        {
+          "label": "70×100",
+          "price_eur": 690,
+          "creativehub_variant_id": "V-PVUBAB49",
+          "limited_edition": 15,
+          "sold_count": 0
+        }
+      ]
+    },
+    {
+      "id": "offrandes-bali-002",
+      "title_fr": "Offrandes · Bali",
+      "title_en": "Offerings · Bali",
+      "location_fr": "Bali",
+      "location_en": "Bali",
+      "image": "images/offrandes-bali-002.jpg",
+      "paper_fr": "Hahnemühle Photo Rag · Fine Art Baryta",
+      "paper_en": "Hahnemühle Photo Rag · Fine Art Baryta",
+      "formats": [
+        {
+          "label": "30×40",
+          "price_eur": 95,
+          "creativehub_variant_id": "V-JMWXJLKF"
+        },
+        {
+          "label": "40×50",
+          "price_eur": 190,
+          "creativehub_variant_id": "V-99UHEP9D"
+        },
+        {
+          "label": "60×80",
+          "price_eur": 690,
+          "creativehub_variant_id": "V-1JBNG57C",
+          "limited_edition": 15,
           "sold_count": 0
         }
       ]

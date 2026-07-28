@@ -898,8 +898,8 @@ button:focus:not(:focus-visible) {
         <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
         <div class="detail-formats">
           <button class="fmt-option" onclick="selectFormat(this)" data-price="95">45×30</button>
-          <button class="fmt-option" onclick="selectFormat(this)" data-price="135">60×40</button>
-          <button class="fmt-option" onclick="selectFormat(this)" data-price="390" data-edition-label-fr="Édition limitée · 7 exemplaires" data-edition-label-en="Limited edition · 7 prints">100×70</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="190">60×40</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires" data-edition-label-en="Limited edition · 15 prints">100×70</button>
         </div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
@@ -944,8 +944,100 @@ button:focus:not(:focus-visible) {
         <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
         <div class="detail-formats">
           <button class="fmt-option" onclick="selectFormat(this)" data-price="95">45×30</button>
-          <button class="fmt-option" onclick="selectFormat(this)" data-price="135">60×40</button>
-          <button class="fmt-option" onclick="selectFormat(this)" data-price="390" data-edition-label-fr="Édition limitée · 7 exemplaires" data-edition-label-en="Limited edition · 7 prints">100×70</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="190">60×40</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires" data-edition-label-en="Limited edition · 15 prints">100×70</button>
+        </div>
+
+        <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
+        <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fine Art Baryta" data-en="Hahnemühle Photo Rag · Fine Art Baryta">Hahnemühle Photo Rag · Fine Art Baryta</p>
+
+        <p class="detail-label" data-fr="Édition" data-en="Edition">Édition</p>
+        <p class="detail-edition" data-fr="Tirage ouvert" data-en="Open edition">Tirage ouvert</p>
+
+        <div class="detail-price-row">
+          <span class="detail-price-from" data-fr="À partir de" data-en="From">À partir de</span>
+          <span class="detail-price">95€</span>
+        </div>
+
+        <button class="order-btn" onclick="handleCheckout(this)">
+          <span data-fr="Commander ce tirage" data-en="Order this print">Commander ce tirage</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </button>
+        <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison offerte en Europe · Certificat d'authenticité" data-en="Hahnemühle printing · Free shipping in Europe · Certificate of authenticity">Impression Hahnemühle · Livraison offerte en Europe · Certificat d'authenticité</p>
+        <a href="mailto:contact@vfimages.com" class="contact-row-link" data-fr="Livraison hors Europe · Me contacter" data-en="Shipping outside Europe · Contact me">Livraison hors Europe · Me contacter</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-modal" id="detail-hummingbird" data-photo-id="hummingbird-costa-rica-001">
+    <div class="detail-inner">
+      <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
+      <div class="modal-viz-wrap">
+        <div class="modal-viz-scene">
+          <div class="modal-viz-frame-area">
+            <div class="modal-viz-frame">
+              <img src="images/hummingbird-costa-rica-001.jpg" class="modal-viz-artwork" alt="" draggable="false">
+            </div>
+          </div>
+        </div>
+        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
+      </div>
+      <div class="detail-info">
+        <p class="detail-location" data-fr="Costa Rica" data-en="Costa Rica">Costa Rica</p>
+        <h2 class="detail-title" data-fr="Colibri · Costa Rica" data-en="Hummingbird · Costa Rica">Colibri · Costa Rica</h2>
+        <div class="detail-divider"></div>
+
+        <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
+        <div class="detail-formats">
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="95">30×45</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="190">40×60</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires" data-edition-label-en="Limited edition · 15 prints">70×100</button>
+        </div>
+
+        <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
+        <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fine Art Baryta" data-en="Hahnemühle Photo Rag · Fine Art Baryta">Hahnemühle Photo Rag · Fine Art Baryta</p>
+
+        <p class="detail-label" data-fr="Édition" data-en="Edition">Édition</p>
+        <p class="detail-edition" data-fr="Tirage ouvert" data-en="Open edition">Tirage ouvert</p>
+
+        <div class="detail-price-row">
+          <span class="detail-price-from" data-fr="À partir de" data-en="From">À partir de</span>
+          <span class="detail-price">95€</span>
+        </div>
+
+        <button class="order-btn" onclick="handleCheckout(this)">
+          <span data-fr="Commander ce tirage" data-en="Order this print">Commander ce tirage</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </button>
+        <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison offerte en Europe · Certificat d'authenticité" data-en="Hahnemühle printing · Free shipping in Europe · Certificate of authenticity">Impression Hahnemühle · Livraison offerte en Europe · Certificat d'authenticité</p>
+        <a href="mailto:contact@vfimages.com" class="contact-row-link" data-fr="Livraison hors Europe · Me contacter" data-en="Shipping outside Europe · Contact me">Livraison hors Europe · Me contacter</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-modal" id="detail-offrandes-002" data-photo-id="offrandes-bali-002">
+    <div class="detail-inner">
+      <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
+      <div class="modal-viz-wrap">
+        <div class="modal-viz-scene">
+          <div class="modal-viz-frame-area">
+            <div class="modal-viz-frame">
+              <img src="images/offrandes-bali-002.jpg" class="modal-viz-artwork" alt="" draggable="false">
+            </div>
+          </div>
+        </div>
+        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
+      </div>
+      <div class="detail-info">
+        <p class="detail-location" data-fr="Bali" data-en="Bali">Bali</p>
+        <h2 class="detail-title" data-fr="Offrandes · Bali" data-en="Offerings · Bali">Offrandes · Bali</h2>
+        <div class="detail-divider"></div>
+
+        <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
+        <div class="detail-formats">
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="95">30×40</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="190">40×50</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires" data-edition-label-en="Limited edition · 15 prints">60×80</button>
         </div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
@@ -1277,6 +1369,56 @@ button:focus:not(:focus-visible) {
         </div>
         <h3 class="print-title" data-fr="Portrait · Bali" data-en="Portrait · Bali">Portrait · Bali</h3>
         <div class="print-formats"><span class="fmt-badge">45×30</span><span class="fmt-badge">60×40</span><span class="fmt-badge">100×70</span></div>
+        <div class="print-price">
+          <span class="price-from" data-fr="À partir de" data-en="From">À partir de</span>
+          <span class="price-amount">95€</span>
+        </div>
+      </div>
+    </div>
+    <div class="print-card" data-id="hummingbird" onclick="openDetail('hummingbird')">
+      <div class="print-image portrait">
+        <img width="1333" height="2000"
+        src="images/hummingbird-costa-rica-001.jpg"
+        srcset="images/hummingbird-costa-rica-001-small.webp 640w, images/hummingbird-costa-rica-001-medium.webp 1200w"
+        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
+        alt="Colibri en vol au coucher du soleil, Costa Rica — tirage photo fine art"
+        loading="lazy"
+        decoding="async">
+        <div class="print-hover">
+          <span class="hover-cta" data-fr="Voir les formats" data-en="See formats">Voir les formats</span>
+        </div>
+      </div>
+      <div class="print-info">
+        <div class="print-meta">
+          <span class="print-location" data-fr="Costa Rica" data-en="Costa Rica">Costa Rica</span>
+        </div>
+        <h3 class="print-title" data-fr="Colibri · Costa Rica" data-en="Hummingbird · Costa Rica">Colibri · Costa Rica</h3>
+        <div class="print-formats"><span class="fmt-badge">30×45</span><span class="fmt-badge">40×60</span><span class="fmt-badge">70×100</span></div>
+        <div class="print-price">
+          <span class="price-from" data-fr="À partir de" data-en="From">À partir de</span>
+          <span class="price-amount">95€</span>
+        </div>
+      </div>
+    </div>
+    <div class="print-card" data-id="offrandes-002" onclick="openDetail('offrandes-002')">
+      <div class="print-image portrait">
+        <img width="1518" height="2000"
+        src="images/offrandes-bali-002.jpg"
+        srcset="images/offrandes-bali-002-small.webp 640w, images/offrandes-bali-002-medium.webp 1200w"
+        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
+        alt="Offrandes canang sari à l'aube dans un temple, Bali — tirage photo fine art"
+        loading="lazy"
+        decoding="async">
+        <div class="print-hover">
+          <span class="hover-cta" data-fr="Voir les formats" data-en="See formats">Voir les formats</span>
+        </div>
+      </div>
+      <div class="print-info">
+        <div class="print-meta">
+          <span class="print-location" data-fr="Bali" data-en="Bali">Bali</span>
+        </div>
+        <h3 class="print-title" data-fr="Offrandes · Bali" data-en="Offerings · Bali">Offrandes · Bali</h3>
+        <div class="print-formats"><span class="fmt-badge">30×40</span><span class="fmt-badge">40×50</span><span class="fmt-badge">60×80</span></div>
         <div class="print-price">
           <span class="price-from" data-fr="À partir de" data-en="From">À partir de</span>
           <span class="price-amount">95€</span>

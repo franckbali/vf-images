@@ -54,9 +54,16 @@ Sous-titres actuels dans `galeries.json` :
 ## 4. ÉTAT — Ce qui est FAIT
 
 **Site & SEO**
-- SEO complet : canonical, OG/Twitter Cards, hreflang FR/EN, JSON-LD, `sitemap.xml` (21 URLs), `robots.txt`
-- `vfimages.com` = domaine primaire ; `www` → redirection 308
-- Google Search Console vérifié (propriété Domaine, TXT via Namecheap), sitemap soumis
+- SEO complet sur 28 pages HTML : canonical sans `.html`, `author`, `robots index/follow`, Open Graph complet (`og:title`, `og:description`, `og:image` absolue, `og:url`, `og:site_name`, `og:locale`), Twitter Cards (`summary_large_image`), `hreflang` fr/en/x-default sur toutes les paires bilingues
+- JSON-LD : URLs corrigées (www supprimé, `.html` retiré) sur toutes les pages ; VisualArtwork ajouté sur `editions/portrait-bali-012` et `editions/portrait-bali-369` (titres et descriptions différenciés N°12 vs N°369)
+- `sitemap.xml` : réécriture complète — 22 URLs, domaine `https://vfimages.com`, zéro `.html`, `xhtml:link` hreflang
+- `robots.txt` : Sitemap corrigé, 3 `Disallow` ajoutés pour fichiers de travail
+- `vercel.json` : 8 redirects 301 — `/gallery`, `/shop`, `/about`, `/legal` (et variantes `.html`) → cibles canoniques correctes
+- `noindex` ajouté sur `boutique_backup`, `propositions-palettes`, `raffinements-style`, `en/legal`, `404`
+- `en/contact.html` : `<h1>` traduit en anglais ; URLs formulaire corrigées (FR et EN)
+- Image OG fallback `assets/og-vf-images.jpg` (1200×630 px, 194 Ko) — vérifiée présente dans le repo
+- `vfimages.com` = domaine primaire · `www` → redirection 308 (à configurer dans Vercel dashboard)
+- Google Search Console vérifié (propriété Domaine, TXT via Namecheap) — **sitemap à resoumettre** : `https://vfimages.com/sitemap.xml`
 - Refonte CSS : `style.css` global partagé (nav, menu hamburger, boutons langue FR/EN, footer, bandeau cookies)
 - Pinterest Business (`pinterest.com/vfimages`), 8 tableaux thématiques, site revendiqué (TXT)
 
@@ -109,9 +116,12 @@ Client paie via Stripe → Franck reçoit la notif → Franck passe la commande 
 7. Générer la version or (`#c9a96e`) de la signature pour les certificats
 
 ### SEO / contenu
-8. **Alt texts** sur toutes les images (SEO)
-9. Compléter les traductions EN des textes longs
-10. Écrire d'autres articles de blog
+8. **Alt texts** descriptifs sur toutes les images des galeries (SEO + accessibilité)
+9. **Images OG dédiées** par galerie : `og-bali.jpg`, `og-newyork.jpg`, `og-portraits.jpg`, `og-blog.jpg` (actuellement fallback `og-vf-images.jpg`)
+10. **Vérifier www → vfimages.com** dans Vercel dashboard (Settings → Domains → redirect "www")
+11. **Resoumettre le sitemap** dans Google Search Console : `https://vfimages.com/sitemap.xml`
+12. Compléter les traductions EN des textes longs (tagline contact, messages erreur formulaire)
+13. Écrire d'autres articles de blog
 
 ### Automatisation (décision ouverte)
 11. **Webhook Vercel Serverless** (`/api/stripe-webhook.js` + `catalogue.json`) pour automatiser Stripe → Creativehub. **À trancher** : construire maintenant, ou rester manuel jusqu'à approcher les 50 photos ?

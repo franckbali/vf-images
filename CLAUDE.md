@@ -32,7 +32,7 @@ Type : **site HTML statique** (pas de framework JS, pas de build step, fichiers 
 - **Formulaire contact** : Formspree (ID `mwvybbrz`)
 - **API Creativehub** : `https://api.creativehub.io` (clé stockée en privé, hors dépôt)
 
-Pages : `index`, `boutique`, `galerie-index`, `galerie-newyork`, `a-propos`, `blog`, `blog-article`, `contact`, `mentions-legales`.
+Pages existantes : `index`, `boutique`, `galerie-index`, `galerie-bali`, `galerie-newyork`, `galerie-portraits`, `a-propos`, `blog`, `blog-article` (Melasti), `blog-article-reunion` (La Réunion), `contact`, `mentions-legales`.
 
 ---
 
@@ -42,6 +42,12 @@ Pages : `index`, `boutique`, `galerie-index`, `galerie-newyork`, `a-propos`, `bl
 Bali · New York · Cérémonies · Voyages · Portraits · La Réunion.
 
 `galerie-index.html` lit `galeries.json` dynamiquement et génère les vignettes.
+Pages HTML existantes : Bali ✅ · New York ✅ · Portraits ✅ · Cérémonies ✗ · Voyages ✗ · La Réunion ✗.
+
+Sous-titres actuels dans `galeries.json` :
+- Bali : « Temples, rites et offrandes »
+- New York : « Le tumulte et l'instant »
+- Portraits : « Visages du monde »
 
 ---
 
@@ -58,78 +64,78 @@ Bali · New York · Cérémonies · Voyages · Portraits · La Réunion.
 - Sveltia CMS configuré, 3 collections : Galeries (`galeries.json`), Blog (`/blog/` markdown), Boutique (`boutique.json`)
 - Script `traiter-photos.py` — optimise les photos (WebP, miniatures, versions medium), met à jour `galeries.json`
 - Raccourci `Lancer-VFImages.command` — lance le script sans Terminal
-- Préréglages Lightroom : "VF Images — Site Web" (JPEG 82%, 2000px, sRGB, 72ppi → `photos-originales/`) et "VF Images — Printspace" (TIFF 16-bit, Adobe RGB 1998, 300ppi → `printspace/`)
+- Préréglages Lightroom : "VF Images — Site Web" et "VF Images — Printspace"
 - Chaîne : Lightroom → `photos-originales/` → script → `images/` → git push → Vercel
 
 **Impression & commerce**
 - Compte Creativehub (Franck Vinel, plan Basic) : clé API générée, branding configuré
-- 2 photos en ligne (dont `portrait-bali-012`), 3 formats chacune : 30×45 cm 95€ / 40×60 cm 135€ / 70×100 cm 390€ (édition limitée à 7). Papier Hahnemühle Pearl giclée avec bordure
-- Stripe production : 3 Payment Links créés pour `portrait-bali-012` (livraison Europe)
-- Certificats d'authenticité : 6 designs dispo sur Creativehub (Classic gratuit), A4 135g/m² Diamond White Fine Linen
-- Signature : `signature-noir.png` (3162px transparent) + `signature-noir.svg` (vectorisée)
+- Stripe production : Payment Links créés pour les photos disponibles
+- Certificats d'authenticité disponibles sur Creativehub
+- Signature : `signature-noir.png` + `signature-noir.svg`
+- `catalogue.json` : source de vérité prix/papier/variant Creativehub — seul fichier à modifier lors d'un changement tarifaire
 
 **Flux de commande actuel = 100% MANUEL**
 Client paie via Stripe → Franck reçoit la notif → Franck passe la commande manuellement dans Creativehub → Printspace expédie directement au client.
+
+**Galeries**
+- `galerie-bali.html` : 6 photos au format naturel (no crop, height:auto), système `.block.nat.lg/md/full`
+- `galerie-newyork.html` : galerie complète, lightbox crossfade
+- `galerie-portraits.html` : galerie complète avec texte éditorial
+- Toutes les galeries : lightbox corrigée (plus de scroll-jump iOS — suppression totale de `position:fixed` sur le body)
+- Panneau « La série » supprimé des 3 galeries (Bali, New York, Portraits)
+- Bandeaux éditoriaux (`.serie-bandeau`) : traits animés au scroll + texte Raleway 200 italic dans les 3 galeries
+- Bandeau contact bilingue FR/EN ajouté en bas des 3 galeries
+- Accueil (`index.html`) : masonry desktop (CSS column-count:3) + flex 2 colonnes alternées mobile, CLS prévenu (w/h dans `accueil.json`)
+
+**Blog / Journal**
+- `blog-article.html` : article Melasti (texte complet, hero, police unifiée, section vidéo retirée)
+- `blog-article-reunion.html` : article « Cari feu de bois » créé de zéro
+- Page `blog.html` : 2 articles en grand format featured, alternance gauche/droite
+- Article « Réflexion » retiré
 
 ---
 
 ## 5. ÉTAT — Ce qu'il RESTE à faire
 
-### Front-end / galeries / CMS
-1. **Vérifier CMS ↔ pages individuelles** (priorité) : les pages individuelles (`galerie-bali.html`, etc.) lisent-elles `galeries.json` ou sont-elles encore statiques ? À confirmer et corriger. Le CMS crée des `.md`/JSON mais toutes les pages HTML ne les lisent pas encore.
-2. **Vérifier les visuels** : confirmer que tous les hero et covers de collections sont bien les vraies photos de Franck et non des placeholders (statut ambigu — à contrôler).
-3. **Cohérence visuelle** : aligner la hauteur du hero de `galerie-index.html` sur celui d'`a-propos.html`.
-4. **Créer les pages galeries manquantes** : Bali, Réunion, Bolivie.
-5. **Blog & Boutique** : collections CMS créées mais vides — aucun article ni produit. Écrire de vrais articles de blog.
-
-### Dossiers Mac & sauvegardes
-6. Clarifier le rôle de `photos-originales/`, `traiter-photos.py`, `Lancer-VFImages.command` dans le workflow.
-7. Tester `sauvegarder-vfimages.command` et `sauvegarder-site-local.command` → vérifier la sauvegarde vers le disque externe « pics ».
+### Front-end / galeries
+1. **Créer les pages galeries manquantes** : Cérémonies, Voyages/Bolivie, La Réunion (actuellement `visible:false` dans `galeries.json`)
+2. **Vérifier les visuels covers** dans `galeries.json` : confirmer que `image_cover` pointe sur les bonnes vraies photos
 
 ### Commerce / print
-8. Uploader les ~48 photos restantes sur Creativehub + créer les Payment Links Stripe correspondants.
-9. Intégrer les Payment Links comme boutons d'achat dans la boutique (`shop.html`).
-10. Générer la version or (`#c9a96e`) de la signature pour les certificats.
-11. Compléter les traductions EN des textes longs.
+3. Uploader les photos restantes sur Creativehub + créer les Payment Links Stripe correspondants
+4. Remplir les `PLACEHOLDER_A_REMPLIR` dans `catalogue.json` (variant IDs Creativehub manquants)
+5. Ajouter le flux Stripe Checkout aux 5 autres produits boutique (Barong, Offrandes, Manhattan, Fenêtre, Faune Sacrée)
+6. Créer le PDF certificat d'authenticité + QR codes éditions limitées
+7. Générer la version or (`#c9a96e`) de la signature pour les certificats
+
+### SEO / contenu
+8. **Alt texts** sur toutes les images (SEO)
+9. Compléter les traductions EN des textes longs
+10. Écrire d'autres articles de blog
 
 ### Automatisation (décision ouverte)
-12. **Webhook Vercel Serverless** (`/api/stripe-webhook.js` + `catalogue.json`) pour automatiser Stripe → Creativehub (prévu avant le lancement des 50 photos). **À trancher** : le construire maintenant, ou rester manuel jusqu'à approcher les 50 photos ?
+11. **Webhook Vercel Serverless** (`/api/stripe-webhook.js` + `catalogue.json`) pour automatiser Stripe → Creativehub. **À trancher** : construire maintenant, ou rester manuel jusqu'à approcher les 50 photos ?
 
 ### Décisions déjà tranchées
-- Migration Shopify : **rejetée** (abandonnerait le site custom, le SEO, Sveltia CMS, le design noir & or).
+- Migration Shopify : **rejetée** (abandonnerait le site custom, le SEO, Sveltia CMS, le design noir & or)
+- Panneau « La série » : **supprimé**, remplacé par les bandeaux éditoriaux toujours visibles
 
 ---
 
-## 6. ⚠️ Worktree à vérifier (session du 1er juin 2026)
-
-Une branche `claude/wizardly-montalcini-0056ce` a été créée dans
-`.claude/worktrees/wizardly-montalcini-0056ce/` et n'était **pas encore mergée sur main** à l'époque.
-**Action** : vérifier si elle a été mergée depuis ; sinon, décider de la merger ou de l'abandonner.
-
-Contenu de cette worktree :
-- Palette affinée : or plus sombre, fonds plus chauds ; nouvelles variables `--cream-warm` et `--cream-soft`
-- Grain argentique SVG sur `body::before` (désactivé sur mobile)
-- Split-tone overlay cinématique sur les photos
-- Hero redessiné, lightbox crossfade, galerie masonry
-- Responsive complet sur `index.html`, `boutique.html`, `galerie-newyork.html`
-
----
-
-## 7. Conventions & workflow
+## 6. Conventions & workflow
 
 - **Changements site** : structurel/visuel via Claude Code (description en français) ; contenu (photos, galeries, blog, boutique) via Sveltia CMS
 - **Corriger toutes les pages d'un coup**, pas page par page
 - **Images dans le CMS** : toujours référencées en JPG de base (ex. `images/ma-photo.jpg`) ; les variantes WebP srcset sont gérées automatiquement
 - Les images vont dans `images/` (générées par le script), **pas** dans `photos-originales/`
 - **Nommage photos** : minuscules, tirets, sans accents, descriptif (ex. `ceremonie-offrandes-bali.jpg`)
-- **Édition de fichiers** : préférer les one-liners Python plutôt que `sed`
+- **`printspace/`** exclu de Git via `.gitignore`
 - **Lancement Claude Code** (nvm requis à chaque nouvelle session terminal) :
   `export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"` puis `claude`
-- **`printspace/`** exclu de Git via `.gitignore`
 
 ---
 
-## 8. Règles de travail Claude Code
+## 7. Règles de travail Claude Code
 
 - Toujours travailler sur `main` sauf si Franck demande une branche séparée
 - Montrer le diff avant de modifier des fichiers
@@ -137,15 +143,18 @@ Contenu de cette worktree :
 - Franck est **direct et minimal** : des actions, pas de longues explications ; pas de questions inutiles (les confirmations de sécurité ci-dessus restent)
 - Priorité : site **ultra-performant sur mobile**, très lisible, cohérent visuellement, gérable en autonomie
 
-**Par où commencer chaque session** : lire `galeries.json` et la structure de `galerie-index.html` pour comprendre l'état actuel, puis demander à Franck quelle priorité traiter.
+**Par où commencer chaque session** : lire `galeries.json` et `accueil.json` pour l'état actuel, puis demander à Franck quelle priorité traiter.
 
 ---
 
-## 9. Pièges à éviter (leçons)
+## 8. Pièges à éviter (leçons)
 
 - **`noindex` + canonical** sur pages dupliquées = signaux contradictoires pour Google → utiliser des redirections 301 via `vercel.json`
 - **`vf-images.com` (avec tiret)** est FAUX — le domaine correct est `vfimages.com` partout
-- L'écran d'onboarding Creativehub (connexion Shopify/Etsy/etc.) est **hors sujet** pour ce site custom → l'ignorer, les Payment Links Stripe existants ne sont pas affectés
+- L'écran d'onboarding Creativehub (connexion Shopify/Etsy/etc.) est **hors sujet** pour ce site custom → l'ignorer
 - Ventes Europe : livraison absorbée dans le prix ; USA/international géré manuellement (Payment Links custom)
 - Coûts livraison Printspace (€) : UK/Allemagne ~6,95 · UE ~14,63 · USA ~28,67 · Canada ~40,95 · Australie/ROW ~76,97
 - WhiteWall = labo préféré pour les Collector (Hahnemühle Platinum Studio), commandes manuelles
+- **Lightbox iOS** : ne jamais modifier `body.style.position/top/overflow` dans openLightbox/closeLightbox — cause un scroll-jump. La lightbox `position:fixed;inset:0;pointer-events:all` suffit à bloquer le scroll
+- **`accueil.json`** : toujours inclure `w` et `h` (dimensions px) pour prévenir le CLS
+- **Images manquantes dans git** : vérifier `git status --short | grep images/` avant chaque push

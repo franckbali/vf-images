@@ -692,6 +692,20 @@ if(hamburger&&navOverlay){
   document.addEventListener('DOMContentLoaded',function(){window.setLang(lang);});
 })();
 </script>
+
+<!-- Titre synchronisé avec galeries.json (édité via le CMS) -->
+<script>
+fetch('/galeries.json').then(function(r){return r.json();}).then(function(data){
+  var g = data.galeries.find(function(x){return x.slug==='portraits';});
+  if(!g) return;
+  var el = document.querySelector('.intro-title');
+  if(!el) return;
+  el.setAttribute('data-fr', g.titre);
+  el.setAttribute('data-en', g.titre_en);
+  var lang = localStorage.getItem('vf_lang')||'fr';
+  el.textContent = lang==='en' ? g.titre_en : g.titre;
+}).catch(function(){});
+</script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   var fab=document.querySelector('.gallery-fab');

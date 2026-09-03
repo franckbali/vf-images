@@ -146,34 +146,18 @@
   <url>
     <loc>https://vfimages.com/blog</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/blog"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vfimages.com/blog"/>
     <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vfimages.com/en/blog</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/blog"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/blog"/>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://vfimages.com/blog-article</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/blog-article"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/blog-article"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vfimages.com/blog-article"/>
     <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://vfimages.com/en/blog-article</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/blog-article"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vfimages.com/en/blog-article"/>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vfimages.com/blog-article-reunion</loc>

@@ -220,6 +220,51 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   </div>
 </footer>
 
+<!-- BANDEAU COOKIES RGPD -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies" style="display:none">
+  <p class="cookie-text">
+    <span data-fr="Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers." data-en="This site uses anonymous analytics cookies (Umami) to understand how you browse, without storing personal data. No advertising, no third-party sharing.">Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers.</span>
+    <a href="mentions-legales.html" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-btn" onclick="cookieRefuse()" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
+    <button class="cookie-btn accept" onclick="cookieAccept()" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
+  </div>
+</div>
+<script>
+/* ══ GESTION COOKIES RGPD ══ */
+(function(){
+  const COOKIE_KEY = 'vf_analytics_consent';
+  const banner = document.getElementById('cookie-banner');
+  if(!banner) return;
+  const consent = localStorage.getItem(COOKIE_KEY);
+  if(consent === null){
+    setTimeout(() => { banner.style.display = 'flex'; }, 800);
+  }
+  if(consent === 'accepted'){
+    loadAnalytics();
+  }
+  window.cookieAccept = function(){
+    localStorage.setItem(COOKIE_KEY, 'accepted');
+    banner.style.display = 'none';
+    loadAnalytics();
+    if(window.umami) umami.track('cookie-accept');
+  };
+  window.cookieRefuse = function(){
+    localStorage.setItem(COOKIE_KEY, 'refused');
+    banner.style.display = 'none';
+  };
+  function loadAnalytics(){
+    if(document.querySelector('[data-website-id]')) return;
+    var s=document.createElement('script');
+    s.defer=true;
+    s.src='https://analytics.umami.is/script.js';
+    s.setAttribute('data-website-id','1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1');
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
 <script>
 const cur=document.getElementById('cur'),ring=document.getElementById('ring');
 let mx=0,my=0,rx=0,ry=0;

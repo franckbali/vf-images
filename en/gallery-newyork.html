@@ -54,7 +54,7 @@ nav ul li a:hover,nav ul li a.active{color:var(--gold)}
 
 /* INTRO */
 .gallery-intro{height:100vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:0 5vw 6vh;position:relative;overflow:hidden}
-.gallery-intro-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.6) 0%,rgba(10,10,10,.2) 40%,rgba(10,10,10,.9) 100%),url('images/bg.webp') center 20%/cover no-repeat;transform:scale(1.04);animation:heroZoom 14s ease-out forwards}
+.gallery-intro-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.6) 0%,rgba(10,10,10,.2) 40%,rgba(10,10,10,.9) 100%),url('../images/bg.webp') center 20%/cover no-repeat;transform:scale(1.04);animation:heroZoom 14s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.04)}to{transform:scale(1)}}
 .gallery-intro-content{position:relative}
 .intro-back{display:inline-flex;align-items:center;gap:.6rem;font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,169,110,.5);text-decoration:none;margin-bottom:2rem;transition:color .3s;font-weight:400}
@@ -591,13 +591,7 @@ button:focus:not(:focus-visible) {
 </div>
 
 <nav role="navigation" aria-label="Navigation principale">
-  <a href="../en/index.html" class="logo"><img
-        src="../images/vf-images.jpg"
-        srcset="images/vf-images-small.webp 640w, images/vf-images-medium.webp 1200w, images/vf-images-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="VF Images"
-        loading="eager"
-        decoding="async"></a>
+  <a href="../en/index.html" class="logo"><img width="500" height="500" src="../images/logo-vf3.svg" alt="VF Images" loading="eager" decoding="async"></a>
   <ul>
     <li><a href="../index.html">Home</a></li>
     <li><a href="../en/gallery.html" class="active">Gallery</a></li>
@@ -643,7 +637,7 @@ button:focus:not(:focus-visible) {
 <div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="Manhattan from Above" data-desc="L'Empire State Building domine une mer de béton. Depuis le sommet du 30 Rock, New York s'étend à l'infini.">
   <img
         src="../images/manhattan-from-above.jpg"
-        srcset="images/manhattan-from-above-small.webp 640w, images/manhattan-from-above-medium.webp 1200w, images/manhattan-from-above-large.webp 1920w"
+        srcset="../images/manhattan-from-above-small.webp 640w, ../images/manhattan-from-above-medium.webp 1200w, ../images/manhattan-from-above-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Manhattan from Above"
         loading="lazy"
@@ -653,7 +647,7 @@ button:focus:not(:focus-visible) {
 <div class="block wide reveal" onclick="openLightbox(this)" data-title="Brooklyn Bridge" data-desc="Les câbles du pont comme autant de fils tendus vers le ciel gris de Manhattan. Une géométrie parfaite, suspendue entre deux rives.">
   <img
         src="../images/brooklyn-bridge.jpg"
-        srcset="images/brooklyn-bridge-small.webp 640w, images/brooklyn-bridge-medium.webp 1200w, images/brooklyn-bridge-large.webp 1920w"
+        srcset="../images/brooklyn-bridge-small.webp 640w, ../images/brooklyn-bridge-medium.webp 1200w, ../images/brooklyn-bridge-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Brooklyn Bridge"
         loading="lazy"
@@ -664,7 +658,7 @@ button:focus:not(:focus-visible) {
   <div class="frame offset-left" onclick="openLightbox(this)" data-title="Brooklyn Bridge II" data-desc="Vu depuis les jardins de Brooklyn, le pont se dévoile à travers un rideau de feuilles. Le noir et blanc efface le temps.">
     <img
         src="../images/brooklyn-bridge-ii.jpg"
-        srcset="images/brooklyn-bridge-ii-small.webp 640w, images/brooklyn-bridge-ii-medium.webp 1200w, images/brooklyn-bridge-ii-large.webp 1920w"
+        srcset="../images/brooklyn-bridge-ii-small.webp 640w, ../images/brooklyn-bridge-ii-medium.webp 1200w, ../images/brooklyn-bridge-ii-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Brooklyn Bridge II"
         loading="lazy"
@@ -675,7 +669,7 @@ button:focus:not(:focus-visible) {
 <div class="block wide reveal" onclick="openLightbox(this)" data-title="Manhattan Skyline" data-desc="Un taxi jaune flou à l'avant-plan, les tours qui percent le brouillard. New York se raconte dans chaque couche de distance.">
   <img
         src="../images/manhattan-skyline.jpg"
-        srcset="images/manhattan-skyline-small.webp 640w, images/manhattan-skyline-medium.webp 1200w, images/manhattan-skyline-large.webp 1920w"
+        srcset="../images/manhattan-skyline-small.webp 640w, ../images/manhattan-skyline-medium.webp 1200w, ../images/manhattan-skyline-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Manhattan Skyline"
         loading="lazy"
@@ -686,7 +680,7 @@ button:focus:not(:focus-visible) {
   <div class="frame centered-sm" onclick="openLightbox(this)" data-title="Fire Escape" data-desc="Deux habitants d'un immeuble du Lower East Side, suspendus entre ciel et rue. La ville ordinaire, saisie dans l'extraordinaire.">
     <img
         src="../images/fire-escape.jpg"
-        srcset="images/fire-escape-small.webp 640w, images/fire-escape-medium.webp 1200w, images/fire-escape-large.webp 1920w"
+        srcset="../images/fire-escape-small.webp 640w, ../images/fire-escape-medium.webp 1200w, ../images/fire-escape-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Fire Escape"
         loading="lazy"
@@ -698,7 +692,7 @@ button:focus:not(:focus-visible) {
   <div class="frame centered-sm" onclick="openLightbox(this)" data-title="The Vessel" data-desc="Hudson Yards. L'architecture cuivrée du Vessel se reflète en milliers de facettes. Une ruche géante tournée vers le ciel.">
     <img
         src="../images/the-vessel.jpg"
-        srcset="images/the-vessel-small.webp 640w, images/the-vessel-medium.webp 1200w, images/the-vessel-large.webp 1920w"
+        srcset="../images/the-vessel-small.webp 640w, ../images/the-vessel-medium.webp 1200w, ../images/the-vessel-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="The Vessel"
         loading="lazy"
@@ -709,7 +703,7 @@ button:focus:not(:focus-visible) {
 <div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="SoHo" data-desc="Les escaliers de secours de SoHo dessinent une dentelle de fer sur les façades blanches. La ville comme partition graphique.">
   <img
         src="../images/soho.jpg"
-        srcset="images/soho-small.webp 640w, images/soho-medium.webp 1200w, images/soho-large.webp 1920w"
+        srcset="../images/soho-small.webp 640w, ../images/soho-medium.webp 1200w, ../images/soho-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="SoHo"
         loading="lazy"
@@ -720,7 +714,7 @@ button:focus:not(:focus-visible) {
   <div class="frame offset-right" onclick="openLightbox(this)" data-title="Quarters Only" data-desc="Sur une plateforme d'observation, une lunette en acier attend le prochain regard. La ville, derrière, ne dort jamais.">
     <img
         src="../images/quarters-only.jpg"
-        srcset="images/quarters-only-small.webp 640w, images/quarters-only-medium.webp 1200w, images/quarters-only-large.webp 1920w"
+        srcset="../images/quarters-only-small.webp 640w, ../images/quarters-only-medium.webp 1200w, ../images/quarters-only-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Quarters Only"
         loading="lazy"
@@ -730,13 +724,7 @@ button:focus:not(:focus-visible) {
 
 </main>
 <footer role="contentinfo">
-  <div class="footer-logo"><img
-        src="../images/vf-images.jpg"
-        srcset="images/vf-images-small.webp 640w, images/vf-images-medium.webp 1200w, images/vf-images-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="VF Images"
-        loading="lazy"
-        decoding="async"></div>
+  <div class="footer-logo"><img width="500" height="500" src="../images/logo-vf3.svg" alt="VF Images" loading="lazy" decoding="async"></div>
   <div class="footer-copy">© 2026 VF Images. All rights reserved. · <a href="../en/legal.html" style="color:inherit;text-decoration:none">Legal notice</a></div>
   <div class="footer-social">
     <a href="https://www.instagram.com/thelensofwonder/" target="_blank" aria-label="Suivre VF Images sur Instagram (nouvelle fenêtre)"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>

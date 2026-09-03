@@ -52,7 +52,7 @@ nav ul li a:hover{color:var(--gold)}
 .hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;
   background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%),
-  url('images/bg.webp') center 30%/cover no-repeat;
+  url('../images/bg.webp') center 30%/cover no-repeat;
   transform:scale(1.05);animation:heroZoom 16s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.05)}to{transform:scale(1)}}
 .hero-content{position:relative;text-align:center}
@@ -157,7 +157,7 @@ section.about-strip{padding:8rem 4rem;background:var(--dark2);display:grid;grid-
 
 /* CTA */
 section.cta{padding:10rem 4rem;text-align:center;position:relative;overflow:hidden}
-section.cta::before{content:'';position:absolute;inset:0;background:url('images/cta-bali.webp') center 60%/cover no-repeat;opacity:.18}
+section.cta::before{content:'';position:absolute;inset:0;background:url('../images/cta-bali.webp') center 60%/cover no-repeat;opacity:.18}
 section.cta>*{position:relative}
 .cta-title{font-family:'Bodoni Moda',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;letter-spacing:.08em;margin-bottom:1rem}
 .cta-sub{font-size:.7rem;letter-spacing:.25em;color:rgba(245,243,239,.4);text-transform:uppercase;margin-bottom:3rem;font-family:'Raleway',sans-serif}
@@ -496,13 +496,7 @@ button:focus:not(:focus-visible) {
 </div>
 
 <nav role="navigation" aria-label="Navigation principale">
-  <a href="../en/index.html" class="logo"><img
-        src="../images/vf-images.jpg"
-        srcset="images/vf-images-small.webp 640w, images/vf-images-medium.webp 1200w, images/vf-images-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="VF Images"
-        loading="eager"
-        decoding="async"></a>
+  <a href="../en/index.html" class="logo"><img width="500" height="500" src="../images/logo-vf3.svg" alt="VF Images" loading="eager" decoding="async"></a>
   <ul>
     <li><a href="../en/index.html" class="active">Home</a></li>
     <li><a href="../en/gallery.html">Gallery</a></li>
@@ -560,7 +554,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/faune-sacree-bali.jpg"
-        srcset="images/faune-sacree-bali-small.webp 640w, images/faune-sacree-bali-medium.webp 1200w, images/faune-sacree-bali-large.webp 1920w"
+        srcset="../images/faune-sacree-bali-small.webp 640w, ../images/faune-sacree-bali-medium.webp 1200w, ../images/faune-sacree-bali-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Faune sacrée · Bali"
         loading="lazy"
@@ -570,7 +564,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/procession-barong-bali.jpg"
-        srcset="images/procession-barong-bali-small.webp 640w, images/procession-barong-bali-medium.webp 1200w, images/procession-barong-bali-large.webp 1920w"
+        srcset="../images/procession-barong-bali-small.webp 640w, ../images/procession-barong-bali-medium.webp 1200w, ../images/procession-barong-bali-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Procession Barong · Bali"
         loading="lazy"
@@ -580,7 +574,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/coucher-de-soleil-bali.jpg"
-        srcset="images/coucher-de-soleil-bali-small.webp 640w, images/coucher-de-soleil-bali-medium.webp 1200w, images/coucher-de-soleil-bali-large.webp 1920w"
+        srcset="../images/coucher-de-soleil-bali-small.webp 640w, ../images/coucher-de-soleil-bali-medium.webp 1200w, ../images/coucher-de-soleil-bali-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Coucher de soleil · Bali"
         loading="lazy"
@@ -590,7 +584,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/portrait-bali.jpg"
-        srcset="images/portrait-bali-small.webp 640w, images/portrait-bali-medium.webp 1200w, images/portrait-bali-large.webp 1920w"
+        srcset="../images/portrait-bali-small.webp 640w, ../images/portrait-bali-medium.webp 1200w, ../images/portrait-bali-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Portrait · Bali"
         loading="lazy"
@@ -600,7 +594,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/portrait-bali.jpg"
-        srcset="images/portrait-bali-small.webp 640w, images/portrait-bali-medium.webp 1200w, images/portrait-bali-large.webp 1920w"
+        srcset="../images/portrait-bali-small.webp 640w, ../images/portrait-bali-medium.webp 1200w, ../images/portrait-bali-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Portrait · Bali"
         loading="lazy"
@@ -610,7 +604,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/ceremonies-sur-la-plage-bali.jpg"
-        srcset="images/ceremonies-sur-la-plage-bali-small.webp 640w, images/ceremonies-sur-la-plage-bali-medium.webp 1200w, images/ceremonies-sur-la-plage-bali-large.webp 1920w"
+        srcset="../images/ceremonies-sur-la-plage-bali-small.webp 640w, ../images/ceremonies-sur-la-plage-bali-medium.webp 1200w, ../images/ceremonies-sur-la-plage-bali-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Cérémonies sur la plage · Bali"
         loading="lazy"
@@ -620,7 +614,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/altiplano-bolivia.jpg"
-        srcset="images/altiplano-bolivia-small.webp 640w, images/altiplano-bolivia-medium.webp 1200w, images/altiplano-bolivia-large.webp 1920w"
+        srcset="../images/altiplano-bolivia-small.webp 640w, ../images/altiplano-bolivia-medium.webp 1200w, ../images/altiplano-bolivia-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Altiplano · Bolivia"
         loading="lazy"
@@ -630,7 +624,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/manhattan-new-york.jpg"
-        srcset="images/manhattan-new-york-small.webp 640w, images/manhattan-new-york-medium.webp 1200w, images/manhattan-new-york-large.webp 1920w"
+        srcset="../images/manhattan-new-york-small.webp 640w, ../images/manhattan-new-york-medium.webp 1200w, ../images/manhattan-new-york-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Manhattan · New York"
         loading="lazy"
@@ -640,7 +634,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/fenetre-sur-locean-la-reunion.jpg"
-        srcset="images/fenetre-sur-locean-la-reunion-small.webp 640w, images/fenetre-sur-locean-la-reunion-medium.webp 1200w, images/fenetre-sur-locean-la-reunion-large.webp 1920w"
+        srcset="../images/fenetre-sur-locean-la-reunion-small.webp 640w, ../images/fenetre-sur-locean-la-reunion-medium.webp 1200w, ../images/fenetre-sur-locean-la-reunion-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Fenêtre sur l'océan · La Réunion"
         loading="lazy"
@@ -650,7 +644,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/soho-new-york.jpg"
-        srcset="images/soho-new-york-small.webp 640w, images/soho-new-york-medium.webp 1200w, images/soho-new-york-large.webp 1920w"
+        srcset="../images/soho-new-york-small.webp 640w, ../images/soho-new-york-medium.webp 1200w, ../images/soho-new-york-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="SoHo · New York"
         loading="lazy"
@@ -660,7 +654,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/monument-valley-usa.jpg"
-        srcset="images/monument-valley-usa-small.webp 640w, images/monument-valley-usa-medium.webp 1200w, images/monument-valley-usa-large.webp 1920w"
+        srcset="../images/monument-valley-usa-small.webp 640w, ../images/monument-valley-usa-medium.webp 1200w, ../images/monument-valley-usa-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Monument Valley · USA"
         loading="lazy"
@@ -670,7 +664,7 @@ button:focus:not(:focus-visible) {
     <div class="photo-item" onclick="openLightbox(this)">
       <img
         src="../images/rituels-offrandes-bali.jpg"
-        srcset="images/rituels-offrandes-bali-small.webp 640w, images/rituels-offrandes-bali-medium.webp 1200w, images/rituels-offrandes-bali-large.webp 1920w"
+        srcset="../images/rituels-offrandes-bali-small.webp 640w, ../images/rituels-offrandes-bali-medium.webp 1200w, ../images/rituels-offrandes-bali-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Rituels & Offrandes · Bali"
         loading="lazy"
@@ -684,7 +678,7 @@ button:focus:not(:focus-visible) {
   <div class="about-image">
     <img
         src="../images/bali-instants-de-vie.jpg"
-        srcset="images/bali-instants-de-vie-small.webp 640w, images/bali-instants-de-vie-medium.webp 1200w, images/bali-instants-de-vie-large.webp 1920w"
+        srcset="../images/bali-instants-de-vie-small.webp 640w, ../images/bali-instants-de-vie-medium.webp 1200w, ../images/bali-instants-de-vie-large.webp 1920w"
         sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
         alt="Bali, instants de vie"
         loading="lazy"
@@ -707,13 +701,7 @@ button:focus:not(:focus-visible) {
 
 </main>
 <footer role="contentinfo">
-  <div class="footer-logo"><a href="../en/index.html"><img
-        src="../images/vf-images.jpg"
-        srcset="images/vf-images-small.webp 640w, images/vf-images-medium.webp 1200w, images/vf-images-large.webp 1920w"
-        sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"
-        alt="VF Images"
-        loading="lazy"
-        decoding="async"></a></div>
+  <div class="footer-logo"><a href="../en/index.html"><img width="500" height="500" src="../images/logo-vf3.svg" alt="VF Images" loading="lazy" decoding="async"></a></div>
   <div class="footer-copy">© 2026 VF Images. All rights reserved. · <a href="../en/legal.html" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.1)">Legal notice</a></div>
   <div class="footer-social">
     <a href="https://www.instagram.com/thelensofwonder/" target="_blank" aria-label="Suivre VF Images sur Instagram (nouvelle fenêtre)">

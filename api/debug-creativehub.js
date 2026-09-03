@@ -25,8 +25,9 @@ module.exports = async (req, res) => {
   for (const c of candidates) {
     try {
       const r = await fetch(c.url, { headers: { Authorization: `Bearer ${key}` } });
+      const text = await r.text();
       let body;
-      try { body = await r.json(); } catch { body = (await r.text()).slice(0, 500); }
+      try { body = JSON.parse(text); } catch { body = text.slice(0, 500); }
       results.push({ label: c.label, url: c.url, status: r.status, body });
     } catch (err) {
       results.push({ label: c.label, url: c.url, error: err.message });

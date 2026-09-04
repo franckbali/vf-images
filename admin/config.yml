@@ -29,19 +29,6 @@ collections:
               - {label: "Ordre", name: "ordre", widget: "number", value_type: "int"}
               - {label: "Visible", name: "visible", widget: "boolean", default: true}
 
-  - name: "blog"
-    label: "Articles de blog"
-    folder: "blog"
-    create: true
-    slug: "{{slug}}"
-    extension: "md"
-    format: "frontmatter"
-    fields:
-      - {label: "Titre", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Image principale", name: "image", widget: "image", required: false}
-      - {label: "Contenu", name: "body", widget: "markdown"}
-
   - name: "accueil"
     label: "Accueil"
     files:
@@ -70,23 +57,3 @@ collections:
               - {label: "Fichier image", name: "fichier", widget: "image"}
               - {label: "Légende",       name: "legende", widget: "string"}
               - {label: "Visible",       name: "visible", widget: "boolean", default: true}
-
-  - name: "boutique"
-    label: "Boutique"
-    files:
-      - name: "boutique"
-        label: "Liste des produits"
-        file: "boutique.json"
-        fields:
-          - name: "produits"
-            label: "Produits"
-            widget: "list"
-            fields:
-              - {label: "Titre", name: "titre", widget: "string"}
-              - {label: "Sous-titre", name: "sous_titre", widget: "string", required: false}
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Prix (€)", name: "prix", widget: "number", value_type: "float"}
-              - {label: "Format", name: "format", widget: "string", required: false}
-              - {label: "Édition", name: "edition", widget: "string", required: false}
-              - {label: "Slug", name: "slug", widget: "string"}
-              - {label: "Visible", name: "visible", widget: "boolean", default: true}

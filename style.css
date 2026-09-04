@@ -16,7 +16,7 @@ body{background:var(--dark);color:var(--light);font-family:'Raleway',sans-serif;
 
 /* ── Navigation ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 4rem;transition:transform .55s cubic-bezier(0.22,1,0.36,1),background .4s,backdrop-filter .4s}
-nav.scrolled{background:transparent}
+nav.scrolled{background:rgba(8,8,8,.62);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%)}
 /* Voile dégradé : garantit la lisibilité de la nav quel que soit le contenu qui défile dessous, sans fond opaque */
 nav::before{content:'';position:absolute;left:0;right:0;top:0;height:200%;pointer-events:none;z-index:-1;background:linear-gradient(to bottom,rgba(8,8,8,.82) 0%,rgba(8,8,8,.5) 42%,rgba(8,8,8,0) 100%)}
 /* Hide-on-scroll : sur les galeries, la nav s'efface quand on entre dans les photos (intention d'origine, CSS manquant) */

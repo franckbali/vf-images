@@ -1,6 +1,8 @@
 /* VF Images — Nav hide-on-scroll partagé
    La nav se cache quand on descend (immersion photo), revient dès qu'on remonte,
-   reste toujours visible tout en haut. Aucun effet sur mobile (nav plus petite déjà). */
+   reste toujours visible tout en haut. Aucun effet sur mobile (nav plus petite déjà).
+   Elle prend aussi un fond verre dépoli (.scrolled) dès qu'on quitte le haut de page,
+   pour rester lisible sur n'importe quel contenu qui défile dessous. */
 (function(){
   var nav = document.querySelector('nav');
   if(!nav) return;
@@ -23,6 +25,8 @@
       // Scroll vers le haut : montrer
       nav.classList.remove('hidden');
     }
+
+    nav.classList.toggle('scrolled', y >= THRESHOLD_TOP);
 
     lastY = y;
     ticking = false;

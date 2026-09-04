@@ -201,7 +201,7 @@ main,footer{position:relative;z-index:2}
 @media(max-width:768px){.contact-bandeau{padding:2.5rem 2rem}}
 /* nav est déjà position:fixed z-index:200 — pas besoin de surcharge */
 /* Désactivé sur petits mobiles pour éviter les saccades GPU */
-@media(max-width:600px){body::before{display:none}}
+@media(max-width:768px){body::before{display:none}}
 
 /* ── Césures : équilibre les lignes des textes d'affichage pour éviter
    les articles/prépositions orphelins en fin de ligne (ex. « à », « les », « de l'île » seuls).

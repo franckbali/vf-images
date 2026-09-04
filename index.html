@@ -886,14 +886,10 @@ if(hamburger&&navOverlay){
     var isMobile = window.innerWidth <= 768;
 
     if(isMobile){
-      /* Mobile : swap Athènes ↔ Temple Bali */
-      var iA = photos.findIndex(function(p){ return p.fichier.indexOf('athenes-grece-002') !== -1; });
-      var iT = photos.findIndex(function(p){ return p.fichier.indexOf('temple-bali-004') !== -1; });
-      if(iA !== -1 && iT !== -1){ var tmp=photos[iA]; photos[iA]=photos[iT]; photos[iT]=tmp; }
       /* Mobile : 1 colonne pleine largeur */
       masonry.innerHTML = photos.map(function(p, i){ return makePhotoHTML(p, i, true); }).join('');
     } else {
-      /* Desktop : liste plate, CSS column-count:3 */
+      /* Desktop : liste plate, CSS grid */
       masonry.innerHTML = photos.map(function(p, i){ return makePhotoHTML(p, i); }).join('');
     }
 

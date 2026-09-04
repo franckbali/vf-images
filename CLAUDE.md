@@ -122,7 +122,6 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 7. **Changer le papier par photo** dans Creativehub (recommandé : Ilford Cotton Textured pour les 2 portraits N&B, Hahnemühle Pearl pour Colibri, Hahnemühle Bamboo pour Offrandes) — puis mettre à jour `paper_fr`/`paper_en` dans `catalogue.json`
 8. **Connecter les 5 photos restantes** de la boutique (bouton mort `href="#"`) : Faune Sacrée (sacred-monkey), Barong, Rituels/Offrandes, Manhattan, Fenêtre — créer leur produit Creativehub puis brancher `handleCheckout`
 9. **Éditions Collector via Whitewall** (EN PAUSE) : toggle Fine Art/Collector dans la fiche détail, bouton = formulaire contact pré-rempli (pas d'API Whitewall), badge sur la vignette. Prérequis : compte Whitewall Pro, liste des œuvres, specs (ex. bali-369)
-10. **Corriger la mention « signé »** dans `legal.html:403` et `mentions-legales.html:411` : la signature est reproduite automatiquement (Fra à Bali, impression en Europe), pas manuscrite — préciser « signature de l'artiste reproduite » pour rester honnête
 11. Créer le PDF certificat d'authenticité + QR codes éditions limitées
 12. Générer la version or (`#c9a96e`) de la signature pour les certificats
 

@@ -593,6 +593,8 @@ function updateCounter(){
 
 function openLightboxAt(index){
   currentPhotoIndex=index;
+  isTransitioning=false;
+  pendingNavDir=null;
   const p=photos[index];
   const cap=getCaption(p);
   // Réinitialiser les deux images
@@ -610,6 +612,8 @@ function openLightboxAt(index){
   });
 }
 
+var pendingNavDir=null; // tap reçu pendant une transition en cours — appliqué juste après
+
 function transitionToPhoto(newIndex){
   if(isTransitioning) return;
   isTransitioning=true;
@@ -626,15 +630,22 @@ function transitionToPhoto(newIndex){
       lbBack.style.zIndex='2'; lbFront.style.zIndex='1';
       lbBack.style.transition='opacity 380ms ease-out';
       lbBack.classList.add('lb-show');
+      // Légende + compteur mis à jour ici, en même temps que la photo devient visible
+      // (avant : mis à jour seulement à la fin, la légende affichait l'ancienne photo pendant ~400ms)
+      currentPhotoIndex=newIndex;
+      lbCap.textContent=cap;
+      updateCounter();
       // 3. Nettoyage après fin du fade-in
       setTimeout(()=>{
         lbFront.style.transition=''; lbBack.style.transition='';
         lbBack.style.zIndex=''; lbFront.style.zIndex='';
         [lbFront,lbBack]=[lbBack,lbFront];
-        currentPhotoIndex=newIndex;
-        lbCap.textContent=cap;
-        updateCounter();
         isTransitioning=false;
+        // Un tap reçu pendant l'animation n'est plus perdu : on l'applique maintenant
+        if(pendingNavDir!==null){
+          const dir=pendingNavDir; pendingNavDir=null;
+          transitionToPhoto((currentPhotoIndex+dir+photos.length)%photos.length);
+        }
       },400);
     },220);
   };
@@ -642,12 +653,17 @@ function transitionToPhoto(newIndex){
   else{ lbBack.onload=doSwap; lbBack.onerror=doSwap; }
 }
 
-function goPrev(e){if(e)e.stopPropagation();if(photos.length<2)return;transitionToPhoto((currentPhotoIndex-1+photos.length)%photos.length);}
-function goNext(e){if(e)e.stopPropagation();if(photos.length<2)return;transitionToPhoto((currentPhotoIndex+1)%photos.length);}
+function requestNav(dir){
+  if(isTransitioning){ pendingNavDir=dir; return; }
+  transitionToPhoto((currentPhotoIndex+dir+photos.length)%photos.length);
+}
+function goPrev(e){if(e)e.stopPropagation();if(photos.length<2)return;requestNav(-1);}
+function goNext(e){if(e)e.stopPropagation();if(photos.length<2)return;requestNav(1);}
 
 function closeLightbox(){
   lb.classList.add('closing');
   lb.classList.remove('open');
+  pendingNavDir=null;
   setTimeout(()=>{
     lb.classList.remove('closing');
     lbA.src=''; lbB.src='';

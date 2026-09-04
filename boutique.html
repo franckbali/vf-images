@@ -1554,11 +1554,8 @@ function openDetail(id){
   // Initialiser le mockup : sélectionner le premier format
   const firstFmt=modal.querySelector('.fmt-option');
   if(firstFmt) selectFormat(firstFmt);
-  // Sur mobile : scroll vers le bas pour que le bouton commander soit visible
-  setTimeout(()=>{
-    if(window.innerWidth<=900) modal.scrollTop=modal.scrollHeight;
-    else modal.scrollTop=0;
-  }, 160);
+  // Toujours démarrer en haut : on voit d'abord le tirage en situation, avant de descendre vers la commande
+  setTimeout(()=>{ modal.scrollTop=0; }, 160);
 }
 function closeDetail(){
   document.querySelectorAll('.detail-modal.open').forEach(m=>m.classList.remove('open'));

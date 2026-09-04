@@ -162,12 +162,31 @@
   box-shadow:0 24px 70px rgba(0,0,0,.7);
   background-image:url('images/salon-gris-moderne.jpg');
   background-size:cover;background-position:center top;
+  transition:background-image .4s ease;
 }
+.modal-viz-scene.amb-clair{background-image:url('images/salon-clair-scandinave.jpg')}
 .modal-viz-scene::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(to bottom,rgba(0,0,0,.04) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,.22) 100%);
   pointer-events:none;z-index:0;
 }
+/* Mur dégagé plus haut sur la photo salon clair : cadre repositionné (marge fauteuil ~64% de hauteur) */
+.modal-viz-scene.amb-clair .modal-viz-frame-area{top:5%;left:10%;right:10%;bottom:40%}
+
+/* ── Sélecteur d'ambiance (bas gauche de la scène) ── */
+.viz-ambiance-switch{
+  position:absolute;bottom:.9rem;left:.9rem;
+  display:flex;gap:.5rem;z-index:10;
+}
+.viz-amb-btn{
+  width:22px;height:22px;border-radius:50%;
+  background-size:cover;background-position:center;
+  border:2px solid rgba(245,243,239,.35);
+  cursor:pointer;padding:0;
+  transition:border-color .3s,transform .3s;
+}
+.viz-amb-btn:hover{transform:scale(1.12)}
+.viz-amb-btn.active{border-color:var(--gold)}
 .modal-viz-frame-area{
   position:absolute;
   top:4%;left:12%;right:3%;bottom:43%;
@@ -232,6 +251,7 @@
   box-shadow:0 32px 90px rgba(0,0,0,.8);
   transition:width .3s,height .3s;
 }
+.viz-fs-scene.amb-clair{background-image:url('images/salon-clair-scandinave.jpg')}
 .viz-fs-scene::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(to bottom,rgba(0,0,0,.04) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,.22) 100%);
@@ -242,6 +262,7 @@
   top:4%;left:12%;right:3%;bottom:43%;
   display:flex;align-items:center;justify-content:center;z-index:1;
 }
+.viz-fs-scene.amb-clair .viz-fs-frame-area{top:5%;left:10%;right:10%;bottom:40%}
 .viz-fs-frame{
   position:relative;flex-shrink:0;
   border:2px solid var(--dark);background:var(--light);
@@ -1808,6 +1829,8 @@ function openVizFullscreen(wrap){
   if(fsImg){fsImg.src=srcImg.src;fsImg.alt=srcImg.alt;}
   const fsLabel=fs.querySelector('.viz-fs-label');
   if(fsLabel) fsLabel.textContent=labelEl?labelEl.textContent:'';
+  const fsScene=fs.querySelector('.viz-fs-scene');
+  if(fsScene) fsScene.classList.toggle('amb-clair', _currentAmbiance==='clair');
   _applyVizFs();
   fs.classList.add('open');
   document.body.style.overflow='hidden';
@@ -1833,6 +1856,48 @@ document.querySelectorAll('.modal-viz-wrap').forEach(wrap=>{
   btn.addEventListener('click',()=>openVizFullscreen(wrap));
   wrap.appendChild(btn);
 });
+
+/* ═══ AMBIANCE DU MOCKUP — salon gris / salon clair, choix mémorisé ═══ */
+const AMBIANCES=[
+  {id:'gris', img:'images/salon-gris-moderne.jpg', labelFr:'Salon gris', labelEn:'Grey room'},
+  {id:'clair', img:'images/salon-clair-scandinave.jpg', labelFr:'Salon clair', labelEn:'Light room'}
+];
+let _currentAmbiance='gris';
+try{
+  const saved=localStorage.getItem('vf_viz_ambiance');
+  if(saved==='clair') _currentAmbiance='clair';
+}catch(e){}
+
+function applyAmbiance(amb){
+  _currentAmbiance=amb;
+  try{ localStorage.setItem('vf_viz_ambiance', amb); }catch(e){}
+  document.querySelectorAll('.modal-viz-scene').forEach(scene=>{
+    scene.classList.toggle('amb-clair', amb==='clair');
+  });
+  document.querySelectorAll('.viz-amb-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.amb===amb);
+  });
+  const fsScene=document.querySelector('.viz-fs-scene');
+  if(fsScene) fsScene.classList.toggle('amb-clair', amb==='clair');
+}
+
+// Injection des pastilles d'ambiance dans chaque mockup
+document.querySelectorAll('.modal-viz-wrap').forEach(wrap=>{
+  const switcher=document.createElement('div');
+  switcher.className='viz-ambiance-switch';
+  AMBIANCES.forEach(a=>{
+    const b=document.createElement('button');
+    b.className='viz-amb-btn'+(a.id===_currentAmbiance?' active':'');
+    b.dataset.amb=a.id;
+    b.style.backgroundImage="url('"+a.img+"')";
+    b.setAttribute('aria-label', a.labelFr);
+    b.setAttribute('title', a.labelFr);
+    b.addEventListener('click',(e)=>{ e.stopPropagation(); applyAmbiance(a.id); });
+    switcher.appendChild(b);
+  });
+  wrap.appendChild(switcher);
+});
+applyAmbiance(_currentAmbiance);
 
 // Hamburger menu
 const hamburger=document.getElementById('hamburger');

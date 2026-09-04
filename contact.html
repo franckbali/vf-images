@@ -733,30 +733,20 @@ button:focus:not(:focus-visible) {
       <h2 class="form-intro-title" data-fr="Comment puis-je vous aider ?" data-en="How can I help you?">Comment puis-je vous aider ?</h2>
     </div>
 
-    <!-- SUJETS -->
-    <div class="form-subjects reveal">
-      <button class="subject-btn active" onclick="selectSubject(this)" data-fr="Tirage Fine Art" data-en="Fine Art Print">Tirage Fine Art</button>
-      <button class="subject-btn" onclick="selectSubject(this)" data-fr="Commande sur mesure" data-en="Custom order">Commande sur mesure</button>
-      <button class="subject-btn" onclick="selectSubject(this)" data-fr="Collaboration" data-en="Collaboration">Collaboration</button>
-      <button class="subject-btn" onclick="selectSubject(this)" data-fr="Autre" data-en="Other">Autre</button>
-    </div>
-
     <!-- FORMULAIRE -->
     <form id="contactForm" onsubmit="submitForm(event)">
+      <!-- SUJETS -->
+      <div class="form-subjects reveal">
+        <button type="button" class="subject-btn active" onclick="selectSubject(this)" data-fr="Tirage Fine Art" data-en="Fine Art Print" data-value-fr="Tirage Fine Art" data-value-en="Fine Art Print">Tirage Fine Art</button>
+        <button type="button" class="subject-btn" onclick="selectSubject(this)" data-fr="Commande sur mesure" data-en="Custom order" data-value-fr="Commande sur mesure" data-value-en="Custom order">Commande sur mesure</button>
+        <button type="button" class="subject-btn" onclick="selectSubject(this)" data-fr="Collaboration" data-en="Collaboration" data-value-fr="Collaboration" data-value-en="Collaboration">Collaboration</button>
+        <button type="button" class="subject-btn" onclick="selectSubject(this)" data-fr="Autre" data-en="Other" data-value-fr="Autre" data-value-en="Other">Autre</button>
+      </div>
+      <input type="hidden" name="subject" id="field-subject" value="Tirage Fine Art">
+
       <div class="form-group reveal">
         <label class="form-label" data-fr="Votre nom" data-en="Your name">Votre nom</label>
         <input type="text" name="name" id="field-name" class="form-input" placeholder="Prénom Nom" data-placeholder-fr="Prénom Nom" data-placeholder-en="First Last" required autocomplete="name" aria-label="Votre nom">
-        <div class="form-underline"></div>
-      </div>
-      <div class="form-group reveal">
-        <label class="form-label" for="field-subject" data-fr="Sujet" data-en="Subject">Sujet</label>
-        <select name="subject" id="field-subject" class="form-input" style="background:transparent;color:inherit;cursor:pointer" aria-label="Sujet du message">
-          <option value="" disabled selected style="background:#111" data-fr="Choisir un sujet..." data-en="Choose a topic...">Choisir un sujet...</option>
-          <option value="Commande tirage Fine Art" style="background:#111" data-fr="Commande tirage Fine Art" data-en="Fine Art Print Order">Commande tirage Fine Art</option>
-          <option value="Commande personnalisée" style="background:#111" data-fr="Commande personnalisée" data-en="Custom Order">Commande personnalisée</option>
-          <option value="Partenariat / Collaboration" style="background:#111" data-fr="Partenariat / Collaboration" data-en="Partnership / Collaboration">Partenariat / Collaboration</option>
-          <option value="Question générale" style="background:#111" data-fr="Question générale" data-en="General question">Question générale</option>
-        </select>
         <div class="form-underline"></div>
       </div>
       <div class="form-group reveal">
@@ -824,6 +814,8 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 function selectSubject(btn){
   document.querySelectorAll('.subject-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
+  var lang = localStorage.getItem('vf_lang') || 'fr';
+  document.getElementById('field-subject').value = btn.dataset['value' + (lang === 'en' ? 'En' : 'Fr')];
 }
 
 function submitForm(e){

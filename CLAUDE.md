@@ -162,8 +162,8 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 ## 7. Règles de travail Claude Code
 
 - Toujours travailler sur `main` sauf si Franck demande une branche séparée
-- Montrer le diff avant de modifier des fichiers
-- Demander confirmation avant toute suppression de fichier
+- **Agir directement, sans demander confirmation à chaque modification** (édits, suppressions de fichiers trackés git, commits, push sur `main`) — décidé le 3 sept. 2026 : "je ne vais jamais refuser, fais les changements de toi-même". Rendre compte après coup plutôt que de demander avant.
+- Ne s'arrêter pour demander que si ça mérite vraiment son avis : une vraie décision (contenu éditorial, choix entre options concurrentes), ou quelque chose d'irréversible hors git / touchant à l'argent ou aux identifiants.
 - Franck est **direct et minimal** : des actions, pas de longues explications ; pas de questions inutiles (les confirmations de sécurité ci-dessus restent)
 - Priorité : site **ultra-performant sur mobile**, très lisible, cohérent visuellement, gérable en autonomie
 

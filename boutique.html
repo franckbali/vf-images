@@ -1615,15 +1615,14 @@ function updateModalViz(modal, w, h){
     const fh=Math.round(h*scale);
     frame.style.width =fw+'px';
     frame.style.height=fh+'px';
-    // Passe-partout : marge horizontale = 7% du petit côté (min 3 max 10)
+    // Passe-partout : même marge sur les 4 côtés (photo recadrée via object-fit:cover,
+    // jamais étirée — pas besoin de faire varier la marge selon le ratio du format)
     const bSide=2; // border 2px par côté
-    const mx=Math.min(5,Math.max(2,Math.round(Math.min(fw,fh)*0.035)));
-    // Marge verticale calculée pour que la photo conserve exactement le ratio w/h
-    const my=Math.max(2,Math.round(bSide*(h-w)/w+(h/w)*mx));
+    const mat=Math.min(6,Math.max(2,Math.round(Math.min(fw,fh)*0.035)));
     const img=frame.querySelector('img');
     if(img){
-      img.style.width =Math.max(1,fw-2*bSide-2*mx)+'px';
-      img.style.height=Math.max(1,fh-2*bSide-2*my)+'px';
+      img.style.width =Math.max(1,fw-2*bSide-2*mat)+'px';
+      img.style.height=Math.max(1,fh-2*bSide-2*mat)+'px';
     }
     if(label) label.textContent=w+' × '+h+' cm';
   }
@@ -1805,11 +1804,10 @@ function _applyVizFs(){
   const fw=Math.round(w*scale), fh=Math.round(h*scale);
   frame.style.width=fw+'px'; frame.style.height=fh+'px';
   const bSide=2;
-  const mx=Math.min(5,Math.max(2,Math.round(Math.min(fw,fh)*0.035)));
-  const my=Math.max(2,Math.round(bSide*(h-w)/w+(h/w)*mx));
+  const mat=Math.min(6,Math.max(2,Math.round(Math.min(fw,fh)*0.035)));
   if(img){
-    img.style.width=Math.max(1,fw-2*bSide-2*mx)+'px';
-    img.style.height=Math.max(1,fh-2*bSide-2*my)+'px';
+    img.style.width=Math.max(1,fw-2*bSide-2*mat)+'px';
+    img.style.height=Math.max(1,fh-2*bSide-2*mat)+'px';
   }
 }
 

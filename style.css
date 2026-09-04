@@ -240,3 +240,7 @@ main,footer{position:relative;z-index:2}
 }
 /* Bandeaux éditoriaux découpés en paragraphes : espacement entre eux (le gap flex fait le reste) */
 .serie-text+.serie-text{margin-top:1.2rem}
+
+/* ── Lien discret "Voir en tirage" sous une photo de galerie, uniquement quand elle est en vente en boutique ── */
+.gallery-shop-link{display:inline-block;margin-top:.7rem;font-family:'Raleway',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,110,.4);text-decoration:none;transition:color .35s}
+.gallery-shop-link:hover{color:rgba(201,169,110,.9)}

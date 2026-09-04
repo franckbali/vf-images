@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Lora:ital,wght@0,400;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Lora:ital,wght@0,400;1,400&display=swap"></noscript>
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
 .nav-right{display:flex;align-items:center;gap:2.5rem}
 .lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
@@ -416,7 +416,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 <div class="gap"></div>
 
 <!-- portrait-bali-012 : landscape 1920x1279 → wide -->
-<div class="block wide reveal" onclick="openLightbox(this)" data-title="Les Années" data-desc="Chaque ride est une histoire. Son visage est un atlas." data-desc-en="Every wrinkle is a story. Her face is an atlas.">
+<div class="block wide reveal" onclick="openLightbox(this)" data-title="Les Années" data-desc="Chaque ride est une histoire. Son visage est un atlas." data-desc-en="Every wrinkle is a story. Her face is an atlas." data-shop="portrait-bali-012">
   <img src="images/portrait-bali-012.jpg" alt="Les Années" loading="lazy" decoding="async">
   <div class="caption-corner">Les Années</div>
 </div>
@@ -495,6 +495,16 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.visible),.serie-line:not(
     cap.className='caption-below';
     cap.textContent=el.dataset.title||'';
     el.insertAdjacentElement('afterend',cap);
+    if(el.dataset.shop){
+      var shopLink=document.createElement('a');
+      shopLink.href='boutique.html#'+el.dataset.shop;
+      shopLink.className='gallery-shop-link';
+      shopLink.setAttribute('data-fr','Voir en tirage');
+      shopLink.setAttribute('data-en','Available as a print');
+      shopLink.textContent='Voir en tirage';
+      shopLink.addEventListener('click',function(e){ e.stopPropagation(); });
+      cap.insertAdjacentElement('afterend',shopLink);
+    }
   });
   var _initLang=localStorage.getItem('vf_lang')||'fr';
   if(_initLang==='en'&&window.setLang) window.setLang('en');

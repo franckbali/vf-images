@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Lora:ital,wght@1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Lora:ital,wght@1,400&display=swap"></noscript>
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
 /* NAV */
 
@@ -1441,6 +1441,24 @@ function closeDetail(){
   document.getElementById('modalOverlay').classList.remove('active');
   document.body.style.overflow='';
 }
+/* Ouverture directe d'une fiche via ancre — ex. boutique.html#offrandes-bali-002
+   (lien "Voir en tirage" depuis les galeries) */
+(function(){
+  function openFromHash(){
+    var photoId = location.hash.replace('#','');
+    if(!photoId) return;
+    var modal = document.querySelector('.detail-modal[data-photo-id="'+photoId+'"]');
+    if(!modal) return;
+    var id = modal.id.replace(/^detail-/,'');
+    openDetail(id);
+    setTimeout(function(){ modal.scrollIntoView({block:'center'}); }, 50);
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', openFromHash);
+  } else {
+    openFromHash();
+  }
+})();
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){
     const fs=document.getElementById('viz-fullscreen');

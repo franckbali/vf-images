@@ -66,13 +66,28 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:grid;grid
 .footer-social a{font-size:0.80rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s}
 .footer-social a:hover{color:var(--gold)}
 
-/* ── Cookie banner ── */
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,.97);border-top:1px solid rgba(201,169,110,0.8);padding:1.5rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.cookie-text{font-size:0.80rem;color:rgba(245,243,239,.92);line-height:1.6;flex:1}
-.cookie-text a{color:var(--gold)}
-.cookie-btns{display:flex;gap:1rem;flex-shrink:0}
-.cookie-btn{font-family:'Raleway',sans-serif;font-size:0.80rem;letter-spacing:.15em;text-transform:uppercase;padding:.6rem 1.5rem;cursor:pointer;border:1px solid rgba(201,169,110,0.8);background:none;color:rgba(245,243,239,.92);transition:all .3s}
-.cookie-btn.accept{background:var(--gold);color:var(--dark);border-color:var(--gold)}
+/* ── Cookie banner (motif majoritaire, unifié le 4 sept. 2026 — 9 pages en dépendent désormais) ── */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,.97);border-top:1px solid rgba(201,169,110,1.0);padding:1.5rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;transform:translateY(100%);transition:transform .5s cubic-bezier(0.22,1,0.36,1)}
+#cookie-banner.visible{transform:translateY(0)}
+#cookie-banner.hidden{transform:translateY(100%)}
+.cookie-text{font-family:'Raleway',sans-serif;font-size:.58rem;font-weight:300;letter-spacing:.12em;color:rgba(245,243,239,.92);line-height:1.7;max-width:680px}
+.cookie-text a{color:rgba(201,169,110,1.0);text-decoration:none;border-bottom:1px solid rgba(201,169,110,1.0)}
+.cookie-text a:hover{color:var(--gold)}
+.cookie-actions{display:flex;gap:1rem;flex-shrink:0}
+.cookie-btn{font-family:'Raleway',sans-serif;font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;font-weight:400;padding:.7rem 1.8rem;border:none;cursor:pointer;transition:background .3s,color .3s,opacity .3s;white-space:nowrap}
+.cookie-btn-accept{background:var(--gold);color:var(--dark)}
+.cookie-btn-accept:hover{opacity:.85}
+.cookie-btn-refuse{background:transparent;color:rgba(245,243,239,.92);border:1px solid rgba(255,255,255,.1)}
+.cookie-btn-refuse:hover{color:var(--light);border-color:rgba(255,255,255,.3)}
+@media(max-width:768px){
+  #cookie-banner{flex-direction:column;padding:1.5rem 1.8rem;gap:1.2rem}
+  .cookie-actions{width:100%}
+  .cookie-btn{flex:1;text-align:center}
+}
+@media(max-width:480px){
+  #cookie-banner{padding:1.2rem}
+  .cookie-text{font-size:0.90rem}
+}
 
 /* ── Skip link ── */
 .skip-link{position:absolute;top:-100px;left:1rem;background:var(--gold);color:var(--dark);padding:.5rem 1rem;font-size:0.80rem;text-decoration:none;z-index:9999;transition:top .3s}
@@ -100,7 +115,6 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
   .logo img{height:64px}
   footer{padding:3rem 1.5rem;display:flex;flex-direction:column;align-items:center;text-align:center}
   .footer-logo,.footer-copy,.footer-social{grid-area:unset;justify-self:unset}
-  #cookie-banner{padding:1.2rem 1.5rem;flex-direction:column;align-items:flex-start}
   .nav-overlay a{font-size:1.4rem}
 }
 
@@ -113,7 +127,6 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
   .btn{font-size:1.15rem!important;padding:.9rem 2rem;letter-spacing:.12em}
   .footer-copy{font-size:1.05rem!important;letter-spacing:.06em}
   .footer-social a{font-size:1.05rem!important}
-  .cookie-text{font-size:1.05rem!important;letter-spacing:.03em}
   .lang-btn{font-size:1.15rem!important}
   .nav-overlay .overlay-lang{font-size:1.05rem!important;letter-spacing:.1em}
   .photo-caption{font-size:1.15rem!important}

@@ -51,36 +51,38 @@ module.exports = async (req, res) => {
 };
 
 // ─── Envoie la commande à Creativehub/Printspace ───────────────────────────
+// API "Escher V2" (migration obligatoire début sept. 2026, l'ancienne
+// https://api.creativehub.io/api/v1 ne répond plus). Doc à jour :
+// https://sell.creativehub.io/api-docs#create-order
+//
+// Différences avec l'ancienne v1 :
+// - base URL : https://escher-v2.creativehub.io/v1 (plus de /api/ dans le chemin)
+// - payload à plat (delivery_*), plus d'objets imbriqués order/shipping_address/customer
+// - champs renommés : address1→delivery_line1, zip→delivery_postcode,
+//   country_code→delivery_country_code, name (destinataire)→delivery_name
+// - le nom du client (facturation) n'a plus de champ dédié séparé du
+//   destinataire ; on envoie l'email client dans delivery_email
 async function sendToCreativehub(session) {
   const { creativehub_variant_id } = session.metadata;
   const shipping = session.shipping_details;
 
-  // ⚠️  Structure à ajuster selon la doc API Creativehub
-  //     https://api.creativehub.io — vérifier les champs exacts
   const orderPayload = {
-    order: {
-      line_items: [
-        {
-          variant_id: creativehub_variant_id, // ID récupéré depuis catalogue.json
-          quantity: 1,
-        },
-      ],
-      shipping_address: {
-        name:         shipping.name,
-        address1:     shipping.address.line1,
-        address2:     shipping.address.line2 || '',
-        city:         shipping.address.city,
-        zip:          shipping.address.postal_code,
-        country_code: shipping.address.country,
+    items: [
+      {
+        variant_id: creativehub_variant_id, // ID récupéré depuis catalogue.json
+        quantity: 1,
       },
-      customer: {
-        email: session.customer_details.email,
-        name:  session.customer_details.name,
-      },
-    },
+    ],
+    delivery_name:         shipping.name,
+    delivery_line1:        shipping.address.line1,
+    delivery_line2:        shipping.address.line2 || undefined,
+    delivery_city:         shipping.address.city,
+    delivery_postcode:     shipping.address.postal_code || undefined,
+    delivery_country_code: shipping.address.country,
+    delivery_email:        session.customer_details.email,
   };
 
-  const response = await fetch('https://api.creativehub.io/api/v1/orders', {
+  const response = await fetch('https://escher-v2.creativehub.io/v1/orders', {
     method: 'POST',
     headers: {
       'Content-Type':  'application/json',
@@ -90,10 +92,16 @@ async function sendToCreativehub(session) {
   });
 
   if (!response.ok) {
+    // Erreurs v2 : { "detail": "raison" } — on affiche le detail si présent,
+    // sinon le texte brut (401 token invalide/révoqué, 403 accès API
+    // désactivé sur le compte, 404, 429 quota dépassé).
     const errorText = await response.text();
-    throw new Error(`Creativehub API ${response.status}: ${errorText}`);
+    let detail = errorText;
+    try { detail = JSON.parse(errorText).detail || errorText; } catch {}
+    throw new Error(`Creativehub API ${response.status}: ${detail}`);
   }
 
+  // { order_id, order_number, currency, total_incl_vat, lines }
   return response.json();
 }
 

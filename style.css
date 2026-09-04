@@ -78,6 +78,12 @@ footer{padding:4rem;border-top:1px solid rgba(201,169,110,0.8);display:grid;grid
 .skip-link{position:absolute;top:-100px;left:1rem;background:var(--gold);color:var(--dark);padding:.5rem 1rem;font-size:0.80rem;text-decoration:none;z-index:9999;transition:top .3s}
 .skip-link:focus{top:1rem}
 
+/* ── Accessibilité — focus clavier & reduced-motion (identique sur 8 pages, centralisé le 4 sept. 2026) ── */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:0}
+a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
+.photo-item:focus-within,.print-card:focus-within,.gallery-card:focus-within{outline:1px solid rgba(201,169,110,1.0)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
+
 /* ── Animations ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(0.22,1,0.36,1),transform .7s cubic-bezier(0.22,1,0.36,1)}

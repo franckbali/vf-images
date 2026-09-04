@@ -405,40 +405,6 @@ img {
   top: 1rem;
 }
 
-/* Focus visible sur tous les éléments interactifs */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible,
-[tabindex]:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 3px;
-  border-radius: 0;
-}
-
-/* Supprimer outline par défaut uniquement si focus-visible géré */
-a:focus:not(:focus-visible),
-button:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* Navigation clavier visible sur les cartes */
-.photo-item:focus-within,
-.print-card:focus-within,
-.gallery-card:focus-within {
-  outline: 1px solid rgba(201,169,110,1.0);
-}
-
-/* Réduction des animations si préférence utilisateur */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
 
 /* ══ BANDEAU COOKIES RGPD ══ */
 #cookie-banner {

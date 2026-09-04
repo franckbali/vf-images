@@ -57,10 +57,10 @@
       "visible": true
     },
     {
-      "fichier": "images/sky-line-new-york-001.jpg",
-      "legende": "Skyline · New York",
-      "legende_en": "Skyline · New York",
-      "w": 1920, "h": 1279,
+      "fichier": "images/fire-escape.jpg",
+      "legende": "Escalier de secours · New York",
+      "legende_en": "Fire Escape · New York",
+      "w": 1372, "h": 2000,
       "visible": true
     },
     {

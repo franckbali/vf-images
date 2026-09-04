@@ -79,6 +79,7 @@ section.gallery-preview{padding:5rem 4rem 7rem;background:var(--dark)}
 .photo-masonry{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
 .photo-item{position:relative;overflow:hidden;background:var(--dark3);aspect-ratio:4/5}
 .photo-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s cubic-bezier(0.25,0.46,0.45,0.94),filter 1.2s ease;filter:contrast(1.04) saturate(1.06);will-change:transform}
+.photo-item img[src*="street-kuala-lumpur-001"]{object-position:32% center}
 .photo-item:hover img{transform:scale(1.04);filter:contrast(1.06) saturate(1.1)}
 /* Action 39 : Split-tone overlay cinématique */
 .photo-item::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(135deg,rgba(40,60,90,0.08) 0%,transparent 50%,rgba(60,30,15,0.06) 100%);mix-blend-mode:soft-light}

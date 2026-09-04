@@ -552,6 +552,7 @@ const lbInner=document.getElementById('lb-inner');
 let currentIndex=0;
 let lbFront=lbImgA,lbBack=lbImgB;
 let isTransitioning=false;
+let pendingNavDir=null; // tap reçu pendant une transition en cours — appliqué juste après
 const allClickable=()=>[...document.querySelectorAll('.block[onclick],.frame[onclick]')];
 
 function setCaption(el){
@@ -564,6 +565,8 @@ function getBestSrc(el){const img=el.querySelector('img');return img.currentSrc|
 function openLightbox(el){
   const items=allClickable();
   currentIndex=items.indexOf(el);
+  isTransitioning=false;
+  pendingNavDir=null;
   lbImgA.className='lightbox-img';lbImgB.className='lightbox-img';
   lbFront=lbImgA;lbBack=lbImgB;lbBack.src='';
   setCaption(el);
@@ -577,7 +580,7 @@ function openLightbox(el){
   });
 }
 function navigateLightbox(dir){
-  if(isTransitioning) return;
+  if(isTransitioning){ pendingNavDir=dir; return; }
   isTransitioning=true;
   const items=allClickable();
   currentIndex=(currentIndex+dir+items.length)%items.length;
@@ -586,14 +589,16 @@ function navigateLightbox(dir){
   const doSwap=()=>{
     lbBack.style.zIndex='2';lbFront.style.zIndex='1';
     lbBack.classList.add('lb-show');
+    setCaption(el); // synchrone avec l'apparition de la photo, pas à la fin de l'animation
     setTimeout(()=>lbFront.classList.remove('lb-show'),40);
-    setTimeout(()=>{lbBack.style.zIndex='';lbFront.style.zIndex='';[lbFront,lbBack]=[lbBack,lbFront];setCaption(el);isTransitioning=false;},420);
+    setTimeout(()=>{lbBack.style.zIndex='';lbFront.style.zIndex='';[lbFront,lbBack]=[lbBack,lbFront];isTransitioning=false;if(pendingNavDir!==null){const d=pendingNavDir;pendingNavDir=null;navigateLightbox(d);}},420);
   };
   if(lbBack.complete&&lbBack.naturalWidth) doSwap();
   else{lbBack.onload=doSwap;lbBack.onerror=doSwap;}
 }
 function closeLightbox(){
   isTransitioning=false;
+  pendingNavDir=null;
   lbImgA.style.zIndex='';lbImgB.style.zIndex='';
   lbBack.src='';lbBack.classList.remove('lb-show');
   /* Lancer le fondu — le body reste fixé pendant toute la durée */

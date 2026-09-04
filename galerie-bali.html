@@ -660,6 +660,7 @@ const lbInner=document.getElementById('lb-inner');
 let currentIndex=0;
 let lbFront=lbImgA,lbBack=lbImgB;
 let isTransitioning=false;
+let pendingNavDir=null; // tap reçu pendant une transition en cours — appliqué juste après
 const allClickable=()=>[...document.querySelectorAll('.block[onclick],.frame[onclick],.frame-nat[onclick]')];
 
 function setCaption(el){
@@ -676,6 +677,8 @@ function getBestSrc(el){
 function openLightbox(el){
   const items=allClickable();
   currentIndex=items.indexOf(el);
+  isTransitioning=false;
+  pendingNavDir=null;
   lbImgA.className='lightbox-img';lbImgB.className='lightbox-img';
   lbFront=lbImgA;lbBack=lbImgB;
   lbBack.src='';
@@ -693,7 +696,7 @@ function openLightbox(el){
 }
 
 function navigateLightbox(dir){
-  if(isTransitioning) return;
+  if(isTransitioning){ pendingNavDir=dir; return; }
   isTransitioning=true;
   const items=allClickable();
   currentIndex=(currentIndex+dir+items.length)%items.length;
@@ -702,11 +705,13 @@ function navigateLightbox(dir){
   const doSwap=()=>{
     lbBack.style.zIndex='2';lbFront.style.zIndex='1';
     lbBack.classList.add('lb-show');
+    setCaption(el); // synchrone avec l'apparition de la photo, pas à la fin de l'animation
     setTimeout(()=>lbFront.classList.remove('lb-show'),40);
     setTimeout(()=>{
       lbBack.style.zIndex='';lbFront.style.zIndex='';
       [lbFront,lbBack]=[lbBack,lbFront];
-      setCaption(el);isTransitioning=false;
+      isTransitioning=false;
+      if(pendingNavDir!==null){const d=pendingNavDir;pendingNavDir=null;navigateLightbox(d);}
     },420);
   };
   if(lbBack.complete&&lbBack.naturalWidth) doSwap();
@@ -715,6 +720,7 @@ function navigateLightbox(dir){
 
 function closeLightbox(){
   isTransitioning=false;
+  pendingNavDir=null;
   lbImgA.style.zIndex='';lbImgB.style.zIndex='';
   lbBack.src='';lbBack.classList.remove('lb-show');
   lb.classList.add('closing');lb.classList.remove('open');

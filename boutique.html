@@ -288,6 +288,52 @@
 }
 .detail-close:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
+/* ── Panneau de confirmation post-achat (remplace l'alerte navigateur) ── */
+.order-confirm{
+  position:fixed;top:50%;left:50%;
+  transform:translate(-50%,-45%);
+  width:min(460px,88vw);
+  background:var(--dark2);
+  border:1px solid rgba(201,169,110,.25);
+  padding:3rem 2.5rem;
+  text-align:center;
+  z-index:950;
+  opacity:0;visibility:hidden;
+  transition:opacity .5s ease,transform .5s cubic-bezier(0.22,1,0.36,1);
+  box-shadow:0 30px 90px rgba(0,0,0,.6);
+}
+.order-confirm.open{opacity:1;visibility:visible;transform:translate(-50%,-50%)}
+.order-confirm-icon{
+  width:52px;height:52px;margin:0 auto 1.6rem;
+  border:1px solid rgba(201,169,110,1.0);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.order-confirm-icon.cancelled{border-color:rgba(245,243,239,.3)}
+.order-confirm-title{
+  font-family:'Bodoni Moda',serif;
+  font-size:1.5rem;font-weight:400;letter-spacing:.02em;
+  color:var(--light);margin-bottom:1rem;
+}
+.order-confirm-text{
+  font-size:.85rem;line-height:1.75;
+  color:rgba(245,243,239,.7);
+  font-family:'Raleway',sans-serif;font-weight:300;
+  margin-bottom:2rem;
+}
+.order-confirm-close{
+  display:inline-block;
+  padding:.8rem 2.2rem;
+  border:1px solid var(--gold);color:var(--gold);
+  font-family:'Raleway',sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  background:none;cursor:pointer;
+  transition:background .35s,color .35s;
+}
+.order-confirm-close:hover{background:var(--gold);color:var(--dark)}
+@media(max-width:480px){
+  .order-confirm{padding:2.2rem 1.6rem}
+}
+
 .detail-location{font-size:0.75rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,110,1.0);font-weight:400;margin-bottom:.7rem;margin-top:2rem}
 .detail-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.2rem,2vw,1.7rem);font-weight:400;letter-spacing:.03em;line-height:1.2;margin-bottom:1.5rem}
 .detail-divider{width:28px;height:1px;background:var(--gold);opacity:.4;margin-bottom:1.8rem}
@@ -649,7 +695,17 @@ img {
 <div class="cursor-ring" id="ring"></div>
 
 <!-- OVERLAY MODALE -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeDetail()"></div>
+<div class="modal-overlay" id="modalOverlay" onclick="document.getElementById('orderConfirm').classList.contains('open') ? closeOrderConfirm() : closeDetail()"></div>
+
+<!-- PANNEAU DE CONFIRMATION POST-ACHAT -->
+<div class="order-confirm" id="orderConfirm" role="dialog" aria-live="polite">
+  <div class="order-confirm-icon" id="orderConfirmIcon">
+    <svg id="orderConfirmIconSvg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(201,169,110,1.0)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+  </div>
+  <h3 class="order-confirm-title" id="orderConfirmTitle" data-fr="Commande confirmée" data-en="Order confirmed">Commande confirmée</h3>
+  <p class="order-confirm-text" id="orderConfirmText" data-fr="Merci pour votre commande. Vous allez recevoir un email de confirmation, et votre tirage sera imprimé et expédié depuis notre laboratoire partenaire en Europe." data-en="Thank you for your order. You will receive a confirmation email shortly, and your print will be produced and shipped from our partner lab in Europe.">Merci pour votre commande. Vous allez recevoir un email de confirmation, et votre tirage sera imprimé et expédié depuis notre laboratoire partenaire en Europe.</p>
+  <button class="order-confirm-close" onclick="closeOrderConfirm()" data-fr="Fermer" data-en="Close">Fermer</button>
+</div>
 
 <!-- MODALES DÉTAIL -->
 
@@ -1462,7 +1518,9 @@ function closeDetail(){
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){
     const fs=document.getElementById('viz-fullscreen');
+    const oc=document.getElementById('orderConfirm');
     if(fs&&fs.classList.contains('open')){ closeVizFullscreen(); }
+    else if(oc&&oc.classList.contains('open')){ closeOrderConfirm(); }
     else{ closeDetail(); }
   }
 });
@@ -1611,24 +1669,47 @@ async function handleCheckout(btn) {
 }
 
 // Message après retour de Stripe (success ou cancelled)
+function openOrderConfirm(kind){
+  const panel = document.getElementById('orderConfirm');
+  const icon = document.getElementById('orderConfirmIcon');
+  const iconSvg = document.getElementById('orderConfirmIconSvg');
+  const title = document.getElementById('orderConfirmTitle');
+  const text = document.getElementById('orderConfirmText');
+  if(kind === 'cancelled'){
+    icon.classList.add('cancelled');
+    iconSvg.innerHTML = '<line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>';
+    iconSvg.setAttribute('stroke', 'rgba(245,243,239,.6)');
+    title.setAttribute('data-fr','Paiement annulé');
+    title.setAttribute('data-en','Payment cancelled');
+    text.setAttribute('data-fr','Votre paiement a été annulé, vous n\'avez pas été débité. Vous pouvez reprendre votre commande à tout moment.');
+    text.setAttribute('data-en','Your payment was cancelled and you have not been charged. You can resume your order at any time.');
+  } else {
+    icon.classList.remove('cancelled');
+    iconSvg.innerHTML = '<polyline points="20 6 9 17 4 12"/>';
+    iconSvg.setAttribute('stroke', 'rgba(201,169,110,1.0)');
+    title.setAttribute('data-fr','Commande confirmée');
+    title.setAttribute('data-en','Order confirmed');
+    text.setAttribute('data-fr','Merci pour votre commande. Vous allez recevoir un email de confirmation, et votre tirage sera imprimé et expédié depuis notre laboratoire partenaire en Europe.');
+    text.setAttribute('data-en','Thank you for your order. You will receive a confirmation email shortly, and your print will be produced and shipped from our partner lab in Europe.');
+  }
+  setLang(currentLang);
+  panel.classList.add('open');
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeOrderConfirm(){
+  document.getElementById('orderConfirm').classList.remove('open');
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
 (function checkStripeReturn() {
   const params = new URLSearchParams(window.location.search);
   const status = params.get('status');
   if (!status) return;
   // Nettoyer l'URL
   history.replaceState({}, '', window.location.pathname);
-  if (status === 'success') {
-    setTimeout(() => alert(
-      currentLang === 'en'
-        ? '✓ Order confirmed! You will receive a confirmation email shortly.'
-        : '✓ Commande confirmée ! Vous allez recevoir un email de confirmation.'
-    ), 300);
-  } else if (status === 'cancelled') {
-    setTimeout(() => alert(
-      currentLang === 'en'
-        ? 'Payment cancelled. Your cart was not charged.'
-        : 'Paiement annulé. Vous n\'avez pas été débité.'
-    ), 300);
+  if (status === 'success' || status === 'cancelled') {
+    setTimeout(() => openOrderConfirm(status), 300);
   }
 })();
 

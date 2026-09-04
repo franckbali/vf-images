@@ -76,9 +76,10 @@
 section.gallery-preview{padding:5rem 4rem 7rem;background:var(--dark)}
 .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem}
 
-.photo-masonry{column-count:3;column-gap:5px}
-.photo-item{break-inside:avoid;position:relative;overflow:hidden;background:var(--dark3);margin-bottom:5px}
-.photo-item img{width:100%;height:auto;display:block;transition:transform 1.4s cubic-bezier(0.25,0.46,0.45,0.94),filter 1.2s ease;filter:contrast(1.04) saturate(1.06);will-change:transform}
+.photo-masonry{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.photo-item{position:relative;overflow:hidden;background:var(--dark3);aspect-ratio:4/5}
+.photo-item.featured{grid-row:span 2;aspect-ratio:auto}
+.photo-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s cubic-bezier(0.25,0.46,0.45,0.94),filter 1.2s ease;filter:contrast(1.04) saturate(1.06);will-change:transform}
 .photo-item:hover img{transform:scale(1.04);filter:contrast(1.06) saturate(1.1)}
 /* Action 39 : Split-tone overlay cinématique */
 .photo-item::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(135deg,rgba(40,60,90,0.08) 0%,transparent 50%,rgba(60,30,15,0.06) 100%);mix-blend-mode:soft-light}
@@ -188,7 +189,7 @@ section.cta>*{position:relative}
   /* Galerie — photos plein bord, sans marge latérale */
   section.gallery-preview{padding:5rem 0!important}
   .section-header{padding:0 1.8rem 3rem!important;margin-bottom:0!important;flex-direction:column!important;align-items:flex-start!important;gap:.8rem!important}
-  .photo-masonry{column-count:2;column-gap:3px;margin:0}
+  .photo-masonry{grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;margin:0}
   /* About — plus d'espace, plus aéré */
   section.about-strip{padding:5rem 1.8rem!important;grid-template-columns:1fr;gap:3.5rem}
   .about-image::before{top:-8px;left:-8px;right:8px;bottom:8px}
@@ -229,7 +230,8 @@ section.cta>*{position:relative}
   .section-header{padding:0 1.5rem 2.5rem!important}
   section.about-strip,section.cta{padding:4rem 1.8rem}
   .photo-masonry{display:block!important;column-count:unset}
-  .photo-item{margin-bottom:3px;width:100%}
+  .photo-item{margin-bottom:3px;width:100%;aspect-ratio:auto!important}
+  .photo-item img{width:100%!important;height:auto!important;object-fit:initial!important}
   section.about-strip{grid-template-columns:1fr;gap:2.5rem}
   .about-image::before{top:-10px;left:-10px;right:10px;bottom:10px}
   .cta-title{font-size:clamp(2rem,5vw,3rem)}
@@ -868,7 +870,8 @@ if(hamburger&&navOverlay){
     var esc = p.legende.replace(/"/g,'&quot;');
     var escEn = (p.legende_en||p.legende).replace(/"/g,'&quot;');
     var wAttr = p.w ? ' width="'+p.w+'" height="'+p.h+'"' : '';
-    var h = '<div class="photo-item" onclick="openLightboxAt('+idx+')">';
+    var cls = 'photo-item'+(idx === 0 ? ' featured' : '');
+    var h = '<div class="'+cls+'" onclick="openLightboxAt('+idx+')">';
     h += '<img src="'+p.fichier+'" srcset="'+makeSrcset(p.fichier)+'"';
     h += ' sizes="(max-width:480px) 100vw, (max-width:900px) 50vw, 33vw"';
     h += wAttr+' alt="'+esc+'" loading="'+(eager || idx < 3 ? 'eager' : 'lazy')+'" decoding="async">';

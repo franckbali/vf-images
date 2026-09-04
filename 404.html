@@ -87,20 +87,48 @@
     @media(max-width:480px){
       .links{flex-direction:column;gap:1.5rem}
     }
+
+    .lang{position:fixed;top:1.5rem;right:1.5rem;display:flex;gap:.6rem;font-family:'Raleway',sans-serif;font-size:.7rem;letter-spacing:.14em}
+    .lang-btn{background:none;border:none;cursor:pointer;color:rgba(245,243,239,.5);font-family:inherit;font-size:inherit;letter-spacing:inherit;padding:0}
+    .lang-btn.active{color:var(--gold)}
   </style>
 </head>
 <body>
+<div class="lang">
+  <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+</div>
 <div class="wrap">
   <div class="code">404</div>
   <p class="brand">VF Images</p>
   <div class="divider"></div>
-  <p class="msg">La page que vous cherchez<br>s'est égarée quelque part entre Bali et New York.</p>
+  <p class="msg" data-fr="La page que vous cherchez<br>s'est égarée quelque part entre Bali et New York." data-en="The page you're looking for<br>got lost somewhere between Bali and New York.">La page que vous cherchez<br>s'est égarée quelque part entre Bali et New York.</p>
   <div class="links">
-    <a href="index.html" class="primary">Accueil</a>
-    <a href="galerie-index.html">Galerie</a>
-    <a href="boutique.html">Boutique</a>
+    <a href="index.html" class="primary" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
+    <a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
   </div>
 </div>
+<script>
+(function(){
+  var lang = localStorage.getItem('vf_lang') || 'fr';
+  window.setLang = function(l){
+    lang = l;
+    localStorage.setItem('vf_lang', l);
+    document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
+      var val = el.getAttribute('data-' + l);
+      if(!val) return;
+      if(val.indexOf('<')!==-1){ el.innerHTML=val; }
+      else { el.textContent=val; }
+    });
+    document.documentElement.lang = l;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === l);
+    });
+  };
+  document.addEventListener('DOMContentLoaded', function(){ window.setLang(lang); });
+})();
+</script>
 <script src="nav-scroll.js" defer></script>
 </body>
 </html>

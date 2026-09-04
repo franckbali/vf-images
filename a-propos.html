@@ -624,7 +624,7 @@ button:focus:not(:focus-visible) {
     <div class="gold-divider"></div>
     <p class="signature-name">Franck</p>
     <p class="signature-role" data-fr="Photographe · Vidéaste · Bali" data-en="Photographer · Filmmaker · Bali">Photographe · Vidéaste · Bali</p>
-    <p style="font-size:.72rem;letter-spacing:.1em;color:rgba(245,243,239,.28);margin-bottom:2.5rem;font-family:'Raleway',sans-serif;font-weight:300" data-fr="Collections privées en France, États-Unis et Australie." data-en="Private collections in France, the United States and Australia.">Collections privées en France, États-Unis et Australie.</p>
+    <p style="font-size:.72rem;letter-spacing:.1em;color:rgba(245,243,239,.55);margin-bottom:2.5rem;font-family:'Raleway',sans-serif;font-weight:300" data-fr="Collections privées en France, États-Unis et Australie." data-en="Private collections in France, the United States and Australia.">Collections privées en France, États-Unis et Australie.</p>
     <a href="contact.html" class="contact-link" data-fr="Me contacter" data-en="Get in touch">
       Me contacter
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
@@ -636,7 +636,7 @@ button:focus:not(:focus-visible) {
   <div class="footer-logo"><img width="500" height="500" src="images/logo-vf3.svg" alt="VF Images" loading="eager" decoding="async"></div>
   <div class="footer-copy"><span data-fr="© 2026 Franck Vinel — VF Images. Tous droits réservés." data-en="© 2026 Franck Vinel — VF Images. All rights reserved.">© 2026 Franck Vinel — VF Images. Tous droits réservés.</span> <a href="mentions-legales.html" style="color:inherit;text-decoration:none" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a></div>
   <div class="footer-social">
-    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" aria-label="Suivre VF Images sur Instagram (nouvelle fenêtre)"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://www.instagram.com/thelensofwonder/" target="_blank" data-aria-fr="Suivre VF Images sur Instagram (nouvelle fenêtre)" data-aria-en="Follow VF Images on Instagram (opens in new tab)" aria-label="Suivre VF Images sur Instagram (nouvelle fenêtre)"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
   </div>
 </footer>
 
@@ -825,6 +825,7 @@ if(hamburger&&navOverlay){
       } else if(val.indexOf('<')!==-1){ el.innerHTML=val; }
       else { el.textContent=val; }
     });
+    document.querySelectorAll('[data-aria-fr][data-aria-en]').forEach(function(el){var v=el.getAttribute('data-aria-'+l);if(v) el.setAttribute('aria-label',v);});
     document.documentElement.lang = l;
     document.querySelectorAll('.lang-btn').forEach(function(b){
       if(b.getAttribute('data-lang') === l){

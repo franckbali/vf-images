@@ -171,7 +171,7 @@
   pointer-events:none;z-index:0;
 }
 /* Mur dégagé plus haut sur la photo salon clair : cadre repositionné (marge fauteuil ~64% de hauteur) */
-.modal-viz-scene.amb-clair .modal-viz-frame-area{top:5%;left:10%;right:10%;bottom:40%}
+.modal-viz-scene.amb-clair .modal-viz-frame-area{top:5%;left:7%;right:7%;bottom:39%}
 
 /* ── Sélecteur d'ambiance (bas gauche de la scène) ── */
 .viz-ambiance-switch{
@@ -262,7 +262,7 @@
   top:4%;left:12%;right:3%;bottom:43%;
   display:flex;align-items:center;justify-content:center;z-index:1;
 }
-.viz-fs-scene.amb-clair .viz-fs-frame-area{top:5%;left:10%;right:10%;bottom:40%}
+.viz-fs-scene.amb-clair .viz-fs-frame-area{top:5%;left:7%;right:7%;bottom:39%}
 .viz-fs-frame{
   position:relative;flex-shrink:0;
   border:2px solid var(--dark);background:var(--light);
@@ -1607,9 +1607,9 @@ function updateModalViz(modal, w, h){
       setTimeout(applyScale, 80);
       return;
     }
-    const wallH=sh*0.50;
+    const wallH=sh*0.54;
     const maxW =sw*0.82;
-    const realScale=sw*0.0035*1.35;
+    const realScale=sw*ambianceScaleFactor();
     const scale=Math.min(realScale, wallH/120, maxW/120);
     const fw=Math.round(w*scale);
     const fh=Math.round(h*scale);
@@ -1798,8 +1798,8 @@ function _applyVizFs(){
   scene.style.width=Math.round(sw)+'px';
   scene.style.height=Math.round(sh)+'px';
   // Cadre
-  const wallH=sh*0.50, maxW=sw*0.82;
-  const realScale=sw*0.0035*1.35;
+  const wallH=sh*0.54, maxW=sw*0.82;
+  const realScale=sw*ambianceScaleFactor();
   const scale=Math.min(realScale,wallH/120,maxW/120);
   const w=_vizFsW, h=_vizFsH;
   const fw=Math.round(w*scale), fh=Math.round(h*scale);
@@ -1858,10 +1858,17 @@ document.querySelectorAll('.modal-viz-wrap').forEach(wrap=>{
 });
 
 /* ═══ AMBIANCE DU MOCKUP — salon gris / salon clair, choix mémorisé ═══ */
+// scaleFactor : px/cm relatif (× sw) — calibré séparément par photo, la distance
+// de prise de vue et le cadrage n'étant pas les mêmes (mesuré sur le fauteuil/la
+// table basse de chaque photo, cf. mémo Fra du 4 sept. — cadres trouvés trop petits)
 const AMBIANCES=[
-  {id:'gris', img:'images/salon-gris-moderne.jpg', labelFr:'Salon gris', labelEn:'Grey room'},
-  {id:'clair', img:'images/salon-clair-scandinave.jpg', labelFr:'Salon clair', labelEn:'Light room'}
+  {id:'gris', img:'images/salon-gris-moderne.jpg', labelFr:'Salon gris', labelEn:'Grey room', scaleFactor:0.0055},
+  {id:'clair', img:'images/salon-clair-scandinave.jpg', labelFr:'Salon clair', labelEn:'Light room', scaleFactor:0.0075}
 ];
+function ambianceScaleFactor(){
+  const a=AMBIANCES.find(a=>a.id===_currentAmbiance);
+  return a?a.scaleFactor:0.0055;
+}
 let _currentAmbiance='gris';
 try{
   const saved=localStorage.getItem('vf_viz_ambiance');
@@ -1879,6 +1886,18 @@ function applyAmbiance(amb){
   });
   const fsScene=document.querySelector('.viz-fs-scene');
   if(fsScene) fsScene.classList.toggle('amb-clair', amb==='clair');
+  // Chaque ambiance a sa propre échelle (photos prises à des distances différentes) —
+  // il faut recalculer la taille du cadre déjà affiché, pas juste le décor
+  const openModal=document.querySelector('.detail-modal.open');
+  if(openModal){
+    const selBtn=openModal.querySelector('.fmt-option.selected');
+    if(selBtn){
+      const parts=selBtn.textContent.trim().split('×').map(Number);
+      if(parts.length===2) updateModalViz(openModal, parts[0], parts[1]);
+    }
+  }
+  const fs=document.getElementById('viz-fullscreen');
+  if(fs&&fs.classList.contains('open')) _applyVizFs();
 }
 
 // Injection des pastilles d'ambiance dans chaque mockup

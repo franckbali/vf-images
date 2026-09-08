@@ -1,0 +1,76 @@
+{
+  "galeries": [
+    {
+      "titre": "Bali",
+      "titre_en": "Bali",
+      "sous_titre": "Temples, rites et offrandes",
+      "sous_titre_en": "Temples, rites and offerings",
+      "image_cover": "images/offrandes-bali.jpg",
+      "orientation": "portrait",
+      "slug": "bali",
+      "page": "galerie-bali.html",
+      "ordre": 1,
+      "visible": true
+    },
+    {
+      "titre": "New York",
+      "titre_en": "New York",
+      "sous_titre": "Le tumulte et l'instant",
+      "sous_titre_en": "The tumult and the instant",
+      "image_cover": "images/new-york.jpg",
+      "orientation": "landscape",
+      "slug": "new-york",
+      "page": "galerie-newyork.html",
+      "ordre": 2,
+      "visible": true
+    },
+    {
+      "titre": "Cérémonies",
+      "titre_en": "Ceremonies",
+      "sous_titre": "L'âme de Bali en images",
+      "sous_titre_en": "The soul of Bali in images",
+      "image_cover": "images/groupe-bali-001.jpg",
+      "orientation": "landscape",
+      "slug": "ceremonies",
+      "page": "galerie-ceremonies.html",
+      "ordre": 3,
+      "visible": false
+    },
+    {
+      "titre": "Voyages",
+      "titre_en": "Travels",
+      "sous_titre": "Des déserts américains à l'Altiplano",
+      "sous_titre_en": "From American deserts to the Altiplano",
+      "image_cover": "images/voyages.jpg",
+      "orientation": "portrait",
+      "slug": "voyages",
+      "page": "galerie-voyages.html",
+      "ordre": 4,
+      "visible": false
+    },
+    {
+      "titre": "Portraits",
+      "titre_en": "Portraits",
+      "sous_titre": "Visages du monde",
+      "sous_titre_en": "Faces of the world",
+      "image_cover": "images/portraits.jpg",
+      "orientation": "landscape",
+      "slug": "portraits",
+      "page": "galerie-portraits.html",
+      "ordre": 5,
+      "visible": true
+    },
+    {
+      "titre": "La Réunion",
+      "titre_en": "Réunion Island",
+      "sous_titre": "L'île intense",
+      "sous_titre_en": "The intense island",
+      "image_cover": "images/la-reunion.jpg",
+      "orientation": "portrait",
+      "slug": "la-reunion",
+      "page": "galerie-lareunion.html",
+      "ordre": 6,
+      "visible": false
+    }
+  ]
+}

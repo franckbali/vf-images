@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://www.instagram.com">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://vfimages.com/contact">
+<title>Contact – VF Images | Photographe Fine Art Bali</title>
+<meta name="description" content="Contactez Franck pour des projets photographiques, commandes privées ou questions sur les tirages Fine Art. Basé à Bali, disponible dans le monde.">
+<meta name="author" content="Franck Vinel">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Contact – Photographe Fine Art Bali | VF Images">
+<meta property="og:description" content="Photographe Fine Art basé à Bali. Projets, commandes, collaborations.">
+<meta property="og:image" content="https://vfimages.com/assets/og-contact.jpg">
+<meta property="og:url" content="https://vfimages.com/contact">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VF Images">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact – Photographe Fine Art Bali | VF Images">
+<meta name="twitter:description" content="Photographe Fine Art basé à Bali. Projets, commandes, collaborations.">
+<meta name="twitter:image" content="https://vfimages.com/assets/og-contact.jpg">
+<link rel="alternate" hreflang="fr" href="https://vfimages.com/contact">
+<link rel="alternate" hreflang="x-default" href="https://vfimages.com/contact">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Lora:ital,wght@1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Lora:ital,wght@1,400&display=swap"></noscript>
+<link rel="stylesheet" href="style.css?v=4">
+<style>
+/* NAV */
+
+.lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
+
+/* LAYOUT PRINCIPAL — 2 colonnes */
+.contact-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:100vh;
+}
+
+/* COLONNE GAUCHE — photo + infos */
+.contact-left{
+  position:relative;
+  overflow:hidden;
+}
+.contact-photo{position:absolute;inset:0;overflow:hidden}
+.contact-photo-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;object-fit:cover;object-position:38% 58%;
+  filter:brightness(.65);
+  transition:transform 14s ease;
+}
+.contact-left:hover .contact-photo-img{transform:scale(1.03)}
+.contact-left-content{
+  position:relative;
+  height:100%;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+  padding:4rem;
+  padding-top:12rem;
+}
+.contact-eyebrow{
+  font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(201,169,110,1.0);font-weight:400;
+  margin-bottom:1rem;
+  animation:fadeUp 1.2s ease .2s both;
+}
+.contact-title{
+  font-family:'Raleway',sans-serif;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  font-weight:200;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--light);
+  line-height:1;margin-bottom:1.2rem;
+  animation:fadeUp 1.2s ease .4s both;
+}
+.contact-tagline{
+  font-family:'Lora',serif;font-style:italic;
+  font-size:.95rem;letter-spacing:.08em;
+  color:rgba(245,243,239,.92);
+  margin-bottom:3.5rem;
+  animation:fadeUp 1.2s ease .6s both;
+  line-height:1.7;
+  max-width:340px;
+}
+
+/* INFOS DE CONTACT */
+.contact-infos{
+  display:flex;flex-direction:column;gap:1.6rem;
+  animation:fadeUp 1.2s ease .8s both;
+}
+.contact-info-item{
+  display:flex;align-items:flex-start;gap:1rem;
+}
+.info-icon{
+  width:32px;height:32px;flex-shrink:0;
+  border:1px solid rgba(201,169,110,1.0);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(201,169,110,1.0);
+  margin-top:.1rem;
+}
+.info-text p{
+  font-size:0.75rem;letter-spacing:.35em;
+  text-transform:uppercase;
+  color:rgba(245,243,239,.92);font-weight:400;
+  margin-bottom:.3rem;
+}
+.info-text a,
+.info-text span{
+  font-size:.78rem;letter-spacing:.06em;
+  color:rgba(245,243,239,.92);
+  text-decoration:none;
+  transition:color .3s;
+}
+.info-text a:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
+
+.contact-social{
+  margin-top:2.5rem;padding-top:2rem;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;gap:1rem;
+  animation:fadeUp 1.2s ease 1s both;
+}
+.social-label{
+  font-size:0.75rem;letter-spacing:.35em;
+  text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;
+}
+.social-link{
+  display:flex;align-items:center;gap:.5rem;
+  font-size:0.80rem;letter-spacing:.25em;
+  text-transform:uppercase;
+  color:rgba(201,169,110,1.0);
+  text-decoration:none;
+  transition:color .3s;
+}
+.social-link:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
+
+/* COLONNE DROITE — formulaire */
+.contact-right{
+  background:var(--dark2);
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:8rem 5rem;
+}
+
+.form-intro{
+  margin-bottom:3rem;
+}
+.form-intro-label{
+  font-size:0.80rem;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(201,169,110,1.0);font-weight:400;margin-bottom:1rem;display:block;
+}
+.form-intro-title{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(1.5rem,2.5vw,2.2rem);
+  font-weight:400;letter-spacing:.04em;
+  line-height:1.2;color:var(--light);
+}
+
+/* SUJETS */
+.form-subjects{
+  display:flex;flex-wrap:wrap;gap:.5rem;
+  margin-bottom:2.5rem;
+}
+.subject-btn{
+  background:none;
+  border:1px solid rgba(255,255,255,.07);
+  font-family:'Raleway',sans-serif;
+  font-size:0.75rem;letter-spacing:.25em;
+  text-transform:uppercase;color:rgba(245,243,239,.92);
+  padding:.5rem 1.1rem;
+  transition:border-color .35s,color .35s,background .35s;font-weight:400;
+}
+.subject-btn:hover{border-color:rgba(201,169,110,1.0);color:rgba(245,243,239,.92)}
+.subject-btn.active{
+  border-color:rgba(201,169,110,1.0);
+  color:#1a1410;text-shadow:none;
+  background:rgba(201,169,110,1.0);
+}
+
+/* CHAMPS */
+.form-group{margin-bottom:1.8rem;position:relative}
+.form-label{
+  display:block;font-size:0.75rem;letter-spacing:.38em;
+  text-transform:uppercase;color:rgba(245,243,239,.92);
+  font-weight:400;margin-bottom:.7rem;
+}
+.form-input,
+.form-textarea{
+  width:100%;background:none;
+  border:none;border-bottom:1px solid rgba(255,255,255,.08);
+  color:var(--light);
+  font-family:'Raleway',sans-serif;font-size:.88rem;
+  font-weight:300;letter-spacing:.04em;
+  padding:.7rem 0;
+  transition:border-color .4s;outline:none;
+  resize:none;
+}
+.form-input::placeholder,
+.form-textarea::placeholder{color:rgba(245,243,239,.92);font-weight:300}
+.form-input:focus,
+.form-textarea:focus{border-bottom-color:rgba(201,169,110,1.0)}
+.form-underline{
+  position:absolute;bottom:0;left:0;
+  width:0;height:1px;
+  background:var(--gold);
+  transition:width .5s cubic-bezier(0.22,1,0.36,1);
+  opacity:.6;
+}
+.form-input:focus~.form-underline,
+.form-textarea:focus~.form-underline{width:100%}
+.form-textarea{min-height:110px;line-height:1.8}
+
+/* SUBMIT */
+.form-submit{
+  display:flex;align-items:center;gap:1.5rem;
+  margin-top:2.5rem;
+}
+.submit-btn{
+  display:inline-flex;align-items:center;gap:.9rem;
+  padding:1rem 2.5rem;
+  border:1px solid rgba(201,169,110,1.0);
+  background:none;
+  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-size:0.80rem;
+  letter-spacing:.38em;text-transform:uppercase;
+  font-family:'Raleway',sans-serif;font-weight:400;
+  cursor:none;
+  transition:background .4s,border-color .4s,gap .4s;
+}
+.submit-btn:hover{
+  background:rgba(201,169,110,1.0);
+  border-color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);
+  gap:1.3rem;
+}
+.submit-btn svg{transition:transform .4s}
+.submit-btn:hover svg{transform:translateX(4px)}
+.form-note{
+  font-size:0.75rem;letter-spacing:.15em;
+  color:rgba(245,243,239,.92);line-height:1.7;
+}
+
+/* SUCCESS */
+.form-success{
+  display:none;
+  text-align:center;
+  padding:3rem 0;
+}
+.success-icon{
+  width:52px;height:52px;
+  border:1px solid rgba(201,169,110,1.0);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.5rem;
+  color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);
+}
+.success-title{
+  font-family:'Bodoni Moda',serif;
+  font-size:1.4rem;font-weight:400;
+  color:var(--light);margin-bottom:.8rem;
+}
+.success-text{
+  font-family:'Lora',serif;font-style:italic;
+  font-size:.85rem;color:rgba(245,243,239,.92);
+  line-height:1.8;
+}
+
+/* FOOTER */
+
+@media(max-width:900px){
+  nav{padding:1.5rem 2rem}
+  /* Contact layout — empilé, aéré */
+  .contact-layout{grid-template-columns:1fr}
+  .contact-left{min-height:85vh}
+  .contact-left-content{padding:1.8rem;padding-top:6rem}
+  .contact-right{padding:5rem 1.8rem 6rem}
+  /* Textes contact */
+  .contact-eyebrow{font-size:1rem!important;letter-spacing:.2em!important}
+  .contact-tagline{font-size:clamp(1.4rem,5vw,2rem)!important;letter-spacing:.08em!important}
+  .contact-desc{font-size:1rem!important;line-height:1.85!important;letter-spacing:0!important}
+}
+
+@media(max-width:900px){}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — Tablette & Mobile complet
+   Breakpoints: 1024px / 768px / 480px / 380px
+   ═══════════════════════════════════════ */
+
+/* ── TABLETTE LARGE (max 1024px) ── */
+@media(max-width:1024px){
+  nav{padding:1.4rem 3rem}
+  section.gallery-preview,section.about-strip,section.cta{padding:6rem 3rem}
+  .shop-wrap{padding:4rem 3rem 6rem}
+  .quality-strip{padding:1.5rem 3rem}
+  .reassurance-strip{padding:1.5rem 3rem}
+  .content{padding:4rem 3rem 6rem}
+  .section-intro{min-height:60vh}
+  .intro-text-col{padding:5rem 4vw 5rem 4vw}
+}
+
+/* ── TABLETTE (max 768px) ── */
+@media(max-width:768px){
+  nav{padding:1.2rem 1.8rem}
+  
+  section.gallery-preview,section.about-strip,section.cta{padding:4rem 1.8rem}
+  .photo-masonry{column-count:2;column-gap:4px}
+  section.about-strip{grid-template-columns:1fr;gap:2.5rem}
+  .about-image::before{top:-10px;left:-10px;right:10px;bottom:10px}
+  .cta-title{font-size:clamp(2rem,5vw,3rem)}
+  .shop-wrap{padding:2.5rem 1.8rem 5rem}
+  .prints-grid{grid-template-columns:repeat(2,1fr)!important}
+  .quality-strip{grid-template-columns:1fr 1fr}
+  .quality-item{padding:1.2rem 1.5rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
+  .reassurance-strip{grid-template-columns:repeat(2,1fr)!important;padding:1.2rem 1.8rem}
+  .detail-inner{grid-template-columns:1fr}
+  .detail-image{height:55vw;position:relative}
+  .detail-info{padding:2rem 1.5rem}
+  .hero{position:relative;height:100vh;height:100dvh;display:flex;align-items:flex-end;padding:0 4rem 5rem;overflow:hidden}
+  .hero-title{font-size:clamp(2rem,7vw,4rem)}
+  .section-intro{grid-template-columns:1fr;min-height:auto}
+  .intro-text-col{padding:4rem 2rem}
+  .intro-photo-col{height:60vw}
+  .filters{padding:2rem 1.8rem 0;flex-wrap:wrap}
+  .filter-btn{padding:.7rem 1.2rem}
+  .blog-grid{gap:1.5rem;padding:3rem 1.8rem 5rem}
+  .page-header{padding:8rem 2rem 3rem}
+  .content{padding:3rem 1.8rem 5rem}
+  
+  
+  .galleries-grid{grid-template-columns:1fr!important}
+}
+
+/* ── MOBILE (max 480px) ── */
+@media(max-width:480px){
+  .photo-masonry{column-count:1}
+  .prints-grid{grid-template-columns:1fr!important}
+  .reassurance-strip{grid-template-columns:1fr!important}
+  .quality-strip{grid-template-columns:1fr}
+  .hero-name,.hero-title{font-size:clamp(2.2rem,12vw,3.5rem);letter-spacing:.1em}
+  .hero-tagline{font-size:1rem}
+  nav{padding:1rem 1.2rem}
+  
+  .hero{padding:0 1.5rem 3.5rem}
+  section.gallery-preview,section.cta{padding:3rem 1.2rem}
+  section.about-strip{padding:3rem 1.2rem;gap:2rem}
+  .about-body{font-size:.82rem}
+  .shop-wrap{padding:2rem 1.2rem 4rem}
+  .page-header{padding:7rem 1.5rem 2.5rem}
+  .content{padding:2.5rem 1.5rem 4rem}
+  .blog-grid{padding:2.5rem 1.2rem 4rem}
+  .section-intro{padding:0}
+  .intro-text-col{padding:3rem 1.5rem}
+  .intro-photo-col{height:70vw}
+}
+
+/* ── TRÈS PETIT MOBILE (max 380px) ── */
+@media(max-width:380px){
+  .hero-name,.hero-title{font-size:2rem}
+  
+  nav{padding:.9rem 1rem}
+  
+}
+
+/* Curseur custom désactivé sur mobile */
+@media(max-width:900px){
+  .cursor,.cursor-ring{display:none!important}
+  body{cursor:auto!important}
+  a,button,.photo-item,.print-card,.btn,.fmt-option,.order-btn,.filter-btn{cursor:pointer!important}
+}
+
+/* ══ PROTECTION PHOTOS ══ */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.photo-item img,
+.print-image img,
+.gallery-card img,
+.detail-image img,
+.about-image img,
+.intro-photo-col img,
+.hero-bg,
+.card-image img {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+}
+
+
+/* ══════════════════════════════════════
+   ACCESSIBILITÉ — Focus & Navigation clavier
+   ══════════════════════════════════════ */
+
+/* Skip link — navigation clavier */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--gold);
+  color: var(--dark);
+  padding: .6rem 1.2rem;
+  font-size: .65rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  z-index: 9999;
+  transition: top .2s;
+  border-radius: 0;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Focus visible sur tous les éléments interactifs */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+/* Supprimer outline par défaut uniquement si focus-visible géré */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Navigation clavier visible sur les cartes */
+.photo-item:focus-within,
+.print-card:focus-within,
+.gallery-card:focus-within {
+  outline: 1px solid rgba(201,169,110,1.0);
+}
+
+/* Réduction des animations si préférence utilisateur */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Formulaire contact — états interactifs */
+.form-input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.form-input select option {
+  background: #111;
+  color: var(--light);
+}
+.form-group select.form-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a96e' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+[type="submit"]:disabled {
+  cursor: not-allowed;
+}
+#formError {
+  padding: .8rem 1rem;
+  border-left: 2px solid rgba(224,112,112,.5);
+  background: rgba(224,112,112,.05);
+}
+
+/* ══ BANDEAU COOKIES RGPD ══ */
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 999;
+  background: rgba(10,10,10,.97);
+  border-top: 1px solid rgba(201,169,110,1.0);
+  padding: 1.5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  transform: translateY(100%);
+  transition: transform .5s cubic-bezier(0.22,1,0.36,1);
+}
+#cookie-banner.visible { transform: translateY(0); }
+#cookie-banner.hidden  { transform: translateY(100%); }
+.cookie-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: .58rem;
+  font-weight: 300;
+  letter-spacing: .12em;
+  color: rgba(245,243,239,.92);
+  line-height: 1.7;
+  max-width: 680px;
+}
+.cookie-text a {
+  color: rgba(201,169,110,1.0);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,169,110,1.0);
+}
+.cookie-text a:hover { color: var(--gold); }
+.cookie-actions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.cookie-btn {
+  font-family: 'Raleway', sans-serif;
+  font-size: .52rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: .7rem 1.8rem;
+  border: none;
+  cursor: pointer;
+  transition: background .3s, color .3s, opacity .3s;
+  white-space: nowrap;
+}
+.cookie-btn-accept {
+  background: var(--gold);
+  color: var(--dark);
+}
+.cookie-btn-accept:hover { opacity: .85; }
+.cookie-btn-refuse {
+  background: transparent;
+  color: rgba(245,243,239,.92);
+  border: 1px solid rgba(255,255,255,.1);
+}
+.cookie-btn-refuse:hover { color: var(--light); border-color: rgba(255,255,255,.3); }
+@media(max-width:768px){
+  #cookie-banner { flex-direction:column; padding:1.5rem 1.8rem; gap:1.2rem; }
+  .cookie-actions { width:100%; }
+  .cookie-btn { flex:1; text-align:center; }
+}
+@media(max-width:480px){
+  #cookie-banner { padding:1.2rem; }
+  .cookie-text { font-size:0.90rem; }
+}
+
+/* Boutons langue toujours cliquables */
+
+.lang-btn.active {
+  color: var(--gold) !important;
+  background: none !important;
+  border: none !important;
+}
+
+@media(max-width:900px){
+  .hero-eyebrow{font-size:1rem!important;letter-spacing:.2em!important}
+  .cta-sub{font-size:.9rem!important;letter-spacing:.12em!important}
+  .panel-trigger{display:flex}
+}
+
+@media(max-width:900px){
+  .form-label{font-size:.85rem !important;letter-spacing:.25em}
+  .subject-btn{font-size:.82rem !important;letter-spacing:.15em;padding:.7rem 1.2rem}
+  .form-input,.form-textarea,.form-select{font-size:1rem !important}
+  .contact-info-label{font-size:.85rem !important;letter-spacing:.25em}
+  .contact-info-value{font-size:1rem !important}
+  .contact-tagline{font-size:1.1rem !important}
+  .contact-eyebrow{font-size:.9rem !important}
+  .submit-btn{font-size:.9rem !important}
+
+  .form-underline-label{font-size:.85rem !important}
+}
+
+@media(max-width:900px){
+  body{font-size:18px}
+  p,li,span,a,button,input,textarea,select,label{min-font-size:14px}
+  [style*="font-size:.3"],[style*="font-size:.4"],[style*="font-size:.5"]{font-size:.9rem !important}
+
+
+
+  .intro-scroll span,.scroll-indicator span{font-size:1rem !important}
+  .caption-corner,.caption-below{font-size:1rem !important}
+  .photo-caption{font-size:1rem !important}
+  .overlay-lang{font-size:.90rem !important}
+
+  .form-label,.form-underline-label{font-size:.85rem !important}
+  .subject-btn{font-size:.82rem !important}
+
+
+  .hero-eyebrow,.hero-fineart{font-size:1rem !important}
+  .about-body{font-size:1.05rem !important;line-height:1.9}
+
+  .card-price,.card-format,.card-edition{font-size:.9rem !important}
+  .blog-meta,.blog-category,.article-meta{font-size:.9rem !important}
+  .panel-label{font-size:.9rem !important}
+  .lb-desc-title{font-size:.9rem !important}
+  .lb-desc-text{font-size:1rem !important}
+}
+@media(max-width:768px){.hero{padding:0 1.8rem 5rem;height:100vh;height:100dvh}}
+@media(max-width:480px){.hero{height:100vh;height:100dvh;padding:0 1.5rem 4.5rem}}
+</style>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#c9a96e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VF Images">
+
+<!-- Analytics Umami — RGPD friendly, sans cookies -->
+<!-- ⚠️  Remplacer 1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1 par votre ID sur umami.is -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "name": "Contact — VF Images",
+      "url": "https://vfimages.com/contact",
+      "author": { "@id": "https://vfimages.com/#franck" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://vfimages.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://vfimages.com/contact" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Aller au contenu</a>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav role="navigation" aria-label="Navigation principale">
+  <a href="index.html" class="logo"><img width="500" height="500" src="images/logo-vf3.svg" alt="VF Images" loading="eager" decoding="async"></a>
+  <ul>
+    <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+    <li><a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
+    <li><a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a></li>
+    <li><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a></li>
+    <li><a href="blog.html" data-fr="Journal" data-en="Journal">Journal</a></li>
+    <li><a href="contact.html" class="active" data-fr="Contact" data-en="Contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1.5rem">
+    <div style="display:flex;align-items:center;gap:.4rem">
+    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+    <span style="color:rgba(245,243,239,.92);font-size:0.85rem">/</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay">
+  <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+  <a href="galerie-index.html" data-fr="Galerie" data-en="Gallery">Galerie</a>
+  <a href="a-propos.html" data-fr="À propos" data-en="About">À propos</a>
+  <a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a>
+  <a href="blog.html" data-fr="Journal" data-en="Journal">Journal</a>
+  <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+  <div class="overlay-lang"><span>FR</span> / EN</div>
+</div>
+
+<main id="main-content">
+<div class="contact-layout">
+
+  <!-- GAUCHE -->
+  <div class="contact-left">
+    <div class="contact-photo">
+      <picture>
+        <source type="image/avif" srcset="images/portrait-bali-01-h640.avif 640w, images/portrait-bali-01-h1280.avif 1280w, images/portrait-bali-01-h1920.avif 1920w" sizes="(max-width:900px) 100vw, 45vw">
+        <source type="image/webp" srcset="images/portrait-bali-01-h640.webp 640w, images/portrait-bali-01-h1280.webp 1280w, images/portrait-bali-01-h1920.webp 1920w" sizes="(max-width:900px) 100vw, 45vw">
+        <img class="contact-photo-img" src="images/portrait-bali-01-h1280.webp" alt="" width="1920" height="1279" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+    <div class="contact-left-content">
+      <p class="contact-eyebrow">VF Images · Bali</p>
+      <h1 class="contact-title">Contact</h1>
+      <div class="contact-infos">
+        <div class="contact-info-item">
+          <div class="info-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="info-text">
+            <p data-fr="Email" data-en="Email">Email</p>
+            <a href="mailto:contact@vfimages.com">contact@vfimages.com</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="info-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="info-text">
+            <p data-fr="Fuseau horaire" data-en="Time zone">Fuseau horaire</p>
+            <span data-fr="Bali, Indonésie · GMT+8" data-en="Bali, Indonesia · GMT+8">Bali, Indonésie · GMT+8</span>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="info-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="info-text">
+            <p data-fr="Basé à" data-en="Based in">Basé à</p>
+            <span data-fr="Bali, Indonésie" data-en="Bali, Indonesia">Bali, Indonésie</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DROITE — FORMULAIRE -->
+  <div class="contact-right">
+    <div class="form-intro reveal">
+      <span class="form-intro-label" data-fr="Votre message" data-en="Your message">Votre message</span>
+      <h2 class="form-intro-title" data-fr="Comment puis-je vous aider ?" data-en="How can I help you?">Comment puis-je vous aider ?</h2>
+    </div>
+
+    <!-- SUJETS -->
+    <div class="form-subjects reveal">
+      <button class="subject-btn active" onclick="selectSubject(this)" data-fr="Tirage Fine Art" data-en="Fine Art Print">Tirage Fine Art</button>
+      <button class="subject-btn" onclick="selectSubject(this)" data-fr="Commande sur mesure" data-en="Custom order">Commande sur mesure</button>
+      <button class="subject-btn" onclick="selectSubject(this)" data-fr="Collaboration" data-en="Collaboration">Collaboration</button>
+      <button class="subject-btn" onclick="selectSubject(this)" data-fr="Autre" data-en="Other">Autre</button>
+    </div>
+
+    <!-- FORMULAIRE -->
+    <form id="contactForm" onsubmit="submitForm(event)">
+      <div class="form-group reveal">
+        <label class="form-label" data-fr="Votre nom" data-en="Your name">Votre nom</label>
+        <input type="text" name="name" id="field-name" class="form-input" placeholder="Prénom Nom" data-placeholder-fr="Prénom Nom" data-placeholder-en="First Last" required autocomplete="name" aria-label="Votre nom">
+        <div class="form-underline"></div>
+      </div>
+      <div class="form-group reveal">
+        <label class="form-label" for="field-subject" data-fr="Sujet" data-en="Subject">Sujet</label>
+        <select name="subject" id="field-subject" class="form-input" style="background:transparent;color:inherit;cursor:pointer" aria-label="Sujet du message">
+          <option value="" disabled selected style="background:#111" data-fr="Choisir un sujet..." data-en="Choose a topic...">Choisir un sujet...</option>
+          <option value="Commande tirage Fine Art" style="background:#111" data-fr="Commande tirage Fine Art" data-en="Fine Art Print Order">Commande tirage Fine Art</option>
+          <option value="Commande personnalisée" style="background:#111" data-fr="Commande personnalisée" data-en="Custom Order">Commande personnalisée</option>
+          <option value="Partenariat / Collaboration" style="background:#111" data-fr="Partenariat / Collaboration" data-en="Partnership / Collaboration">Partenariat / Collaboration</option>
+          <option value="Question générale" style="background:#111" data-fr="Question générale" data-en="General question">Question générale</option>
+        </select>
+        <div class="form-underline"></div>
+      </div>
+      <div class="form-group reveal">
+        <label class="form-label" for="field-email" data-fr="Email" data-en="Email">Email</label>
+        <input type="email" name="email" id="field-email" class="form-input" placeholder="votre@email.com" required autocomplete="email" aria-label="Votre email">
+        <div class="form-underline"></div>
+      </div>
+      <div class="form-group reveal">
+        <label class="form-label" data-fr="Message" data-en="Message">Message</label>
+        <textarea class="form-textarea" name="message" id="field-message" placeholder="Décrivez votre projet, la photo qui vous intéresse, le format souhaité..." data-placeholder-fr="Décrivez votre projet, la photo qui vous intéresse, le format souhaité..." data-placeholder-en="Describe your project, the photo you're interested in, the desired format..." required></textarea>
+        <div class="form-underline"></div>
+      </div>
+      <div class="form-submit reveal">
+        
+      <!-- Honeypot anti-spam — ne pas modifier -->
+      <div style="display:none" aria-hidden="true">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+      <!-- Redirection après envoi réussi -->
+      <input type="hidden" name="_next" value="https://vfimages.com/contact?sent=1">
+      <input type="hidden" name="_subject" value="Nouveau message — VF Images">
+      <input type="hidden" name="_language" value="fr">
+      <button type="submit" class="submit-btn">
+          <span data-fr="Envoyer" data-en="Send">Envoyer</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <p class="form-note" data-fr="Réponse sous 48h · Depuis Bali" data-en="Reply within 48h · From Bali">Réponse sous 48h · Depuis Bali</p>
+      </div>
+    </form>
+
+    <!-- SUCCESS -->
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3 class="success-title" data-fr="Message envoyé" data-en="Message sent">Message envoyé</h3>
+      <p class="success-text" data-fr="Merci pour votre message. Je vous réponds dans les meilleurs délais depuis Bali." data-en="Thank you for your message. I will reply as soon as possible from Bali.">Merci pour votre message. Je vous réponds dans les meilleurs délais depuis Bali.</p>
+    </div>
+  </div>
+
+  </main>
+<footer role="contentinfo">
+    <div class="footer-logo"><img width="500" height="500" src="images/logo-vf3.svg" alt="VF Images" loading="eager" decoding="async"></div>
+    <div class="footer-copy"><span data-fr="© 2026 Franck Vinel — VF Images. Tous droits réservés." data-en="© 2026 Franck Vinel — VF Images. All rights reserved.">© 2026 Franck Vinel — VF Images. Tous droits réservés.</span> <a href="mentions-legales.html" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.1)" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a></div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/thelensofwonder/" target="_blank" aria-label="Suivre VF Images sur Instagram (nouvelle fenêtre)"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+const cur=document.getElementById('cur'),ring=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function a(){if(!document.hidden){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';}requestAnimationFrame(a)})();
+document.querySelectorAll('a,button,.subject-btn,.submit-btn').forEach(el=>{
+  el.addEventListener('mouseenter',()=>ring.classList.add('h'));
+  el.addEventListener('mouseleave',()=>ring.classList.remove('h'));
+});
+
+const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')}),{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+function selectSubject(btn){
+  document.querySelectorAll('.subject-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function submitForm(e){
+  e.preventDefault();
+  var form = document.getElementById('contactForm');
+  var btn = form.querySelector('[type="submit"]');
+  var success = document.getElementById('formSuccess');
+  var errorMsg = document.getElementById('formError');
+  var name = form.querySelector('[name="name"]').value.trim();
+  var email = form.querySelector('[name="email"]').value.trim();
+  var message = form.querySelector('[name="message"]').value.trim();
+  if(!name || !email || !message){
+    if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Merci de remplir tous les champs.'; }
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = 'Envoi en cours...';
+  if(errorMsg) errorMsg.style.display = 'none';
+  fetch('https://formspree.io/f/mwvybbrz', {
+    method: 'POST',
+    headers: {'Accept': 'application/json'},
+    body: new FormData(form)
+  }).then(function(r){
+    if(r.ok){
+      form.style.display = 'none';
+      if(success){ success.style.display = 'block'; }
+    } else {
+      if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Erreur. Réessayez ou écrivez à contact@vfimages.com'; }
+      btn.disabled = false;
+      btn.textContent = 'Envoyer';
+    }
+  }).catch(function(){
+    if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Erreur réseau. Vérifiez votre connexion.'; }
+    btn.disabled = false;
+    btn.textContent = 'Envoyer';
+  });
+}
+
+if(window.location.search.includes('sent=1')){
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  if(form) form.style.display = 'none';
+  if(success){ success.style.display = 'block'; success.style.opacity = '1'; }
+}
+
+document.addEventListener('keydown', function(e){
+  if((e.ctrlKey || e.metaKey) && e.key === 'u'){ e.preventDefault(); }
+  if((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'i'){ e.preventDefault(); }
+});
+
+document.addEventListener('selectstart', function(e){
+  if(e.target.tagName === 'IMG'){ e.preventDefault(); }
+});
+
+document.addEventListener('touchstart', function(e){
+  if(e.target.tagName === 'IMG'){ e.target.setAttribute('draggable', 'false'); }
+}, {passive: true});
+
+window.addEventListener('load', function(){
+  document.querySelectorAll('.photo-item img, .print-image img, .gallery-card img, .detail-image img, .intro-photo-col img').forEach(function(img){
+    if(img.complete && img.src && !img.src.startsWith('data:')){
+      img.setAttribute('data-protected', 'true');
+      img.style.pointerEvents = 'none';
+      img.setAttribute('draggable', 'false');
+      img.setAttribute('oncontextmenu', 'return false;');
+    }
+  });
+});
+</script>
+
+<!-- BANDEAU COOKIES RGPD -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+  <p class="cookie-text">
+    <span data-fr="Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers." data-en="This site uses anonymous analytics cookies (Umami) to understand how you browse, without storing personal data. No advertising, no third-party sharing.">Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers.</span>
+    <a href="mentions-legales.html" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
+  </div>
+</div>
+<script>
+/* ══ GESTION COOKIES RGPD ══ */
+(function(){
+  const COOKIE_KEY = 'vf_analytics_consent';
+  const banner = document.getElementById('cookie-banner');
+  if(!banner) return;
+
+  const consent = localStorage.getItem(COOKIE_KEY);
+
+  // Afficher le bandeau si pas encore de choix
+  if(consent === null){
+    setTimeout(() => banner.classList.add('visible'), 800);
+  }
+
+  // Charger Umami seulement si consentement donné
+  if(consent === 'accepted'){
+    loadAnalytics();
+  }
+
+  window.cookieAccept = function(){
+    localStorage.setItem(COOKIE_KEY, 'accepted');
+    banner.classList.remove('visible');
+    banner.classList.add('hidden');
+    loadAnalytics();
+    // Tracker l'event consentement (sans cookie, anonyme)
+    if(window.umami) umami.track('cookie-accept');
+  };
+
+  window.cookieRefuse = function(){
+    localStorage.setItem(COOKIE_KEY, 'refused');
+    banner.classList.remove('visible');
+    banner.classList.add('hidden');
+  };
+
+  function loadAnalytics(){
+      if(document.querySelector('[data-website-id]')) return;
+      var s=document.createElement('script');
+      s.defer=true;
+      s.src='https://analytics.umami.is/script.js';
+      s.setAttribute('data-website-id','1e9107e5-f1ec-4acc-b2d3-a44932d9fcf1');
+      document.head.appendChild(s);
+    // Ne charger Umami que si consentement
+    const existing = document.querySelector('[data-website-id]');
+    if(existing && !existing.src.includes('loaded')){
+      // Umami est déjà en defer — il se charge automatiquement
+      // Ici on pourrait aussi l'activer dynamiquement si nécessaire
+    }
+  }
+})();
+</script>
+<script>
+
+
+
+</script>
+<script>
+(function(){
+  var lang = localStorage.getItem('vf_lang') || 'fr';
+  window.setLang = function(l){
+    lang = l;
+    localStorage.setItem('vf_lang', l);
+    document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
+      var val = el.getAttribute('data-' + l);
+      if(!val) return;
+      if(el.children.length > 0){
+        for(var i=0;i<el.childNodes.length;i++){
+          var n=el.childNodes[i];
+          if(n.nodeType===3 && n.textContent.trim()){n.textContent='\n      '+val+'\n      ';break;}
+        }
+      } else if(val.indexOf('<')!==-1){ el.innerHTML=val; }
+      else { el.textContent=val; }
+    });
+    document.documentElement.lang = l;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      if(b.getAttribute('data-lang') === l){
+        b.classList.add('active');
+        b.style.color = 'var(--gold)';
+        b.style.fontWeight = '400';
+      } else {
+        b.classList.remove('active');
+        b.style.color = 'rgba(245,243,239,.92)';
+        b.style.fontWeight = '300';
+      }
+    });
+    /* Options select */
+    document.querySelectorAll('option[data-fr][data-en]').forEach(function(opt){
+      opt.textContent = opt.getAttribute('data-' + l);
+    });
+    /* Placeholders */
+    document.querySelectorAll('[data-placeholder-fr][data-placeholder-en]').forEach(function(el){
+      el.placeholder = el.getAttribute('data-placeholder-' + l);
+    });
+  };
+  document.addEventListener('DOMContentLoaded', function(){ window.setLang(lang); });
+})();
+
+const hamburger=document.getElementById('hamburger');
+const navOverlay=document.getElementById('nav-overlay');
+if(hamburger&&navOverlay){
+  function toggleMenu(){
+    const isOpen=hamburger.classList.toggle('open');
+    navOverlay.classList.toggle('open',isOpen);
+    document.body.style.overflow=isOpen?'hidden':'';
+  }
+  hamburger.addEventListener('click',toggleMenu);
+  hamburger.addEventListener('touchstart',function(e){e.preventDefault();toggleMenu();},{passive:false});
+  navOverlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    hamburger.classList.remove('open');
+    navOverlay.classList.remove('open');
+    document.body.style.overflow='';
+  }));
+}
+</script>
+<script src="nav-scroll.js" defer></script>
+</body>
+</html>

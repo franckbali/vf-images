@@ -38,15 +38,15 @@
 /* SWITCH LANGUE */
 .lang-switch{display:flex;align-items:center;gap:0;border:none;overflow:hidden;background:none}
 
-/* HERO */
-.hero{height:100svh;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:0 4rem 7svh;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.04)}
+/* HERO — bandeau court (Ouverture B) */
+.hero{height:40svh;display:flex;flex-direction:row;justify-content:space-between;align-items:flex-end;padding:0 4rem 2.2rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.04)}
 .hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%)}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}
-.hero-eyebrow,.page-title,.hero-sub{position:relative;z-index:1}
-.hero-eyebrow{font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-warm);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
-.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1;margin-bottom:1.2rem}
-.hero-sub{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(245,243,239,.92);letter-spacing:.08em;animation:fadeUp 1.2s ease .6s both;max-width:540px;line-height:1.7}
+.hero-left,.hero-count{position:relative;z-index:1}
+.hero-eyebrow{font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-warm);margin-bottom:.9rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1}
+.hero-count{font-family:'Raleway',sans-serif;font-size:0.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-soft);font-weight:400;animation:fadeUp 1.2s ease .6s both;white-space:nowrap}
 
 /* INFOS QUALITÉ */
 .quality-strip{
@@ -56,7 +56,7 @@
   margin-bottom:0;
 }
 .quality-item{
-  padding:2.2rem 3rem;
+  padding:1.3rem 3rem;
   border-right:1px solid rgba(255,255,255,.04);
   display:flex;align-items:center;justify-content:center;gap:1.2rem;
 }
@@ -424,20 +424,21 @@
 @media(max-width:1024px){.prints-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){
   nav{padding:1.5rem 2rem}
-  /* Hero — 50svh, contenu en bas */
-  .hero{height:85svh!important;padding:0 1.8rem 5svh!important;flex-direction:column!important;justify-content:flex-end!important;align-items:flex-start!important}
+  /* Hero — bandeau court empilé */
+  .hero{height:32svh!important;padding:0 1.8rem 1.6rem!important;flex-direction:column!important;justify-content:flex-end!important;align-items:flex-start!important;gap:.6rem}
   .hero-eyebrow{font-size:1rem!important;letter-spacing:.2em!important}
   .page-title{font-size:clamp(1.8rem,7vw,3rem)!important;letter-spacing:.1em!important}
-  .hero-sub{font-size:.95rem!important;line-height:1.6!important;max-width:100%!important}
-  /* Qualité strip — empilé */
+  .hero-count{font-size:.78rem!important}
+  /* Qualité strip — empilé, compact */
   .quality-strip{grid-template-columns:1fr}
-  .quality-item{padding:1.5rem 1.8rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
+  .quality-item{padding:.9rem 1.8rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
   .quality-text p{font-size:.95rem!important;letter-spacing:.15em!important}
   .quality-text span{font-size:1rem!important;letter-spacing:.06em!important}
   /* Grille tirages — 2 colonnes propres */
-  .shop-wrap{padding:4rem 0 7rem}
+  .shop-wrap{padding:2rem 0 7rem}
   .prints-grid{grid-template-columns:1fr 1fr;gap:3px;padding:0}
-  /* Réassurance */
+  /* Réassurance — empilée, compacte */
+  .reassurance-item{padding:.9rem 1.8rem!important}
   .reassurance-text strong{font-size:.9rem!important;letter-spacing:.15em!important}
   .reassurance-text span{font-size:.9rem!important;letter-spacing:.06em!important}
   /* Detail modale — empilé + scrollable sur mobile */
@@ -467,7 +468,7 @@
 }
 .reassurance-item{
   display:flex;align-items:center;gap:1.2rem;
-  padding:2.2rem 5rem;
+  padding:1.3rem 5rem;
   border-right:1px solid rgba(255,255,255,.04);
 }
 .reassurance-item:last-child{border-right:none}
@@ -1214,9 +1215,11 @@ img {
       <img class="hero-img" src="images/sifnos-grece-001-h1280.webp" alt="" width="1920" height="1279" fetchpriority="high" decoding="async">
     </picture>
   </div>
-  <p class="hero-eyebrow" data-fr="VF Images · Tirages Fine Art" data-en="VF Images · Fine Art Prints">VF Images</p>
-  <h1 class="page-title" data-fr="Boutique" data-en="Shop">Boutique</h1>
-  <p class="hero-sub" data-fr="Des images pensées pour durer — tirées sur papiers d'exception, numérotées et livrées partout dans le monde." data-en="Images made to last — printed on exceptional papers, numbered and shipped worldwide.">Des images pensées pour durer — tirées sur papiers d'exception, numérotées et livrées partout dans le monde.</p>
+  <div class="hero-left">
+    <p class="hero-eyebrow" data-fr="VF Images · Tirages Fine Art" data-en="VF Images · Fine Art Prints">VF Images</p>
+    <h1 class="page-title" data-fr="Boutique" data-en="Shop">Boutique</h1>
+  </div>
+  <p class="hero-count" data-fr="Neuf tirages · quatre lieux" data-en="Nine prints · four places">Neuf tirages · quatre lieux</p>
 </div>
 
 <!-- QUALITÉ -->

@@ -44,7 +44,7 @@
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%)}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}
 .hero-eyebrow,.page-title,.hero-sub{position:relative;z-index:1}
-.hero-eyebrow{font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
+.hero-eyebrow{font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-warm);margin-bottom:1rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
 .page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1;margin-bottom:1.2rem}
 .hero-sub{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(245,243,239,.92);letter-spacing:.08em;animation:fadeUp 1.2s ease .6s both;max-width:540px;line-height:1.7}
 
@@ -61,7 +61,7 @@
   display:flex;align-items:center;justify-content:center;gap:1.2rem;
 }
 .quality-item:last-child{border-right:none}
-.quality-icon{color:rgba(201,169,110,1.0);flex-shrink:0}
+.quality-icon{color:var(--cream-warm);flex-shrink:0}
 .quality-text p{font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.2rem}
 .quality-text span{font-size:0.85rem;letter-spacing:.1em;color:rgba(245,243,239,.92);font-weight:300}
 
@@ -102,19 +102,19 @@
 .hover-cta{
   font-size:0.80rem;letter-spacing:.38em;text-transform:uppercase;
   color:rgba(245,243,239,.92);font-weight:400;
-  border-bottom:1px solid rgba(201,169,110,1.0);
+  border-bottom:1px solid var(--cream-warm);
   padding-bottom:.3rem;
 }
 
 .print-info{padding:1.6rem 1.8rem 2rem}
 .print-meta{margin-bottom:.5rem}
-.print-location{font-size:0.75rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(201,169,110,1.0);font-weight:400}
+.print-location{font-size:0.75rem;letter-spacing:.35em;text-transform:uppercase;color:var(--cream-warm);font-weight:400}
 .print-title{font-family:'Bodoni Moda',serif;font-size:1.1rem;font-weight:400;letter-spacing:.03em;color:var(--light);margin-bottom:.9rem;line-height:1.25}
 .print-formats{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}
 .fmt-badge{font-size:0.75rem;letter-spacing:.18em;color:rgba(245,243,239,.92);border:1px solid rgba(255,255,255,.06);padding:.25rem .6rem;font-weight:400}
 .print-price{display:flex;align-items:baseline;gap:.5rem}
 .price-from{font-size:0.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:300}
-.price-amount{font-family:'Bodoni Moda',serif;font-size:1.1rem;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-weight:400}
+.price-amount{font-family:'Bodoni Moda',serif;font-size:1.1rem;color:var(--light);font-weight:400}
 
 /* REVEAL */
 
@@ -186,7 +186,7 @@
   transition:border-color .3s,transform .3s;
 }
 .viz-amb-btn:hover{transform:scale(1.12)}
-.viz-amb-btn.active{border-color:var(--gold)}
+.viz-amb-btn.active{border-color:var(--cream-warm)}
 .modal-viz-frame-area{
   position:absolute;
   top:4%;left:12%;right:3%;bottom:43%;
@@ -224,7 +224,7 @@
   transition:color .3s,transform .3s;
   z-index:10;
 }
-.viz-expand-btn:hover{color:var(--gold);transform:scale(1.2)}
+.viz-expand-btn:hover{color:var(--cream-warm);transform:scale(1.2)}
 
 /* ── Overlay plein écran mockup ── */
 #viz-fullscreen{
@@ -242,7 +242,7 @@
   text-transform:uppercase;color:rgba(245,243,239,.5);
   transition:color .3s;padding:.5rem;
 }
-#viz-fs-close:hover{color:var(--gold)}
+#viz-fs-close:hover{color:var(--cream-warm)}
 .viz-fs-scene{
   position:relative;
   background-image:url('images/salon-gris-moderne.jpg');
@@ -307,7 +307,7 @@
   transition:color .3s;padding:.5rem;font-weight:200;
   z-index:10;
 }
-.detail-close:hover{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
+.detail-close:hover{color:var(--cream-warm)}
 
 /* ── Panneau de confirmation post-achat (remplace l'alerte navigateur) ── */
 .order-confirm{
@@ -355,9 +355,9 @@
   .order-confirm{padding:2.2rem 1.6rem}
 }
 
-.detail-location{font-size:0.75rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,110,1.0);font-weight:400;margin-bottom:.7rem;margin-top:2rem}
+.detail-location{font-size:0.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-warm);font-weight:400;margin-bottom:.7rem;margin-top:2rem}
 .detail-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.2rem,2vw,1.7rem);font-weight:400;letter-spacing:.03em;line-height:1.2;margin-bottom:1.5rem}
-.detail-divider{width:28px;height:1px;background:var(--gold);opacity:.4;margin-bottom:1.8rem}
+.detail-divider{width:28px;height:1px;background:var(--cream-warm);opacity:.5;margin-bottom:1.8rem}
 
 .detail-label{font-size:0.75rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.6rem;margin-top:1.4rem}
 .detail-formats{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem}
@@ -368,14 +368,14 @@
   padding:.5rem 1rem;
   transition:border-color .3s,color .3s,background .3s;font-weight:400;cursor:pointer;
 }
-.fmt-option:hover{border-color:rgba(201,169,110,.5);color:rgba(201,169,110,.8)}
-.fmt-limited-tag{display:inline-flex;align-items:center;margin-left:.3rem;font-family:'Raleway',sans-serif;font-size:0.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.fmt-option:hover{border-color:var(--cream-soft);color:var(--cream-warm)}
+.fmt-limited-tag{display:inline-flex;align-items:center;margin-left:.3rem;font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
 .fmt-option.selected{
   border-color:var(--gold);color:var(--dark);
   background:var(--gold);text-shadow:none;
 }
 .detail-paper{font-size:0.80rem;letter-spacing:.12em;color:rgba(245,243,239,.92);line-height:1.6}
-.detail-edition{font-size:0.80rem;letter-spacing:.1em;color:rgba(245,243,239,.55);line-height:1.6;font-style:italic;font-family:'Lora',serif;transition:color .3s}
+.detail-edition{font-size:0.80rem;letter-spacing:.1em;color:var(--cream-soft);line-height:1.6;font-style:italic;font-family:'Lora',serif;transition:color .3s}
 .detail-edition.edition-limitee{color:var(--gold);font-style:normal;letter-spacing:.18em;font-family:'Raleway',sans-serif;font-size:0.72rem;text-transform:uppercase}
 
 .detail-price-row{
@@ -384,7 +384,7 @@
   border-top:1px solid rgba(255,255,255,.05);
 }
 .detail-price-from{font-size:0.75rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,243,239,.92)}
-.detail-price{font-family:'Bodoni Moda',serif;font-size:1.6rem;color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4);font-weight:400}
+.detail-price{font-family:'Bodoni Moda',serif;font-size:1.6rem;color:var(--light);font-weight:400}
 
 .order-btn{
   display:flex;align-items:center;justify-content:center;gap:.8rem;
@@ -469,7 +469,7 @@
   border-right:1px solid rgba(255,255,255,.04);
 }
 .reassurance-item:last-child{border-right:none}
-.reassurance-icon{color:rgba(201,169,110,1.0);flex-shrink:0}
+.reassurance-icon{color:var(--cream-warm);flex-shrink:0}
 .reassurance-text strong{display:block;font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.2rem}
 .reassurance-text span{font-size:0.85rem;letter-spacing:.1em;color:rgba(245,243,239,.92);font-weight:300}
 @media(max-width:900px){.reassurance-strip{flex-direction:column;align-items:stretch}.reassurance-item{padding:1.5rem 2rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}.reassurance-item:last-child{border-bottom:none}}

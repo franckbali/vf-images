@@ -440,7 +440,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
     <picture>
       <source type="image/avif" srcset="images/rituels-bali-003-h640.avif 640w, images/rituels-bali-003-h1280.avif 1280w, images/rituels-bali-003-h1920.avif 1920w" sizes="100vw">
       <source type="image/webp" srcset="images/rituels-bali-003-h640.webp 640w, images/rituels-bali-003-h1280.webp 1280w, images/rituels-bali-003-h1920.webp 1920w" sizes="100vw">
-      <img class="gallery-intro-img" src="images/rituels-bali-003-h1280.webp" alt="" width="1920" height="1279" fetchpriority="high" decoding="async">
+      <img class="gallery-intro-img" src="images/rituels-bali-003-h1280.webp" alt="Prêtre balinais tenant une clochette rituelle et une fleur de frangipanier — tirage photo fine art" width="1920" height="1279" fetchpriority="high" decoding="async">
     </picture>
   </div>
   <div class="gallery-intro-content">
@@ -683,6 +683,7 @@ function openLightbox(el){
   lbFront=lbImgA;lbBack=lbImgB;
   lbBack.src='';
   setCaption(el);
+  lbFront.alt=el.dataset.title||'';
   lb.classList.remove('closing');
   var fab=document.querySelector('.gallery-fab');
   if(fab) fab.style.opacity='0';
@@ -706,6 +707,7 @@ function navigateLightbox(dir){
     lbBack.style.zIndex='2';lbFront.style.zIndex='1';
     lbBack.classList.add('lb-show');
     setCaption(el); // synchrone avec l'apparition de la photo, pas à la fin de l'animation
+    lbBack.alt=el.dataset.title||'';
     setTimeout(()=>lbFront.classList.remove('lb-show'),40);
     setTimeout(()=>{
       lbBack.style.zIndex='';lbFront.style.zIndex='';

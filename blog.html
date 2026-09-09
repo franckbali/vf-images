@@ -45,7 +45,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;transform:scale(1.03);animation:heroZoom 14s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.03)}to{transform:scale(1)}}
 .hero-content{position:relative}
-.hero-eyebrow{font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,169,110,1.0);margin-bottom:.9rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
+.hero-eyebrow{font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-warm);margin-bottom:.9rem;font-weight:400;animation:fadeUp 1.2s ease .2s both}
 .page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5.5vw,4.5rem);font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1}
 .hero-sub{font-family:'Lora',serif;font-style:italic;font-size:.9rem;letter-spacing:.08em;color:rgba(245,243,239,.65);margin-top:.9rem;animation:fadeUp 1.2s ease .6s both}
 
@@ -65,7 +65,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 }
 .zone-eyebrow{
   font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.52em;
-  text-transform:uppercase;color:rgba(201,169,110,.8);font-weight:400;margin-bottom:.6rem;
+  text-transform:uppercase;color:var(--cream-warm);font-weight:400;margin-bottom:.6rem;
 }
 .zone-name{
   font-family:'Bodoni Moda',serif;
@@ -74,11 +74,11 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 }
 .zone-link{
   font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.22em;
-  text-transform:uppercase;color:rgba(201,169,110,.6);font-weight:400;
+  text-transform:uppercase;color:var(--cream-soft);font-weight:400;
   text-decoration:none;display:flex;align-items:center;gap:.6rem;
   transition:color .35s;white-space:nowrap;
 }
-.zone-link:hover{color:rgba(201,169,110,1.0)}
+.zone-link:hover{color:var(--cream-warm)}
 .zone-link-line{width:16px;height:1px;background:currentColor;opacity:.5;transition:width .4s}
 .zone-link:hover .zone-link-line{width:28px}
 
@@ -129,7 +129,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 /* Shared article elements */
 .art-tag{
   font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.44em;
-  text-transform:uppercase;color:rgba(201,169,110,.75);font-weight:400;margin-bottom:.4rem;
+  text-transform:uppercase;color:var(--cream-warm);font-weight:400;margin-bottom:.4rem;
 }
 .art-date{
   font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.25em;
@@ -152,10 +152,10 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .art-read{
   display:flex;align-items:center;gap:.7rem;
   font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.42em;
-  text-transform:uppercase;color:rgba(201,169,110,.55);font-weight:400;
+  text-transform:uppercase;color:var(--cream-soft);font-weight:400;
   margin-top:auto;transition:color .35s;
 }
-.art-featured:hover .art-read,.art-card:hover .art-read{color:rgba(201,169,110,1.0)}
+.art-featured:hover .art-read,.art-card:hover .art-read{color:var(--cream-warm)}
 .art-read-line{width:16px;height:1px;background:currentColor;opacity:.4;transition:width .45s,opacity .45s}
 .art-featured:hover .art-read-line,.art-card:hover .art-read-line{width:30px;opacity:.8}
 
@@ -169,11 +169,11 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 }
 .pivot-deco{
   position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(201,169,110,.03) 0%,transparent 65%);
+  background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(220,212,192,.03) 0%,transparent 65%);
 }
 /* Vertical line that grows on scroll-in */
 .pivot-line-v{
-  width:1px;height:0;background:rgba(201,169,110,.3);
+  width:1px;height:0;background:var(--cream-soft);
   margin:0 auto;
   transition:height 1.3s cubic-bezier(0.22,1,0.36,1);
 }
@@ -181,7 +181,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 .pivot-eyebrow{
   font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.72em;
-  text-transform:uppercase;color:rgba(201,169,110,.45);font-weight:400;
+  text-transform:uppercase;color:var(--cream-soft);font-weight:400;
   margin:1.8rem 0 1.2rem;
 }
 .pivot-title{
@@ -199,7 +199,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* Horizontal gold line that extends on scroll-in */
 .pivot-line-h{
-  width:0;height:1px;background:rgba(201,169,110,.18);
+  width:0;height:1px;background:var(--cream-soft);
   margin:2.8rem auto;
   transition:width 1.5s cubic-bezier(0.22,1,0.36,1) .2s;
 }
@@ -228,8 +228,8 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   transition:border-color .4s,color .4s,background .4s;
 }
 .pivot-cta:hover{
-  border-color:rgba(201,169,110,.4);
-  color:rgba(201,169,110,1.0);background:rgba(201,169,110,.04);
+  border-color:var(--cream-soft);
+  color:var(--cream-warm);background:rgba(220,212,192,.04);
 }
 .pivot-cta svg{opacity:.45;transition:opacity .4s}
 .pivot-cta:hover svg{opacity:1}
@@ -246,7 +246,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 }
 .low-zone-eyebrow{
   font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.52em;
-  text-transform:uppercase;color:rgba(201,169,110,.42);font-weight:400;margin-bottom:.5rem;
+  text-transform:uppercase;color:var(--cream-soft);font-weight:400;margin-bottom:.5rem;
 }
 .low-zone-name{
   font-family:'Bodoni Moda',serif;
@@ -286,7 +286,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   transition:all .45s cubic-bezier(0.22,1,0.36,1);
 }
 .yt-card:hover .yt-play{
-  background:rgba(201,169,110,.18);border-color:rgba(201,169,110,.5);
+  background:rgba(220,212,192,.18);border-color:var(--cream-soft);
   transform:translate(-50%,-50%) scale(1.1);
 }
 .yt-play svg{margin-left:3px}
@@ -298,10 +298,10 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .yt-body{padding:.95rem 0 0}
 .yt-low-badge{
   font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.42em;
-  text-transform:uppercase;color:rgba(201,169,110,.38);font-weight:400;
+  text-transform:uppercase;color:var(--cream-soft);font-weight:400;
   margin-bottom:.38rem;display:flex;align-items:center;gap:.5rem;
 }
-.yt-low-badge i{width:12px;height:1px;background:rgba(201,169,110,.3);display:inline-block;font-style:normal}
+.yt-low-badge i{width:12px;height:1px;background:var(--cream-soft);display:inline-block;font-style:normal}
 .yt-title{
   font-family:'Raleway',sans-serif;font-weight:300;
   font-size:clamp(.88rem,1.05vw,.98rem);
@@ -321,10 +321,10 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 }
 .ig-follow-link{
   font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.36em;
-  text-transform:uppercase;color:rgba(201,169,110,.5);font-weight:400;
+  text-transform:uppercase;color:var(--cream-soft);font-weight:400;
   text-decoration:none;display:flex;align-items:center;gap:.45rem;transition:color .35s;
 }
-.ig-follow-link:hover{color:rgba(201,169,110,1.0)}
+.ig-follow-link:hover{color:var(--cream-warm)}
 .ig-arrow{transition:transform .35s}
 .ig-follow-link:hover .ig-arrow{transform:translateX(3px)}
 .ig-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:2px}
@@ -342,7 +342,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .ig-post:hover img{transform:scale(1.08);filter:brightness(.88) saturate(.95)}
 .ig-post-overlay{
   position:absolute;inset:0;opacity:0;
-  background:rgba(201,169,110,.06);
+  background:rgba(220,212,192,.06);
   display:flex;align-items:center;justify-content:center;
   transition:opacity .4s;
 }
@@ -436,14 +436,14 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 
 /* ══ BANDEAU COOKIES ══ */
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,.97);border-top:1px solid rgba(201,169,110,1.0);padding:1.5rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;transform:translateY(100%);transition:transform .5s cubic-bezier(0.22,1,0.36,1)}
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,.97);border-top:1px solid var(--cream-soft);padding:1.5rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;transform:translateY(100%);transition:transform .5s cubic-bezier(0.22,1,0.36,1)}
 #cookie-banner.visible{transform:translateY(0)}
 #cookie-banner.hidden{transform:translateY(100%)}
 .cookie-text{font-family:'Raleway',sans-serif;font-size:.58rem;font-weight:300;letter-spacing:.12em;color:rgba(245,243,239,.92);line-height:1.7;max-width:680px}
-.cookie-text a{color:rgba(201,169,110,1.0);text-decoration:none;border-bottom:1px solid rgba(201,169,110,1.0)}
+.cookie-text a{color:var(--cream-warm);text-decoration:none;border-bottom:1px solid var(--cream-soft)}
 .cookie-actions{display:flex;gap:1rem;flex-shrink:0}
 .cookie-btn{font-family:'Raleway',sans-serif;font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;font-weight:400;padding:.7rem 1.8rem;border:none;cursor:pointer;transition:background .3s,color .3s,opacity .3s;white-space:nowrap}
-.cookie-btn-accept{background:var(--gold);color:var(--dark)}.cookie-btn-accept:hover{opacity:.85}
+.cookie-btn-accept{background:var(--cream-warm);color:var(--dark)}.cookie-btn-accept:hover{opacity:.85}
 .cookie-btn-refuse{background:transparent;color:rgba(245,243,239,.92);border:1px solid rgba(255,255,255,.1)}.cookie-btn-refuse:hover{color:var(--light);border-color:rgba(255,255,255,.3)}
 @media(max-width:768px){#cookie-banner{flex-direction:column;padding:1.5rem 1.8rem;gap:1.2rem}.cookie-actions{width:100%}.cookie-btn{flex:1;text-align:center}}
 @media(max-width:480px){#cookie-banner{padding:1.2rem}.cookie-text{font-size:0.90rem}}
@@ -674,7 +674,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
       <div class="yt-body">
         <p class="yt-low-badge"><i></i><span>The Lens of Wonder</span></p>
         <h3 class="yt-title" data-fr="Réveil à Amed : à la rencontre des pêcheurs balinais" data-en="Sunrise in Amed: Meeting Bali's Fishermen">Réveil à Amed : à la rencontre des pêcheurs balinais</h3>
-        <p class="yt-meta"><span data-fr="Bali · 2025" data-en="Bali · 2025">Bali · 2025</span> · <a href="https://www.youtube.com/watch?v=Imlxpynb0qM" target="_blank" rel="noopener" style="color:rgba(201,169,110,.6);text-decoration:none" data-fr="Voir sur YouTube ↗" data-en="Watch on YouTube ↗">Voir sur YouTube ↗</a></p>
+        <p class="yt-meta"><span data-fr="Bali · 2025" data-en="Bali · 2025">Bali · 2025</span> · <a href="https://www.youtube.com/watch?v=Imlxpynb0qM" target="_blank" rel="noopener" style="color:rgba(220,212,192,.6);text-decoration:none" data-fr="Voir sur YouTube ↗" data-en="Watch on YouTube ↗">Voir sur YouTube ↗</a></p>
       </div>
     </article>
 
@@ -689,7 +689,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
       <div class="yt-body">
         <p class="yt-low-badge"><i></i><span>The Lens of Wonder</span></p>
         <h3 class="yt-title" data-fr="Tout simplement Bali" data-en="Simply Bali">Tout simplement Bali</h3>
-        <p class="yt-meta"><span data-fr="Bali · 2025" data-en="Bali · 2025">Bali · 2025</span> · <a href="https://www.youtube.com/watch?v=OYRhqWETiic" target="_blank" rel="noopener" style="color:rgba(201,169,110,.6);text-decoration:none" data-fr="Voir sur YouTube ↗" data-en="Watch on YouTube ↗">Voir sur YouTube ↗</a></p>
+        <p class="yt-meta"><span data-fr="Bali · 2025" data-en="Bali · 2025">Bali · 2025</span> · <a href="https://www.youtube.com/watch?v=OYRhqWETiic" target="_blank" rel="noopener" style="color:rgba(220,212,192,.6);text-decoration:none" data-fr="Voir sur YouTube ↗" data-en="Watch on YouTube ↗">Voir sur YouTube ↗</a></p>
       </div>
     </article>
 
@@ -704,7 +704,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
       <div class="yt-body">
         <p class="yt-low-badge"><i></i><span>The Lens of Wonder</span></p>
         <h3 class="yt-title" data-fr="Cérémonie de Melasti sur la plage de Petitenget" data-en="Melasti Ceremony on Petitenget Beach">Cérémonie de Melasti sur la plage de Petitenget</h3>
-        <p class="yt-meta"><span data-fr="Bali · Mars 2025" data-en="Bali · March 2025">Bali · Mars 2025</span> · <a href="https://www.youtube.com/watch?v=hLWum5wnx9M" target="_blank" rel="noopener" style="color:rgba(201,169,110,.6);text-decoration:none" data-fr="Voir sur YouTube ↗" data-en="Watch on YouTube ↗">Voir sur YouTube ↗</a></p>
+        <p class="yt-meta"><span data-fr="Bali · Mars 2025" data-en="Bali · March 2025">Bali · Mars 2025</span> · <a href="https://www.youtube.com/watch?v=hLWum5wnx9M" target="_blank" rel="noopener" style="color:rgba(220,212,192,.6);text-decoration:none" data-fr="Voir sur YouTube ↗" data-en="Watch on YouTube ↗">Voir sur YouTube ↗</a></p>
       </div>
     </article>
 
@@ -719,7 +719,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
       <div class="yt-body">
         <p class="yt-low-badge"><i></i><span>The Lens of Wonder</span></p>
         <h3 class="yt-title" data-fr="Les Ogoh Ogoh — veille de Nyepi" data-en="The Ogoh-Ogoh — Nyepi Eve">Les Ogoh Ogoh — veille de Nyepi</h3>
-        <p class="yt-meta"><span data-fr="Bali · 2025" data-en="Bali · 2025">Bali · 2025</span> · <a href="https://www.instagram.com/reel/DWdw5OvhG6g/" target="_blank" rel="noopener" style="color:rgba(201,169,110,.6);text-decoration:none" data-fr="Voir sur Instagram ↗" data-en="View on Instagram ↗">Voir sur Instagram ↗</a></p>
+        <p class="yt-meta"><span data-fr="Bali · 2025" data-en="Bali · 2025">Bali · 2025</span> · <a href="https://www.instagram.com/reel/DWdw5OvhG6g/" target="_blank" rel="noopener" style="color:rgba(220,212,192,.6);text-decoration:none" data-fr="Voir sur Instagram ↗" data-en="View on Instagram ↗">Voir sur Instagram ↗</a></p>
       </div>
     </article>
 
@@ -731,7 +731,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
 <!-- ══ CTA ══ -->
 <section class="blog-cta">
-  <p style="font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.42em;text-transform:uppercase;color:rgba(201,169,110,.8);margin-bottom:1rem" data-fr="Tirages Fine Art" data-en="Fine Art Prints">Tirages Fine Art</p>
+  <p style="font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.42em;text-transform:uppercase;color:rgba(220,212,192,.8);margin-bottom:1rem" data-fr="Tirages Fine Art" data-en="Fine Art Prints">Tirages Fine Art</p>
   <h2 style="font-family:'Bodoni Moda',serif;font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:400;color:var(--light);margin-bottom:2.5rem;letter-spacing:.02em" data-fr="Voir la collection" data-en="View the collection">Voir la collection</h2>
   <a href="boutique.html" style="display:inline-block;padding:1.1rem 3.5rem;border:1px solid rgba(201,169,110,.35);color:rgba(201,169,110,.85);font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:border-color .35s,color .35s" data-fr="Explorer la boutique" data-en="Explore the shop">Explorer la boutique</a>
 </section>

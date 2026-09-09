@@ -127,15 +127,11 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 
 ### Structure / cohérence
 13. **Pages galerie individuelles STATIQUES** : `galerie-bali.html` et `galerie-newyork.html` ne lisent PAS `galeries.json` (pas de `fetch`) — seul `galerie-index.html` est dynamique. Les modifs CMS sur ces galeries n'apparaissent donc pas. À rendre dynamiques ou à documenter.
-14. **`.DS_Store` trackés dans git** (3 fichiers) — à retirer du suivi + gitignorer
 15. Vérifier l'alignement des hero (`galerie-index.html .page-hero` vs `a-propos.html .hero`, override `85vh` qui traîne)
 
 ### SEO / contenu
-16. **Alt texts** descriptifs sur toutes les images des galeries (SEO + accessibilité)
-17. **Images OG dédiées** par galerie : `og-bali.jpg`, `og-newyork.jpg`, `og-portraits.jpg`, `og-blog.jpg` (actuellement fallback `og-vf-images.jpg`)
 18. **Vérifier www → vfimages.com** dans Vercel dashboard (Settings → Domains → redirect "www")
 19. **Resoumettre le sitemap** dans Google Search Console : `https://vfimages.com/sitemap.xml`
-20. Compléter les traductions EN des textes longs (tagline contact, messages erreur formulaire)
 21. Écrire d'autres articles de blog
 
 ### Décisions déjà tranchées

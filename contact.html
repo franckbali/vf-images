@@ -681,6 +681,7 @@ img {
         </button>
         <p class="form-note" data-fr="Réponse sous 48h · Depuis Bali" data-en="Reply within 48h · From Bali">Réponse sous 48h · Depuis Bali</p>
       </div>
+      <div class="form-error" id="formError" style="display:none"><span id="formErrorText"></span></div>
     </form>
 
     <!-- SUCCESS -->
@@ -726,19 +727,25 @@ function selectSubject(btn){
 
 function submitForm(e){
   e.preventDefault();
+  var lang = localStorage.getItem('vf_lang') || 'fr';
   var form = document.getElementById('contactForm');
   var btn = form.querySelector('[type="submit"]');
   var success = document.getElementById('formSuccess');
   var errorMsg = document.getElementById('formError');
+  var errorText = document.getElementById('formErrorText');
   var name = form.querySelector('[name="name"]').value.trim();
   var email = form.querySelector('[name="email"]').value.trim();
   var message = form.querySelector('[name="message"]').value.trim();
+  function showError(fr, en){
+    if(errorMsg && errorText){ errorText.textContent = lang==='en' ? en : fr; errorMsg.style.display='block'; }
+  }
   if(!name || !email || !message){
-    if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Merci de remplir tous les champs.'; }
+    showError('Merci de remplir tous les champs.', 'Please fill in all fields.');
     return;
   }
+  var originalBtnHTML = btn.innerHTML;
   btn.disabled = true;
-  btn.textContent = 'Envoi en cours...';
+  btn.textContent = lang==='en' ? 'Sending...' : 'Envoi en cours...';
   if(errorMsg) errorMsg.style.display = 'none';
   fetch('https://formspree.io/f/mwvybbrz', {
     method: 'POST',
@@ -749,14 +756,14 @@ function submitForm(e){
       form.style.display = 'none';
       if(success){ success.style.display = 'block'; }
     } else {
-      if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Erreur. Réessayez ou écrivez à contact@vfimages.com'; }
+      showError('Erreur. Réessayez ou écrivez à contact@vfimages.com', 'Error. Please try again or email contact@vfimages.com');
       btn.disabled = false;
-      btn.textContent = 'Envoyer';
+      btn.innerHTML = originalBtnHTML;
     }
   }).catch(function(){
-    if(errorMsg){ errorMsg.style.display='block'; errorMsg.textContent='Erreur réseau. Vérifiez votre connexion.'; }
+    showError('Erreur réseau. Vérifiez votre connexion.', 'Network error. Please check your connection.');
     btn.disabled = false;
-    btn.textContent = 'Envoyer';
+    btn.innerHTML = originalBtnHTML;
   });
 }
 

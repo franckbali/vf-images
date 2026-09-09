@@ -429,18 +429,22 @@
   .hero-eyebrow{font-size:1rem!important;letter-spacing:.2em!important}
   .page-title{font-size:clamp(1.8rem,7vw,3rem)!important;letter-spacing:.1em!important}
   .hero-count{font-size:.78rem!important}
-  /* Qualité strip — empilé, compact */
-  .quality-strip{grid-template-columns:1fr}
-  .quality-item{padding:.9rem 1.8rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
-  .quality-text p{font-size:.95rem!important;letter-spacing:.15em!important}
-  .quality-text span{font-size:1rem!important;letter-spacing:.06em!important}
+  /* Qualité + Réassurance — grille compacte 2 colonnes, icône + titre seul (sous-titre masqué) */
+  .quality-strip{grid-template-columns:1fr 1fr;padding:0!important}
+  .quality-item{padding:.7rem 1.1rem;gap:.7rem;border-right:1px solid rgba(255,255,255,.04);border-bottom:none}
+  .quality-item:nth-child(2n),.quality-item:last-child{border-right:none}
+  .quality-text span{display:none}
+  .quality-text p{font-size:.7rem!important;letter-spacing:.1em!important;margin-bottom:0!important}
+  .quality-icon svg,.reassurance-icon svg{width:16px;height:16px}
   /* Grille tirages — 2 colonnes propres */
-  .shop-wrap{padding:2rem 0 7rem}
+  .shop-wrap{padding-top:0!important}
   .prints-grid{grid-template-columns:1fr 1fr;gap:3px;padding:0}
-  /* Réassurance — empilée, compacte */
-  .reassurance-item{padding:.9rem 1.8rem!important}
-  .reassurance-text strong{font-size:.9rem!important;letter-spacing:.15em!important}
-  .reassurance-text span{font-size:.9rem!important;letter-spacing:.06em!important}
+  /* Réassurance — même grille compacte */
+  .reassurance-strip{display:grid!important;grid-template-columns:1fr 1fr;padding:0!important}
+  .reassurance-item{padding:.7rem 1.1rem!important;gap:.7rem;border-right:1px solid rgba(255,255,255,.04)}
+  .reassurance-item:last-child{border-right:none;border-bottom:none}
+  .reassurance-text span{display:none}
+  .reassurance-text strong{font-size:.7rem!important;letter-spacing:.1em!important}
   /* Detail modale — empilé + scrollable sur mobile */
   .detail-modal{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
   .detail-inner{grid-template-columns:1fr;height:auto;overflow:visible}
@@ -475,7 +479,7 @@
 .reassurance-icon{color:var(--cream-warm);flex-shrink:0}
 .reassurance-text strong{display:block;font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.92);font-weight:400;margin-bottom:.2rem}
 .reassurance-text span{font-size:0.85rem;letter-spacing:.1em;color:rgba(245,243,239,.92);font-weight:300}
-@media(max-width:900px){.reassurance-strip{flex-direction:column;align-items:stretch}.reassurance-item{padding:1.5rem 2rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}.reassurance-item:last-child{border-bottom:none}}
+/* Ancien empilement colonne remplacé par la grille compacte 2 colonnes définie plus haut */
 @media(max-width:480px){.reassurance-item{padding:1.2rem 1.5rem}}
 
 /* ═══════════════════════════════════════
@@ -506,9 +510,7 @@
   .cta-title{font-size:clamp(2rem,5vw,3rem)}
   .shop-wrap{padding:2.5rem 1.8rem 5rem}
   .prints-grid{grid-template-columns:repeat(2,1fr)!important}
-  .quality-strip{grid-template-columns:1fr 1fr}
-  .quality-item{padding:1.2rem 1.5rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
-  .reassurance-strip{grid-template-columns:repeat(2,1fr)!important;padding:1.2rem 1.8rem}
+  .reassurance-strip{padding:1.2rem 1.8rem}
   .detail-info{height:auto;padding:1.5rem 1.5rem 6rem}
   /* Ordre : bouton pleine largeur + lien ROW bien espacé */
   .order-btn{font-size:0.9rem!important;letter-spacing:.2em!important;padding:1.1rem!important}
@@ -532,8 +534,6 @@
 @media(max-width:480px){
   .photo-masonry{column-count:1}
   .prints-grid{grid-template-columns:1fr!important}
-  .reassurance-strip{grid-template-columns:1fr!important}
-  .quality-strip{grid-template-columns:1fr}
   .hero-name,.page-title{font-size:clamp(2.2rem,12vw,3.5rem);letter-spacing:.1em}
   .hero-tagline{font-size:1rem}
   nav{padding:1rem 1.2rem}

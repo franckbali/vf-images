@@ -36,11 +36,11 @@
 .nav-right{display:flex;align-items:center;gap:2.5rem}
 .lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
-/* INTRO */
-.gallery-intro{height:100svh;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:0 5vw 6svh;position:relative;overflow:hidden}
-.gallery-intro-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
-.gallery-intro-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.4) 0%,rgba(10,10,10,.1) 40%,rgba(10,10,10,.92) 100%)}
-.gallery-intro-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.04);animation:heroZoom 14s ease-out forwards}
+/* INTRO — diptyque (Ouverture C) */
+.gallery-intro{height:72svh;display:grid;grid-template-columns:46fr 54fr;background:var(--dark)}
+.gallery-intro-text{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 4vw}
+.gallery-intro-photo{position:relative;overflow:hidden}
+.gallery-intro-img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.04);animation:heroZoom 14s ease-out forwards;display:block}
 @keyframes heroZoom{from{transform:scale(1.04)}to{transform:scale(1)}}
 .gallery-intro-content{position:relative}
 .intro-back{display:inline-flex;align-items:center;gap:.6rem;font-size:0.80rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,110,1.0);text-decoration:none;margin-bottom:2rem;transition:color .3s;font-weight:400}
@@ -48,11 +48,10 @@
 .intro-back svg{transition:transform .3s}
 .intro-back:hover svg{transform:translateX(-3px)}
 .intro-label{font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-warm);margin-bottom:1.2rem;font-weight:400;animation:fadeUp 1.4s ease .3s both}
-.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,7rem);font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--light);line-height:1;animation:fadeUp 1.4s ease .55s both;margin-bottom:1.2rem}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5.2vw,4.6rem);font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--light);line-height:1.08;animation:fadeUp 1.4s ease .55s both;margin-bottom:1.3rem}
+.title-accent{color:var(--gold)}
+.intro-desc{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(245,243,239,.85);line-height:1.7;max-width:400px;margin-bottom:1.5rem;animation:fadeUp 1.4s ease .68s both}
 .intro-count{font-size:0.80rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,243,239,.92);animation:fadeUp 1.4s ease .75s both}
-.intro-scroll{position:absolute;bottom:5svh;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:.6rem;animation:fadeUp 1.4s ease 1s both}
-.scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,var(--cream-warm),transparent);animation:sp 2.2s ease-in-out infinite}
-@keyframes sp{0%,100%{opacity:.25}50%{opacity:.8}}
 
 /* GAPS */
 .gap{height:11svh}
@@ -148,7 +147,7 @@
   nav{padding:1.5rem 2rem}
   .frame.centered-sm{width:78vw;aspect-ratio:2/3;margin:0 auto}
   .frame.offset-left,.frame.offset-right{width:88vw;aspect-ratio:3/2;margin:0 auto}
-  .gallery-intro{padding:0 2rem 5svh}
+  .gallery-intro-text{padding:3.5rem 2rem 2.5rem}
   .gap{height:12svh}
   .photo-desc{padding:1.5rem 1.5rem}
   .desc-text{font-size:.75rem}
@@ -205,12 +204,12 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
 @media(max-width:900px){
   body{font-size:18px}
-  .gallery-intro{height:85svh!important}
+  .gallery-intro{height:auto!important;grid-template-columns:1fr!important}
+  .gallery-intro-photo{height:60vw!important}
   .page-title{font-size:clamp(2.2rem,10vw,3.2rem)!important;letter-spacing:.05em!important}
   .intro-label{font-size:1rem!important;letter-spacing:.2em!important}
+  .intro-desc{font-size:1rem!important;max-width:100%!important}
   .intro-count{font-size:1rem!important;letter-spacing:.15em!important}
-  .intro-scroll{display:none!important}
-  .gallery-intro-bg{animation:none!important;transform:scale(1)!important}
   .block img,.frame img{transition:filter .8s ease!important}
   .block.fullscreen img{transition:filter .8s ease!important}
   .block.fullscreen.visible img{transform:none!important}
@@ -317,24 +316,22 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
 <!-- INTRO -->
 <div class="gallery-intro">
-  <div class="gallery-intro-bg">
-    <picture>
-      <source type="image/avif" srcset="images/portrait-bali-010-h640.avif 640w, images/portrait-bali-010-h1280.avif 1280w, images/portrait-bali-010-h1920.avif 1920w" sizes="100vw">
-      <source type="image/webp" srcset="images/portrait-bali-010-h640.webp 640w, images/portrait-bali-010-h1280.webp 1280w, images/portrait-bali-010-h1920.webp 1920w" sizes="100vw">
-      <img class="gallery-intro-img" src="images/portrait-bali-010-h1280.webp" alt="Profil d'une femme balinaise en coiffe cérémonielle dorée — tirage photo fine art" width="1920" height="1279" fetchpriority="high" decoding="async">
-    </picture>
-  </div>
-  <div class="gallery-intro-content">
+  <div class="gallery-intro-text gallery-intro-content">
     <a href="galerie-index.html" class="intro-back">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
       Galeries
     </a>
-    <p class="intro-label">VF Images · Portfolio</p>
-    <h1 class="page-title" data-fr="Portraits" data-en="Portraits">Portraits</h1>
+    <p class="intro-label" data-fr="Collection · 03" data-en="Collection · 03">Collection · 03</p>
+    <h1 class="page-title"><span class="title-accent" data-fr="Portraits" data-en="Portraits">Portraits</span></h1>
+    <p class="intro-desc" data-fr="Visages du monde" data-en="Faces of the world">Visages du monde</p>
     <p class="intro-count" data-fr="13 photographies · Bali & Bolivie" data-en="13 photographs · Bali & Bolivia">13 photographies · Bali & Bolivie</p>
   </div>
-  <div class="intro-scroll">
-    <div class="scroll-line"></div>
+  <div class="gallery-intro-photo">
+    <picture>
+      <source type="image/avif" srcset="images/portrait-bali-010-h640.avif 640w, images/portrait-bali-010-h1280.avif 1280w, images/portrait-bali-010-h1920.avif 1920w" sizes="54vw">
+      <source type="image/webp" srcset="images/portrait-bali-010-h640.webp 640w, images/portrait-bali-010-h1280.webp 1280w, images/portrait-bali-010-h1920.webp 1920w" sizes="54vw">
+      <img class="gallery-intro-img" src="images/portrait-bali-010-h1280.webp" alt="Profil d'une femme balinaise en coiffe cérémonielle dorée — tirage photo fine art" width="1920" height="1279" fetchpriority="high" decoding="async">
+    </picture>
   </div>
 </div>
 
@@ -714,7 +711,12 @@ fetch('/galeries.json').then(function(r){return r.json();}).then(function(data){
   el.setAttribute('data-fr', g.titre);
   el.setAttribute('data-en', g.titre_en);
   var lang = localStorage.getItem('vf_lang')||'fr';
-  el.textContent = lang==='en' ? g.titre_en : g.titre;
+  var titre = lang==='en' ? g.titre_en : g.titre;
+  el.innerHTML='';
+  var span=document.createElement('span');
+  span.className='title-accent';
+  span.textContent=titre;
+  el.appendChild(span);
 }).catch(function(){});
 </script>
 <script>

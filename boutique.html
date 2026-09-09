@@ -369,6 +369,7 @@
   transition:border-color .3s,color .3s,background .3s;font-weight:400;cursor:pointer;
 }
 .fmt-option:hover{border-color:rgba(201,169,110,.5);color:rgba(201,169,110,.8)}
+.fmt-limited-tag{display:inline-flex;align-items:center;margin-left:.3rem;font-family:'Raleway',sans-serif;font-size:0.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
 .fmt-option.selected{
   border-color:var(--gold);color:var(--dark);
   background:var(--gold);text-shadow:none;
@@ -796,7 +797,7 @@ img {
         <div class="detail-divider"></div>
 
         <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
-        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 7 prints · Certificate of authenticity included">80×120</button></div>
+        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 7 prints · Certificate of authenticity included">80×120</button><span class="fmt-limited-tag" data-fr="Édition limitée" data-en="Limited edition">Édition limitée</span></div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
         <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fuji Crystal" data-en="Hahnemühle Photo Rag · Fuji Crystal">Hahnemühle Photo Rag · Fuji Crystal</p>
@@ -837,7 +838,7 @@ img {
         <div class="detail-divider"></div>
 
         <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
-        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 7 prints · Certificate of authenticity included">80×120</button></div>
+        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 7 prints · Certificate of authenticity included">80×120</button><span class="fmt-limited-tag" data-fr="Édition limitée" data-en="Limited edition">Édition limitée</span></div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
         <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fuji Crystal" data-en="Hahnemühle Photo Rag · Fuji Crystal">Hahnemühle Photo Rag · Fuji Crystal</p>
@@ -878,7 +879,7 @@ img {
         <div class="detail-divider"></div>
 
         <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
-        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">40×27</button><button class="fmt-option" onclick="selectFormat(this)">60×40</button><button class="fmt-option" onclick="selectFormat(this)">90×60</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 7 prints · Certificate of authenticity included">120×80</button></div>
+        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">40×27</button><button class="fmt-option" onclick="selectFormat(this)">60×40</button><button class="fmt-option" onclick="selectFormat(this)">90×60</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 7 prints · Certificate of authenticity included">120×80</button><span class="fmt-limited-tag" data-fr="Édition limitée" data-en="Limited edition">Édition limitée</span></div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
         <p class="detail-paper" data-fr="Hahnemühle Photo Rag · Fuji Crystal" data-en="Hahnemühle Photo Rag · Fuji Crystal">Hahnemühle Photo Rag · Fuji Crystal</p>
@@ -922,7 +923,7 @@ img {
         <div class="detail-formats">
           <button class="fmt-option" onclick="selectFormat(this)" data-price="95">45×30</button>
           <button class="fmt-option" onclick="selectFormat(this)" data-price="190">60×40</button>
-          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 15 prints · Certificate of authenticity included">100×70</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 15 prints · Certificate of authenticity included">100×70</button><span class="fmt-limited-tag" data-fr="Édition limitée" data-en="Limited edition">Édition limitée</span>
         </div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
@@ -968,7 +969,7 @@ img {
         <div class="detail-formats">
           <button class="fmt-option" onclick="selectFormat(this)" data-price="95">45×30</button>
           <button class="fmt-option" onclick="selectFormat(this)" data-price="190">60×40</button>
-          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 15 prints · Certificate of authenticity included">100×70</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 15 prints · Certificate of authenticity included">100×70</button><span class="fmt-limited-tag" data-fr="Édition limitée" data-en="Limited edition">Édition limitée</span>
         </div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
@@ -1014,7 +1015,7 @@ img {
         <div class="detail-formats">
           <button class="fmt-option" onclick="selectFormat(this)" data-price="95">30×45</button>
           <button class="fmt-option" onclick="selectFormat(this)" data-price="190">40×60</button>
-          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 15 prints · Certificate of authenticity included">70×100</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 15 prints · Certificate of authenticity included">70×100</button><span class="fmt-limited-tag" data-fr="Édition limitée" data-en="Limited edition">Édition limitée</span>
         </div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
@@ -1060,7 +1061,7 @@ img {
         <div class="detail-formats">
           <button class="fmt-option" onclick="selectFormat(this)" data-price="95">30×40</button>
           <button class="fmt-option" onclick="selectFormat(this)" data-price="190">40×50</button>
-          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 15 prints · Certificate of authenticity included">60×80</button>
+          <button class="fmt-option" onclick="selectFormat(this)" data-price="690" data-edition-label-fr="Édition limitée · 15 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 15 prints · Certificate of authenticity included">60×80</button><span class="fmt-limited-tag" data-fr="Édition limitée" data-en="Limited edition">Édition limitée</span>
         </div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
@@ -1102,7 +1103,7 @@ img {
         <div class="detail-divider"></div>
 
         <p class="detail-label" data-fr="Format" data-en="Size">Format</p>
-        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 7 prints · Certificate of authenticity included">80×120</button></div>
+        <div class="detail-formats"><button class="fmt-option" onclick="selectFormat(this)">30×40</button><button class="fmt-option" onclick="selectFormat(this)">40×60</button><button class="fmt-option" onclick="selectFormat(this)">60×90</button><button class="fmt-option" onclick="selectFormat(this)" data-edition-label-fr="Édition limitée · 7 exemplaires · Certificat d'authenticité inclus" data-edition-label-en="Limited edition · 7 prints · Certificate of authenticity included">80×120</button><span class="fmt-limited-tag" data-fr="Édition limitée" data-en="Limited edition">Édition limitée</span></div>
 
         <p class="detail-label" data-fr="Papier" data-en="Paper">Papier</p>
         <p class="detail-paper" data-fr="Fine Art Baryta · Fuji Crystal" data-en="Fine Art Baryta · Fuji Crystal">Fine Art Baryta · Fuji Crystal</p>
@@ -1242,7 +1243,7 @@ img {
     </div>
     <div class="quality-text">
       <p data-fr="Certificat d'authenticité" data-en="Certificate of authenticity">Certificat d'authenticité</p>
-      <span data-fr="Signature reproduite · Numéroté · Édition limitée" data-en="Facsimile signature · Numbered · Limited edition">Signature reproduite · Numéroté · Édition limitée</span>
+      <span data-fr="Signature reproduite" data-en="Facsimile signature">Signature reproduite</span>
     </div>
   </div>
 </div>

@@ -39,7 +39,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* ── HERO ── */
-.hero{position:relative;height:100vh;display:flex;align-items:flex-end;padding:0 4rem 4.5rem;overflow:hidden}
+.hero{position:relative;height:100svh;display:flex;align-items:flex-end;padding:0 4rem 4.5rem;overflow:hidden}
 .hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%)}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;transform:scale(1.03);animation:heroZoom 14s ease-out forwards}
@@ -361,7 +361,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   nav{padding:1.5rem 2rem}
   /* Hero — désactiver animation GPU */
   .hero-img{animation:none!important;transform:scale(1)!important}
-  .hero{padding:0 1.8rem 5rem;height:85vh}
+  .hero{padding:0 1.8rem 5rem;height:85svh}
   .hero-eyebrow{font-size:1rem!important;letter-spacing:.2em!important}
   .hero-sub{font-size:1rem!important}
   /* Zone écrits — plus d'espace */
@@ -409,7 +409,7 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
   .pivot-stats{gap:2rem}
 }
 @media(max-width:480px){
-  .hero{height:85vh}
+  .hero{height:85svh}
   .art-card-img{height:55vw}
   .pivot-cta-row{flex-direction:column;align-items:center}
   .pivot-cta{width:100%;max-width:260px;justify-content:center;font-size:.85rem!important;letter-spacing:.2em!important}

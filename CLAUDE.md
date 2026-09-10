@@ -106,6 +106,12 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 - Page `blog.html` : 2 articles en grand format featured, alternance gauche/droite
 - Article « Réflexion » retiré
 
+**Design / refonte visuelle (sept. 2026)** — cf. mémoire `hero-refonte-ouvertures-page`, `systeme-or-cream-rarete-cta-nav`, `nettoyage-mensonges-passifs`
+- **Système or** : l'or (`#c9a96e`) réservé à 3 rôles (rareté / CTA-intention d'achat / navigation+accessibilité) ; tout le décoratif → `--cream-warm` (#dcd4c0) / `--cream-soft`. Appliqué sur les 13 pages + `style.css`.
+- **Heros par fonction de page** — 5 ouvertures /6 faites : accueil (photo plein cadre + [VF Images / Franck Vinel] centré bas + bandeau verre fumé « Tirages Fine Art · Éditions limitées · Bali & le monde » + « Voir les tirages → » flush au bas), boutique (bandeau court + compteur), 3 galeries (diptyque texte/photo, « Collection · 0X », 1 mot du titre en or), à-propos (typo seule, « Bali, depuis 2022»), journal (éditorial : titre + vignette du dernier article). **Reste : Contact** (Fra aime la page telle quelle, ne pas y toucher sans redemander).
+- **Fix `vh` → `svh`** sur toutes les hauteurs de viewport des 13 pages (bug Safari iOS barre d'adresse). `style.css?v=14`.
+- `mentions-legales.html` : réécrite pour refléter la réalité (société indonésienne, pas d'entité française) + **version anglaise complète** ajoutée (data-fr/data-en + setLang mis à niveau pour gérer le HTML). Reste à Fra : raison sociale + adresse + NIB de la société.
+
 ---
 
 ## 5. ÉTAT — Ce qu'il RESTE à faire
@@ -126,13 +132,18 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 12. Générer la version or (`#c9a96e`) de la signature pour les certificats
 
 ### Structure / cohérence
-13. **Pages galerie individuelles STATIQUES** : `galerie-bali.html` et `galerie-newyork.html` ne lisent PAS `galeries.json` (pas de `fetch`) — seul `galerie-index.html` est dynamique. Les modifs CMS sur ces galeries n'apparaissent donc pas. À rendre dynamiques ou à documenter.
-15. Vérifier l'alignement des hero (`galerie-index.html .page-hero` vs `a-propos.html .hero`, override `85vh` qui traîne)
+13. **Galeries** : les 3 pages galerie (bali/newyork/portraits) lisent maintenant `galeries.json` au chargement pour synchroniser **le titre h1** (fetch ajouté 2 sept.). ⚠️ Le script reconstruit le titre via DOM (`createElement`) pour préserver le `<span class="title-accent">` de l'or — **si une 4e page galerie est créée, appliquer le même pattern**. Le texte éditorial (`.serie-bandeau`) reste volontairement statique par page.
+
+### Contenu — décisions en attente de Fra
+- **Titres des photos de galeries** : `data-title` sans variante EN → ne réagit pas au toggle (Bali/Portraits restent FR, New York reste EN). Traduire ou assumer le titre en langue d'origine ?
+- **Œuvres homonymes** à renommer : `galerie-bali` "Rituels · Bali" ×3 + "Temple · Bali" ×2 (6 photos, 3 titres) ; `boutique` deux "Portrait · Bali" (012 & 369).
+- **`mentions-legales.html`** : fournir raison sociale + adresse + NIB de la société indonésienne (actuellement « sur demande »). Vérifier le compte Stripe marqué « France » vs société indonésienne.
+- **Prix en hero d'accueil** (« À partir de 95 € ») : positionnement valeur vs désirabilité — non tranché, non implémenté.
 
 ### SEO / contenu
 18. **Vérifier www → vfimages.com** dans Vercel dashboard (Settings → Domains → redirect "www")
 19. **Resoumettre le sitemap** dans Google Search Console : `https://vfimages.com/sitemap.xml`
-21. Écrire d'autres articles de blog
+21. Écrire d'autres articles de blog (le hero du Journal met en avant le dernier automatiquement)
 
 ### Décisions déjà tranchées
 - Migration Shopify : **rejetée** (abandonnerait le site custom, le SEO, Sveltia CMS, le design noir & or)
@@ -179,3 +190,8 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 - **Images manquantes dans git** : vérifier `git status --short | grep images/` avant chaque push
 - **Worktree `.claude/worktrees/wizardly-montalcini-0056ce`** : branche à ~270 commits DERRIÈRE `main` (dernier commit mai 2026) — **rien à merger**, `main` l'a dépassée. Ne jamais relancer ce merge.
 - **Signature « reproduite », pas « manuscrite »** : Fra est à Bali, l'impression se fait en Europe → il ne signe jamais physiquement. La signature est incrustée à l'impression par Creativehub. Ne pas laisser croire à une signature à l'encre dans les textes légaux/marketing.
+- **`perl -i` sur les fichiers du repo = INTERDIT si le remplacement contient de l'accentué / des échappements Unicode** — a corrompu l'encodage UTF-8 de boutique.html (× → Ã, é → Ã©, ligne perdue). Utiliser Python avec `encoding='utf-8'` explicite ou l'outil Edit, et vérifier `'Ã' not in content` avant de commit.
+- **Règles hero mobile dans `style.css` PARTAGÉ** : avant de retoucher un hero, chercher le nom de classe dans `style.css` (pas seulement le `<style>` inline de la page) — il y a des règles `@media(max-width:900px) .hero-home ... !important` qui écrasent silencieusement. Idem `.hero-tagline/.hero-fineart/.hero-eyebrow/.hero-prenom` (partagées entre a-propos/blog/boutique).
+- **`animation:fadeUp` + `transform:translateY(-50%)`** sur le même élément = centrage cassé (fadeUp finit sur `translateY(0)`). Centrer via flex du parent, pas via transform sur un élément animé.
+- **Statut juridique** : Fra n'a AUCUNE entité française (société indonésienne, fiscalité en Indonésie). Le droit FR/UE ne le lie pas — ne pas remettre « droit français / SIRET / CNIL » dans les pages légales. Cf. mémoire `statut-juridique-fiscal-fra`.
+- **Captures d'écran navigateur (outil Browser)** peuvent montrer un rendu figé/obsolète (image absente, ancienne position) alors que le code est bon — vérifier via mesures DOM (`getBoundingClientRect`, `getComputedStyle`) et/ou une tab fraîche avant de conclure à un bug.

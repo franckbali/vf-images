@@ -792,7 +792,7 @@ img {
             </div>
           </div>
         </div>
-        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
+        <p class="modal-viz-badge"><span class="modal-viz-label">30 × 40 cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="Forêt des singes · Bali" data-en="Sacred Monkey Forest · Bali">Forêt des singes · Bali</p>
@@ -833,7 +833,7 @@ img {
             </div>
           </div>
         </div>
-        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
+        <p class="modal-viz-badge"><span class="modal-viz-label">30 × 40 cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="Cérémonie · Bali" data-en="Ceremony · Bali">Cérémonie · Bali</p>
@@ -874,7 +874,7 @@ img {
             </div>
           </div>
         </div>
-        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
+        <p class="modal-viz-badge"><span class="modal-viz-label">40 × 27 cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="Temple · Bali" data-en="Temple · Bali">Temple · Bali</p>
@@ -915,7 +915,7 @@ img {
             </div>
           </div>
         </div>
-        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
+        <p class="modal-viz-badge"><span class="modal-viz-label">45 × 30 cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="Ubud · Bali" data-en="Ubud · Bali">Ubud · Bali</p>
@@ -961,7 +961,7 @@ img {
             </div>
           </div>
         </div>
-        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
+        <p class="modal-viz-badge"><span class="modal-viz-label">45 × 30 cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="Ubud · Bali" data-en="Ubud · Bali">Ubud · Bali</p>
@@ -1007,7 +1007,7 @@ img {
             </div>
           </div>
         </div>
-        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
+        <p class="modal-viz-badge"><span class="modal-viz-label">30 × 45 cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="Costa Rica" data-en="Costa Rica">Costa Rica</p>
@@ -1053,7 +1053,7 @@ img {
             </div>
           </div>
         </div>
-        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
+        <p class="modal-viz-badge"><span class="modal-viz-label">30 × 40 cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="Bali" data-en="Bali">Bali</p>
@@ -1098,7 +1098,7 @@ img {
             </div>
           </div>
         </div>
-        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
+        <p class="modal-viz-badge"><span class="modal-viz-label">30 × 40 cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="New York · USA" data-en="New York · USA">New York · USA</p>
@@ -1139,7 +1139,7 @@ img {
             </div>
           </div>
         </div>
-        <p class="modal-viz-badge"><span class="modal-viz-label">— cm</span></p>
+        <p class="modal-viz-badge"><span class="modal-viz-label">30 × 40 cm</span></p>
       </div>
       <div class="detail-info">
         <p class="detail-location" data-fr="La Réunion" data-en="Réunion Island">La Réunion</p>
@@ -1601,6 +1601,7 @@ function updateModalViz(modal, w, h){
   const scene=modal.querySelector('.modal-viz-scene');
   const frame=modal.querySelector('.modal-viz-frame');
   const label=modal.querySelector('.modal-viz-label');
+  if(label) label.textContent=w+' × '+h+' cm';
   if(!scene||!frame) return;
   function applyScale(){
     const sw=scene.offsetWidth;

@@ -31,21 +31,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Lora:ital,wght@0,400;1,400;1,500&family=Cormorant+Garamond:wght@300;400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Lora:ital,wght@0,400;1,400;1,500&family=Cormorant+Garamond:wght@300;400&display=swap"></noscript>
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=13">
 <style>
 .lang span{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 /* HERO — plein cadre (Ouverture A) */
-.hero{position:relative;height:100svh;display:flex;align-items:flex-end;justify-content:flex-start;overflow:hidden}
+.hero{position:relative;height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:stretch;overflow:hidden}
 .hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
 .hero-bg::after{content:'';position:absolute;inset:0;z-index:1;
   background:linear-gradient(to bottom,rgba(10,10,10,.35) 0%,rgba(10,10,10,.1) 35%,rgba(10,10,10,.85) 100%)}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;
   transform:scale(1.05);animation:heroZoom 16s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.05)}to{transform:scale(1)}}
-.hero-content{position:relative;z-index:2;text-align:left;max-width:560px;margin:0;padding:0 6vw 12svh;display:flex;flex-direction:column;align-items:flex-start;box-sizing:border-box}
+.hero-content{position:relative;z-index:2;text-align:left;padding:0 6vw 1.6rem;display:flex;flex-direction:column;align-items:flex-start;box-sizing:border-box}
 
-.home-fineart-strip{padding:2.6rem 4rem;text-align:center;background:var(--dark);border-bottom:1px solid rgba(255,255,255,.04);display:flex;flex-direction:column;align-items:center;gap:1rem}
+.home-fineart-strip{position:relative;z-index:3;padding:2.4rem 4rem;text-align:center;background:var(--dark);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;gap:1rem;animation:fadeUp 1.4s ease .6s both}
 .home-fineart-strip p{font-family:'Raleway',sans-serif;font-size:1.2rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-warm);margin:0}
 .fineart-strip-link{font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.4);padding-bottom:.25rem;transition:border-color .3s}
 .fineart-strip-link::after{content:' →'}
@@ -488,6 +488,10 @@ img {
   <div class="hero-content">
     <h1 class="hero-name"><em>VF</em> Images</h1>
   </div>
+  <div class="home-fineart-strip">
+    <p data-fr="Tirages Fine Art · Éditions limitées · Bali &amp; le monde" data-en="Fine Art Prints · Limited Editions · Bali &amp; the World">Tirages Fine Art · Éditions limitées · Bali &amp; le monde</p>
+    <a href="boutique.html" class="fineart-strip-link" data-fr="Voir les tirages" data-en="View the prints">Voir les tirages</a>
+  </div>
 </section>
 
 <section class="home-manifesto">
@@ -498,11 +502,6 @@ img {
   <p class="manifesto-sign">Franck Vinel</p>
   <span class="manifesto-line"></span>
 </section>
-
-<div class="home-fineart-strip">
-  <p data-fr="Tirages Fine Art · Éditions limitées · Bali &amp; le monde" data-en="Fine Art Prints · Limited Editions · Bali &amp; the World">Tirages Fine Art · Éditions limitées · Bali &amp; le monde</p>
-  <a href="boutique.html" class="fineart-strip-link" data-fr="Voir les tirages" data-en="View the prints">Voir les tirages</a>
-</div>
 
 <section class="gallery-preview">
   <div class="section-header">

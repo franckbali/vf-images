@@ -121,6 +121,7 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 2. **Vérifier les visuels covers** dans `galeries.json` : confirmer que `image_cover` pointe sur les bonnes vraies photos
 
 ### Commerce / print
+0. **Certificat d'authenticité numérique** (décidé 10 sept.) — un certificat numérique vérifiable pour chaque tirage, lien unique `/certificat/[code]` + PDF dans l'email. Spec complète : **`CERTIFICAT-NUMERIQUE.md`**. Dépend de : chaîne paiement active + Resend + Vercel KV. Le compteur « X restants » (ci-dessous #6) fait partie du même travail (sold_count → KV). Ne rien promettre sur le site avant que ce soit en place.
 3. **Activer l'accès API Creativehub** (Settings → API tokens) → renseigner `CREATIVEHUB_API_KEY` sur Vercel
 4. **Vérifier les env vars Vercel** : `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `CREATIVEHUB_API_KEY` (invérifiables depuis le repo, pas de `.env` local)
 5. **Test d'achat réel** (petit montant) pour valider la chaîne Stripe → webhook → Creativehub

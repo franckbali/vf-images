@@ -759,7 +759,7 @@ img {
 
   <div class="detail-modal" id="detail-portrait" data-photo-id="portrait-bali-012">
     <div class="detail-inner">
-      <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
+      <button class="detail-close" onclick="closeDetail()" data-aria-fr="Fermer le détail" data-aria-en="Close details" aria-label="Fermer le détail">&#x2715;</button>
       <div class="modal-viz-wrap">
         <div class="modal-viz-scene">
           <div class="modal-viz-frame-area">
@@ -805,7 +805,7 @@ img {
 
   <div class="detail-modal" id="detail-portrait-369" data-photo-id="portrait-bali-369">
     <div class="detail-inner">
-      <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
+      <button class="detail-close" onclick="closeDetail()" data-aria-fr="Fermer le détail" data-aria-en="Close details" aria-label="Fermer le détail">&#x2715;</button>
       <div class="modal-viz-wrap">
         <div class="modal-viz-scene">
           <div class="modal-viz-frame-area">
@@ -851,7 +851,7 @@ img {
 
   <div class="detail-modal" id="detail-hummingbird" data-photo-id="hummingbird-costa-rica-001">
     <div class="detail-inner">
-      <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
+      <button class="detail-close" onclick="closeDetail()" data-aria-fr="Fermer le détail" data-aria-en="Close details" aria-label="Fermer le détail">&#x2715;</button>
       <div class="modal-viz-wrap">
         <div class="modal-viz-scene">
           <div class="modal-viz-frame-area">
@@ -897,7 +897,7 @@ img {
 
   <div class="detail-modal" id="detail-offrandes-002" data-photo-id="offrandes-bali-002">
     <div class="detail-inner">
-      <button class="detail-close" onclick="closeDetail()" aria-label="Fermer le détail">&#x2715;</button>
+      <button class="detail-close" onclick="closeDetail()" data-aria-fr="Fermer le détail" data-aria-en="Close details" aria-label="Fermer le détail">&#x2715;</button>
       <div class="modal-viz-wrap">
         <div class="modal-viz-scene">
           <div class="modal-viz-frame-area">
@@ -943,7 +943,7 @@ img {
 
 
 
-<nav role="navigation" aria-label="Navigation principale">
+<nav role="navigation" data-aria-fr="Navigation principale" data-aria-en="Main navigation" aria-label="Navigation principale">
   <a href="index" class="logo"><img width="500" height="500" src="images/logo-vf3.svg" alt="VF Images" loading="eager" decoding="async"></a>
   <ul>
     <li><a href="index" data-fr="Accueil" data-en="Home">Accueil</a></li>
@@ -1656,8 +1656,8 @@ if(hamburger&&navOverlay){
 </script>
 
 <!-- FULLSCREEN MOCKUP OVERLAY -->
-<div id="viz-fullscreen" role="dialog" aria-modal="true" aria-label="Vue plein écran" onclick="if(event.target===this)closeVizFullscreen()">
-  <button id="viz-fs-close" aria-label="Fermer" onclick="closeVizFullscreen()">&#x2715; <span style="font-size:.6rem;letter-spacing:.3em;vertical-align:middle">ESC</span></button>
+<div id="viz-fullscreen" role="dialog" aria-modal="true" data-aria-fr="Vue plein écran" data-aria-en="Fullscreen view" aria-label="Vue plein écran" onclick="if(event.target===this)closeVizFullscreen()">
+  <button id="viz-fs-close" data-aria-fr="Fermer" data-aria-en="Close" aria-label="Fermer" onclick="closeVizFullscreen()">&#x2715; <span style="font-size:.6rem;letter-spacing:.3em;vertical-align:middle">ESC</span></button>
   <div class="viz-fs-scene">
     <div class="viz-fs-frame-area">
       <div class="viz-fs-frame">
@@ -1669,14 +1669,14 @@ if(hamburger&&navOverlay){
 </div>
 
 <!-- BANDEAU COOKIES RGPD -->
-<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+<div id="cookie-banner" role="dialog" aria-live="polite" data-aria-fr="Consentement cookies" data-aria-en="Cookie consent" aria-label="Consentement cookies">
   <p class="cookie-text">
     <span data-fr="Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers." data-en="This site uses anonymous analytics cookies (Umami) to understand how you browse, without storing personal data. No advertising, no third-party sharing.">Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers.</span>
     <a href="mentions-legales" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
   </p>
   <div class="cookie-actions">
-    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
-    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
+    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" data-aria-fr="Refuser les cookies analytiques" data-aria-en="Decline analytics cookies" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" data-aria-fr="Accepter les cookies analytiques" data-aria-en="Accept analytics cookies" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
   </div>
 </div>
 <script>

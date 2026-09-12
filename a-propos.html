@@ -632,14 +632,14 @@ if(hamburger&&navOverlay){
 </script>
 
 <!-- BANDEAU COOKIES RGPD -->
-<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+<div id="cookie-banner" role="dialog" aria-live="polite" data-aria-fr="Consentement cookies" data-aria-en="Cookie consent" aria-label="Consentement cookies">
   <p class="cookie-text">
     <span data-fr="Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers." data-en="This site uses anonymous analytics cookies (Umami) to understand how you browse, without storing personal data. No advertising, no third-party sharing.">Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers.</span>
     <a href="mentions-legales" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
   </p>
   <div class="cookie-actions">
-    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
-    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
+    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" data-aria-fr="Refuser les cookies analytiques" data-aria-en="Decline analytics cookies" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" data-aria-fr="Accepter les cookies analytiques" data-aria-en="Accept analytics cookies" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
   </div>
 </div>
 <script>

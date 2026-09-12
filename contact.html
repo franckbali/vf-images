@@ -555,7 +555,7 @@ img {
 <div class="cursor" id="cur"></div>
 <div class="cursor-ring" id="ring"></div>
 
-<nav role="navigation" aria-label="Navigation principale">
+<nav role="navigation" data-aria-fr="Navigation principale" data-aria-en="Main navigation" aria-label="Navigation principale">
   <a href="index" class="logo"><img width="500" height="500" src="images/logo-vf3.svg" alt="VF Images" loading="eager" decoding="async"></a>
   <ul>
     <li><a href="index" data-fr="Accueil" data-en="Home">Accueil</a></li>
@@ -652,12 +652,12 @@ img {
 
       <div class="form-group reveal">
         <label class="form-label" data-fr="Votre nom" data-en="Your name">Votre nom</label>
-        <input type="text" name="name" id="field-name" class="form-input" placeholder="Prénom Nom" data-placeholder-fr="Prénom Nom" data-placeholder-en="First Last" required autocomplete="name" aria-label="Votre nom">
+        <input type="text" name="name" id="field-name" class="form-input" placeholder="Prénom Nom" data-placeholder-fr="Prénom Nom" data-placeholder-en="First Last" required autocomplete="name" data-aria-fr="Votre nom" data-aria-en="Your name" aria-label="Votre nom">
         <div class="form-underline"></div>
       </div>
       <div class="form-group reveal">
         <label class="form-label" for="field-email" data-fr="Email" data-en="Email">Email</label>
-        <input type="email" name="email" id="field-email" class="form-input" placeholder="votre@email.com" required autocomplete="email" aria-label="Votre email">
+        <input type="email" name="email" id="field-email" class="form-input" placeholder="votre@email.com" data-placeholder-fr="votre@email.com" data-placeholder-en="your@email.com" required autocomplete="email" data-aria-fr="Votre email" data-aria-en="Your email" aria-label="Votre email">
         <div class="form-underline"></div>
       </div>
       <div class="form-group reveal">
@@ -800,14 +800,14 @@ window.addEventListener('load', function(){
 </script>
 
 <!-- BANDEAU COOKIES RGPD -->
-<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+<div id="cookie-banner" role="dialog" aria-live="polite" data-aria-fr="Consentement cookies" data-aria-en="Cookie consent" aria-label="Consentement cookies">
   <p class="cookie-text">
     <span data-fr="Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers." data-en="This site uses anonymous analytics cookies (Umami) to understand how you browse, without storing personal data. No advertising, no third-party sharing.">Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers.</span>
     <a href="mentions-legales" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
   </p>
   <div class="cookie-actions">
-    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
-    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
+    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" data-aria-fr="Refuser les cookies analytiques" data-aria-en="Decline analytics cookies" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" data-aria-fr="Accepter les cookies analytiques" data-aria-en="Accept analytics cookies" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
   </div>
 </div>
 <script>
@@ -883,6 +883,7 @@ window.addEventListener('load', function(){
       else { el.textContent=val; }
     });
     document.querySelectorAll('[data-aria-fr][data-aria-en]').forEach(function(el){var v=el.getAttribute('data-aria-'+l);if(v) el.setAttribute('aria-label',v);});
+    document.querySelectorAll('[data-placeholder-fr][data-placeholder-en]').forEach(function(el){var v=el.getAttribute('data-placeholder-'+l);if(v) el.placeholder=v;});
     document.documentElement.lang = l;
     document.querySelectorAll('.lang-btn').forEach(function(b){
       if(b.getAttribute('data-lang') === l){

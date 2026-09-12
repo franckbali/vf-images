@@ -274,14 +274,14 @@ img {
 <body>
 <a href="#main-content" class="skip-link" data-fr="Aller au contenu" data-en="Skip to content">Aller au contenu</a>
 
-<nav role="navigation" aria-label="Navigation principale">
+<nav role="navigation" data-aria-fr="Navigation principale" data-aria-en="Main navigation" aria-label="Navigation principale">
   <a href="index" class="logo"><img width="500" height="500" src="images/logo-vf3.svg" alt="VF Images" loading="eager" decoding="async"></a>
   <ul>
     <li><a href="index" data-fr="Accueil" data-en="Home">Accueil</a></li>
     <li><a href="galerie-index" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
     <li><a href="a-propos" data-fr="À propos" data-en="About">À propos</a></li>
     <li><a href="boutique" data-fr="Boutique" data-en="Shop">Boutique</a></li>
-    <li><a href="blog" data-fr="Blog" data-en="Blog">Blog</a></li>
+    <li><a href="blog" data-fr="Journal" data-en="Journal">Journal</a></li>
     <li><a href="contact" data-fr="Contact" data-en="Contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem">
@@ -298,7 +298,7 @@ img {
   <a href="galerie-index" data-fr="Galerie" data-en="Gallery">Galerie</a>
   <a href="a-propos" data-fr="À propos" data-en="About">À propos</a>
   <a href="boutique" data-fr="Boutique" data-en="Shop">Boutique</a>
-  <a href="blog" data-fr="Blog" data-en="Blog">Blog</a>
+  <a href="blog" data-fr="Journal" data-en="Journal">Journal</a>
   <a href="contact" data-fr="Contact" data-en="Contact">Contact</a>
 </div>
 
@@ -503,14 +503,14 @@ if(hamburger&&navOverlay){
 </script>
 
 <!-- BANDEAU COOKIES RGPD -->
-<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+<div id="cookie-banner" role="dialog" aria-live="polite" data-aria-fr="Consentement cookies" data-aria-en="Cookie consent" aria-label="Consentement cookies">
   <p class="cookie-text">
     <span data-fr="Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers." data-en="This site uses anonymous analytics cookies (Umami) to understand how you browse, without storing personal data. No advertising, no third-party sharing.">Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers.</span>
     <a href="mentions-legales" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
   </p>
   <div class="cookie-actions">
-    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
-    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
+    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" data-aria-fr="Refuser les cookies analytiques" data-aria-en="Decline analytics cookies" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" data-aria-fr="Accepter les cookies analytiques" data-aria-en="Accept analytics cookies" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
   </div>
 </div>
 <script>

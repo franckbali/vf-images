@@ -429,22 +429,22 @@ img {
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="handleLightboxClick(event)">
-  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer la lightbox">&#x2715;</button>
-  <button class="lb-nav lb-nav-prev" onclick="goPrev(event)" aria-label="Photo précédente">
+  <button class="lightbox-close" onclick="closeLightbox()" data-aria-fr="Fermer la lightbox" data-aria-en="Close lightbox" aria-label="Fermer la lightbox">&#x2715;</button>
+  <button class="lb-nav lb-nav-prev" onclick="goPrev(event)" data-aria-fr="Photo précédente" data-aria-en="Previous photo" aria-label="Photo précédente">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
   </button>
   <div id="lb-img-wrap">
     <img loading="eager" decoding="async" class="lightbox-img" id="lb-img-a" src="" alt="">
     <img loading="eager" decoding="async" class="lightbox-img" id="lb-img-b" src="" alt="">
   </div>
-  <button class="lb-nav lb-nav-next" onclick="goNext(event)" aria-label="Photo suivante">
+  <button class="lb-nav lb-nav-next" onclick="goNext(event)" data-aria-fr="Photo suivante" data-aria-en="Next photo" aria-label="Photo suivante">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
   </button>
   <div class="lightbox-caption" id="lightbox-caption"></div>
   <div class="lb-counter" id="lb-counter"></div>
 </div>
 
-<nav role="navigation" aria-label="Navigation principale">
+<nav role="navigation" data-aria-fr="Navigation principale" data-aria-en="Main navigation" aria-label="Navigation principale">
   <a href="index" class="logo"><img width="500" height="500" src="images/logo-vf3.svg" alt="VF Images" loading="eager" decoding="async"></a>
   <ul>
     <li><a href="index" class="active" data-fr="Accueil" data-en="Home">Accueil</a></li>
@@ -747,14 +747,14 @@ if(hamburger&&navOverlay){
 </script>
 
 <!-- BANDEAU COOKIES RGPD -->
-<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+<div id="cookie-banner" role="dialog" aria-live="polite" data-aria-fr="Consentement cookies" data-aria-en="Cookie consent" aria-label="Consentement cookies">
   <p class="cookie-text">
     <span data-fr="Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers." data-en="This site uses anonymous analytics cookies (Umami) to understand how you browse, without storing personal data. No advertising, no third-party sharing.">Ce site utilise des cookies analytiques anonymes (Umami) pour comprendre comment vous naviguez, sans stocker de données personnelles. Aucune publicité, aucun partage tiers.</span>
     <a href="mentions-legales" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
   </p>
   <div class="cookie-actions">
-    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
-    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
+    <button class="cookie-btn cookie-btn-refuse" onclick="cookieRefuse()" data-aria-fr="Refuser les cookies analytiques" data-aria-en="Decline analytics cookies" aria-label="Refuser les cookies analytiques" data-fr="Refuser" data-en="Decline">Refuser</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()" data-aria-fr="Accepter les cookies analytiques" data-aria-en="Accept analytics cookies" aria-label="Accepter les cookies analytiques" data-fr="Accepter" data-en="Accept">Accepter</button>
   </div>
 </div>
 <script>

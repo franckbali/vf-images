@@ -62,6 +62,8 @@ footer{padding:4rem;border-top:1px solid var(--cream-soft);display:grid;grid-tem
 .footer-logo{grid-area:logo}
 .footer-logo img{height:48px;width:auto;opacity:.8}
 .footer-copy{grid-area:copy;font-size:0.80rem;letter-spacing:.2em;color:rgba(245,243,239,.92);text-align:center}
+.footer-tagline{margin:0 0 .6rem;font-size:0.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-soft)}
+.footer-copy-wrap{grid-area:copy}
 .footer-social{grid-area:social;display:flex;gap:1.5rem}
 .footer-social a{font-size:0.80rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,243,239,.92);text-decoration:none;transition:color .3s}
 .footer-social a:hover{color:var(--cream-warm)}
@@ -126,6 +128,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
   .section-link{font-size:1.2rem!important;letter-spacing:.1em}
   .btn{font-size:1.15rem!important;padding:.9rem 2rem;letter-spacing:.12em}
   .footer-copy{font-size:1.05rem!important;letter-spacing:.06em}
+  .footer-tagline{font-size:.95rem!important;letter-spacing:.08em}
   .footer-social a{font-size:1.05rem!important}
   .lang-btn{font-size:1.15rem!important}
   .nav-overlay .overlay-lang{font-size:1.05rem!important;letter-spacing:.1em}

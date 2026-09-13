@@ -75,6 +75,20 @@
 .frame.offset-left,.frame.offset-right{width:min(52vw,740px);aspect-ratio:3/2;overflow:hidden;position:relative;margin:0}
 .frame.offset-left img,.frame.offset-right img{width:100%;height:100%;object-fit:cover}
 
+/* GRILLE — remplace l'empilement d'une photo à la fois (14 sept.) */
+/* 6 photos, 5 très majoritairement portrait → 2 colonnes s'équilibrent
+   nettement mieux que 3 (une 3e colonne isolerait le seul paysage). */
+.bali-grid{column-count:2;column-gap:1.4rem;padding:8svh 4vw 10svh;max-width:1200px;margin:0 auto}
+.bali-grid .block{break-inside:avoid;margin-bottom:1.4rem;cursor:pointer;overflow:hidden;position:relative}
+.bali-grid .block img{width:100%;height:auto;display:block;filter:contrast(1.04) saturate(1.06);transition:transform 1.1s ease,filter .8s ease}
+.bali-grid .block.hovered img{transform:scale(1.035);filter:contrast(1.06) saturate(1.1)}
+.bali-grid .caption-below{margin:.5rem 0 0}
+.bali-grid .gallery-shop-link{display:block;margin:.3rem 0 0}
+@media(max-width:768px){
+  .bali-grid{column-count:1;padding:5svh 1.2rem 7svh}
+  .bali-grid .block{margin-bottom:.8rem}
+}
+
 .caption-corner{display:none}
 .caption-below{
   margin-top:.7rem;
@@ -464,115 +478,83 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
   <div class="serie-line"></div>
 </div>
 
-<!-- SÉQUENCE -->
+<!-- SÉQUENCE — grille (14 sept.) -->
+<div class="bali-grid">
 
-<!-- 1. Offrandes — portrait grand format -->
-<div class="block nat lg reveal">
-  <div class="frame-nat" onclick="openLightbox(this)"
-    data-title="Offrandes · Bali"
-    data-desc="Les canang sari, posés à l'aube comme une conversation silencieuse avec les dieux. Fleurs, encens, prière — l'île commence sa journée ainsi."
-    data-desc-en="Canang sari, placed at dawn like a silent conversation with the gods. Flowers, incense, prayer — this is how the island begins its day.">
-    <img width="1518" height="2000"
-      src="images/offrandes-bali-002.jpg"
-      srcset="images/offrandes-bali-002-small.webp 640w, images/offrandes-bali-002-medium.webp 1200w, images/offrandes-bali-002-large.webp 1920w"
-      sizes="(max-width:768px) 86vw, 52vw"
-      alt="Offrandes canang sari et encens dans un temple à Bali — tirage photo fine art"
-      loading="eager"
-      decoding="async">
-  </div>
-  <a href="boutique#offrandes-bali-002" class="gallery-shop-link" data-fr="Voir en tirage" data-en="Available as a print">Voir en tirage</a>
+<div class="block reveal" onclick="openLightbox(this)"
+  data-title="Offrandes · Bali"
+  data-desc="Les canang sari, posés à l'aube comme une conversation silencieuse avec les dieux. Fleurs, encens, prière — l'île commence sa journée ainsi."
+  data-desc-en="Canang sari, placed at dawn like a silent conversation with the gods. Flowers, incense, prayer — this is how the island begins its day.">
+  <img src="images/offrandes-bali-002.jpg"
+    srcset="images/offrandes-bali-002-small.webp 640w, images/offrandes-bali-002-medium.webp 1200w, images/offrandes-bali-002-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 45vw"
+    alt="Offrandes canang sari et encens dans un temple à Bali — tirage photo fine art"
+    loading="eager"
+    decoding="async">
+</div>
+<a href="boutique#offrandes-bali-002" class="gallery-shop-link" data-fr="Voir en tirage" data-en="Available as a print">Voir en tirage</a>
+
+<div class="block reveal" onclick="openLightbox(this)"
+  data-title="Rituels · Bali"
+  data-desc="La cérémonie n'appartient pas au temps ordinaire. Elle en est l'interruption sacrée — le moment où l'invisible se rend présent."
+  data-desc-en="The ceremony does not belong to ordinary time. It is its sacred interruption — the moment when the invisible makes itself present.">
+  <img src="images/rituels-bali-003.jpg"
+    srcset="images/rituels-bali-003-small.webp 640w, images/rituels-bali-003-medium.webp 1200w, images/rituels-bali-003-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 45vw"
+    alt="Scène de cérémonie rituelle à Bali — tirage photo fine art"
+    loading="eager"
+    decoding="async">
 </div>
 
-<div class="gap"></div>
-
-<!-- 2. Rituels-003 — paysage pleine largeur -->
-<div class="block nat full reveal">
-  <div class="frame-nat" onclick="openLightbox(this)"
-    data-title="Rituels · Bali"
-    data-desc="La cérémonie n'appartient pas au temps ordinaire. Elle en est l'interruption sacrée — le moment où l'invisible se rend présent."
-    data-desc-en="The ceremony does not belong to ordinary time. It is its sacred interruption — the moment when the invisible makes itself present.">
-    <img width="1920" height="1279"
-      src="images/rituels-bali-003.jpg"
-      srcset="images/rituels-bali-003-small.webp 640w, images/rituels-bali-003-medium.webp 1200w, images/rituels-bali-003-large.webp 1920w"
-      sizes="100vw"
-      alt="Scène de cérémonie rituelle à Bali — tirage photo fine art"
-      loading="eager"
-      decoding="async">
-  </div>
+<div class="block reveal" onclick="openLightbox(this)"
+  data-title="Rituels · Bali"
+  data-desc="Chaque geste, chaque voile, chaque fleur porte une intention que l'œil seul ne suffit pas à saisir. Il faut rester, attendre, et voir."
+  data-desc-en="Every gesture, every veil, every flower carries an intention the eye alone cannot grasp. One must stay, wait, and truly see.">
+  <img src="images/rituels-bali-002.jpg"
+    srcset="images/rituels-bali-002-small.webp 640w, images/rituels-bali-002-medium.webp 1200w, images/rituels-bali-002-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 45vw"
+    alt="Geste d'offrande lors d'un rituel balinais — tirage photo fine art"
+    loading="eager"
+    decoding="async">
 </div>
 
-<div class="gap"></div>
-
-<!-- 3. Rituels-002 — portrait moyen -->
-<div class="block nat md reveal">
-  <div class="frame-nat" onclick="openLightbox(this)"
-    data-title="Rituels · Bali"
-    data-desc="Chaque geste, chaque voile, chaque fleur porte une intention que l'œil seul ne suffit pas à saisir. Il faut rester, attendre, et voir."
-    data-desc-en="Every gesture, every veil, every flower carries an intention the eye alone cannot grasp. One must stay, wait, and truly see.">
-    <img width="1333" height="2000"
-      src="images/rituels-bali-002.jpg"
-      srcset="images/rituels-bali-002-small.webp 640w, images/rituels-bali-002-medium.webp 1200w, images/rituels-bali-002-large.webp 1920w"
-      sizes="(max-width:768px) 86vw, 40vw"
-      alt="Geste d'offrande lors d'un rituel balinais — tirage photo fine art"
-      loading="eager"
-      decoding="async">
-  </div>
+<div class="block reveal" onclick="openLightbox(this)"
+  data-title="Rituels · Bali"
+  data-desc="La dévotion s'exprime dans le détail — les mains jointes, l'encens qui monte, la lumière filtrée par les arbres sacrés."
+  data-desc-en="Devotion expressed in detail — clasped hands, rising incense, light filtered through sacred trees.">
+  <img src="images/rituels-bali-001.jpg"
+    srcset="images/rituels-bali-001-small.webp 640w, images/rituels-bali-001-medium.webp 1200w, images/rituels-bali-001-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 45vw"
+    alt="Rituel sacré dans un temple de Bali — tirage photo fine art"
+    loading="lazy"
+    decoding="async">
 </div>
 
-<div class="gap"></div>
-
-<!-- 4. Rituels-001 — portrait grand format -->
-<div class="block nat lg reveal">
-  <div class="frame-nat" onclick="openLightbox(this)"
-    data-title="Rituels · Bali"
-    data-desc="La dévotion s'exprime dans le détail — les mains jointes, l'encens qui monte, la lumière filtrée par les arbres sacrés."
-    data-desc-en="Devotion expressed in detail — clasped hands, rising incense, light filtered through sacred trees.">
-    <img width="1333" height="2000"
-      src="images/rituels-bali-001.jpg"
-      srcset="images/rituels-bali-001-small.webp 640w, images/rituels-bali-001-medium.webp 1200w, images/rituels-bali-001-large.webp 1920w"
-      sizes="(max-width:768px) 86vw, 52vw"
-      alt="Rituel sacré dans un temple de Bali — tirage photo fine art"
-      loading="eager"
-      decoding="async">
-  </div>
+<div class="block reveal" onclick="openLightbox(this)"
+  data-title="Temple · Bali"
+  data-desc="Le temple comme passage entre deux mondes. La pierre noire de mousse, l'air chargé de prières anciennes et de fumée d'encens."
+  data-desc-en="The temple as passage between two worlds. Stone darkened with moss, the air heavy with ancient prayers and incense smoke.">
+  <img src="images/temple-bali-004.jpg"
+    srcset="images/temple-bali-004-small.webp 640w, images/temple-bali-004-medium.webp 1200w, images/temple-bali-004-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 45vw"
+    alt="Temple balinais, pierres et sculptures sacrées — tirage photo fine art"
+    loading="lazy"
+    decoding="async">
 </div>
 
-<div class="gap"></div>
-
-<!-- 5. Temple-004 — portrait moyen -->
-<div class="block nat md reveal">
-  <div class="frame-nat" onclick="openLightbox(this)"
-    data-title="Temple · Bali"
-    data-desc="Le temple comme passage entre deux mondes. La pierre noire de mousse, l'air chargé de prières anciennes et de fumée d'encens."
-    data-desc-en="The temple as passage between two worlds. Stone darkened with moss, the air heavy with ancient prayers and incense smoke.">
-    <img width="1333" height="2000"
-      src="images/temple-bali-004.jpg"
-      srcset="images/temple-bali-004-small.webp 640w, images/temple-bali-004-medium.webp 1200w, images/temple-bali-004-large.webp 1920w"
-      sizes="(max-width:768px) 86vw, 40vw"
-      alt="Temple balinais, pierres et sculptures sacrées — tirage photo fine art"
-      loading="eager"
-      decoding="async">
-  </div>
+<div class="block reveal" onclick="openLightbox(this)"
+  data-title="Temple · Bali"
+  data-desc="Bali sacré — là où chaque porte est un seuil, chaque statue une présence, chaque fleur une offrande renouvelée à l'infini."
+  data-desc-en="Sacred Bali — where every door is a threshold, every statue a presence, every flower an offering renewed endlessly.">
+  <img src="images/temple-bali-002.jpg"
+    srcset="images/temple-bali-002-small.webp 640w, images/temple-bali-002-medium.webp 1200w, images/temple-bali-002-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 45vw"
+    alt="Architecture d'un temple à Bali — tirage photo fine art"
+    loading="lazy"
+    decoding="async">
 </div>
 
-<div class="gap"></div>
-
-<!-- 6. Temple-002 — portrait grand format, fermeture -->
-<div class="block nat lg reveal">
-  <div class="frame-nat" onclick="openLightbox(this)"
-    data-title="Temple · Bali"
-    data-desc="Bali sacré — là où chaque porte est un seuil, chaque statue une présence, chaque fleur une offrande renouvelée à l'infini."
-    data-desc-en="Sacred Bali — where every door is a threshold, every statue a presence, every flower an offering renewed endlessly.">
-    <img width="1354" height="2000"
-      src="images/temple-bali-002.jpg"
-      srcset="images/temple-bali-002-small.webp 640w, images/temple-bali-002-medium.webp 1200w, images/temple-bali-002-large.webp 1920w"
-      sizes="(max-width:768px) 86vw, 52vw"
-      alt="Architecture d'un temple à Bali — tirage photo fine art"
-      loading="eager"
-      decoding="async">
-  </div>
 </div>
-
 <div class="gap"></div>
 
 <div class="contact-bandeau">

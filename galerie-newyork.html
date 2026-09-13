@@ -96,6 +96,20 @@
 .frame.offset-left,.frame.offset-right{width:min(52vw,740px);aspect-ratio:3/2;overflow:hidden;position:relative;margin:0}
 .frame.offset-left img,.frame.offset-right img{width:100%;height:100%;object-fit:cover}
 
+/* GRILLE — remplace l'empilement d'une photo à la fois (14 sept.) */
+.newyork-grid{column-count:3;column-gap:1.4rem;padding:8svh 4vw 10svh;max-width:1500px;margin:0 auto}
+.newyork-grid .block{break-inside:avoid;margin-bottom:1.4rem;cursor:pointer;overflow:hidden;position:relative}
+.newyork-grid .block img{width:100%;height:auto;display:block;filter:contrast(1.04) saturate(1.06);transition:transform 1.1s ease,filter .8s ease}
+.newyork-grid .block.hovered img{transform:scale(1.035);filter:contrast(1.06) saturate(1.1)}
+.newyork-grid .caption-below{margin:.5rem 0 0}
+@media(max-width:768px){
+  .newyork-grid{column-count:2;column-gap:.8rem;padding:5svh 1.2rem 7svh}
+  .newyork-grid .block{margin-bottom:.8rem}
+}
+@media(max-width:420px){
+  .newyork-grid{column-count:1}
+}
+
 /* CAPTIONS — apparaissent sous la photo au hover */
 .caption-corner{display:none}
 .caption-below{
@@ -631,97 +645,82 @@ img {
   <div class="serie-line"></div>
 </div>
 
-<!-- SÉQUENCE -->
+<!-- SÉQUENCE — grille (14 sept.) -->
+<div class="newyork-grid">
 
-
-<div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="Manhattan from Above" data-desc="L'Empire State Building domine une mer de béton. Depuis le sommet du 30 Rock, New York s'étend à l'infini." data-desc-en="The Empire State Building towers over a sea of concrete. From the top of 30 Rock, New York stretches to infinity.">
-  <img width="1333" height="2000"
-        src="images/manhattan-from-above.jpg"
-        srcset="images/manhattan-from-above-small.webp 640w, images/manhattan-from-above-medium.webp 1200w, images/manhattan-from-above-large.webp 1920w"
-        sizes="100vw"
-        alt="Manhattan from Above"
-        loading="eager"
-        decoding="async"><div class="caption-corner">Manhattan from Above</div>
-</div>
-<div class="gap"></div>
-<div class="block wide reveal" onclick="openLightbox(this)" data-title="Brooklyn Bridge" data-desc="Les câbles du pont comme autant de fils tendus vers le ciel gris de Manhattan. Une géométrie parfaite, suspendue entre deux rives." data-desc-en="The bridge cables, like threads stretched toward Manhattan's grey sky. A perfect geometry, suspended between two shores.">
-  <img width="2000" height="1328"
-        src="images/brooklyn-bridge.jpg"
-        srcset="images/brooklyn-bridge-small.webp 640w, images/brooklyn-bridge-medium.webp 1200w, images/brooklyn-bridge-large.webp 1920w"
-        sizes="100vw"
-        alt="Brooklyn Bridge"
-        loading="eager"
-        decoding="async"><div class="caption-corner">Brooklyn Bridge</div>
-</div>
-<div class="gap"></div>
-<div class="block offset reveal">
-  <div class="frame offset-left" onclick="openLightbox(this)" data-title="Brooklyn Bridge II" data-desc="Vu depuis les jardins de Brooklyn, le pont se dévoile à travers un rideau de feuilles. Le noir et blanc efface le temps." data-desc-en="Seen from the Brooklyn gardens, the bridge reveals itself through a curtain of leaves. Black and white erases time.">
-    <img width="2000" height="1333"
-        src="images/brooklyn-bridge-ii.jpg"
-        srcset="images/brooklyn-bridge-ii-small.webp 640w, images/brooklyn-bridge-ii-medium.webp 1200w, images/brooklyn-bridge-ii-large.webp 1920w"
-        sizes="(max-width:900px) 100vw, 52vw"
-        alt="Brooklyn Bridge II"
-        loading="eager"
-        decoding="async"><div class="caption-corner">Brooklyn Bridge II</div>
-  </div>
-</div>
-<div class="gap"></div>
-<div class="block wide reveal" onclick="openLightbox(this)" data-title="Manhattan Skyline" data-desc="Un taxi jaune flou à l'avant-plan, les tours qui percent le brouillard. New York se raconte dans chaque couche de distance." data-desc-en="A blurred yellow cab in the foreground, towers piercing the fog. New York reveals itself in every layer of distance.">
-  <img width="2000" height="1333"
-        src="images/manhattan-skyline.jpg"
-        srcset="images/manhattan-skyline-small.webp 640w, images/manhattan-skyline-medium.webp 1200w, images/manhattan-skyline-large.webp 1920w"
-        sizes="100vw"
-        alt="Manhattan Skyline"
-        loading="eager"
-        decoding="async"><div class="caption-corner">Manhattan Skyline</div>
-</div>
-<div class="gap"></div>
-<div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="Fire Escape" data-desc="Deux habitants d'un immeuble du Lower East Side, suspendus entre ciel et rue. La ville ordinaire, saisie dans l'extraordinaire." data-desc-en="Two residents of a Lower East Side building, suspended between sky and street. The ordinary city, caught in the extraordinary.">
-    <img width="1372" height="2000"
-        src="images/fire-escape.jpg"
-        srcset="images/fire-escape-small.webp 640w, images/fire-escape-medium.webp 1200w, images/fire-escape-large.webp 1920w"
-        sizes="(max-width:900px) 100vw, 45vw"
-        alt="Fire Escape"
-        loading="eager"
-        decoding="async"><div class="caption-corner">Fire Escape</div>
-  </div>
-</div>
-<div class="gap"></div>
-<div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="The Vessel" data-desc="Hudson Yards. L'architecture cuivrée du Vessel se reflète en milliers de facettes. Une ruche géante tournée vers le ciel." data-desc-en="Hudson Yards. The Vessel's copper architecture reflects in thousands of facets. A giant beehive turned toward the sky.">
-    <img width="1333" height="2000"
-        src="images/the-vessel.jpg"
-        srcset="images/the-vessel-small.webp 640w, images/the-vessel-medium.webp 1200w, images/the-vessel-large.webp 1920w"
-        sizes="(max-width:900px) 100vw, 45vw"
-        alt="The Vessel"
-        loading="eager"
-        decoding="async"><div class="caption-corner">The Vessel</div>
-  </div>
-</div>
-<div class="gap"></div>
-<div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="SoHo" data-desc="Les escaliers de secours de SoHo dessinent une dentelle de fer sur les façades blanches. La ville comme partition graphique." data-desc-en="SoHo's fire escapes trace an iron lacework across white façades. The city as a graphic score.">
-  <img width="2000" height="1333"
-        src="images/soho.jpg"
-        srcset="images/soho-small.webp 640w, images/soho-medium.webp 1200w, images/soho-large.webp 1920w"
-        sizes="100vw"
-        alt="SoHo"
-        loading="eager"
-        decoding="async"><div class="caption-corner">SoHo</div>
-</div>
-<div class="gap"></div>
-<div class="block offset reveal">
-  <div class="frame offset-right" onclick="openLightbox(this)" data-title="Quarters Only" data-desc="Sur une plateforme d'observation, une lunette en acier attend le prochain regard. La ville, derrière, ne dort jamais." data-desc-en="On an observation platform, a steel telescope awaits the next gaze. The city behind it never sleeps.">
-    <img width="2000" height="1333"
-        src="images/quarters-only.jpg"
-        srcset="images/quarters-only-small.webp 640w, images/quarters-only-medium.webp 1200w, images/quarters-only-large.webp 1920w"
-        sizes="(max-width:900px) 100vw, 52vw"
-        alt="Quarters Only"
-        loading="eager"
-        decoding="async"><div class="caption-corner">Quarters Only</div>
-  </div>
+<div class="block reveal" onclick="openLightbox(this)" data-title="Manhattan from Above" data-desc="L'Empire State Building domine une mer de béton. Depuis le sommet du 30 Rock, New York s'étend à l'infini." data-desc-en="The Empire State Building towers over a sea of concrete. From the top of 30 Rock, New York stretches to infinity.">
+  <img src="images/manhattan-from-above.jpg"
+    srcset="images/manhattan-from-above-small.webp 640w, images/manhattan-from-above-medium.webp 1200w, images/manhattan-from-above-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 33vw"
+    alt="Manhattan from Above"
+    loading="eager"
+    decoding="async">
 </div>
 
+<div class="block reveal" onclick="openLightbox(this)" data-title="Brooklyn Bridge" data-desc="Les câbles du pont comme autant de fils tendus vers le ciel gris de Manhattan. Une géométrie parfaite, suspendue entre deux rives." data-desc-en="The bridge cables, like threads stretched toward Manhattan's grey sky. A perfect geometry, suspended between two shores.">
+  <img src="images/brooklyn-bridge.jpg"
+    srcset="images/brooklyn-bridge-small.webp 640w, images/brooklyn-bridge-medium.webp 1200w, images/brooklyn-bridge-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 33vw"
+    alt="Brooklyn Bridge"
+    loading="eager"
+    decoding="async">
+</div>
+
+<div class="block reveal" onclick="openLightbox(this)" data-title="Brooklyn Bridge II" data-desc="Vu depuis les jardins de Brooklyn, le pont se dévoile à travers un rideau de feuilles. Le noir et blanc efface le temps." data-desc-en="Seen from the Brooklyn gardens, the bridge reveals itself through a curtain of leaves. Black and white erases time.">
+  <img src="images/brooklyn-bridge-ii.jpg"
+    srcset="images/brooklyn-bridge-ii-small.webp 640w, images/brooklyn-bridge-ii-medium.webp 1200w, images/brooklyn-bridge-ii-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 33vw"
+    alt="Brooklyn Bridge II"
+    loading="eager"
+    decoding="async">
+</div>
+
+<div class="block reveal" onclick="openLightbox(this)" data-title="Manhattan Skyline" data-desc="Un taxi jaune flou à l'avant-plan, les tours qui percent le brouillard. New York se raconte dans chaque couche de distance." data-desc-en="A blurred yellow cab in the foreground, towers piercing the fog. New York reveals itself in every layer of distance.">
+  <img src="images/manhattan-skyline.jpg"
+    srcset="images/manhattan-skyline-small.webp 640w, images/manhattan-skyline-medium.webp 1200w, images/manhattan-skyline-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 33vw"
+    alt="Manhattan Skyline"
+    loading="lazy"
+    decoding="async">
+</div>
+
+<div class="block reveal" onclick="openLightbox(this)" data-title="Fire Escape" data-desc="Deux habitants d'un immeuble du Lower East Side, suspendus entre ciel et rue. La ville ordinaire, saisie dans l'extraordinaire." data-desc-en="Two residents of a Lower East Side building, suspended between sky and street. The ordinary city, caught in the extraordinary.">
+  <img src="images/fire-escape.jpg"
+    srcset="images/fire-escape-small.webp 640w, images/fire-escape-medium.webp 1200w, images/fire-escape-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 33vw"
+    alt="Fire Escape"
+    loading="lazy"
+    decoding="async">
+</div>
+
+<div class="block reveal" onclick="openLightbox(this)" data-title="The Vessel" data-desc="Hudson Yards. L'architecture cuivrée du Vessel se reflète en milliers de facettes. Une ruche géante tournée vers le ciel." data-desc-en="Hudson Yards. The Vessel's copper architecture reflects in thousands of facets. A giant beehive turned toward the sky.">
+  <img src="images/the-vessel.jpg"
+    srcset="images/the-vessel-small.webp 640w, images/the-vessel-medium.webp 1200w, images/the-vessel-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 33vw"
+    alt="The Vessel"
+    loading="lazy"
+    decoding="async">
+</div>
+
+<div class="block reveal" onclick="openLightbox(this)" data-title="SoHo" data-desc="Les escaliers de secours de SoHo dessinent une dentelle de fer sur les façades blanches. La ville comme partition graphique." data-desc-en="SoHo's fire escapes trace an iron lacework across white façades. The city as a graphic score.">
+  <img src="images/soho.jpg"
+    srcset="images/soho-small.webp 640w, images/soho-medium.webp 1200w, images/soho-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 33vw"
+    alt="SoHo"
+    loading="lazy"
+    decoding="async">
+</div>
+
+<div class="block reveal" onclick="openLightbox(this)" data-title="Quarters Only" data-desc="Sur une plateforme d'observation, une lunette en acier attend le prochain regard. La ville, derrière, ne dort jamais." data-desc-en="On an observation platform, a steel telescope awaits the next gaze. The city behind it never sleeps.">
+  <img src="images/quarters-only.jpg"
+    srcset="images/quarters-only-small.webp 640w, images/quarters-only-medium.webp 1200w, images/quarters-only-large.webp 1920w"
+    sizes="(max-width:768px) 92vw, 33vw"
+    alt="Quarters Only"
+    loading="lazy"
+    decoding="async">
+</div>
+
+</div>
 <div class="gap"></div>
 <div class="contact-bandeau">
   <p class="contact-bandeau-text"><span data-fr="Vous avez repéré une photographie qui n'est pas disponible dans la boutique ?" data-en="Have you spotted a photograph that isn't available in the shop?">Vous avez repéré une photographie qui n'est pas disponible dans la boutique ?</span><br><a href="contact" data-fr="Contactez-moi" data-en="Contact me">Contactez-moi</a><span data-fr=" pour étudier sa disponibilité en tirage d'art." data-en=" to discuss its availability as a fine art print."> pour étudier sa disponibilité en tirage d'art.</span></p>

@@ -51,8 +51,8 @@
     {
       "titre": "Portraits",
       "titre_en": "Portraits",
-      "sous_titre": "Visages du monde",
-      "sous_titre_en": "Faces of the world",
+      "sous_titre": "Visages de Bali",
+      "sous_titre_en": "Faces of Bali",
       "image_cover": "images/portraits.jpg",
       "orientation": "landscape",
       "slug": "portraits",

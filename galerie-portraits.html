@@ -80,6 +80,20 @@
 .frame.offset-left,.frame.offset-right{width:min(52vw,740px);aspect-ratio:3/2;overflow:hidden;position:relative;margin:0}
 .frame.offset-left img,.frame.offset-right img{width:100%;height:100%;object-fit:cover}
 
+/* GRILLE — prototype "survol → lightbox" (test 14 sept.) */
+.portrait-grid{column-count:3;column-gap:1.4rem;padding:8svh 4vw 10svh;max-width:1500px;margin:0 auto}
+.portrait-grid .block{break-inside:avoid;margin-bottom:1.4rem;cursor:pointer;overflow:hidden;position:relative}
+.portrait-grid .block img{width:100%;height:auto;display:block;filter:contrast(1.04) saturate(1.06);transition:transform 1.1s ease,filter .8s ease}
+.portrait-grid .block.hovered img{transform:scale(1.035);filter:contrast(1.06) saturate(1.1)}
+.portrait-grid .caption-below{margin:.5rem 0 0}
+@media(max-width:768px){
+  .portrait-grid{column-count:2;column-gap:.8rem;padding:5svh 1.2rem 7svh}
+  .portrait-grid .block{margin-bottom:.8rem}
+}
+@media(max-width:420px){
+  .portrait-grid{column-count:1}
+}
+
 /* CAPTIONS — apparaissent sous la photo au hover */
 .caption-corner{display:none}
 .caption-below{
@@ -344,115 +358,62 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
   <div class="serie-line"></div>
 </div>
 
-<!-- SÉQUENCE -->
+<!-- SÉQUENCE — grille (prototype "survol → lightbox", 14 sept.) -->
+<div class="portrait-grid">
 
-<!-- portrait-bali-02 : landscape 1920x1279 → fullscreen -->
-<div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="La Danseuse" data-desc="Le masque se pose, les yeux se concentrent. Avant la danse, il y a ce moment de transformation." data-desc-en="The mask is applied, the eyes focus. Before the dance, there is this moment of transformation.">
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="La Danseuse" data-desc="Le masque se pose, les yeux se concentrent. Avant la danse, il y a ce moment de transformation." data-desc-en="The mask is applied, the eyes focus. Before the dance, there is this moment of transformation.">
   <img src="images/portrait-bali-02.jpg" alt="La Danseuse" loading="eager" decoding="async">
-  <div class="caption-corner">La Danseuse</div>
 </div>
-<div class="gap"></div>
 
-<!-- portrait-bali-007 : portrait 1333x2000 → centered-sm -->
-<div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="Célébration" data-desc="Sous les parasols sacrés, un visage rayonnant. La joie comme offrande." data-desc-en="Under the sacred parasols, a radiant face. Joy as offering.">
-    <img src="images/portrait-bali-007.jpg" alt="Célébration" loading="lazy" decoding="async">
-    <div class="caption-corner">Célébration</div>
-  </div>
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="Célébration" data-desc="Sous les parasols sacrés, un visage rayonnant. La joie comme offrande." data-desc-en="Under the sacred parasols, a radiant face. Joy as offering.">
+  <img src="images/portrait-bali-007.jpg" alt="Célébration" loading="eager" decoding="async">
 </div>
-<div class="gap"></div>
 
-<!-- portrait-bali-006 : landscape 1920x1279 → wide -->
-<div class="block wide reveal" onclick="openLightbox(this)" data-title="Le Cortège" data-desc="Ils avancent ensemble, en blanc, vers la cérémonie. La communauté comme force collective." data-desc-en="They move together, in white, toward the ceremony. The community as collective force.">
-  <img src="images/portrait-bali-006.jpg" alt="Le Cortège" loading="lazy" decoding="async">
-  <div class="caption-corner">Le Cortège</div>
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="Le Cortège" data-desc="Ils avancent ensemble, en blanc, vers la cérémonie. La communauté comme force collective." data-desc-en="They move together, in white, toward the ceremony. The community as collective force.">
+  <img src="images/portrait-bali-006.jpg" alt="Le Cortège" loading="eager" decoding="async">
 </div>
-<div class="gap"></div>
 
-<!-- portrait-bali-010 : landscape 1920x1279 → offset-left -->
-<div class="block offset reveal">
-  <div class="frame offset-left" onclick="openLightbox(this)" data-title="Parure d'Or" data-desc="Une parure royale, des yeux levés vers le rite. L'or de Bali sur une peau jeune." data-desc-en="A royal adornment, eyes raised toward the rite. Bali's gold on young skin.">
-    <img src="images/portrait-bali-010.jpg" alt="Parure d'Or" loading="lazy" decoding="async">
-    <div class="caption-corner">Parure d'Or</div>
-  </div>
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="Parure d'Or" data-desc="Une parure royale, des yeux levés vers le rite. L'or de Bali sur une peau jeune." data-desc-en="A royal adornment, eyes raised toward the rite. Bali's gold on young skin.">
+  <img src="images/portrait-bali-010.jpg" alt="Parure d'Or" loading="lazy" decoding="async">
 </div>
-<div class="gap"></div>
 
-<!-- portrait-bali-004 : portrait 1333x2000 → centered-sm -->
-<div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="L'Éveil" data-desc="Les yeux levés vers quelque chose que nous ne voyons pas encore." data-desc-en="Eyes lifted toward something we cannot yet see.">
-    <img src="images/portrait-bali-004.jpg" alt="L'Éveil" loading="lazy" decoding="async">
-    <div class="caption-corner">L'Éveil</div>
-  </div>
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="L'Éveil" data-desc="Les yeux levés vers quelque chose que nous ne voyons pas encore." data-desc-en="Eyes lifted toward something we cannot yet see.">
+  <img src="images/portrait-bali-004.jpg" alt="L'Éveil" loading="lazy" decoding="async">
 </div>
-<div class="gap"></div>
 
-<!-- portrait-bali-011 : portrait 1333x2000 → fullscreen -->
-<div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="Mélancolie" data-desc="Un profil perdu dans ses pensées, au bord du bruit du monde." data-desc-en="A profile lost in thought, on the edge of the world's noise.">
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="Mélancolie" data-desc="Un profil perdu dans ses pensées, au bord du bruit du monde." data-desc-en="A profile lost in thought, on the edge of the world's noise.">
   <img src="images/portrait-bali-011.jpg" alt="Mélancolie" loading="lazy" decoding="async">
-  <div class="caption-corner">Mélancolie</div>
 </div>
-<div class="gap"></div>
 
-<!-- portrait-bali-003 : landscape 1920x1279 → offset-right -->
-<div class="block offset reveal">
-  <div class="frame offset-right" onclick="openLightbox(this)" data-title="Sagesse" data-desc="Il rit. Et dans ce rire, toute la légèreté d'une vie longue et accomplie." data-desc-en="He laughs. And in that laughter, all the lightness of a long, fulfilled life.">
-    <img src="images/portrait-bali-003.jpg" alt="Sagesse" loading="lazy" decoding="async">
-    <div class="caption-corner">Sagesse</div>
-  </div>
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="Sagesse" data-desc="Il rit. Et dans ce rire, toute la légèreté d'une vie longue et accomplie." data-desc-en="He laughs. And in that laughter, all the lightness of a long, fulfilled life.">
+  <img src="images/portrait-bali-003.jpg" alt="Sagesse" loading="lazy" decoding="async">
 </div>
-<div class="gap"></div>
 
-<!-- portrait-bali-008 : portrait 1333x2000 → centered-sm -->
-<div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="Regard" data-desc="Un regard direct, calme, ancré dans la procession." data-desc-en="A direct gaze, calm, anchored in the procession.">
-    <img src="images/portrait-bali-008.jpg" alt="Regard" loading="lazy" decoding="async">
-    <div class="caption-corner">Regard</div>
-  </div>
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="Regard" data-desc="Un regard direct, calme, ancré dans la procession." data-desc-en="A direct gaze, calm, anchored in the procession.">
+  <img src="images/portrait-bali-008.jpg" alt="Regard" loading="lazy" decoding="async">
 </div>
-<div class="gap"></div>
 
-<!-- portrait-bali-012 : landscape 1920x1279 → wide -->
-<div class="block wide reveal" onclick="openLightbox(this)" data-title="Les Années" data-desc="Chaque ride est une histoire. Son visage est un atlas." data-desc-en="Every wrinkle is a story. Her face is an atlas." data-shop="portrait-bali-012">
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="Les Années" data-desc="Chaque ride est une histoire. Son visage est un atlas." data-desc-en="Every wrinkle is a story. Her face is an atlas." data-shop="portrait-bali-012">
   <img src="images/portrait-bali-012.jpg" alt="Les Années" loading="lazy" decoding="async">
-  <div class="caption-corner">Les Années</div>
 </div>
-<div class="gap"></div>
 
-<!-- portrait-bali-005 : landscape 1920x1279 → offset-left -->
-<div class="block offset reveal">
-  <div class="frame offset-left" onclick="openLightbox(this)" data-title="Transmission" data-desc="Entre les mains de l'ancienne et les yeux du petit, quelque chose passe — invisible et essentiel." data-desc-en="Between the elder's hands and the child's eyes, something passes — invisible and essential.">
-    <img src="images/portrait-bali-005.jpg" alt="Transmission" loading="lazy" decoding="async">
-    <div class="caption-corner">Transmission</div>
-  </div>
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="Transmission" data-desc="Entre les mains de l'ancienne et les yeux du petit, quelque chose passe — invisible et essentiel." data-desc-en="Between the elder's hands and the child's eyes, something passes — invisible and essential.">
+  <img src="images/portrait-bali-005.jpg" alt="Transmission" loading="lazy" decoding="async">
 </div>
-<div class="gap"></div>
 
-<!-- portrait-bali-009 : portrait 1333x2000 → centered-sm -->
-<div class="block centered reveal">
-  <div class="frame centered-sm" onclick="openLightbox(this)" data-title="L'Offrande" data-desc="Elle sourit en portant le monde sur sa tête." data-desc-en="She smiles while carrying the world on her head.">
-    <img src="images/portrait-bali-009.jpg" alt="L'Offrande" loading="lazy" decoding="async">
-    <div class="caption-corner">L'Offrande</div>
-  </div>
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="L'Offrande" data-desc="Elle sourit en portant le monde sur sa tête." data-desc-en="She smiles while carrying the world on her head.">
+  <img src="images/portrait-bali-009.jpg" alt="L'Offrande" loading="lazy" decoding="async">
 </div>
-<div class="gap"></div>
 
-
-<!-- portrait-bali-01 : landscape 1920x1279 → offset-right -->
-<div class="block offset reveal">
-  <div class="frame offset-right" onclick="openLightbox(this)" data-title="Le Geste" data-desc="Ce pouce levé comme une victoire offerte à l'objectif." data-desc-en="That raised thumb like a victory offered to the lens.">
-    <img src="images/portrait-bali-01.jpg" alt="Le Geste" loading="lazy" decoding="async">
-    <div class="caption-corner">Le Geste</div>
-  </div>
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="Le Geste" data-desc="Ce pouce levé comme une victoire offerte à l'objectif." data-desc-en="That raised thumb like a victory offered to the lens.">
+  <img src="images/portrait-bali-01.jpg" alt="Le Geste" loading="lazy" decoding="async">
 </div>
-<div class="gap"></div>
 
-<!-- portrait-bolivie-001 : portrait 1333x2000 → fullscreen -->
-<div class="block fullscreen reveal" onclick="openLightbox(this)" data-title="Sourire des Andes" data-desc="Depuis l'Altiplano bolivien, un sourire qui traverse les distances." data-desc-en="From the Bolivian Altiplano, a smile that crosses distances.">
+<div class="block grid-tile reveal" onclick="openLightbox(this)" data-title="Sourire des Andes" data-desc="Depuis l'Altiplano bolivien, un sourire qui traverse les distances." data-desc-en="From the Bolivian Altiplano, a smile that crosses distances.">
   <img src="images/portrait-bolivie-001.jpg" alt="Sourire des Andes" loading="lazy" decoding="async">
-  <div class="caption-corner">Sourire des Andes</div>
 </div>
 
+</div>
 <div class="gap"></div>
 <div class="contact-bandeau">
   <p class="contact-bandeau-text"><span data-fr="Vous avez repéré une photographie qui n'est pas disponible dans la boutique ?" data-en="Have you spotted a photograph that isn't available in the shop?">Vous avez repéré une photographie qui n'est pas disponible dans la boutique ?</span><br><a href="contact" data-fr="Contactez-moi" data-en="Contact me">Contactez-moi</a><span data-fr=" pour étudier sa disponibilité en tirage d'art." data-en=" to discuss its availability as a fine art print."> pour étudier sa disponibilité en tirage d'art.</span></p>

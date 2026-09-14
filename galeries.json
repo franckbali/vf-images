@@ -5,23 +5,12 @@
       "titre_en": "Bali",
       "sous_titre": "Temples, rites et offrandes",
       "sous_titre_en": "Temples, rites and offerings",
-      "image_cover": "images/offrandes-bali.jpg",
+      "image_cover": "images/offrandes-bali-002.jpg",
       "orientation": "portrait",
+      "featured": true,
       "slug": "bali",
       "page": "galerie-bali.html",
       "ordre": 1,
-      "visible": true
-    },
-    {
-      "titre": "New York",
-      "titre_en": "New York",
-      "sous_titre": "Le tumulte et l'instant",
-      "sous_titre_en": "The tumult and the instant",
-      "image_cover": "images/new-york.jpg",
-      "orientation": "landscape",
-      "slug": "new-york",
-      "page": "galerie-newyork.html",
-      "ordre": 2,
       "visible": true
     },
     {
@@ -33,19 +22,7 @@
       "orientation": "landscape",
       "slug": "ceremonies",
       "page": "galerie-ceremonies.html",
-      "ordre": 3,
-      "visible": false
-    },
-    {
-      "titre": "Voyages",
-      "titre_en": "Travels",
-      "sous_titre": "Des déserts américains à l'Altiplano",
-      "sous_titre_en": "From American deserts to the Altiplano",
-      "image_cover": "images/voyages.jpg",
-      "orientation": "portrait",
-      "slug": "voyages",
-      "page": "galerie-voyages.html",
-      "ordre": 4,
+      "ordre": 2,
       "visible": false
     },
     {
@@ -57,8 +34,32 @@
       "orientation": "landscape",
       "slug": "portraits",
       "page": "galerie-portraits.html",
-      "ordre": 5,
+      "ordre": 3,
       "visible": true
+    },
+    {
+      "titre": "New York",
+      "titre_en": "New York",
+      "sous_titre": "Le tumulte et l'instant",
+      "sous_titre_en": "The tumult and the instant",
+      "image_cover": "images/new-york.jpg",
+      "orientation": "landscape",
+      "slug": "new-york",
+      "page": "galerie-newyork.html",
+      "ordre": 4,
+      "visible": true
+    },
+    {
+      "titre": "Voyages",
+      "titre_en": "Travels",
+      "sous_titre": "Des déserts américains à l'Altiplano",
+      "sous_titre_en": "From American deserts to the Altiplano",
+      "image_cover": "images/voyages.jpg",
+      "orientation": "portrait",
+      "slug": "voyages",
+      "page": "galerie-voyages.html",
+      "ordre": 5,
+      "visible": false
     },
     {
       "titre": "La Réunion",

@@ -49,14 +49,29 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--light);animation:fadeUp 1.2s ease .4s both;line-height:1}
 .page-hero-sub{font-family:'Lora',serif;font-style:italic;font-size:.95rem;letter-spacing:.08em;color:rgba(245,243,239,.92);margin-top:1rem;animation:fadeUp 1.2s ease .6s both}
 
-/* GRILLE GALERIES */
+/* EN-TÊTE COMPACT — remplace le hero plein écran (14 sept.) */
+.galleries-header{padding:7rem 4rem 2rem}
+.galleries-header-eyebrow{font-size:0.80rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-warm);margin-bottom:.9rem;font-weight:400}
+.galleries-header-sub{font-family:'Lora',serif;font-style:italic;font-size:.95rem;color:rgba(245,243,239,.85);margin-top:1rem;max-width:520px;line-height:1.6}
+.galleries-header-sub a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.4);transition:border-color .3s}
+.galleries-header-sub a:hover{border-color:rgba(201,169,110,.85)}
+
+/* GRILLE GALERIES — diptyque : 1 galerie en avant (featured), les autres empilées à droite */
 .galleries-grid{
-  padding:3rem 4rem 4rem;
+  padding:0 4rem 4rem;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  grid-auto-rows:auto;
+  grid-template-columns:44fr 56fr;
+  min-height:75svh;
   gap:5px;
 }
+.gallery-door.featured{aspect-ratio:unset}
+.galleries-secondary{display:flex;flex-direction:column;gap:5px}
+.galleries-secondary .gallery-door{aspect-ratio:unset;flex:1;min-height:200px}
+
+/* Lien boutique en bas de page */
+.galleries-shop-cta{padding:0 4rem 5rem;text-align:center}
+.galleries-shop-cta a{display:inline-flex;align-items:center;gap:.6rem;font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.4);padding-bottom:.3rem;transition:border-color .3s}
+.galleries-shop-cta a:hover{border-color:rgba(201,169,110,.85)}
 
 /* PORTE D'ENTRÉE */
 .gallery-door{
@@ -159,17 +174,19 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 
 @media(max-width:900px){
   nav{padding:1.5rem 2rem}
-  .page-hero{padding:0 1.8rem 5rem;height:85svh}
-  .page-hero-eyebrow{font-size:1rem!important;letter-spacing:.25em!important}
+  .galleries-header{padding:6rem 1.8rem 1.5rem}
+  .galleries-header-sub{font-size:1.05rem!important}
   .page-title{letter-spacing:.12em!important}
-  .page-hero-sub{font-size:1.05rem!important}
 
-  /* Galerie — 1 colonne, hauteur fixe pour homogénéité */
+  /* Galerie — 1 colonne, hauteur fixe pour homogénéité ; le diptyque
+     desktop (featured + colonne empilée) redevient une simple liste */
   .galleries-grid{
     grid-template-columns:1fr;
-    padding:3rem 0 7rem;
+    padding:0 0 4rem;
     gap:4px;
   }
+  .galleries-secondary{display:contents}
+  .galleries-shop-cta{padding:0 1.8rem 4rem}
   .gallery-door{
     aspect-ratio:unset!important;
     height:260px!important;
@@ -476,22 +493,17 @@ img {
 
 <main id="main-content">
 
-<div class="page-hero">
-  <div class="page-hero-bg">
-    <picture>
-      <source type="image/avif" srcset="images/portrait-bali-003-h640.avif 640w, images/portrait-bali-003-h1280.avif 1280w, images/portrait-bali-003-h1920.avif 1920w" sizes="100vw">
-      <source type="image/webp" srcset="images/portrait-bali-003-h640.webp 640w, images/portrait-bali-003-h1280.webp 1280w, images/portrait-bali-003-h1920.webp 1920w" sizes="100vw">
-      <img class="page-hero-img" src="images/portrait-bali-003-h1280.webp" alt="" width="1920" height="1279" fetchpriority="high" decoding="async">
-    </picture>
-  </div>
-  <div class="page-hero-content">
-    <p class="page-hero-eyebrow">VF Images</p>
-    <h1 class="page-title" data-fr="Galerie" data-en="Gallery">Galerie</h1>
-    <p class="page-hero-sub" data-fr="Explorez les collections" data-en="Explore the collections">Explorez les collections</p>
-  </div>
+<div class="galleries-header">
+  <p class="galleries-header-eyebrow">VF Images</p>
+  <h1 class="page-title" data-fr="Galerie" data-en="Gallery">Galerie</h1>
+  <p class="galleries-header-sub"><span data-fr="Les séries, à regarder. Les tirages disponibles sont en " data-en="The series, to look at. Available prints are in the ">Les séries, à regarder. Les tirages disponibles sont en </span><a href="boutique" data-fr="boutique" data-en="shop">boutique</a><span data-fr="." data-en=".">.</span></p>
 </div>
 
 <div class="galleries-grid" id="galleries-grid"></div>
+
+<div class="galleries-shop-cta">
+  <a href="boutique" data-fr="Voir les tirages disponibles" data-en="See the available prints">Voir les tirages disponibles →</a>
+</div>
 
 </main>
 <footer role="contentinfo">
@@ -685,9 +697,10 @@ if(hamburger&&navOverlay){
       const galeries = data.galeries
         .filter(function(g){ return g.visible; })
         .sort(function(a,b){ return a.ordre - b.ordre; });
-      galeries.forEach(function(g, i){
+
+      function makeDoor(g, i, extraClass){
         const a = document.createElement('a');
-        a.className = 'gallery-door ' + g.orientation;
+        a.className = 'gallery-door ' + g.orientation + (extraClass ? ' ' + extraClass : '');
         a.href = g.page;
         var titreEn = g.titre_en || g.titre;
         var sousTitreEn = g.sous_titre_en || g.sous_titre;
@@ -708,7 +721,6 @@ if(hamburger&&navOverlay){
           '<span class="door-line"></span>' +
           '<span class="door-sub" data-fr="' + g.sous_titre + '" data-en="' + sousTitreEn + '">' + g.sous_titre + '</span>' +
           '</div></div>';
-        grid.appendChild(a);
         /* gallery doors don't grow the cursor ring — they're full-height tiles */
         a.addEventListener('touchstart', function(e){
           if(!a.classList.contains('touched')){
@@ -717,7 +729,21 @@ if(hamburger&&navOverlay){
             a.classList.add('touched');
           }
         }, {passive: false});
-      });
+        return a;
+      }
+
+      // Diptyque : une galerie "featured" (Bali) occupe la grande colonne,
+      // les autres s'empilent dans la colonne restante — tient à 3 comme à
+      // 6+ galeries, la colonne empilée grandit simplement avec le catalogue.
+      var featured = galeries.filter(function(g){ return g.featured; })[0] || galeries[0];
+      var rest = galeries.filter(function(g){ return g !== featured; });
+
+      grid.appendChild(makeDoor(featured, 0, 'featured'));
+      var secondary = document.createElement('div');
+      secondary.className = 'galleries-secondary';
+      rest.forEach(function(g, i){ secondary.appendChild(makeDoor(g, i + 1)); });
+      grid.appendChild(secondary);
+
       /* Apply current language to the newly created door elements */
       var currentLang = localStorage.getItem('vf_lang') || 'fr';
       if(currentLang === 'en' && window.setLang) window.setLang('en');

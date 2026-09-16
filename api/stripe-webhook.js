@@ -64,7 +64,15 @@ module.exports = async (req, res) => {
 //   destinataire ; on envoie l'email client dans delivery_email
 async function sendToCreativehub(session) {
   const { creativehub_variant_id } = session.metadata;
-  const shipping = session.shipping_details;
+  // Stripe a déplacé ce champ : jusqu'à début 2026 c'était `session.shipping_details`,
+  // c'est maintenant `session.collected_information.shipping_details` (vérifié sur
+  // la doc API le 16 sept. 2026, version de compte 2026-04-22.dahlia). On garde
+  // l'ancien chemin en repli au cas où l'API tournerait un jour sur une version
+  // antérieure à ce changement.
+  const shipping = session.collected_information?.shipping_details || session.shipping_details;
+  if (!shipping) {
+    throw new Error('Adresse de livraison introuvable sur la session Stripe (ni collected_information.shipping_details, ni shipping_details)');
+  }
 
   const orderPayload = {
     items: [

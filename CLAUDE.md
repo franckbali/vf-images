@@ -32,17 +32,17 @@ Type : **site HTML statique** (pas de framework JS, pas de build step, fichiers 
 - **Formulaire contact** : Formspree (ID `mwvybbrz`)
 - **API Creativehub** : `https://api.creativehub.io` (clé stockée en privé, hors dépôt)
 
-Pages existantes : `index`, `boutique`, `galerie-index`, `galerie-bali`, `galerie-newyork`, `galerie-portraits`, `a-propos`, `blog`, `blog-article` (Melasti), `blog-article-reunion` (La Réunion), `contact`, `mentions-legales`.
+Pages existantes : `index`, `boutique`, `galerie-index`, `galerie-bali`, `galerie-mekotek`, `galerie-newyork`, `galerie-portraits`, `a-propos`, `blog`, `blog-article` (Melasti), `blog-article-mekotek` (Mekotek), `contact`, `mentions-legales`.
 
 ---
 
 ## 3. Structure des galeries
 
-6 galeries configurées dans `galeries.json` (fichier édité par le CMS) :
-Bali · New York · Cérémonies · Voyages · Portraits · La Réunion.
+7 galeries configurées dans `galeries.json` (fichier édité par le CMS) :
+Bali · Mekotek · Cérémonies · Voyages · Portraits · New York · La Réunion.
 
 `galerie-index.html` lit `galeries.json` dynamiquement et génère les vignettes.
-Pages HTML existantes : Bali ✅ · New York ✅ · Portraits ✅ · Cérémonies ✗ · Voyages ✗ · La Réunion ✗.
+Pages HTML existantes : Bali ✅ · Mekotek ✅ · New York ✅ · Portraits ✅ · Cérémonies ✗ · Voyages ✗ · La Réunion ✗.
 
 Sous-titres actuels dans `galeries.json` :
 - Bali : « Temples, rites et offrandes »
@@ -102,7 +102,7 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 
 **Blog / Journal**
 - `blog-article.html` : article Melasti (texte complet, hero, police unifiée, section vidéo retirée)
-- `blog-article-reunion.html` : article « Cari feu de bois » créé de zéro
+- `blog-article-mekotek.html` (17 sept. 2026) : remplace « Cari feu de bois »/La Réunion, supprimé. Récit intact (texte de Fra, FR uniquement, EN à traduire plus tard), 16 photos `bali-mekotek-0XX`, bloc factuel « En pratique » bilingue, galerie dédiée `galerie-mekotek.html` (pas le slot « Cérémonies », resté dormant). 301 `/blog-article-reunion` → nouvelle URL dans `vercel.json`.
 - Page `blog.html` : 2 articles en grand format featured, alternance gauche/droite
 - Article « Réflexion » retiré
 

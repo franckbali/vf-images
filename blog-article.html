@@ -165,6 +165,19 @@ nav ul li a.active{color:var(--gold);text-shadow:0 0 20px rgba(201,169,110,.4)}
 .yt-lazy:hover .yt-thumb{filter:brightness(.95)}
 .yt-lazy iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 
+/* EN PRATIQUE */
+.article-facts{margin:3.5rem 0;padding:2.2rem 2.4rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.015)}
+.facts-label{font-family:'Raleway',sans-serif;font-size:0.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-warm);opacity:.85;margin-bottom:1.4rem}
+.facts-list{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+.facts-list li{display:flex;gap:1.2rem;align-items:baseline}
+.facts-term{font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,243,239,.5);flex-shrink:0;width:90px}
+.facts-value{font-family:'Lora',serif;font-size:0.95rem;font-style:italic;color:rgba(245,243,239,.92)}
+@media(max-width:480px){
+  .article-facts{padding:1.8rem 1.6rem}
+  .facts-list li{flex-direction:column;gap:.2rem}
+  .facts-term{width:auto}
+}
+
 /* TAGS */
 .article-tags{
   display:flex;align-items:center;gap:.8rem;
@@ -500,6 +513,16 @@ img {
 
     <p class="reveal" data-fr="Photographies réalisées à Petitenget, lors du Melasti 2025. — VF Images / The Lens of Wonder" data-en="Photographs taken in Petitenget, during Melasti 2025. — VF Images / The Lens of Wonder">Photographies réalisées à Petitenget, lors du Melasti 2025. — VF Images / The Lens of Wonder</p>
 
+  </div>
+
+  <!-- EN PRATIQUE -->
+  <div class="article-facts reveal">
+    <p class="facts-label" data-fr="En pratique" data-en="In practice">En pratique</p>
+    <ul class="facts-list">
+      <li><span class="facts-term" data-fr="Lieu" data-en="Location">Lieu</span><span class="facts-value" data-fr="Petitenget, Bali" data-en="Petitenget, Bali">Petitenget, Bali</span></li>
+      <li><span class="facts-term" data-fr="Fréquence" data-en="Frequency">Fréquence</span><span class="facts-value" data-fr="Chaque année, quelques jours avant Nyepi" data-en="Every year, a few days before Nyepi">Chaque année, quelques jours avant Nyepi</span></li>
+      <li><span class="facts-term" data-fr="Origine" data-en="Origin">Origine</span><span class="facts-value" data-fr="Tradition hindoue balinaise ancestrale, liée au calendrier Saka" data-en="Ancestral Balinese Hindu tradition, tied to the Saka calendar">Tradition hindoue balinaise ancestrale, liée au calendrier Saka</span></li>
+    </ul>
   </div>
 
   <!-- TAGS -->

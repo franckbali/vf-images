@@ -5,6 +5,12 @@
       "name": "bali-confidential",
       "url": "http://localhost:1420",
       "port": 1420
+    },
+    {
+      "name": "vf-images",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8123", "--directory", "/Users/franckvinel/Desktop/vf-images"],
+      "port": 8123
     }
   ]
 }

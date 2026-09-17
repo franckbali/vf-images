@@ -2,6 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/blog-article-reunion.html", "destination": "/blog-article-mekotek", "permanent": true },
+    { "source": "/blog-article-reunion",      "destination": "/blog-article-mekotek", "permanent": true },
     { "source": "/gallery.html", "destination": "/galerie-index", "permanent": true },
     { "source": "/gallery",      "destination": "/galerie-index", "permanent": true },
     { "source": "/shop.html",    "destination": "/boutique",    "permanent": true },

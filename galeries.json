@@ -14,6 +14,18 @@
       "visible": true
     },
     {
+      "titre": "Mekotek",
+      "titre_en": "Mekotek",
+      "sous_titre": "La pyramide de bâtons de Munggu",
+      "sous_titre_en": "Munggu's pyramid of sticks",
+      "image_cover": "images/bali-mekotek-012.jpg",
+      "orientation": "landscape",
+      "slug": "mekotek",
+      "page": "galerie-mekotek.html",
+      "ordre": 2,
+      "visible": true
+    },
+    {
       "titre": "Cérémonies",
       "titre_en": "Ceremonies",
       "sous_titre": "L'âme de Bali en images",

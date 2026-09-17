@@ -92,6 +92,11 @@
       display: block;
       aspect-ratio: 3 / 2;
       object-fit: cover;
+      -webkit-user-drag: none;
+      user-drag: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
     }
     .photo-caption {
       font-size: .6rem;
@@ -448,6 +453,17 @@
       });
 
     applyLang(lang);
+  </script>
+
+  <script>
+  (function(){
+    document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG'){e.preventDefault();return false;}});
+    document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG'){e.preventDefault();return false;}});
+    document.addEventListener('keydown',function(e){
+      if((e.ctrlKey||e.metaKey)&&e.key==='s'){e.preventDefault();return false;}
+      if((e.ctrlKey||e.metaKey)&&e.key==='u'){e.preventDefault();return false;}
+    });
+  })();
   </script>
 
 </body>

@@ -42,6 +42,7 @@ module.exports = async (req, res) => {
     const kv = getKv();
     await kv.set('cert:TEST1234', record);
     await kv.set('cert:TESTOPEN', openRecord);
+    await kv.set('session_cert:cs_test_fake', 'TEST1234', { ex: 600 });
     return res.status(200).json({ ok: true, urls: ['/certificat/TEST1234', '/certificat/TESTOPEN'] });
   } catch (err) {
     return res.status(500).json({ error: err.message });

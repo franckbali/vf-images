@@ -19,19 +19,22 @@
         {
           "label": "45×30",
           "price_eur": 95,
-          "creativehub_variant_id": "V-N1TIIHYI"
+          "creativehub_variant_id": "ad638a4d-ca12-4ccc-9d55-c3d104402f7b",
+          "creativehub_sku": "V-N1TIIHYI"
         },
         {
           "label": "60×40",
           "price_eur": 190,
-          "creativehub_variant_id": "V-2LRL800N"
+          "creativehub_variant_id": "6c82f81e-f89c-4f85-afca-022c75b6d8c0",
+          "creativehub_sku": "V-2LRL800N"
         },
         {
           "label": "100×70",
           "price_eur": 690,
-          "creativehub_variant_id": "V-GYLTS2EJ",
+          "creativehub_variant_id": "2bd6ba53-b2b3-4740-a551-afea911983ee",
           "limited_edition": 15,
-          "sold_count": 0
+          "sold_count": 0,
+          "creativehub_sku": "V-GYLTS2EJ"
         }
       ]
     },
@@ -54,19 +57,22 @@
         {
           "label": "45×30",
           "price_eur": 95,
-          "creativehub_variant_id": "V-HR9WVHRR"
+          "creativehub_variant_id": "d93ee1ba-31cf-4314-9a8f-488191a6f344",
+          "creativehub_sku": "V-HR9WVHRR"
         },
         {
           "label": "60×40",
           "price_eur": 190,
-          "creativehub_variant_id": "V-5IIU2AG8"
+          "creativehub_variant_id": "4b9a3b77-f4c6-4389-b2e0-157896c7f679",
+          "creativehub_sku": "V-5IIU2AG8"
         },
         {
           "label": "100×70",
           "price_eur": 690,
-          "creativehub_variant_id": "V-2DR8I9G2",
+          "creativehub_variant_id": "d30d921a-6553-4e22-b7fc-4ccafe777296",
           "limited_edition": 15,
-          "sold_count": 0
+          "sold_count": 0,
+          "creativehub_sku": "V-2DR8I9G2"
         }
       ]
     },
@@ -89,19 +95,22 @@
         {
           "label": "30×45",
           "price_eur": 95,
-          "creativehub_variant_id": "V-BIXYVFC6"
+          "creativehub_variant_id": "a6c6f6f7-a3c3-4c2b-82c0-a117312f9ce3",
+          "creativehub_sku": "V-BIXYVFC6"
         },
         {
           "label": "40×60",
           "price_eur": 190,
-          "creativehub_variant_id": "V-A50VLI9I"
+          "creativehub_variant_id": "f77dd477-03eb-4cfc-97ac-aa1fcdaced36",
+          "creativehub_sku": "V-A50VLI9I"
         },
         {
           "label": "70×100",
           "price_eur": 690,
-          "creativehub_variant_id": "V-PVUBAB49",
+          "creativehub_variant_id": "6dcc6d6c-6d5d-4f4a-83ca-c6ea9d263bf4",
           "limited_edition": 15,
-          "sold_count": 0
+          "sold_count": 0,
+          "creativehub_sku": "V-PVUBAB49"
         }
       ]
     },
@@ -124,19 +133,22 @@
         {
           "label": "30×40",
           "price_eur": 95,
-          "creativehub_variant_id": "V-JMWXJLKF"
+          "creativehub_variant_id": "c6efbf7d-cc07-4a81-a0da-d8ce9c3dfb56",
+          "creativehub_sku": "V-JMWXJLKF"
         },
         {
           "label": "40×50",
           "price_eur": 190,
-          "creativehub_variant_id": "V-99UHEP9D"
+          "creativehub_variant_id": "b567b1ab-b3c2-494d-937f-383b48d33b13",
+          "creativehub_sku": "V-99UHEP9D"
         },
         {
           "label": "60×80",
           "price_eur": 690,
-          "creativehub_variant_id": "V-1JBNG57C",
+          "creativehub_variant_id": "5ed3b1d0-0776-4365-9d6d-c022e6ab89e3",
           "limited_edition": 15,
-          "sold_count": 0
+          "sold_count": 0,
+          "creativehub_sku": "V-1JBNG57C"
         }
       ]
     }

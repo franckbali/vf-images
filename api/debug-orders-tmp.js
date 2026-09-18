@@ -25,6 +25,18 @@ module.exports = async (req, res) => {
       return res.status(200).json({ marker: 'v2', query: req.query, url: req.url });
     }
 
+    if (req.query && req.query.variant !== undefined) {
+      // teste si un fetch direct d'un variant expose un compteur (sold_count / available / remaining)
+      const productId = '731636ec-c7ce-4be3-85c8-c5fa4f368e37'; // offrandes / La Conversation Silencieuse
+      const variantId = 'c6efbf7d-cc07-4a81-a0da-d8ce9c3dfb56';
+      const vRes = await fetch(`https://escher-v2.creativehub.io/v1/products/${productId}/variants/${variantId}`, {
+        headers: { Authorization: `Bearer ${key}` },
+      });
+      const vText = await vRes.text();
+      let vData; try { vData = JSON.parse(vText); } catch { vData = vText; }
+      return res.status(200).json({ status: vRes.status, data: vData });
+    }
+
     if (req.query && req.query.detail !== undefined && data.orders && data.orders.length) {
       const orderId = req.query.id || data.orders[0].id;
       const detailRes = await fetch(`https://escher-v2.creativehub.io/v1/orders/${orderId}`, {

@@ -6,6 +6,12 @@ const { getKv } = require('./_lib/kv');
 const catalogue = require('../catalogue.json');
 
 module.exports = async (req, res) => {
+  if (req.query.cleanup !== undefined) {
+    const kv = getKv();
+    await kv.del('cert:TEST1234', 'cert:TESTOPEN', 'session_cert:cs_test_fake');
+    return res.status(200).json({ cleaned: true });
+  }
+
   const photo = catalogue.photos.find(p => p.id === 'offrandes-bali-002');
   const format = photo.formats.find(f => f.label === '60×80');
 

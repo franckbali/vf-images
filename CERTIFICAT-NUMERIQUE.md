@@ -4,28 +4,29 @@
 > Pas de certificat papier au lancement. Le certificat papier signé à la main reste une option future, éditions limitées uniquement (cf. mémoire `nettoyage-mensonges-passifs` / discussion certificat).
 >
 > **Ne rien promettre sur le site tant que ce n'est pas en place** (sinon "mensonge passif"). Le site dit déjà "Certificat d'authenticité" sur les formats limités (le certificat Creativehub imprimé actuel) — ne pas étendre cette promesse à tous les formats avant que le numérique fonctionne.
+>
+> **✅ Construit le 18 sept. 2026** (voir CLAUDE.md §4 pour l'état exact). Testé avec des données de test injectées directement en KV, **pas encore avec un vrai achat** — c'est la seule validation qui reste avant de publier les textes du site (dernière section de ce doc).
 
 ## Dépendances (à faire AVANT)
 
-1. Chaîne de paiement active et testée (§3-5 CLAUDE.md — token Creativehub, env vars Vercel, achat test réel).
-2. **Resend** connecté (email de confirmation client — déjà un TODO dans `api/stripe-webhook.js`). Le certificat part dans cet email.
-3. **Vercel KV** ajouté au projet (free tier largement suffisant).
+1. Chaîne de paiement active et testée (§3-5 CLAUDE.md — token Creativehub, env vars Vercel, achat test réel). ✅ FAIT (18 sept.)
+2. **Resend** connecté (email de confirmation client — déjà un TODO dans `api/stripe-webhook.js`). Le certificat part dans cet email. **Pas fait, pas bloquant** : le lien du certificat s'affiche directement sur la page de succès de la boutique (polling `api/certificat-lookup.js`), l'email est un bonus pour plus tard.
+3. ~~Vercel KV~~ — **Vercel KV n'existe plus en tant que produit natif** (remplacé par la Marketplace Vercel). ✅ FAIT (18 sept.) : Upstash Redis ajouté via Storage → Marketplace → Upstash for Redis, plan Free (500K commandes/mois, 256 Mo). Vars injectées : `KV_REST_API_URL` / `KV_REST_API_TOKEN`.
 
 ## Architecture
 
 Site statique + fonctions serverless sur Vercel. Le webhook Stripe (`api/stripe-webhook.js`) fait déjà foi après paiement — c'est là qu'on génère le certificat.
 
 ### 1. Code unique
-- Format : `VFC-XXXXXXXX` (préfixe + 8-10 caractères url-safe aléatoires, style nanoid).
+- Format : `VFC-XXXXXXXX` (8 caractères, alphabet sans 0/O/1/I pour éviter les confusions). ✅ `api/_lib/certificate.js`.
 - **Non séquentiel / non devinable** (sinon on peut énumérer tous les certificats).
 - Généré dans le webhook au moment du `checkout.session.completed`.
 
-### 2. Stockage — Vercel KV
+### 2. Stockage — Upstash Redis (`api/_lib/kv.js`)
 - `cert:{code}` → JSON de l'enregistrement (voir champs ci-dessous). Écrit par le webhook.
-- **`edition:{photo_id}:{format_label}` → compteur vendu**, incrémenté **atomiquement** par le webhook (`INCR`) pour attribuer le numéro d'exemplaire d'une édition limitée.
-  - ⚠️ Ça déplace `sold_count` de `catalogue.json` (statique, manuel) vers KV. `api/edition-status.js` doit alors lire le compteur depuis KV.
-  - **Ce travail = le même que le compteur « X restants »** (§ "Structure/cohérence" CLAUDE.md, bloqué depuis juillet). À faire ensemble.
-  - `catalogue.json` garde `limited_edition: 15` (le total, source de vérité) ; seul le *vendu* passe en KV.
+- `session_cert:{stripe_session_id}` → `code`, TTL 24h. Pointeur temporaire pour que la page de succès retrouve le certificat juste après paiement (avant que l'email existe).
+- **Numéro d'édition : PAS d'INCR KV séparé, finalement.** Le compteur « X restants » (`api/edition-status.js`) interroge déjà l'API Orders de Creativehub en direct (source de vérité, fait le 18 sept. — voir CLAUDE.md §4). Comme la commande Creativehub est créée *avant* le certificat dans le webhook, elle est déjà comptée : `countSoldByVariant()` (dans `api/_lib/creativehub.js`, partagé) donne directement le numéro d'exemplaire. Pas de risque de dérive entre deux sources de vérité différentes. `catalogue.json` garde `limited_edition: 15` (le total).
+  - ⚠️ Limite connue et acceptée : si deux achats du même tirage limité arrivent à quelques secondes d'écart, il y a un petit risque de collision sur le numéro attribué (pas de verrou distribué). Volume actuel de la boutique largement en dessous de ce seuil de risque.
 
 ### 3. Champs de l'enregistrement certificat
 Depuis `session` Stripe + `catalogue.json` :
@@ -40,14 +41,14 @@ format_label      session.metadata.format_label  (ex. "100×70")
 dimensions_cm     "100 × 70 cm"
 paper_fr/paper_en catalogue
 edition           "open"  |  "limited"
-edition_number    (si limited) N° attribué via INCR KV
+edition_number    (si limited) N° attribué via countSoldByVariant() Creativehub
 edition_total     (si limited) catalogue.limited_edition  (ex. 15)
 buyer_name        session.shipping_details.name   (PDF uniquement, PAS sur la page publique)
 buyer_email       session.customer_details.email  (jamais affiché)
 stripe_session_id (référence interne, jamais affiché)
 ```
 
-### 4. Page de vérification — `/certificat/[code]` (ou `/api/certificat?code=X`)
+### 4. Page de vérification — `/certificat/[code]` — ✅ FAIT (18 sept., `api/certificat.js`)
 - Publique, sans authentification (c'est le but : n'importe qui avec le code vérifie la provenance).
 - Rend le certificat depuis `cert:{code}` en KV.
 - Code introuvable → page propre "Certificat introuvable".
@@ -57,8 +58,9 @@ stripe_session_id (référence interne, jamais affiché)
 - Bilingue FR/EN (même toggle que le site, ou selon `?lang=`).
 
 ### 5. Livraison
-- Email de confirmation Resend (client + copie Fra) : lien vers `/certificat/[code]` + (phase 2) PDF joint.
-- Encart dans le colis : Creativehub peut insérer une carte avec **QR code → `/certificat/[code]`** (encart statique, à configurer côté Creativehub — vérifier s'ils le facturent).
+- ✅ FAIT (18 sept.) : lien affiché directement sur la page de succès de la boutique après paiement (`api/certificat-lookup.js` + polling côté client, le webhook Stripe étant asynchrone).
+- **Pas fait** : email de confirmation Resend (client + copie Fra) avec le lien + (phase 2) PDF joint. Bonus pour plus tard, pas bloquant.
+- **Pas fait** : encart dans le colis avec QR code → `/certificat/[code]` (à configurer côté Creativehub — vérifier s'ils le facturent).
 
 ## Contenu / formulation (garde-fous honnêteté)
 

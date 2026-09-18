@@ -63,11 +63,6 @@ module.exports = async (req, res) => {
   return res.status(200).json({ received: true });
 };
 
-// Export temporaire pour générer rétroactivement le certificat de la
-// commande EC-AA98978 (achetée avant que le certificat existe) — à retirer
-// après usage, le certificat lui-même reste en base.
-module.exports.createCertificate = createCertificate;
-
 // ─── Envoie la commande à Creativehub/Printspace ───────────────────────────
 // API "Escher V2" (migration obligatoire début sept. 2026, l'ancienne
 // https://api.creativehub.io/api/v1 ne répond plus). Doc à jour :

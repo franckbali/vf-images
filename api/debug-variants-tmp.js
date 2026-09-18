@@ -25,7 +25,21 @@ module.exports = async (req, res) => {
       return res.status(prodRes.status).json({ step: 'products', error: t });
     }
     const prodData = await prodRes.json();
-    const products = prodData.results || prodData.items || prodData;
+
+    if (req.query.raw !== undefined) {
+      return res.status(200).json({ raw_products_response: prodData });
+    }
+
+    const products = Array.isArray(prodData) ? prodData
+      : Array.isArray(prodData.results) ? prodData.results
+      : Array.isArray(prodData.items) ? prodData.items
+      : Array.isArray(prodData.data) ? prodData.data
+      : Array.isArray(prodData.products) ? prodData.products
+      : [];
+
+    if (!products.length) {
+      return res.status(200).json({ error: 'products is not iterable', raw_products_response: prodData });
+    }
 
     const matches = [];
     const allVariants = [];
@@ -37,7 +51,12 @@ module.exports = async (req, res) => {
       });
       if (!varRes.ok) continue;
       const varData = await varRes.json();
-      const variants = varData.results || varData.items || varData;
+      const variants = Array.isArray(varData) ? varData
+        : Array.isArray(varData.results) ? varData.results
+        : Array.isArray(varData.items) ? varData.items
+        : Array.isArray(varData.data) ? varData.data
+        : Array.isArray(varData.variants) ? varData.variants
+        : [];
 
       for (const v of variants) {
         const entry = {

@@ -19,8 +19,19 @@ module.exports = async (req, res) => {
     if (!ordersRes.ok) {
       return res.status(ordersRes.status).json({ step: 'orders', error: text });
     }
-    let data;
-    try { data = JSON.parse(text); } catch { data = text; }
+    const data = JSON.parse(text);
+
+    if (req.query.detail !== undefined && data.orders && data.orders.length) {
+      const orderId = req.query.id || data.orders[0].id;
+      const detailRes = await fetch(`https://escher-v2.creativehub.io/v1/orders/${orderId}`, {
+        headers: { Authorization: `Bearer ${key}` },
+      });
+      const detailText = await detailRes.text();
+      let detail;
+      try { detail = JSON.parse(detailText); } catch { detail = detailText; }
+      return res.status(200).json({ order_id: orderId, status: detailRes.status, detail });
+    }
+
     return res.status(200).json(data);
   } catch (err) {
     return res.status(500).json({ error: err.message });

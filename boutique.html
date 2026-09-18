@@ -1387,7 +1387,7 @@ async function handleCheckout(btn) {
     const res = await fetch('/api/create-checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ photo_id: photoId, format_label: format })
+      body: JSON.stringify({ photo_id: photoId, format_label: format, lang: currentLang })
     });
     const data = await res.json();
     if (data.url) {

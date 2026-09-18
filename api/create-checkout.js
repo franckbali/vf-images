@@ -36,7 +36,8 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'Body invalide' });
   }
 
-  const { photo_id, format_label } = body;
+  const { photo_id, format_label, lang } = body;
+  const isEn = lang === 'en';
 
   // Trouver la photo dans le catalogue
   const photo = catalogue.photos.find(p => p.id === photo_id);
@@ -57,7 +58,7 @@ module.exports = async (req, res) => {
             currency: 'eur',
             product_data: {
               name: `${photo.title_fr} — ${format_label} cm`,
-              description: `Tirage Fine Art Hahnemühle · ${format_label} cm · Livraison offerte en Europe`,
+              description: `Tirage Fine Art ${photo.paper_fr} · ${format_label} cm · Livraison offerte en Europe`,
               images: [`${siteUrl}/${photo.image}`],
             },
             unit_amount: format.price_eur * 100, // Stripe travaille en centimes
@@ -74,6 +75,21 @@ module.exports = async (req, res) => {
           'HU', 'RO', 'GR', 'HR', 'SK', 'SI', 'BG', 'EE', 'LV', 'LT'
         ],
       },
+      // Champ optionnel — capte le nom de société si un acheteur pro a besoin
+      // d'une facture plus tard (pas de génération de facture pour l'instant,
+      // juste l'info récupérée dans la session Stripe pour ne pas avoir à la
+      // redemander après coup)
+      custom_fields: [
+        {
+          key: 'company_name',
+          label: {
+            type: 'custom',
+            custom: isEn ? 'Company (for invoice, optional)' : 'Société (pour facture, optionnel)',
+          },
+          type: 'text',
+          optional: true,
+        },
+      ],
       // Infos passées au webhook pour créer la commande Creativehub
       metadata: {
         photo_id: photo.id,

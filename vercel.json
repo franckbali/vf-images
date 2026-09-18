@@ -32,6 +32,9 @@
     { "source": "/en/legal.html",        "destination": "/mentions-legales", "permanent": true },
     { "source": "/en/legal",             "destination": "/mentions-legales", "permanent": true }
   ],
+  "rewrites": [
+    { "source": "/certificat/:code", "destination": "/api/certificat?code=:code" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

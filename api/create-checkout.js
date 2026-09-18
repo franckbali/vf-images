@@ -81,7 +81,7 @@ module.exports = async (req, res) => {
         creativehub_variant_id: format.creativehub_variant_id,
         price_eur: String(format.price_eur),
       },
-      success_url: `${siteUrl}/boutique.html?status=success`,
+      success_url: `${siteUrl}/boutique.html?status=success&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url:  `${siteUrl}/boutique.html?status=cancelled`,
     });
 

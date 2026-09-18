@@ -342,6 +342,20 @@
   font-family:'Raleway',sans-serif;font-weight:300;
   margin-bottom:2rem;
 }
+.order-confirm-cert-pending{
+  font-size:.72rem;letter-spacing:.08em;
+  color:rgba(245,243,239,.45);
+  font-family:'Raleway',sans-serif;font-weight:300;font-style:italic;
+  margin:-1rem 0 1.6rem;
+}
+.order-confirm-cert{margin:-1rem 0 1.6rem}
+.order-confirm-cert-link{
+  font-family:'Raleway',sans-serif;font-size:.75rem;letter-spacing:.1em;
+  color:var(--gold);text-decoration:none;
+  border-bottom:1px solid rgba(201,169,110,.4);
+  transition:border-color .3s;
+}
+.order-confirm-cert-link:hover{border-color:rgba(201,169,110,.9)}
 .order-confirm-close{
   display:inline-block;
   padding:.8rem 2.2rem;
@@ -752,6 +766,10 @@ img {
   </div>
   <h3 class="order-confirm-title" id="orderConfirmTitle" data-fr="Commande confirmée" data-en="Order confirmed">Commande confirmée</h3>
   <p class="order-confirm-text" id="orderConfirmText" data-fr="Merci pour votre commande. Vous allez recevoir un email de confirmation, et votre tirage sera imprimé et expédié depuis notre laboratoire partenaire en Europe." data-en="Thank you for your order. You will receive a confirmation email shortly, and your print will be produced and shipped from our partner lab in Europe.">Merci pour votre commande. Vous allez recevoir un email de confirmation, et votre tirage sera imprimé et expédié depuis notre laboratoire partenaire en Europe.</p>
+  <p class="order-confirm-cert-pending" id="orderConfirmCertPending" style="display:none" data-fr="Génération de votre certificat d'authenticité…" data-en="Generating your certificate of authenticity…">Génération de votre certificat d'authenticité…</p>
+  <div class="order-confirm-cert" id="orderConfirmCert" style="display:none">
+    <a class="order-confirm-cert-link" id="orderConfirmCertLink" href="#" target="_blank" rel="noopener" data-fr="Voir mon certificat d'authenticité →" data-en="View my certificate of authenticity →">Voir mon certificat d'authenticité →</a>
+  </div>
   <button class="order-confirm-close" onclick="closeOrderConfirm()" data-fr="Fermer" data-en="Close">Fermer</button>
 </div>
 
@@ -1423,13 +1441,47 @@ function closeOrderConfirm(){
 (function checkStripeReturn() {
   const params = new URLSearchParams(window.location.search);
   const status = params.get('status');
+  const sessionId = params.get('session_id');
   if (!status) return;
   // Nettoyer l'URL
   history.replaceState({}, '', window.location.pathname);
   if (status === 'success' || status === 'cancelled') {
     setTimeout(() => openOrderConfirm(status), 300);
+    if (status === 'success' && sessionId) pollCertificate(sessionId);
   }
 })();
+
+// Le certificat est généré par le webhook Stripe (asynchrone, pas garanti
+// prêt à l'instant où on atterrit sur cette page) — on l'attend un peu.
+function pollCertificate(sessionId){
+  const pending = document.getElementById('orderConfirmCertPending');
+  const certBlock = document.getElementById('orderConfirmCert');
+  const certLink = document.getElementById('orderConfirmCertLink');
+  if (!pending || !certBlock || !certLink) return;
+  pending.style.display = 'block';
+
+  let attempts = 0;
+  const maxAttempts = 10; // ~20s
+  const tick = () => {
+    attempts++;
+    fetch('/api/certificat-lookup?session_id=' + encodeURIComponent(sessionId))
+      .then(r => r.json())
+      .then(data => {
+        if (data.ready && data.code) {
+          pending.style.display = 'none';
+          const url = 'https://vfimages.com/certificat/' + data.code;
+          certLink.href = url;
+          certBlock.style.display = 'block';
+        } else if (attempts < maxAttempts) {
+          setTimeout(tick, 2000);
+        } else {
+          pending.style.display = 'none';
+        }
+      })
+      .catch(() => { pending.style.display = 'none'; });
+  };
+  setTimeout(tick, 2000);
+}
 
 /* ═══ FULLSCREEN MOCKUP ═══ */
 let _vizFsW=30,_vizFsH=45;

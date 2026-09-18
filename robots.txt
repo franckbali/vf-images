@@ -4,5 +4,6 @@ Disallow: /admin/
 Disallow: /boutique_backup
 Disallow: /propositions-palettes-vf-images
 Disallow: /raffinements-style-actuel
+Disallow: /certificat/
 
 Sitemap: https://vfimages.com/sitemap.xml

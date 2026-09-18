@@ -5,6 +5,10 @@
 // ═══════════════════════════════════════════════════════
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const catalogue = require('../catalogue.json');
+const { countSoldByVariant } = require('./_lib/creativehub');
+const { generateCertificateCode } = require('./_lib/certificate');
+const { getKv } = require('./_lib/kv');
 
 // Lit le body brut (nécessaire pour vérifier la signature Stripe)
 function readRawBody(req) {
@@ -39,6 +43,15 @@ module.exports = async (req, res) => {
     try {
       const order = await sendToCreativehub(session);
       console.log('Commande Creativehub créée:', order);
+
+      try {
+        const code = await createCertificate(session);
+        console.log('Certificat créé:', code);
+      } catch (certErr) {
+        // Ne bloque jamais la commande — le certificat peut être régénéré/réparé
+        // manuellement plus tard si besoin, la commande elle-même est déjà passée.
+        console.error('Erreur création certificat (commande OK malgré tout):', certErr.message);
+      }
     } catch (err) {
       console.error('Erreur Creativehub:', err.message);
       // On notifie par email pour intervention manuelle
@@ -111,6 +124,58 @@ async function sendToCreativehub(session) {
 
   // { order_id, order_number, currency, total_incl_vat, lines }
   return response.json();
+}
+
+// ─── Crée le certificat d'authenticité numérique ───────────────────────────
+// Appelée seulement après succès de la commande Creativehub. Écrit dans
+// Upstash Redis : cert:{code} (l'enregistrement complet, lu par
+// /api/certificat) et session_cert:{stripe_session_id} (pointeur, pour que
+// la page de succès retrouve le code juste après le paiement).
+async function createCertificate(session) {
+  const { photo_id, format_label, creativehub_variant_id } = session.metadata;
+  const shipping = session.collected_information?.shipping_details || session.shipping_details;
+
+  const photo = catalogue.photos.find(p => p.id === photo_id);
+  if (!photo) throw new Error(`Photo "${photo_id}" introuvable dans catalogue.json`);
+  const format = photo.formats.find(f => f.label === format_label);
+  if (!format) throw new Error(`Format "${format_label}" introuvable pour "${photo_id}"`);
+
+  const code = generateCertificateCode();
+  const isLimited = !!format.limited_edition;
+
+  let editionNumber = null;
+  if (isLimited) {
+    // La commande vient d'être créée chez Creativehub : elle est déjà comptée
+    // dans ce total, qui devient donc directement le numéro d'exemplaire.
+    const counts = await countSoldByVariant(process.env.CREATIVEHUB_API_KEY, [creativehub_variant_id]);
+    editionNumber = counts[creativehub_variant_id] || null;
+  }
+
+  const record = {
+    code,
+    issued_at: new Date(session.created * 1000).toISOString(),
+    photo_id,
+    title_fr: photo.title_fr,
+    title_en: photo.title_en,
+    location_fr: photo.location_fr,
+    location_en: photo.location_en,
+    image: photo.image,
+    format_label,
+    paper_fr: photo.paper_fr,
+    paper_en: photo.paper_en,
+    edition: isLimited ? 'limited' : 'open',
+    edition_number: editionNumber,
+    edition_total: isLimited ? format.limited_edition : null,
+    buyer_name: shipping?.name || null,
+    buyer_email: session.customer_details?.email || null,
+    stripe_session_id: session.id,
+  };
+
+  const kv = getKv();
+  await kv.set(`cert:${code}`, record);
+  await kv.set(`session_cert:${session.id}`, code, { ex: 60 * 60 * 24 }); // pointeur temporaire, 24h suffit
+
+  return code;
 }
 
 // ─── Notification email en cas d'échec ────────────────────────────────────

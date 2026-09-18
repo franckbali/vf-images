@@ -21,7 +21,11 @@ module.exports = async (req, res) => {
     }
     const data = JSON.parse(text);
 
-    if (req.query.detail !== undefined && data.orders && data.orders.length) {
+    if (req.query && req.query.debug !== undefined) {
+      return res.status(200).json({ marker: 'v2', query: req.query, url: req.url });
+    }
+
+    if (req.query && req.query.detail !== undefined && data.orders && data.orders.length) {
       const orderId = req.query.id || data.orders[0].id;
       const detailRes = await fetch(`https://escher-v2.creativehub.io/v1/orders/${orderId}`, {
         headers: { Authorization: `Bearer ${key}` },

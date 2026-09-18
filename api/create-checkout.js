@@ -58,7 +58,7 @@ module.exports = async (req, res) => {
             currency: 'eur',
             product_data: {
               name: `${photo.title_fr} — ${format_label} cm`,
-              description: `Tirage Fine Art ${photo.paper_fr} · ${format_label} cm · Livraison offerte en Europe`,
+              description: `Tirage ${photo.paper_fr} · ${format_label} cm · Livraison offerte en Europe`,
               images: [`${siteUrl}/${photo.image}`],
             },
             unit_amount: format.price_eur * 100, // Stripe travaille en centimes

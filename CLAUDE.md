@@ -87,8 +87,9 @@ Sous-titres actuels dans `galeries.json` :
 - Fix honnêteté : mention « Certificat d'authenticité » retirée des formats en édition ouverte, affichée uniquement sur le format limité
 - Papier par défaut des 4 produits : Hahnemühle Photo Rag (choix par-photo à affiner, cf. section 5)
 
-**Flux de commande = AUTOMATISÉ (codé) pour les 4 photos connectées**
-Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.session.completed`) transmet la commande à l'API Creativehub → Printspace imprime et expédie. Le webhook existe déjà ; **reste à activer** : clé API Creativehub + vérif env vars Vercel + test d'achat réel (cf. section 5). Les autres photos restent en flux manuel.
+**Flux de commande = AUTOMATISÉ ET VALIDÉ (18 sept. 2026) pour les 4 photos connectées**
+Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.session.completed`) transmet la commande à l'API Creativehub → Printspace imprime et expédie. **Test d'achat réel réussi le 18 sept.** : commande Creativehub `EC-AA98978` créée automatiquement (origine `api`) suite à un vrai paiement Stripe. Chaîne complète validée de bout en bout. Les autres photos restent en flux manuel.
+- Bug corrigé au passage (18 sept.) : `catalogue.json` stockait le SKU Creativehub (`V-XXXX`, affiché dans leur UI) au lieu du vrai `variant_id` (UUID interne) attendu par `items[].variant_id` de leur API — confirmé par leur support. Les 12 formats corrigés, l'ancien SKU gardé dans un champ `creativehub_sku` pour référence.
 
 **Galeries**
 - `galerie-bali.html` : 6 photos au format naturel (no crop, height:auto), système `.block.nat.lg/md/full`
@@ -122,10 +123,7 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 2. **Vérifier les visuels covers** dans `galeries.json` : confirmer que `image_cover` pointe sur les bonnes vraies photos
 
 ### Commerce / print
-0. **Certificat d'authenticité numérique** (décidé 10 sept.) — un certificat numérique vérifiable pour chaque tirage, lien unique `/certificat/[code]` + PDF dans l'email. Spec complète : **`CERTIFICAT-NUMERIQUE.md`**. Dépend de : chaîne paiement active + Resend + Vercel KV. Le compteur « X restants » (ci-dessous #6) fait partie du même travail (sold_count → KV). Ne rien promettre sur le site avant que ce soit en place.
-3. **Activer l'accès API Creativehub** (Settings → API tokens) → renseigner `CREATIVEHUB_API_KEY` sur Vercel
-4. **Vérifier les env vars Vercel** : `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `CREATIVEHUB_API_KEY` (invérifiables depuis le repo, pas de `.env` local)
-5. **Test d'achat réel** (petit montant) pour valider la chaîne Stripe → webhook → Creativehub
+0. **Certificat d'authenticité numérique** (décidé 10 sept.) — un certificat numérique vérifiable pour chaque tirage, lien unique `/certificat/[code]` + PDF dans l'email. Spec complète : **`CERTIFICAT-NUMERIQUE.md`**. Dépend de : chaîne paiement active (✅ FAIT) + Resend + Vercel KV. Le compteur « X restants » (ci-dessous #6) fait partie du même travail (sold_count → KV). Ne rien promettre sur le site avant que ce soit en place.
 6. **Compteur « X restants »** sur les éditions limitées — passer par l'API Creativehub (source de vérité du sold count) ; bloqué le 28 juil. par un 502 Cloudflare sur `api.creativehub.io`, à retenter
 7. **Changer le papier par photo** dans Creativehub (recommandé : Ilford Cotton Textured pour les 2 portraits N&B, Hahnemühle Pearl pour Colibri, Hahnemühle Bamboo pour Offrandes) — puis mettre à jour `paper_fr`/`paper_en` dans `catalogue.json`
 8. **Boutique = 4 produits connectés** (portrait-012, portrait-369, hummingbird, offrandes-002). Les 5 fiches à bouton mort (Faune Sacrée, Barong, Rituels/Offrandes, Manhattan, Fenêtre) ont été **retirées** le 10 sept. (commit boutique « petite mais prête »). Pour réintégrer une photo : Fra crée le produit Creativehub (dupliquer un existant pour garder les réglages) → me passe fichier JPG + SKU par format + papier + titre/lieu → je refais carte + fiche détail + `catalogue.json` + `handleCheckout`. Images encore dans `images/` (faune-sacree, procession-barong, rituels-offrandes, manhattan, fenetre-sur-locean).
@@ -150,7 +148,7 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 ### Décisions déjà tranchées
 - Migration Shopify : **rejetée** (abandonnerait le site custom, le SEO, Sveltia CMS, le design noir & or)
 - Panneau « La série » : **supprimé**, remplacé par les bandeaux éditoriaux toujours visibles
-- **Automatisation Stripe → Creativehub : FAITE** — le webhook `api/stripe-webhook.js` existe et est branché pour 4 photos (n'est plus une décision ouverte)
+- **Automatisation Stripe → Creativehub : FAITE ET VALIDÉE** — le webhook `api/stripe-webhook.js` existe, est branché pour 4 photos, et a été testé avec un vrai achat le 18 sept. 2026 (commande Creativehub `EC-AA98978` créée automatiquement)
 
 ---
 

@@ -4,9 +4,15 @@
 // GET /api/debug-test-real-cert-tmp
 // À SUPPRIMER après usage.
 
-const { createCertificate } = require('./stripe-webhook');
+const { getKv } = require('./_lib/kv');
 
 module.exports = async (req, res) => {
+  if (req.query.cleanup) {
+    const kv = getKv();
+    await kv.del(`cert:${req.query.cleanup}`);
+    return res.status(200).json({ cleaned: req.query.cleanup });
+  }
+
   const session = {
     id: 'cs_manual_verify_' + Date.now(),
     created: Math.floor(Date.now() / 1000),

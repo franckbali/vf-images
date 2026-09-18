@@ -63,10 +63,6 @@ module.exports = async (req, res) => {
   return res.status(200).json({ received: true });
 };
 
-// Export temporaire pour test (données réelles de la commande EC-AA98978,
-// sans repasser par Stripe/Creativehub) — à retirer après vérification.
-module.exports.createCertificate = createCertificate;
-
 // ─── Envoie la commande à Creativehub/Printspace ───────────────────────────
 // API "Escher V2" (migration obligatoire début sept. 2026, l'ancienne
 // https://api.creativehub.io/api/v1 ne répond plus). Doc à jour :

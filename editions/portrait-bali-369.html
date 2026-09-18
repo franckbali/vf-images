@@ -443,9 +443,9 @@
       })
       .catch(() => {
         // Fallback statique si l'API est indisponible
-        document.getElementById('el-number').textContent = '7';
+        document.getElementById('el-number').textContent = '15';
         const dotsEl = document.getElementById('el-dots');
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < 15; i++) {
           const d = document.createElement('div');
           d.className = 'dot';
           dotsEl.appendChild(d);

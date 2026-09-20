@@ -3,113 +3,18 @@ CODE HTML À COPIER DANS VOS PAGES
 Remplacez [DESCRIPTION] par le texte alternatif
 ════════════════════════════════════════════════════════════
 
-<!-- bali-mekotek-001 -->
+<!-- bali-cremasion-001 -->
 <picture>
   <source
     type="image/avif"
-    srcset="images/bali-mekotek-001-small.avif 640w, images/bali-mekotek-001-medium.avif 1200w"
+    srcset="images/bali-cremasion-001-small.avif 640w, images/bali-cremasion-001-medium.avif 1200w, images/bali-cremasion-001-large.avif 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <source
     type="image/webp"
-    srcset="images/bali-mekotek-001-small.webp 640w, images/bali-mekotek-001-medium.webp 1200w"
+    srcset="images/bali-cremasion-001-small.webp 640w, images/bali-cremasion-001-medium.webp 1200w, images/bali-cremasion-001-large.webp 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/bali-mekotek-001.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- bali-mekotek-002 -->
-<picture>
-  <source
-    type="image/avif"
-    srcset="images/bali-mekotek-002-small.avif 640w, images/bali-mekotek-002-medium.avif 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <source
-    type="image/webp"
-    srcset="images/bali-mekotek-002-small.webp 640w, images/bali-mekotek-002-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/bali-mekotek-002.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- bali-mekotek-003 -->
-<picture>
-  <source
-    type="image/avif"
-    srcset="images/bali-mekotek-003-small.avif 640w, images/bali-mekotek-003-medium.avif 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <source
-    type="image/webp"
-    srcset="images/bali-mekotek-003-small.webp 640w, images/bali-mekotek-003-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/bali-mekotek-003.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- bali-mekotek-004 -->
-<picture>
-  <source
-    type="image/avif"
-    srcset="images/bali-mekotek-004-small.avif 640w, images/bali-mekotek-004-medium.avif 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <source
-    type="image/webp"
-    srcset="images/bali-mekotek-004-small.webp 640w, images/bali-mekotek-004-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/bali-mekotek-004.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- bali-mekotek-005 -->
-<picture>
-  <source
-    type="image/avif"
-    srcset="images/bali-mekotek-005-small.avif 640w, images/bali-mekotek-005-medium.avif 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <source
-    type="image/webp"
-    srcset="images/bali-mekotek-005-small.webp 640w, images/bali-mekotek-005-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/bali-mekotek-005.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1200"
-    height="auto">
-</picture>
-
-<!-- bali-mekotek-006 -->
-<picture>
-  <source
-    type="image/avif"
-    srcset="images/bali-mekotek-006-small.avif 640w, images/bali-mekotek-006-medium.avif 1200w, images/bali-mekotek-006-large.avif 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <source
-    type="image/webp"
-    srcset="images/bali-mekotek-006-small.webp 640w, images/bali-mekotek-006-medium.webp 1200w, images/bali-mekotek-006-large.webp 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/bali-mekotek-006.jpg"
+    src="images/bali-cremasion-001.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -117,18 +22,18 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- bali-mekotek-007 -->
+<!-- bali-cremasion-002 -->
 <picture>
   <source
     type="image/avif"
-    srcset="images/bali-mekotek-007-small.avif 640w, images/bali-mekotek-007-medium.avif 1200w, images/bali-mekotek-007-large.avif 1920w"
+    srcset="images/bali-cremasion-002-small.avif 640w, images/bali-cremasion-002-medium.avif 1200w, images/bali-cremasion-002-large.avif 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <source
     type="image/webp"
-    srcset="images/bali-mekotek-007-small.webp 640w, images/bali-mekotek-007-medium.webp 1200w, images/bali-mekotek-007-large.webp 1920w"
+    srcset="images/bali-cremasion-002-small.webp 640w, images/bali-cremasion-002-medium.webp 1200w, images/bali-cremasion-002-large.webp 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/bali-mekotek-007.jpg"
+    src="images/bali-cremasion-002.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -136,18 +41,56 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- bali-mekotek-008 -->
+<!-- bali-cremasion-003 -->
 <picture>
   <source
     type="image/avif"
-    srcset="images/bali-mekotek-008-small.avif 640w, images/bali-mekotek-008-medium.avif 1200w"
+    srcset="images/bali-cremasion-003-small.avif 640w, images/bali-cremasion-003-medium.avif 1200w, images/bali-cremasion-003-large.avif 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <source
     type="image/webp"
-    srcset="images/bali-mekotek-008-small.webp 640w, images/bali-mekotek-008-medium.webp 1200w"
+    srcset="images/bali-cremasion-003-small.webp 640w, images/bali-cremasion-003-medium.webp 1200w, images/bali-cremasion-003-large.webp 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/bali-mekotek-008.jpg"
+    src="images/bali-cremasion-003.jpg"
+    alt="[DESCRIPTION]"
+    loading="lazy"
+    decoding="async"
+    width="1920"
+    height="auto">
+</picture>
+
+<!-- bali-cremasion-004 -->
+<picture>
+  <source
+    type="image/avif"
+    srcset="images/bali-cremasion-004-small.avif 640w, images/bali-cremasion-004-medium.avif 1200w, images/bali-cremasion-004-large.avif 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
+    type="image/webp"
+    srcset="images/bali-cremasion-004-small.webp 640w, images/bali-cremasion-004-medium.webp 1200w, images/bali-cremasion-004-large.webp 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <img
+    src="images/bali-cremasion-004.jpg"
+    alt="[DESCRIPTION]"
+    loading="lazy"
+    decoding="async"
+    width="1920"
+    height="auto">
+</picture>
+
+<!-- bali-cremasion-005 -->
+<picture>
+  <source
+    type="image/avif"
+    srcset="images/bali-cremasion-005-small.avif 640w, images/bali-cremasion-005-medium.avif 1200w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
+    type="image/webp"
+    srcset="images/bali-cremasion-005-small.webp 640w, images/bali-cremasion-005-medium.webp 1200w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <img
+    src="images/bali-cremasion-005.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -155,18 +98,18 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- bali-mekotek-009 -->
+<!-- bali-cremasion-006 -->
 <picture>
   <source
     type="image/avif"
-    srcset="images/bali-mekotek-009-small.avif 640w, images/bali-mekotek-009-medium.avif 1200w"
+    srcset="images/bali-cremasion-006-small.avif 640w, images/bali-cremasion-006-medium.avif 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <source
     type="image/webp"
-    srcset="images/bali-mekotek-009-small.webp 640w, images/bali-mekotek-009-medium.webp 1200w"
+    srcset="images/bali-cremasion-006-small.webp 640w, images/bali-cremasion-006-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/bali-mekotek-009.jpg"
+    src="images/bali-cremasion-006.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -174,18 +117,37 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- bali-mekotek-010 -->
+<!-- bali-cremasion-007 -->
 <picture>
   <source
     type="image/avif"
-    srcset="images/bali-mekotek-010-small.avif 640w, images/bali-mekotek-010-medium.avif 1200w"
+    srcset="images/bali-cremasion-007-small.avif 640w, images/bali-cremasion-007-medium.avif 1200w, images/bali-cremasion-007-large.avif 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <source
     type="image/webp"
-    srcset="images/bali-mekotek-010-small.webp 640w, images/bali-mekotek-010-medium.webp 1200w"
+    srcset="images/bali-cremasion-007-small.webp 640w, images/bali-cremasion-007-medium.webp 1200w, images/bali-cremasion-007-large.webp 1920w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/bali-mekotek-010.jpg"
+    src="images/bali-cremasion-007.jpg"
+    alt="[DESCRIPTION]"
+    loading="lazy"
+    decoding="async"
+    width="1920"
+    height="auto">
+</picture>
+
+<!-- bali-cremasion-008 -->
+<picture>
+  <source
+    type="image/avif"
+    srcset="images/bali-cremasion-008-small.avif 640w, images/bali-cremasion-008-medium.avif 1200w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
+    type="image/webp"
+    srcset="images/bali-cremasion-008-small.webp 640w, images/bali-cremasion-008-medium.webp 1200w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <img
+    src="images/bali-cremasion-008.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -193,75 +155,18 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- bali-mekotek-011 -->
+<!-- bali-cremasion-009 -->
 <picture>
   <source
     type="image/avif"
-    srcset="images/bali-mekotek-011-small.avif 640w, images/bali-mekotek-011-medium.avif 1200w, images/bali-mekotek-011-large.avif 1920w"
+    srcset="images/bali-cremasion-009-small.avif 640w, images/bali-cremasion-009-medium.avif 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <source
     type="image/webp"
-    srcset="images/bali-mekotek-011-small.webp 640w, images/bali-mekotek-011-medium.webp 1200w, images/bali-mekotek-011-large.webp 1920w"
+    srcset="images/bali-cremasion-009-small.webp 640w, images/bali-cremasion-009-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/bali-mekotek-011.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1920"
-    height="auto">
-</picture>
-
-<!-- bali-mekotek-012 -->
-<picture>
-  <source
-    type="image/avif"
-    srcset="images/bali-mekotek-012-small.avif 640w, images/bali-mekotek-012-medium.avif 1200w, images/bali-mekotek-012-large.avif 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <source
-    type="image/webp"
-    srcset="images/bali-mekotek-012-small.webp 640w, images/bali-mekotek-012-medium.webp 1200w, images/bali-mekotek-012-large.webp 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/bali-mekotek-012.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1920"
-    height="auto">
-</picture>
-
-<!-- bali-mekotek-013 -->
-<picture>
-  <source
-    type="image/avif"
-    srcset="images/bali-mekotek-013-small.avif 640w, images/bali-mekotek-013-medium.avif 1200w, images/bali-mekotek-013-large.avif 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <source
-    type="image/webp"
-    srcset="images/bali-mekotek-013-small.webp 640w, images/bali-mekotek-013-medium.webp 1200w, images/bali-mekotek-013-large.webp 1920w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/bali-mekotek-013.jpg"
-    alt="[DESCRIPTION]"
-    loading="lazy"
-    decoding="async"
-    width="1920"
-    height="auto">
-</picture>
-
-<!-- bali-mekotek-014 -->
-<picture>
-  <source
-    type="image/avif"
-    srcset="images/bali-mekotek-014-small.avif 640w, images/bali-mekotek-014-medium.avif 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <source
-    type="image/webp"
-    srcset="images/bali-mekotek-014-small.webp 640w, images/bali-mekotek-014-medium.webp 1200w"
-    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
-  <img
-    src="images/bali-mekotek-014.jpg"
+    src="images/bali-cremasion-009.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -269,18 +174,37 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- bali-mekotek-015 -->
+<!-- bali-cremasion-010 -->
 <picture>
   <source
     type="image/avif"
-    srcset="images/bali-mekotek-015-small.avif 640w, images/bali-mekotek-015-medium.avif 1200w, images/bali-mekotek-015-large.avif 1920w"
+    srcset="images/bali-cremasion-010-small.avif 640w, images/bali-cremasion-010-medium.avif 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <source
     type="image/webp"
-    srcset="images/bali-mekotek-015-small.webp 640w, images/bali-mekotek-015-medium.webp 1200w, images/bali-mekotek-015-large.webp 1920w"
+    srcset="images/bali-cremasion-010-small.webp 640w, images/bali-cremasion-010-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/bali-mekotek-015.jpg"
+    src="images/bali-cremasion-010.jpg"
+    alt="[DESCRIPTION]"
+    loading="lazy"
+    decoding="async"
+    width="1200"
+    height="auto">
+</picture>
+
+<!-- bali-cremasion-011 -->
+<picture>
+  <source
+    type="image/avif"
+    srcset="images/bali-cremasion-011-small.avif 640w, images/bali-cremasion-011-medium.avif 1200w, images/bali-cremasion-011-large.avif 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
+    type="image/webp"
+    srcset="images/bali-cremasion-011-small.webp 640w, images/bali-cremasion-011-medium.webp 1200w, images/bali-cremasion-011-large.webp 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <img
+    src="images/bali-cremasion-011.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"
@@ -288,18 +212,94 @@ Remplacez [DESCRIPTION] par le texte alternatif
     height="auto">
 </picture>
 
-<!-- bali-mekotek-016 -->
+<!-- bali-cremasion-012 -->
 <picture>
   <source
     type="image/avif"
-    srcset="images/bali-mekotek-016-small.avif 640w, images/bali-mekotek-016-medium.avif 1200w, images/bali-mekotek-016-large.avif 1920w"
+    srcset="images/bali-cremasion-012-small.avif 640w, images/bali-cremasion-012-medium.avif 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <source
     type="image/webp"
-    srcset="images/bali-mekotek-016-small.webp 640w, images/bali-mekotek-016-medium.webp 1200w, images/bali-mekotek-016-large.webp 1920w"
+    srcset="images/bali-cremasion-012-small.webp 640w, images/bali-cremasion-012-medium.webp 1200w"
     sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
   <img
-    src="images/bali-mekotek-016.jpg"
+    src="images/bali-cremasion-012.jpg"
+    alt="[DESCRIPTION]"
+    loading="lazy"
+    decoding="async"
+    width="1200"
+    height="auto">
+</picture>
+
+<!-- bali-cremasion-013 -->
+<picture>
+  <source
+    type="image/avif"
+    srcset="images/bali-cremasion-013-small.avif 640w, images/bali-cremasion-013-medium.avif 1200w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
+    type="image/webp"
+    srcset="images/bali-cremasion-013-small.webp 640w, images/bali-cremasion-013-medium.webp 1200w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <img
+    src="images/bali-cremasion-013.jpg"
+    alt="[DESCRIPTION]"
+    loading="lazy"
+    decoding="async"
+    width="1200"
+    height="auto">
+</picture>
+
+<!-- bali-cremasion-014 -->
+<picture>
+  <source
+    type="image/avif"
+    srcset="images/bali-cremasion-014-small.avif 640w, images/bali-cremasion-014-medium.avif 1200w, images/bali-cremasion-014-large.avif 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
+    type="image/webp"
+    srcset="images/bali-cremasion-014-small.webp 640w, images/bali-cremasion-014-medium.webp 1200w, images/bali-cremasion-014-large.webp 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <img
+    src="images/bali-cremasion-014.jpg"
+    alt="[DESCRIPTION]"
+    loading="lazy"
+    decoding="async"
+    width="1920"
+    height="auto">
+</picture>
+
+<!-- bali-cremasion-015 -->
+<picture>
+  <source
+    type="image/avif"
+    srcset="images/bali-cremasion-015-small.avif 640w, images/bali-cremasion-015-medium.avif 1200w, images/bali-cremasion-015-large.avif 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
+    type="image/webp"
+    srcset="images/bali-cremasion-015-small.webp 640w, images/bali-cremasion-015-medium.webp 1200w, images/bali-cremasion-015-large.webp 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <img
+    src="images/bali-cremasion-015.jpg"
+    alt="[DESCRIPTION]"
+    loading="lazy"
+    decoding="async"
+    width="1920"
+    height="auto">
+</picture>
+
+<!-- bali-cremasion-016 -->
+<picture>
+  <source
+    type="image/avif"
+    srcset="images/bali-cremasion-016-small.avif 640w, images/bali-cremasion-016-medium.avif 1200w, images/bali-cremasion-016-large.avif 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <source
+    type="image/webp"
+    srcset="images/bali-cremasion-016-small.webp 640w, images/bali-cremasion-016-medium.webp 1200w, images/bali-cremasion-016-large.webp 1920w"
+    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw">
+  <img
+    src="images/bali-cremasion-016.jpg"
     alt="[DESCRIPTION]"
     loading="lazy"
     decoding="async"

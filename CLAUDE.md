@@ -32,7 +32,7 @@ Type : **site HTML statique** (pas de framework JS, pas de build step, fichiers 
 - **Formulaire contact** : Formspree (ID `mwvybbrz`)
 - **API Creativehub** : `https://api.creativehub.io` (clé stockée en privé, hors dépôt)
 
-Pages existantes : `index`, `boutique`, `galerie-index`, `galerie-bali`, `galerie-mekotek`, `galerie-newyork`, `galerie-portraits`, `a-propos`, `blog`, `blog-article` (Melasti), `blog-article-mekotek` (Mekotek), `contact`, `mentions-legales`.
+Pages existantes : `index`, `boutique`, `galerie-index`, `galerie-bali`, `galerie-mekotek`, `galerie-newyork`, `galerie-portraits`, `a-propos`, `blog`, `blog-article` (Melasti), `blog-article-mekotek` (Mekotek), `blog-article-cremation` (Ngaben), `contact`, `mentions-legales`.
 
 ---
 
@@ -62,7 +62,7 @@ Sous-titres actuels dans `galeries.json` :
 - `noindex` ajouté sur `boutique_backup`, `propositions-palettes`, `raffinements-style`, `en/legal`, `404`
 - `en/contact.html` : `<h1>` traduit en anglais ; URLs formulaire corrigées (FR et EN)
 - Image OG fallback `assets/og-vf-images.jpg` (1200×630 px, 194 Ko) — vérifiée présente dans le repo
-- `vfimages.com` = domaine primaire · `www` → redirection 308 (à configurer dans Vercel dashboard)
+- `vfimages.com` = domaine primaire · `www` → redirection 308 (vérifié actif le 20 sept. 2026)
 - Google Search Console vérifié (propriété Domaine, TXT via Namecheap) — **sitemap à resoumettre** : `https://vfimages.com/sitemap.xml`
 - Refonte CSS : `style.css` global partagé (nav, menu hamburger, boutons langue FR/EN, footer, bandeau cookies)
 - Pinterest Business (`pinterest.com/vfimages`), 8 tableaux thématiques, site revendiqué (TXT)
@@ -93,7 +93,8 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 - Bug corrigé au passage (18 sept.) : `catalogue.json` stockait le SKU Creativehub (`V-XXXX`, affiché dans leur UI) au lieu du vrai `variant_id` (UUID interne) attendu par `items[].variant_id` de leur API — confirmé par leur support. Les 12 formats corrigés, l'ancien SKU gardé dans un champ `creativehub_sku` pour référence.
 
 **Galeries**
-- `galerie-bali.html` : 6 photos au format naturel (no crop, height:auto), système `.block.nat.lg/md/full`
+- `galerie-bali.html` : 9 photos au format naturel (no crop, height:auto), système `.block.nat.lg/md/full`. Titres EN ajoutés sur les 9 (data-title-en, géré par setCaption() + la légende sous chaque photo — pattern à répliquer si une autre galerie a le même souci). 3 photos ajoutées le 21 sept. (temple-bali-005/006, bali-dupa-001) avec des titres distincts pour ne pas ajouter d'homonymes ; l'un des 2 anciens "Temple · Bali" (temple-bali-004) retitré "La Source Sacrée · Bali" — reste "Rituels · Bali" ×3 en homonymes non tranchés.
+- `galerie-portraits.html` : titres EN ajoutés sur les 12 photos (même pattern data-title-en).
 - `galerie-newyork.html` : galerie complète, lightbox crossfade
 - `galerie-portraits.html` : galerie complète avec texte éditorial
 - Toutes les galeries : lightbox corrigée (plus de scroll-jump iOS — suppression totale de `position:fixed` sur le body)
@@ -104,8 +105,9 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 
 **Blog / Journal**
 - `blog-article.html` : article Melasti (texte complet, hero, police unifiée, section vidéo retirée)
-- `blog-article-mekotek.html` (17 sept. 2026) : remplace « Cari feu de bois »/La Réunion, supprimé. Récit intact (texte de Fra, FR uniquement, EN à traduire plus tard), 16 photos `bali-mekotek-0XX`, bloc factuel « En pratique » bilingue, galerie dédiée `galerie-mekotek.html` (pas le slot « Cérémonies », resté dormant). 301 `/blog-article-reunion` → nouvelle URL dans `vercel.json`.
-- Page `blog.html` : 2 articles en grand format featured, alternance gauche/droite
+- `blog-article-mekotek.html` (17 sept. 2026) : remplace « Cari feu de bois »/La Réunion, supprimé. Récit intact (texte de Fra, FR **et EN**, traduit intégralement), 16 photos `bali-mekotek-0XX`, bloc factuel « En pratique » bilingue, galerie dédiée `galerie-mekotek.html` (pas le slot « Cérémonies », resté dormant). 301 `/blog-article-reunion` → nouvelle URL dans `vercel.json`.
+- `blog-article-cremation.html` (21 sept. 2026) : article Ngaben (crémation hindoue-balinaise), texte de Fra traduit FR/EN, 16 photos `bali-cremation-0XX` intégrées dans le corps (solo plein cadre + 1 diptyque de 2 photos au même format — éviter de marier portrait+paysage dans un diptyque, ça force un recadrage moche via `object-fit:cover`). Mis en avant comme dernier article sur `blog.html` (hero + carte featured), Mekotek passe en 2e position. Pas de lien boutique (photos non connectées à un produit).
+- Page `blog.html` : 3 articles en grand format featured (Ngaben, Mekotek, Melasti), alternance gauche/droite
 - Article « Réflexion » retiré
 
 **Design / refonte visuelle (sept. 2026)** — cf. mémoire `hero-refonte-ouvertures-page`, `systeme-or-cream-rarete-cta-nav`, `nettoyage-mensonges-passifs`
@@ -136,15 +138,16 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 13. **Galeries** : les 3 pages galerie (bali/newyork/portraits) lisent maintenant `galeries.json` au chargement pour synchroniser **le titre h1** (fetch ajouté 2 sept.). ⚠️ Le script reconstruit le titre via DOM (`createElement`) pour préserver le `<span class="title-accent">` de l'or — **si une 4e page galerie est créée, appliquer le même pattern**. Le texte éditorial (`.serie-bandeau`) reste volontairement statique par page.
 
 ### Contenu — décisions en attente de Fra
-- **Titres des photos de galeries** : `data-title` sans variante EN → ne réagit pas au toggle (Bali/Portraits restent FR, New York reste EN). Traduire ou assumer le titre en langue d'origine ?
-- **Œuvres homonymes** à renommer : `galerie-bali` "Rituels · Bali" ×3 + "Temple · Bali" ×2 (6 photos, 3 titres) ; `boutique` deux "Portrait · Bali" (012 & 369). ⚠️ Fra prévoit (18 sept.) de revoir « pas mal de titres et descriptions » sur les photos du site — probablement le bon moment pour trancher aussi ces homonymes.
+- **Titres des photos de galeries EN — FAIT (20 sept. 2026)** : `data-title-en` ajouté sur `galerie-bali` (9 photos) et `galerie-portraits` (12 photos), le toggle FR/EN traduit maintenant aussi les légendes et le titre de la lightbox. New York n'avait pas le problème (titres déjà en anglais).
+- **Œuvres homonymes** : `galerie-bali` "Temple · Bali" réduit de ×2 à ×1 (20 sept., l'autre retitré "La Source Sacrée · Bali"). Reste : "Rituels · Bali" ×3 dans `galerie-bali`, et `boutique` deux "Portrait · Bali" (012 & 369) — non tranchés.
 - **`mentions-legales.html`** : raison sociale + adresse + NIB **FAIT (18 sept.)** — PT Happy Sunrise Family, Jalan Bidadari IIA, Kerobokan Kelod, Kuta Utara, Badung, Bali, NIB 2306220091801. Reste à vérifier : le compte Stripe marqué « France » vs société indonésienne.
 - **Prix en hero d'accueil** (« À partir de 95 € ») : positionnement valeur vs désirabilité — non tranché, non implémenté.
+- **Champ société à la commande — FAIT (18 sept.)** : `api/create-checkout.js` ajoute un `custom_field` Stripe optionnel « Société (pour facture, optionnel) » — capté pour une future facturation pro, pas de génération de facture automatique pour l'instant.
 
 ### SEO / contenu
-18. **Vérifier www → vfimages.com** dans Vercel dashboard (Settings → Domains → redirect "www")
-19. **Resoumettre le sitemap** dans Google Search Console : `https://vfimages.com/sitemap.xml`
-21. Écrire d'autres articles de blog (le hero du Journal met en avant le dernier automatiquement)
+18. **www → vfimages.com — vérifié FAIT (20 sept.)** : redirection 308 confirmée active, rien à faire côté Vercel dashboard.
+19. **Resoumettre le sitemap** dans Google Search Console : `https://vfimages.com/sitemap.xml` — nécessite la connexion de Fra à son compte Google, je ne peux pas le faire à sa place.
+21. Écrire d'autres articles de blog (le hero du Journal met en avant le dernier automatiquement) — Ngaben publié le 21 sept., prochain sujet non défini.
 
 ### Décisions déjà tranchées
 - Migration Shopify : **rejetée** (abandonnerait le site custom, le SEO, Sveltia CMS, le design noir & or)

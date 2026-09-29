@@ -74,6 +74,7 @@ const BASE_STYLE = `
   .fact-label{color:#9a9282;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;flex-shrink:0;padding-top:.15rem}
   .fact-value{text-align:right;font-family:'Lora',serif;font-style:italic}
   .signature-block{text-align:center;margin-bottom:2.5rem}
+  .signature-img{height:54px;width:auto;display:block;margin:0 auto .9rem}
   .signature-cap{font-size:.68rem;letter-spacing:.1em;color:#9a9282;text-transform:uppercase}
   .artist{font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-top:.3rem}
   .verify{text-align:center;font-size:.72rem;color:#9a9282;line-height:1.7}
@@ -150,6 +151,7 @@ function renderCertificate(c, lang) {
       <div class="fact"><span class="fact-label">${escapeHtml(t.lblIssued)}</span><span class="fact-value">${escapeHtml(issuedDate)}</span></div>
     </div>
     <div class="signature-block">
+      <img class="signature-img" src="https://vfimages.com/images/signature-noir.svg" alt="${escapeHtml(t.artist)}">
       <p class="signature-cap">${escapeHtml(t.signedBy)}</p>
       <p class="artist">${escapeHtml(t.artist)}</p>
     </div>

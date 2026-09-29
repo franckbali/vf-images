@@ -77,7 +77,7 @@ Sous-titres actuels dans `galeries.json` :
 **Impression & commerce**
 - Compte Creativehub (Franck Vinel, plan Basic) : clé API générée, branding configuré
 - Certificats d'authenticité disponibles sur Creativehub
-- Signature : `signature-noir.png` + `signature-noir.svg`
+- Signature : `images/signature-noir.svg` — vraie signature manuscrite de Fra (noir `#222221`, pas dorée : il préfère la garder telle quelle, y compris sur le certificat clair). Source : `~/Downloads/Signature_FranckVinel/FrancVinel_Signature.svg`, la même utilisée pour la numérotation Creativehub. Affichée sur `/certificat/[code]` (29 sept. 2026) — avant ça la page n'avait qu'un texte, aucune image.
 - `catalogue.json` : source de vérité prix/papier/variant Creativehub — seul fichier à modifier lors d'un changement tarifaire
 
 **Boutique / Creativehub — nouvelle plateforme `sell.creativehub.io` (28 juil. 2026)**
@@ -132,7 +132,7 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 9. **Éditions Collector via Whitewall** (EN PAUSE) : toggle Fine Art/Collector dans la fiche détail, bouton = formulaire contact pré-rempli (pas d'API Whitewall), badge sur la vignette. Prérequis : compte Whitewall Pro, liste des œuvres, specs (ex. bali-369)
 10. **Suivi de commande après paiement — idée, à affiner plus tard.** Aujourd'hui le client ne voit que le reçu Stripe + le lien du certificat numérique ; aucune visibilité sur la production/expédition Creativehub. Leur doc API confirme que les webhooks de statut de commande ne sont **pas encore actifs** côté Creativehub (`GET /v1/orders/{order_id}` existe pour interroger le statut, mais rien ne nous notifie automatiquement). Piste : script qui poll cette API et alerte Fra (ou le client via Resend) au changement de statut. Non bloquant, faible volume actuellement.
 11. Créer le PDF certificat d'authenticité + QR codes éditions limitées
-12. Générer la version or (`#c9a96e`) de la signature pour les certificats
+12. ~~Générer la version or de la signature pour les certificats~~ — **tranché (29 sept. 2026) : Fra ne veut PAS de version dorée**, la signature reste en noir. FAIT, voir section 4.
 
 ### Structure / cohérence
 13. **Galeries** : les 3 pages galerie (bali/newyork/portraits) lisent maintenant `galeries.json` au chargement pour synchroniser **le titre h1** (fetch ajouté 2 sept.). ⚠️ Le script reconstruit le titre via DOM (`createElement`) pour préserver le `<span class="title-accent">` de l'or — **si une 4e page galerie est créée, appliquer le même pattern**. Le texte éditorial (`.serie-bandeau`) reste volontairement statique par page.

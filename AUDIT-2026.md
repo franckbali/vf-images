@@ -15,6 +15,20 @@
 
 ---
 
+## Vérification du 5 octobre 2026
+
+**Bilan : 9 faites, 8 partielles, 3 à faire** (08 témoignages, 09 page « Le tirage », 17 newsletter). Pour le référencement, les plus utiles sont 09, 19 et 20.
+
+**Les 5 prochaines actions proposées :**
+1. **12 — afficher lieu / date / histoire sur les fiches boutique** (les données existent déjà, ~1 h).
+2. **09 — page « Le tirage »** : papier, atelier, emballage (photos de livraison), certificat, délais, retours. Répond aux objections d'achat et se référence bien.
+3. **08 — un premier témoignage** (la phrase de l'ami qui a reçu le tirage, avec son accord) + intégrer les photos de livraison sur À propos (reste de 07).
+4. **19 / 20 — référencement** : pages anglaises avec leurs propres URLs, puis la page « cérémonies de Bali, mois par mois ».
+5. **18 + 14 — finitions** : focus clavier du panneau produit et de la lightbox, miniatures YouTube du blog.
+
+
+---
+
 ## Constat central
 
 **La boutique ne peut prendre aucune commande.** Sur les 9 tirages :
@@ -50,7 +64,9 @@ Seule action réellement disponible : un `mailto` « Livraison hors Europe · Me
 
 # 🔴 PRIORITÉ 1 — cette semaine
 
-## `[ ]` 01. Câbler l'achat
+## `[x]` 01. Câbler l'achat
+
+> **État (5 oct. 2026) :** Fait. `handleCheckout` → `/api/create-checkout` (Stripe Checkout) sur les 4 tirages en vente, flux jusqu'à Creativehub testé avec un vrai achat. Les 5 fiches à bouton mort ont été retirées de la boutique.
 
 **Impact :** décisif · **Difficulté :** moyenne · **Temps :** 1 journée
 
@@ -62,7 +78,9 @@ Seule action réellement disponible : un `mailto` « Livraison hors Europe · Me
 
 ---
 
-## `[ ]` 02. Trancher et harmoniser la question de l'édition
+## `[x]` 02. Trancher et harmoniser la question de l'édition
+
+> **État (5 oct. 2026) :** Fait. Tirage ouvert (45×30, 60×40…) + format limité à 15 exemplaires, libellés harmonisés, certificat numérique « Édition ouverte » / « Exemplaire N° X / 15 ». « Signature reproduite » conservé volontairement (transparence : Fra ne signe pas à la main).
 
 **Impact :** fort · **Difficulté :** décision · **Temps :** 1 h après décision
 
@@ -77,7 +95,9 @@ Seule action réellement disponible : un `mailto` « Livraison hors Europe · Me
 
 ---
 
-## `[ ]` 03. Régler la Galerie
+## `[x]` 03. Régler la Galerie
+
+> **État (5 oct. 2026) :** Fait. `galerie-index` lit `galeries.json` et affiche les collections visibles (Bali, Mekotek, Portraits, New York).
 
 **Impact :** fort · **Difficulté :** faible · **Temps :** 15 min ou 1 week-end
 
@@ -90,7 +110,9 @@ Seule action réellement disponible : un `mailto` « Livraison hors Europe · Me
 
 ---
 
-## `[ ]` 04. Prix par format, mis à jour en direct
+## `[x]` 04. Prix par format, mis à jour en direct
+
+> **État (5 oct. 2026) :** Fait. Prix par format (95 / 190 / 690 €) mis à jour au clic, `catalogue.json` = source de vérité.
 
 **Impact :** fort · **Difficulté :** faible · **Temps :** 2 h
 
@@ -106,7 +128,9 @@ Seule action réellement disponible : un `mailto` « Livraison hors Europe · Me
 
 ---
 
-## `[ ]` 05. Nettoyer les mensonges passifs
+## `[x]` 05. Nettoyer les mensonges passifs
+
+> **État (5 oct. 2026) :** Fait pour l'essentiel : « — cm » retiré, « Tous les articles » corrigé, modale de commande câblée, homonymes boutique résolus (« Les Années » / « La Bénédiction »). Reste seulement « Rituels · Bali » ×3 dans `galerie-bali`.
 
 **Impact :** fort · **Difficulté :** très faible · **Temps :** 1 h
 
@@ -124,7 +148,9 @@ Chacun de ces détails dit au visiteur que le site n'est pas tenu :
 
 ---
 
-## `[ ]` 06. Réécrire le hero de l'accueil
+## `[x]` 06. Réécrire le hero de l'accueil
+
+> **État (5 oct. 2026) :** Fait. Hero accueil avec bandeau « Tirages Fine Art · Éditions limitées », prix d'appel et CTA « Voir les tirages ».
 
 **Impact :** fort · **Difficulté :** faible · **Temps :** 2 h de rédaction
 
@@ -140,7 +166,9 @@ Chacun de ces détails dit au visiteur que le site n'est pas tenu :
 
 # 🟠 PRIORITÉ 2 — ce mois
 
-## `[ ]` 07. Les trois photos de preuve
+## `[~]` 07. Les trois photos de preuve
+
+> **État (5 oct. 2026) :** Boutique : fait le 5 oct. 2026 (section « De l'atelier à votre mur », 5 photos de la première livraison, sans filtre). Reste : l'intégrer aussi sur À propos. Le « colis étiqueté » a été écarté (nom du destinataire visible).
 
 **Impact :** fort · **Temps :** 2 h (côté Franck) + intégration
 
@@ -152,6 +180,8 @@ Tirage encadré accroché à un mur · certificat posé sur une table · colis �
 
 ## `[ ]` 08. Trois témoignages
 
+> **État (5 oct. 2026) :** Rien en place. Une phrase de l'ami qui a reçu le premier tirage serait un début (avec son accord).
+
 **Impact :** fort · **Temps :** 2 h + attente
 
 Email aux acheteurs passés. Prénom, ville, deux phrases. Section sobre en bas de boutique. Actuellement : zéro preuve sociale, et « Collections privées en France, États-Unis et Australie » n'est étayée par rien.
@@ -162,6 +192,8 @@ Email aux acheteurs passés. Prénom, ville, deux phrases. Section sobre en bas 
 
 ## `[ ]` 09. Page « Le tirage »
 
+> **État (5 oct. 2026) :** Aucune page « Le tirage » (papier, encres, atelier, emballage, délais, retours). Les photos de livraison et le certificat fourniraient le contenu.
+
 **Impact :** fort · **Temps :** 1 dimanche
 
 Papier, encres, atelier partenaire, marges, signature, certificat, emballage, délais, retour. Une seule page qui répond à la moitié des objections d'achat. Lien depuis le footer et sous chaque bouton d'achat.
@@ -170,7 +202,9 @@ Papier, encres, atelier partenaire, marges, signature, certificat, emballage, d�
 
 ---
 
-## `[ ]` 10. CGV et politique de retour
+## `[~]` 10. CGV et politique de retour
+
+> **État (5 oct. 2026) :** CGV + retours/remboursements présents, mais dans `mentions-legales.html` (pas de page dédiée ; le lien du footer s'appelle « Mentions légales »). À décider : renommer le lien ou créer une page CGV.
 
 **Impact :** fort · **Temps :** 3 h
 
@@ -182,7 +216,9 @@ Papier, encres, atelier partenaire, marges, signature, certificat, emballage, d�
 
 ---
 
-## `[ ]` 11. Réécrire l'À propos avec des faits
+## `[~]` 11. Réécrire l'À propos avec des faits
+
+> **État (5 oct. 2026) :** Texte réécrit avec des faits (Ubud depuis 2022, 2016, école de 300 élèves). Reste : une photo de Franck aujourd'hui (il n'y a que 2 photos d'enfance) et vérifier l'alt de `franck-enfant.jpg`.
 
 **Impact :** fort · **Temps :** 3 h
 
@@ -197,7 +233,9 @@ Ramener de 5 paragraphes à 3. Ajouter une photo de Franck en situation. Corrige
 
 ---
 
-## `[ ]` 12. Légendes enrichies sur chaque œuvre
+## `[~]` 12. Légendes enrichies sur chaque œuvre
+
+> **État (5 oct. 2026) :** Galeries : descriptions et titres EN faits. Fiches boutique : lieu, date et histoire de chaque tirage existent dans `catalogue.json` mais ne sont pas affichés dans le panneau détail — gain rapide.
 
 **Impact :** fort · **Temps :** 3 h de rédaction (Franck) + intégration
 
@@ -210,7 +248,9 @@ Ramener de 5 paragraphes à 3. Ajouter une photo de Franck en situation. Corrige
 
 ---
 
-## `[ ]` 13. Accorder canonicals et liens internes
+## `[x]` 13. Accorder canonicals et liens internes
+
+> **État (5 oct. 2026) :** Fait. Canonicals et liens internes sans extension, sitemap à jour (Ngaben ajouté 5 oct.), redirections 301.
 
 **Impact :** moyen · **Temps :** 2 h
 
@@ -224,7 +264,9 @@ Ramener de 5 paragraphes à 3. Ajouter une photo de Franck en situation. Corrige
 
 ---
 
-## `[ ]` 14. Images de boutique en AVIF/WebP + srcset
+## `[~]` 14. Images de boutique en AVIF/WebP + srcset
+
+> **État (5 oct. 2026) :** Boutique : WebP + `srcset` + width/height faits. Reste : les 4 miniatures YouTube de `blog.html` sont toujours en `maxresdefault`.
 
 **Impact :** moyen · **Temps :** 1 journée
 
@@ -238,7 +280,9 @@ Ajouter `width` et `height` sur chaque `<img>` (CLS). Passer les miniatures YouT
 
 # 🟢 PRIORITÉ 3 — optimisation
 
-## `[ ]` 15. Rationner l'or — 3 usages par page
+## `[x]` 15. Rationner l'or — 3 usages par page
+
+> **État (5 oct. 2026) :** Fait (système or / crème : rareté, CTA, navigation).
 
 **Impact :** moyen · **Temps :** 2 h
 
@@ -246,7 +290,9 @@ L'or `#c9a96e` apparaît dans les eyebrows, filets, prix, hovers, labels, bordur
 
 ---
 
-## `[ ]` 16. Différencier les héros de page
+## `[x]` 16. Différencier les héros de page
+
+> **État (5 oct. 2026) :** Fait pour 5 pages sur 6, `svh` partout. Contact volontairement laissé tel quel (choix de Fra).
 
 **Impact :** moyen · **Temps :** 1 journée
 
@@ -256,13 +302,17 @@ Les 6 pages ouvrent sur le même dispositif : image plein écran assombrie + eye
 
 ## `[ ]` 17. Newsletter
 
+> **État (5 oct. 2026) :** Aucune newsletter ni capture d'email.
+
 **Impact :** moyen · **Temps :** 1/2 journée
 
 Accès anticipé aux nouvelles séries, un email tous les deux mois. Capture l'audience Instagram qui n'achète pas aujourd'hui. Brevo gratuit convient.
 
 ---
 
-## `[ ]` 18. Finitions techniques et accessibilité
+## `[~]` 18. Finitions techniques et accessibilité
+
+> **État (5 oct. 2026) :** Fait : JSON-LD, page 404, contrastes, aria-label Instagram. Reste : piège/retour de focus clavier dans le panneau produit et la lightbox, `aria-label` de quelques liens (« Lire », « Voir les formats »).
 
 **Impact :** faible à moyen · **Temps :** 1 journée
 
@@ -276,7 +326,9 @@ Accès anticipé aux nouvelles séries, un email tous les deux mois. Capture l'a
 
 ---
 
-## `[ ]` 19. Version anglaise
+## `[~]` 19. Version anglaise
+
+> **État (5 oct. 2026) :** Toggle FR/EN fonctionnel sur toutes les pages, textes traduits. Mais pas d'URL anglaises indexables (Google ne voit que le français, pas de hreflang `en`).
 
 **Impact :** fort à terme · **Temps :** 2 jours
 
@@ -284,7 +336,9 @@ Six pages. Le toggle est déjà dessiné. Les acheteurs les plus proches géogra
 
 ---
 
-## `[ ]` 20. Contenu éditorial régulier
+## `[~]` 20. Contenu éditorial régulier
+
+> **État (5 oct. 2026) :** 3 articles (Melasti, Mekotek, Ngaben) + galerie Mekotek. Reste : la page « cérémonies de Bali, mois par mois » et le rythme régulier.
 
 **Impact :** fort à terme · **Temps :** continu
 

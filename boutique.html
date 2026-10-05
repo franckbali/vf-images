@@ -670,6 +670,11 @@ img {
   .delivery-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:.8rem;padding-right:1.5rem;-webkit-overflow-scrolling:touch}
   .delivery-fig{flex:0 0 68%;scroll-snap-align:start}
 }
+
+.delivery-quote{margin:3rem 0 0;max-width:760px;border-left:1px solid var(--cream-soft);padding:.4rem 0 .4rem 1.8rem}
+.delivery-quote p{font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(1.05rem,1.8vw,1.35rem);line-height:1.65;color:rgba(245,243,239,.92);letter-spacing:.01em}
+.delivery-quote cite{display:block;font-style:normal;font-family:'Raleway',sans-serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-warm);margin-top:1.1rem}
+@media(max-width:900px){.delivery-quote{margin:2.2rem 1.5rem 0 0;padding-left:1.2rem}}
 </style>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -1193,7 +1198,7 @@ img {
 <section class="delivery-proof reveal" aria-labelledby="delivery-title">
   <p class="delivery-eyebrow" data-fr="Première livraison · France" data-en="First delivery · France">Première livraison · France</p>
   <h2 class="delivery-title" id="delivery-title" data-fr="De l'atelier à votre mur" data-en="From the studio to your wall">De l'atelier à votre mur</h2>
-  <p class="delivery-intro" data-fr="Un tirage 30×40 cm commandé via le site, imprimé en Europe et expédié en France fin septembre 2026. Acquis par un proche, qui l'a fait encadrer : voici le colis tel qu'il est arrivé, du carton de protection à l'accrochage." data-en="A 30×40 cm print ordered through the site, produced in Europe and shipped to France in late September 2026. Acquired by a friend, who had it framed: here is the parcel exactly as it arrived, from the protective board to the hanging.">Un tirage 30×40 cm commandé via le site, imprimé en Europe et expédié en France fin septembre 2026. Acquis par un proche, qui l'a fait encadrer : voici le colis tel qu'il est arrivé, du carton de protection à l'accrochage.</p>
+  <p class="delivery-intro" data-fr="Un tirage 30×40 cm commandé via le site, imprimé en Europe et expédié en France fin septembre 2026 : voici le colis tel qu'il est arrivé, du carton de protection à l'accrochage." data-en="A 30×40 cm print ordered through the site, produced in Europe and shipped to France in late September 2026: here is the parcel exactly as it arrived, from the protective board to the hanging.">Un tirage 30×40 cm commandé via le site, imprimé en Europe et expédié en France fin septembre 2026 : voici le colis tel qu'il est arrivé, du carton de protection à l'accrochage.</p>
   <div class="delivery-row">
     <figure class="delivery-fig">
       <img src="images/livraison-france-01.jpg"
@@ -1231,6 +1236,10 @@ img {
       <figcaption data-fr="Encadré, au mur" data-en="Framed on the wall">Encadré, au mur</figcaption>
     </figure>
   </div>
+  <blockquote class="delivery-quote">
+    <p data-fr="« J'ai reçu la photo très rapidement. Elle était extrêmement bien emballée, avec un carton pour la protéger et dans une pochette transparente, et avec en plus un certificat d'authenticité du photographe Franck Vinel. Photo de grande qualité sur un très beau papier. J'ai pu l'encadrer et l'accrocher dans ma maison : le résultat est splendide. Je recommande sans hésiter ce site. »" data-en="“I received the photo very quickly. It was extremely well packaged, with a board to protect it and in a clear sleeve, and with a certificate of authenticity from the photographer Franck Vinel as well. High-quality photo on a very beautiful paper. I was able to frame it and hang it in my home: the result is splendid. I recommend this site without hesitation.”">« J'ai reçu la photo très rapidement. Elle était extrêmement bien emballée, avec un carton pour la protéger et dans une pochette transparente, et avec en plus un certificat d'authenticité du photographe Franck Vinel. Photo de grande qualité sur un très beau papier. J'ai pu l'encadrer et l'accrocher dans ma maison : le résultat est splendide. Je recommande sans hésiter ce site. »</p>
+    <cite data-fr="Premier client · France" data-en="First customer · France">Premier client · France</cite>
+  </blockquote>
 </section>
 
 </main>

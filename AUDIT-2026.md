@@ -178,9 +178,9 @@ Tirage encadré accroché à un mur · certificat posé sur une table · colis �
 
 ---
 
-## `[ ]` 08. Trois témoignages
+## `[~]` 08. Trois témoignages
 
-> **État (5 oct. 2026) :** Rien en place. Une phrase de l'ami qui a reçu le premier tirage serait un début (avec son accord).
+> **État (6 oct. 2026) :** 1 sur 3. Témoignage du premier client (France) publié sous les photos de livraison de la boutique, sans nom. Restent 2 témoignages à recueillir ; ajouter son prénom/ville seulement avec son accord.
 
 **Impact :** fort · **Temps :** 2 h + attente
 

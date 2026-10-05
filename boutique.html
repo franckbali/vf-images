@@ -654,6 +654,22 @@ img {
   .detail-label{font-size:.9rem!important;letter-spacing:.2em!important}
   .detail-paper,.detail-edition{font-size:1rem!important}
 }
+
+/* ── PREMIÈRE LIVRAISON ── */
+.delivery-proof{padding:5rem 4rem 6rem;border-top:1px solid rgba(255,255,255,.05)}
+.delivery-eyebrow{font-family:'Raleway',sans-serif;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-warm);font-weight:400;margin-bottom:.9rem}
+.delivery-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.5rem,3vw,2.3rem);font-weight:400;color:var(--light);letter-spacing:.02em;margin-bottom:1.2rem}
+.delivery-intro{font-family:'Lora',serif;font-style:italic;font-size:1rem;line-height:1.8;color:rgba(245,243,239,.85);max-width:640px;margin-bottom:2.8rem}
+.delivery-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.delivery-fig{margin:0}
+.delivery-fig img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;filter:brightness(.92);-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+.delivery-fig figcaption{font-family:'Raleway',sans-serif;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,243,239,.8);margin-top:.8rem;line-height:1.5}
+@media(max-width:900px){
+  .delivery-proof{padding:3.5rem 0 4rem 1.5rem}
+  .delivery-eyebrow,.delivery-title,.delivery-intro{padding-right:1.5rem}
+  .delivery-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:.8rem;padding-right:1.5rem;-webkit-overflow-scrolling:touch}
+  .delivery-fig{flex:0 0 68%;scroll-snap-align:start}
+}
 </style>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -1171,6 +1187,51 @@ img {
   </div>
 </div>
 
+
+
+<!-- PREMIÈRE LIVRAISON -->
+<section class="delivery-proof reveal" aria-labelledby="delivery-title">
+  <p class="delivery-eyebrow" data-fr="Première livraison · France" data-en="First delivery · France">Première livraison · France</p>
+  <h2 class="delivery-title" id="delivery-title" data-fr="De l'atelier à votre mur" data-en="From the studio to your wall">De l'atelier à votre mur</h2>
+  <p class="delivery-intro" data-fr="Un tirage 30×40 cm imprimé en Europe et expédié en France fin septembre 2026. Commande passée par mes soins pour tester la chaîne de bout en bout, livrée chez un proche : voici le colis tel qu'il est arrivé, du carton de protection à l'accrochage." data-en="A 30×40 cm print produced in Europe and shipped to France in late September 2026. An order I placed myself to test the whole chain end to end, delivered to a friend: here is the parcel exactly as it arrived, from the protective board to the hanging.">Un tirage 30×40 cm imprimé en Europe et expédié en France fin septembre 2026. Commande passée par mes soins pour tester la chaîne de bout en bout, livrée chez un proche : voici le colis tel qu'il est arrivé, du carton de protection à l'accrochage.</p>
+  <div class="delivery-row">
+    <figure class="delivery-fig">
+      <img src="images/livraison-france-01.jpg"
+        srcset="images/livraison-france-01-small.webp 640w, images/livraison-france-01-medium.webp 1200w"
+        sizes="(max-width:900px) 68vw, 18vw"
+        alt="Carton rigide de protection fermé par un sceau Carbon Neutral" loading="lazy" decoding="async">
+      <figcaption data-fr="Carton rigide de protection" data-en="Rigid protective board">Carton rigide de protection</figcaption>
+    </figure>
+    <figure class="delivery-fig">
+      <img src="images/livraison-france-02.jpg"
+        srcset="images/livraison-france-02-small.webp 640w, images/livraison-france-02-medium.webp 1200w"
+        sizes="(max-width:900px) 68vw, 18vw"
+        alt="Ouverture du colis : tirage et certificat sous papier cristal" loading="lazy" decoding="async">
+      <figcaption data-fr="Ouverture du colis" data-en="Opening the parcel">Ouverture du colis</figcaption>
+    </figure>
+    <figure class="delivery-fig">
+      <img src="images/livraison-france-03.jpg"
+        srcset="images/livraison-france-03-small.webp 640w, images/livraison-france-03-medium.webp 1200w"
+        sizes="(max-width:900px) 68vw, 18vw"
+        alt="Tirage 30×40 et certificat d'authenticité papier, Canson Baryta" loading="lazy" decoding="async">
+      <figcaption data-fr="Tirage et certificat" data-en="Print and certificate">Tirage et certificat</figcaption>
+    </figure>
+    <figure class="delivery-fig">
+      <img src="images/livraison-france-04.jpg"
+        srcset="images/livraison-france-04-small.webp 640w, images/livraison-france-04-medium.webp 1200w"
+        sizes="(max-width:900px) 68vw, 18vw"
+        alt="Le tirage La Conversation Silencieuse sorti de son emballage" loading="lazy" decoding="async">
+      <figcaption data-fr="Le tirage, sorti du colis" data-en="The print, out of the box">Le tirage, sorti du colis</figcaption>
+    </figure>
+    <figure class="delivery-fig">
+      <img src="images/livraison-france-05.jpg"
+        srcset="images/livraison-france-05-small.webp 640w, images/livraison-france-05-medium.webp 1200w"
+        sizes="(max-width:900px) 68vw, 18vw"
+        alt="Le tirage encadré et accroché au mur" loading="lazy" decoding="async">
+      <figcaption data-fr="Encadré, au mur" data-en="Framed on the wall">Encadré, au mur</figcaption>
+    </figure>
+  </div>
+</section>
 
 </main>
 <footer role="contentinfo">

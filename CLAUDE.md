@@ -142,6 +142,7 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 - **Œuvres homonymes** : `galerie-bali` "Temple · Bali" réduit de ×2 à ×1 (20 sept., l'autre retitré "La Source Sacrée · Bali"). Reste : "Rituels · Bali" ×3 dans `galerie-bali`, et `boutique` deux "Portrait · Bali" (012 & 369) — non tranchés.
 - **`mentions-legales.html`** : raison sociale + adresse + NIB **FAIT (18 sept.)** — PT Happy Sunrise Family, Jalan Bidadari IIA, Kerobokan Kelod, Kuta Utara, Badung, Bali, NIB 2306220091801. Reste à vérifier : le compte Stripe marqué « France » vs société indonésienne.
 - **Prix en hero d'accueil** (« À partir de 95 € ») : positionnement valeur vs désirabilité — non tranché, non implémenté.
+- **Section « De l'atelier à votre mur » (boutique.html, 5 oct. 2026) — FAIT** : 5 photos de la première livraison en France (`images/livraison-france-0X`), dossier source `premiere livraison/` (13 photos WhatsApp, non versionné). Contexte : commande EC-AA98978 passée par Fra (sa carte), puis tirage acquis par un ami qui a payé le tirage + le cadre hors site. Formulé « acquis par un proche » — pas un avis client (aucune citation de l'ami ; en ajouter une seulement avec son accord et ses mots). Photo du colis fermé écartée : nom/adresse du destinataire écrits dessus.
 - **Champ société à la commande — FAIT (18 sept.)** : `api/create-checkout.js` ajoute un `custom_field` Stripe optionnel « Société (pour facture, optionnel) » — capté pour une future facturation pro, pas de génération de facture automatique pour l'instant.
 
 ### SEO / contenu

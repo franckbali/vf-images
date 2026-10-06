@@ -32,7 +32,7 @@ Type : **site HTML statique** (pas de framework JS, pas de build step, fichiers 
 - **Formulaire contact** : Formspree (ID `mwvybbrz`)
 - **API Creativehub** : `https://api.creativehub.io` (clé stockée en privé, hors dépôt)
 
-Pages existantes : `index`, `boutique`, `galerie-index`, `galerie-bali`, `galerie-mekotek`, `galerie-newyork`, `galerie-portraits`, `a-propos`, `blog`, `blog-article` (Melasti), `blog-article-mekotek` (Mekotek), `blog-article-cremation` (Ngaben), `contact`, `mentions-legales`.
+Pages existantes : `index`, `boutique`, `galerie-index`, `galerie-bali`, `galerie-mekotek`, `galerie-newyork`, `galerie-portraits`, `a-propos`, `blog`, `blog-article` (Melasti), `blog-article-mekotek` (Mekotek), `blog-article-cremation` (Ngaben), `le-tirage`, `contact`, `mentions-legales`.
 
 ---
 
@@ -143,6 +143,7 @@ Client paie via Stripe Checkout → `api/stripe-webhook.js` (event `checkout.ses
 - **`mentions-legales.html`** : raison sociale + adresse + NIB **FAIT (18 sept.)** — PT Happy Sunrise Family, Jalan Bidadari IIA, Kerobokan Kelod, Kuta Utara, Badung, Bali, NIB 2306220091801. Reste à vérifier : le compte Stripe marqué « France » vs société indonésienne.
 - **Prix en hero d'accueil** (« À partir de 95 € ») : positionnement valeur vs désirabilité — non tranché, non implémenté.
 - **Section « De l'atelier à votre mur » (boutique.html, 5 oct. 2026) — FAIT** : 5 photos de la première livraison en France (`images/livraison-france-0X`), dossier source `premiere livraison/` (13 photos WhatsApp, non versionné). Contexte : commande EC-AA98978 passée par Fra (sa carte), puis tirage acquis par un ami qui a payé le tirage + le cadre hors site. Le 6 oct., l'ami (qui a réellement acheté le tirage + le cadre) a envoyé son message : publié tel quel sous les photos, attribué « Olivier D. · Ceyreste, France » (Fra ne veut plus la mention « proche » ; nom ajouté sur demande de Fra le 6 oct.). Photo du colis fermé écartée : nom/adresse du destinataire écrits dessus.
+- **Page `/le-tirage` — FAIT (6 oct. 2026)** : papier (Hahnemühle Photo Rag / Canson Baryta), impression, signature reproduite, emballage (photos `livraison-france-0X`), certificats, éditions, livraison « 7 à 10 jours ouvrés » (vérifié : commande 18 sept. → déballée 30 sept. = 8 jours ouvrés), retours. Lien « Le tirage » ajouté au pied de page des 14 pages + sous chaque fiche boutique. Aussi corrigé : mention « Fuji Crystal » (papier non vendu) retirée de la boutique et des CGV. ⚠️ À vérifier : les CGV promettent « Un numéro de suivi est communiqué par email » — non confirmé (Creativehub n'a pas de webhook de statut) ; absent de la page tirage volontairement.
 - **Champ société à la commande — FAIT (18 sept.)** : `api/create-checkout.js` ajoute un `custom_field` Stripe optionnel « Société (pour facture, optionnel) » — capté pour une future facturation pro, pas de génération de facture automatique pour l'instant.
 
 ### SEO / contenu

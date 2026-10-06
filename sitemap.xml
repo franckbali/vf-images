@@ -66,6 +66,15 @@
 
   <!-- ── Éditions limitées ── -->
   <url>
+    <loc>https://vfimages.com/le-tirage</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/le-tirage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vfimages.com/le-tirage"/>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://vfimages.com/editions/portrait-bali-012</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://vfimages.com/editions/portrait-bali-012"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vfimages.com/editions/portrait-bali-012"/>

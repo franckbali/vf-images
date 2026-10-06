@@ -17,7 +17,7 @@
 
 ## Vérification du 5 octobre 2026
 
-**Bilan : 9 faites, 8 partielles, 3 à faire** (08 témoignages, 09 page « Le tirage », 17 newsletter). Pour le référencement, les plus utiles sont 09, 19 et 20.
+**Bilan (mis à jour le 6 oct. : 09 faite) : 10 faites, 8 partielles, 2 à faire** (17 newsletter ; 08 passée en partiel). Pour le référencement, les plus utiles sont 09, 19 et 20.
 
 **Les 5 prochaines actions proposées :**
 1. **12 — afficher lieu / date / histoire sur les fiches boutique** (les données existent déjà, ~1 h).
@@ -190,9 +190,9 @@ Email aux acheteurs passés. Prénom, ville, deux phrases. Section sobre en bas 
 
 ---
 
-## `[ ]` 09. Page « Le tirage »
+## `[x]` 09. Page « Le tirage »
 
-> **État (5 oct. 2026) :** Aucune page « Le tirage » (papier, encres, atelier, emballage, délais, retours). Les photos de livraison et le certificat fourniraient le contenu.
+> **État (6 oct. 2026) :** Fait. Page `/le-tirage` (papier, impression, signature, emballage avec photos de livraison, certificats, éditions, livraison 7–10 jours ouvrés, retours), bilingue, liée depuis le pied de page de toutes les pages et sous chaque fiche produit de la boutique, ajoutée au sitemap.
 
 **Impact :** fort · **Temps :** 1 dimanche
 

@@ -786,7 +786,7 @@ img {
     <svg id="orderConfirmIconSvg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(201,169,110,1.0)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
   </div>
   <h3 class="order-confirm-title" id="orderConfirmTitle" data-fr="Commande confirmée" data-en="Order confirmed">Commande confirmée</h3>
-  <p class="order-confirm-text" id="orderConfirmText" data-fr="Merci pour votre commande. Vous allez recevoir un email de confirmation, et votre tirage sera imprimé et expédié depuis notre laboratoire partenaire en Europe." data-en="Thank you for your order. You will receive a confirmation email shortly, and your print will be produced and shipped from our partner lab in Europe.">Merci pour votre commande. Vous allez recevoir un email de confirmation, et votre tirage sera imprimé et expédié depuis notre laboratoire partenaire en Europe.</p>
+  <p class="order-confirm-text" id="orderConfirmText" data-fr="Merci pour votre commande. Vous allez recevoir un email de confirmation, et votre tirage sera imprimé et expédié depuis notre laboratoire partenaire en Europe. Le transporteur vous enverra un numéro de suivi par email dès l'expédition." data-en="Thank you for your order. You will receive a confirmation email shortly, and your print will be produced and shipped from our partner lab in Europe. The carrier will email you a tracking number once it ships.">Merci pour votre commande. Vous allez recevoir un email de confirmation, et votre tirage sera imprimé et expédié depuis notre laboratoire partenaire en Europe. Le transporteur vous enverra un numéro de suivi par email dès l'expédition.</p>
   <p class="order-confirm-cert-pending" id="orderConfirmCertPending" style="display:none" data-fr="Génération de votre certificat d'authenticité…" data-en="Generating your certificate of authenticity…">Génération de votre certificat d'authenticité…</p>
   <div class="order-confirm-cert" id="orderConfirmCert" style="display:none">
     <a class="order-confirm-cert-link" id="orderConfirmCertLink" href="#" target="_blank" rel="noopener" data-fr="Voir mon certificat d'authenticité →" data-en="View my certificate of authenticity →">Voir mon certificat d'authenticité →</a>
@@ -1499,8 +1499,8 @@ function openOrderConfirm(kind){
     iconSvg.setAttribute('stroke', 'rgba(201,169,110,1.0)');
     title.setAttribute('data-fr','Commande confirmée');
     title.setAttribute('data-en','Order confirmed');
-    text.setAttribute('data-fr','Merci pour votre commande. Vous allez recevoir un email de confirmation, et votre tirage sera imprimé et expédié depuis notre laboratoire partenaire en Europe.');
-    text.setAttribute('data-en','Thank you for your order. You will receive a confirmation email shortly, and your print will be produced and shipped from our partner lab in Europe.');
+    text.setAttribute('data-fr','Merci pour votre commande. Vous allez recevoir un email de confirmation, et votre tirage sera imprimé et expédié depuis notre laboratoire partenaire en Europe. Le transporteur vous enverra un numéro de suivi par email dès l'expédition.');
+    text.setAttribute('data-en','Thank you for your order. You will receive a confirmation email shortly, and your print will be produced and shipped from our partner lab in Europe. The carrier will email you a tracking number once it ships.');
   }
   setLang(currentLang);
   panel.classList.add('open');

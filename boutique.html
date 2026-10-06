@@ -837,7 +837,7 @@ img {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </button>
         <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison offerte en Europe" data-en="Hahnemühle printing · Free shipping in Europe">Impression Hahnemühle · Livraison offerte en Europe</p>
-        <a href="le-tirage" class="contact-row-link" data-fr="Papier, emballage, délais, retours · Le tirage" data-en="Paper, packaging, delivery, returns · The print">Papier, emballage, délais, retours · Le tirage</a>
+        <a href="le-tirage" class="contact-row-link detail-tirage-link" data-fr="Papier, emballage, délais, retours · Le tirage" data-en="Paper, packaging, delivery, returns · The print">Papier, emballage, délais, retours · Le tirage</a>
         <a href="mailto:contact@vfimages.com" class="contact-row-link" data-fr="Livraison hors Europe · Me contacter" data-en="Shipping outside Europe · Contact me">Livraison hors Europe · Me contacter</a>
       </div>
     </div>
@@ -884,7 +884,7 @@ img {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </button>
         <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison offerte en Europe" data-en="Hahnemühle printing · Free shipping in Europe">Impression Hahnemühle · Livraison offerte en Europe</p>
-        <a href="le-tirage" class="contact-row-link" data-fr="Papier, emballage, délais, retours · Le tirage" data-en="Paper, packaging, delivery, returns · The print">Papier, emballage, délais, retours · Le tirage</a>
+        <a href="le-tirage" class="contact-row-link detail-tirage-link" data-fr="Papier, emballage, délais, retours · Le tirage" data-en="Paper, packaging, delivery, returns · The print">Papier, emballage, délais, retours · Le tirage</a>
         <a href="mailto:contact@vfimages.com" class="contact-row-link" data-fr="Livraison hors Europe · Me contacter" data-en="Shipping outside Europe · Contact me">Livraison hors Europe · Me contacter</a>
       </div>
     </div>
@@ -931,7 +931,7 @@ img {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </button>
         <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison offerte en Europe" data-en="Hahnemühle printing · Free shipping in Europe">Impression Hahnemühle · Livraison offerte en Europe</p>
-        <a href="le-tirage" class="contact-row-link" data-fr="Papier, emballage, délais, retours · Le tirage" data-en="Paper, packaging, delivery, returns · The print">Papier, emballage, délais, retours · Le tirage</a>
+        <a href="le-tirage" class="contact-row-link detail-tirage-link" data-fr="Papier, emballage, délais, retours · Le tirage" data-en="Paper, packaging, delivery, returns · The print">Papier, emballage, délais, retours · Le tirage</a>
         <a href="mailto:contact@vfimages.com" class="contact-row-link" data-fr="Livraison hors Europe · Me contacter" data-en="Shipping outside Europe · Contact me">Livraison hors Europe · Me contacter</a>
       </div>
     </div>
@@ -978,7 +978,7 @@ img {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </button>
         <p class="detail-shipping" data-fr="Impression Hahnemühle · Livraison offerte en Europe" data-en="Hahnemühle printing · Free shipping in Europe">Impression Hahnemühle · Livraison offerte en Europe</p>
-        <a href="le-tirage" class="contact-row-link" data-fr="Papier, emballage, délais, retours · Le tirage" data-en="Paper, packaging, delivery, returns · The print">Papier, emballage, délais, retours · Le tirage</a>
+        <a href="le-tirage" class="contact-row-link detail-tirage-link" data-fr="Papier, emballage, délais, retours · Le tirage" data-en="Paper, packaging, delivery, returns · The print">Papier, emballage, délais, retours · Le tirage</a>
         <a href="mailto:contact@vfimages.com" class="contact-row-link" data-fr="Livraison hors Europe · Me contacter" data-en="Shipping outside Europe · Contact me">Livraison hors Europe · Me contacter</a>
       </div>
     </div>
@@ -1430,7 +1430,7 @@ function selectFormat(btn){
   if(parts.length===2) updateModalViz(modal, parts[0], parts[1]);
 
   // Mise à jour lien email ROW
-  const rowLink = modal.querySelector('.contact-row-link');
+  const rowLink = modal.querySelector('.contact-row-link[href^="mailto"]');
   if(rowLink){
     const title = modal.querySelector('.detail-title');
     const photoTitle = title ? title.textContent.trim() : 'tirage';

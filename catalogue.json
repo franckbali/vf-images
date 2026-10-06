@@ -13,8 +13,8 @@
       "story_fr": "Lors d'un mariage, où j'étais l'invité de la famille.",
       "story_en": "At a wedding, where I was a guest of the family.",
       "image": "images/portrait-bali-012.jpg",
-      "paper_fr": "Hahnemühle Photo Rag · Fine Art Baryta",
-      "paper_en": "Hahnemühle Photo Rag · Fine Art Baryta",
+      "paper_fr": "Hahnemühle Photo Rag · Fine Art Giclée",
+      "paper_en": "Hahnemühle Photo Rag · Fine Art Giclée",
       "formats": [
         {
           "label": "45×30",
@@ -51,8 +51,8 @@
       "story_fr": "Cérémonie de bénédiction d'une villa, célébrée par un prêtre balinais (jero mangku).",
       "story_en": "A villa blessing ceremony, led by a Balinese priest (jero mangku).",
       "image": "images/portrait-bali-369.jpg",
-      "paper_fr": "Hahnemühle Photo Rag · Fine Art Baryta",
-      "paper_en": "Hahnemühle Photo Rag · Fine Art Baryta",
+      "paper_fr": "Hahnemühle Photo Rag · Fine Art Giclée",
+      "paper_en": "Hahnemühle Photo Rag · Fine Art Giclée",
       "formats": [
         {
           "label": "45×30",
@@ -89,8 +89,8 @@
       "story_fr": "Photographié au coucher du soleil.",
       "story_en": "Photographed at sunset.",
       "image": "images/hummingbird-costa-rica-001.jpg",
-      "paper_fr": "Hahnemühle Photo Rag · Fine Art Baryta",
-      "paper_en": "Hahnemühle Photo Rag · Fine Art Baryta",
+      "paper_fr": "Canson Baryta · Fine Art Giclée",
+      "paper_en": "Canson Baryta · Fine Art Giclée",
       "formats": [
         {
           "label": "30×45",
@@ -149,6 +149,272 @@
           "limited_edition": 15,
           "sold_count": 0,
           "creativehub_sku": "V-1JBNG57C"
+        }
+      ]
+    },
+    {
+      "id": "bali-dupa-001",
+      "title_fr": "Le Souffle des Dieux · Bali",
+      "title_en": "The Breath of the Gods · Bali",
+      "location_fr": "Bali",
+      "location_en": "Bali",
+      "place_fr": "Bali",
+      "place_en": "Bali",
+      "date_fr": "",
+      "date_en": "",
+      "story_fr": "",
+      "story_en": "",
+      "image": "images/bali-dupa-001.jpg",
+      "paper_fr": "Hahnemühle Photo Rag · Fine Art Giclée",
+      "paper_en": "Hahnemühle Photo Rag · Fine Art Giclée",
+      "formats": [
+        {
+          "label": "45×30",
+          "price_eur": 95,
+          "creativehub_variant_id": "10d1f330-4f7d-4d33-83c9-32bda1eb1e19",
+          "creativehub_sku": "V-1J7XS82O"
+        },
+        {
+          "label": "60×40",
+          "price_eur": 190,
+          "creativehub_variant_id": "cbe6943b-4537-47e7-9653-ecf4e1d5ecaf",
+          "creativehub_sku": "V-3ZAW59KJ"
+        },
+        {
+          "label": "100×70",
+          "price_eur": 690,
+          "creativehub_variant_id": "0c0937ee-e2c9-426d-a4a4-843cbb2abf91",
+          "limited_edition": 15,
+          "sold_count": 0,
+          "creativehub_sku": "V-K3QLOYKQ"
+        }
+      ]
+    },
+    {
+      "id": "bali-dupa-003",
+      "title_fr": "Le Geste de l'Aube · Bali",
+      "title_en": "The Dawn Gesture · Bali",
+      "location_fr": "Bali",
+      "location_en": "Bali",
+      "place_fr": "Bali",
+      "place_en": "Bali",
+      "date_fr": "",
+      "date_en": "",
+      "story_fr": "",
+      "story_en": "",
+      "image": "images/bali-dupa-003.jpg",
+      "paper_fr": "Canson Baryta · Fine Art Giclée",
+      "paper_en": "Canson Baryta · Fine Art Giclée",
+      "formats": [
+        {
+          "label": "30×45",
+          "price_eur": 95,
+          "creativehub_variant_id": "f7a9aa16-2486-457c-bf29-11cf877faafa",
+          "creativehub_sku": "V-QOVPBQZA"
+        },
+        {
+          "label": "40×60",
+          "price_eur": 190,
+          "creativehub_variant_id": "dfdde209-9015-43b2-b2ee-f99892e9b116",
+          "creativehub_sku": "V-77IH245O"
+        },
+        {
+          "label": "70×100",
+          "price_eur": 690,
+          "creativehub_variant_id": "1981a989-6fec-4895-8244-d1a8dc1dd70b",
+          "limited_edition": 15,
+          "sold_count": 0,
+          "creativehub_sku": "V-45DI3299"
+        }
+      ]
+    },
+    {
+      "id": "bali-dupa-004",
+      "title_fr": "Voile de Fumée · Bali",
+      "title_en": "Veil of Smoke · Bali",
+      "location_fr": "Bali",
+      "location_en": "Bali",
+      "place_fr": "Bali",
+      "place_en": "Bali",
+      "date_fr": "",
+      "date_en": "",
+      "story_fr": "",
+      "story_en": "",
+      "image": "images/bali-dupa-004.jpg",
+      "paper_fr": "Hahnemühle Photo Rag · Fine Art Giclée",
+      "paper_en": "Hahnemühle Photo Rag · Fine Art Giclée",
+      "formats": [
+        {
+          "label": "30×45",
+          "price_eur": 95,
+          "creativehub_variant_id": "6c964c28-aafd-474c-8158-3717f804a4bc",
+          "creativehub_sku": "V-ZME26DQX"
+        },
+        {
+          "label": "40×60",
+          "price_eur": 190,
+          "creativehub_variant_id": "d0f7f464-e840-486f-b803-ed5c8389d4f5",
+          "creativehub_sku": "V-5058ZCVC"
+        },
+        {
+          "label": "70×100",
+          "price_eur": 690,
+          "creativehub_variant_id": "0aa5a411-4dff-4ac3-8360-387c04885d10",
+          "limited_edition": 15,
+          "sold_count": 0,
+          "creativehub_sku": "V-K8IPJL99"
+        }
+      ]
+    },
+    {
+      "id": "bali-dupa-006",
+      "title_fr": "L'Offrande Dorée · Bali",
+      "title_en": "The Golden Offering · Bali",
+      "location_fr": "Bali",
+      "location_en": "Bali",
+      "place_fr": "Bali",
+      "place_en": "Bali",
+      "date_fr": "",
+      "date_en": "",
+      "story_fr": "",
+      "story_en": "",
+      "image": "images/bali-dupa-006.jpg",
+      "paper_fr": "Canson Baryta · Fine Art Giclée",
+      "paper_en": "Canson Baryta · Fine Art Giclée",
+      "formats": [
+        {
+          "label": "30×45",
+          "price_eur": 95,
+          "creativehub_variant_id": "a8eae60d-951a-432f-8e07-0a8b6eaff3bd",
+          "creativehub_sku": "V-5513PZLS"
+        },
+        {
+          "label": "40×60",
+          "price_eur": 190,
+          "creativehub_variant_id": "28d33a1e-d0cb-4e75-86ce-b439a834c136",
+          "creativehub_sku": "V-1LUH3TP0"
+        },
+        {
+          "label": "70×100",
+          "price_eur": 690,
+          "creativehub_variant_id": "5d8f177b-54f1-4a52-a4fc-bee7f30a3be3",
+          "limited_edition": 15,
+          "sold_count": 0,
+          "creativehub_sku": "V-ZYHA2DCC"
+        }
+      ]
+    },
+    {
+      "id": "temple-bali-005",
+      "title_fr": "Le Gardien de Pierre · Bali",
+      "title_en": "The Stone Guardian · Bali",
+      "location_fr": "Bali",
+      "location_en": "Bali",
+      "place_fr": "Bali",
+      "place_en": "Bali",
+      "date_fr": "",
+      "date_en": "",
+      "story_fr": "",
+      "story_en": "",
+      "image": "images/temple-bali-005.jpg",
+      "paper_fr": "Canson Baryta · Fine Art Giclée",
+      "paper_en": "Canson Baryta · Fine Art Giclée",
+      "formats": [
+        {
+          "label": "30×45",
+          "price_eur": 95,
+          "creativehub_variant_id": "4618ebeb-c901-4582-a8f6-805d44b21422",
+          "creativehub_sku": "V-NYRNJVOO"
+        },
+        {
+          "label": "40×60",
+          "price_eur": 190,
+          "creativehub_variant_id": "53fc9908-3a3e-40d4-97b0-54168c7b408d",
+          "creativehub_sku": "V-ETZYNDRF"
+        },
+        {
+          "label": "70×100",
+          "price_eur": 690,
+          "creativehub_variant_id": "39ba2709-be98-40cf-a15a-4d5cb2cdc764",
+          "limited_edition": 15,
+          "sold_count": 0,
+          "creativehub_sku": "V-79UV98YP"
+        }
+      ]
+    },
+    {
+      "id": "temple-bali-006",
+      "title_fr": "Le Seuil du Temple · Bali",
+      "title_en": "The Temple Threshold · Bali",
+      "location_fr": "Bali",
+      "location_en": "Bali",
+      "place_fr": "Bali",
+      "place_en": "Bali",
+      "date_fr": "",
+      "date_en": "",
+      "story_fr": "",
+      "story_en": "",
+      "image": "images/temple-bali-006.jpg",
+      "paper_fr": "Hahnemühle Photo Rag · Fine Art Giclée",
+      "paper_en": "Hahnemühle Photo Rag · Fine Art Giclée",
+      "formats": [
+        {
+          "label": "30×45",
+          "price_eur": 95,
+          "creativehub_variant_id": "aa37bc32-3c39-4a74-ba8e-b303a8c870f3",
+          "creativehub_sku": "V-FHWJ0U36"
+        },
+        {
+          "label": "40×60",
+          "price_eur": 190,
+          "creativehub_variant_id": "195b8c27-10e5-4736-8ee0-57bb377a7899",
+          "creativehub_sku": "V-LLXU7SY0"
+        },
+        {
+          "label": "70×100",
+          "price_eur": 690,
+          "creativehub_variant_id": "17d30570-ec4e-4f8a-a9ec-5001543729a6",
+          "limited_edition": 15,
+          "sold_count": 0,
+          "creativehub_sku": "V-5OPOWAKP"
+        }
+      ]
+    },
+    {
+      "id": "temple-bali-008",
+      "title_fr": "Les Mains Jointes · Bali",
+      "title_en": "Joined Hands · Bali",
+      "location_fr": "Bali",
+      "location_en": "Bali",
+      "place_fr": "Bali",
+      "place_en": "Bali",
+      "date_fr": "",
+      "date_en": "",
+      "story_fr": "",
+      "story_en": "",
+      "image": "images/temple-bali-008.jpg",
+      "paper_fr": "Canson Baryta · Fine Art Giclée",
+      "paper_en": "Canson Baryta · Fine Art Giclée",
+      "formats": [
+        {
+          "label": "30×45",
+          "price_eur": 95,
+          "creativehub_variant_id": "38bc4db1-8e4c-4045-a5e9-0c3db6142ac2",
+          "creativehub_sku": "V-XVLHLK6H"
+        },
+        {
+          "label": "40×60",
+          "price_eur": 190,
+          "creativehub_variant_id": "b360e72b-05da-4d69-92e6-c0d7bf36caa9",
+          "creativehub_sku": "V-CYNK9TA0"
+        },
+        {
+          "label": "70×100",
+          "price_eur": 690,
+          "creativehub_variant_id": "af565fd7-1296-4810-b519-5b600f43f206",
+          "limited_edition": 15,
+          "sold_count": 0,
+          "creativehub_sku": "V-WYMLDOPR"
         }
       ]
     }
